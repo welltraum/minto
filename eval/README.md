@@ -28,7 +28,7 @@ repository.
 - `skill`: canonical `SKILL.md` plus both references and the task.
 - `control`: one sentence naming the Minto Pyramid Principle plus the same task.
 
-The pinned release matrix is:
+The v1.5.0 release matrix is:
 
 - `gpt-5.6-terra`, low reasoning, through Codex CLI.
 - `kimi-code/k3-low` through Kimi Code CLI.
@@ -38,18 +38,52 @@ unavailable in the release environment and was excluded rather than silently
 substituted. Judging and report synthesis use `gpt-5.6-sol` with high reasoning
 in isolated Codex workspaces.
 
+The expanded comparison matrix adds three models through NeuralDeep's
+OpenAI-compatible API:
+
+- `gemma-4-31b`
+- `gpt-oss-120b`
+- `qwen3.6-35b-a3b`
+
+With Codex and Kimi, this produces 80 outputs: eight fixtures x two arms x five
+engines. Claude remains excluded when it is unavailable. NeuralDeep credentials
+are read only from `NEURALDEEP_API_KEY`; never write the key to repository files
+or command metadata.
+
+Before launching the full matrix, preflight both arms on one representative
+fixture. This checks the long skill prompt rather than only API authentication:
+
+```bash
+bash eval/build-prompts.sh
+NEURALDEEP_API_KEY=... NEURALDEEP_ATTEMPTS=1 \
+  bash eval/run-cli.sh eval/runs/neuraldeep-preflight \
+  "skill control" "04-meeting-note" \
+  "gemma-4-31b gpt-oss-120b qwen3.6-35b-a3b"
+```
+
+Do not launch the release matrix if any selected model fails this preflight.
+Record unavailable models instead of silently substituting another engine.
+
 ## Run
 
 ```bash
 bash eval/build-prompts.sh
-bash eval/run-cli.sh eval/runs/v1.5.0
-bash eval/shuffle.sh eval/runs/v1.5.0
-bash eval/run-judge.sh eval/runs/v1.5.0
-bash eval/build-report.sh eval/runs/v1.5.0
+NEURALDEEP_API_KEY=... bash eval/run-cli.sh eval/runs/v1.6.0 \
+  "skill control" "" \
+  "codex kimi gemma-4-31b gpt-oss-120b qwen3.6-35b-a3b"
+bash eval/shuffle.sh eval/runs/v1.6.0 10
+EXPECTED_OUTPUTS=10 bash eval/run-judge.sh eval/runs/v1.6.0
+bash eval/build-report.sh eval/runs/v1.6.0 eval/report-v1.6.0.md
 ```
 
-Each engine is run as a batch of 16 parallel jobs. Nonempty outputs are skipped,
-so rerunning the same directory safely fills only failed or missing cells.
+Codex and Kimi run as batches of 16 parallel jobs. NeuralDeep defaults to two
+concurrent requests because its API enforces parallel and requests-per-minute
+limits; override this with `NEURALDEEP_CONCURRENCY` only when the account tier
+supports it. Retryable `408`, `429`, `500`, and `502` responses are retried.
+Each API attempt has a five-minute read timeout, with two attempts and a hard
+process deadline so a stalled upstream cannot block the full run indefinitely.
+Nonempty outputs are skipped, so rerunning the same directory safely fills only
+failed or missing cells.
 
 `engines.txt` records model IDs, effort, CLI versions, UTC time, fixture and arm
 selection, and the tested Git commit. Never compare runs whose engine metadata
@@ -63,7 +97,7 @@ The judge sees only:
 - the shared rubric;
 - that fixture's decisive questions;
 - a frozen copy of the skill and rules;
-- four blinded outputs.
+- the expected set of blinded outputs.
 
 It does not receive the output mapping, changelog, other fixtures, previous
 reports, or other verdicts. The report step sees verdicts and mapping only after

@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 # Create deterministic blinded copies and a private-to-the-judge mapping.
-# Usage: bash eval/shuffle.sh <runs_dir>
+# Usage: bash eval/shuffle.sh <runs_dir> [expected_outputs_per_fixture]
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-RUNS="${1:?usage: shuffle.sh <runs_dir>}"
+RUNS="${1:?usage: shuffle.sh <runs_dir> [expected_outputs_per_fixture]}"
+EXPECTED_OUTPUTS="${2:-4}"
 
-python3 - "$ROOT" "$RUNS" <<'PY'
+python3 - "$ROOT" "$RUNS" "$EXPECTED_OUTPUTS" <<'PY'
 import hashlib
 import json
 import shutil
@@ -15,13 +16,16 @@ from pathlib import Path
 
 root = Path(sys.argv[1])
 runs = Path(sys.argv[2])
+expected_outputs = int(sys.argv[3])
 mapping = {}
 
 for before in sorted((root / "eval" / "fixtures").glob("*/before.md")):
     name = before.parent.name
     raw = sorted((runs / "raw").glob(f"{name}__*.md"))
-    if len(raw) != 4:
-        raise SystemExit(f"{name}: expected 4 raw outputs, found {len(raw)}")
+    if len(raw) != expected_outputs:
+        raise SystemExit(
+            f"{name}: expected {expected_outputs} raw outputs, found {len(raw)}"
+        )
 
     ordered = sorted(raw, key=lambda path: hashlib.sha256(path.name.encode()).hexdigest())
     blind_dir = runs / "blind" / name
