@@ -11,6 +11,7 @@ case "$RUNS" in
 esac
 JUDGE_MODEL="${JUDGE_MODEL:-gpt-5.6-sol}"
 JUDGE_EFFORT="${JUDGE_EFFORT:-high}"
+EXPECTED_OUTPUTS="${EXPECTED_OUTPUTS:-4}"
 SKILL_DIR="$ROOT/plugins/minto/skills/minto"
 
 if command -v timeout >/dev/null 2>&1; then
@@ -26,6 +27,7 @@ mkdir -p "$RUNS/verdicts" "$RUNS/logs"
 {
   echo "judge_model: $JUDGE_MODEL"
   echo "judge_effort: $JUDGE_EFFORT"
+  echo "expected_outputs_per_fixture: $EXPECTED_OUTPUTS"
   echo "codex_cli: $(codex --version 2>/dev/null || echo unavailable)"
   echo "command: codex exec -C ISOLATED_WORKSPACE -m MODEL -c model_reasoning_effort=EFFORT --ignore-user-config --ignore-rules --ephemeral --skip-git-repo-check -o OUTPUT -"
 } > "$RUNS/judge.txt"
@@ -76,8 +78,8 @@ judge_one() {
   } > "$prompt"
 
   count="$(find "$RUNS/blind/$name" -name 'out-*.md' -type f | wc -l | tr -d ' ')"
-  if [ "$count" -ne 4 ]; then
-    echo "FAIL $name expected 4 blinded outputs, found $count"
+  if [ "$count" -ne "$EXPECTED_OUTPUTS" ]; then
+    echo "FAIL $name expected $EXPECTED_OUTPUTS blinded outputs, found $count"
     rm -f "$prompt"
     return 1
   fi

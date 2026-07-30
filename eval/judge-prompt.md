@@ -1,6 +1,6 @@
 # Judge instructions
 
-Evaluate four blinded outputs for one fixture. Two engines produced two arms:
+Evaluate all blinded outputs for one fixture. Every engine produced two arms:
 one with the skill and one control. Do not infer engine or arm identities.
 
 Read the supplied fixture, gold structure, rubric, decisive questions, frozen

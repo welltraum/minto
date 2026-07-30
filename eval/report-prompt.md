@@ -1,7 +1,8 @@
 # Release report instructions
 
-Build a concise, evidence-based Markdown report for Minto v1.5.0 from the
-supplied engine metadata, output mapping, fixture verdicts, and fixture list.
+Build a concise, evidence-based Markdown report for the supplied Minto
+benchmark run from the engine metadata, output mapping, fixture verdicts, and
+fixture list.
 
 Include:
 
@@ -11,11 +12,11 @@ Include:
 3. A fixture-level table of the most decisive skill-versus-control result.
 4. Strengths that recur across at least two engines.
 5. Defects that recur across at least two engines and should be candidates for
-   v1.6.0.
+   the next skill revision.
 6. Hard failures and incomplete cells.
 7. Limitations: paraphrased English fixtures, one run per cell, model and judge
-   dependence, Claude execution being unavailable for this release, and no
-   direct comparability to historical Russian runs.
+   dependence, provider or engine availability recorded in the metadata, and
+   no direct comparability to historical Russian runs.
 8. A plain conclusion that does not claim improvement unless the supplied
    scores support it.
 

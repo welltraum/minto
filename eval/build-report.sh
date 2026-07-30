@@ -9,7 +9,7 @@ case "$RUNS" in
   /*) ;;
   *) RUNS="$ROOT/$RUNS" ;;
 esac
-REPORT="${2:-$ROOT/eval/report-v1.5.0.md}"
+REPORT="${2:-$RUNS/report.md}"
 case "$REPORT" in
   /*) ;;
   *) REPORT="$ROOT/$REPORT" ;;
