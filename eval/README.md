@@ -32,10 +32,11 @@ The pinned release matrix is:
 
 - `gpt-5.6-terra`, low reasoning, through Codex CLI.
 - `kimi-code/k3-low` through Kimi Code CLI.
-- `claude-sonnet-5`, medium effort, through Claude Code CLI.
-- `claude-haiku-4-5-20251001`, medium effort, through Claude Code CLI.
 
-Eight fixtures x two arms x four engines = 64 outputs.
+Eight fixtures x two arms x two engines = 32 outputs. Claude execution was
+unavailable in the release environment and was excluded rather than silently
+substituted. Judging and report synthesis use `gpt-5.6-sol` with high reasoning
+in isolated Codex workspaces.
 
 ## Run
 
@@ -62,7 +63,7 @@ The judge sees only:
 - the shared rubric;
 - that fixture's decisive questions;
 - a frozen copy of the skill and rules;
-- eight blinded outputs.
+- four blinded outputs.
 
 It does not receive the output mapping, changelog, other fixtures, previous
 reports, or other verdicts. The report step sees verdicts and mapping only after

@@ -1,22 +1,24 @@
 #!/usr/bin/env bash
-# Run the benchmark through four pinned engines.
+# Run the benchmark through two pinned engines.
 # Usage: bash eval/run-cli.sh <runs_dir> [arms] [fixtures] [engines]
 # Results: <runs_dir>/raw/<fixture>__<engine>__<arm>.md
 set -uo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 RUNS="${1:?usage: run-cli.sh <runs_dir> [arms] [fixtures] [engines]}"
+case "$RUNS" in
+  /*) ;;
+  *) RUNS="$ROOT/$RUNS" ;;
+esac
 ARMS="${2:-skill control}"
 FIXTURES="${3:-}"
-ENGINES="${4:-codex kimi sonnet haiku}"
+ENGINES="${4:-codex kimi}"
+FORCE_RUN="${FORCE_RUN:-0}"
 
 CODEX_MODEL="${CODEX_MODEL:-gpt-5.6-terra}"
 CODEX_EFFORT="${CODEX_EFFORT:-low}"
 KIMI_MODEL="${KIMI_MODEL:-kimi-code/k3-low}"
 KIMI_EFFORT="${KIMI_EFFORT:-low}"
-CLAUDE_SONNET_MODEL="${CLAUDE_SONNET_MODEL:-claude-sonnet-5}"
-CLAUDE_HAIKU_MODEL="${CLAUDE_HAIKU_MODEL:-claude-haiku-4-5-20251001}"
-CLAUDE_EFFORT="${CLAUDE_EFFORT:-medium}"
 
 if command -v timeout >/dev/null 2>&1; then
   TIMEOUT_CMD="timeout"
@@ -39,26 +41,34 @@ STARTED_UTC="$(date -u '+%Y-%m-%dT%H:%M:%SZ')"
   echo "codex_cli: $(codex --version 2>/dev/null || echo unavailable)"
   echo "kimi: model=$KIMI_MODEL effort=$KIMI_EFFORT"
   echo "kimi_cli: $(kimi --version 2>/dev/null || echo unavailable)"
-  echo "claude_sonnet: model=$CLAUDE_SONNET_MODEL effort=$CLAUDE_EFFORT"
-  echo "claude_haiku: model=$CLAUDE_HAIKU_MODEL effort=$CLAUDE_EFFORT"
-  echo "claude_cli: $(claude --version 2>/dev/null || echo unavailable)"
   echo "arms: $ARMS"
   echo "fixtures: ${FIXTURES:-all}"
   echo "engines: $ENGINES"
-  echo "codex_command: codex exec -m MODEL -c model_reasoning_effort=EFFORT --ephemeral --skip-git-repo-check -o OUTPUT -"
-  echo "kimi_command: KIMI_CODE_HOME=ISOLATED_HOME kimi -p PROMPT -m MODEL --output-format stream-json"
-  echo "claude_command: claude -p --model MODEL --effort EFFORT --tools '' --safe-mode --no-session-persistence --output-format text"
+  echo "codex_command: codex exec -C ISOLATED_WORKSPACE -m MODEL -c model_reasoning_effort=EFFORT --ignore-user-config --ignore-rules --ephemeral --skip-git-repo-check -o OUTPUT -"
+  echo "kimi_command: cd ISOLATED_HOME && KIMI_CODE_HOME=ISOLATED_HOME kimi --skills-dir EMPTY_SKILLS -p PROMPT -m MODEL --output-format stream-json"
 } > "$RUNS/engines.txt"
 
 run_codex() {
-  "$TIMEOUT_CMD" 900 codex exec \
+  codex_work="$(mktemp -d "${TMPDIR:-/tmp}/minto-codex-work.XXXXXX")"
+  if "$TIMEOUT_CMD" 900 codex exec \
+    -C "$codex_work" \
     -m "$CODEX_MODEL" \
     -c model_reasoning_effort="$CODEX_EFFORT" \
+    --ignore-user-config \
+    --ignore-rules \
     --ephemeral --skip-git-repo-check -o "$2" - < "$1" > /dev/null 2>>"$3"
+  then
+    run_status=0
+  else
+    run_status=$?
+  fi
+  rm -rf "$codex_work"
+  return "$run_status"
 }
 
 run_kimi() {
   kimi_home="$(mktemp -d "${TMPDIR:-/tmp}/minto-kimi-home.XXXXXX")"
+  mkdir -p "$kimi_home/skills"
   cp "$HOME/.kimi-code/config.toml" "$kimi_home/config.toml"
   cp -R "$HOME/.kimi-code/credentials" "$kimi_home/credentials"
   {
@@ -73,8 +83,12 @@ run_kimi() {
     echo "default_effort = \"$KIMI_EFFORT\""
   } >> "$kimi_home/config.toml"
 
-  if KIMI_CODE_HOME="$kimi_home" "$TIMEOUT_CMD" 900 \
-    kimi -p "$(cat "$1")" -m "$KIMI_MODEL" --output-format stream-json 2>>"$3" \
+  if (
+    cd "$kimi_home" &&
+    KIMI_CODE_HOME="$kimi_home" "$TIMEOUT_CMD" 900 \
+    kimi --skills-dir "$kimi_home/skills" -p "$(cat "$1")" \
+      -m "$KIMI_MODEL" --output-format stream-json 2>>"$3"
+  ) \
     | python3 -c '
 import json
 import sys
@@ -99,24 +113,6 @@ sys.stdout.write(last.rstrip() + "\n")
 
   rm -rf "$kimi_home"
   return "$run_status"
-}
-
-run_sonnet() {
-  run_claude "$CLAUDE_SONNET_MODEL" "$1" "$2" "$3"
-}
-
-run_haiku() {
-  run_claude "$CLAUDE_HAIKU_MODEL" "$1" "$2" "$3"
-}
-
-run_claude() {
-  "$TIMEOUT_CMD" 900 claude -p \
-    --model "$1" \
-    --effort "$CLAUDE_EFFORT" \
-    --tools "" \
-    --safe-mode \
-    --no-session-persistence \
-    --output-format text < "$2" > "$3" 2>>"$4"
 }
 
 selected() {
@@ -144,7 +140,7 @@ job() {
   job_log="$RUNS/logs/${name}__${engine}__${arm}.log"
 
   existing_bytes="$(file_bytes "$output")"
-  if [ "$existing_bytes" -gt 10 ]; then
+  if [ "$FORCE_RUN" != "1" ] && [ "$existing_bytes" -gt 10 ]; then
     echo "skip $name/$engine/$arm (exists)"
     return 0
   fi
@@ -171,7 +167,7 @@ job() {
 overall_status=0
 
 # Run one engine batch at a time. Each batch contains all selected fixtures and
-# both arms, which balances throughput without launching all 64 processes at once.
+# both arms, which balances throughput without launching all 32 processes at once.
 for engine in $ENGINES; do
   if ! selected "$engine" "$ENGINES"; then
     continue

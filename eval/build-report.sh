@@ -5,9 +5,17 @@ set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 RUNS="${1:?usage: build-report.sh <runs_dir> [report_file]}"
+case "$RUNS" in
+  /*) ;;
+  *) RUNS="$ROOT/$RUNS" ;;
+esac
 REPORT="${2:-$ROOT/eval/report-v1.5.0.md}"
-REPORT_MODEL="${REPORT_MODEL:-claude-opus-5}"
-REPORT_EFFORT="${REPORT_EFFORT:-medium}"
+case "$REPORT" in
+  /*) ;;
+  *) REPORT="$ROOT/$REPORT" ;;
+esac
+REPORT_MODEL="${REPORT_MODEL:-gpt-5.6-sol}"
+REPORT_EFFORT="${REPORT_EFFORT:-high}"
 
 if command -v timeout >/dev/null 2>&1; then
   TIMEOUT_CMD="timeout"
@@ -40,13 +48,25 @@ trap 'rm -f "$prompt"' EXIT
   done
 } > "$prompt"
 
-"$TIMEOUT_CMD" 900 claude -p \
-  --model "$REPORT_MODEL" \
-  --effort "$REPORT_EFFORT" \
-  --tools "" \
-  --safe-mode \
-  --no-session-persistence \
-  --output-format text < "$prompt" > "$REPORT"
+report_work="$(mktemp -d "${TMPDIR:-/tmp}/minto-report-work.XXXXXX")"
+if "$TIMEOUT_CMD" 900 codex exec \
+  -C "$report_work" \
+  -m "$REPORT_MODEL" \
+  -c model_reasoning_effort="$REPORT_EFFORT" \
+  --ignore-user-config \
+  --ignore-rules \
+  --ephemeral \
+  --skip-git-repo-check \
+  -o "$REPORT" - < "$prompt" > /dev/null
+then
+  report_status=0
+else
+  report_status=$?
+fi
+rm -rf "$report_work"
+if [ "$report_status" -ne 0 ]; then
+  exit "$report_status"
+fi
 
 test -s "$REPORT"
 echo "wrote $REPORT ($(wc -c < "$REPORT" | tr -d ' ') bytes)"

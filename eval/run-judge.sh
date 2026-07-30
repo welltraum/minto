@@ -1,12 +1,16 @@
 #!/usr/bin/env bash
-# Judge each fixture from a leakage-free prompt with a pinned Claude model.
+# Judge each fixture from a leakage-free prompt with a pinned Codex model.
 # Usage: bash eval/run-judge.sh <runs_dir>
 set -uo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 RUNS="${1:?usage: run-judge.sh <runs_dir>}"
-JUDGE_MODEL="${JUDGE_MODEL:-claude-opus-5}"
-JUDGE_EFFORT="${JUDGE_EFFORT:-medium}"
+case "$RUNS" in
+  /*) ;;
+  *) RUNS="$ROOT/$RUNS" ;;
+esac
+JUDGE_MODEL="${JUDGE_MODEL:-gpt-5.6-sol}"
+JUDGE_EFFORT="${JUDGE_EFFORT:-high}"
 SKILL_DIR="$ROOT/plugins/minto/skills/minto"
 
 if command -v timeout >/dev/null 2>&1; then
@@ -22,8 +26,8 @@ mkdir -p "$RUNS/verdicts" "$RUNS/logs"
 {
   echo "judge_model: $JUDGE_MODEL"
   echo "judge_effort: $JUDGE_EFFORT"
-  echo "claude_cli: $(claude --version 2>/dev/null || echo unavailable)"
-  echo "command: claude -p --model MODEL --effort EFFORT --tools '' --safe-mode --no-session-persistence --output-format text"
+  echo "codex_cli: $(codex --version 2>/dev/null || echo unavailable)"
+  echo "command: codex exec -C ISOLATED_WORKSPACE -m MODEL -c model_reasoning_effort=EFFORT --ignore-user-config --ignore-rules --ephemeral --skip-git-repo-check -o OUTPUT -"
 } > "$RUNS/judge.txt"
 
 judge_one() {
@@ -72,24 +76,28 @@ judge_one() {
   } > "$prompt"
 
   count="$(find "$RUNS/blind/$name" -name 'out-*.md' -type f | wc -l | tr -d ' ')"
-  if [ "$count" -ne 8 ]; then
-    echo "FAIL $name expected 8 blinded outputs, found $count"
+  if [ "$count" -ne 4 ]; then
+    echo "FAIL $name expected 4 blinded outputs, found $count"
     rm -f "$prompt"
     return 1
   fi
 
   started=$SECONDS
-  if "$TIMEOUT_CMD" 900 claude -p \
-    --model "$JUDGE_MODEL" \
-    --effort "$JUDGE_EFFORT" \
-    --tools "" \
-    --safe-mode \
-    --no-session-persistence \
-    --output-format text < "$prompt" > "$output" 2>>"$log"; then
+  judge_work="$(mktemp -d "${TMPDIR:-/tmp}/minto-judge-work.XXXXXX")"
+  if "$TIMEOUT_CMD" 900 codex exec \
+    -C "$judge_work" \
+    -m "$JUDGE_MODEL" \
+    -c model_reasoning_effort="$JUDGE_EFFORT" \
+    --ignore-user-config \
+    --ignore-rules \
+    --ephemeral \
+    --skip-git-repo-check \
+    -o "$output" - < "$prompt" > /dev/null 2>>"$log"; then
     status=0
   else
     status=$?
   fi
+  rm -rf "$judge_work"
   rm -f "$prompt"
   elapsed=$((SECONDS - started))
 

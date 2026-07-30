@@ -10,7 +10,7 @@ versioning for its plugin manifests.
 - Native Claude Code and Codex plugin manifests and marketplace catalogs.
 - One portable, shared skill with Codex UI metadata.
 - English installation, usage, development, and evaluation documentation.
-- An English eight-fixture, four-engine evaluation harness.
+- An English eight-fixture, two-engine evaluation harness.
 - Reproducible isolated judging and benchmark reporting.
 
 ### Changed

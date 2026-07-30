@@ -20,8 +20,8 @@ mapping = {}
 for before in sorted((root / "eval" / "fixtures").glob("*/before.md")):
     name = before.parent.name
     raw = sorted((runs / "raw").glob(f"{name}__*.md"))
-    if len(raw) != 8:
-        raise SystemExit(f"{name}: expected 8 raw outputs, found {len(raw)}")
+    if len(raw) != 4:
+        raise SystemExit(f"{name}: expected 4 raw outputs, found {len(raw)}")
 
     ordered = sorted(raw, key=lambda path: hashlib.sha256(path.name.encode()).hexdigest())
     blind_dir = runs / "blind" / name

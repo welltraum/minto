@@ -14,7 +14,8 @@ Include:
    v1.6.0.
 6. Hard failures and incomplete cells.
 7. Limitations: paraphrased English fixtures, one run per cell, model and judge
-   dependence, and no direct comparability to historical Russian runs.
+   dependence, Claude execution being unavailable for this release, and no
+   direct comparability to historical Russian runs.
 8. A plain conclusion that does not claim improvement unless the supplied
    scores support it.
 

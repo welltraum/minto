@@ -133,9 +133,11 @@ bash eval/run-judge.sh eval/runs/v1.5.0
 bash eval/build-report.sh eval/runs/v1.5.0
 ```
 
-The benchmark uses eight English fixtures, four engines, and two arms
-(`skill` and `control`) for 64 model outputs. Model identifiers, CLI versions,
+The release benchmark uses eight English fixtures, two engines, and two arms
+(`skill` and `control`) for 32 model outputs. Model identifiers, CLI versions,
 effort settings, UTC time, and the commit SHA are recorded with the run.
+Claude models were excluded because Claude execution was unavailable in the
+release environment.
 
 ## Evaluation sources
 
