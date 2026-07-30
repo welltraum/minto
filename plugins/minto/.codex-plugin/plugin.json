@@ -1,0 +1,38 @@
+{
+  "name": "minto",
+  "version": "1.5.0",
+  "description": "Apply the Minto Pyramid Principle to business writing, audits, intent discovery, and visual structures.",
+  "author": {
+    "name": "Vladislav Shevchenko",
+    "email": "v.shevchenko@redmadrobot.com",
+    "url": "https://github.com/welltraum"
+  },
+  "homepage": "https://github.com/welltraum/minto#readme",
+  "repository": "https://github.com/welltraum/minto",
+  "license": "MIT",
+  "keywords": [
+    "minto",
+    "pyramid-principle",
+    "business-writing",
+    "executive-communication",
+    "mece"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Minto",
+    "shortDescription": "Answer-first business writing",
+    "longDescription": "Structure, audit, rewrite, and visualize business communication with the Minto Pyramid Principle.",
+    "developerName": "Vladislav Shevchenko",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/welltraum/minto",
+    "defaultPrompt": [
+      "Structure this memo with the Minto Pyramid Principle.",
+      "Audit this document for pyramid logic.",
+      "Turn these notes into an answer-first executive update."
+    ]
+  }
+}

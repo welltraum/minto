@@ -1,0 +1,21 @@
+.DS_Store
+
+# Generated evaluation inputs and isolated judge snapshots
+eval/fixtures/*/prompt-*.md
+eval/judge-view/
+
+# Historical local research remains available locally, but is not distributed
+eval/report-v1.1*.md
+eval/report-v1.2.md
+eval/report-v1.3.md
+eval/report-v1.4.md
+eval/snapshots/
+eval/runs/*
+!eval/runs/v1.5.0/
+eval/runs/v1.5.0/logs/
+eval/runs/v1.5.0/blind/
+
+# Local source material and transient files
+*.pdf
+tmp/
+.cache/

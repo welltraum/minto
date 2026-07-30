@@ -1,0 +1,20 @@
+{
+  "name": "minto",
+  "interface": {
+    "displayName": "Minto"
+  },
+  "plugins": [
+    {
+      "name": "minto",
+      "source": {
+        "source": "local",
+        "path": "./plugins/minto"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "minto",
+  "description": "A focused marketplace for the Minto Pyramid Principle writing plugin.",
+  "owner": {
+    "name": "Vladislav Shevchenko",
+    "email": "v.shevchenko@redmadrobot.com"
+  },
+  "plugins": [
+    {
+      "name": "minto",
+      "source": "./plugins/minto",
+      "description": "Apply the Minto Pyramid Principle to business writing, audits, intent discovery, and visual structures.",
+      "version": "1.5.0",
+      "author": {
+        "name": "Vladislav Shevchenko",
+        "email": "v.shevchenko@redmadrobot.com"
+      }
+    }
+  ]
+}

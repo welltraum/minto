@@ -1,0 +1,6 @@
+interface:
+  display_name: "Minto Pyramid Principle"
+  short_description: "Structure business writing with Minto logic"
+  default_prompt: "Use $minto to structure this business document answer-first."
+policy:
+  allow_implicit_invocation: true
