@@ -1,0 +1,178 @@
+{
+  "01-big-chief": {
+    "out-01.md": {
+      "engine": "codex",
+      "arm": "skill",
+      "bytes": 1811
+    },
+    "out-02.md": {
+      "engine": "kimi",
+      "arm": "control",
+      "bytes": 1339
+    },
+    "out-03.md": {
+      "engine": "codex",
+      "arm": "control",
+      "bytes": 1073
+    },
+    "out-04.md": {
+      "engine": "kimi",
+      "arm": "skill",
+      "bytes": 1547
+    }
+  },
+  "02-ttv": {
+    "out-01.md": {
+      "engine": "codex",
+      "arm": "control",
+      "bytes": 1380
+    },
+    "out-02.md": {
+      "engine": "codex",
+      "arm": "skill",
+      "bytes": 2430
+    },
+    "out-03.md": {
+      "engine": "kimi",
+      "arm": "skill",
+      "bytes": 3057
+    },
+    "out-04.md": {
+      "engine": "kimi",
+      "arm": "control",
+      "bytes": 2559
+    }
+  },
+  "03-period-graph-books": {
+    "out-01.md": {
+      "engine": "codex",
+      "arm": "control",
+      "bytes": 2579
+    },
+    "out-02.md": {
+      "engine": "codex",
+      "arm": "skill",
+      "bytes": 5586
+    },
+    "out-03.md": {
+      "engine": "kimi",
+      "arm": "skill",
+      "bytes": 5224
+    },
+    "out-04.md": {
+      "engine": "kimi",
+      "arm": "control",
+      "bytes": 5095
+    }
+  },
+  "04-meeting-note": {
+    "out-01.md": {
+      "engine": "codex",
+      "arm": "skill",
+      "bytes": 134
+    },
+    "out-02.md": {
+      "engine": "codex",
+      "arm": "control",
+      "bytes": 191
+    },
+    "out-03.md": {
+      "engine": "kimi",
+      "arm": "control",
+      "bytes": 320
+    },
+    "out-04.md": {
+      "engine": "kimi",
+      "arm": "skill",
+      "bytes": 413
+    }
+  },
+  "05-role-of-board": {
+    "out-01.md": {
+      "engine": "codex",
+      "arm": "control",
+      "bytes": 490
+    },
+    "out-02.md": {
+      "engine": "kimi",
+      "arm": "skill",
+      "bytes": 1546
+    },
+    "out-03.md": {
+      "engine": "kimi",
+      "arm": "control",
+      "bytes": 954
+    },
+    "out-04.md": {
+      "engine": "codex",
+      "arm": "skill",
+      "bytes": 780
+    }
+  },
+  "06-ttw-viz": {
+    "out-01.md": {
+      "engine": "kimi",
+      "arm": "skill",
+      "bytes": 1393
+    },
+    "out-02.md": {
+      "engine": "codex",
+      "arm": "control",
+      "bytes": 1014
+    },
+    "out-03.md": {
+      "engine": "kimi",
+      "arm": "control",
+      "bytes": 3238
+    },
+    "out-04.md": {
+      "engine": "codex",
+      "arm": "skill",
+      "bytes": 677
+    }
+  },
+  "07-headings-audit": {
+    "out-01.md": {
+      "engine": "kimi",
+      "arm": "skill",
+      "bytes": 3903
+    },
+    "out-02.md": {
+      "engine": "codex",
+      "arm": "control",
+      "bytes": 537
+    },
+    "out-03.md": {
+      "engine": "codex",
+      "arm": "skill",
+      "bytes": 2172
+    },
+    "out-04.md": {
+      "engine": "kimi",
+      "arm": "control",
+      "bytes": 2438
+    }
+  },
+  "08-techdebt": {
+    "out-01.md": {
+      "engine": "codex",
+      "arm": "skill",
+      "bytes": 1169
+    },
+    "out-02.md": {
+      "engine": "kimi",
+      "arm": "skill",
+      "bytes": 1339
+    },
+    "out-03.md": {
+      "engine": "codex",
+      "arm": "control",
+      "bytes": 612
+    },
+    "out-04.md": {
+      "engine": "kimi",
+      "arm": "control",
+      "bytes": 820
+    }
+  }
+}

@@ -1,0 +1,5 @@
+- The opening gives no clear governing thought or key message—only a topic statement.
+- The six headings are not parallel: they mix background, principles, definitions, organization, benefits/results, and success conditions.
+- The sequence does not show a clear logical grouping or progression.
+- “Distinctive benefits and results” combines two potentially different ideas in one heading.
+- The stated purpose (“how project teams identify and deliver significant profit improvements”) is not clearly reflected by every heading.

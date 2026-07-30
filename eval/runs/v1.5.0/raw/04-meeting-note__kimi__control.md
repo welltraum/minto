@@ -1,0 +1,1 @@
+Could we move today's 3:00 meeting to Thursday at 11:00? That time works for everyone: Collins can't make 3:00, Johnson is only free after 10:30, and Clifford won't be back from Frankfurt until late tomorrow. The conference room is also free on Thursday, whereas it's booked tomorrow. Please confirm this works for you.
