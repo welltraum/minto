@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#ffffff">
-    <meta name="description" content="Minto turns rough notes into answer-first business writing for Codex and Claude Code. Structure, audit, rewrite, and visualize the logic.">
+    <meta name="description" content="Minto helps Codex and Claude Code settle the reader's question before they rewrite a business document.">
     <meta name="robots" content="index,follow">
     <link rel="canonical" href="https://welltraum.github.io/minto/">
     <link rel="alternate" hreflang="en" href="https://welltraum.github.io/minto/">
@@ -12,18 +12,18 @@
     <link rel="alternate" hreflang="x-default" href="https://welltraum.github.io/minto/">
     <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
     <link rel="preload" href="./assets/fonts/onest-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="./assets/styles.css">
+    <link rel="stylesheet" href="./assets/styles.css?v=3">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Minto">
-    <meta property="og:title" content="Minto — answer-first business writing">
-    <meta property="og:description" content="Turn rough notes into a decision-ready answer, supporting logic, and a structure people can scan.">
+    <meta property="og:title" content="Minto: structure business writing before rewriting it">
+    <meta property="og:description" content="Help Codex and Claude Code put the answer first and show where the argument needs work.">
     <meta property="og:url" content="https://welltraum.github.io/minto/">
     <meta property="og:image" content="https://welltraum.github.io/minto/assets/og.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Minto: the answer at the top, supported by three clear reasons">
+    <meta property="og:image:alt" content="Minto helps Codex and Claude Code settle the argument before rewriting the prose">
     <meta name="twitter:card" content="summary_large_image">
-    <title>Minto — Answer-first business writing for Codex and Claude Code</title>
+    <title>Minto | Structure business writing before rewriting it</title>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -38,9 +38,10 @@
       </a>
 
       <nav class="header-nav" aria-label="Primary navigation">
-        <a href="#method">Method</a>
-        <a href="#evidence">Evidence</a>
-        <a href="https://github.com/welltraum/minto">GitHub</a>
+        <a href="#install" data-section-link="install">Install</a>
+        <a href="#example" data-section-link="example">Example</a>
+        <a href="#method" data-section-link="method">Method</a>
+        <a href="#evidence" data-section-link="evidence">Evidence</a>
       </nav>
 
       <nav class="language-switch" aria-label="Language">
@@ -51,41 +52,45 @@
     </header>
 
     <main id="main">
+      <div class="argument-spine" aria-hidden="true">
+        <span></span>
+      </div>
+
       <section class="hero">
         <div class="hero-copy">
-          <p class="hero-note">A writing plugin for Codex &amp; Claude Code</p>
-          <h1>Lead with the answer.<br><span>Build the logic beneath it.</span></h1>
-          <p class="hero-lede">Minto turns rough notes into decision-ready business writing: one clear answer, a sound argument, and no invented evidence.</p>
+          <p class="hero-question"><span aria-hidden="true"></span>Need a document someone can decide from?</p>
+          <h1>Settle the argument <span>before rewriting the prose.</span></h1>
+          <p class="hero-lede">Minto makes Codex and Claude Code identify the reader's question before they edit the wording. The finished draft puts the answer first and shows where the support is weak.</p>
           <div class="hero-actions">
             <a class="button button-primary" href="#install">Install Minto</a>
-            <a class="text-link" href="#example">See the transformation <span aria-hidden="true">↓</span></a>
+            <a class="text-link" href="#example">See a before-and-after example <span aria-hidden="true">↓</span></a>
           </div>
         </div>
 
-        <figure class="hero-pyramid" aria-labelledby="hero-pyramid-caption">
-          <div class="pyramid-top">
-            <span>ANSWER</span>
+        <figure class="hero-pyramid argument-map" aria-labelledby="hero-pyramid-caption">
+          <div class="pyramid-top argument-answer">
+            <span>Answer</span>
             <strong>Approve the pilot now.</strong>
           </div>
           <svg class="pyramid-connectors" viewBox="0 0 600 120" aria-hidden="true" preserveAspectRatio="none">
             <path d="M300 0V38M300 38H92V120M300 38V120M300 38H508V120"></path>
           </svg>
           <div class="pyramid-supports">
-            <div><span>REASON</span><strong>Closes the data gap</strong></div>
-            <div><span>REASON</span><strong>Fits current operations</strong></div>
-            <div><span>REASON</span><strong>Limits the commitment</strong></div>
+            <div><span>Reason</span><strong>Gives us the missing data</strong></div>
+            <div><span>Reason</span><strong>Works with our current process</strong></div>
+            <div><span>Reason</span><strong>Keeps the test small</strong></div>
           </div>
-          <figcaption id="hero-pyramid-caption">One answer supported by three reasons of the same kind.</figcaption>
+          <figcaption id="hero-pyramid-caption">Three comparable reasons support one answer.</figcaption>
         </figure>
       </section>
 
       <section class="install-section" id="install" aria-labelledby="install-heading">
         <div class="section-heading">
-          <h2 id="install-heading">Two commands. Then ask the real question.</h2>
-          <p>Choose your agent, add the Minto marketplace, and install the plugin. Start a new session after installation.</p>
+          <h2 id="install-heading">Install Minto in two commands.</h2>
+          <p>Add the marketplace and install the plugin. Start a new session after installation.</p>
         </div>
 
-        <div class="install-board">
+        <div class="install-board install-platforms">
           <section class="install-track" aria-labelledby="codex-heading">
             <div class="install-track-heading">
               <h3 id="codex-heading">Codex</h3>
@@ -139,61 +144,127 @@
 
       <section class="transformation" id="example" aria-labelledby="transformation-heading">
         <div class="section-heading">
-          <h2 id="transformation-heading">The prose was not the problem.<br>The structure was.</h2>
-          <p>A fictional project update, before and after Minto. The facts stay put; the reader’s decision moves to the top.</p>
+          <h2 id="transformation-heading">The original update hides its recommendation in the last sentence.</h2>
+          <p>This fictional example keeps the same facts, but puts the decision first and shows how each fact supports it.</p>
         </div>
 
-        <div class="before-after">
-          <article class="draft draft-before">
-            <div class="draft-label">
-              <span>Before</span>
-              <span>Topic-led</span>
-            </div>
-            <p>We have been looking at the onboarding problem. Research ran five interviews, design prepared two directions, and engineering estimates three weeks. Activation remains below target, so the team would like to run a pilot next month.</p>
-            <div class="annotation annotation-before">The recommendation arrives last.</div>
-          </article>
+        <div class="transformation-stage" data-transformation>
+          <div class="transform-controls" role="group" aria-label="Choose document version">
+            <button type="button" data-transform-control="before" aria-pressed="true">Original</button>
+            <button type="button" data-transform-control="after" aria-pressed="false">With Minto</button>
+          </div>
 
-          <article class="draft draft-after">
-            <div class="draft-label">
-              <span>After Minto</span>
-              <span>Answer-first</span>
-            </div>
-            <h3>Approve a three-week onboarding pilot next month.</h3>
-            <ul>
-              <li>Activation remains below target.</li>
-              <li>Five interviews identify the current friction.</li>
-              <li>Two tested directions are ready to build.</li>
-            </ul>
-            <div class="annotation annotation-after">The decision now frames every fact.</div>
-          </article>
+          <div class="transform-panels">
+            <article class="transform-document transform-before" data-transform-panel="before">
+              <header>
+                <span>Project update</span>
+                <strong>Topic first</strong>
+              </header>
+              <div class="document-body">
+                <p>We have been looking at the onboarding problem.</p>
+                <p>Research ran five interviews, design prepared two directions, and engineering estimates three weeks.</p>
+                <p>Activation remains below target.</p>
+                <p class="recommendation-line"><span>Recommendation</span>The team would like to run a pilot next month.</p>
+              </div>
+              <footer>The reader has to infer the point from the background.</footer>
+            </article>
+
+            <article class="transform-document transform-after" data-transform-panel="after">
+              <header>
+                <span>Project update</span>
+                <strong>Answer first</strong>
+              </header>
+              <div class="document-body">
+                <h3 class="recommendation-line"><span>Recommendation</span>Approve a three-week onboarding pilot next month.</h3>
+                <ul>
+                  <li><span>01</span>Activation remains below target.</li>
+                  <li><span>02</span>Research completed five interviews.</li>
+                  <li><span>03</span>Design prepared two directions.</li>
+                </ul>
+              </div>
+              <footer>The same facts now support one visible decision.</footer>
+            </article>
+          </div>
+          <p class="transform-status" aria-live="polite"></p>
         </div>
       </section>
 
       <section class="method" id="method" aria-labelledby="method-heading">
-        <div class="method-intro">
-          <div class="section-heading">
-            <h2 id="method-heading">Four modes. One discipline.</h2>
-            <p>Minto routes the request by what you need now: clarify the intent, diagnose the logic, rebuild the writing, or expose the structure.</p>
-          </div>
+        <div class="section-heading method-heading">
+          <h2 id="method-heading">Use the mode that matches the job.</h2>
+          <p>One source can produce four different outcomes. Choose the mode by what you need to know or make next.</p>
+        </div>
 
-          <dl class="mode-list">
-            <div>
-              <dt><code>intent</code></dt>
-              <dd>Find the reader’s real question and the one-sentence answer before drafting.</dd>
-            </div>
-            <div>
-              <dt><code>audit</code></dt>
-              <dd>Mark structural defects, score the logic, and prescribe fixes without rewriting.</dd>
-            </div>
-            <div>
-              <dt><code>write</code></dt>
-              <dd>Turn notes into an answer-first memo, update, email, one-pager, or deck storyline.</dd>
-            </div>
-            <div>
-              <dt><code>viz</code></dt>
-              <dd>Render the pyramid and SCQ flow in Mermaid or an optional shareable page.</dd>
-            </div>
-          </dl>
+        <div class="mode-explorer" data-mode-explorer>
+          <nav class="mode-tabs" aria-label="Minto modes">
+            <a href="#mode-intent" data-mode-tab="intent" aria-current="true"><code>intent</code><span>Clarify the decision</span></a>
+            <a href="#mode-audit" data-mode-tab="audit"><code>audit</code><span>Find structural gaps</span></a>
+            <a href="#mode-write" data-mode-tab="write"><code>write</code><span>Rebuild the draft</span></a>
+            <a href="#mode-viz" data-mode-tab="viz"><code>viz</code><span>Expose the logic</span></a>
+          </nav>
+
+          <div class="mode-panels">
+            <article class="mode-panel" id="mode-intent" data-mode-panel="intent">
+              <div class="mode-panel-copy">
+                <p class="mode-label"><code>intent</code></p>
+                <h3>Decide what the document must achieve before drafting it.</h3>
+                <p>Identify the reader, the decision, and an answer that the available evidence can support.</p>
+              </div>
+              <div class="mode-output intent-output" aria-label="Example intent output">
+                <span>Reader question</span>
+                <p>Should we run an onboarding pilot next month?</p>
+                <span>One-sentence answer</span>
+                <strong>Approve a three-week pilot to test the two prepared directions.</strong>
+                <span>Evidence gap</span>
+                <p>Define the activation target before launch.</p>
+              </div>
+            </article>
+
+            <article class="mode-panel" id="mode-audit" data-mode-panel="audit">
+              <div class="mode-panel-copy">
+                <p class="mode-label"><code>audit</code></p>
+                <h3>See where the logic breaks without changing the source.</h3>
+                <p>Minto scores the structure, names the defect, and prescribes a fix. The original wording stays intact.</p>
+              </div>
+              <div class="mode-output audit-output" aria-label="Example audit output">
+                <div><span>4.0</span><small>Structure score</small></div>
+                <ol>
+                  <li><strong>Finding</strong> The recommendation appears last.</li>
+                  <li><strong>Finding</strong> Evidence and actions sit at the same level.</li>
+                  <li><strong>Fix</strong> Lead with the pilot decision, then group the evidence.</li>
+                </ol>
+              </div>
+            </article>
+
+            <article class="mode-panel" id="mode-write" data-mode-panel="write">
+              <div class="mode-panel-copy">
+                <p class="mode-label"><code>write</code></p>
+                <h3>Turn notes into a document that starts with the conclusion.</h3>
+                <p>Use it for a memo or email, as well as one-pagers, updates, and deck storylines.</p>
+              </div>
+              <div class="mode-output write-output" aria-label="Example write output">
+                <strong>Approve a three-week onboarding pilot next month.</strong>
+                <p>Activation is below target. Research completed five interviews, and design prepared two directions. Engineering estimates three weeks.</p>
+              </div>
+            </article>
+
+            <article class="mode-panel" id="mode-viz" data-mode-panel="viz">
+              <div class="mode-panel-copy">
+                <p class="mode-label"><code>viz</code></p>
+                <h3>Make the pyramid visible when prose hides the structure.</h3>
+                <p>Render the pyramid and SCQ flow in Mermaid or build a standalone interactive page for sharing.</p>
+              </div>
+              <div class="mode-output viz-output" aria-label="Example pyramid">
+                <strong>Approve the pilot</strong>
+                <div aria-hidden="true"></div>
+                <ul>
+                  <li>Need</li>
+                  <li>Readiness</li>
+                  <li>Scope</li>
+                </ul>
+              </div>
+            </article>
+          </div>
         </div>
 
         <figure class="scq-figure" aria-labelledby="scq-caption">
@@ -215,26 +286,26 @@
               <strong>What they should conclude or do</strong>
             </li>
           </ol>
-          <figcaption id="scq-caption">SCQ creates the tension; the pyramid resolves it.</figcaption>
+          <figcaption id="scq-caption">SCQ brings the reader to the question. The pyramid shows the answer and its support.</figcaption>
         </figure>
       </section>
 
       <section class="prompt-section" aria-labelledby="prompt-heading">
         <div class="section-heading">
-          <h2 id="prompt-heading">Bring the messy version.</h2>
-          <p>Minto works from a vague intention, a finished draft, or the notes in between.</p>
+          <h2 id="prompt-heading">Start with the draft you actually have.</h2>
+          <p>Minto can work from an unclear goal or a draft that still feels wrong. You do not need to clean it up first.</p>
         </div>
         <div class="prompt-list">
           <button type="button" class="prompt-copy" data-copy="Use Minto intent mode to clarify what this board note must achieve.">
-            <span>“Use Minto intent mode to clarify what this board note must achieve.”</span>
+            <span>Use Minto intent mode to clarify what this board note must achieve.</span>
             <span class="prompt-action">Copy prompt</span>
           </button>
           <button type="button" class="prompt-copy" data-copy="Audit this proposal for pyramid logic. Do not rewrite it.">
-            <span>“Audit this proposal for pyramid logic. Do not rewrite it.”</span>
+            <span>Audit this proposal for pyramid logic. Do not rewrite it.</span>
             <span class="prompt-action">Copy prompt</span>
           </button>
           <button type="button" class="prompt-copy" data-copy="Rewrite these notes as a one-page decision memo, answer first.">
-            <span>“Rewrite these notes as a one-page decision memo, answer first.”</span>
+            <span>Rewrite these notes as a one-page decision memo, answer first.</span>
             <span class="prompt-action">Copy prompt</span>
           </button>
         </div>
@@ -242,48 +313,72 @@
 
       <section class="evidence" id="evidence" aria-labelledby="evidence-heading">
         <div class="evidence-statement">
-          <p>Measured, not promised.</p>
-          <h2 id="evidence-heading"><span>+1.13</span> average quality points</h2>
+          <p>Release benchmark, v1.5.0</p>
+          <h2 id="evidence-heading">Quality rose by <span>1.13</span> points on average</h2>
           <p>Across Codex and Kimi, the skill arm scored 6.75/10 versus 5.63/10 for the control in the v1.5.0 release benchmark.</p>
         </div>
 
         <div class="evidence-detail">
-          <table>
-            <caption>Average benchmark results across eight fixtures</caption>
-            <thead>
-              <tr>
-                <th scope="col">Engine</th>
-                <th scope="col">Quality Δ</th>
-                <th scope="col">Structure Δ</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">Codex</th>
-                <td class="positive">+1.25</td>
-                <td class="positive">+1.38</td>
-              </tr>
-              <tr>
-                <th scope="row">Kimi</th>
-                <td class="positive">+1.00</td>
-                <td class="negative">−0.38</td>
-              </tr>
-              <tr>
-                <th scope="row">Both engines</th>
-                <td class="positive">+1.13</td>
-                <td class="positive">+0.50</td>
-              </tr>
-            </tbody>
-          </table>
-          <p class="evidence-caveat">32 evaluated cells, one run per engine–arm–fixture combination. The evidence supports a useful but inconsistent effect—not a blanket claim of improvement.</p>
+          <figure class="benchmark-chart" aria-labelledby="benchmark-chart-caption">
+            <figcaption id="benchmark-chart-caption">Mean quality score out of 10</figcaption>
+            <div class="score-row control-score">
+              <span>Control</span>
+              <div><i></i></div>
+              <strong>5.63</strong>
+            </div>
+            <div class="score-row minto-score">
+              <span>With Minto</span>
+              <div><i></i></div>
+              <strong>6.75</strong>
+            </div>
+            <div class="effect-plot" aria-label="Score changes by engine">
+              <p>Change by engine</p>
+              <div class="effect-row effect-positive effect-125"><span>Codex quality</span><i></i><strong>+1.25</strong></div>
+              <div class="effect-row effect-positive effect-138"><span>Codex structure</span><i></i><strong>+1.38</strong></div>
+              <div class="effect-row effect-positive effect-100"><span>Kimi quality</span><i></i><strong>+1.00</strong></div>
+              <div class="effect-row effect-negative effect-038"><span>Kimi structure</span><i></i><strong>−0.38</strong></div>
+            </div>
+          </figure>
+
+          <details class="benchmark-data">
+            <summary>View the benchmark table</summary>
+            <table>
+              <caption>Average benchmark results across eight fixtures</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Engine</th>
+                  <th scope="col">Quality Δ</th>
+                  <th scope="col">Structure Δ</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Codex</th>
+                  <td class="positive">+1.25</td>
+                  <td class="positive">+1.38</td>
+                </tr>
+                <tr>
+                  <th scope="row">Kimi</th>
+                  <td class="positive">+1.00</td>
+                  <td class="negative">−0.38</td>
+                </tr>
+                <tr>
+                  <th scope="row">Both engines</th>
+                  <td class="positive">+1.13</td>
+                  <td class="positive">+0.50</td>
+                </tr>
+              </tbody>
+            </table>
+          </details>
+          <p class="evidence-caveat">32 evaluated cells, with one run for each engine, arm, and fixture combination. Kimi's structure score fell by 0.38 even though its overall quality score rose. The benchmark shows an effect, but it does not guarantee improvement in every case.</p>
           <a class="text-link" href="https://github.com/welltraum/minto/blob/main/eval/report-v1.5.0.md">Read the full methodology and limitations <span aria-hidden="true">↗</span></a>
         </div>
       </section>
 
       <section class="final-cta" aria-labelledby="final-heading">
         <div>
-          <h2 id="final-heading">Make the answer impossible to miss.</h2>
-          <p>Install Minto, paste the version you have, and let the structure come before the polish.</p>
+          <h2 id="final-heading">Use Minto on the draft you have.</h2>
+          <p>Install the plugin, paste your text, and ask Minto to fix the structure before it edits the wording.</p>
         </div>
         <a class="button button-light" href="#install">Choose your install</a>
       </section>
@@ -297,7 +392,7 @@
         </svg>
         <span>Minto</span>
       </a>
-      <p>Answer-first business writing for Codex and Claude Code.</p>
+      <p>Minto helps Codex and Claude Code structure business writing before rewriting it.</p>
       <nav aria-label="Footer navigation">
         <a href="https://github.com/welltraum/minto">GitHub</a>
         <a href="https://github.com/welltraum/minto/blob/main/CHANGELOG.md">Changelog</a>
@@ -305,6 +400,6 @@
       </nav>
     </footer>
 
-    <script src="./assets/app.js" defer></script>
+    <script src="./assets/app.js?v=3" defer></script>
   </body>
 </html>

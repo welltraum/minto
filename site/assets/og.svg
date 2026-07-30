@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
-  <title id="title">Minto — answer-first business writing</title>
-  <desc id="description">The answer at the top, supported by three clear reasons.</desc>
+  <title id="title">Minto: structure business writing before rewriting it</title>
+  <desc id="description">Minto helps Codex and Claude Code settle the argument before rewriting the prose.</desc>
   <style>
     @font-face {
       font-family: "Onest";
@@ -28,11 +28,10 @@
   </g>
 
   <text class="accent" x="70" y="170" font-size="19" font-weight="700">FOR CODEX &amp; CLAUDE CODE</text>
-  <text class="ink" x="70" y="250" font-size="66" font-weight="820" letter-spacing="-2">Lead with the answer.</text>
-  <text class="primary" x="70" y="320" font-size="66" font-weight="820" letter-spacing="-2">Build the logic</text>
-  <text class="primary" x="70" y="390" font-size="66" font-weight="820" letter-spacing="-2">beneath it.</text>
-  <text class="ink" x="70" y="455" font-size="25" font-weight="450">Structure, audit, rewrite, and visualize</text>
-  <text class="ink" x="70" y="491" font-size="25" font-weight="450">decision-ready business writing.</text>
+  <text class="ink" x="70" y="250" font-size="60" font-weight="820" letter-spacing="-2">Settle the argument</text>
+  <text class="primary" x="70" y="320" font-size="60" font-weight="820" letter-spacing="-2">before rewriting</text>
+  <text class="primary" x="70" y="390" font-size="60" font-weight="820" letter-spacing="-2">the prose.</text>
+  <text class="ink" x="70" y="455" font-size="25" font-weight="450">A Minto plugin for Codex and Claude Code.</text>
 
   <g transform="translate(760 145)">
     <rect class="primary" x="68" width="234" height="104"/>

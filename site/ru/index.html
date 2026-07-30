@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#ffffff">
-    <meta name="description" content="Minto превращает черновые заметки в деловые тексты с ответом в начале — для Codex и Claude Code. Структурируйте, проверяйте, переписывайте и визуализируйте логику.">
+    <meta name="description" content="Minto помогает Codex и Claude Code сначала разобраться с вопросом читателя, а затем переписать деловой текст.">
     <meta name="robots" content="index,follow">
     <link rel="canonical" href="https://welltraum.github.io/minto/ru/">
     <link rel="alternate" hreflang="en" href="https://welltraum.github.io/minto/">
@@ -12,18 +12,18 @@
     <link rel="alternate" hreflang="x-default" href="https://welltraum.github.io/minto/">
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
     <link rel="preload" href="../assets/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../assets/styles.css">
+    <link rel="stylesheet" href="../assets/styles.css?v=3">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Minto">
-    <meta property="og:title" content="Minto — деловые тексты с ответом в начале">
-    <meta property="og:description" content="Превратите черновые заметки в ясный ответ, доказательную логику и структуру, которую легко просмотреть.">
+    <meta property="og:title" content="Minto: сначала структура, затем редактура">
+    <meta property="og:description" content="Помогите Codex и Claude Code поставить ответ наверх и показать слабые места в аргументации.">
     <meta property="og:url" content="https://welltraum.github.io/minto/ru/">
     <meta property="og:image" content="https://welltraum.github.io/minto/assets/og.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="Minto: ответ наверху, под ним три ясных аргумента">
     <meta name="twitter:card" content="summary_large_image">
-    <title>Minto — деловые тексты для Codex и Claude Code</title>
+    <title>Minto | Сначала структура, затем редактура</title>
   </head>
   <body>
     <a class="skip-link" href="#main">Перейти к содержанию</a>
@@ -38,9 +38,10 @@
       </a>
 
       <nav class="header-nav" aria-label="Основная навигация">
-        <a href="#method">Метод</a>
-        <a href="#evidence">Результаты</a>
-        <a href="https://github.com/welltraum/minto">GitHub</a>
+        <a href="#install" data-section-link="install">Установка</a>
+        <a href="#example" data-section-link="example">Пример</a>
+        <a href="#method" data-section-link="method">Метод</a>
+        <a href="#evidence" data-section-link="evidence">Результаты</a>
       </nav>
 
       <nav class="language-switch" aria-label="Язык">
@@ -51,41 +52,45 @@
     </header>
 
     <main id="main">
+      <div class="argument-spine" aria-hidden="true">
+        <span></span>
+      </div>
+
       <section class="hero">
         <div class="hero-copy">
-          <p class="hero-note">Плагин для работы с текстом в Codex и Claude Code</p>
-          <h1>Сначала ответ.<br><span>Под ним — логика.</span></h1>
-          <p class="hero-lede">Minto превращает черновые заметки в тексты, по которым можно принять решение: один ясный ответ, стройная аргументация и никаких выдуманных фактов.</p>
+          <p class="hero-question"><span aria-hidden="true"></span>Нужен документ, по которому можно принять решение?</p>
+          <h1>Разберитесь с аргументацией <span>до того, как редактировать текст.</span></h1>
+          <p class="hero-lede">С Minto Codex и Claude Code сначала формулируют вопрос читателя, а затем редактируют текст. Готовый документ начинается с ответа и показывает, где аргументации не хватает.</p>
           <div class="hero-actions">
             <a class="button button-primary" href="#install">Установить Minto</a>
-            <a class="text-link" href="#example">Посмотреть преобразование <span aria-hidden="true">↓</span></a>
+            <a class="text-link" href="#example">Посмотреть пример до и после <span aria-hidden="true">↓</span></a>
           </div>
         </div>
 
-        <figure class="hero-pyramid" aria-labelledby="hero-pyramid-caption">
-          <div class="pyramid-top">
-            <span>ОТВЕТ</span>
+        <figure class="hero-pyramid argument-map" aria-labelledby="hero-pyramid-caption">
+          <div class="pyramid-top argument-answer">
+            <span>Ответ</span>
             <strong>Запустите пилот сейчас.</strong>
           </div>
           <svg class="pyramid-connectors" viewBox="0 0 600 120" aria-hidden="true" preserveAspectRatio="none">
             <path d="M300 0V38M300 38H92V120M300 38V120M300 38H508V120"></path>
           </svg>
           <div class="pyramid-supports">
-            <div><span>ПРИЧИНА</span><strong>Закрывает пробел в данных</strong></div>
-            <div><span>ПРИЧИНА</span><strong>Вписывается в процессы</strong></div>
-            <div><span>ПРИЧИНА</span><strong>Ограничивает риск</strong></div>
+            <div><span>Причина</span><strong>Даёт недостающие данные</strong></div>
+            <div><span>Причина</span><strong>Не требует менять процесс</strong></div>
+            <div><span>Причина</span><strong>Ограничивает масштаб теста</strong></div>
           </div>
-          <figcaption id="hero-pyramid-caption">Один ответ опирается на три причины одного типа.</figcaption>
+          <figcaption id="hero-pyramid-caption">Один ответ опирается на три сопоставимые причины.</figcaption>
         </figure>
       </section>
 
       <section class="install-section" id="install" aria-labelledby="install-heading">
         <div class="section-heading">
-          <h2 id="install-heading">Две команды. Затем — правильный вопрос.</h2>
-          <p>Выберите агента, добавьте маркетплейс Minto и установите плагин. После установки начните новую сессию.</p>
+          <h2 id="install-heading">Установите Minto двумя командами.</h2>
+          <p>Добавьте маркетплейс и установите плагин. После установки начните новую сессию.</p>
         </div>
 
-        <div class="install-board">
+        <div class="install-board install-platforms">
           <section class="install-track" aria-labelledby="codex-heading">
             <div class="install-track-heading">
               <h3 id="codex-heading">Codex</h3>
@@ -139,61 +144,127 @@
 
       <section class="transformation" id="example" aria-labelledby="transformation-heading">
         <div class="section-heading">
-          <h2 id="transformation-heading">Проблема была не в формулировках.<br>Проблема была в структуре.</h2>
-          <p>Вымышленный отчёт о проекте до и после Minto. Факты остаются на месте, но решение читателя поднимается наверх.</p>
+          <h2 id="transformation-heading">В исходном отчёте рекомендация спрятана в последнем предложении.</h2>
+          <p>В этом вымышленном примере факты остаются прежними, но решение стоит первым и показывает, как каждый факт его поддерживает.</p>
         </div>
 
-        <div class="before-after">
-          <article class="draft draft-before">
-            <div class="draft-label">
-              <span>До</span>
-              <span>Сначала тема</span>
-            </div>
-            <p>Мы изучили проблему онбординга. Исследователи провели пять интервью, дизайнеры подготовили два решения, а разработка займёт около трёх недель. Активация всё ещё ниже цели, поэтому команда предлагает провести пилот в следующем месяце.</p>
-            <div class="annotation annotation-before">Рекомендация появляется последней.</div>
-          </article>
+        <div class="transformation-stage" data-transformation>
+          <div class="transform-controls" role="group" aria-label="Выберите версию документа">
+            <button type="button" data-transform-control="before" aria-pressed="true">Исходник</button>
+            <button type="button" data-transform-control="after" aria-pressed="false">С Minto</button>
+          </div>
 
-          <article class="draft draft-after">
-            <div class="draft-label">
-              <span>После Minto</span>
-              <span>Сначала ответ</span>
-            </div>
-            <h3>Одобрите трёхнедельный пилот онбординга на следующий месяц.</h3>
-            <ul>
-              <li>Активация остаётся ниже цели.</li>
-              <li>Пять интервью выявили основные барьеры.</li>
-              <li>Два проверенных решения готовы к разработке.</li>
-            </ul>
-            <div class="annotation annotation-after">Теперь решение задаёт рамку всем фактам.</div>
-          </article>
+          <div class="transform-panels">
+            <article class="transform-document transform-before" data-transform-panel="before">
+              <header>
+                <span>Отчёт о проекте</span>
+                <strong>Тема наверху</strong>
+              </header>
+              <div class="document-body">
+                <p>Мы изучили проблему онбординга.</p>
+                <p>Исследователи провели пять интервью, дизайнеры подготовили два решения, а разработка займёт около трёх недель.</p>
+                <p>Активация всё ещё ниже цели.</p>
+                <p class="recommendation-line"><span>Рекомендация</span>Команда предлагает провести пилот в следующем месяце.</p>
+              </div>
+              <footer>Читателю приходится самому искать смысл в предыстории.</footer>
+            </article>
+
+            <article class="transform-document transform-after" data-transform-panel="after">
+              <header>
+                <span>Отчёт о проекте</span>
+                <strong>Сначала ответ</strong>
+              </header>
+              <div class="document-body">
+                <h3 class="recommendation-line"><span>Рекомендация</span>Одобрите трёхнедельный пилот онбординга на следующий месяц.</h3>
+                <ul>
+                  <li><span>01</span>Активация остаётся ниже цели.</li>
+                  <li><span>02</span>Исследователи провели пять интервью.</li>
+                  <li><span>03</span>Дизайнеры подготовили два решения.</li>
+                </ul>
+              </div>
+              <footer>Те же факты теперь поддерживают одно видимое решение.</footer>
+            </article>
+          </div>
+          <p class="transform-status" aria-live="polite"></p>
         </div>
       </section>
 
       <section class="method" id="method" aria-labelledby="method-heading">
-        <div class="method-intro">
-          <div class="section-heading">
-            <h2 id="method-heading">Четыре режима. Одна дисциплина.</h2>
-            <p>Minto выбирает режим по текущей задаче: прояснить намерение, проверить логику, перестроить текст или показать его структуру.</p>
-          </div>
+        <div class="section-heading method-heading">
+          <h2 id="method-heading">Выберите режим под свою задачу.</h2>
+          <p>Один исходник может дать четыре разных результата. Выбирайте режим по тому, что нужно понять или подготовить дальше.</p>
+        </div>
 
-          <dl class="mode-list">
-            <div>
-              <dt><code>intent</code></dt>
-              <dd>Находит настоящий вопрос читателя и одно предложение с ответом ещё до черновика.</dd>
-            </div>
-            <div>
-              <dt><code>audit</code></dt>
-              <dd>Отмечает структурные дефекты, оценивает логику и предлагает исправления без переписывания.</dd>
-            </div>
-            <div>
-              <dt><code>write</code></dt>
-              <dd>Превращает заметки в письмо, записку, отчёт, one-pager или сюжет презентации с ответом в начале.</dd>
-            </div>
-            <div>
-              <dt><code>viz</code></dt>
-              <dd>Показывает пирамиду и ход SCQ в Mermaid или на отдельной интерактивной странице.</dd>
-            </div>
-          </dl>
+        <div class="mode-explorer" data-mode-explorer>
+          <nav class="mode-tabs" aria-label="Режимы Minto">
+            <a href="#mode-intent" data-mode-tab="intent" aria-current="true"><code>intent</code><span>Прояснить решение</span></a>
+            <a href="#mode-audit" data-mode-tab="audit"><code>audit</code><span>Найти разрывы</span></a>
+            <a href="#mode-write" data-mode-tab="write"><code>write</code><span>Перестроить текст</span></a>
+            <a href="#mode-viz" data-mode-tab="viz"><code>viz</code><span>Показать логику</span></a>
+          </nav>
+
+          <div class="mode-panels">
+            <article class="mode-panel" id="mode-intent" data-mode-panel="intent">
+              <div class="mode-panel-copy">
+                <p class="mode-label"><code>intent</code></p>
+                <h3>Определите задачу документа до того, как писать черновик.</h3>
+                <p>Зафиксируйте читателя, решение и ответ, который можно подтвердить имеющимися фактами.</p>
+              </div>
+              <div class="mode-output intent-output" aria-label="Пример результата intent">
+                <span>Вопрос читателя</span>
+                <p>Стоит ли запускать пилот онбординга в следующем месяце?</p>
+                <span>Ответ одним предложением</span>
+                <strong>Одобрите трёхнедельный пилот, чтобы проверить два подготовленных решения.</strong>
+                <span>Пробел в данных</span>
+                <p>До запуска определите целевой уровень активации.</p>
+              </div>
+            </article>
+
+            <article class="mode-panel" id="mode-audit" data-mode-panel="audit">
+              <div class="mode-panel-copy">
+                <p class="mode-label"><code>audit</code></p>
+                <h3>Посмотрите, где рвётся логика, не меняя исходный текст.</h3>
+                <p>Minto оценивает структуру, называет дефект и предлагает исправление. Формулировки остаются прежними.</p>
+              </div>
+              <div class="mode-output audit-output" aria-label="Пример результата audit">
+                <div><span>4,0</span><small>Оценка структуры</small></div>
+                <ol>
+                  <li><strong>Проблема</strong> Рекомендация появляется последней.</li>
+                  <li><strong>Проблема</strong> Факты и действия находятся на одном уровне.</li>
+                  <li><strong>Исправление</strong> Начните с решения о пилоте, затем сгруппируйте факты.</li>
+                </ol>
+              </div>
+            </article>
+
+            <article class="mode-panel" id="mode-write" data-mode-panel="write">
+              <div class="mode-panel-copy">
+                <p class="mode-label"><code>write</code></p>
+                <h3>Превратите заметки в документ, который начинается с вывода.</h3>
+                <p>Режим подходит для письма или записки, а также для отчёта, one-pager и структуры презентации.</p>
+              </div>
+              <div class="mode-output write-output" aria-label="Пример результата write">
+                <strong>Одобрите трёхнедельный пилот онбординга на следующий месяц.</strong>
+                <p>Активация ниже цели. Исследователи провели пять интервью, дизайнеры подготовили два решения. Разработка займёт около трёх недель.</p>
+              </div>
+            </article>
+
+            <article class="mode-panel" id="mode-viz" data-mode-panel="viz">
+              <div class="mode-panel-copy">
+                <p class="mode-label"><code>viz</code></p>
+                <h3>Покажите пирамиду, когда текст скрывает структуру.</h3>
+                <p>Постройте пирамиду и ход SCQ в Mermaid или соберите отдельную интерактивную страницу для отправки другим.</p>
+              </div>
+              <div class="mode-output viz-output" aria-label="Пример пирамиды">
+                <strong>Одобрить пилот</strong>
+                <div aria-hidden="true"></div>
+                <ul>
+                  <li>Потребность</li>
+                  <li>Готовность</li>
+                  <li>Масштаб</li>
+                </ul>
+              </div>
+            </article>
+          </div>
         </div>
 
         <figure class="scq-figure" aria-labelledby="scq-caption">
@@ -215,26 +286,26 @@
               <strong>Что ему следует понять или сделать</strong>
             </li>
           </ol>
-          <figcaption id="scq-caption">SCQ создаёт напряжение, а пирамида его разрешает.</figcaption>
+          <figcaption id="scq-caption">SCQ подводит читателя к вопросу. Пирамида показывает ответ и его обоснование.</figcaption>
         </figure>
       </section>
 
       <section class="prompt-section" aria-labelledby="prompt-heading">
         <div class="section-heading">
-          <h2 id="prompt-heading">Приносите неопрятную версию.</h2>
-          <p>Minto начинает с туманного намерения, готового черновика или заметок между ними.</p>
+          <h2 id="prompt-heading">Начните с того черновика, который у вас есть.</h2>
+          <p>Minto работает с неясным замыслом или черновиком, в котором что-то не сходится. Предварительно приводить текст в порядок не нужно.</p>
         </div>
         <div class="prompt-list">
           <button type="button" class="prompt-copy" data-copy="Используй режим intent в Minto и помоги понять, чего должна добиться эта записка для совета директоров.">
-            <span>«Используй режим intent и помоги понять, чего должна добиться эта записка для совета директоров».</span>
+            <span>Используй режим intent и помоги понять, чего должна добиться эта записка для совета директоров.</span>
             <span class="prompt-action">Скопировать</span>
           </button>
           <button type="button" class="prompt-copy" data-copy="Проверь это предложение по принципу пирамиды Минто. Не переписывай текст.">
-            <span>«Проверь это предложение по принципу пирамиды Минто. Не переписывай текст».</span>
+            <span>Проверь это предложение по принципу пирамиды Минто. Не переписывай текст.</span>
             <span class="prompt-action">Скопировать</span>
           </button>
           <button type="button" class="prompt-copy" data-copy="Перепиши эти заметки как одностраничную записку для принятия решения. Начни с ответа.">
-            <span>«Перепиши эти заметки как одностраничную записку для принятия решения. Начни с ответа».</span>
+            <span>Перепиши эти заметки как одностраничную записку для принятия решения. Начни с ответа.</span>
             <span class="prompt-action">Скопировать</span>
           </button>
         </div>
@@ -242,48 +313,72 @@
 
       <section class="evidence" id="evidence" aria-labelledby="evidence-heading">
         <div class="evidence-statement">
-          <p>Измерено, а не обещано.</p>
-          <h2 id="evidence-heading"><span>+1,13</span> пункта качества в среднем</h2>
+          <p>Бенчмарк версии 1.5.0</p>
+          <h2 id="evidence-heading">В среднем качество выросло на <span>1,13</span> пункта</h2>
           <p>В release benchmark версии 1.5.0 вариант с навыком получил 6,75/10 против 5,63/10 у контрольного варианта на Codex и Kimi.</p>
         </div>
 
         <div class="evidence-detail">
-          <table>
-            <caption>Средние результаты по восьми заданиям</caption>
-            <thead>
-              <tr>
-                <th scope="col">Модель</th>
-                <th scope="col">Δ качества</th>
-                <th scope="col">Δ структуры</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">Codex</th>
-                <td class="positive">+1,25</td>
-                <td class="positive">+1,38</td>
-              </tr>
-              <tr>
-                <th scope="row">Kimi</th>
-                <td class="positive">+1,00</td>
-                <td class="negative">−0,38</td>
-              </tr>
-              <tr>
-                <th scope="row">Обе модели</th>
-                <td class="positive">+1,13</td>
-                <td class="positive">+0,50</td>
-              </tr>
-            </tbody>
-          </table>
-          <p class="evidence-caveat">32 оценки, по одному прогону на каждое сочетание модели, варианта и задания. Результат показывает полезный, но неоднородный эффект — не гарантированное улучшение во всех случаях.</p>
+          <figure class="benchmark-chart" aria-labelledby="benchmark-chart-caption">
+            <figcaption id="benchmark-chart-caption">Средняя оценка качества из 10</figcaption>
+            <div class="score-row control-score">
+              <span>Контроль</span>
+              <div><i></i></div>
+              <strong>5,63</strong>
+            </div>
+            <div class="score-row minto-score">
+              <span>С Minto</span>
+              <div><i></i></div>
+              <strong>6,75</strong>
+            </div>
+            <div class="effect-plot" aria-label="Изменение оценок по моделям">
+              <p>Изменение по моделям</p>
+              <div class="effect-row effect-positive effect-125"><span>Codex, качество</span><i></i><strong>+1,25</strong></div>
+              <div class="effect-row effect-positive effect-138"><span>Codex, структура</span><i></i><strong>+1,38</strong></div>
+              <div class="effect-row effect-positive effect-100"><span>Kimi, качество</span><i></i><strong>+1,00</strong></div>
+              <div class="effect-row effect-negative effect-038"><span>Kimi, структура</span><i></i><strong>−0,38</strong></div>
+            </div>
+          </figure>
+
+          <details class="benchmark-data">
+            <summary>Показать таблицу benchmark</summary>
+            <table>
+              <caption>Средние результаты по восьми заданиям</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Модель</th>
+                  <th scope="col">Δ качества</th>
+                  <th scope="col">Δ структуры</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Codex</th>
+                  <td class="positive">+1,25</td>
+                  <td class="positive">+1,38</td>
+                </tr>
+                <tr>
+                  <th scope="row">Kimi</th>
+                  <td class="positive">+1,00</td>
+                  <td class="negative">−0,38</td>
+                </tr>
+                <tr>
+                  <th scope="row">Обе модели</th>
+                  <td class="positive">+1,13</td>
+                  <td class="positive">+0,50</td>
+                </tr>
+              </tbody>
+            </table>
+          </details>
+          <p class="evidence-caveat">32 оценки, по одному прогону на каждое сочетание модели, варианта и задания. У Kimi оценка структуры снизилась на 0,38, хотя общая оценка качества выросла. Benchmark показывает эффект, но не гарантирует улучшение в каждом случае.</p>
           <a class="text-link" href="https://github.com/welltraum/minto/blob/main/eval/report-v1.5.0.md">Методика, результаты и ограничения <span aria-hidden="true">↗</span></a>
         </div>
       </section>
 
       <section class="final-cta" aria-labelledby="final-heading">
         <div>
-          <h2 id="final-heading">Сделайте так, чтобы ответ нельзя было пропустить.</h2>
-          <p>Установите Minto, вставьте имеющуюся версию текста и поставьте структуру перед редактурой.</p>
+          <h2 id="final-heading">Запустите Minto на том черновике, который у вас есть.</h2>
+          <p>Установите плагин, вставьте текст и попросите Minto сначала исправить структуру, а затем отредактировать формулировки.</p>
         </div>
         <a class="button button-light" href="#install">Выбрать установку</a>
       </section>
@@ -297,7 +392,7 @@
         </svg>
         <span>Minto</span>
       </a>
-      <p>Деловые тексты с ответом в начале — для Codex и Claude Code.</p>
+      <p>Minto помогает Codex и Claude Code структурировать деловой текст до редактуры.</p>
       <nav aria-label="Навигация в подвале">
         <a href="https://github.com/welltraum/minto">GitHub</a>
         <a href="https://github.com/welltraum/minto/blob/main/CHANGELOG.md">История изменений</a>
@@ -305,6 +400,6 @@
       </nav>
     </footer>
 
-    <script src="../assets/app.js" defer></script>
+    <script src="../assets/app.js?v=3" defer></script>
   </body>
 </html>
