@@ -13,6 +13,7 @@ ENGINES="${4:-codex kimi sonnet haiku}"
 CODEX_MODEL="${CODEX_MODEL:-gpt-5.6-terra}"
 CODEX_EFFORT="${CODEX_EFFORT:-low}"
 KIMI_MODEL="${KIMI_MODEL:-kimi-code/k3-low}"
+KIMI_EFFORT="${KIMI_EFFORT:-low}"
 CLAUDE_SONNET_MODEL="${CLAUDE_SONNET_MODEL:-claude-sonnet-5}"
 CLAUDE_HAIKU_MODEL="${CLAUDE_HAIKU_MODEL:-claude-haiku-4-5-20251001}"
 CLAUDE_EFFORT="${CLAUDE_EFFORT:-medium}"
@@ -36,7 +37,7 @@ STARTED_UTC="$(date -u '+%Y-%m-%dT%H:%M:%SZ')"
   echo "commit: $TESTED_COMMIT"
   echo "codex: model=$CODEX_MODEL reasoning_effort=$CODEX_EFFORT"
   echo "codex_cli: $(codex --version 2>/dev/null || echo unavailable)"
-  echo "kimi: model=$KIMI_MODEL"
+  echo "kimi: model=$KIMI_MODEL effort=$KIMI_EFFORT"
   echo "kimi_cli: $(kimi --version 2>/dev/null || echo unavailable)"
   echo "claude_sonnet: model=$CLAUDE_SONNET_MODEL effort=$CLAUDE_EFFORT"
   echo "claude_haiku: model=$CLAUDE_HAIKU_MODEL effort=$CLAUDE_EFFORT"
@@ -45,7 +46,7 @@ STARTED_UTC="$(date -u '+%Y-%m-%dT%H:%M:%SZ')"
   echo "fixtures: ${FIXTURES:-all}"
   echo "engines: $ENGINES"
   echo "codex_command: codex exec -m MODEL -c model_reasoning_effort=EFFORT --ephemeral --skip-git-repo-check -o OUTPUT -"
-  echo "kimi_command: kimi -p PROMPT -m MODEL --output-format stream-json"
+  echo "kimi_command: KIMI_CODE_HOME=ISOLATED_HOME kimi -p PROMPT -m MODEL --output-format stream-json"
   echo "claude_command: claude -p --model MODEL --effort EFFORT --tools '' --safe-mode --no-session-persistence --output-format text"
 } > "$RUNS/engines.txt"
 
@@ -57,7 +58,23 @@ run_codex() {
 }
 
 run_kimi() {
-  "$TIMEOUT_CMD" 900 kimi -p "$(cat "$1")" -m "$KIMI_MODEL" --output-format stream-json 2>>"$3" \
+  kimi_home="$(mktemp -d "${TMPDIR:-/tmp}/minto-kimi-home.XXXXXX")"
+  cp "$HOME/.kimi-code/config.toml" "$kimi_home/config.toml"
+  cp -R "$HOME/.kimi-code/credentials" "$kimi_home/credentials"
+  {
+    echo
+    echo "[models.\"$KIMI_MODEL\"]"
+    echo 'provider = "managed:kimi-code"'
+    echo 'model = "k3"'
+    echo 'max_context_size = 1048576'
+    echo 'capabilities = [ "thinking", "always_thinking", "image_in", "video_in", "tool_use" ]'
+    echo 'display_name = "K3 Low"'
+    echo 'support_efforts = [ "low", "high", "max" ]'
+    echo "default_effort = \"$KIMI_EFFORT\""
+  } >> "$kimi_home/config.toml"
+
+  if KIMI_CODE_HOME="$kimi_home" "$TIMEOUT_CMD" 900 \
+    kimi -p "$(cat "$1")" -m "$KIMI_MODEL" --output-format stream-json 2>>"$3" \
     | python3 -c '
 import json
 import sys
@@ -70,8 +87,18 @@ for line in sys.stdin:
         continue
     if event.get("role") == "assistant" and event.get("content"):
         last = event["content"]
-print(last)
+if not last:
+    raise SystemExit(1)
+sys.stdout.write(last.rstrip() + "\n")
 ' > "$2"
+  then
+    run_status=0
+  else
+    run_status=$?
+  fi
+
+  rm -rf "$kimi_home"
+  return "$run_status"
 }
 
 run_sonnet() {
@@ -100,6 +127,14 @@ selected() {
   return 1
 }
 
+file_bytes() {
+  if [ -f "$1" ]; then
+    wc -c < "$1" | tr -d ' '
+  else
+    echo 0
+  fi
+}
+
 job() {
   fixture_dir="$1"
   name="$2"
@@ -108,7 +143,8 @@ job() {
   output="$RUNS/raw/${name}__${engine}__${arm}.md"
   job_log="$RUNS/logs/${name}__${engine}__${arm}.log"
 
-  if [ -s "$output" ]; then
+  existing_bytes="$(file_bytes "$output")"
+  if [ "$existing_bytes" -gt 10 ]; then
     echo "skip $name/$engine/$arm (exists)"
     return 0
   fi
@@ -121,7 +157,8 @@ job() {
   fi
   elapsed=$((SECONDS - started))
 
-  if [ "$status" -eq 0 ] && [ -s "$output" ]; then
+  output_bytes="$(file_bytes "$output")"
+  if [ "$status" -eq 0 ] && [ "$output_bytes" -gt 10 ]; then
     echo "ok   $name/$engine/$arm  $(wc -c < "$output" | tr -d ' ') B  ${elapsed}s"
     return 0
   fi
