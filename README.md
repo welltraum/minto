@@ -4,6 +4,8 @@ Minto is an installable skill for Claude Code and Codex that applies the
 [Minto Pyramid Principle](https://www.barbaraminto.com/) to business writing
 and thinking.
 
+**Website:** [welltraum.github.io/minto](https://welltraum.github.io/minto/)
+
 It turns a topic into the reader's question, puts one answer at the top, groups
 supporting ideas by kind, checks the logic for overlaps and gaps, and makes the
 result easy to scan. The instructions are written in English, but the skill

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">Minto — answer-first business writing</title>
+  <desc id="description">The answer at the top, supported by three clear reasons.</desc>
+  <style>
+    @font-face {
+      font-family: "Onest";
+      src: url("./fonts/onest-latin.woff2") format("woff2");
+      font-weight: 100 900;
+    }
+    text { font-family: "Onest", "Helvetica Neue", Arial, sans-serif; }
+    .bg { fill: #ffffff; fill: oklch(1 0 0); }
+    .ink { fill: #24271d; fill: oklch(0.18 0.025 110); }
+    .primary { fill: #48502c; fill: oklch(0.35 0.075 110); }
+    .primary-stroke { stroke: #48502c; stroke: oklch(0.35 0.075 110); }
+    .surface { fill: #f2f3ed; fill: oklch(0.965 0.008 110); }
+    .accent { fill: #c34d32; fill: oklch(0.56 0.16 35); }
+    .line { stroke: #d2d5c8; stroke: oklch(0.84 0.014 110); }
+    .white { fill: #ffffff; fill: oklch(1 0 0); }
+  </style>
+
+  <rect class="bg" width="1200" height="630"/>
+  <path class="line" d="M70 80H1130" stroke-width="2"/>
+
+  <g transform="translate(70 31)">
+    <path class="primary-stroke" d="M25 2 47 44H3L25 2Z" fill="none" stroke-width="2.5"/>
+    <path class="primary-stroke" d="M10 29h30M16 17h18" fill="none" stroke-width="2.5"/>
+    <text class="ink" x="62" y="34" font-size="30" font-weight="750">Minto</text>
+  </g>
+
+  <text class="accent" x="70" y="170" font-size="19" font-weight="700">FOR CODEX &amp; CLAUDE CODE</text>
+  <text class="ink" x="70" y="250" font-size="66" font-weight="820" letter-spacing="-2">Lead with the answer.</text>
+  <text class="primary" x="70" y="320" font-size="66" font-weight="820" letter-spacing="-2">Build the logic</text>
+  <text class="primary" x="70" y="390" font-size="66" font-weight="820" letter-spacing="-2">beneath it.</text>
+  <text class="ink" x="70" y="455" font-size="25" font-weight="450">Structure, audit, rewrite, and visualize</text>
+  <text class="ink" x="70" y="491" font-size="25" font-weight="450">decision-ready business writing.</text>
+
+  <g transform="translate(760 145)">
+    <rect class="primary" x="68" width="234" height="104"/>
+    <text class="white" x="92" y="35" font-size="14" font-weight="700">ANSWER</text>
+    <text class="white" x="92" y="72" font-size="23" font-weight="750">Approve the pilot.</text>
+    <path class="primary-stroke" d="M185 104V145M185 145H55V205M185 145V205M185 145H315V205" fill="none" stroke-width="3"/>
+    <g transform="translate(0 205)">
+      <rect class="surface" width="110" height="125"/>
+      <rect class="surface" x="130" width="110" height="125"/>
+      <rect class="surface" x="260" width="110" height="125"/>
+      <rect class="accent" width="110" height="6"/>
+      <rect class="accent" x="130" width="110" height="6"/>
+      <rect class="accent" x="260" width="110" height="6"/>
+      <text class="ink" x="14" y="42" font-size="13" font-weight="700">REASON</text>
+      <text class="ink" x="144" y="42" font-size="13" font-weight="700">REASON</text>
+      <text class="ink" x="274" y="42" font-size="13" font-weight="700">REASON</text>
+      <text class="ink" x="14" y="76" font-size="16" font-weight="650">Evidence</text>
+      <text class="ink" x="144" y="76" font-size="16" font-weight="650">Fit</text>
+      <text class="ink" x="274" y="76" font-size="16" font-weight="650">Risk</text>
+    </g>
+  </g>
+
+  <text class="ink" x="70" y="570" font-size="19" font-weight="650">welltraum.github.io/minto</text>
+</svg>

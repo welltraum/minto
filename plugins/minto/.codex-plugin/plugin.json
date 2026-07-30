@@ -7,7 +7,7 @@
     "email": "v.shevchenko@redmadrobot.com",
     "url": "https://github.com/welltraum"
   },
-  "homepage": "https://github.com/welltraum/minto#readme",
+  "homepage": "https://welltraum.github.io/minto/",
   "repository": "https://github.com/welltraum/minto",
   "license": "MIT",
   "keywords": [
@@ -28,7 +28,7 @@
       "Interactive",
       "Write"
     ],
-    "websiteURL": "https://github.com/welltraum/minto",
+    "websiteURL": "https://welltraum.github.io/minto/",
     "defaultPrompt": [
       "Structure this memo with the Minto Pyramid Principle.",
       "Audit this document for pyramid logic.",
