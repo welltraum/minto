@@ -15,8 +15,25 @@ eval/runs/*
 eval/runs/v1.5.0/logs/
 eval/runs/v1.5.0/blind/
 eval/runs/v1.5.0/log.txt
+# v1.5.0 was blinded before shuffle.txt existed. Regenerating it would stamp
+# today's date on a July run, so it stays local; mapping.json is the record.
+eval/runs/v1.5.0/shuffle.txt
+!eval/runs/v1.5.0-wide/
+eval/runs/v1.5.0-wide/logs/
+eval/runs/v1.5.0-wide/blind/
+eval/runs/v1.5.0-wide/log.txt
+
+# Resume invocations record themselves separately so a re-run cannot overwrite the
+# provenance of the cells already on disk. Incidental; the original is what counts.
+eval/runs/*/engines-resume-*.txt
+
+# Credentials. Never committed; the eval reads NEURALDEEP_API_KEY from the
+# environment and records only the base URL and request parameters in engines.txt.
+.env
+.env.*
 
 # Local source material and transient files
 *.pdf
 tmp/
 .cache/
+__pycache__/

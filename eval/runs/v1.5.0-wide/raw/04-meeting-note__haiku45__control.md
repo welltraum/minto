@@ -1,0 +1,1 @@
+Thursday at 11:00 works for our meeting. Collins cannot attend at 3:00, Johnson is not available before 10:30, Clifford won't return from Frankfurt until late tomorrow, and the conference room is available Thursday.

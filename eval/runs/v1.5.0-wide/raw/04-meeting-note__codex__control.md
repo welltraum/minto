@@ -1,0 +1,1 @@
+Could we reschedule today’s 3:00 meeting to Thursday at 11:00? Collins is unavailable today, Johnson can attend then, Clifford will be back, and the conference room is free.
