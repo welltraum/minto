@@ -1,0 +1,338 @@
+{
+  "01-big-chief": {
+    "out-01.md": {
+      "engine": "gpt-oss-120b",
+      "arm": "skill",
+      "bytes": 1844
+    },
+    "out-02.md": {
+      "engine": "codex",
+      "arm": "skill",
+      "bytes": 1114
+    },
+    "out-03.md": {
+      "engine": "gpt-oss-120b",
+      "arm": "control",
+      "bytes": 1722
+    },
+    "out-04.md": {
+      "engine": "kimi",
+      "arm": "skill",
+      "bytes": 1879
+    },
+    "out-05.md": {
+      "engine": "qwen3.6-35b-a3b",
+      "arm": "skill",
+      "bytes": 1260
+    },
+    "out-06.md": {
+      "engine": "qwen3.6-35b-a3b",
+      "arm": "control",
+      "bytes": 1347
+    },
+    "out-07.md": {
+      "engine": "codex",
+      "arm": "control",
+      "bytes": 1073
+    },
+    "out-08.md": {
+      "engine": "kimi",
+      "arm": "control",
+      "bytes": 1369
+    }
+  },
+  "02-ttv": {
+    "out-01.md": {
+      "engine": "gpt-oss-120b",
+      "arm": "control",
+      "bytes": 4157
+    },
+    "out-02.md": {
+      "engine": "kimi",
+      "arm": "skill",
+      "bytes": 3034
+    },
+    "out-03.md": {
+      "engine": "qwen3.6-35b-a3b",
+      "arm": "control",
+      "bytes": 1883
+    },
+    "out-04.md": {
+      "engine": "codex",
+      "arm": "control",
+      "bytes": 1252
+    },
+    "out-05.md": {
+      "engine": "gpt-oss-120b",
+      "arm": "skill",
+      "bytes": 2844
+    },
+    "out-06.md": {
+      "engine": "kimi",
+      "arm": "control",
+      "bytes": 2635
+    },
+    "out-07.md": {
+      "engine": "qwen3.6-35b-a3b",
+      "arm": "skill",
+      "bytes": 1500
+    },
+    "out-08.md": {
+      "engine": "codex",
+      "arm": "skill",
+      "bytes": 2221
+    }
+  },
+  "03-period-graph-books": {
+    "out-01.md": {
+      "engine": "codex",
+      "arm": "skill",
+      "bytes": 5310
+    },
+    "out-02.md": {
+      "engine": "codex",
+      "arm": "control",
+      "bytes": 4346
+    },
+    "out-03.md": {
+      "engine": "qwen3.6-35b-a3b",
+      "arm": "control",
+      "bytes": 2993
+    },
+    "out-04.md": {
+      "engine": "kimi",
+      "arm": "control",
+      "bytes": 2724
+    },
+    "out-05.md": {
+      "engine": "gpt-oss-120b",
+      "arm": "control",
+      "bytes": 6425
+    },
+    "out-06.md": {
+      "engine": "kimi",
+      "arm": "skill",
+      "bytes": 5044
+    },
+    "out-07.md": {
+      "engine": "qwen3.6-35b-a3b",
+      "arm": "skill",
+      "bytes": 3941
+    },
+    "out-08.md": {
+      "engine": "gpt-oss-120b",
+      "arm": "skill",
+      "bytes": 4611
+    }
+  },
+  "04-meeting-note": {
+    "out-01.md": {
+      "engine": "qwen3.6-35b-a3b",
+      "arm": "control",
+      "bytes": 332
+    },
+    "out-02.md": {
+      "engine": "kimi",
+      "arm": "skill",
+      "bytes": 913
+    },
+    "out-03.md": {
+      "engine": "kimi",
+      "arm": "control",
+      "bytes": 393
+    },
+    "out-04.md": {
+      "engine": "gpt-oss-120b",
+      "arm": "control",
+      "bytes": 350
+    },
+    "out-05.md": {
+      "engine": "gpt-oss-120b",
+      "arm": "skill",
+      "bytes": 738
+    },
+    "out-06.md": {
+      "engine": "codex",
+      "arm": "control",
+      "bytes": 175
+    },
+    "out-07.md": {
+      "engine": "codex",
+      "arm": "skill",
+      "bytes": 160
+    },
+    "out-08.md": {
+      "engine": "qwen3.6-35b-a3b",
+      "arm": "skill",
+      "bytes": 392
+    }
+  },
+  "05-role-of-board": {
+    "out-01.md": {
+      "engine": "gpt-oss-120b",
+      "arm": "skill",
+      "bytes": 1480
+    },
+    "out-02.md": {
+      "engine": "gpt-oss-120b",
+      "arm": "control",
+      "bytes": 878
+    },
+    "out-03.md": {
+      "engine": "kimi",
+      "arm": "control",
+      "bytes": 898
+    },
+    "out-04.md": {
+      "engine": "qwen3.6-35b-a3b",
+      "arm": "control",
+      "bytes": 879
+    },
+    "out-05.md": {
+      "engine": "kimi",
+      "arm": "skill",
+      "bytes": 1631
+    },
+    "out-06.md": {
+      "engine": "codex",
+      "arm": "control",
+      "bytes": 472
+    },
+    "out-07.md": {
+      "engine": "qwen3.6-35b-a3b",
+      "arm": "skill",
+      "bytes": 892
+    },
+    "out-08.md": {
+      "engine": "codex",
+      "arm": "skill",
+      "bytes": 914
+    }
+  },
+  "06-ttw-viz": {
+    "out-01.md": {
+      "engine": "codex",
+      "arm": "control",
+      "bytes": 1407
+    },
+    "out-02.md": {
+      "engine": "qwen3.6-35b-a3b",
+      "arm": "control",
+      "bytes": 928
+    },
+    "out-03.md": {
+      "engine": "qwen3.6-35b-a3b",
+      "arm": "skill",
+      "bytes": 2567
+    },
+    "out-04.md": {
+      "engine": "gpt-oss-120b",
+      "arm": "control",
+      "bytes": 1056
+    },
+    "out-05.md": {
+      "engine": "kimi",
+      "arm": "skill",
+      "bytes": 1362
+    },
+    "out-06.md": {
+      "engine": "gpt-oss-120b",
+      "arm": "skill",
+      "bytes": 928
+    },
+    "out-07.md": {
+      "engine": "codex",
+      "arm": "skill",
+      "bytes": 762
+    },
+    "out-08.md": {
+      "engine": "kimi",
+      "arm": "control",
+      "bytes": 4627
+    }
+  },
+  "07-headings-audit": {
+    "out-01.md": {
+      "engine": "codex",
+      "arm": "control",
+      "bytes": 870
+    },
+    "out-02.md": {
+      "engine": "kimi",
+      "arm": "skill",
+      "bytes": 4223
+    },
+    "out-03.md": {
+      "engine": "gpt-oss-120b",
+      "arm": "skill",
+      "bytes": 1679
+    },
+    "out-04.md": {
+      "engine": "gpt-oss-120b",
+      "arm": "control",
+      "bytes": 2600
+    },
+    "out-05.md": {
+      "engine": "qwen3.6-35b-a3b",
+      "arm": "skill",
+      "bytes": 1973
+    },
+    "out-06.md": {
+      "engine": "kimi",
+      "arm": "control",
+      "bytes": 2261
+    },
+    "out-07.md": {
+      "engine": "qwen3.6-35b-a3b",
+      "arm": "control",
+      "bytes": 1144
+    },
+    "out-08.md": {
+      "engine": "codex",
+      "arm": "skill",
+      "bytes": 2641
+    }
+  },
+  "08-techdebt": {
+    "out-01.md": {
+      "engine": "gpt-oss-120b",
+      "arm": "control",
+      "bytes": 1241
+    },
+    "out-02.md": {
+      "engine": "codex",
+      "arm": "control",
+      "bytes": 658
+    },
+    "out-03.md": {
+      "engine": "kimi",
+      "arm": "control",
+      "bytes": 800
+    },
+    "out-04.md": {
+      "engine": "gpt-oss-120b",
+      "arm": "skill",
+      "bytes": 1337
+    },
+    "out-05.md": {
+      "engine": "kimi",
+      "arm": "skill",
+      "bytes": 1784
+    },
+    "out-06.md": {
+      "engine": "qwen3.6-35b-a3b",
+      "arm": "control",
+      "bytes": 872
+    },
+    "out-07.md": {
+      "engine": "qwen3.6-35b-a3b",
+      "arm": "skill",
+      "bytes": 809
+    },
+    "out-08.md": {
+      "engine": "codex",
+      "arm": "skill",
+      "bytes": 438
+    }
+  }
+}

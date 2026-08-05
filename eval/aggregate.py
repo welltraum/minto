@@ -42,14 +42,26 @@ STRUCTURE_MAX = 8
 QUALITY_MAX = 10
 FIRST_LEVEL_LIMIT = 4
 
-# What the landing page is allowed to quote, and the label it carries there. Each
-# entry names one row; anything not listed here has no business being a headline.
+# What the landing page is allowed to quote, and the label it carries there.
+#
+# Chosen on two rules, both of which have to hold:
+#   1. the row corresponds to a distinctive, checkable instruction in the skill;
+#   2. every metric that moved *against* the skill is included, without exception.
+#
+# Rule 2 is the one that matters. Picking rows by which direction they point is how
+# a benchmark becomes marketing, so a negative result earns its place on the page
+# by being negative, not despite it.
+#
+# Quality uses the raw axes, not the penalized ones. Source loss and invented facts
+# already have their own row, so penalizing quality for them too would charge the
+# same defect twice — and raw is the more conservative of the two figures.
 SITE_METRICS = (
     ("quality", "score", "quality_raw", "Writing quality, share of the judge's 10 points"),
     ("structure", "score", "structure", "Structure, share of the judge's 8 points"),
-    ("answer-first", "rate", "answer_first", "Answer in the first sentence"),
+    ("readers-question", "rate", "readers_question_literal", "The reader's question is written down"),
     ("kind-matches", "rate", "first_level_kind_matches", "First-level points are all the same kind"),
-    ("clean-runs", "rate", "no_hard_failure", "Runs with no hard failure"),
+    ("answer-first", "rate", "answer_first", "Answer in the first sentence"),
+    ("source-kept", "rate", "no_unacknowledged_source_loss", "No source material lost without saying so"),
 )
 
 

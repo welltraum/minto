@@ -33,20 +33,26 @@ through Codex CLI, and `kimi-code/k3-low` through Kimi Code CLI. Eight fixtures 
 two arms x two engines = 32 outputs. Claude was unavailable in that environment
 and was excluded rather than silently substituted.
 
-The wide matrix adds four Claude models and three NeuralDeep models, all
-generating at low effort:
+The wide matrix adds four Claude models and two NeuralDeep models, all generating
+at low effort:
 
 | Engine key | Model | Transport |
 |---|---|---|
 | `codex` | `gpt-5.6-terra` | Codex CLI |
 | `kimi` | `kimi-code/k3-low` | Kimi Code CLI |
 | `haiku45` `fable5` `sonnet5` `opus5` | Claude aliases `haiku` `fable` `sonnet` `opus` | Claude Code CLI |
-| `gemma-4-31b` `gpt-oss-120b` `qwen3.6-35b-a3b` | as named | NeuralDeep OpenAI-compatible API |
+| `gpt-oss-120b` `qwen3.6-35b-a3b` | as named | NeuralDeep OpenAI-compatible API |
 
-Nine engines x two arms x eight fixtures = 144 cells. Generation runs at low
+Eight engines x two arms x eight fixtures = 128 cells. Generation runs at low
 effort throughout so the comparison is between arms, not between reasoning
 budgets. Judging and report synthesis stay at high reasoning: the judge is the
 measuring instrument, not a subject of the experiment.
+
+`gemma-4-31b` is a selectable engine but is excluded from the matrix: it times out
+on the 26 KB skill prompt at both 300 and 550 seconds while completing short
+fixtures, so it would contribute only the fixtures it finds easy. See
+`neuraldeep-availability-2026-08-05.md`. A uniformly absent engine reduces `n`; an
+engine absent from exactly the hard fixtures is a bias.
 
 Credentials come only from `NEURALDEEP_API_KEY` in the environment. Never write a
 key into repository files or command metadata.
@@ -116,9 +122,9 @@ cells and present for others biases the delta, which is why `shuffle.sh` and
 
 ```bash
 bash eval/build-prompts.sh
-NEURALDEEP_API_KEY=... bash eval/run-cli.sh eval/runs/v1.5.0-wide \
+NEURALDEEP_API_KEY=... NEURALDEEP_TIMEOUT=550 bash eval/run-cli.sh eval/runs/v1.5.0-wide \
   "skill control" "" \
-  "haiku45 fable5 sonnet5 codex kimi opus5 gemma-4-31b gpt-oss-120b qwen3.6-35b-a3b"
+  "gpt-oss-120b qwen3.6-35b-a3b codex kimi haiku45 fable5 sonnet5 opus5"
 SHUFFLE_SEED=v1.5.0-wide bash eval/shuffle.sh eval/runs/v1.5.0-wide
 bash eval/run-judge.sh eval/runs/v1.5.0-wide
 python3 eval/aggregate.py eval/runs/v1.5.0-wide --allow-partial
@@ -127,6 +133,14 @@ bash eval/build-report.sh eval/runs/v1.5.0-wide eval/report-v1.5.0-wide.md
 
 Engine order matters: `run-cli.sh` runs one engine batch at a time, so listing the
 cheap models first surfaces a systemic problem before the expensive ones are spent.
+
+List every engine in **one** invocation. `engines.txt` is written by the first
+invocation and never rewritten — a later invocation records itself in
+`engines-resume-N.txt` instead, so the provenance of cells already on disk cannot
+be restamped. Since `shuffle.sh` filters on the `engines:` line in `engines.txt`,
+an engine introduced by a second invocation would be silently left out of the
+blinding. Name them all up front; failed cells are picked up by re-running the
+identical command.
 
 `shuffle.sh` derives the expected output count per fixture and writes it to
 `shuffle.txt`, which `run-judge.sh` then reads. Passing a global

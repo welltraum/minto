@@ -1,0 +1,13 @@
+shuffled_utc: 2026-08-05T16:13:13Z
+seed: v1.5.0-wide
+min_output_bytes: 10
+expected_outputs: auto
+engines: gpt-oss-120b qwen3.6-35b-a3b codex kimi haiku45 fable5 sonnet5 opus5
+outputs 01-big-chief 8
+outputs 02-ttv 8
+outputs 03-period-graph-books 8
+outputs 04-meeting-note 8
+outputs 05-role-of-board 8
+outputs 06-ttw-viz 8
+outputs 07-headings-audit 8
+outputs 08-techdebt 8

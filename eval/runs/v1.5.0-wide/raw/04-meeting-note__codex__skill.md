@@ -1,0 +1,1 @@
+Could we move today’s 3:00 meeting to Thursday at 11:00? Collins cannot attend today, Clifford returns only late tomorrow, and the room is available Thursday.
