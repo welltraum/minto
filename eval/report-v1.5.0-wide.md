@@ -1,114 +1,119 @@
-# Minto benchmark release report — v1.5.0-wide
+# Minto v1.5.0-wide release report
 
 ## Scope and methodology
 
-This report covers the `skill` and `control` arms for 64 judged cells generated from the supplied fixture set. The deterministic scores were produced on 2026-08-05T16:20:05Z by `eval/aggregate.py` at commit `7dbae71baa7bd43af54c345292b861046233af8c`, with a clean worktree and rubric penalty version 1.
+The benchmark compared `skill` and `control` arms across the supplied write, audit, and visualization fixtures. The deterministic aggregate was generated on 2026-08-05 from 112 judged cells at commit `7dbae71baa7bd43af54c345292b861046233af8c`; the worktree was clean, and the skill text was identical across the two commits represented.
 
-Outputs were blindly mapped to their engines and arms, then assessed by `gpt-5.6-sol` at high judge effort. Structure was judged on an eight-point rubric and quality on a ten-point rubric. Hard-failure penalties and behaviour checks were applied by the aggregator. All figures below are quoted from the deterministic scores; no additional statistics were calculated.
+Each output was judged by `gpt-5.6-sol` at high reasoning effort. Structure was scored against an eight-point rubric, quality against a ten-point rubric, and hard failures were separately penalized. The blind mapping was used to restore engine and arm attribution.
 
-## Overall result
+## Pooled result
 
 | Measure | Control | With skill | Δ | Δ pp | Relative |
 |---|---:|---:|---:|---:|---:|
-| Structure /8 | 4.28 (53.5%) | 4.75 (59.4%) | +0.47 | +5.9 | +10.9% |
-| Quality as judged /10 | 6.91 (69.1%) | 7.38 (73.8%) | +0.47 | +4.7 | +6.8% |
-| Quality after hard-failure penalty /10 | 5.94 (59.4%) | 6.88 (68.8%) | +0.94 | +9.4 | +15.8% |
+| Structure /8 | 4.32 (54.0%) | 5.00 (62.5%) | +0.68 | +8.5 | +15.7% |
+| Quality as judged /10 | 6.84 (68.4%) | 7.50 (75.0%) | +0.66 | +6.6 | +9.7% |
+| Quality after hard-failure penalty /10 | 5.98 (59.8%) | 6.88 (68.8%) | +0.89 | +9.0 | +14.9% |
+
+The pooled scores favor the skill, including after the hard-failure penalty. That aggregate result is not uniform across engines or reliability checks.
 
 ## Results by engine
 
 | Engine | n per arm | Structure: control → skill | Quality: control → skill | Δ quality pp |
 |---|---:|---:|---:|---:|
-| codex | 8 | 54.7% → 67.2% | 68.8% → 76.3% | +7.5 |
-| gpt-oss-120b | 8 | 46.9% → 51.6% | 67.5% → 70.0% | +2.5 |
-| kimi | 8 | 53.1% → 59.4% | 72.5% → 75.0% | +2.5 |
-| qwen3.6-35b-a3b | 8 | 59.4% → 59.4% | 67.5% → 73.8% | +6.3 |
+| codex | 8 | 56.3% → 62.5% | 65.0% → 77.5% | +12.5 |
+| gpt-oss-120b | 8 | 51.6% → 51.6% | 67.5% → 63.8% | -3.7 |
+| haiku45 | 8 | 39.1% → 59.4% | 61.3% → 75.0% | +13.7 |
+| kimi | 8 | 54.7% → 68.8% | 70.0% → 77.5% | +7.5 |
+| opus5 | 8 | 65.6% → 76.6% | 75.0% → 81.3% | +6.3 |
+| qwen3.6-35b-a3b | 8 | 60.9% → 59.4% | 71.3% → 72.5% | +1.2 |
+| sonnet5 | 8 | 50.0% → 59.4% | 68.8% → 77.5% | +8.7 |
 
-Quality moved in favour of the skill for every scored engine. Structure improved for codex, gpt-oss-120b, and kimi, while qwen3.6-35b-a3b was unchanged rather than improved.
+Quality favors the skill on every scored engine except `gpt-oss-120b`, where it reverses. Structure improves on five engines, is unchanged on `gpt-oss-120b`, and reverses on `qwen3.6-35b-a3b`.
 
 ## Behaviour pass rates
 
-The denominator is the number of applicable cells in each arm. Conditional checks therefore have smaller denominators.
-
-| Check | Control | With skill | Δ pp | n per arm |
+| Check | Control | With skill | Δ pp | Denominator per arm |
 |---|---:|---:|---:|---:|
-| `first_level_kind_matches` | 50.0% | 68.8% | +18.8 | 32 |
-| `no_invented_facts` | 43.8% | 53.1% | +9.3 | 32 |
-| `no_unacknowledged_source_loss` | 87.5% | 65.6% | -21.9 | 32 |
-| `mode_respected` | 100.0% | 100.0% | 0.0 | 32 |
-| `answer_first` | 83.3% | 75.0% | -8.3 | 24 |
-| `first_level_count_within_limit` | 87.5% | 100.0% | +12.5 | 24 |
-| `readers_question_literal` | 15.0% | 65.0% | +50.0 | 20 |
-| `order_type_named` | 16.7% | 37.5% | +20.8 | 24 |
-| `no_hard_failure` | 34.4% | 40.6% | +6.2 | 32 |
+| `first_level_kind_matches` | 48.2% | 71.4% | +23.2 | 56 |
+| `no_invented_facts` | 46.4% | 42.9% | -3.5 | 56 |
+| `no_unacknowledged_source_loss` | 91.1% | 71.4% | -19.7 | 56 |
+| `mode_respected` | 100.0% | 100.0% | 0.0 | 56 |
+| `answer_first` | 76.2% | 76.2% | 0.0 | 42 |
+| `first_level_count_within_limit` | 88.1% | 100.0% | +11.9 | 42 |
+| `readers_question_literal` | 17.1% | 48.6% | +31.5 | 35 |
+| `order_type_named` | 19.0% | 35.7% | +16.7 | 42 |
+| `no_hard_failure` | 37.5% | 33.9% | -3.6 | 56 |
 
-The rates that moved against the skill were `no_unacknowledged_source_loss` at -21.9 percentage points and `answer_first` at -8.3 percentage points. `mode_respected` was unchanged at 100.0%.
+The rates that moved against the skill were `no_invented_facts`, `no_unacknowledged_source_loss`, and `no_hard_failure`. `answer_first` and `mode_respected` were unchanged.
 
-## Most decisive fixture-level result
+## Most decisive fixture-level contrast
 
-The deterministic section does not provide fixture-level aggregate deltas, so the clearest verdict-level contrast is reported qualitatively without calculating a score.
+Fixture-level aggregate figures are not present in the deterministic scores, so no numeric fixture delta is reported. The clearest qualitative reversal in the supplied verdicts was:
 
-| Fixture | Engine | Control verdict | Skill verdict | Decisive distinction |
+| Fixture | Engine | Control evidence | Skill evidence | Direction |
 |---|---|---|---|---|
-| Big Chief | codex | Answered feasibility rather than whether management should accept; kept mechanics at the first level; omitted source detail and incurred `unacknowledged_source_loss` | Converted the mechanics into grounded acceptance reasons, subordinated operational evidence correctly, and had no hard failure | The skill changed both the governing answer and the hierarchy while preserving the evidence |
+| Meeting note | gpt-oss-120b | Compact, answer-first request, although it upgraded feasibility to certainty | Extensive labeled scaffolding, mixed branches, and unsupported universal-availability and delay claims | Decisively against the skill |
+
+This contrast is consistent with the engine-level quality reversal for `gpt-oss-120b`.
 
 ## Recurring strengths
 
-The following strengths recur across multiple engines:
+- More consistent first-level grouping recurred across engines. The visualization fixture produced clear action-based hierarchies for engines including `sonnet5`, `kimi`, `qwen3.6-35b-a3b`, and `opus5`, while the pooled `first_level_kind_matches` rate rose from 48.2% to 71.4%.
 
-- Better first-level grouping. The aggregate `first_level_kind_matches` rate rose from 50.0% to 68.8%. The fixture verdicts repeatedly show skill outputs organizing support as actions, benefits, or other consistent categories, especially in the visualization and governance tasks.
+- Compliance with the first-level display limit generalized across engines: `first_level_count_within_limit` rose from 88.1% to 100.0%, and `more_than_four_first_level` hard failures fell from 5 to 0.
 
-- More explicit reader orientation. `readers_question_literal` rose from 15.0% to 65.0%, with successful examples across gpt-oss-120b, kimi, codex, and qwen3.6-35b-a3b.
+- Making the reader’s question explicit recurred across engines including `gpt-oss-120b` and `kimi`. The pooled rate rose from 17.1% to 48.6%.
 
-- Better control of group size. `first_level_count_within_limit` rose from 87.5% to 100.0%, and `more_than_four_first_level` hard failures changed from 3 to 0.
-
-- Stronger visible action pyramids. Across the engines, the visualization fixture commonly placed a controlling claim above action branches and subordinated observations beneath the relevant action.
-
-- Better judged quality. Quality rose for every scored engine, while pooled quality as judged moved from 6.91 (69.1%) to 7.38 (73.8%).
+- Stronger answer-and-support hierarchies appeared across several engines in fixtures such as the Big Chief decision, the two-action visualization, and the technical-debt recommendation. This aligns with the pooled gains in structure and judged quality.
 
 ## Recurring defects and revision candidates
 
-The following defects recur across multiple engines and should be candidates for the next skill revision:
+- Unsupported facts, certainty, timing, and causal claims remain the main reliability defect. They recur across multiple engines and fixtures, especially when tentative source language is rewritten as a definite result. `invented_facts` hard failures rose from 30 to 32, while `no_invented_facts` fell from 46.4% to 42.9%.
 
-- Source preservation regressed. `no_unacknowledged_source_loss` fell from 87.5% to 65.6%, while `unacknowledged_source_loss` hard failures changed from 4 to 11. The skill needs a stricter final inventory check and an explicit omission note when compression removes material.
+- Source preservation deteriorated across engines including `codex`, `haiku45`, `qwen3.6-35b-a3b`, `gpt-oss-120b`, and `opus5`. `unacknowledged_source_loss` hard failures rose from 5 to 16, and the corresponding pass rate fell from 91.1% to 71.4%. The next revision should require an explicit source-retention check after restructuring.
 
-- Unsupported specificity remains common. `invented_facts` hard failures changed from 18 to 15, and `no_invented_facts` reached only 53.1%. Verdicts across all scored engines identify invented certainty, causal claims, dates, metrics, plurality, or implementation detail. The next revision should distinguish paraphrase from inference and preserve tentative wording.
+- Ordering remains under-specified across multiple engines. Although `order_type_named` rose from 19.0% to 35.7%, verdicts repeatedly found absent or weak ordering rationales. The skill should make the ordering test operational and require the chosen order to be visible when the task calls for it.
 
-- Answer-first behaviour weakened. `answer_first` fell from 83.3% to 75.0%. SCQ framing, headings, and explanatory setup should not delay the requested recommendation.
+- Short-form writing often exposes too much method. The meeting-note fixture showed recurring SCQ labels, diagrams, and separate answer/key-line blocks across engines including `kimi`, `gpt-oss-120b`, and `opus5`. The revision should make proportionality a final gate for short notes and colleague messages.
 
-- Ordering remains under-specified. Although `order_type_named` rose from 16.7% to 37.5%, the verdicts repeatedly note that ordering was visible but not explicitly explained.
-
-- Compression sometimes destroys hierarchy or evidence. Codex, gpt-oss-120b, and qwen3.6-35b-a3b examples lost source details; other outputs promoted constraints or context to the first level. The revision should require every retained fact to have a clear parent before shortening.
-
-- Formatting can become disproportionate. Several engines added SCQ apparatus, diagrams, or extensive audit scaffolding to short messages. The skill should scale visible structure to the size and mode of the requested deliverable.
+- Several engines still promote source topics, constraints, or mechanics instead of synthesizing reader-facing reasons or actions. This recurred in the Big Chief, meeting-note, board-role, and audit fixtures.
 
 ## Hard failures, incomplete cells, and exclusions
 
 | Hard-failure token | Control | With skill |
 |---|---:|---:|
-| `invented_facts` | 18 | 15 |
-| `more_than_four_first_level` | 3 | 0 |
-| `unacknowledged_source_loss` | 4 | 11 |
+| `invented_facts` | 30 | 32 |
+| `more_than_four_first_level` | 5 | 0 |
+| `unacknowledged_source_loss` | 5 | 16 |
 
-No incomplete judged cells are reported: every mapped verdict cell is marked completed. The deterministic scores do not report any excluded judged pair or give any pair-level exclusion reason.
+No incomplete cell is identified among the 112 judged cells.
 
-The metadata configures Codex, Kimi, Neuraldeep, and Claude execution paths. Only codex, kimi, gpt-oss-120b, and qwen3.6-35b-a3b appear in the blind mapping and deterministic engine table. The configured Claude-family engines are absent from both. Their provider or engine availability outcome—and the reason they did not enter the judged set—is not available in the supplied aggregator output, so no exclusion cause can be assigned.
+`fable5` was configured in the engine metadata but has no mapped or scored output for either arm on any supplied fixture:
+
+| Missing engine–fixture pair | Status | Supplied reason |
+|---|---|---|
+| `fable5` — Big Chief | Both arms absent | Not available |
+| `fable5` — TTV | Both arms absent | Not available |
+| `fable5` — Period graph books | Both arms absent | Not available |
+| `fable5` — Meeting note | Both arms absent | Not available |
+| `fable5` — Role of board | Both arms absent | Not available |
+| `fable5` — TTW visualization | Both arms absent | Not available |
+| `fable5` — Headings audit | Both arms absent | Not available |
+| `fable5` — Technical debt | Both arms absent | Not available |
+
+The supplied aggregator output names no pair as explicitly excluded and gives no exclusion reason. The absent `fable5` pairs therefore cannot be classified more precisely without inventing an explanation.
 
 ## Limitations
 
-- The fixtures are paraphrased English versions, so linguistic and structural behaviour may differ from the original material.
-
-- There was one run per cell; the report therefore does not measure run-to-run variance.
-
-- Results depend on the selected models, reasoning settings, provider implementations, and the `gpt-5.6-sol` judge.
-
-- Provider and engine availability is only partially observable from the metadata. Configured Claude-family engines are absent from the mapped and scored outputs, without a supplied reason.
-
-- The benchmark uses the current rubric, checks, templates, and hard-failure penalty. Results may change with any of those components.
-
-- These English results are not directly comparable with historical Russian runs.
+- The English fixtures are paraphrases, so results are not directly comparable with historical Russian runs.
+- There was one run per cell; the report cannot estimate run-to-run variance.
+- Results depend on the participating models, their configured effort, the provider routes, and the `gpt-5.6-sol` judge and rubric.
+- Engine and provider availability is only partially observable from the metadata. In particular, `fable5` was configured but is absent from the mapping and aggregate, with no supplied reason.
+- The metadata spans two commits, although it states that the skill text was identical throughout.
+- Fixture-level numeric deltas are not available in the deterministic scores and were therefore not derived from verdict-level scores.
 
 ## Conclusion
 
-The supplied scores support a qualified improvement claim: pooled structure, judged quality, penalty-adjusted quality, and quality for every scored engine moved in favour of the skill. There was no engine-level quality reversal, although qwen3.6-35b-a3b showed no structure gain.
+The skill improved pooled structure and judged quality, including penalty-adjusted quality, but the result is mixed rather than universal. Quality reversed on `gpt-oss-120b`; structure reversed on `qwen3.6-35b-a3b` and was unchanged on `gpt-oss-120b`. At the behaviour level, factual grounding, source retention, and freedom from hard failure all moved against the skill, while answer-first performance did not change.
 
-The result is not uniformly positive. Source preservation reversed sharply against the skill at -21.9 percentage points, and answer-first behaviour reversed at -8.3 percentage points. The next revision should retain the stronger grouping and explicit reader-question behaviour while tightening source retention, factual grounding, tentative language, and placement of the answer.
+The release evidence therefore supports better structural guidance, especially for same-kind grouping, explicit reader questions, and first-level limits. It does not support a claim of unqualified improvement. The next revision should preserve those structural gains while directly addressing invented certainty, lost source material, disproportionate scaffolding, and weak ordering discipline.

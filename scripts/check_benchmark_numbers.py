@@ -41,18 +41,21 @@ class MetricParser(HTMLParser):
         self.rows: list[dict] = []
         self.tags: list[str] = []
         self.paths: list[str] = []
+        self.section: dict[str, str] = {}
         self._open: list[str] = []
         self._stack: list[dict] = []
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         self.tags.append(tag)
+        values = {key: (value or "") for key, value in attrs}
+        if "data-benchmark" in values:
+            self.section = {k: v for k, v in values.items() if k.startswith("data-")}
         # Record where in the tree each element sits, not just that it exists. A
         # start-tag sequence alone is blind to nesting: moving a <p> out of its
         # parent <div> leaves the sequence untouched.
         self.paths.append("/".join(self._open + [tag]))
         if tag not in VOID_TAGS:
             self._open.append(tag)
-        values = {key: (value or "") for key, value in attrs}
         if "data-metric" in values or "data-fixture" in values:
             row = {"tag": tag, "attrs": values, "text": [], "depth": len(self._stack)}
             self._stack.append(row)
@@ -79,12 +82,12 @@ class MetricParser(HTMLParser):
             row["text"].append(data)
 
 
-def parse_page(path: Path) -> tuple[list[dict], list[str]]:
+def parse_page(path: Path) -> tuple[list[dict], list[str], dict[str, str]]:
     parser = MetricParser()
     parser.feed(path.read_text(encoding="utf-8"))
     for row in parser.rows:
         row["text"] = re.sub(r"\s+", " ", "".join(row["text"])).strip()
-    return parser.rows, parser.paths
+    return parser.rows, parser.paths, parser.section
 
 
 def as_int(value: str) -> int | None:
@@ -172,6 +175,21 @@ def check_example(page: Path, rows: list[dict], scores: dict, errors: list[str])
             )
 
 
+def check_section(page: Path, section: dict[str, str], scores: dict, errors: list[str]) -> None:
+    label = page.relative_to(ROOT)
+    if not section:
+        errors.append(f"{label}: no element carries data-benchmark, so the run it quotes is unstated")
+        return
+    run = section.get("data-benchmark")
+    if run != scores["run"]:
+        errors.append(f"{label}: data-benchmark is {run!r} but scores.json is for {scores['run']!r}")
+    cells = as_int(section.get("data-benchmark-cells", ""))
+    if cells != scores["cells_used"]:
+        errors.append(
+            f"{label}: data-benchmark-cells is {cells}, scores.json used {scores['cells_used']}"
+        )
+
+
 def check_parity(pages: dict[Path, tuple[list[dict], list[str]]], errors: list[str]) -> None:
     """The two locales are maintained as line-for-line mirrors; keep them that way."""
     (first, (first_rows, first_tags)), (second, (second_rows, second_tags)) = pages.items()
@@ -223,8 +241,9 @@ def main() -> int:
         if not page.is_file():
             errors.append(f"missing page: {page.relative_to(ROOT)}")
             continue
-        rows, tags = parse_page(page)
+        rows, tags, section = parse_page(page)
         parsed[page] = (rows, tags)
+        check_section(page, section, scores, errors)
         check_metrics(page, rows, metrics, errors)
         check_example(page, rows, scores, errors)
 

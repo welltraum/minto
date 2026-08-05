@@ -14,10 +14,11 @@ The skill itself is unchanged. Only the evaluation and the site moved.
   figure from it into `scores.json` and `scores.md`. Previously the arithmetic was
   done by a language model, so the numbers could not be reproduced from the
   committed artifacts.
-- Four Claude models as evaluation engines through the Claude Code CLI at low
-  effort, isolated the way the Codex arm already was.
-- A wide skill-versus-control benchmark: 64 judged cells over four engines,
-  reported in `eval/report-v1.5.0-wide.md`.
+- Claude Opus 5, Sonnet 5 and Haiku 4.5 as evaluation engines through the Claude
+  Code CLI at low effort, isolated the way the Codex arm already was.
+- A wide skill-versus-control benchmark: 112 judged cells over seven engines,
+  including Claude Opus 5, Sonnet 5 and Haiku 4.5, reported in
+  `eval/report-v1.5.0-wide.md`.
 - `eval/universal-checks.md`, defining behaviour checks with an explicit
   per-mode applicability matrix, so a check is never pooled across modes where it
   means different things.
@@ -49,9 +50,15 @@ The skill itself is unchanged. Only the evaluation and the site moved.
 ### Known issue
 
 - Under the wider benchmark, models given the skill lose source material without
-  acknowledging it more often than the control does — 11 runs against 4. This
-  replicates a defect already recorded for v1.5.0 and is the first candidate for
-  the next version. It is published on the site rather than held back.
+  acknowledging it more often than the control does — 16 runs against 5, and the
+  clean rate falls from 91% to 71%. This replicates a defect already recorded for
+  v1.5.0, now across seven engines, and is the first candidate for the next
+  version. It is published on the site rather than held back.
+- Quality fell for one of the seven engines, `gpt-oss-120b`. The effect is useful
+  but not uniform, and the site says so.
+- `fable5` is excluded from the matrix: on this account the `fable` alias resolves
+  to `claude-opus-5`, so running it would have double-weighted Opus under a second
+  engine name.
 
 ## 1.5.0 - 2026-07-30
 

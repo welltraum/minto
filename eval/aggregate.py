@@ -384,6 +384,15 @@ def render_md(scores: dict) -> str:
         f"{scores['cells_used']} judged cells. Commit `{scores['commit']}`, worktree "
         f"{scores['worktree']}, rubric penalty version {scores['rubric_penalty_version']}.",
         "",
+        (
+            f"Generated over {len(scores['commits'])} commits "
+            f"({', '.join('`' + c[:12] + '`' for c in scores['commits'])}); the skill text was "
+            + ("identical throughout." if scores["skill_unchanged_across_run"]
+               else "**NOT identical**, so these cells are not comparable.")
+            if len(scores["commits"]) > 1 else
+            "Generated at a single commit."
+        ),
+        "",
         "Every number here is computed from the json blocks in `verdicts/`. Quote them; "
         "do not recompute them.",
         "",
@@ -492,6 +501,14 @@ def main(argv: list[str] | None = None) -> int:
     provenance = read_kv(runs / "engines.txt")
     judge_meta = read_kv(runs / "judge.txt")
 
+    # A run resumed after a commit spans more than one commit. Record every one, and
+    # whether the skill text was identical throughout — if it was not, the cells are
+    # not comparable and no single `commit` field could say so.
+    resumes = [read_kv(path) for path in sorted(runs.glob("engines-resume-*.txt"))]
+    commits = [provenance.get("commit", "unknown")] + [r.get("commit", "unknown") for r in resumes]
+    skill_hashes = {provenance.get("skill_sha256")} | {r.get("skill_sha256") for r in resumes}
+    skill_hashes.discard(None)
+
     by_arm = defaultdict(list)
     for cell in kept:
         by_arm[cell["arm"]].append(cell)
@@ -513,6 +530,9 @@ def main(argv: list[str] | None = None) -> int:
         "run": runs.name,
         "generated_utc": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "commit": provenance.get("commit", "unknown"),
+        "commits": commits,
+        "skill_sha256": sorted(skill_hashes),
+        "skill_unchanged_across_run": len(skill_hashes) == 1,
         "worktree": provenance.get("worktree", "unknown"),
         "rubric_penalty_version": RUBRIC_PENALTY_VERSION,
         "fixtures": sorted({cell["fixture"] for cell in kept}),

@@ -40,13 +40,22 @@ at low effort:
 |---|---|---|
 | `codex` | `gpt-5.6-terra` | Codex CLI |
 | `kimi` | `kimi-code/k3-low` | Kimi Code CLI |
-| `haiku45` `fable5` `sonnet5` `opus5` | Claude aliases `haiku` `fable` `sonnet` `opus` | Claude Code CLI |
+| `haiku45` `sonnet5` `opus5` | Claude aliases `haiku` `sonnet` `opus` | Claude Code CLI |
 | `gpt-oss-120b` `qwen3.6-35b-a3b` | as named | NeuralDeep OpenAI-compatible API |
 
-Eight engines x two arms x eight fixtures = 128 cells. Generation runs at low
+Seven engines x two arms x eight fixtures = 112 cells. Generation runs at low
 effort throughout so the comparison is between arms, not between reasoning
 budgets. Judging and report synthesis stay at high reasoning: the judge is the
 measuring instrument, not a subject of the experiment.
+
+`fable5` is defined in `CLAUDE_ENGINES` but excluded from the matrix. On the
+account used for this run both `--model fable` and the explicit
+`--model claude-fable-5` resolve to `claude-opus-5`, verified from the CLI's own
+`modelUsage` field. Running it would have put sixteen Opus-generated cells in the
+table under another engine's name, double-weighting Opus in the pooled average and
+claiming a comparison that does not exist. This is what the `resolved_models=` line
+in each cell log is for: an alias that silently falls back is indistinguishable from
+a working one until you read what actually answered.
 
 `gemma-4-31b` is a selectable engine but is excluded from the matrix: it times out
 on the 26 KB skill prompt at both 300 and 550 seconds while completing short
@@ -102,11 +111,11 @@ trip, which is the failure the first stage cannot see:
 ```bash
 bash eval/build-prompts.sh
 CLAUDE_PREFLIGHT=1 bash eval/run-cli.sh eval/runs/wide-preflight \
-  "skill" "04-meeting-note" "haiku45 fable5 sonnet5 opus5"
+  "skill" "04-meeting-note" "haiku45 sonnet5 opus5"
 NEURALDEEP_API_KEY=... NEURALDEEP_ATTEMPTS=1 \
   bash eval/run-cli.sh eval/runs/wide-preflight \
   "skill control" "04-meeting-note 03-period-graph-books" \
-  "haiku45 fable5 sonnet5 opus5 gemma-4-31b gpt-oss-120b qwen3.6-35b-a3b"
+  "haiku45 sonnet5 opus5 gpt-oss-120b qwen3.6-35b-a3b"
 ```
 
 The two fixtures bracket the workload deliberately: `04-meeting-note` produces the
@@ -124,7 +133,7 @@ cells and present for others biases the delta, which is why `shuffle.sh` and
 bash eval/build-prompts.sh
 NEURALDEEP_API_KEY=... NEURALDEEP_TIMEOUT=550 bash eval/run-cli.sh eval/runs/v1.5.0-wide \
   "skill control" "" \
-  "gpt-oss-120b qwen3.6-35b-a3b codex kimi haiku45 fable5 sonnet5 opus5"
+  "gpt-oss-120b qwen3.6-35b-a3b codex kimi haiku45 sonnet5 opus5"
 SHUFFLE_SEED=v1.5.0-wide bash eval/shuffle.sh eval/runs/v1.5.0-wide
 bash eval/run-judge.sh eval/runs/v1.5.0-wide
 python3 eval/aggregate.py eval/runs/v1.5.0-wide --allow-partial

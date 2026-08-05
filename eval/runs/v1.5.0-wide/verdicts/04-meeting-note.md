@@ -1,52 +1,69 @@
 ## 1. Score table
 
-Axis order: Structure = top/key line/levels/order; Quality = top/grouping/order/MECE/display.
-
 | output | Structure 0-8 | Quality 0-10 | Hard failures |
 |---|---:|---:|---|
-| out-01 | 6 (2/1/2/1) | 6 (2/1/1/1/1) | `invented_facts` |
-| out-02 | 3 (2/0/0/1) | 6 (2/1/2/1/0) | `invented_facts` |
-| out-03 | 3 (2/0/0/1) | 7 (2/1/1/2/1) | `invented_facts` |
-| out-04 | 3 (2/0/0/1) | 7 (2/1/1/2/1) | `invented_facts` |
-| out-05 | 2 (1/0/0/1) | 5 (1/2/1/1/0) | `invented_facts` |
-| out-06 | 5 (2/1/1/1) | 7 (2/1/1/1/2) | `invented_facts` |
-| out-07 | 3 (2/0/0/1) | 6 (2/1/1/0/2) | `unacknowledged_source_loss` |
-| out-08 | 4 (2/0/1/1) | 6 (2/2/1/1/0) | `invented_facts` |
+| out-01 | 3 (2, 0, 0, 1) | 7 (2, 2, 1, 0, 2) | `unacknowledged_source_loss` |
+| out-02 | 3 (2, 0, 0, 1) | 8 (2, 2, 1, 2, 1) | `invented_facts` |
+| out-03 | 5 (2, 0, 1, 2) | 7 (2, 2, 2, 1, 0) | `invented_facts` |
+| out-04 | 3 (2, 0, 0, 1) | 8 (2, 2, 1, 2, 1) | `invented_facts` |
+| out-05 | 4 (2, 0, 1, 1) | 8 (2, 2, 1, 1, 2) | `invented_facts` |
+| out-06 | 5 (2, 1, 1, 1) | 8 (2, 2, 1, 1, 2) | `invented_facts` |
+| out-07 | 2 (1, 0, 0, 1) | 8 (1, 2, 1, 2, 2) | `invented_facts` |
+| out-08 | 5 (2, 1, 1, 1) | 6 (2, 2, 1, 1, 0) | `invented_facts` |
+| out-09 | 3 (2, 0, 0, 1) | 8 (2, 2, 1, 2, 1) | `invented_facts` |
+| out-10 | 3 (2, 0, 1, 0) | 2 (2, 0, 0, 0, 0) | `invented_facts` |
+| out-11 | 5 (2, 1, 1, 1) | 7 (2, 1, 1, 1, 2) | `invented_facts` |
+| out-12 | 5 (2, 1, 1, 1) | 6 (2, 2, 1, 1, 0) | `invented_facts` |
+| out-13 | 5 (2, 1, 1, 1) | 8 (2, 2, 1, 1, 2) | `invented_facts` |
+| out-14 | 3 (2, 0, 0, 1) | 7 (2, 2, 0, 2, 1) | `invented_facts` |
 
 ## 2. Decisive questions
 
-- **out-01:** (1) One aggregate first-level benefit. (2) No; room availability is supporting evidence. (3) Yes. (4) No. (5) Heading and separate key-line block. (6) Attendee constraints are demoted beneath the aggregate claim. (7) “Resolves all scheduling conflicts” turns tentative feasibility into certainty.
-- **out-02:** (1) No genuine first-level benefits; it presents three chronological slot assessments. (2) No standalone room branch. (3) Yes, in the subject. (4) No. (5) Headings, separate key line, and Mermaid. (6) Constraints are promoted into today/tomorrow branches. (7) “No one has raised a conflict,” definite Thursday feasibility, and the all-day room claim exceed the source.
-- **out-03:** (1) No first-level benefits; four constraints are presented. (2) Yes, as a standalone first-level constraint. (3) Yes. (4) No. (5) None of the listed devices. (6) All attendee constraints are promoted. (7) “The first time everyone … [is] available” is unsupported.
-- **out-04:** (1) No first-level benefits; four constraints are presented. (2) Yes, as a standalone first-level constraint. (3) Yes. (4) No. (5) None. (6) All attendee constraints are promoted. (7) The claim that Thursday at 11:00 satisfies every constraint is unsupported, particularly for Johnson.
-- **out-05:** (1) Three purported benefits: participant availability, room availability, and avoiding delay. (2) Yes, as a standalone branch, although listed second. (3) Only incompletely in the subject; the explicit request comes last. (4) No. (5) Headings, SCQ labels, and a separate key-line block. (6) Constraints are moved into the labeled Situation. (7) It invents universal Thursday availability and avoidance of further delay.
-- **out-06:** (1) Two attendee benefits appear among four coordinated first-level clauses. (2) Yes; the room is promoted to the same level. (3) Yes. (4) Yes. (5) None. (6) The Collins constraint is promoted; detailed Johnson and Frankfurt timing is omitted. (7) Johnson’s Thursday availability is invented.
-- **out-07:** (1) One attendee benefit appears among three clauses. (2) Yes; the room is promoted to the same level. (3) Yes. (4) Yes. (5) None. (6) Collins and Clifford are promoted, while Johnson is omitted. (7) No fact is invented.
-- **out-08:** (1) Two purported branches, but only one is an attendee benefit; the room is a constraint. (2) Yes, as a standalone branch. (3) Yes, in the subject. (4) No. (5) Headings, SCQ labels, and a separate key-line block. (6) Individual attendee constraints are omitted in favor of a generalization. (7) It invents availability for all attendees at Thursday 11:00.
+| output | First-level benefits | Room as third benefit? | Request first? | No longer than source? | Excessive devices | Attendee constraints | Invented material |
+|---|---|---|---|---|---|---|---|
+| out-01 | Three purported reasons | Yes | Yes | Yes | None | Collins and Clifford promoted; Johnson omitted | No |
+| out-02 | Four constraints | No; room is fourth | Yes | No | None | Promoted | “Satisfies all constraints” |
+| out-03 | Three temporal branches | No; room supports temporal branches | Yes, in subject | No | Headings, Mermaid | Demoted beneath day-based branches | “No conflicts,” plus unsupported certainty |
+| out-04 | Four constraints | No; room is fourth | Yes | No | None | Promoted | “First time everyone and the room are available” |
+| out-05 | Three conflict branches | Yes | Yes | No | None | Promoted, with Johnson and Clifford combined | “Resolves all scheduling conflicts” |
+| out-06 | Two availability conditions | No; room is second | Yes | Yes | None | Details omitted; aggregate availability promoted | Everyone being free and able to attend |
+| out-07 | Four supporting constraints | No; room is fourth | No; it states feasibility rather than requesting approval | Yes | None | Promoted in prose | Thursday definitively “works” |
+| out-08 | Two availability conditions | No; room is second | Yes, in subject | No | Headings, SCQ labels, separate answer block | Details omitted; aggregate availability promoted | All attendees being available |
+| out-09 | Four constraints | No; room is fourth | Yes | No | None | Promoted | “Only time that works for everyone” |
+| out-10 | Three purported benefits | No; room is second | Yes, in subject | No | Headings, SCQ labels, separate answer/key-line blocks | Detailed constraints placed in Situation | Universal availability and avoided delay/rescheduling |
+| out-11 | Four supporting clauses | No; room is fourth | Yes | Yes | None | Promoted | Johnson definitively being able to attend |
+| out-12 | Two constraint categories | No; room is second | Yes, in subject and opening question | No | Headings, Mermaid | Demoted beneath an attendee branch | “Earliest slot,” “nobody,” and room available “only” Thursday |
+| out-13 | Two availability conditions | No; room is second | Yes | Yes | None | Demoted beneath aggregate attendee availability | All attendees definitively being available |
+| out-14 | Four supporting constraints | No; room is fourth | Yes | No | None | Promoted in prose | Everyone definitively available; room booked “all day” |
 
 ## 3. Output notes
 
-- **out-01:** It has the cleanest hierarchy of the expanded notes, but collapses the two intended benefits into one overconfident claim.
-- **out-02:** Its chronological elimination is clear, but it answers with slot mechanics and adds a highly disproportionate diagram.
-- **out-03:** The request leads, yet four source facts are promoted ahead of an unsupported conclusion.
-- **out-04:** It is readable and answer-first, but its bullets remain constraints rather than the two reader benefits.
-- **out-05:** Correctly labeled reasons are undermined by buried approval, invented support, and excessive SCQ apparatus.
-- **out-06:** This is the most proportionate complete note, though its compressed key line mixes benefits with constraints and assumes Johnson can attend.
-- **out-07:** It is concise and answer-first, but losing Johnson removes half of the intended attendee case.
-- **out-08:** Its two availability branches are visually tidy but use the wrong split and rely on an unsupported attendee generalization.
+- **out-01:** Concise and genuinely tentative, but it loses Johnson and elevates the room alongside attendee reasons.
+- **out-02:** It retains the constraints cleanly, yet promotes raw evidence and turns a possible slot into a settled one.
+- **out-03:** The temporal logic is unusually clear, but the headings and Mermaid overwhelm a short note and add unsupported claims.
+- **out-04:** The request is immediate, while the bullet list remains at the evidence level and the closing “first time” claim overreaches.
+- **out-05:** The note is compact and actionable, but its branches are scheduling mechanics rather than the two reader benefits.
+- **out-06:** It usefully compresses the attendee case, though it substitutes room availability for Clifford’s distinct benefit and asserts certainty.
+- **out-07:** The prose is compact and proportionate, but it states feasibility without explicitly asking for approval and leaves constraints promoted.
+- **out-08:** The aggregate attendee branch preserves the core attendance case, but labeled SCQ scaffolding is disproportionate and the room remains peer-level.
+- **out-09:** It preserves all source constraints, although the evidence list displaces the benefit structure and “only time” is unsupported.
+- **out-10:** Its extensive labeled apparatus exposes mixed branches, including an invented delay benefit, rather than clarifying the pyramid.
+- **out-11:** This is concise and close to the desired attendance logic, but it fragments the benefits and adds the room as a peer.
+- **out-12:** The attendee-versus-room split is readable, but it is the wrong first-level decomposition and the diagram magnifies unsupported claims.
+- **out-13:** Its aggregate attendee branch is compact, yet the room remains a peer benefit and tentative feasibility becomes certainty.
+- **out-14:** The request leads, but the following prose preserves source-order constraints instead of synthesizing the two benefits.
 
 ## 4. Attribution
 
 | recurring defect | skill section | cause | affected outputs |
 |---|---|---|---|
-| Constraints or room availability promoted instead of the two reader benefits | Core loop §4, “Groups” | ignored | out-02, out-03, out-04, out-05, out-06, out-07, out-08 |
-| Tentative feasibility converted into asserted availability or certainty | Mode 3, “Invent nothing”; Core loop §8.4 | ignored | out-01, out-02, out-03, out-04, out-05, out-06, out-08 |
-| Structure disproportionate to a two-sentence scheduling note | Core loop §7, “Show the structure” and “Limits” | ignored | out-01, out-02, out-05, out-08 |
-| The two attendee benefits collapsed or left unstated | Core loop §6, “MECE” | missing | out-01, out-02, out-03, out-04, out-05, out-07, out-08 |
+| Constraints or room mechanics promoted instead of the two reader benefits | Core loop §4, “Groups” | ignored | out-01–out-14 |
+| Tentative feasibility upgraded to factual certainty | Mode 3, “Invent nothing”; Core loop §8 self-check | ignored | out-02–out-14 |
+| SCQ or diagram apparatus disproportionate to the short note | Core loop §3 and §7; write-mode chaining | ignored | out-03, out-08, out-10, out-12 |
 
 ## 5. Observation
 
-Stronger outputs put the reschedule request first, remain brief, and subordinate constraints beneath the case for approval. Weaker outputs promote raw scheduling facts or room availability to the key line, replace tentative evidence with certainty, or add formatting apparatus larger than the note itself.
+The stronger outputs lead with the rescheduling ask and remain compact; the weaker outputs either promote attendee and room constraints as peer branches or expose excessive scaffolding. None cleanly synthesizes the evidence into the gold’s two first-level reader benefits while keeping the room subordinate.
 
 ## 6. Machine-readable scores
 
@@ -60,29 +77,29 @@ Stronger outputs put the reschedule request first, remain brief, and subordinate
       "output": "out-01",
       "completed": true,
       "structure": {
-        "total": 6,
+        "total": 3,
         "top": 2,
-        "key_line_composition": 1,
-        "levels": 2,
+        "key_line_composition": 0,
+        "levels": 0,
         "order_and_kind": 1
       },
       "quality": {
-        "total": 6,
+        "total": 7,
         "top": 2,
-        "same_kind_grouping": 1,
+        "same_kind_grouping": 2,
         "explainable_order": 1,
-        "mece": 1,
-        "visible_structure": 1
+        "mece": 0,
+        "visible_structure": 2
       },
-      "hard_failures": ["invented_facts"],
+      "hard_failures": ["unacknowledged_source_loss"],
       "checks": {
         "answer_first": true,
-        "first_level_count": 1,
-        "first_level_kind_matches": true,
-        "invented_facts": true,
-        "unacknowledged_source_loss": false,
+        "first_level_count": 3,
+        "first_level_kind_matches": false,
+        "invented_facts": false,
+        "unacknowledged_source_loss": true,
         "mode_respected": true,
-        "readers_question_literal": false,
+        "readers_question_literal": true,
         "order_type_named": "na"
       }
     },
@@ -97,39 +114,9 @@ Stronger outputs put the reschedule request first, remain brief, and subordinate
         "order_and_kind": 1
       },
       "quality": {
-        "total": 6,
+        "total": 8,
         "top": 2,
-        "same_kind_grouping": 1,
-        "explainable_order": 2,
-        "mece": 1,
-        "visible_structure": 0
-      },
-      "hard_failures": ["invented_facts"],
-      "checks": {
-        "answer_first": true,
-        "first_level_count": 3,
-        "first_level_kind_matches": false,
-        "invented_facts": true,
-        "unacknowledged_source_loss": false,
-        "mode_respected": true,
-        "readers_question_literal": true,
-        "order_type_named": "na"
-      }
-    },
-    {
-      "output": "out-03",
-      "completed": true,
-      "structure": {
-        "total": 3,
-        "top": 2,
-        "key_line_composition": 0,
-        "levels": 0,
-        "order_and_kind": 1
-      },
-      "quality": {
-        "total": 7,
-        "top": 2,
-        "same_kind_grouping": 1,
+        "same_kind_grouping": 2,
         "explainable_order": 1,
         "mece": 2,
         "visible_structure": 1
@@ -138,6 +125,36 @@ Stronger outputs put the reschedule request first, remain brief, and subordinate
       "checks": {
         "answer_first": true,
         "first_level_count": 4,
+        "first_level_kind_matches": false,
+        "invented_facts": true,
+        "unacknowledged_source_loss": false,
+        "mode_respected": true,
+        "readers_question_literal": false,
+        "order_type_named": "na"
+      }
+    },
+    {
+      "output": "out-03",
+      "completed": true,
+      "structure": {
+        "total": 5,
+        "top": 2,
+        "key_line_composition": 0,
+        "levels": 1,
+        "order_and_kind": 2
+      },
+      "quality": {
+        "total": 7,
+        "top": 2,
+        "same_kind_grouping": 2,
+        "explainable_order": 2,
+        "mece": 1,
+        "visible_structure": 0
+      },
+      "hard_failures": ["invented_facts"],
+      "checks": {
+        "answer_first": true,
+        "first_level_count": 3,
         "first_level_kind_matches": false,
         "invented_facts": true,
         "unacknowledged_source_loss": false,
@@ -157,12 +174,102 @@ Stronger outputs put the reschedule request first, remain brief, and subordinate
         "order_and_kind": 1
       },
       "quality": {
-        "total": 7,
+        "total": 8,
         "top": 2,
-        "same_kind_grouping": 1,
+        "same_kind_grouping": 2,
         "explainable_order": 1,
         "mece": 2,
         "visible_structure": 1
+      },
+      "hard_failures": ["invented_facts"],
+      "checks": {
+        "answer_first": true,
+        "first_level_count": 4,
+        "first_level_kind_matches": false,
+        "invented_facts": true,
+        "unacknowledged_source_loss": false,
+        "mode_respected": true,
+        "readers_question_literal": true,
+        "order_type_named": "na"
+      }
+    },
+    {
+      "output": "out-05",
+      "completed": true,
+      "structure": {
+        "total": 4,
+        "top": 2,
+        "key_line_composition": 0,
+        "levels": 1,
+        "order_and_kind": 1
+      },
+      "quality": {
+        "total": 8,
+        "top": 2,
+        "same_kind_grouping": 2,
+        "explainable_order": 1,
+        "mece": 1,
+        "visible_structure": 2
+      },
+      "hard_failures": ["invented_facts"],
+      "checks": {
+        "answer_first": true,
+        "first_level_count": 3,
+        "first_level_kind_matches": false,
+        "invented_facts": true,
+        "unacknowledged_source_loss": false,
+        "mode_respected": true,
+        "readers_question_literal": false,
+        "order_type_named": "na"
+      }
+    },
+    {
+      "output": "out-06",
+      "completed": true,
+      "structure": {
+        "total": 5,
+        "top": 2,
+        "key_line_composition": 1,
+        "levels": 1,
+        "order_and_kind": 1
+      },
+      "quality": {
+        "total": 8,
+        "top": 2,
+        "same_kind_grouping": 2,
+        "explainable_order": 1,
+        "mece": 1,
+        "visible_structure": 2
+      },
+      "hard_failures": ["invented_facts"],
+      "checks": {
+        "answer_first": true,
+        "first_level_count": 2,
+        "first_level_kind_matches": false,
+        "invented_facts": true,
+        "unacknowledged_source_loss": false,
+        "mode_respected": true,
+        "readers_question_literal": true,
+        "order_type_named": "na"
+      }
+    },
+    {
+      "output": "out-07",
+      "completed": true,
+      "structure": {
+        "total": 2,
+        "top": 1,
+        "key_line_composition": 0,
+        "levels": 0,
+        "order_and_kind": 1
+      },
+      "quality": {
+        "total": 8,
+        "top": 1,
+        "same_kind_grouping": 2,
+        "explainable_order": 1,
+        "mece": 2,
+        "visible_structure": 2
       },
       "hard_failures": ["invented_facts"],
       "checks": {
@@ -177,18 +284,18 @@ Stronger outputs put the reschedule request first, remain brief, and subordinate
       }
     },
     {
-      "output": "out-05",
+      "output": "out-08",
       "completed": true,
       "structure": {
-        "total": 2,
-        "top": 1,
-        "key_line_composition": 0,
-        "levels": 0,
+        "total": 5,
+        "top": 2,
+        "key_line_composition": 1,
+        "levels": 1,
         "order_and_kind": 1
       },
       "quality": {
-        "total": 5,
-        "top": 1,
+        "total": 6,
+        "top": 2,
         "same_kind_grouping": 2,
         "explainable_order": 1,
         "mece": 1,
@@ -197,8 +304,38 @@ Stronger outputs put the reschedule request first, remain brief, and subordinate
       "hard_failures": ["invented_facts"],
       "checks": {
         "answer_first": true,
-        "first_level_count": 3,
-        "first_level_kind_matches": true,
+        "first_level_count": 2,
+        "first_level_kind_matches": false,
+        "invented_facts": true,
+        "unacknowledged_source_loss": false,
+        "mode_respected": true,
+        "readers_question_literal": false,
+        "order_type_named": "na"
+      }
+    },
+    {
+      "output": "out-09",
+      "completed": true,
+      "structure": {
+        "total": 3,
+        "top": 2,
+        "key_line_composition": 0,
+        "levels": 0,
+        "order_and_kind": 1
+      },
+      "quality": {
+        "total": 8,
+        "top": 2,
+        "same_kind_grouping": 2,
+        "explainable_order": 1,
+        "mece": 2,
+        "visible_structure": 1
+      },
+      "hard_failures": ["invented_facts"],
+      "checks": {
+        "answer_first": true,
+        "first_level_count": 4,
+        "first_level_kind_matches": false,
         "invented_facts": true,
         "unacknowledged_source_loss": false,
         "mode_respected": true,
@@ -207,7 +344,37 @@ Stronger outputs put the reschedule request first, remain brief, and subordinate
       }
     },
     {
-      "output": "out-06",
+      "output": "out-10",
+      "completed": true,
+      "structure": {
+        "total": 3,
+        "top": 2,
+        "key_line_composition": 0,
+        "levels": 1,
+        "order_and_kind": 0
+      },
+      "quality": {
+        "total": 2,
+        "top": 2,
+        "same_kind_grouping": 0,
+        "explainable_order": 0,
+        "mece": 0,
+        "visible_structure": 0
+      },
+      "hard_failures": ["invented_facts"],
+      "checks": {
+        "answer_first": true,
+        "first_level_count": 3,
+        "first_level_kind_matches": false,
+        "invented_facts": true,
+        "unacknowledged_source_loss": false,
+        "mode_respected": true,
+        "readers_question_literal": true,
+        "order_type_named": "na"
+      }
+    },
+    {
+      "output": "out-11",
       "completed": true,
       "structure": {
         "total": 5,
@@ -237,42 +404,12 @@ Stronger outputs put the reschedule request first, remain brief, and subordinate
       }
     },
     {
-      "output": "out-07",
+      "output": "out-12",
       "completed": true,
       "structure": {
-        "total": 3,
+        "total": 5,
         "top": 2,
-        "key_line_composition": 0,
-        "levels": 0,
-        "order_and_kind": 1
-      },
-      "quality": {
-        "total": 6,
-        "top": 2,
-        "same_kind_grouping": 1,
-        "explainable_order": 1,
-        "mece": 0,
-        "visible_structure": 2
-      },
-      "hard_failures": ["unacknowledged_source_loss"],
-      "checks": {
-        "answer_first": true,
-        "first_level_count": 3,
-        "first_level_kind_matches": false,
-        "invented_facts": false,
-        "unacknowledged_source_loss": true,
-        "mode_respected": true,
-        "readers_question_literal": true,
-        "order_type_named": "na"
-      }
-    },
-    {
-      "output": "out-08",
-      "completed": true,
-      "structure": {
-        "total": 4,
-        "top": 2,
-        "key_line_composition": 0,
+        "key_line_composition": 1,
         "levels": 1,
         "order_and_kind": 1
       },
@@ -288,11 +425,71 @@ Stronger outputs put the reschedule request first, remain brief, and subordinate
       "checks": {
         "answer_first": true,
         "first_level_count": 2,
-        "first_level_kind_matches": true,
+        "first_level_kind_matches": false,
         "invented_facts": true,
         "unacknowledged_source_loss": false,
         "mode_respected": true,
-        "readers_question_literal": false,
+        "readers_question_literal": true,
+        "order_type_named": "na"
+      }
+    },
+    {
+      "output": "out-13",
+      "completed": true,
+      "structure": {
+        "total": 5,
+        "top": 2,
+        "key_line_composition": 1,
+        "levels": 1,
+        "order_and_kind": 1
+      },
+      "quality": {
+        "total": 8,
+        "top": 2,
+        "same_kind_grouping": 2,
+        "explainable_order": 1,
+        "mece": 1,
+        "visible_structure": 2
+      },
+      "hard_failures": ["invented_facts"],
+      "checks": {
+        "answer_first": true,
+        "first_level_count": 2,
+        "first_level_kind_matches": false,
+        "invented_facts": true,
+        "unacknowledged_source_loss": false,
+        "mode_respected": true,
+        "readers_question_literal": true,
+        "order_type_named": "na"
+      }
+    },
+    {
+      "output": "out-14",
+      "completed": true,
+      "structure": {
+        "total": 3,
+        "top": 2,
+        "key_line_composition": 0,
+        "levels": 0,
+        "order_and_kind": 1
+      },
+      "quality": {
+        "total": 7,
+        "top": 2,
+        "same_kind_grouping": 2,
+        "explainable_order": 0,
+        "mece": 2,
+        "visible_structure": 1
+      },
+      "hard_failures": ["invented_facts"],
+      "checks": {
+        "answer_first": true,
+        "first_level_count": 4,
+        "first_level_kind_matches": false,
+        "invented_facts": true,
+        "unacknowledged_source_loss": false,
+        "mode_respected": true,
+        "readers_question_literal": true,
         "order_type_named": "na"
       }
     }
