@@ -48,22 +48,23 @@ Use the Onest variable family, self-hosted under the SIL Open Font License. It i
 - Language switch: two ordinary links with the active language exposed through `aria-current`.
 - Installation block: Codex and Claude Code steps are both visible; copy buttons enhance the static code.
 - Pyramid diagram: one answer over three same-kind supports, implemented with semantic HTML and CSS. The answer arrives first, connectors draw, and supports settle in sequence.
-- Document transformation: the same source facts appear in topic-first and answer-first states. JavaScript adds an accessible switcher; without JavaScript both versions remain visible.
+- Document transformation: two real benchmark artifacts side by side — a source document and a model output produced from it. Static, with no switcher: the two texts have different shapes, and that contrast is the argument, so asking the reader to hold one shape in memory while looking at the other defeats the point. Quoted texts carry `lang` when it differs from the page.
 - Mode explorer: `intent`, `audit`, `write`, and `viz` operate on one example so their differences are visible. Links remain useful without JavaScript and become keyboard-operated tabs when enhanced.
 - SCQ ribbon: a four-part ordered flow whose final answer receives the strongest color.
-- Benchmark: a visual score comparison and effect plot, backed by a native disclosure containing the full accessible table.
+- Benchmark: percentage rows on a shared 0–100% track, control against skill, backed by a native disclosure containing the exact scores. Bar geometry is an inline `--bar` custom property, never a per-value CSS class, so a new benchmark run touches markup only. A regression renders as a shorter skill bar with no special-casing.
 - Copy feedback: an `aria-live` status message, not a visual-only toast.
 
 ## Motion
 
-The first-load choreography brings in the answer, draws the pyramid connectors, and settles the three supports. The before/after control moves the recommendation from the bottom of the source to the top of the rewritten document, then collects the supporting facts beneath it. Mode changes are immediate so the explorer feels like a tool rather than a carousel.
+The first-load choreography brings in the answer, draws the pyramid connectors, and settles the three supports. Mode changes are immediate so the explorer feels like a tool rather than a carousel. The example section does not animate: it is evidence, and evidence should not perform.
 
 Content is visible without JavaScript and before animation starts. Hover and focus transitions use an ease-out-quint curve and affect only color, opacity, and transforms. `prefers-reduced-motion: reduce` disables drawing and movement.
 
 ## Content rules
 
-- English is canonical; Russian is a complete localized route.
+- English is canonical; Russian is a complete localized route. The two pages are line-for-line mirrors with identical tag skeletons and identical `data-*` values; only text nodes differ.
 - Lead with the outcome, then explain mechanics.
-- Benchmark figures must match `eval/report-v1.5.0.md`.
-- Examples are original and clearly illustrative.
+- Benchmark figures come from `eval/runs/<run>/scores.json`, which `eval/aggregate.py` computes from the published verdicts. `scripts/check_benchmark_numbers.py` enforces the match in CI, against both the `data-*` attributes and the visible copy, in both locales. Never hand-edit a figure.
+- Every measure that moved against the skill appears as its own row, at the same prominence as the ones that moved for it. Choosing rows by which direction they point is how a benchmark becomes marketing.
+- Examples are real, cited artifacts from a committed run, quoted verbatim and linked to their source. Where a fixture's scenario is derived from a published example, the page does not imply the scenario is ours.
 - No marketing superlatives, fake customer logos, invented testimonials, or unsupported efficiency claims.

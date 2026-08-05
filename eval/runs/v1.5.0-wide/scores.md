@@ -1,6 +1,6 @@
 # Deterministic scores: v1.5.0-wide
 
-Generated 2026-08-05T16:20:05Z by `eval/aggregate.py` from 64 judged cells. Commit `7dbae71baa7bd43af54c345292b861046233af8c`, worktree clean, rubric penalty version 1.
+Generated 2026-08-05T16:48:07Z by `eval/aggregate.py` from 64 judged cells. Commit `7dbae71baa7bd43af54c345292b861046233af8c`, worktree clean, rubric penalty version 1.
 
 Every number here is computed from the json blocks in `verdicts/`. Quote them; do not recompute them.
 

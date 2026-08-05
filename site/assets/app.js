@@ -58,46 +58,6 @@
     });
   });
 
-  const transformation = document.querySelector("[data-transformation]");
-
-  if (transformation) {
-    const controls = [...transformation.querySelectorAll("[data-transform-control]")];
-    const panels = [...transformation.querySelectorAll("[data-transform-panel]")];
-    const transformationStatus = transformation.querySelector(".transform-status");
-
-    const setTransformation = (view, shouldAnnounce = true) => {
-      controls.forEach((control) => {
-        control.setAttribute(
-          "aria-pressed",
-          String(control.dataset.transformControl === view),
-        );
-      });
-
-      panels.forEach((panel) => {
-        panel.hidden = panel.dataset.transformPanel !== view;
-      });
-
-      if (shouldAnnounce && transformationStatus) {
-        transformationStatus.textContent =
-          view === "after"
-            ? isRussian
-              ? "Показана версия после Minto."
-              : "Showing the version with Minto."
-            : isRussian
-              ? "Показан исходный текст."
-              : "Showing the original document.";
-      }
-    };
-
-    controls.forEach((control) => {
-      control.addEventListener("click", () => {
-        setTransformation(control.dataset.transformControl);
-      });
-    });
-
-    setTransformation("before", false);
-  }
-
   const modeExplorer = document.querySelector("[data-mode-explorer]");
 
   if (modeExplorer) {

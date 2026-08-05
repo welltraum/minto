@@ -30,6 +30,9 @@ DEFAULT_RUN = "v1.5.0-wide"
 EXAMPLE_ATTRS = ("data-fixture", "data-engine", "data-arm", "data-structure", "data-quality")
 
 
+VOID_TAGS = frozenset({"br", "img", "input", "hr", "meta", "link", "source", "area", "base", "col", "embed", "param", "track", "wbr"})
+
+
 class MetricParser(HTMLParser):
     """Collect elements carrying data-metric or data-fixture, with their text."""
 
@@ -37,10 +40,18 @@ class MetricParser(HTMLParser):
         super().__init__()
         self.rows: list[dict] = []
         self.tags: list[str] = []
+        self.paths: list[str] = []
+        self._open: list[str] = []
         self._stack: list[dict] = []
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         self.tags.append(tag)
+        # Record where in the tree each element sits, not just that it exists. A
+        # start-tag sequence alone is blind to nesting: moving a <p> out of its
+        # parent <div> leaves the sequence untouched.
+        self.paths.append("/".join(self._open + [tag]))
+        if tag not in VOID_TAGS:
+            self._open.append(tag)
         values = {key: (value or "") for key, value in attrs}
         if "data-metric" in values or "data-fixture" in values:
             row = {"tag": tag, "attrs": values, "text": [], "depth": len(self._stack)}
@@ -54,6 +65,9 @@ class MetricParser(HTMLParser):
             self._stack[-1]["open"] = max(0, self._stack[-1].get("open", 0) - 1)
 
     def handle_endtag(self, tag: str) -> None:
+        if tag in self._open:
+            while self._open and self._open.pop() != tag:
+                pass
         if self._stack:
             if self._stack[-1].get("open", 0) > 0:
                 self._stack[-1]["open"] -= 1
@@ -70,7 +84,7 @@ def parse_page(path: Path) -> tuple[list[dict], list[str]]:
     parser.feed(path.read_text(encoding="utf-8"))
     for row in parser.rows:
         row["text"] = re.sub(r"\s+", " ", "".join(row["text"])).strip()
-    return parser.rows, parser.tags
+    return parser.rows, parser.paths
 
 
 def as_int(value: str) -> int | None:
@@ -172,12 +186,14 @@ def check_parity(pages: dict[Path, tuple[list[dict], list[str]]], errors: list[s
         for index, (left, right) in enumerate(zip(first_tags, second_tags)):
             if left != right:
                 errors.append(
-                    f"the pages diverge at tag {index}: {first.relative_to(ROOT)} has <{left}>, "
-                    f"{second.relative_to(ROOT)} has <{right}>"
+                    f"the pages diverge at element {index}: {first.relative_to(ROOT)} has "
+                    f"{left}, {second.relative_to(ROOT)} has {right}"
                 )
                 break
         else:
-            errors.append("the pages have different tag counts")
+            errors.append(
+                f"the pages have different element counts: {len(first_tags)} vs {len(second_tags)}"
+            )
 
     first_slugs = {row["attrs"]["data-metric"] for row in first_rows if "data-metric" in row["attrs"]}
     second_slugs = {row["attrs"]["data-metric"] for row in second_rows if "data-metric" in row["attrs"]}
