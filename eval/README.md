@@ -28,53 +28,116 @@ repository.
 - `skill`: canonical `SKILL.md` plus both references and the task.
 - `control`: one sentence naming the Minto Pyramid Principle plus the same task.
 
-The v1.5.0 release matrix is:
+The v1.5.0 release matrix was two engines: `gpt-5.6-terra` at low reasoning
+through Codex CLI, and `kimi-code/k3-low` through Kimi Code CLI. Eight fixtures x
+two arms x two engines = 32 outputs. Claude was unavailable in that environment
+and was excluded rather than silently substituted.
 
-- `gpt-5.6-terra`, low reasoning, through Codex CLI.
-- `kimi-code/k3-low` through Kimi Code CLI.
+The wide matrix adds four Claude models and three NeuralDeep models, all
+generating at low effort:
 
-Eight fixtures x two arms x two engines = 32 outputs. Claude execution was
-unavailable in the release environment and was excluded rather than silently
-substituted. Judging and report synthesis use `gpt-5.6-sol` with high reasoning
-in isolated Codex workspaces.
+| Engine key | Model | Transport |
+|---|---|---|
+| `codex` | `gpt-5.6-terra` | Codex CLI |
+| `kimi` | `kimi-code/k3-low` | Kimi Code CLI |
+| `haiku45` `fable5` `sonnet5` `opus5` | Claude aliases `haiku` `fable` `sonnet` `opus` | Claude Code CLI |
+| `gemma-4-31b` `gpt-oss-120b` `qwen3.6-35b-a3b` | as named | NeuralDeep OpenAI-compatible API |
 
-The expanded comparison matrix adds three models through NeuralDeep's
-OpenAI-compatible API:
+Nine engines x two arms x eight fixtures = 144 cells. Generation runs at low
+effort throughout so the comparison is between arms, not between reasoning
+budgets. Judging and report synthesis stay at high reasoning: the judge is the
+measuring instrument, not a subject of the experiment.
 
-- `gemma-4-31b`
-- `gpt-oss-120b`
-- `qwen3.6-35b-a3b`
+Credentials come only from `NEURALDEEP_API_KEY` in the environment. Never write a
+key into repository files or command metadata.
 
-With Codex and Kimi, this produces 80 outputs: eight fixtures x two arms x five
-engines. Claude remains excluded when it is unavailable. NeuralDeep credentials
-are read only from `NEURALDEEP_API_KEY`; never write the key to repository files
-or command metadata.
+### Claude transport
 
-Before launching the full matrix, preflight both arms on one representative
-fixture. This checks the long skill prompt rather than only API authentication:
+The Claude engines shell out to `claude -p` with every customization disabled:
+
+```
+--tools "" --disable-slash-commands --strict-mcp-config --setting-sources ""
+--no-session-persistence --exclude-dynamic-system-prompt-sections --effort low
+--output-format json
+```
+
+Four details are load-bearing:
+
+- `--disable-slash-commands` is what keeps the minto skill out of the control arm.
+  Without it the control is not a control.
+- The wrapper runs under `env -u CLAUDE_EFFORT` and unsets the other inherited
+  `CLAUDE_*` variables. A developer machine running Claude Code exports
+  `CLAUDE_EFFORT`, and if it ever won over the flag the run would claim low effort
+  while producing something else.
+- `--output-format json`, never `text`. Under `text` the CLI prints authentication
+  errors to stdout, which would land in `raw/` and be judged as a model output.
+  The extractor keys on `is_error`, because `subtype` reads `"success"` even on a
+  401.
+- Not `--safe-mode` and not `--bare`. Both break authentication here; `--bare`
+  refuses OAuth entirely and requires `ANTHROPIC_API_KEY`.
+
+If Claude cells fail with `401 OAuth access token has been revoked` while
+`claude auth status` reports `loggedIn: true`, the stored keychain credential is
+stale — that command reports the blob's presence, not its validity. Run
+`claude auth login` in a plain terminal, outside any Claude Code session so no
+host environment is inherited, then re-run the preflight.
+
+Claude cells must be produced by this CLI path, not by in-session subagents. A
+subagent inherits the host system prompt, the user's `CLAUDE.md`, the installed
+plugin set, and the session's effort, so its control arm is contaminated and its
+effort is not the one recorded in `engines.txt`.
+
+### Preflight
+
+Two stages, both before any real spend. The first proves authentication and the
+flag set; the second proves the long skill prompt actually survives the round
+trip, which is the failure the first stage cannot see:
 
 ```bash
 bash eval/build-prompts.sh
+CLAUDE_PREFLIGHT=1 bash eval/run-cli.sh eval/runs/wide-preflight \
+  "skill" "04-meeting-note" "haiku45 fable5 sonnet5 opus5"
 NEURALDEEP_API_KEY=... NEURALDEEP_ATTEMPTS=1 \
-  bash eval/run-cli.sh eval/runs/neuraldeep-preflight \
-  "skill control" "04-meeting-note" \
-  "gemma-4-31b gpt-oss-120b qwen3.6-35b-a3b"
+  bash eval/run-cli.sh eval/runs/wide-preflight \
+  "skill control" "04-meeting-note 03-period-graph-books" \
+  "haiku45 fable5 sonnet5 opus5 gemma-4-31b gpt-oss-120b qwen3.6-35b-a3b"
 ```
 
-Do not launch the release matrix if any selected model fails this preflight.
-Record unavailable models instead of silently substituting another engine.
+The two fixtures bracket the workload deliberately: `04-meeting-note` produces the
+shortest outputs and tests proportionality, `03-period-graph-books` produces the
+longest and is `audit` mode.
+
+Record unavailable models instead of silently substituting another engine. An
+engine that is uniformly absent only reduces `n`; one that is absent for some
+cells and present for others biases the delta, which is why `shuffle.sh` and
+`aggregate.py` both refuse an unpaired cell.
 
 ## Run
 
 ```bash
 bash eval/build-prompts.sh
-NEURALDEEP_API_KEY=... bash eval/run-cli.sh eval/runs/v1.6.0 \
+NEURALDEEP_API_KEY=... bash eval/run-cli.sh eval/runs/v1.5.0-wide \
   "skill control" "" \
-  "codex kimi gemma-4-31b gpt-oss-120b qwen3.6-35b-a3b"
-bash eval/shuffle.sh eval/runs/v1.6.0 10
-EXPECTED_OUTPUTS=10 bash eval/run-judge.sh eval/runs/v1.6.0
-bash eval/build-report.sh eval/runs/v1.6.0 eval/report-v1.6.0.md
+  "haiku45 fable5 sonnet5 codex kimi opus5 gemma-4-31b gpt-oss-120b qwen3.6-35b-a3b"
+SHUFFLE_SEED=v1.5.0-wide bash eval/shuffle.sh eval/runs/v1.5.0-wide
+bash eval/run-judge.sh eval/runs/v1.5.0-wide
+python3 eval/aggregate.py eval/runs/v1.5.0-wide --allow-partial
+bash eval/build-report.sh eval/runs/v1.5.0-wide eval/report-v1.5.0-wide.md
 ```
+
+Engine order matters: `run-cli.sh` runs one engine batch at a time, so listing the
+cheap models first surfaces a systemic problem before the expensive ones are spent.
+
+`shuffle.sh` derives the expected output count per fixture and writes it to
+`shuffle.txt`, which `run-judge.sh` then reads. Passing a global
+`EXPECTED_OUTPUTS` asserts one count for every fixture instead, which only holds
+when every engine produced every cell. Set `SHUFFLE_SEED` per run: the blinding is
+deterministic by design, so without a per-run seed the identities learned from one
+run's verdicts carry into the next.
+
+`run-cli.sh` refuses to start on a dirty worktree, because the commit it records in
+`engines.txt` would not reproduce the cells. Override with `ALLOW_DIRTY=1` only for
+throwaway runs.
 
 Codex and Kimi run as batches of 16 parallel jobs. NeuralDeep defaults to two
 concurrent requests because its API enforces parallel and requests-per-minute
@@ -96,18 +159,54 @@ The judge sees only:
 - the fixture input and gold structure;
 - the shared rubric;
 - that fixture's decisive questions;
+- that fixture's slice of the universal checks, with applicability already
+  resolved, produced by `eval/checks.py`;
 - a frozen copy of the skill and rules;
 - the expected set of blinded outputs.
 
 It does not receive the output mapping, changelog, other fixtures, previous
 reports, or other verdicts. The report step sees verdicts and mapping only after
-all fixture judgments are complete.
+all fixture judgments are complete. `eval/test-eval.py` asserts that no fixture's
+check slice names any other fixture.
+
+## Deterministic scores
+
+Every published percentage comes from `eval/aggregate.py`, which reads the fenced
+`json` block each verdict ends with, joins it to `mapping.json`, and writes
+`scores.json` and `scores.md` into the run directory. Nothing downstream is allowed
+to recompute: `build-report.sh` refuses to run before the aggregator has, and the
+report prompt instructs the model to quote and calculate nothing.
+
+This exists because the arithmetic used to be done by a language model. The v1.5.0
+figures happened to be right, but nobody could reproduce them from the artifacts.
+
+Two properties are worth knowing before quoting a number:
+
+- **Quality is reported twice.** `quality_raw` is the axes as the judge scored
+  them. `quality_penalized` applies the hard-failure map in `rubric.md`, in code,
+  identically in every cell. The judge does not apply penalties itself; it reports
+  raw axes and a failure list, which is what makes the deduction reproducible.
+- **Every rate carries its denominator.** Six universal checks apply to all eight
+  fixtures. `readers_question_literal` applies only to the five `write` fixtures
+  and `order_type_named` to six, so they show smaller `n` by design and never
+  belong in a pooled headline.
+
+The aggregator fails loudly. It collects every problem, prints them all, and
+computes nothing until the list is empty — a missing verdict, a total that does not
+equal its axes, a check answered where the matrix says `na`, or a `(fixture,
+engine)` pair with only one arm. `--allow-partial` downgrades the pairing error to
+dropping the pair, recorded in `scores.json` with its reason. Use it when engines
+genuinely timed out; do not use it to make a broken run report a number.
+
+`eval/test-eval.py` covers the validator, the penalty map, the applicability matrix
+and the aggregator's refusals. Run it after touching any of them.
 
 ## Interpretation
 
 Scores are supporting evidence. The decisive questions are the primary signal
 because they identify concrete behaviors such as wrong key-line kind, duplicate
-branches, invented evidence, and mode violations.
+branches, invented evidence, and mode violations. The universal checks sit between
+the two: aggregable, but a narrower question than the decisive ones ask.
 
 The release benchmark is descriptive. Do not tune the tested skill against the
 same outputs and call the result a clean measurement. Recurring defects become

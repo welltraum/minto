@@ -26,11 +26,21 @@ else
   exit 1
 fi
 
+if [ ! -s "$RUNS/scores.md" ]; then
+  echo "$RUNS/scores.md is missing. Run: python3 eval/aggregate.py $RUNS" >&2
+  echo "Every published figure comes from the aggregator, so the report cannot be" >&2
+  echo "built before it has run." >&2
+  exit 2
+fi
+
 prompt="$(mktemp "${TMPDIR:-/tmp}/minto-report.XXXXXX")"
 trap 'rm -f "$prompt"' EXIT
 
 {
   cat "$ROOT/eval/report-prompt.md"
+  echo
+  echo "===== DETERMINISTIC SCORES ====="
+  cat "$RUNS/scores.md"
   echo
   echo "===== ENGINE METADATA ====="
   cat "$RUNS/engines.txt"
