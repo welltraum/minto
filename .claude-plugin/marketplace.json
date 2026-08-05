@@ -10,7 +10,7 @@
       "name": "minto",
       "source": "./plugins/minto",
       "description": "Apply the Minto Pyramid Principle to business writing, audits, intent discovery, and visual structures.",
-      "version": "1.5.0",
+      "version": "1.6.0",
       "author": {
         "name": "Vladislav Shevchenko",
         "email": "v.shevchenko@redmadrobot.com"

@@ -192,6 +192,17 @@ reports, or other verdicts. The report step sees verdicts and mapping only after
 all fixture judgments are complete. `eval/test-eval.py` asserts that no fixture's
 check slice names any other fixture.
 
+## Which release a run belongs to
+
+A run directory is named after the skill text it tested, not the release it ships
+with. `v1.5.0-wide` is the release benchmark for **1.6.0**, because 1.6.0 ships
+`SKILL.md`, `rules.md` and `templates.md` byte-identical to 1.5.0 — the
+`skill_sha256` in `engines.txt` is the check, and it matches.
+
+Do not rename a run to match a release. The name records what was measured and
+when; renaming it would restate both, and it would break `scores.json`'s `run`
+field, the `--run` argument in the Pages workflow, and every committed artifact path.
+
 ## Deterministic scores
 
 Every published percentage comes from `eval/aggregate.py`, which reads the fenced

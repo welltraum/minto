@@ -129,17 +129,22 @@ Build the evaluation prompts and run the pinned benchmark:
 
 ```bash
 bash eval/build-prompts.sh
-bash eval/run-cli.sh eval/runs/v1.5.0
-bash eval/shuffle.sh eval/runs/v1.5.0
-bash eval/run-judge.sh eval/runs/v1.5.0
-bash eval/build-report.sh eval/runs/v1.5.0
+NEURALDEEP_API_KEY=... bash eval/run-cli.sh eval/runs/v1.5.0-wide \
+  "skill control" "" \
+  "gpt-oss-120b qwen3.6-35b-a3b codex kimi haiku45 sonnet5 opus5"
+SHUFFLE_SEED=v1.5.0-wide bash eval/shuffle.sh eval/runs/v1.5.0-wide
+bash eval/run-judge.sh eval/runs/v1.5.0-wide
+python3 eval/aggregate.py eval/runs/v1.5.0-wide
+bash eval/build-report.sh eval/runs/v1.5.0-wide eval/report-v1.5.0-wide.md
 ```
 
-The release benchmark uses eight English fixtures, two engines, and two arms
-(`skill` and `control`) for 32 model outputs. Model identifiers, CLI versions,
-effort settings, UTC time, and the commit SHA are recorded with the run.
-Claude models were excluded because Claude execution was unavailable in the
-release environment.
+The release benchmark uses eight English fixtures, seven engines, and two arms
+(`skill` and `control`) for 112 judged cells, all generated at low reasoning
+effort. Model identifiers, CLI versions, effort settings, UTC time, and the commit
+SHA are recorded with the run. Every published figure is computed from the verdicts
+by `eval/aggregate.py`; nothing downstream recomputes it. See `eval/README.md` for
+the arms, the isolation each engine runs under, and which release a given run
+belongs to.
 
 ## Evaluation sources
 
