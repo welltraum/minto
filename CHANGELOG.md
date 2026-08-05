@@ -3,9 +3,20 @@
 All notable changes to Minto are documented here. The project follows semantic
 versioning for its plugin manifests.
 
-## Unreleased - 2026-08-05
+## 1.6.0 - 2026-08-05
 
-The skill itself is unchanged. Only the evaluation and the site moved.
+**The skill instructions are byte-identical to 1.5.0.** `SKILL.md`, `rules.md` and
+`templates.md` all carry the same SHA-256 as the 1.5.0 release, so installing 1.6.0
+changes nothing about how the skill behaves. What changed is the evidence: how the
+benchmark is measured, how much of it there is, and how honestly the site reports
+it.
+
+Note on the version number: `eval/report-v1.5.0.md` named the v1.6.0 priorities as
+first-level grouping, MECE nesting, grounding and source preservation, decisive
+reader framing, and reliable mode compliance. **None of those are addressed here.**
+They remain open, and the wider benchmark in this release makes the case for two of
+them stronger rather than weaker — source preservation measurably got worse. They
+carry forward to the next skill revision, which will need its own run to validate.
 
 ### Added
 
@@ -59,6 +70,24 @@ The skill itself is unchanged. Only the evaluation and the site moved.
 - `fable5` is excluded from the matrix: on this account the `fable` alias resolves
   to `claude-opus-5`, so running it would have double-weighted Opus under a second
   engine name.
+
+### Evaluation
+
+The release benchmark is `eval/report-v1.5.0-wide.md`, backed by
+`eval/runs/v1.5.0-wide/`. Its name refers to the skill text it tested, which 1.6.0
+ships unchanged — the recorded `skill_sha256` matches this release, so the run is
+this release's benchmark despite the earlier version in its name. Renaming it would
+have restated when it ran and what it measured.
+
+Pooled across seven engines and 112 cells: structure 4.32 → 5.00 of 8, quality
+6.84 → 7.50 of 10, and 5.98 → 6.88 after the rubric's hard-failure penalty. Quality
+improved for six of the seven engines. The two measures that moved against the
+skill are in the Known issues above and on the site.
+
+Not comparable with `eval/report-v1.5.0.md`: that round used two engines, a judge
+that applied hard-failure penalties at its own discretion, and LLM-computed
+averages. The 32 outputs from it were re-judged under the new contract as a
+validation step, reproducing its effect size to within 0.06 points.
 
 ## 1.5.0 - 2026-07-30
 
