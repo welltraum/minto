@@ -76,12 +76,8 @@ mixes signals, say which mode you picked in one sentence and go.
 
    Then cut back: cover any Situation sentence — if the Complication still bites without
    it, it was a run-up, not a Situation. Anti-patterns: `references/rules.md`.
-4. **Groups** — first-level groups, at most four. The count comes from the material,
-   not from habit: two honest groups beat three padded ones (a short note often has
-   exactly two), and four honest ones beat three with a stowaway. The same goes for
-   depth — a level exists because the material fills it, not because pyramids have
-   three levels. Before filling the groups, name out loud the kind the question
-   demands:
+4. **Groups** — 3–4 first-level groups. Before filling them, name out loud the kind the
+   question demands:
 
    | Reader's question | Kind of the elements |
    |---|---|
@@ -131,27 +127,6 @@ mixes signals, say which mode you picked in one sentence and go.
 Read `references/rules.md` when you need the exact test, the order-type table, the
 failure catalogue, or the scoring rubric. Read `references/templates.md` when
 rendering a concrete format.
-
-## Large or sectioned input
-
-When the input runs past roughly 1500 words or arrives divided into sections, one
-flat pyramid stops fitting the material. Three obligations replace it:
-
-- **A pyramid per section, plus one on top.** Give each substantive section its own
-  one-sentence top that its details support, and build the top-level pyramid out of
-  those section tops. The section layer is what the reader navigates by; dissolving
-  it into one flat structure loses it, and keeping the source's section order as
-  your key line is not an answer either — the top-level groups still come from the
-  reader's question.
-- **A separate cross-section MECE pass.** The §6 hand-cover test works inside one
-  pyramid; it does not catch the same idea living in two sections under two
-  phrasings. After the section pyramids stand, list every idea that appears in more
-  than one of them, give each one home, and gather its scattered evidence under
-  that home. A defect with four symptoms in four sections is one branch with four
-  supports, not four points.
-- **Geometry from the material.** Section pyramids will be uneven — one section may
-  carry a third level while another is two lines. Leave them uneven; padding thin
-  branches to match deep ones manufactures structure the material does not have.
 
 ## Mode 1 — intent
 
@@ -238,14 +213,16 @@ Rules that do not bend:
   `[data needed: …]` — but never the top. The top always states the answer the material
   supports; if the material genuinely does not settle it, say so in one line under the
   top, and keep the answer above.
-- At most four first-level groups, the count from the material (§4). Not seven.
+- 3–4 first-level groups. Not seven.
 - The deliverable is clean text. Markers and the legend belong to `audit` and `viz`;
   no meta-commentary about the output in the output — the order type and the reason
   for the grouping are your §8 checks, never lines the reader sees ("groups ordered
   by...", "sorted by cost of error" and kin are process, not content).
 - When the user asks for a plain list or something to paste into chat, deliver
   exactly that: a top sentence and grouped items in plain text — no `##` machinery,
-  no numbering apparatus, no SCQ labels, no closing note.
+  no numbering apparatus, no SCQ labels, no closing note about the structure.
+  A dropped fact is the one exception: if source material was left out, one short
+  line names it — that line is content, not apparatus.
 - Otherwise, close with one line on what changed structurally — not a list of edits.
 
 ## Mode 4 — digest
