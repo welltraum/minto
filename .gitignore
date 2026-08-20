@@ -32,6 +32,10 @@ eval/runs/*/engines-resume-*.txt
 .env
 .env.*
 
+# Session dialogs collected by scripts/collect_minto_dataset.py contain client
+# project content and never leave this machine; only the collector is tracked.
+dataset/
+
 # Local source material and transient files
 *.pdf
 tmp/
