@@ -54,10 +54,16 @@ engines_txt = runs / "engines.txt"
 # from an aborted run with different engines. No engines.txt means no filtering.
 engines = read_provenance(engines_txt, "engines")
 declared_arms = read_provenance(engines_txt, "arms")
+declared_fixtures = read_provenance(engines_txt, "fixtures")
 
 fixtures = sorted(
     before.parent.name for before in (root / "eval" / "fixtures").glob("*/before.md")
 )
+# A partial run (run-cli.sh was given an explicit fixture list) blinds only the
+# fixtures it declared; demanding outputs for the rest would refuse every
+# deliberately scoped run. `fixtures: all` is what run-cli writes for full runs.
+if declared_fixtures and declared_fixtures != ["all"]:
+    fixtures = [name for name in fixtures if name in declared_fixtures]
 
 problems = []
 notes = []
