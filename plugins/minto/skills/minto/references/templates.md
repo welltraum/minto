@@ -67,6 +67,25 @@ Backup slides support; they never repeat the argument slides.
 Next step: <what happens after approval, and who moves>
 ```
 
+## Text skeleton — pyramid
+
+The default rendering of a pyramid after `write`: plain indentation, readable in
+any chat or terminal, no diagram syntax to fail.
+
+```text
+Top: <the answer, one sentence>
+  1. <group 1>
+     - <support 1.1>
+     - <support 1.2>
+  2. <group 2>
+     - <support 2.1>
+  3. <group 3>
+     - <support 3.1>
+```
+
+Every node is a claim, not a topic word. Depth follows the material — show a third
+level only where it exists.
+
 ## Mermaid — pyramid
 
 ```mermaid

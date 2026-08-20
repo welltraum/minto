@@ -1,15 +1,17 @@
 ---
 name: minto
 description: |
-  Apply the Minto Pyramid Principle to business writing and thinking. Four modes:
+  Apply the Minto Pyramid Principle to business writing and thinking. Five modes:
   (1) intent — interview the user and turn a vague goal into reader question +
   one-sentence answer; (2) audit — check an existing text for pyramid logic and
   report the gaps; (3) write — draft or rewrite answer-first with SCQ intro and
-  ordered, same-kind groups; (4) viz — annotate problems inline and build the
-  pyramid (mermaid, optional HTML page). Use for memos, emails, decision notes,
-  board papers, executive summaries, deck storylines, Slack updates. Triggers:
+  ordered, same-kind groups; (4) digest — report on read sources answer-first in
+  chat; (5) viz — annotate problems inline and build the pyramid (mermaid,
+  optional HTML page). Use for memos, emails, decision notes, board papers,
+  executive summaries, deck storylines, Slack updates, source digests. Triggers:
   pyramid principle, Minto, SCQ, MECE, answer-first, structure this text, check
-  the logic, executive memo, and equivalent requests in Russian or other
+  the logic, executive memo, digest, summarize the sources, summary of what was
+  read, "выжимка", "саммари", and equivalent requests in Russian or other
   languages.
 ---
 
@@ -26,18 +28,21 @@ material unless asked.
 
 ## Router
 
-Explicit argument wins: `intent` | `audit` | `write` | `viz`. Otherwise:
+Explicit argument wins: `intent` | `audit` | `write` | `digest` | `viz`. Otherwise:
 
 | Signal | Mode |
 |---|---|
 | No text yet, goal is vague ("we need to do something about X", "write something about Y") | `intent` |
 | Text supplied + "check / what's wrong / is the logic sound / review" | `audit` |
 | Text, notes or bullets + "write / rewrite / restructure / make a memo" | `write` |
+| Sources were read (or are supplied) + "digest / summary in chat / report on what you read / выжимка / саммари" | `digest` |
 | Structure exists (or was just produced) + "show / diagram / pyramid / picture" | `viz` |
 
 Chaining: after `audit`, offer `write` in one line — do not rewrite unasked. After
-`write`, append the compact mermaid pyramid by default. If the request mixes signals,
-say which mode you picked in one sentence and go.
+`write`, append the pyramid as a text skeleton with indentation — it reads everywhere;
+render it as mermaid only when the environment is known to display diagrams (an
+artifact, a markdown file opened in a viewer) or when the user asks. If the request
+mixes signals, say which mode you picked in one sentence and go.
 
 ## Core loop (all modes)
 
@@ -71,8 +76,12 @@ say which mode you picked in one sentence and go.
 
    Then cut back: cover any Situation sentence — if the Complication still bites without
    it, it was a run-up, not a Situation. Anti-patterns: `references/rules.md`.
-4. **Groups** — 3–4 first-level groups. Before filling them, name out loud the kind the
-   question demands:
+4. **Groups** — first-level groups, at most four. The count comes from the material,
+   not from habit: two honest groups beat three padded ones (a short note often has
+   exactly two), and four honest ones beat three with a stowaway. The same goes for
+   depth — a level exists because the material fills it, not because pyramids have
+   three levels. Before filling the groups, name out loud the kind the question
+   demands:
 
    | Reader's question | Kind of the elements |
    |---|---|
@@ -114,10 +123,35 @@ say which mode you picked in one sentence and go.
    3. Check the top: one sentence, answers the written question, contains no gap marker.
    4. Check that each element rests on material from the source, and name the order type
       in one word.
+   5. Check the intro: before the support starts, the reader can see the Situation they
+      accept and the Complication that makes the question live — or the output is short
+      enough that the request itself is the Situation, and you decided to skip the story
+      deliberately, not by forgetting it.
 
 Read `references/rules.md` when you need the exact test, the order-type table, the
 failure catalogue, or the scoring rubric. Read `references/templates.md` when
 rendering a concrete format.
+
+## Large or sectioned input
+
+When the input runs past roughly 1500 words or arrives divided into sections, one
+flat pyramid stops fitting the material. Three obligations replace it:
+
+- **A pyramid per section, plus one on top.** Give each substantive section its own
+  one-sentence top that its details support, and build the top-level pyramid out of
+  those section tops. The section layer is what the reader navigates by; dissolving
+  it into one flat structure loses it, and keeping the source's section order as
+  your key line is not an answer either — the top-level groups still come from the
+  reader's question.
+- **A separate cross-section MECE pass.** The §6 hand-cover test works inside one
+  pyramid; it does not catch the same idea living in two sections under two
+  phrasings. After the section pyramids stand, list every idea that appears in more
+  than one of them, give each one home, and gather its scattered evidence under
+  that home. A defect with four symptoms in four sections is one branch with four
+  supports, not four points.
+- **Geometry from the material.** Section pyramids will be uneven — one section may
+  carry a third level while another is two lines. Leave them uneven; padding thin
+  branches to match deep ones manufactures structure the material does not have.
 
 ## Mode 1 — intent
 
@@ -129,6 +163,12 @@ already accept; the complication; what decision or action you need from them. If
 structured input is unavailable, ask the same questions together in one compact chat
 message. Two rounds maximum. After that, stop asking — state assumptions explicitly
 instead.
+
+Dose the density of what you send back. The first output opens with what is there
+now, in the reader's own words and without verdicts — a few lines the user can
+nod at. Disagreements and gaps surface one at a time, each waiting for a
+reaction, not as one screen of conclusions: a user who meets four objections at
+once rejects all four. The full card comes when the frame has been agreed.
 
 Deliver an intent card:
 
@@ -198,10 +238,45 @@ Rules that do not bend:
   `[data needed: …]` — but never the top. The top always states the answer the material
   supports; if the material genuinely does not settle it, say so in one line under the
   top, and keep the answer above.
-- 3–4 first-level groups. Not seven.
-- Close with one line on what changed structurally — not a list of edits.
+- At most four first-level groups, the count from the material (§4). Not seven.
+- The deliverable is clean text. Markers and the legend belong to `audit` and `viz`;
+  no meta-commentary about the output in the output — the order type and the reason
+  for the grouping are your §8 checks, never lines the reader sees ("groups ordered
+  by...", "sorted by cost of error" and kin are process, not content).
+- When the user asks for a plain list or something to paste into chat, deliver
+  exactly that: a top sentence and grouped items in plain text — no `##` machinery,
+  no numbering apparatus, no SCQ labels, no closing note.
+- Otherwise, close with one line on what changed structurally — not a list of edits.
 
-## Mode 4 — viz
+## Mode 4 — digest
+
+Report on read sources, answer-first, in chat. The input is not a text to rewrite:
+it is several sources you have read plus a reader who has not and will not — they
+act on your report. Digesting is not shrinking the sources; it is answering the
+reader's question from them.
+
+Run the core loop with the reader's question as the spine, then deliver chat
+prose:
+
+- the answer in the first sentence, grounded by the situation and complication in
+  story form around it — a reader meeting a bare verdict with no "what changed"
+  rejects it;
+- two to four groups keyed to the reader's question, not one block per source: the
+  same fact reported by two sources is one point, a commitment dated differently in
+  two sources is dated from the older one, and a fact from source A that changes the
+  meaning of a fact from source B is delivered as the combined point;
+- a source reference on every load-bearing claim (file, row, note — the shortest
+  form that lets the reader find it);
+- length of roughly one chat screen. Condensing is the job: compress settled
+  matters to a line each, and spend the space on what the reader will act on.
+  Anything the reader would act on differently had they known must survive the
+  compression; the rest may go without a note.
+
+Plain text throughout: no marker legend, no mermaid, no findings table, no scoring,
+no meta-commentary about ordering. Bold group labels or minimal headings are as far
+as the formatting goes.
+
+## Mode 5 — viz
 
 Default output is markdown + mermaid, in chat, nothing written to disk:
 
@@ -220,6 +295,7 @@ the findings in a side panel.
 
 ## Markers
 
+For `audit` and `viz` only — `write` and `digest` deliver clean text without them.
 Print the legend once, immediately above annotated text. Symbols are fixed; labels
 follow the output language.
 
