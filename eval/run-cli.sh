@@ -290,7 +290,7 @@ run_neuraldeep() {
   model="$1"
   neuraldeep_tmp="$(mktemp "${TMPDIR:-/tmp}/minto-neuraldeep-out.XXXXXX")"
   if NEURALDEEP_BASE_URL="$NEURALDEEP_BASE_URL" \
-    "$TIMEOUT_CMD" -k 30 660 \
+    "$TIMEOUT_CMD" -k 30 "${NEURALDEEP_DEADLINE:-660}" \
     python3 "$ROOT/eval/run-neuraldeep.py" "$model" "$2" "$neuraldeep_tmp" 2>>"$4"
   then
     run_status=0
