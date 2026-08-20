@@ -1,0 +1,1 @@
+I recommend rescheduling to Thursday at 11:00. This slot meets all requirements: Collins is unavailable at 3:00, Johnson needs a start after 10:30, Clifford returns late tomorrow, and the conference room is occupied tomorrow but available Thursday.

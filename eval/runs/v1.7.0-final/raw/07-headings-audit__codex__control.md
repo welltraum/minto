@@ -1,0 +1,4 @@
+- The six headings are topic labels, not message headings; they do not state the points the memorandum will prove.
+- They are not parallel: they mix background, definitions, principles, organization, benefits/results, and success conditions.
+- “Distinctive benefits and results” combines two potentially different ideas in one heading.
+- The opening promises how teams identify and deliver profit improvements, but the setout does not make the supporting logic or sequence visible.

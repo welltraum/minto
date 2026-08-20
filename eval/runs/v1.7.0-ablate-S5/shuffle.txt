@@ -1,0 +1,7 @@
+shuffled_utc: 2026-08-20T17:24:59Z
+seed: v1.7.0-ablate-S5
+min_output_bytes: 10
+expected_outputs: auto
+engines: gpt-oss-120b qwen3.6-fp8 codex sonnet5
+outputs 04-meeting-note 8
+outputs 08-techdebt 8

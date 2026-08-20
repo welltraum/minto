@@ -22,6 +22,30 @@ eval/runs/v1.5.0/shuffle.txt
 eval/runs/v1.5.0-wide/logs/
 eval/runs/v1.5.0-wide/blind/
 eval/runs/v1.5.0-wide/log.txt
+!eval/runs/v1.7.0-baseline/
+eval/runs/v1.7.0-baseline/logs/
+eval/runs/v1.7.0-baseline/blind/
+eval/runs/v1.7.0-baseline/log.txt
+# The superseded 5-engine provenance from the invocation the hub outage killed;
+# engines.txt (the 8-engine invocation that owns the cells) is the record.
+eval/runs/v1.7.0-baseline/engines-superseded-5eng.txt
+!eval/runs/v1.7.0/
+eval/runs/v1.7.0/logs/
+eval/runs/v1.7.0/blind/
+eval/runs/v1.7.0/log.txt
+!eval/runs/v1.7.0-final/
+eval/runs/v1.7.0-final/logs/
+eval/runs/v1.7.0-final/blind/
+eval/runs/v1.7.0-final/log.txt
+!eval/runs/v1.7.0-ablate-S1/
+!eval/runs/v1.7.0-ablate-S2/
+!eval/runs/v1.7.0-ablate-S3/
+!eval/runs/v1.7.0-ablate-S4/
+!eval/runs/v1.7.0-ablate-S5/
+!eval/runs/v1.7.0-ablate-S7/
+eval/runs/v1.7.0-ablate-*/logs/
+eval/runs/v1.7.0-ablate-*/blind/
+eval/runs/v1.7.0-ablate-*/log.txt
 
 # Resume invocations record themselves separately so a re-run cannot overwrite the
 # provenance of the cells already on disk. Incidental; the original is what counts.

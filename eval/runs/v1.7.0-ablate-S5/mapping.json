@@ -1,0 +1,86 @@
+{
+  "04-meeting-note": {
+    "out-01.md": {
+      "engine": "codex",
+      "arm": "control",
+      "bytes": 205
+    },
+    "out-02.md": {
+      "engine": "codex",
+      "arm": "skill",
+      "bytes": 173
+    },
+    "out-03.md": {
+      "engine": "qwen3.6-fp8",
+      "arm": "skill",
+      "bytes": 386
+    },
+    "out-04.md": {
+      "engine": "gpt-oss-120b",
+      "arm": "skill",
+      "bytes": 722
+    },
+    "out-05.md": {
+      "engine": "qwen3.6-fp8",
+      "arm": "control",
+      "bytes": 249
+    },
+    "out-06.md": {
+      "engine": "sonnet5",
+      "arm": "skill",
+      "bytes": 472
+    },
+    "out-07.md": {
+      "engine": "sonnet5",
+      "arm": "control",
+      "bytes": 264
+    },
+    "out-08.md": {
+      "engine": "gpt-oss-120b",
+      "arm": "control",
+      "bytes": 400
+    }
+  },
+  "08-techdebt": {
+    "out-01.md": {
+      "engine": "codex",
+      "arm": "skill",
+      "bytes": 617
+    },
+    "out-02.md": {
+      "engine": "sonnet5",
+      "arm": "control",
+      "bytes": 886
+    },
+    "out-03.md": {
+      "engine": "sonnet5",
+      "arm": "skill",
+      "bytes": 737
+    },
+    "out-04.md": {
+      "engine": "gpt-oss-120b",
+      "arm": "skill",
+      "bytes": 832
+    },
+    "out-05.md": {
+      "engine": "qwen3.6-fp8",
+      "arm": "control",
+      "bytes": 624
+    },
+    "out-06.md": {
+      "engine": "gpt-oss-120b",
+      "arm": "control",
+      "bytes": 1088
+    },
+    "out-07.md": {
+      "engine": "codex",
+      "arm": "control",
+      "bytes": 551
+    },
+    "out-08.md": {
+      "engine": "qwen3.6-fp8",
+      "arm": "skill",
+      "bytes": 1469
+    }
+  }
+}

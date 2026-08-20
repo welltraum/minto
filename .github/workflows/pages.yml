@@ -6,8 +6,8 @@ on:
       - "site/**"
       - "scripts/check_site.py"
       - "scripts/check_benchmark_numbers.py"
-      - "eval/runs/v1.5.0-wide/**"
-      - "eval/report-v1.5.0-wide.md"
+      - "eval/runs/v1.7.0-final/**"
+      - "eval/report-v1.7.0.md"
       - ".github/workflows/pages.yml"
   push:
     branches:
@@ -16,8 +16,8 @@ on:
       - "site/**"
       - "scripts/check_site.py"
       - "scripts/check_benchmark_numbers.py"
-      - "eval/runs/v1.5.0-wide/**"
-      - "eval/report-v1.5.0-wide.md"
+      - "eval/runs/v1.7.0-final/**"
+      - "eval/report-v1.7.0.md"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 
@@ -39,7 +39,7 @@ jobs:
         run: python3 scripts/check_site.py
 
       - name: Validate benchmark figures
-        run: python3 scripts/check_benchmark_numbers.py --run v1.5.0-wide
+        run: python3 scripts/check_benchmark_numbers.py --run v1.7.0-final
 
       - name: Configure Pages
         if: github.event_name != 'pull_request'

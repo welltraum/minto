@@ -1,0 +1,16 @@
+shuffled_utc: 2026-08-20T14:00:39Z
+seed: v1.7.0-baseline
+min_output_bytes: 10
+expected_outputs: auto
+engines: gpt-oss-120b qwen3.6-35b-a3b qwen3.6-fp8 qwen3.8-27b codex haiku45 sonnet5 opus5
+outputs 01-big-chief 16
+outputs 02-ttv 14
+outputs 03-period-graph-books 16
+outputs 04-meeting-note 16
+outputs 05-role-of-board 16
+outputs 06-ttw-viz 16
+outputs 07-headings-audit 16
+outputs 08-techdebt 16
+outputs 09-sources-digest 16
+outputs 10-rollout-review 14
+outputs 11-plain-list 16

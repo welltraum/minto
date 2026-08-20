@@ -1,0 +1,8 @@
+shuffled_utc: 2026-08-20T17:32:01Z
+seed: v1.7.0-ablate-S7
+min_output_bytes: 10
+expected_outputs: auto
+engines: gpt-oss-120b qwen3.6-fp8 codex sonnet5
+outputs 01-big-chief 8
+outputs 02-ttv 8
+outputs 04-meeting-note 8

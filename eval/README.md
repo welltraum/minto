@@ -5,7 +5,7 @@ The evaluation asks two questions:
 1. Does the skill produce the structural result expected by the Minto examples?
 2. Does it improve on a control prompt that only names the Pyramid Principle?
 
-The suite contains eight English fixtures:
+The suite contains eleven English fixtures:
 
 | Fixture | Mode | Primary behavior |
 |---|---|---|
@@ -17,11 +17,17 @@ The suite contains eight English fixtures:
 | `06-ttw-viz` | viz | expose an existing two-branch pyramid |
 | `07-headings-audit` | audit | distinguish topics from ideas without false positives |
 | `08-techdebt` | write | move a buried recommendation to the top |
+| `09-sources-digest` | digest | answer-first source report with cross-source synthesis |
+| `10-rollout-review` | write | large sectioned document: cross-section MECE, honest geometry |
+| `11-plain-list` | write | plain pasteable output without audit apparatus |
 
 Book-derived inputs are faithful paraphrases of Barbara Minto's 2010 English
 edition. They preserve the business facts and structural defect without
 reproducing long copyrighted passages. The source PDF is not part of the
-repository.
+repository. Fixtures 09–11 are modeled on real usage sessions with every
+company, product, person, system and number invented for the benchmark; the
+raw session data never leaves the maintainer's machine (`dataset/` is
+gitignored).
 
 ## Arms and engines
 
@@ -129,19 +135,34 @@ cells and present for others biases the delta, which is why `shuffle.sh` and
 
 ## Run
 
+The v1.7.0 release matrix (see `neuraldeep-availability-2026-08-20.md` for the
+engine admissions of that round):
+
 ```bash
 bash eval/build-prompts.sh
-NEURALDEEP_API_KEY=... NEURALDEEP_TIMEOUT=550 bash eval/run-cli.sh eval/runs/v1.5.0-wide \
+PARALLEL_ENGINES=1 \
+NEURALDEEP_API_KEY=... NEURALDEEP_MODELS="gpt-oss-120b qwen3.6-35b-a3b qwen3.6-fp8 qwen3.8-27b" \
+NEURALDEEP_MAX_TOKENS=24576 NEURALDEEP_TIMEOUT=550 bash eval/run-cli.sh eval/runs/v1.7.0-final \
   "skill control" "" \
-  "gpt-oss-120b qwen3.6-35b-a3b codex kimi haiku45 sonnet5 opus5"
-SHUFFLE_SEED=v1.5.0-wide bash eval/shuffle.sh eval/runs/v1.5.0-wide
-bash eval/run-judge.sh eval/runs/v1.5.0-wide
-python3 eval/aggregate.py eval/runs/v1.5.0-wide --allow-partial
-bash eval/build-report.sh eval/runs/v1.5.0-wide eval/report-v1.5.0-wide.md
+  "gpt-oss-120b qwen3.6-35b-a3b qwen3.6-fp8 qwen3.8-27b codex haiku45 sonnet5 opus5"
+SHUFFLE_SEED=v1.7.0-final bash eval/shuffle.sh eval/runs/v1.7.0-final
+bash eval/run-judge.sh eval/runs/v1.7.0-final
+python3 eval/aggregate.py eval/runs/v1.7.0-final --allow-partial
+bash eval/build-report.sh eval/runs/v1.7.0-final eval/report-v1.7.0.md
 ```
 
-Engine order matters: `run-cli.sh` runs one engine batch at a time, so listing the
-cheap models first surfaces a systemic problem before the expensive ones are spent.
+To compare two aggregated runs cell-for-cell (a baseline skill text against a
+candidate), run `python3 eval/compare-runs.py <baseline_dir> <candidate_dir>`.
+The control arms of the two runs answered identical prompts, so their drift is
+the noise floor against which skill-arm movement must be read. The runs must
+score the same cell set; pin composition by moving orphaned cells to a
+`raw-excluded/` directory with a README before blinding, as the v1.7.0 runs do.
+
+Engine order matters in the default sequential mode: `run-cli.sh` runs one
+engine batch at a time, so listing the cheap models first surfaces a systemic
+problem before the expensive ones are spent. `PARALLEL_ENGINES=1` instead runs
+each transport in its own concurrent lane, with all NeuralDeep models sharing
+one sequential lane because the hub enforces account-wide parallel limits.
 
 List every engine in **one** invocation. `engines.txt` is written by the first
 invocation and never rewritten — a later invocation records itself in
@@ -198,6 +219,13 @@ A run directory is named after the skill text it tested, not the release it ship
 with. `v1.5.0-wide` is the release benchmark for **1.6.0**, because 1.6.0 ships
 `SKILL.md`, `rules.md` and `templates.md` byte-identical to 1.5.0 — the
 `skill_sha256` in `engines.txt` is the check, and it matches.
+
+The 1.7.0 release ships three run directories: `v1.7.0-baseline` (the 1.6.0
+skill text on the eleven-fixture matrix), `v1.7.0` (an intermediate candidate,
+two of whose sections later failed their removal tests — see
+`eval/runs/v1.7.0-ablate-*` and Appendix B of `report-v1.7.0.md`), and
+`v1.7.0-final`, the release benchmark for **1.7.0**: its `skill_sha256`
+matches the shipped text.
 
 Do not rename a run to match a release. The name records what was measured and
 when; renaming it would restate both, and it would break `scores.json`'s `run`

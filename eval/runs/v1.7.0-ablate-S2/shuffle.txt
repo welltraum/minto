@@ -1,0 +1,7 @@
+shuffled_utc: 2026-08-20T16:59:28Z
+seed: v1.7.0-ablate-S2
+min_output_bytes: 10
+expected_outputs: auto
+engines: gpt-oss-120b qwen3.6-fp8 codex sonnet5
+outputs 09-sources-digest 8
+outputs 11-plain-list 8

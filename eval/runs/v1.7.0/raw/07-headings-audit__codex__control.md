@@ -1,0 +1,5 @@
+- The six headings are labels, not message-level conclusions.
+- They do not form an evident single logical grouping or a clear order.
+- The set mixes different categories: context, definition, principles, organization, benefits/results, and success conditions.
+- “Distinctive benefits and results” is potentially overlapping and imprecise.
+- The opening’s promised answer—how teams identify and deliver profit improvements—is not reflected in the section headings.
