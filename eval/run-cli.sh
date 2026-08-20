@@ -436,33 +436,36 @@ fi
 : > "$LOG"
 overall_status=0
 
-# Run one engine batch at a time. Codex and Kimi retain their full-batch behavior;
-# Claude and NeuralDeep batches are capped to respect parallel-request limits.
-for engine in $ENGINES; do
+# One engine's full batch, capped at its transport's concurrency. Codex and Kimi
+# retain their full-batch behavior; Claude and NeuralDeep batches are capped to
+# respect parallel-request limits. Returns nonzero if any cell failed.
+engine_batch() {
+  batch_engine="$1"
+  batch_status=0
   pids=""
   batch_jobs=0
   jobs=0
-  if is_neuraldeep_model "$engine"; then
+  if is_neuraldeep_model "$batch_engine"; then
     concurrency="$NEURALDEEP_CONCURRENCY"
-  elif is_claude_engine "$engine"; then
+  elif is_claude_engine "$batch_engine"; then
     concurrency="$CLAUDE_CONCURRENCY"
   else
     concurrency=999
   fi
-  echo "[$(date -u '+%H:%M:%SZ')] starting engine=$engine" | tee -a "$LOG"
+  echo "[$(date -u '+%H:%M:%SZ')] starting engine=$batch_engine" | tee -a "$LOG"
   for before in "$ROOT"/eval/fixtures/*/before.md; do
     fixture_dir="${before%/before.md}"
     name="$(basename "$fixture_dir")"
     selected "$name" "$FIXTURES" || continue
     for arm in $ARMS; do
-      job "$fixture_dir" "$name" "$arm" "$engine" >> "$LOG" 2>&1 &
+      job "$fixture_dir" "$name" "$arm" "$batch_engine" >> "$LOG" 2>&1 &
       pids="$pids $!"
       jobs=$((jobs + 1))
       batch_jobs=$((batch_jobs + 1))
       if [ "$batch_jobs" -ge "$concurrency" ]; then
         for pid in $pids; do
           if ! wait "$pid"; then
-            overall_status=1
+            batch_status=1
           fi
         done
         pids=""
@@ -471,14 +474,54 @@ for engine in $ENGINES; do
     done
   done
 
-  echo "launched $jobs jobs for $engine" | tee -a "$LOG"
+  echo "launched $jobs jobs for $batch_engine" | tee -a "$LOG"
   for pid in $pids; do
+    if ! wait "$pid"; then
+      batch_status=1
+    fi
+  done
+  grep -E "^(ok|FAIL|skip) .*/$batch_engine/" "$LOG" | tail -n "$jobs"
+  return "$batch_status"
+}
+
+# PARALLEL_ENGINES=1 runs engines in concurrent lanes instead of one after
+# another. All NeuralDeep engines share ONE sequential lane: the hub enforces
+# account-wide parallel-request limits, so parallelizing across its models would
+# just convert throughput into 429/503 retries. Every other engine is its own
+# transport (codex, each Claude alias) and gets its own lane.
+if [ "${PARALLEL_ENGINES:-0}" = "1" ]; then
+  hub_lane=""
+  lane_pids=""
+  for engine in $ENGINES; do
+    if is_neuraldeep_model "$engine"; then
+      hub_lane="$hub_lane $engine"
+    fi
+  done
+  if [ -n "$hub_lane" ]; then
+    (
+      lane_status=0
+      for engine in $hub_lane; do
+        engine_batch "$engine" || lane_status=1
+      done
+      exit "$lane_status"
+    ) &
+    lane_pids="$lane_pids $!"
+  fi
+  for engine in $ENGINES; do
+    is_neuraldeep_model "$engine" && continue
+    ( engine_batch "$engine"; exit $? ) &
+    lane_pids="$lane_pids $!"
+  done
+  for pid in $lane_pids; do
     if ! wait "$pid"; then
       overall_status=1
     fi
   done
-  grep -E "^(ok|FAIL|skip) .*/$engine/" "$LOG" | tail -n "$jobs"
-done
+else
+  for engine in $ENGINES; do
+    engine_batch "$engine" || overall_status=1
+  done
+fi
 
 echo "[$(date -u '+%Y-%m-%dT%H:%M:%SZ')] finished status=$overall_status" | tee -a "$LOG"
 exit "$overall_status"
