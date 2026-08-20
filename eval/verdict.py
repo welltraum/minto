@@ -48,6 +48,7 @@ CHECK_TYPES = {
     "mode_respected": "bool",
     "readers_question_literal": "bool",
     "order_type_named": "bool",
+    "scq_intro_present": "bool",
 }
 FIRST_LEVEL_LIMIT = 4
 

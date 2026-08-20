@@ -82,3 +82,37 @@ Answer only the section for the current fixture, once for every blinded output.
 6. Is the format a colleague message or an oversized formal memo?
 7. Which numbers, customers, dates, or facts were invented?
 8. Is the reader's question stated literally?
+
+## 09-sources-digest
+
+1. Does the first line answer what the tech lead should do, or does it describe the sources?
+2. Is the digest organized by answer (settled / blocked on us / owed by them or equivalent) or source by source?
+3. Is the package-list commitment dated from 12 May (98 days) or from 9 July?
+4. Are the Q7 refusal and the unsent 11 August draft combined into one point about Fernway's own move?
+5. How is Lisbon handled: unresolved exposure, presented as approved, or silently dropped?
+6. Do load-bearing claims carry a source reference?
+7. Which of these appear: marker legend, mermaid, findings table, meta-comment about group order?
+8. Is the length within roughly one chat screen?
+9. Which facts, dates, or commitments were invented?
+
+## 10-rollout-review
+
+1. Does the top carry both the recommendation and its condition?
+2. How many first-level branches, and does the split follow the answer or the source sections?
+3. Does each substantive section get its own one-sentence top feeding the key line, or is the document flattened into a single pyramid?
+4. Is the completion-code mismatch a single point gathering its four symptoms, or does it appear in more than one branch?
+5. Is the asset-register feed a single point, or split across branches?
+6. Is the training shortfall a single cause, or split across branches?
+7. Does depth vary with the material (e.g., a third level under integrations), or is every branch forced to the same depth?
+8. Were the minor facts (parts-ordering habit, dispatcher uptake, vendor relationship) demoted or dropped with a note, silently lost, or promoted?
+9. Which numbers or facts were invented?
+
+## 11-plain-list
+
+1. Is the output plain pasteable chat text, or does it carry document apparatus?
+2. Which of these appear: markers or legend, `##` headings, meta-comment about ordering, layer numbers in parentheses, SCQ labels, mermaid, a closing line about what changed structurally?
+3. Does the top sentence state both counts, and does the staging environment's optional status survive?
+4. Are additions grouped by cluster (trust / failure handling / path to production) rather than by layer number?
+5. Are the three removals present as one group?
+6. Were the covered layers listed as a padding group?
+7. Which severities, efforts, orders, or facts were invented?

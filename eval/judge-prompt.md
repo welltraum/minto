@@ -86,7 +86,8 @@ applicable for this fixture. Never `null`, `"n/a"`, `"unknown"`, or an omitted k
         "unacknowledged_source_loss": false,
         "mode_respected": true,
         "readers_question_literal": true,
-        "order_type_named": "na"
+        "order_type_named": "na",
+        "scq_intro_present": "na"
       }
     }
   ]

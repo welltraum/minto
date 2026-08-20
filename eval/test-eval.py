@@ -58,6 +58,7 @@ GOOD = {
                 "answer_first": True, "first_level_count": 3, "first_level_kind_matches": True,
                 "invented_facts": False, "unacknowledged_source_loss": False, "mode_respected": True,
                 "readers_question_literal": True, "order_type_named": True,
+                "scq_intro_present": True,
             },
         }
     ],
@@ -148,26 +149,28 @@ def test_penalty_map() -> None:
 
 def test_applicability() -> None:
     modes = fixture_modes(FIXTURES)
-    check("every fixture declares a mode", len(modes) == 8, f"found {len(modes)}")
+    check("every fixture declares a mode", len(modes) == 11, f"found {len(modes)}")
 
     counts: dict[str, int] = {name: 0 for name in matrix()["checks"]}
     for fixture, mode in modes.items():
         for name, applies in applicability_for(fixture, mode).items():
             counts[name] += 1 if applies else 0
 
-    universal = [name for name, spec in matrix()["checks"].items() if len(spec["modes"]) == 3]
+    universal = [name for name, spec in matrix()["checks"].items() if len(spec["modes"]) == 4]
     check(
-        "the four universal checks apply to all eight fixtures",
-        all(counts[name] == 8 for name in universal) and len(universal) == 4,
+        "the three universal checks apply to all eleven fixtures",
+        all(counts[name] == 11 for name in universal) and len(universal) == 3,
         f"{ {n: counts[n] for n in universal} }",
     )
     # These denominators encode design decisions, so a silent change to the matrix
     # must break a test rather than quietly move a published percentage.
     for name, expected, why in (
-        ("answer_first", 6, "write and viz only: an audit opens with annotated text"),
-        ("first_level_count", 6, "write and viz only: audit findings are capped at a different number"),
-        ("readers_question_literal", 5, "write only"),
-        ("order_type_named", 6, "write and audit, minus the short-note override"),
+        ("unacknowledged_source_loss", 10, "every mode except digest, whose job is omission"),
+        ("answer_first", 9, "write, viz and digest: an audit opens with annotated text"),
+        ("first_level_count", 9, "write, viz and digest: audit findings are capped at a different number"),
+        ("readers_question_literal", 6, "write only, minus the plain-list override"),
+        ("order_type_named", 7, "write and audit, minus the short-note and plain-list overrides"),
+        ("scq_intro_present", 6, "write and digest, minus the short-note and plain-list overrides"),
     ):
         check(f"{name} applies to {expected} fixtures ({why})", counts[name] == expected, f"got {counts[name]}")
 
