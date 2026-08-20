@@ -13,7 +13,7 @@ import urllib.request
 from pathlib import Path
 
 
-RETRYABLE_STATUS = {408, 429, 500, 502}
+RETRYABLE_STATUS = {408, 429, 500, 502, 503}
 
 
 def parse_args() -> argparse.Namespace:
