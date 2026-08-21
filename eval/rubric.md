@@ -44,6 +44,12 @@ to weigh:
 
 Two failures mapping to the same axis zero it once; the penalty is not cumulative.
 
+For a `digest` fixture, do not record `unacknowledged_source_loss` — omission is
+what a digest is for, and what it must keep is judged through the gold and the
+decisive questions. There is no digest-specific mode token: a digest that
+retells sources one by one, returns a formal document, or writes a file fails
+`mode_respected` in the checks and is scored accordingly on the axes.
+
 The map is a judgement call, not a derivation — the five quality axes were not
 designed to absorb these eight failures. It is pinned here so that every run
 applies the same one, and `scores.json` records `rubric_penalty_version`. Changing

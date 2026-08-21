@@ -1,0 +1,4 @@
+- Add: identity provider, service-to-service authentication, and secrets store.
+- Add: message queue and dead-letter store.
+- Add: CI/CD pipeline, staging environment, structured log pipeline, and per-message tracing.
+- Remove: blockchain audit ledger, future ML anomaly detection, and the duplicate retention DB block.

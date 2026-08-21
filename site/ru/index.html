@@ -165,28 +165,27 @@
               <footer><span>Почему это плохо</span>Алексу нужно прочитать четыре абзаца фактов, прежде чем он узнает, какое решение от него ждут.</footer>
             </article>
 
-            <article class="transform-document transform-after" data-fixture="08-techdebt" data-engine="opus5" data-arm="skill" data-structure="7" data-quality="10" data-hard-failures="1" aria-labelledby="example-after-heading">
+            <article class="transform-document transform-after" data-fixture="08-techdebt" data-engine="opus5" data-arm="skill" data-structure="8" data-quality="10" data-hard-failures="1" aria-labelledby="example-after-heading">
               <header>
                 <span>Что мы считаем хорошим</span>
                 <h3 id="example-after-heading">Opus 5, с Minto</h3>
-                <p class="doc-score">Слепая оценка: структура <strong>7/8</strong>, качество <strong>10/10</strong></p>
+                <p class="doc-score">Слепая оценка: структура <strong>8/8</strong>, качество <strong>10/10</strong></p>
               </header>
               <div class="document-body" lang="en">
-                <p class="doc-subject"><mark>Subject: Let&rsquo;s spend the next sprint on the defect backlog</mark></p>
-                <p>We close fewer defects each sprint than come in. On current rates the attached projection puts the backlog a year out at a level we cannot work off later, and the cost of leaving it is already landing on revenue. <mark>I&rsquo;d like the next sprint dedicated to reducing the defect backlog.</mark></p>
-                <p>Three reasons, strongest first:</p>
-                <ol>
-                  <li><strong>We are losing customers we already paid to win.</strong> CX and Research attribute churn to defects; the second chart tracks churn against defect volume.</li>
-                  <li><strong>New revenue is getting harder to close.</strong> Sales reports defect concerns slowing deals, backed by user posts and a major-account complaint.</li>
-                  <li><strong>The cost of fixing rises every sprint we wait.</strong> One sprint of focus now buys back capacity a later cleanup would cost several sprints.</li>
-                </ol>
-                <p>What I need: your decision on the next sprint&rsquo;s focus by the planning meeting.</p>
+                <p>Hi Alex,</p>
+                <p><mark>Let&rsquo;s spend the next sprint on the defect backlog</mark> &mdash; we&rsquo;re losing customers and deals to it faster than we&rsquo;re closing it.</p>
+                <ul>
+                  <li><strong>The backlog will keep growing on its own.</strong> We&rsquo;re opening defects faster than we close them; the attached chart projects where that leaves us in a year if we don&rsquo;t intervene now.</li>
+                  <li><strong>Defects are costing us customers.</strong> Customer Experience and Research tie them directly to churn &mdash; the second chart puts churn alongside defect volume, and the attached interview shows the mechanism up close.</li>
+                  <li><strong>They&rsquo;re now costing us new business too.</strong> User posts and a complaint from one of our largest accounts have made this visible outside the product, and Sales reports it&rsquo;s slowing close rates.</li>
+                </ul>
+                <p>Can you confirm the sprint focus so we can shape the backlog before planning?</p>
               </div>
-              <p class="doc-note">Сокращено по длине. В ответе также были пирамида в Mermaid и заключительная строка о том, что изменилось в структуре.</p>
-              <footer><span>Почему это хорошо</span>Просьба стоит и в теме письма, и в первом абзаце. Три причины одного типа &mdash; каждая о том, что читатель теряет, пока ждёт, &mdash; и порядок назван, а не оставлен на догадки.</footer>
+              <p class="doc-note">Показано полностью. Судья отметил один жёсткий сбой &mdash; выдуманный факт &mdash; и в этом ответе, и в контрольном.</p>
+              <footer><span>Почему это хорошо</span>Просьба &mdash; первое предложение. Три пункта одного типа &mdash; каждый о том, что читатель теряет, пока ждёт, &mdash; и похороненная рекомендация поднята наверх.</footer>
             </article>
           </div>
-          <p class="example-verdict">Скажем честно: пример простой, и навык его не выиграл. Рекомендация уже была написана, только стояла не в том месте. Контрольный прогон того же Opus получил здесь 8/8 и 10/10 &mdash; по структуре лучше, чем версия выше, &mdash; и в обеих версиях судья отметил выдуманный факт. Варианты разделяет закономерность по всем 112 прогонам ниже, а не победа на каком-то одном документе. <a class="text-link" href="https://github.com/welltraum/minto/blob/main/eval/runs/v1.5.0-wide/verdicts/08-techdebt.md">Открыть вердикт слепой оценки <span aria-hidden="true">&#8599;</span></a></p>
+          <p class="example-verdict">Скажем честно: пример простой, и навык его не выиграл. Рекомендация уже была написана, только стояла не в том месте. Контрольный прогон того же Opus тоже получил здесь 8/8 и 10/10, и в обеих версиях судья отметил выдуманный факт. Варианты разделяет закономерность по всем 172 прогонам ниже, а не победа на каком-то одном документе. <a class="text-link" href="https://github.com/welltraum/minto/blob/main/eval/runs/v1.7.0-final/verdicts/08-techdebt.md">Открыть вердикт слепой оценки <span aria-hidden="true">&#8599;</span></a></p>
         </div>
       </section>
 
@@ -312,52 +311,52 @@
         </div>
       </section>
 
-      <section class="evidence" id="evidence" aria-labelledby="evidence-heading" data-benchmark="v1.5.0-wide" data-benchmark-cells="112">
+      <section class="evidence" id="evidence" aria-labelledby="evidence-heading" data-benchmark="v1.7.0-final" data-benchmark-cells="172">
         <div class="evidence-statement">
-          <p>Бенчмарк, 112 оценённых прогонов</p>
-          <h2 id="evidence-heading">Четыре показателя улучшились. <span>Один стал хуже.</span></h2>
-          <p>Восемь документов, семь моделей, каждый документ переписан дважды: один раз с Minto, другой &mdash; с промптом, который только называет принцип пирамиды Минто. Судья вслепую оценил все 112 текстов, не зная, где какой вариант. Ниже &mdash; все числа, которые он выставил.</p>
+          <p>Бенчмарк, 172 оценённых прогона</p>
+          <h2 id="evidence-heading">Пять показателей улучшились. <span>Один стал хуже.</span></h2>
+          <p>Одиннадцать документов, восемь моделей, каждый документ переписан дважды: один раз с Minto, другой &mdash; с промптом, который только называет принцип пирамиды Минто. Судья вслепую оценил все 172 текста, не зная, где какой вариант. Ниже &mdash; все числа, которые он выставил.</p>
         </div>
 
         <div class="evidence-detail">
           <figure class="benchmark-chart" aria-labelledby="benchmark-chart-caption">
             <figcaption id="benchmark-chart-caption">Доля прогонов или доля от максимальной оценки судьи. &laquo;п.п.&raquo; &mdash; процентные пункты.</figcaption>
             <ul class="metric-list">
-              <li class="metric" data-metric="readers-question" data-control="17" data-skill="49" data-delta="32">
+              <li class="metric" data-metric="readers-question" data-control="13" data-skill="35" data-delta="22">
                 <p class="metric-name">Вопрос читателя выписан в тексте</p>
-                <p class="metric-delta">+32<span aria-hidden="true">&nbsp;п.п.</span><span class="visually-hidden"> процентных пункта</span></p>
-                <div class="metric-track"><span>Контроль</span><span class="metric-bar" style="--bar: 17%" aria-hidden="true"><i></i></span><strong>17%</strong></div>
-                <div class="metric-track metric-skill"><span>С Minto</span><span class="metric-bar" style="--bar: 49%" aria-hidden="true"><i></i></span><strong>49%</strong></div>
+                <p class="metric-delta">+22<span aria-hidden="true">&nbsp;п.п.</span><span class="visually-hidden"> процентных пункта</span></p>
+                <div class="metric-track"><span>Контроль</span><span class="metric-bar" style="--bar: 13%" aria-hidden="true"><i></i></span><strong>13%</strong></div>
+                <div class="metric-track metric-skill"><span>С Minto</span><span class="metric-bar" style="--bar: 35%" aria-hidden="true"><i></i></span><strong>35%</strong></div>
               </li>
-              <li class="metric" data-metric="kind-matches" data-control="48" data-skill="71" data-delta="23">
+              <li class="metric" data-metric="kind-matches" data-control="54" data-skill="66" data-delta="12">
                 <p class="metric-name">Пункты первого уровня одного типа</p>
-                <p class="metric-delta">+23<span aria-hidden="true">&nbsp;п.п.</span><span class="visually-hidden"> процентных пункта</span></p>
-                <div class="metric-track"><span>Контроль</span><span class="metric-bar" style="--bar: 48%" aria-hidden="true"><i></i></span><strong>48%</strong></div>
-                <div class="metric-track metric-skill"><span>С Minto</span><span class="metric-bar" style="--bar: 71%" aria-hidden="true"><i></i></span><strong>71%</strong></div>
-              </li>
-              <li class="metric" data-metric="structure" data-control="54" data-skill="63" data-delta="9">
-                <p class="metric-name">Структура, доля от 8 баллов судьи</p>
-                <p class="metric-delta">+9<span aria-hidden="true">&nbsp;п.п.</span><span class="visually-hidden"> процентных пунктов</span></p>
+                <p class="metric-delta">+12<span aria-hidden="true">&nbsp;п.п.</span><span class="visually-hidden"> процентных пункта</span></p>
                 <div class="metric-track"><span>Контроль</span><span class="metric-bar" style="--bar: 54%" aria-hidden="true"><i></i></span><strong>54%</strong></div>
-                <div class="metric-track metric-skill"><span>С Minto</span><span class="metric-bar" style="--bar: 63%" aria-hidden="true"><i></i></span><strong>63%</strong></div>
+                <div class="metric-track metric-skill"><span>С Minto</span><span class="metric-bar" style="--bar: 66%" aria-hidden="true"><i></i></span><strong>66%</strong></div>
               </li>
-              <li class="metric" data-metric="quality" data-control="68" data-skill="75" data-delta="7">
+              <li class="metric" data-metric="structure" data-control="59" data-skill="66" data-delta="7">
+                <p class="metric-name">Структура, доля от 8 баллов судьи</p>
+                <p class="metric-delta">+7<span aria-hidden="true">&nbsp;п.п.</span><span class="visually-hidden"> процентных пунктов</span></p>
+                <div class="metric-track"><span>Контроль</span><span class="metric-bar" style="--bar: 59%" aria-hidden="true"><i></i></span><strong>59%</strong></div>
+                <div class="metric-track metric-skill"><span>С Minto</span><span class="metric-bar" style="--bar: 66%" aria-hidden="true"><i></i></span><strong>66%</strong></div>
+              </li>
+              <li class="metric" data-metric="quality" data-control="72" data-skill="79" data-delta="7">
                 <p class="metric-name">Качество текста, доля от 10 баллов судьи</p>
                 <p class="metric-delta">+7<span aria-hidden="true">&nbsp;п.п.</span><span class="visually-hidden"> процентных пунктов</span></p>
-                <div class="metric-track"><span>Контроль</span><span class="metric-bar" style="--bar: 68%" aria-hidden="true"><i></i></span><strong>68%</strong></div>
-                <div class="metric-track metric-skill"><span>С Minto</span><span class="metric-bar" style="--bar: 75%" aria-hidden="true"><i></i></span><strong>75%</strong></div>
+                <div class="metric-track"><span>Контроль</span><span class="metric-bar" style="--bar: 72%" aria-hidden="true"><i></i></span><strong>72%</strong></div>
+                <div class="metric-track metric-skill"><span>С Minto</span><span class="metric-bar" style="--bar: 79%" aria-hidden="true"><i></i></span><strong>79%</strong></div>
               </li>
-              <li class="metric" data-metric="answer-first" data-control="76" data-skill="76" data-delta="0">
-                <p class="metric-name">Ответ в первом предложении</p>
-                <p class="metric-delta">0<span aria-hidden="true">&nbsp;п.п.</span><span class="visually-hidden"> процентных пунктов</span></p>
-                <div class="metric-track"><span>Контроль</span><span class="metric-bar" style="--bar: 76%" aria-hidden="true"><i></i></span><strong>76%</strong></div>
-                <div class="metric-track metric-skill"><span>С Minto</span><span class="metric-bar" style="--bar: 76%" aria-hidden="true"><i></i></span><strong>76%</strong></div>
-              </li>
-              <li class="metric" data-metric="source-kept" data-control="91" data-skill="71" data-delta="-20">
+              <li class="metric" data-metric="source-kept" data-control="62" data-skill="65" data-delta="3">
                 <p class="metric-name">Из исходника ничего не потеряно молча</p>
-                <p class="metric-delta is-down">&minus;20<span aria-hidden="true">&nbsp;п.п.</span><span class="visually-hidden"> процентных пунктов</span></p>
-                <div class="metric-track"><span>Контроль</span><span class="metric-bar" style="--bar: 91%" aria-hidden="true"><i></i></span><strong>91%</strong></div>
-                <div class="metric-track metric-skill"><span>С Minto</span><span class="metric-bar" style="--bar: 71%" aria-hidden="true"><i></i></span><strong>71%</strong></div>
+                <p class="metric-delta">+3<span aria-hidden="true">&nbsp;п.п.</span><span class="visually-hidden"> процентных пункта</span></p>
+                <div class="metric-track"><span>Контроль</span><span class="metric-bar" style="--bar: 62%" aria-hidden="true"><i></i></span><strong>62%</strong></div>
+                <div class="metric-track metric-skill"><span>С Minto</span><span class="metric-bar" style="--bar: 65%" aria-hidden="true"><i></i></span><strong>65%</strong></div>
+              </li>
+              <li class="metric" data-metric="answer-first" data-control="84" data-skill="74" data-delta="-10">
+                <p class="metric-name">Ответ в первом предложении</p>
+                <p class="metric-delta is-down">&minus;10<span aria-hidden="true">&nbsp;п.п.</span><span class="visually-hidden"> процентных пунктов</span></p>
+                <div class="metric-track"><span>Контроль</span><span class="metric-bar" style="--bar: 84%" aria-hidden="true"><i></i></span><strong>84%</strong></div>
+                <div class="metric-track metric-skill"><span>С Minto</span><span class="metric-bar" style="--bar: 74%" aria-hidden="true"><i></i></span><strong>74%</strong></div>
               </li>
             </ul>
           </figure>
@@ -365,7 +364,7 @@
           <details class="benchmark-data">
             <summary>Показать точные оценки по моделям</summary>
             <table>
-              <caption>Доля от максимума судьи, контроль &rarr; с Minto, по восьми документам на каждую модель</caption>
+              <caption>Доля от максимума судьи, контроль &rarr; с Minto, по одиннадцати документам на каждую модель (у qwen3.8-27b &mdash; девять: два не прошли по таймауту хаба в обоих вариантах)</caption>
               <thead>
                 <tr>
                   <th scope="col">Модель</th>
@@ -376,45 +375,50 @@
               <tbody>
                 <tr>
                   <th scope="row">Claude Opus 5</th>
-                  <td class="positive">66% &rarr; 77%</td>
-                  <td class="positive">75% &rarr; 81%</td>
+                  <td class="positive">63% &rarr; 84%</td>
+                  <td class="positive">74% &rarr; 90%</td>
                 </tr>
                 <tr>
                   <th scope="row">Claude Sonnet 5</th>
-                  <td class="positive">50% &rarr; 59%</td>
-                  <td class="positive">69% &rarr; 78%</td>
+                  <td class="negative">66% &rarr; 61%</td>
+                  <td class="positive">78% &rarr; 80%</td>
                 </tr>
                 <tr>
                   <th scope="row">Claude Haiku 4.5</th>
-                  <td class="positive">39% &rarr; 59%</td>
-                  <td class="positive">61% &rarr; 75%</td>
+                  <td class="positive">53% &rarr; 63%</td>
+                  <td class="positive">67% &rarr; 76%</td>
                 </tr>
                 <tr>
                   <th scope="row">Codex <code>gpt-5.6-terra</code></th>
-                  <td class="positive">56% &rarr; 62%</td>
-                  <td class="positive">65% &rarr; 78%</td>
-                </tr>
-                <tr>
-                  <th scope="row">Kimi <code>k3-low</code></th>
-                  <td class="positive">55% &rarr; 69%</td>
-                  <td class="positive">70% &rarr; 78%</td>
+                  <td class="positive">60% &rarr; 67%</td>
+                  <td class="positive">75% &rarr; 82%</td>
                 </tr>
                 <tr>
                   <th scope="row"><code>gpt-oss-120b</code></th>
-                  <td>52% &rarr; 52%</td>
-                  <td class="negative">68% &rarr; 64%</td>
+                  <td class="positive">50% &rarr; 52%</td>
+                  <td class="positive">53% &rarr; 64%</td>
                 </tr>
                 <tr>
                   <th scope="row"><code>qwen3.6-35b-a3b</code></th>
-                  <td class="negative">61% &rarr; 59%</td>
-                  <td class="positive">71% &rarr; 72%</td>
+                  <td class="positive">58% &rarr; 67%</td>
+                  <td class="positive">76% &rarr; 79%</td>
+                </tr>
+                <tr>
+                  <th scope="row"><code>qwen3.6-fp8</code></th>
+                  <td class="positive">64% &rarr; 69%</td>
+                  <td class="positive">75% &rarr; 80%</td>
+                </tr>
+                <tr>
+                  <th scope="row"><code>qwen3.8-27b</code></th>
+                  <td>63% &rarr; 63%</td>
+                  <td class="positive">79% &rarr; 81%</td>
                 </tr>
               </tbody>
             </table>
-            <p>В сырых баллах, суммарно по всем семи моделям: структура 4,32 &rarr; 5,00 из 8, качество 6,84 &rarr; 7,50 из 10. Если применить штраф самой рубрики за выдуманные и потерянные факты, получится 5,98 &rarr; 6,88.</p>
+            <p>В сырых баллах, суммарно по всем восьми моделям: структура 4,76 &rarr; 5,27 из 8, качество 7,17 &rarr; 7,90 из 10. Если применить штраф самой рубрики за выдуманные и потерянные факты, получится 6,34 &rarr; 7,08.</p>
           </details>
-          <p class="evidence-caveat">По одному прогону на каждое сочетание модели, варианта и документа, поэтому повторяемость не измерена. Контроль &mdash; это не модель без промпта: это промпт из одного предложения, который уже называет принцип пирамиды Минто, поэтому он и получает такие оценки. Два результата не в пользу навыка &mdash; один хуже, другой просто на том же уровне. Модели с ним гораздо чаще теряли материал исходника, не сказав об этом &mdash; 16 прогонов против 5, &mdash; и это первое, что нужно исправить в следующей версии. А ответ в первом предложении вышел ровно на том же уровне: на этой привычке навык не изменил ничего. Качество выросло у шести моделей из семи и упало у одной, <code>gpt-oss-120b</code>. Все числа здесь считает скрипт по опубликованным вердиктам, а не пересказывает модель.</p>
-          <a class="text-link" href="https://github.com/welltraum/minto/blob/main/eval/report-v1.5.0-wide.md">Полная методика и ограничения <span aria-hidden="true">↗</span></a>
+          <p class="evidence-caveat">По одному прогону на каждое сочетание модели, варианта и документа, поэтому повторяемость не измерена. Контроль &mdash; это не модель без промпта: это промпт из одного предложения, который уже называет принцип пирамиды Минто, поэтому он и получает такие оценки. Два результата не в пользу навыка, и они опубликованы наравне с остальными: модели с ним чаще утверждали факты без опоры на исходник &mdash; 49 прогонов против 42 &mdash; и реже ставили ответ в первое предложение; это первые кандидаты на исправление в следующей версии. Качество выросло у всех восьми моделей; структура упала у одной, Sonnet 5, и осталась на месте у <code>qwen3.8-27b</code>. Три документа из одиннадцати в этом раунде новые, поэтому эти числа несравнимы с прежней таблицей на 112 прогонов. Все числа здесь считает скрипт по опубликованным вердиктам, а не пересказывает модель.</p>
+          <a class="text-link" href="https://github.com/welltraum/minto/blob/main/eval/report-v1.7.0.md">Полная методика и ограничения <span aria-hidden="true">↗</span></a>
         </div>
       </section>
 

@@ -1,0 +1,884 @@
+{
+  "01-big-chief": {
+    "out-01.md": {
+      "engine": "qwen3.6-35b-a3b",
+      "arm": "control",
+      "bytes": 1164
+    },
+    "out-02.md": {
+      "engine": "qwen3.6-fp8",
+      "arm": "skill",
+      "bytes": 2213
+    },
+    "out-03.md": {
+      "engine": "qwen3.6-fp8",
+      "arm": "control",
+      "bytes": 1221
+    },
+    "out-04.md": {
+      "engine": "qwen3.6-35b-a3b",
+      "arm": "skill",
+      "bytes": 1477
+    },
+    "out-05.md": {
+      "engine": "gpt-oss-120b",
+      "arm": "skill",
+      "bytes": 1960
+    },
+    "out-06.md": {
+      "engine": "codex",
+      "arm": "skill",
+      "bytes": 1766
+    },
+    "out-07.md": {
+      "engine": "codex",
+      "arm": "control",
+      "bytes": 1087
+    },
+    "out-08.md": {
+      "engine": "qwen3.8-27b",
+      "arm": "skill",
+      "bytes": 1475
+    },
+    "out-09.md": {
+      "engine": "sonnet5",
+      "arm": "skill",
+      "bytes": 1275
+    },
+    "out-10.md": {
+      "engine": "gpt-oss-120b",
+      "arm": "control",
+      "bytes": 1536
+    },
+    "out-11.md": {
+      "engine": "haiku45",
+      "arm": "control",
+      "bytes": 1027
+    },
+    "out-12.md": {
+      "engine": "qwen3.8-27b",
+      "arm": "control",
+      "bytes": 1257
+    },
+    "out-13.md": {
+      "engine": "sonnet5",
+      "arm": "control",
+      "bytes": 1194
+    },
+    "out-14.md": {
+      "engine": "haiku45",
+      "arm": "skill",
+      "bytes": 1357
+    },
+    "out-15.md": {
+      "engine": "opus5",
+      "arm": "control",
+      "bytes": 1211
+    },
+    "out-16.md": {
+      "engine": "opus5",
+      "arm": "skill",
+      "bytes": 2667
+    }
+  },
+  "02-ttv": {
+    "out-01.md": {
+      "engine": "sonnet5",
+      "arm": "control",
+      "bytes": 2116
+    },
+    "out-02.md": {
+      "engine": "opus5",
+      "arm": "skill",
+      "bytes": 3970
+    },
+    "out-03.md": {
+      "engine": "codex",
+      "arm": "control",
+      "bytes": 1494
+    },
+    "out-04.md": {
+      "engine": "haiku45",
+      "arm": "skill",
+      "bytes": 1916
+    },
+    "out-05.md": {
+      "engine": "qwen3.6-35b-a3b",
+      "arm": "skill",
+      "bytes": 2358
+    },
+    "out-06.md": {
+      "engine": "haiku45",
+      "arm": "control",
+      "bytes": 1516
+    },
+    "out-07.md": {
+      "engine": "gpt-oss-120b",
+      "arm": "skill",
+      "bytes": 2735
+    },
+    "out-08.md": {
+      "engine": "opus5",
+      "arm": "control",
+      "bytes": 2584
+    },
+    "out-09.md": {
+      "engine": "qwen3.6-fp8",
+      "arm": "skill",
+      "bytes": 2468
+    },
+    "out-10.md": {
+      "engine": "qwen3.6-35b-a3b",
+      "arm": "control",
+      "bytes": 2656
+    },
+    "out-11.md": {
+      "engine": "gpt-oss-120b",
+      "arm": "control",
+      "bytes": 2970
+    },
+    "out-12.md": {
+      "engine": "codex",
+      "arm": "skill",
+      "bytes": 2405
+    },
+    "out-13.md": {
+      "engine": "sonnet5",
+      "arm": "skill",
+      "bytes": 2301
+    },
+    "out-14.md": {
+      "engine": "qwen3.6-fp8",
+      "arm": "control",
+      "bytes": 2004
+    }
+  },
+  "03-period-graph-books": {
+    "out-01.md": {
+      "engine": "sonnet5",
+      "arm": "skill",
+      "bytes": 6405
+    },
+    "out-02.md": {
+      "engine": "codex",
+      "arm": "skill",
+      "bytes": 4906
+    },
+    "out-03.md": {
+      "engine": "codex",
+      "arm": "control",
+      "bytes": 2725
+    },
+    "out-04.md": {
+      "engine": "haiku45",
+      "arm": "skill",
+      "bytes": 4906
+    },
+    "out-05.md": {
+      "engine": "haiku45",
+      "arm": "control",
+      "bytes": 1858
+    },
+    "out-06.md": {
+      "engine": "opus5",
+      "arm": "control",
+      "bytes": 5890
+    },
+    "out-07.md": {
+      "engine": "gpt-oss-120b",
+      "arm": "skill",
+      "bytes": 4966
+    },
+    "out-08.md": {
+      "engine": "qwen3.6-35b-a3b",
+      "arm": "skill",
+      "bytes": 3468
+    },
+    "out-09.md": {
+      "engine": "qwen3.6-35b-a3b",
+      "arm": "control",
+      "bytes": 3311
+    },
+    "out-10.md": {
+      "engine": "qwen3.8-27b",
+      "arm": "skill",
+      "bytes": 4609
+    },
+    "out-11.md": {
+      "engine": "qwen3.6-fp8",
+      "arm": "control",
+      "bytes": 2994
+    },
+    "out-12.md": {
+      "engine": "qwen3.6-fp8",
+      "arm": "skill",
+      "bytes": 4060
+    },
+    "out-13.md": {
+      "engine": "opus5",
+      "arm": "skill",
+      "bytes": 6879
+    },
+    "out-14.md": {
+      "engine": "gpt-oss-120b",
+      "arm": "control",
+      "bytes": 5851
+    },
+    "out-15.md": {
+      "engine": "qwen3.8-27b",
+      "arm": "control",
+      "bytes": 8745
+    },
+    "out-16.md": {
+      "engine": "sonnet5",
+      "arm": "control",
+      "bytes": 4624
+    }
+  },
+  "04-meeting-note": {
+    "out-01.md": {
+      "engine": "qwen3.6-35b-a3b",
+      "arm": "skill",
+      "bytes": 372
+    },
+    "out-02.md": {
+      "engine": "sonnet5",
+      "arm": "skill",
+      "bytes": 260
+    },
+    "out-03.md": {
+      "engine": "sonnet5",
+      "arm": "control",
+      "bytes": 302
+    },
+    "out-04.md": {
+      "engine": "qwen3.6-fp8",
+      "arm": "skill",
+      "bytes": 488
+    },
+    "out-05.md": {
+      "engine": "qwen3.8-27b",
+      "arm": "control",
+      "bytes": 400
+    },
+    "out-06.md": {
+      "engine": "haiku45",
+      "arm": "skill",
+      "bytes": 348
+    },
+    "out-07.md": {
+      "engine": "codex",
+      "arm": "control",
+      "bytes": 198
+    },
+    "out-08.md": {
+      "engine": "gpt-oss-120b",
+      "arm": "skill",
+      "bytes": 800
+    },
+    "out-09.md": {
+      "engine": "opus5",
+      "arm": "control",
+      "bytes": 296
+    },
+    "out-10.md": {
+      "engine": "haiku45",
+      "arm": "control",
+      "bytes": 248
+    },
+    "out-11.md": {
+      "engine": "qwen3.8-27b",
+      "arm": "skill",
+      "bytes": 499
+    },
+    "out-12.md": {
+      "engine": "qwen3.6-fp8",
+      "arm": "control",
+      "bytes": 287
+    },
+    "out-13.md": {
+      "engine": "gpt-oss-120b",
+      "arm": "control",
+      "bytes": 428
+    },
+    "out-14.md": {
+      "engine": "codex",
+      "arm": "skill",
+      "bytes": 224
+    },
+    "out-15.md": {
+      "engine": "opus5",
+      "arm": "skill",
+      "bytes": 553
+    },
+    "out-16.md": {
+      "engine": "qwen3.6-35b-a3b",
+      "arm": "control",
+      "bytes": 261
+    }
+  },
+  "05-role-of-board": {
+    "out-01.md": {
+      "engine": "codex",
+      "arm": "skill",
+      "bytes": 605
+    },
+    "out-02.md": {
+      "engine": "qwen3.8-27b",
+      "arm": "skill",
+      "bytes": 980
+    },
+    "out-03.md": {
+      "engine": "gpt-oss-120b",
+      "arm": "skill",
+      "bytes": 1544
+    },
+    "out-04.md": {
+      "engine": "sonnet5",
+      "arm": "skill",
+      "bytes": 978
+    },
+    "out-05.md": {
+      "engine": "qwen3.6-fp8",
+      "arm": "control",
+      "bytes": 734
+    },
+    "out-06.md": {
+      "engine": "qwen3.6-35b-a3b",
+      "arm": "skill",
+      "bytes": 682
+    },
+    "out-07.md": {
+      "engine": "haiku45",
+      "arm": "control",
+      "bytes": 572
+    },
+    "out-08.md": {
+      "engine": "haiku45",
+      "arm": "skill",
+      "bytes": 676
+    },
+    "out-09.md": {
+      "engine": "opus5",
+      "arm": "skill",
+      "bytes": 2523
+    },
+    "out-10.md": {
+      "engine": "qwen3.6-fp8",
+      "arm": "skill",
+      "bytes": 985
+    },
+    "out-11.md": {
+      "engine": "opus5",
+      "arm": "control",
+      "bytes": 1361
+    },
+    "out-12.md": {
+      "engine": "qwen3.6-35b-a3b",
+      "arm": "control",
+      "bytes": 502
+    },
+    "out-13.md": {
+      "engine": "sonnet5",
+      "arm": "control",
+      "bytes": 755
+    },
+    "out-14.md": {
+      "engine": "gpt-oss-120b",
+      "arm": "control",
+      "bytes": 1308
+    },
+    "out-15.md": {
+      "engine": "qwen3.8-27b",
+      "arm": "control",
+      "bytes": 511
+    },
+    "out-16.md": {
+      "engine": "codex",
+      "arm": "control",
+      "bytes": 491
+    }
+  },
+  "06-ttw-viz": {
+    "out-01.md": {
+      "engine": "qwen3.6-35b-a3b",
+      "arm": "skill",
+      "bytes": 465
+    },
+    "out-02.md": {
+      "engine": "codex",
+      "arm": "control",
+      "bytes": 3777
+    },
+    "out-03.md": {
+      "engine": "qwen3.8-27b",
+      "arm": "control",
+      "bytes": 1098
+    },
+    "out-04.md": {
+      "engine": "opus5",
+      "arm": "control",
+      "bytes": 4181
+    },
+    "out-05.md": {
+      "engine": "qwen3.6-fp8",
+      "arm": "skill",
+      "bytes": 3292
+    },
+    "out-06.md": {
+      "engine": "gpt-oss-120b",
+      "arm": "control",
+      "bytes": 860
+    },
+    "out-07.md": {
+      "engine": "qwen3.8-27b",
+      "arm": "skill",
+      "bytes": 1141
+    },
+    "out-08.md": {
+      "engine": "gpt-oss-120b",
+      "arm": "skill",
+      "bytes": 1249
+    },
+    "out-09.md": {
+      "engine": "qwen3.6-35b-a3b",
+      "arm": "control",
+      "bytes": 804
+    },
+    "out-10.md": {
+      "engine": "haiku45",
+      "arm": "control",
+      "bytes": 1609
+    },
+    "out-11.md": {
+      "engine": "codex",
+      "arm": "skill",
+      "bytes": 690
+    },
+    "out-12.md": {
+      "engine": "sonnet5",
+      "arm": "control",
+      "bytes": 1276
+    },
+    "out-13.md": {
+      "engine": "qwen3.6-fp8",
+      "arm": "control",
+      "bytes": 723
+    },
+    "out-14.md": {
+      "engine": "sonnet5",
+      "arm": "skill",
+      "bytes": 1306
+    },
+    "out-15.md": {
+      "engine": "haiku45",
+      "arm": "skill",
+      "bytes": 1160
+    },
+    "out-16.md": {
+      "engine": "opus5",
+      "arm": "skill",
+      "bytes": 3349
+    }
+  },
+  "07-headings-audit": {
+    "out-01.md": {
+      "engine": "qwen3.6-35b-a3b",
+      "arm": "control",
+      "bytes": 718
+    },
+    "out-02.md": {
+      "engine": "codex",
+      "arm": "control",
+      "bytes": 493
+    },
+    "out-03.md": {
+      "engine": "gpt-oss-120b",
+      "arm": "skill",
+      "bytes": 1777
+    },
+    "out-04.md": {
+      "engine": "haiku45",
+      "arm": "skill",
+      "bytes": 2464
+    },
+    "out-05.md": {
+      "engine": "opus5",
+      "arm": "skill",
+      "bytes": 3883
+    },
+    "out-06.md": {
+      "engine": "codex",
+      "arm": "skill",
+      "bytes": 1743
+    },
+    "out-07.md": {
+      "engine": "gpt-oss-120b",
+      "arm": "control",
+      "bytes": 1483
+    },
+    "out-08.md": {
+      "engine": "qwen3.8-27b",
+      "arm": "skill",
+      "bytes": 2767
+    },
+    "out-09.md": {
+      "engine": "haiku45",
+      "arm": "control",
+      "bytes": 728
+    },
+    "out-10.md": {
+      "engine": "sonnet5",
+      "arm": "control",
+      "bytes": 1938
+    },
+    "out-11.md": {
+      "engine": "qwen3.6-fp8",
+      "arm": "skill",
+      "bytes": 1342
+    },
+    "out-12.md": {
+      "engine": "opus5",
+      "arm": "control",
+      "bytes": 2422
+    },
+    "out-13.md": {
+      "engine": "qwen3.6-35b-a3b",
+      "arm": "skill",
+      "bytes": 2305
+    },
+    "out-14.md": {
+      "engine": "qwen3.8-27b",
+      "arm": "control",
+      "bytes": 1292
+    },
+    "out-15.md": {
+      "engine": "qwen3.6-fp8",
+      "arm": "control",
+      "bytes": 937
+    },
+    "out-16.md": {
+      "engine": "sonnet5",
+      "arm": "skill",
+      "bytes": 3181
+    }
+  },
+  "08-techdebt": {
+    "out-01.md": {
+      "engine": "qwen3.8-27b",
+      "arm": "control",
+      "bytes": 678
+    },
+    "out-02.md": {
+      "engine": "gpt-oss-120b",
+      "arm": "control",
+      "bytes": 794
+    },
+    "out-03.md": {
+      "engine": "sonnet5",
+      "arm": "control",
+      "bytes": 957
+    },
+    "out-04.md": {
+      "engine": "qwen3.6-fp8",
+      "arm": "control",
+      "bytes": 1066
+    },
+    "out-05.md": {
+      "engine": "qwen3.8-27b",
+      "arm": "skill",
+      "bytes": 826
+    },
+    "out-06.md": {
+      "engine": "haiku45",
+      "arm": "skill",
+      "bytes": 551
+    },
+    "out-07.md": {
+      "engine": "opus5",
+      "arm": "control",
+      "bytes": 908
+    },
+    "out-08.md": {
+      "engine": "gpt-oss-120b",
+      "arm": "skill",
+      "bytes": 909
+    },
+    "out-09.md": {
+      "engine": "qwen3.6-35b-a3b",
+      "arm": "skill",
+      "bytes": 893
+    },
+    "out-10.md": {
+      "engine": "sonnet5",
+      "arm": "skill",
+      "bytes": 851
+    },
+    "out-11.md": {
+      "engine": "qwen3.6-fp8",
+      "arm": "skill",
+      "bytes": 1227
+    },
+    "out-12.md": {
+      "engine": "haiku45",
+      "arm": "control",
+      "bytes": 599
+    },
+    "out-13.md": {
+      "engine": "codex",
+      "arm": "skill",
+      "bytes": 1118
+    },
+    "out-14.md": {
+      "engine": "codex",
+      "arm": "control",
+      "bytes": 644
+    },
+    "out-15.md": {
+      "engine": "opus5",
+      "arm": "skill",
+      "bytes": 1903
+    },
+    "out-16.md": {
+      "engine": "qwen3.6-35b-a3b",
+      "arm": "control",
+      "bytes": 776
+    }
+  },
+  "09-sources-digest": {
+    "out-01.md": {
+      "engine": "qwen3.8-27b",
+      "arm": "skill",
+      "bytes": 1833
+    },
+    "out-02.md": {
+      "engine": "qwen3.6-fp8",
+      "arm": "skill",
+      "bytes": 1572
+    },
+    "out-03.md": {
+      "engine": "qwen3.6-35b-a3b",
+      "arm": "skill",
+      "bytes": 1609
+    },
+    "out-04.md": {
+      "engine": "codex",
+      "arm": "skill",
+      "bytes": 1328
+    },
+    "out-05.md": {
+      "engine": "opus5",
+      "arm": "skill",
+      "bytes": 2746
+    },
+    "out-06.md": {
+      "engine": "qwen3.6-35b-a3b",
+      "arm": "control",
+      "bytes": 1827
+    },
+    "out-07.md": {
+      "engine": "sonnet5",
+      "arm": "control",
+      "bytes": 1694
+    },
+    "out-08.md": {
+      "engine": "haiku45",
+      "arm": "skill",
+      "bytes": 615
+    },
+    "out-09.md": {
+      "engine": "qwen3.8-27b",
+      "arm": "control",
+      "bytes": 2416
+    },
+    "out-10.md": {
+      "engine": "gpt-oss-120b",
+      "arm": "control",
+      "bytes": 3668
+    },
+    "out-11.md": {
+      "engine": "opus5",
+      "arm": "control",
+      "bytes": 2636
+    },
+    "out-12.md": {
+      "engine": "qwen3.6-fp8",
+      "arm": "control",
+      "bytes": 2178
+    },
+    "out-13.md": {
+      "engine": "codex",
+      "arm": "control",
+      "bytes": 1457
+    },
+    "out-14.md": {
+      "engine": "sonnet5",
+      "arm": "skill",
+      "bytes": 1760
+    },
+    "out-15.md": {
+      "engine": "haiku45",
+      "arm": "control",
+      "bytes": 1810
+    },
+    "out-16.md": {
+      "engine": "gpt-oss-120b",
+      "arm": "skill",
+      "bytes": 1602
+    }
+  },
+  "10-rollout-review": {
+    "out-01.md": {
+      "engine": "qwen3.6-fp8",
+      "arm": "control",
+      "bytes": 5481
+    },
+    "out-02.md": {
+      "engine": "qwen3.6-35b-a3b",
+      "arm": "control",
+      "bytes": 4279
+    },
+    "out-03.md": {
+      "engine": "gpt-oss-120b",
+      "arm": "control",
+      "bytes": 6704
+    },
+    "out-04.md": {
+      "engine": "gpt-oss-120b",
+      "arm": "skill",
+      "bytes": 4044
+    },
+    "out-05.md": {
+      "engine": "haiku45",
+      "arm": "skill",
+      "bytes": 2834
+    },
+    "out-06.md": {
+      "engine": "opus5",
+      "arm": "skill",
+      "bytes": 6881
+    },
+    "out-07.md": {
+      "engine": "opus5",
+      "arm": "control",
+      "bytes": 7759
+    },
+    "out-08.md": {
+      "engine": "sonnet5",
+      "arm": "skill",
+      "bytes": 4134
+    },
+    "out-09.md": {
+      "engine": "codex",
+      "arm": "skill",
+      "bytes": 7611
+    },
+    "out-10.md": {
+      "engine": "codex",
+      "arm": "control",
+      "bytes": 4713
+    },
+    "out-11.md": {
+      "engine": "qwen3.6-fp8",
+      "arm": "skill",
+      "bytes": 6340
+    },
+    "out-12.md": {
+      "engine": "qwen3.6-35b-a3b",
+      "arm": "skill",
+      "bytes": 5771
+    },
+    "out-13.md": {
+      "engine": "sonnet5",
+      "arm": "control",
+      "bytes": 5700
+    },
+    "out-14.md": {
+      "engine": "haiku45",
+      "arm": "control",
+      "bytes": 3374
+    }
+  },
+  "11-plain-list": {
+    "out-01.md": {
+      "engine": "sonnet5",
+      "arm": "skill",
+      "bytes": 910
+    },
+    "out-02.md": {
+      "engine": "qwen3.6-fp8",
+      "arm": "control",
+      "bytes": 696
+    },
+    "out-03.md": {
+      "engine": "opus5",
+      "arm": "control",
+      "bytes": 1183
+    },
+    "out-04.md": {
+      "engine": "sonnet5",
+      "arm": "control",
+      "bytes": 438
+    },
+    "out-05.md": {
+      "engine": "gpt-oss-120b",
+      "arm": "skill",
+      "bytes": 643
+    },
+    "out-06.md": {
+      "engine": "codex",
+      "arm": "skill",
+      "bytes": 311
+    },
+    "out-07.md": {
+      "engine": "gpt-oss-120b",
+      "arm": "control",
+      "bytes": 729
+    },
+    "out-08.md": {
+      "engine": "codex",
+      "arm": "control",
+      "bytes": 341
+    },
+    "out-09.md": {
+      "engine": "qwen3.6-35b-a3b",
+      "arm": "skill",
+      "bytes": 531
+    },
+    "out-10.md": {
+      "engine": "haiku45",
+      "arm": "control",
+      "bytes": 454
+    },
+    "out-11.md": {
+      "engine": "qwen3.8-27b",
+      "arm": "control",
+      "bytes": 531
+    },
+    "out-12.md": {
+      "engine": "qwen3.8-27b",
+      "arm": "skill",
+      "bytes": 305
+    },
+    "out-13.md": {
+      "engine": "opus5",
+      "arm": "skill",
+      "bytes": 1192
+    },
+    "out-14.md": {
+      "engine": "haiku45",
+      "arm": "skill",
+      "bytes": 396
+    },
+    "out-15.md": {
+      "engine": "qwen3.6-35b-a3b",
+      "arm": "control",
+      "bytes": 529
+    },
+    "out-16.md": {
+      "engine": "qwen3.6-fp8",
+      "arm": "skill",
+      "bytes": 599
+    }
+  }
+}

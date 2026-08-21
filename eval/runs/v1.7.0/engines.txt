@@ -1,0 +1,27 @@
+started_utc: 2026-08-20T14:11:02Z
+commit: 03975451e3c979d733f5e2053a239bac29c7cea9
+worktree: clean
+allow_dirty: 0
+min_output_bytes: 10
+skill_sha256: 55fe66c1091efd7c49655dfe60004bb748a90b4345b2c8787d431bb9fb0173f1
+rules_sha256: 44ac7427fa75f614df62c1cf5bd6ac8b17b9b4771e02e52d93f697a120ddd93a
+templates_sha256: 9be36d71f023001a3d743903ab122ee0b7aaffcfcdee8c14619bc5b295113f33
+codex: model=gpt-5.6-terra reasoning_effort=low
+codex_cli: codex-cli 0.147.0
+kimi: model=kimi-code/k3-low effort=low
+kimi_cli: 0.34.0
+claude: engine=haiku45 model=haiku effort=low
+claude: engine=sonnet5 model=sonnet effort=low
+claude: engine=opus5 model=opus effort=low
+claude_cli: 2.1.227 (Claude Code)
+neuraldeep: model=gpt-oss-120b base_url=https://api.neuraldeep.ru/v1 temperature=0.1 max_tokens=24576 timeout=550 attempts=2 concurrency=2
+neuraldeep: model=qwen3.6-35b-a3b base_url=https://api.neuraldeep.ru/v1 temperature=0.1 max_tokens=24576 timeout=550 attempts=2 concurrency=2
+neuraldeep: model=qwen3.6-fp8 base_url=https://api.neuraldeep.ru/v1 temperature=0.1 max_tokens=24576 timeout=550 attempts=2 concurrency=2
+neuraldeep: model=qwen3.8-27b base_url=https://api.neuraldeep.ru/v1 temperature=0.1 max_tokens=24576 timeout=550 attempts=2 concurrency=2
+arms: skill control
+fixtures: all
+engines: gpt-oss-120b qwen3.6-35b-a3b qwen3.6-fp8 qwen3.8-27b codex haiku45 sonnet5 opus5
+codex_command: codex exec -C ISOLATED_WORKSPACE -m MODEL -c model_reasoning_effort=EFFORT --ignore-user-config --ignore-rules --ephemeral --skip-git-repo-check -o OUTPUT -
+kimi_command: cd ISOLATED_HOME && KIMI_CODE_HOME=ISOLATED_HOME kimi --skills-dir EMPTY_SKILLS -p PROMPT -m MODEL --output-format stream-json
+claude_command: cd ISOLATED_WORKSPACE && env -u CLAUDECODE -u CLAUDE_CODE_* -u CLAUDE_EFFORT -u CLAUDE_PID -u CLAUDE_PLUGIN_DATA -u CLAUDE_AGENT_SDK_VERSION claude -p --model MODEL --effort EFFORT --output-format json --tools "" --disable-slash-commands --strict-mcp-config --setting-sources "" --no-session-persistence --exclude-dynamic-system-prompt-sections < PROMPT
+neuraldeep_command: eval/run-neuraldeep.py MODEL PROMPT OUTPUT

@@ -13,13 +13,15 @@ answers in the language of the source material or request, including Russian.
 
 ## What it does
 
-Minto routes a request into one of four modes:
+Minto routes a request into one of five modes:
 
 - `intent`: interview the author and turn a vague goal into a reader question,
   one-sentence answer, and provisional key line.
 - `audit`: diagnose pyramid-logic defects without rewriting the document.
 - `write`: draft or restructure an answer-first memo, email, one-pager, decision
   note, chat update, or deck storyline.
+- `digest`: report on read sources answer-first in chat, with source references
+  and cross-source synthesis.
 - `viz`: render the pyramid and SCQ flow in Mermaid, with an optional
   self-contained HTML view when explicitly requested.
 
@@ -129,17 +131,19 @@ Build the evaluation prompts and run the pinned benchmark:
 
 ```bash
 bash eval/build-prompts.sh
-NEURALDEEP_API_KEY=... bash eval/run-cli.sh eval/runs/v1.5.0-wide \
+PARALLEL_ENGINES=1 NEURALDEEP_API_KEY=... \
+NEURALDEEP_MODELS="gpt-oss-120b qwen3.6-35b-a3b qwen3.6-fp8 qwen3.8-27b" \
+NEURALDEEP_MAX_TOKENS=24576 bash eval/run-cli.sh eval/runs/v1.7.0-final \
   "skill control" "" \
-  "gpt-oss-120b qwen3.6-35b-a3b codex kimi haiku45 sonnet5 opus5"
-SHUFFLE_SEED=v1.5.0-wide bash eval/shuffle.sh eval/runs/v1.5.0-wide
-bash eval/run-judge.sh eval/runs/v1.5.0-wide
-python3 eval/aggregate.py eval/runs/v1.5.0-wide
-bash eval/build-report.sh eval/runs/v1.5.0-wide eval/report-v1.5.0-wide.md
+  "gpt-oss-120b qwen3.6-35b-a3b qwen3.6-fp8 qwen3.8-27b codex haiku45 sonnet5 opus5"
+SHUFFLE_SEED=v1.7.0-final bash eval/shuffle.sh eval/runs/v1.7.0-final
+bash eval/run-judge.sh eval/runs/v1.7.0-final
+python3 eval/aggregate.py eval/runs/v1.7.0-final --allow-partial
+bash eval/build-report.sh eval/runs/v1.7.0-final eval/report-v1.7.0.md
 ```
 
-The release benchmark uses eight English fixtures, seven engines, and two arms
-(`skill` and `control`) for 112 judged cells, all generated at low reasoning
+The release benchmark uses eleven English fixtures, eight engines, and two arms
+(`skill` and `control`) for 172 judged cells, all generated at low reasoning
 effort. Model identifiers, CLI versions, effort settings, UTC time, and the commit
 SHA are recorded with the run. Every published figure is computed from the verdicts
 by `eval/aggregate.py`; nothing downstream recomputes it. See `eval/README.md` for
@@ -157,7 +161,9 @@ The source book and online course are copyrighted and are not distributed with
 this repository. Fixtures preserve the structural problem and evaluation target
 without reproducing long source passages. The modern technical-debt fixture is
 an original paraphrase inspired by a
-[Planio article](https://plan.io/blog/pyramid-principle-pitching/).
+[Planio article](https://plan.io/blog/pyramid-principle-pitching/). The digest,
+rollout-review, and plain-list fixtures are modeled on real usage patterns with
+every company, product, person, system, and number invented for the benchmark.
 
 ## Updating
 

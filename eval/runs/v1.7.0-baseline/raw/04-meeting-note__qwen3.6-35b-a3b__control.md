@@ -1,0 +1,1 @@
+Please approve rescheduling to Thursday at 11:00. This time accommodates all constraints: Collins is unavailable at 3:00, Clifford returns late tomorrow, Johnson is busy until 10:30 tomorrow, and the conference room is occupied tomorrow but available Thursday.

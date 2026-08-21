@@ -1,0 +1,1 @@
+I propose rescheduling to Thursday at 11:00. This time accommodates all attendees and the venue: Collins is unavailable at 3:00; Johnson is free after 10:30; Clifford returns late tomorrow; and the conference room is occupied tomorrow but available Thursday. Please confirm approval.

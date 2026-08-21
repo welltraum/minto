@@ -1,0 +1,1 @@
+Please approve moving the meeting to Thursday at 11:00. Collins cannot attend at 3:00, Johnson cannot meet before 10:30, Clifford won't return from Frankfurt until late tomorrow, and the conference room is occupied tomorrow.

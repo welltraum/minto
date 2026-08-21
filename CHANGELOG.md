@@ -3,6 +3,60 @@
 All notable changes to Minto are documented here. The project follows semantic
 versioning for its plugin manifests.
 
+## 1.7.0 - 2026-08-20
+
+The first revision of the skill text since 1.5.0, driven by 21 real usage
+sessions (26 invocations) and validated by a full baseline-versus-candidate
+benchmark: the same eleven fixtures, eight engines and blind judge scored the
+1.6.0 text and this text cell-for-cell. Skill-arm quality rose on all eight
+engines; the skill-versus-control delta on judged quality went from +0.256 to
++0.721 points (penalized: +0.302 → +0.744). Full figures, including everything
+that moved against the skill: `eval/report-v1.7.0.md`.
+
+### Added
+
+- **Mode 4 — `digest`**: an answer-first report on read sources delivered as
+  chat prose with source references. This was the single most common real
+  invocation (35%) and previously had no mode; the router and description now
+  carry the digest/выжимка/саммари triggers. Its fixture (`09-sources-digest`)
+  gained +2.12 judged quality over the 1.6.0 text.
+- An SCQ-intro item in the core-loop self-check: the output must ground its
+  answer in a situation and complication, or skip the story deliberately.
+- A text-skeleton pyramid template; after `write` the pyramid is now appended
+  as indented text by default, with mermaid only where it demonstrably renders
+  or on request. Judged metrics are ambiguous on this one; it ships because
+  raw mermaid in chat output is a real, repeatedly reported reading problem.
+- Presentation discipline in `write`: markers and the legend belong to `audit`
+  and `viz` only; no meta-commentary about ordering in the deliverable; a
+  plain-list request gets plain text — with one exception the removal test
+  taught us: a dropped fact still earns its one-line omission note.
+- Intent-mode output dosing (context first, disagreements one at a time).
+  No fixture exercises intent mode, so this ships unmeasured and is recorded
+  as such.
+- Three benchmark fixtures modeled on real usage with all client specifics
+  invented from scratch: a multi-source digest, a large sectioned rollout
+  review, and a plain pasteable list. A new conditional check
+  (`scq_intro_present`) with per-mode applicability.
+- `eval/compare-runs.py` — cell-for-cell comparison of two aggregated runs.
+- Parallel engine lanes in `eval/run-cli.sh` (`PARALLEL_ENGINES=1`), a
+  `NEURALDEEP_DEADLINE` override, 503 retries, and fixture-scoped blinding for
+  deliberately partial runs.
+
+### Rolled back during this cycle (negative results)
+
+- A "Large or sectioned input" section made its own target fixture worse on
+  every metric and was removed; the large-document pain remains open, with the
+  fixture staying in the suite to measure the next attempt.
+- A rewording of the group-count rule ("count from the material") hurt three
+  fixtures and was reverted to the original "3–4 first-level groups".
+
+### Known regressions shipped with eyes open
+
+- `no_invented_facts` moved −8.2 pp against the skill in the final run
+  (49 vs 42 hard failures) and `answer_first` remains −10.0 pp against the
+  skill — both are on the page and in the report, and both are the top
+  candidates for the next revision.
+
 ## 1.6.0 - 2026-08-05
 
 **The skill instructions are byte-identical to 1.5.0.** `SKILL.md`, `rules.md` and

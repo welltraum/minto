@@ -1,0 +1,2438 @@
+{
+  "schema_version": 1,
+  "run": "v1.7.0-ablate-S7",
+  "generated_utc": "2026-08-20T17:36:58Z",
+  "commit": "a5312821438a65c3b009a76992f4da732b0ffd03",
+  "commits": [
+    "a5312821438a65c3b009a76992f4da732b0ffd03"
+  ],
+  "skill_sha256": [
+    "34f1ccef3f47da450740aa3038ae3d43730b272a2a7d5ccab6f21432e45a907c"
+  ],
+  "skill_unchanged_across_run": true,
+  "worktree": "dirty",
+  "rubric_penalty_version": 1,
+  "fixtures": [
+    "01-big-chief",
+    "02-ttv",
+    "04-meeting-note"
+  ],
+  "cells_used": 24,
+  "judge": {
+    "model": "gpt-5.6-sol",
+    "effort": "high",
+    "attempts": "2",
+    "rubric_sha256": "973cef5bb2f16503d6b2a33e44b53915f2ec277268033221b0b6d244755687e7",
+    "universal_checks_sha256": "fe794add3a25c898a594bdeb75f6de7e036bad5ec58487bcacd59c05cbac12d2",
+    "split_fixtures": {}
+  },
+  "engines": {
+    "codex": {
+      "model": "gpt-5.6-terra",
+      "reasoning_effort": "low"
+    },
+    "gpt-oss-120b": {},
+    "qwen3.6-fp8": {},
+    "sonnet5": {
+      "model": "sonnet",
+      "effort": "low"
+    }
+  },
+  "excluded_pairs": [],
+  "hard_failure_tally": {
+    "skill": {
+      "invented_facts": 8,
+      "unacknowledged_source_loss": 4
+    },
+    "control": {
+      "invented_facts": 7,
+      "unacknowledged_source_loss": 5,
+      "more_than_four_first_level": 1
+    }
+  },
+  "pooled": {
+    "control": {
+      "n": 12,
+      "structure_mean": 2.6667,
+      "structure_pct_of_max": 33.3,
+      "quality_raw_mean": 6.9167,
+      "quality_raw_pct_of_max": 69.2,
+      "quality_penalized_mean": 6.3333,
+      "quality_penalized_pct_of_max": 63.3,
+      "first_level_count_mean": 3.3333,
+      "first_level_count_n": 12,
+      "hard_failures_total": 13,
+      "no_hard_failure": {
+        "check": "hard_failures",
+        "pass": 3,
+        "applicable": 12,
+        "pass_rate_pct": 25.0
+      },
+      "checks": {
+        "first_level_kind_matches": {
+          "check": "first_level_kind_matches",
+          "pass": 2,
+          "applicable": 12,
+          "pass_rate_pct": 16.7
+        },
+        "no_invented_facts": {
+          "check": "invented_facts",
+          "pass": 5,
+          "applicable": 12,
+          "pass_rate_pct": 41.7
+        },
+        "no_unacknowledged_source_loss": {
+          "check": "unacknowledged_source_loss",
+          "pass": 7,
+          "applicable": 12,
+          "pass_rate_pct": 58.3
+        },
+        "mode_respected": {
+          "check": "mode_respected",
+          "pass": 12,
+          "applicable": 12,
+          "pass_rate_pct": 100.0
+        },
+        "answer_first": {
+          "check": "answer_first",
+          "pass": 9,
+          "applicable": 12,
+          "pass_rate_pct": 75.0
+        },
+        "first_level_count_within_limit": {
+          "check": "first_level_count",
+          "pass": 11,
+          "applicable": 12,
+          "pass_rate_pct": 91.7
+        },
+        "readers_question_literal": {
+          "check": "readers_question_literal",
+          "pass": 2,
+          "applicable": 12,
+          "pass_rate_pct": 16.7
+        },
+        "order_type_named": {
+          "check": "order_type_named",
+          "pass": 0,
+          "applicable": 8,
+          "pass_rate_pct": 0.0
+        },
+        "scq_intro_present": {
+          "check": "scq_intro_present",
+          "pass": 2,
+          "applicable": 8,
+          "pass_rate_pct": 25.0
+        }
+      }
+    },
+    "skill": {
+      "n": 12,
+      "structure_mean": 3.8333,
+      "structure_pct_of_max": 47.9,
+      "quality_raw_mean": 6.75,
+      "quality_raw_pct_of_max": 67.5,
+      "quality_penalized_mean": 6.25,
+      "quality_penalized_pct_of_max": 62.5,
+      "first_level_count_mean": 2.8333,
+      "first_level_count_n": 12,
+      "hard_failures_total": 12,
+      "no_hard_failure": {
+        "check": "hard_failures",
+        "pass": 2,
+        "applicable": 12,
+        "pass_rate_pct": 16.7
+      },
+      "checks": {
+        "first_level_kind_matches": {
+          "check": "first_level_kind_matches",
+          "pass": 4,
+          "applicable": 12,
+          "pass_rate_pct": 33.3
+        },
+        "no_invented_facts": {
+          "check": "invented_facts",
+          "pass": 4,
+          "applicable": 12,
+          "pass_rate_pct": 33.3
+        },
+        "no_unacknowledged_source_loss": {
+          "check": "unacknowledged_source_loss",
+          "pass": 8,
+          "applicable": 12,
+          "pass_rate_pct": 66.7
+        },
+        "mode_respected": {
+          "check": "mode_respected",
+          "pass": 12,
+          "applicable": 12,
+          "pass_rate_pct": 100.0
+        },
+        "answer_first": {
+          "check": "answer_first",
+          "pass": 6,
+          "applicable": 12,
+          "pass_rate_pct": 50.0
+        },
+        "first_level_count_within_limit": {
+          "check": "first_level_count",
+          "pass": 12,
+          "applicable": 12,
+          "pass_rate_pct": 100.0
+        },
+        "readers_question_literal": {
+          "check": "readers_question_literal",
+          "pass": 5,
+          "applicable": 12,
+          "pass_rate_pct": 41.7
+        },
+        "order_type_named": {
+          "check": "order_type_named",
+          "pass": 0,
+          "applicable": 8,
+          "pass_rate_pct": 0.0
+        },
+        "scq_intro_present": {
+          "check": "scq_intro_present",
+          "pass": 7,
+          "applicable": 8,
+          "pass_rate_pct": 87.5
+        }
+      }
+    },
+    "delta": {
+      "structure": {
+        "control_mean": 2.6667,
+        "skill_mean": 3.8333,
+        "points": 1.1666,
+        "control_pct_of_max": 33.3,
+        "skill_pct_of_max": 47.9,
+        "pct_points": 14.6,
+        "relative_change_pct": 43.7
+      },
+      "quality_raw": {
+        "control_mean": 6.9167,
+        "skill_mean": 6.75,
+        "points": -0.1667,
+        "control_pct_of_max": 69.2,
+        "skill_pct_of_max": 67.5,
+        "pct_points": -1.7,
+        "relative_change_pct": -2.4
+      },
+      "quality_penalized": {
+        "control_mean": 6.3333,
+        "skill_mean": 6.25,
+        "points": -0.0833,
+        "control_pct_of_max": 63.3,
+        "skill_pct_of_max": 62.5,
+        "pct_points": -0.8,
+        "relative_change_pct": -1.3
+      },
+      "checks": {
+        "first_level_kind_matches": {
+          "control_pct": 16.7,
+          "skill_pct": 33.3,
+          "control_applicable": 12,
+          "skill_applicable": 12,
+          "pct_points": 16.6
+        },
+        "no_invented_facts": {
+          "control_pct": 41.7,
+          "skill_pct": 33.3,
+          "control_applicable": 12,
+          "skill_applicable": 12,
+          "pct_points": -8.4
+        },
+        "no_unacknowledged_source_loss": {
+          "control_pct": 58.3,
+          "skill_pct": 66.7,
+          "control_applicable": 12,
+          "skill_applicable": 12,
+          "pct_points": 8.4
+        },
+        "mode_respected": {
+          "control_pct": 100.0,
+          "skill_pct": 100.0,
+          "control_applicable": 12,
+          "skill_applicable": 12,
+          "pct_points": 0.0
+        },
+        "answer_first": {
+          "control_pct": 75.0,
+          "skill_pct": 50.0,
+          "control_applicable": 12,
+          "skill_applicable": 12,
+          "pct_points": -25.0
+        },
+        "first_level_count_within_limit": {
+          "control_pct": 91.7,
+          "skill_pct": 100.0,
+          "control_applicable": 12,
+          "skill_applicable": 12,
+          "pct_points": 8.3
+        },
+        "readers_question_literal": {
+          "control_pct": 16.7,
+          "skill_pct": 41.7,
+          "control_applicable": 12,
+          "skill_applicable": 12,
+          "pct_points": 25.0
+        },
+        "order_type_named": {
+          "control_pct": 0.0,
+          "skill_pct": 0.0,
+          "control_applicable": 8,
+          "skill_applicable": 8,
+          "pct_points": 0.0
+        },
+        "scq_intro_present": {
+          "control_pct": 25.0,
+          "skill_pct": 87.5,
+          "control_applicable": 8,
+          "skill_applicable": 8,
+          "pct_points": 62.5
+        },
+        "no_hard_failure": {
+          "control_pct": 25.0,
+          "skill_pct": 16.7,
+          "control_applicable": 12,
+          "skill_applicable": 12,
+          "pct_points": -8.3
+        }
+      }
+    }
+  },
+  "by_engine": {
+    "codex": {
+      "control": {
+        "n": 3,
+        "structure_mean": 2.3333,
+        "structure_pct_of_max": 29.2,
+        "quality_raw_mean": 7.3333,
+        "quality_raw_pct_of_max": 73.3,
+        "quality_penalized_mean": 7.3333,
+        "quality_penalized_pct_of_max": 73.3,
+        "first_level_count_mean": 3.3333,
+        "first_level_count_n": 3,
+        "hard_failures_total": 1,
+        "no_hard_failure": {
+          "check": "hard_failures",
+          "pass": 2,
+          "applicable": 3,
+          "pass_rate_pct": 66.7
+        },
+        "checks": {
+          "first_level_kind_matches": {
+            "check": "first_level_kind_matches",
+            "pass": 0,
+            "applicable": 3,
+            "pass_rate_pct": 0.0
+          },
+          "no_invented_facts": {
+            "check": "invented_facts",
+            "pass": 3,
+            "applicable": 3,
+            "pass_rate_pct": 100.0
+          },
+          "no_unacknowledged_source_loss": {
+            "check": "unacknowledged_source_loss",
+            "pass": 2,
+            "applicable": 3,
+            "pass_rate_pct": 66.7
+          },
+          "mode_respected": {
+            "check": "mode_respected",
+            "pass": 3,
+            "applicable": 3,
+            "pass_rate_pct": 100.0
+          },
+          "answer_first": {
+            "check": "answer_first",
+            "pass": 2,
+            "applicable": 3,
+            "pass_rate_pct": 66.7
+          },
+          "first_level_count_within_limit": {
+            "check": "first_level_count",
+            "pass": 3,
+            "applicable": 3,
+            "pass_rate_pct": 100.0
+          },
+          "readers_question_literal": {
+            "check": "readers_question_literal",
+            "pass": 1,
+            "applicable": 3,
+            "pass_rate_pct": 33.3
+          },
+          "order_type_named": {
+            "check": "order_type_named",
+            "pass": 0,
+            "applicable": 2,
+            "pass_rate_pct": 0.0
+          },
+          "scq_intro_present": {
+            "check": "scq_intro_present",
+            "pass": 0,
+            "applicable": 2,
+            "pass_rate_pct": 0.0
+          }
+        }
+      },
+      "skill": {
+        "n": 3,
+        "structure_mean": 3.3333,
+        "structure_pct_of_max": 41.7,
+        "quality_raw_mean": 6.0,
+        "quality_raw_pct_of_max": 60.0,
+        "quality_penalized_mean": 5.6667,
+        "quality_penalized_pct_of_max": 56.7,
+        "first_level_count_mean": 3.3333,
+        "first_level_count_n": 3,
+        "hard_failures_total": 2,
+        "no_hard_failure": {
+          "check": "hard_failures",
+          "pass": 1,
+          "applicable": 3,
+          "pass_rate_pct": 33.3
+        },
+        "checks": {
+          "first_level_kind_matches": {
+            "check": "first_level_kind_matches",
+            "pass": 1,
+            "applicable": 3,
+            "pass_rate_pct": 33.3
+          },
+          "no_invented_facts": {
+            "check": "invented_facts",
+            "pass": 2,
+            "applicable": 3,
+            "pass_rate_pct": 66.7
+          },
+          "no_unacknowledged_source_loss": {
+            "check": "unacknowledged_source_loss",
+            "pass": 2,
+            "applicable": 3,
+            "pass_rate_pct": 66.7
+          },
+          "mode_respected": {
+            "check": "mode_respected",
+            "pass": 3,
+            "applicable": 3,
+            "pass_rate_pct": 100.0
+          },
+          "answer_first": {
+            "check": "answer_first",
+            "pass": 2,
+            "applicable": 3,
+            "pass_rate_pct": 66.7
+          },
+          "first_level_count_within_limit": {
+            "check": "first_level_count",
+            "pass": 3,
+            "applicable": 3,
+            "pass_rate_pct": 100.0
+          },
+          "readers_question_literal": {
+            "check": "readers_question_literal",
+            "pass": 1,
+            "applicable": 3,
+            "pass_rate_pct": 33.3
+          },
+          "order_type_named": {
+            "check": "order_type_named",
+            "pass": 0,
+            "applicable": 2,
+            "pass_rate_pct": 0.0
+          },
+          "scq_intro_present": {
+            "check": "scq_intro_present",
+            "pass": 2,
+            "applicable": 2,
+            "pass_rate_pct": 100.0
+          }
+        }
+      },
+      "delta": {
+        "structure": {
+          "control_mean": 2.3333,
+          "skill_mean": 3.3333,
+          "points": 1.0,
+          "control_pct_of_max": 29.2,
+          "skill_pct_of_max": 41.7,
+          "pct_points": 12.5,
+          "relative_change_pct": 42.9
+        },
+        "quality_raw": {
+          "control_mean": 7.3333,
+          "skill_mean": 6.0,
+          "points": -1.3333,
+          "control_pct_of_max": 73.3,
+          "skill_pct_of_max": 60.0,
+          "pct_points": -13.3,
+          "relative_change_pct": -18.2
+        },
+        "quality_penalized": {
+          "control_mean": 7.3333,
+          "skill_mean": 5.6667,
+          "points": -1.6666,
+          "control_pct_of_max": 73.3,
+          "skill_pct_of_max": 56.7,
+          "pct_points": -16.6,
+          "relative_change_pct": -22.7
+        },
+        "checks": {
+          "first_level_kind_matches": {
+            "control_pct": 0.0,
+            "skill_pct": 33.3,
+            "control_applicable": 3,
+            "skill_applicable": 3,
+            "pct_points": 33.3
+          },
+          "no_invented_facts": {
+            "control_pct": 100.0,
+            "skill_pct": 66.7,
+            "control_applicable": 3,
+            "skill_applicable": 3,
+            "pct_points": -33.3
+          },
+          "no_unacknowledged_source_loss": {
+            "control_pct": 66.7,
+            "skill_pct": 66.7,
+            "control_applicable": 3,
+            "skill_applicable": 3,
+            "pct_points": 0.0
+          },
+          "mode_respected": {
+            "control_pct": 100.0,
+            "skill_pct": 100.0,
+            "control_applicable": 3,
+            "skill_applicable": 3,
+            "pct_points": 0.0
+          },
+          "answer_first": {
+            "control_pct": 66.7,
+            "skill_pct": 66.7,
+            "control_applicable": 3,
+            "skill_applicable": 3,
+            "pct_points": 0.0
+          },
+          "first_level_count_within_limit": {
+            "control_pct": 100.0,
+            "skill_pct": 100.0,
+            "control_applicable": 3,
+            "skill_applicable": 3,
+            "pct_points": 0.0
+          },
+          "readers_question_literal": {
+            "control_pct": 33.3,
+            "skill_pct": 33.3,
+            "control_applicable": 3,
+            "skill_applicable": 3,
+            "pct_points": 0.0
+          },
+          "order_type_named": {
+            "control_pct": 0.0,
+            "skill_pct": 0.0,
+            "control_applicable": 2,
+            "skill_applicable": 2,
+            "pct_points": 0.0
+          },
+          "scq_intro_present": {
+            "control_pct": 0.0,
+            "skill_pct": 100.0,
+            "control_applicable": 2,
+            "skill_applicable": 2,
+            "pct_points": 100.0
+          },
+          "no_hard_failure": {
+            "control_pct": 66.7,
+            "skill_pct": 33.3,
+            "control_applicable": 3,
+            "skill_applicable": 3,
+            "pct_points": -33.4
+          }
+        }
+      }
+    },
+    "gpt-oss-120b": {
+      "control": {
+        "n": 3,
+        "structure_mean": 2.0,
+        "structure_pct_of_max": 25.0,
+        "quality_raw_mean": 5.6667,
+        "quality_raw_pct_of_max": 56.7,
+        "quality_penalized_mean": 4.6667,
+        "quality_penalized_pct_of_max": 46.7,
+        "first_level_count_mean": 4.0,
+        "first_level_count_n": 3,
+        "hard_failures_total": 6,
+        "no_hard_failure": {
+          "check": "hard_failures",
+          "pass": 0,
+          "applicable": 3,
+          "pass_rate_pct": 0.0
+        },
+        "checks": {
+          "first_level_kind_matches": {
+            "check": "first_level_kind_matches",
+            "pass": 0,
+            "applicable": 3,
+            "pass_rate_pct": 0.0
+          },
+          "no_invented_facts": {
+            "check": "invented_facts",
+            "pass": 0,
+            "applicable": 3,
+            "pass_rate_pct": 0.0
+          },
+          "no_unacknowledged_source_loss": {
+            "check": "unacknowledged_source_loss",
+            "pass": 1,
+            "applicable": 3,
+            "pass_rate_pct": 33.3
+          },
+          "mode_respected": {
+            "check": "mode_respected",
+            "pass": 3,
+            "applicable": 3,
+            "pass_rate_pct": 100.0
+          },
+          "answer_first": {
+            "check": "answer_first",
+            "pass": 3,
+            "applicable": 3,
+            "pass_rate_pct": 100.0
+          },
+          "first_level_count_within_limit": {
+            "check": "first_level_count",
+            "pass": 2,
+            "applicable": 3,
+            "pass_rate_pct": 66.7
+          },
+          "readers_question_literal": {
+            "check": "readers_question_literal",
+            "pass": 0,
+            "applicable": 3,
+            "pass_rate_pct": 0.0
+          },
+          "order_type_named": {
+            "check": "order_type_named",
+            "pass": 0,
+            "applicable": 2,
+            "pass_rate_pct": 0.0
+          },
+          "scq_intro_present": {
+            "check": "scq_intro_present",
+            "pass": 0,
+            "applicable": 2,
+            "pass_rate_pct": 0.0
+          }
+        }
+      },
+      "skill": {
+        "n": 3,
+        "structure_mean": 3.6667,
+        "structure_pct_of_max": 45.8,
+        "quality_raw_mean": 6.0,
+        "quality_raw_pct_of_max": 60.0,
+        "quality_penalized_mean": 5.6667,
+        "quality_penalized_pct_of_max": 56.7,
+        "first_level_count_mean": 3.0,
+        "first_level_count_n": 3,
+        "hard_failures_total": 5,
+        "no_hard_failure": {
+          "check": "hard_failures",
+          "pass": 0,
+          "applicable": 3,
+          "pass_rate_pct": 0.0
+        },
+        "checks": {
+          "first_level_kind_matches": {
+            "check": "first_level_kind_matches",
+            "pass": 1,
+            "applicable": 3,
+            "pass_rate_pct": 33.3
+          },
+          "no_invented_facts": {
+            "check": "invented_facts",
+            "pass": 0,
+            "applicable": 3,
+            "pass_rate_pct": 0.0
+          },
+          "no_unacknowledged_source_loss": {
+            "check": "unacknowledged_source_loss",
+            "pass": 1,
+            "applicable": 3,
+            "pass_rate_pct": 33.3
+          },
+          "mode_respected": {
+            "check": "mode_respected",
+            "pass": 3,
+            "applicable": 3,
+            "pass_rate_pct": 100.0
+          },
+          "answer_first": {
+            "check": "answer_first",
+            "pass": 2,
+            "applicable": 3,
+            "pass_rate_pct": 66.7
+          },
+          "first_level_count_within_limit": {
+            "check": "first_level_count",
+            "pass": 3,
+            "applicable": 3,
+            "pass_rate_pct": 100.0
+          },
+          "readers_question_literal": {
+            "check": "readers_question_literal",
+            "pass": 2,
+            "applicable": 3,
+            "pass_rate_pct": 66.7
+          },
+          "order_type_named": {
+            "check": "order_type_named",
+            "pass": 0,
+            "applicable": 2,
+            "pass_rate_pct": 0.0
+          },
+          "scq_intro_present": {
+            "check": "scq_intro_present",
+            "pass": 2,
+            "applicable": 2,
+            "pass_rate_pct": 100.0
+          }
+        }
+      },
+      "delta": {
+        "structure": {
+          "control_mean": 2.0,
+          "skill_mean": 3.6667,
+          "points": 1.6667,
+          "control_pct_of_max": 25.0,
+          "skill_pct_of_max": 45.8,
+          "pct_points": 20.8,
+          "relative_change_pct": 83.3
+        },
+        "quality_raw": {
+          "control_mean": 5.6667,
+          "skill_mean": 6.0,
+          "points": 0.3333,
+          "control_pct_of_max": 56.7,
+          "skill_pct_of_max": 60.0,
+          "pct_points": 3.3,
+          "relative_change_pct": 5.9
+        },
+        "quality_penalized": {
+          "control_mean": 4.6667,
+          "skill_mean": 5.6667,
+          "points": 1.0,
+          "control_pct_of_max": 46.7,
+          "skill_pct_of_max": 56.7,
+          "pct_points": 10.0,
+          "relative_change_pct": 21.4
+        },
+        "checks": {
+          "first_level_kind_matches": {
+            "control_pct": 0.0,
+            "skill_pct": 33.3,
+            "control_applicable": 3,
+            "skill_applicable": 3,
+            "pct_points": 33.3
+          },
+          "no_invented_facts": {
+            "control_pct": 0.0,
+            "skill_pct": 0.0,
+            "control_applicable": 3,
+            "skill_applicable": 3,
+            "pct_points": 0.0
+          },
+          "no_unacknowledged_source_loss": {
+            "control_pct": 33.3,
+            "skill_pct": 33.3,
+            "control_applicable": 3,
+            "skill_applicable": 3,
+            "pct_points": 0.0
+          },
+          "mode_respected": {
+            "control_pct": 100.0,
+            "skill_pct": 100.0,
+            "control_applicable": 3,
+            "skill_applicable": 3,
+            "pct_points": 0.0
+          },
+          "answer_first": {
+            "control_pct": 100.0,
+            "skill_pct": 66.7,
+            "control_applicable": 3,
+            "skill_applicable": 3,
+            "pct_points": -33.3
+          },
+          "first_level_count_within_limit": {
+            "control_pct": 66.7,
+            "skill_pct": 100.0,
+            "control_applicable": 3,
+            "skill_applicable": 3,
+            "pct_points": 33.3
+          },
+          "readers_question_literal": {
+            "control_pct": 0.0,
+            "skill_pct": 66.7,
+            "control_applicable": 3,
+            "skill_applicable": 3,
+            "pct_points": 66.7
+          },
+          "order_type_named": {
+            "control_pct": 0.0,
+            "skill_pct": 0.0,
+            "control_applicable": 2,
+            "skill_applicable": 2,
+            "pct_points": 0.0
+          },
+          "scq_intro_present": {
+            "control_pct": 0.0,
+            "skill_pct": 100.0,
+            "control_applicable": 2,
+            "skill_applicable": 2,
+            "pct_points": 100.0
+          },
+          "no_hard_failure": {
+            "control_pct": 0.0,
+            "skill_pct": 0.0,
+            "control_applicable": 3,
+            "skill_applicable": 3,
+            "pct_points": 0.0
+          }
+        }
+      }
+    },
+    "qwen3.6-fp8": {
+      "control": {
+        "n": 3,
+        "structure_mean": 2.6667,
+        "structure_pct_of_max": 33.3,
+        "quality_raw_mean": 7.0,
+        "quality_raw_pct_of_max": 70.0,
+        "quality_penalized_mean": 6.0,
+        "quality_penalized_pct_of_max": 60.0,
+        "first_level_count_mean": 3.0,
+        "first_level_count_n": 3,
+        "hard_failures_total": 4,
+        "no_hard_failure": {
+          "check": "hard_failures",
+          "pass": 0,
+          "applicable": 3,
+          "pass_rate_pct": 0.0
+        },
+        "checks": {
+          "first_level_kind_matches": {
+            "check": "first_level_kind_matches",
+            "pass": 1,
+            "applicable": 3,
+            "pass_rate_pct": 33.3
+          },
+          "no_invented_facts": {
+            "check": "invented_facts",
+            "pass": 1,
+            "applicable": 3,
+            "pass_rate_pct": 33.3
+          },
+          "no_unacknowledged_source_loss": {
+            "check": "unacknowledged_source_loss",
+            "pass": 1,
+            "applicable": 3,
+            "pass_rate_pct": 33.3
+          },
+          "mode_respected": {
+            "check": "mode_respected",
+            "pass": 3,
+            "applicable": 3,
+            "pass_rate_pct": 100.0
+          },
+          "answer_first": {
+            "check": "answer_first",
+            "pass": 2,
+            "applicable": 3,
+            "pass_rate_pct": 66.7
+          },
+          "first_level_count_within_limit": {
+            "check": "first_level_count",
+            "pass": 3,
+            "applicable": 3,
+            "pass_rate_pct": 100.0
+          },
+          "readers_question_literal": {
+            "check": "readers_question_literal",
+            "pass": 0,
+            "applicable": 3,
+            "pass_rate_pct": 0.0
+          },
+          "order_type_named": {
+            "check": "order_type_named",
+            "pass": 0,
+            "applicable": 2,
+            "pass_rate_pct": 0.0
+          },
+          "scq_intro_present": {
+            "check": "scq_intro_present",
+            "pass": 1,
+            "applicable": 2,
+            "pass_rate_pct": 50.0
+          }
+        }
+      },
+      "skill": {
+        "n": 3,
+        "structure_mean": 4.0,
+        "structure_pct_of_max": 50.0,
+        "quality_raw_mean": 7.3333,
+        "quality_raw_pct_of_max": 73.3,
+        "quality_penalized_mean": 6.3333,
+        "quality_penalized_pct_of_max": 63.3,
+        "first_level_count_mean": 2.6667,
+        "first_level_count_n": 3,
+        "hard_failures_total": 3,
+        "no_hard_failure": {
+          "check": "hard_failures",
+          "pass": 0,
+          "applicable": 3,
+          "pass_rate_pct": 0.0
+        },
+        "checks": {
+          "first_level_kind_matches": {
+            "check": "first_level_kind_matches",
+            "pass": 1,
+            "applicable": 3,
+            "pass_rate_pct": 33.3
+          },
+          "no_invented_facts": {
+            "check": "invented_facts",
+            "pass": 1,
+            "applicable": 3,
+            "pass_rate_pct": 33.3
+          },
+          "no_unacknowledged_source_loss": {
+            "check": "unacknowledged_source_loss",
+            "pass": 2,
+            "applicable": 3,
+            "pass_rate_pct": 66.7
+          },
+          "mode_respected": {
+            "check": "mode_respected",
+            "pass": 3,
+            "applicable": 3,
+            "pass_rate_pct": 100.0
+          },
+          "answer_first": {
+            "check": "answer_first",
+            "pass": 1,
+            "applicable": 3,
+            "pass_rate_pct": 33.3
+          },
+          "first_level_count_within_limit": {
+            "check": "first_level_count",
+            "pass": 3,
+            "applicable": 3,
+            "pass_rate_pct": 100.0
+          },
+          "readers_question_literal": {
+            "check": "readers_question_literal",
+            "pass": 1,
+            "applicable": 3,
+            "pass_rate_pct": 33.3
+          },
+          "order_type_named": {
+            "check": "order_type_named",
+            "pass": 0,
+            "applicable": 2,
+            "pass_rate_pct": 0.0
+          },
+          "scq_intro_present": {
+            "check": "scq_intro_present",
+            "pass": 2,
+            "applicable": 2,
+            "pass_rate_pct": 100.0
+          }
+        }
+      },
+      "delta": {
+        "structure": {
+          "control_mean": 2.6667,
+          "skill_mean": 4.0,
+          "points": 1.3333,
+          "control_pct_of_max": 33.3,
+          "skill_pct_of_max": 50.0,
+          "pct_points": 16.7,
+          "relative_change_pct": 50.0
+        },
+        "quality_raw": {
+          "control_mean": 7.0,
+          "skill_mean": 7.3333,
+          "points": 0.3333,
+          "control_pct_of_max": 70.0,
+          "skill_pct_of_max": 73.3,
+          "pct_points": 3.3,
+          "relative_change_pct": 4.8
+        },
+        "quality_penalized": {
+          "control_mean": 6.0,
+          "skill_mean": 6.3333,
+          "points": 0.3333,
+          "control_pct_of_max": 60.0,
+          "skill_pct_of_max": 63.3,
+          "pct_points": 3.3,
+          "relative_change_pct": 5.6
+        },
+        "checks": {
+          "first_level_kind_matches": {
+            "control_pct": 33.3,
+            "skill_pct": 33.3,
+            "control_applicable": 3,
+            "skill_applicable": 3,
+            "pct_points": 0.0
+          },
+          "no_invented_facts": {
+            "control_pct": 33.3,
+            "skill_pct": 33.3,
+            "control_applicable": 3,
+            "skill_applicable": 3,
+            "pct_points": 0.0
+          },
+          "no_unacknowledged_source_loss": {
+            "control_pct": 33.3,
+            "skill_pct": 66.7,
+            "control_applicable": 3,
+            "skill_applicable": 3,
+            "pct_points": 33.4
+          },
+          "mode_respected": {
+            "control_pct": 100.0,
+            "skill_pct": 100.0,
+            "control_applicable": 3,
+            "skill_applicable": 3,
+            "pct_points": 0.0
+          },
+          "answer_first": {
+            "control_pct": 66.7,
+            "skill_pct": 33.3,
+            "control_applicable": 3,
+            "skill_applicable": 3,
+            "pct_points": -33.4
+          },
+          "first_level_count_within_limit": {
+            "control_pct": 100.0,
+            "skill_pct": 100.0,
+            "control_applicable": 3,
+            "skill_applicable": 3,
+            "pct_points": 0.0
+          },
+          "readers_question_literal": {
+            "control_pct": 0.0,
+            "skill_pct": 33.3,
+            "control_applicable": 3,
+            "skill_applicable": 3,
+            "pct_points": 33.3
+          },
+          "order_type_named": {
+            "control_pct": 0.0,
+            "skill_pct": 0.0,
+            "control_applicable": 2,
+            "skill_applicable": 2,
+            "pct_points": 0.0
+          },
+          "scq_intro_present": {
+            "control_pct": 50.0,
+            "skill_pct": 100.0,
+            "control_applicable": 2,
+            "skill_applicable": 2,
+            "pct_points": 50.0
+          },
+          "no_hard_failure": {
+            "control_pct": 0.0,
+            "skill_pct": 0.0,
+            "control_applicable": 3,
+            "skill_applicable": 3,
+            "pct_points": 0.0
+          }
+        }
+      }
+    },
+    "sonnet5": {
+      "control": {
+        "n": 3,
+        "structure_mean": 3.6667,
+        "structure_pct_of_max": 45.8,
+        "quality_raw_mean": 7.6667,
+        "quality_raw_pct_of_max": 76.7,
+        "quality_penalized_mean": 7.3333,
+        "quality_penalized_pct_of_max": 73.3,
+        "first_level_count_mean": 3.0,
+        "first_level_count_n": 3,
+        "hard_failures_total": 2,
+        "no_hard_failure": {
+          "check": "hard_failures",
+          "pass": 1,
+          "applicable": 3,
+          "pass_rate_pct": 33.3
+        },
+        "checks": {
+          "first_level_kind_matches": {
+            "check": "first_level_kind_matches",
+            "pass": 1,
+            "applicable": 3,
+            "pass_rate_pct": 33.3
+          },
+          "no_invented_facts": {
+            "check": "invented_facts",
+            "pass": 1,
+            "applicable": 3,
+            "pass_rate_pct": 33.3
+          },
+          "no_unacknowledged_source_loss": {
+            "check": "unacknowledged_source_loss",
+            "pass": 3,
+            "applicable": 3,
+            "pass_rate_pct": 100.0
+          },
+          "mode_respected": {
+            "check": "mode_respected",
+            "pass": 3,
+            "applicable": 3,
+            "pass_rate_pct": 100.0
+          },
+          "answer_first": {
+            "check": "answer_first",
+            "pass": 2,
+            "applicable": 3,
+            "pass_rate_pct": 66.7
+          },
+          "first_level_count_within_limit": {
+            "check": "first_level_count",
+            "pass": 3,
+            "applicable": 3,
+            "pass_rate_pct": 100.0
+          },
+          "readers_question_literal": {
+            "check": "readers_question_literal",
+            "pass": 1,
+            "applicable": 3,
+            "pass_rate_pct": 33.3
+          },
+          "order_type_named": {
+            "check": "order_type_named",
+            "pass": 0,
+            "applicable": 2,
+            "pass_rate_pct": 0.0
+          },
+          "scq_intro_present": {
+            "check": "scq_intro_present",
+            "pass": 1,
+            "applicable": 2,
+            "pass_rate_pct": 50.0
+          }
+        }
+      },
+      "skill": {
+        "n": 3,
+        "structure_mean": 4.3333,
+        "structure_pct_of_max": 54.2,
+        "quality_raw_mean": 7.6667,
+        "quality_raw_pct_of_max": 76.7,
+        "quality_penalized_mean": 7.3333,
+        "quality_penalized_pct_of_max": 73.3,
+        "first_level_count_mean": 2.3333,
+        "first_level_count_n": 3,
+        "hard_failures_total": 2,
+        "no_hard_failure": {
+          "check": "hard_failures",
+          "pass": 1,
+          "applicable": 3,
+          "pass_rate_pct": 33.3
+        },
+        "checks": {
+          "first_level_kind_matches": {
+            "check": "first_level_kind_matches",
+            "pass": 1,
+            "applicable": 3,
+            "pass_rate_pct": 33.3
+          },
+          "no_invented_facts": {
+            "check": "invented_facts",
+            "pass": 1,
+            "applicable": 3,
+            "pass_rate_pct": 33.3
+          },
+          "no_unacknowledged_source_loss": {
+            "check": "unacknowledged_source_loss",
+            "pass": 3,
+            "applicable": 3,
+            "pass_rate_pct": 100.0
+          },
+          "mode_respected": {
+            "check": "mode_respected",
+            "pass": 3,
+            "applicable": 3,
+            "pass_rate_pct": 100.0
+          },
+          "answer_first": {
+            "check": "answer_first",
+            "pass": 1,
+            "applicable": 3,
+            "pass_rate_pct": 33.3
+          },
+          "first_level_count_within_limit": {
+            "check": "first_level_count",
+            "pass": 3,
+            "applicable": 3,
+            "pass_rate_pct": 100.0
+          },
+          "readers_question_literal": {
+            "check": "readers_question_literal",
+            "pass": 1,
+            "applicable": 3,
+            "pass_rate_pct": 33.3
+          },
+          "order_type_named": {
+            "check": "order_type_named",
+            "pass": 0,
+            "applicable": 2,
+            "pass_rate_pct": 0.0
+          },
+          "scq_intro_present": {
+            "check": "scq_intro_present",
+            "pass": 1,
+            "applicable": 2,
+            "pass_rate_pct": 50.0
+          }
+        }
+      },
+      "delta": {
+        "structure": {
+          "control_mean": 3.6667,
+          "skill_mean": 4.3333,
+          "points": 0.6666,
+          "control_pct_of_max": 45.8,
+          "skill_pct_of_max": 54.2,
+          "pct_points": 8.4,
+          "relative_change_pct": 18.2
+        },
+        "quality_raw": {
+          "control_mean": 7.6667,
+          "skill_mean": 7.6667,
+          "points": 0.0,
+          "control_pct_of_max": 76.7,
+          "skill_pct_of_max": 76.7,
+          "pct_points": 0.0,
+          "relative_change_pct": 0.0
+        },
+        "quality_penalized": {
+          "control_mean": 7.3333,
+          "skill_mean": 7.3333,
+          "points": 0.0,
+          "control_pct_of_max": 73.3,
+          "skill_pct_of_max": 73.3,
+          "pct_points": 0.0,
+          "relative_change_pct": 0.0
+        },
+        "checks": {
+          "first_level_kind_matches": {
+            "control_pct": 33.3,
+            "skill_pct": 33.3,
+            "control_applicable": 3,
+            "skill_applicable": 3,
+            "pct_points": 0.0
+          },
+          "no_invented_facts": {
+            "control_pct": 33.3,
+            "skill_pct": 33.3,
+            "control_applicable": 3,
+            "skill_applicable": 3,
+            "pct_points": 0.0
+          },
+          "no_unacknowledged_source_loss": {
+            "control_pct": 100.0,
+            "skill_pct": 100.0,
+            "control_applicable": 3,
+            "skill_applicable": 3,
+            "pct_points": 0.0
+          },
+          "mode_respected": {
+            "control_pct": 100.0,
+            "skill_pct": 100.0,
+            "control_applicable": 3,
+            "skill_applicable": 3,
+            "pct_points": 0.0
+          },
+          "answer_first": {
+            "control_pct": 66.7,
+            "skill_pct": 33.3,
+            "control_applicable": 3,
+            "skill_applicable": 3,
+            "pct_points": -33.4
+          },
+          "first_level_count_within_limit": {
+            "control_pct": 100.0,
+            "skill_pct": 100.0,
+            "control_applicable": 3,
+            "skill_applicable": 3,
+            "pct_points": 0.0
+          },
+          "readers_question_literal": {
+            "control_pct": 33.3,
+            "skill_pct": 33.3,
+            "control_applicable": 3,
+            "skill_applicable": 3,
+            "pct_points": 0.0
+          },
+          "order_type_named": {
+            "control_pct": 0.0,
+            "skill_pct": 0.0,
+            "control_applicable": 2,
+            "skill_applicable": 2,
+            "pct_points": 0.0
+          },
+          "scq_intro_present": {
+            "control_pct": 50.0,
+            "skill_pct": 50.0,
+            "control_applicable": 2,
+            "skill_applicable": 2,
+            "pct_points": 0.0
+          },
+          "no_hard_failure": {
+            "control_pct": 33.3,
+            "skill_pct": 33.3,
+            "control_applicable": 3,
+            "skill_applicable": 3,
+            "pct_points": 0.0
+          }
+        }
+      }
+    }
+  },
+  "cells": [
+    {
+      "fixture": "01-big-chief",
+      "mode": "write",
+      "engine": "codex",
+      "arm": "control",
+      "output": "out-06",
+      "completed": true,
+      "structure": {
+        "total": 2,
+        "top": 1,
+        "key_line_composition": 0,
+        "levels": 0,
+        "order_and_kind": 1
+      },
+      "quality_raw": {
+        "total": 9,
+        "top": 1,
+        "same_kind_grouping": 2,
+        "explainable_order": 2,
+        "mece": 2,
+        "visible_structure": 2
+      },
+      "quality_penalized": {
+        "top": 1,
+        "same_kind_grouping": 2,
+        "explainable_order": 2,
+        "mece": 2,
+        "visible_structure": 2,
+        "total": 9
+      },
+      "hard_failures": [],
+      "checks": {
+        "answer_first": false,
+        "first_level_count": 3,
+        "first_level_kind_matches": false,
+        "invented_facts": false,
+        "unacknowledged_source_loss": false,
+        "mode_respected": true,
+        "readers_question_literal": false,
+        "order_type_named": false,
+        "scq_intro_present": false
+      }
+    },
+    {
+      "fixture": "01-big-chief",
+      "mode": "write",
+      "engine": "codex",
+      "arm": "skill",
+      "output": "out-08",
+      "completed": true,
+      "structure": {
+        "total": 2,
+        "top": 1,
+        "key_line_composition": 0,
+        "levels": 0,
+        "order_and_kind": 1
+      },
+      "quality_raw": {
+        "total": 6,
+        "top": 1,
+        "same_kind_grouping": 2,
+        "explainable_order": 2,
+        "mece": 0,
+        "visible_structure": 1
+      },
+      "quality_penalized": {
+        "top": 1,
+        "same_kind_grouping": 2,
+        "explainable_order": 2,
+        "mece": 0,
+        "visible_structure": 1,
+        "total": 6
+      },
+      "hard_failures": [],
+      "checks": {
+        "answer_first": false,
+        "first_level_count": 3,
+        "first_level_kind_matches": false,
+        "invented_facts": false,
+        "unacknowledged_source_loss": false,
+        "mode_respected": true,
+        "readers_question_literal": false,
+        "order_type_named": false,
+        "scq_intro_present": true
+      }
+    },
+    {
+      "fixture": "01-big-chief",
+      "mode": "write",
+      "engine": "gpt-oss-120b",
+      "arm": "control",
+      "output": "out-05",
+      "completed": true,
+      "structure": {
+        "total": 3,
+        "top": 2,
+        "key_line_composition": 0,
+        "levels": 0,
+        "order_and_kind": 1
+      },
+      "quality_raw": {
+        "total": 7,
+        "top": 2,
+        "same_kind_grouping": 1,
+        "explainable_order": 1,
+        "mece": 1,
+        "visible_structure": 2
+      },
+      "quality_penalized": {
+        "top": 2,
+        "same_kind_grouping": 1,
+        "explainable_order": 1,
+        "mece": 0,
+        "visible_structure": 2,
+        "total": 6
+      },
+      "hard_failures": [
+        "invented_facts",
+        "unacknowledged_source_loss"
+      ],
+      "checks": {
+        "answer_first": true,
+        "first_level_count": 3,
+        "first_level_kind_matches": false,
+        "invented_facts": true,
+        "unacknowledged_source_loss": true,
+        "mode_respected": true,
+        "readers_question_literal": false,
+        "order_type_named": false,
+        "scq_intro_present": false
+      }
+    },
+    {
+      "fixture": "01-big-chief",
+      "mode": "write",
+      "engine": "gpt-oss-120b",
+      "arm": "skill",
+      "output": "out-01",
+      "completed": true,
+      "structure": {
+        "total": 3,
+        "top": 2,
+        "key_line_composition": 0,
+        "levels": 0,
+        "order_and_kind": 1
+      },
+      "quality_raw": {
+        "total": 7,
+        "top": 2,
+        "same_kind_grouping": 1,
+        "explainable_order": 2,
+        "mece": 1,
+        "visible_structure": 1
+      },
+      "quality_penalized": {
+        "top": 2,
+        "same_kind_grouping": 1,
+        "explainable_order": 2,
+        "mece": 0,
+        "visible_structure": 1,
+        "total": 6
+      },
+      "hard_failures": [
+        "invented_facts",
+        "unacknowledged_source_loss"
+      ],
+      "checks": {
+        "answer_first": true,
+        "first_level_count": 3,
+        "first_level_kind_matches": false,
+        "invented_facts": true,
+        "unacknowledged_source_loss": true,
+        "mode_respected": true,
+        "readers_question_literal": true,
+        "order_type_named": false,
+        "scq_intro_present": true
+      }
+    },
+    {
+      "fixture": "01-big-chief",
+      "mode": "write",
+      "engine": "qwen3.6-fp8",
+      "arm": "control",
+      "output": "out-03",
+      "completed": true,
+      "structure": {
+        "total": 1,
+        "top": 0,
+        "key_line_composition": 0,
+        "levels": 0,
+        "order_and_kind": 1
+      },
+      "quality_raw": {
+        "total": 8,
+        "top": 0,
+        "same_kind_grouping": 2,
+        "explainable_order": 2,
+        "mece": 2,
+        "visible_structure": 2
+      },
+      "quality_penalized": {
+        "top": 0,
+        "same_kind_grouping": 2,
+        "explainable_order": 2,
+        "mece": 0,
+        "visible_structure": 2,
+        "total": 6
+      },
+      "hard_failures": [
+        "unacknowledged_source_loss"
+      ],
+      "checks": {
+        "answer_first": false,
+        "first_level_count": 3,
+        "first_level_kind_matches": false,
+        "invented_facts": false,
+        "unacknowledged_source_loss": true,
+        "mode_respected": true,
+        "readers_question_literal": false,
+        "order_type_named": false,
+        "scq_intro_present": true
+      }
+    },
+    {
+      "fixture": "01-big-chief",
+      "mode": "write",
+      "engine": "qwen3.6-fp8",
+      "arm": "skill",
+      "output": "out-07",
+      "completed": true,
+      "structure": {
+        "total": 1,
+        "top": 0,
+        "key_line_composition": 0,
+        "levels": 0,
+        "order_and_kind": 1
+      },
+      "quality_raw": {
+        "total": 8,
+        "top": 0,
+        "same_kind_grouping": 2,
+        "explainable_order": 2,
+        "mece": 2,
+        "visible_structure": 2
+      },
+      "quality_penalized": {
+        "top": 0,
+        "same_kind_grouping": 2,
+        "explainable_order": 2,
+        "mece": 0,
+        "visible_structure": 2,
+        "total": 6
+      },
+      "hard_failures": [
+        "unacknowledged_source_loss"
+      ],
+      "checks": {
+        "answer_first": false,
+        "first_level_count": 3,
+        "first_level_kind_matches": false,
+        "invented_facts": false,
+        "unacknowledged_source_loss": true,
+        "mode_respected": true,
+        "readers_question_literal": false,
+        "order_type_named": false,
+        "scq_intro_present": true
+      }
+    },
+    {
+      "fixture": "01-big-chief",
+      "mode": "write",
+      "engine": "sonnet5",
+      "arm": "control",
+      "output": "out-04",
+      "completed": true,
+      "structure": {
+        "total": 2,
+        "top": 1,
+        "key_line_composition": 0,
+        "levels": 0,
+        "order_and_kind": 1
+      },
+      "quality_raw": {
+        "total": 9,
+        "top": 1,
+        "same_kind_grouping": 2,
+        "explainable_order": 2,
+        "mece": 2,
+        "visible_structure": 2
+      },
+      "quality_penalized": {
+        "top": 1,
+        "same_kind_grouping": 2,
+        "explainable_order": 2,
+        "mece": 2,
+        "visible_structure": 2,
+        "total": 9
+      },
+      "hard_failures": [],
+      "checks": {
+        "answer_first": false,
+        "first_level_count": 3,
+        "first_level_kind_matches": false,
+        "invented_facts": false,
+        "unacknowledged_source_loss": false,
+        "mode_respected": true,
+        "readers_question_literal": false,
+        "order_type_named": false,
+        "scq_intro_present": true
+      }
+    },
+    {
+      "fixture": "01-big-chief",
+      "mode": "write",
+      "engine": "sonnet5",
+      "arm": "skill",
+      "output": "out-02",
+      "completed": true,
+      "structure": {
+        "total": 2,
+        "top": 1,
+        "key_line_composition": 0,
+        "levels": 0,
+        "order_and_kind": 1
+      },
+      "quality_raw": {
+        "total": 9,
+        "top": 1,
+        "same_kind_grouping": 2,
+        "explainable_order": 2,
+        "mece": 2,
+        "visible_structure": 2
+      },
+      "quality_penalized": {
+        "top": 1,
+        "same_kind_grouping": 2,
+        "explainable_order": 2,
+        "mece": 2,
+        "visible_structure": 2,
+        "total": 9
+      },
+      "hard_failures": [],
+      "checks": {
+        "answer_first": false,
+        "first_level_count": 3,
+        "first_level_kind_matches": false,
+        "invented_facts": false,
+        "unacknowledged_source_loss": false,
+        "mode_respected": true,
+        "readers_question_literal": false,
+        "order_type_named": false,
+        "scq_intro_present": false
+      }
+    },
+    {
+      "fixture": "02-ttv",
+      "mode": "write",
+      "engine": "codex",
+      "arm": "control",
+      "output": "out-07",
+      "completed": true,
+      "structure": {
+        "total": 2,
+        "top": 2,
+        "key_line_composition": 0,
+        "levels": 0,
+        "order_and_kind": 0
+      },
+      "quality_raw": {
+        "total": 6,
+        "top": 2,
+        "same_kind_grouping": 2,
+        "explainable_order": 1,
+        "mece": 0,
+        "visible_structure": 1
+      },
+      "quality_penalized": {
+        "top": 2,
+        "same_kind_grouping": 2,
+        "explainable_order": 1,
+        "mece": 0,
+        "visible_structure": 1,
+        "total": 6
+      },
+      "hard_failures": [
+        "unacknowledged_source_loss"
+      ],
+      "checks": {
+        "answer_first": true,
+        "first_level_count": 3,
+        "first_level_kind_matches": false,
+        "invented_facts": false,
+        "unacknowledged_source_loss": true,
+        "mode_respected": true,
+        "readers_question_literal": false,
+        "order_type_named": false,
+        "scq_intro_present": false
+      }
+    },
+    {
+      "fixture": "02-ttv",
+      "mode": "write",
+      "engine": "codex",
+      "arm": "skill",
+      "output": "out-01",
+      "completed": true,
+      "structure": {
+        "total": 6,
+        "top": 2,
+        "key_line_composition": 1,
+        "levels": 1,
+        "order_and_kind": 2
+      },
+      "quality_raw": {
+        "total": 7,
+        "top": 2,
+        "same_kind_grouping": 2,
+        "explainable_order": 1,
+        "mece": 0,
+        "visible_structure": 2
+      },
+      "quality_penalized": {
+        "top": 2,
+        "same_kind_grouping": 2,
+        "explainable_order": 1,
+        "mece": 0,
+        "visible_structure": 2,
+        "total": 7
+      },
+      "hard_failures": [
+        "unacknowledged_source_loss"
+      ],
+      "checks": {
+        "answer_first": true,
+        "first_level_count": 3,
+        "first_level_kind_matches": true,
+        "invented_facts": false,
+        "unacknowledged_source_loss": true,
+        "mode_respected": true,
+        "readers_question_literal": false,
+        "order_type_named": false,
+        "scq_intro_present": true
+      }
+    },
+    {
+      "fixture": "02-ttv",
+      "mode": "write",
+      "engine": "gpt-oss-120b",
+      "arm": "control",
+      "output": "out-06",
+      "completed": true,
+      "structure": {
+        "total": 1,
+        "top": 1,
+        "key_line_composition": 0,
+        "levels": 0,
+        "order_and_kind": 0
+      },
+      "quality_raw": {
+        "total": 5,
+        "top": 1,
+        "same_kind_grouping": 2,
+        "explainable_order": 1,
+        "mece": 0,
+        "visible_structure": 1
+      },
+      "quality_penalized": {
+        "top": 1,
+        "same_kind_grouping": 2,
+        "explainable_order": 1,
+        "mece": 0,
+        "visible_structure": 0,
+        "total": 4
+      },
+      "hard_failures": [
+        "invented_facts",
+        "unacknowledged_source_loss",
+        "more_than_four_first_level"
+      ],
+      "checks": {
+        "answer_first": true,
+        "first_level_count": 5,
+        "first_level_kind_matches": false,
+        "invented_facts": true,
+        "unacknowledged_source_loss": true,
+        "mode_respected": true,
+        "readers_question_literal": false,
+        "order_type_named": false,
+        "scq_intro_present": false
+      }
+    },
+    {
+      "fixture": "02-ttv",
+      "mode": "write",
+      "engine": "gpt-oss-120b",
+      "arm": "skill",
+      "output": "out-02",
+      "completed": true,
+      "structure": {
+        "total": 6,
+        "top": 2,
+        "key_line_composition": 1,
+        "levels": 1,
+        "order_and_kind": 2
+      },
+      "quality_raw": {
+        "total": 7,
+        "top": 2,
+        "same_kind_grouping": 2,
+        "explainable_order": 1,
+        "mece": 0,
+        "visible_structure": 2
+      },
+      "quality_penalized": {
+        "top": 2,
+        "same_kind_grouping": 2,
+        "explainable_order": 1,
+        "mece": 0,
+        "visible_structure": 2,
+        "total": 7
+      },
+      "hard_failures": [
+        "invented_facts",
+        "unacknowledged_source_loss"
+      ],
+      "checks": {
+        "answer_first": false,
+        "first_level_count": 3,
+        "first_level_kind_matches": true,
+        "invented_facts": true,
+        "unacknowledged_source_loss": true,
+        "mode_respected": true,
+        "readers_question_literal": true,
+        "order_type_named": false,
+        "scq_intro_present": true
+      }
+    },
+    {
+      "fixture": "02-ttv",
+      "mode": "write",
+      "engine": "qwen3.6-fp8",
+      "arm": "control",
+      "output": "out-03",
+      "completed": true,
+      "structure": {
+        "total": 5,
+        "top": 2,
+        "key_line_composition": 1,
+        "levels": 1,
+        "order_and_kind": 1
+      },
+      "quality_raw": {
+        "total": 7,
+        "top": 2,
+        "same_kind_grouping": 2,
+        "explainable_order": 1,
+        "mece": 0,
+        "visible_structure": 2
+      },
+      "quality_penalized": {
+        "top": 2,
+        "same_kind_grouping": 2,
+        "explainable_order": 1,
+        "mece": 0,
+        "visible_structure": 2,
+        "total": 7
+      },
+      "hard_failures": [
+        "invented_facts",
+        "unacknowledged_source_loss"
+      ],
+      "checks": {
+        "answer_first": true,
+        "first_level_count": 2,
+        "first_level_kind_matches": true,
+        "invented_facts": true,
+        "unacknowledged_source_loss": true,
+        "mode_respected": true,
+        "readers_question_literal": false,
+        "order_type_named": false,
+        "scq_intro_present": false
+      }
+    },
+    {
+      "fixture": "02-ttv",
+      "mode": "write",
+      "engine": "qwen3.6-fp8",
+      "arm": "skill",
+      "output": "out-05",
+      "completed": true,
+      "structure": {
+        "total": 6,
+        "top": 2,
+        "key_line_composition": 1,
+        "levels": 1,
+        "order_and_kind": 2
+      },
+      "quality_raw": {
+        "total": 8,
+        "top": 2,
+        "same_kind_grouping": 2,
+        "explainable_order": 2,
+        "mece": 0,
+        "visible_structure": 2
+      },
+      "quality_penalized": {
+        "top": 2,
+        "same_kind_grouping": 2,
+        "explainable_order": 2,
+        "mece": 0,
+        "visible_structure": 2,
+        "total": 8
+      },
+      "hard_failures": [
+        "invented_facts"
+      ],
+      "checks": {
+        "answer_first": false,
+        "first_level_count": 3,
+        "first_level_kind_matches": true,
+        "invented_facts": true,
+        "unacknowledged_source_loss": false,
+        "mode_respected": true,
+        "readers_question_literal": false,
+        "order_type_named": false,
+        "scq_intro_present": true
+      }
+    },
+    {
+      "fixture": "02-ttv",
+      "mode": "write",
+      "engine": "sonnet5",
+      "arm": "control",
+      "output": "out-04",
+      "completed": true,
+      "structure": {
+        "total": 6,
+        "top": 2,
+        "key_line_composition": 1,
+        "levels": 1,
+        "order_and_kind": 2
+      },
+      "quality_raw": {
+        "total": 7,
+        "top": 2,
+        "same_kind_grouping": 2,
+        "explainable_order": 1,
+        "mece": 0,
+        "visible_structure": 2
+      },
+      "quality_penalized": {
+        "top": 2,
+        "same_kind_grouping": 2,
+        "explainable_order": 1,
+        "mece": 0,
+        "visible_structure": 2,
+        "total": 7
+      },
+      "hard_failures": [
+        "invented_facts"
+      ],
+      "checks": {
+        "answer_first": true,
+        "first_level_count": 2,
+        "first_level_kind_matches": true,
+        "invented_facts": true,
+        "unacknowledged_source_loss": false,
+        "mode_respected": true,
+        "readers_question_literal": false,
+        "order_type_named": false,
+        "scq_intro_present": false
+      }
+    },
+    {
+      "fixture": "02-ttv",
+      "mode": "write",
+      "engine": "sonnet5",
+      "arm": "skill",
+      "output": "out-08",
+      "completed": true,
+      "structure": {
+        "total": 6,
+        "top": 2,
+        "key_line_composition": 1,
+        "levels": 1,
+        "order_and_kind": 2
+      },
+      "quality_raw": {
+        "total": 7,
+        "top": 2,
+        "same_kind_grouping": 2,
+        "explainable_order": 1,
+        "mece": 0,
+        "visible_structure": 2
+      },
+      "quality_penalized": {
+        "top": 2,
+        "same_kind_grouping": 2,
+        "explainable_order": 1,
+        "mece": 0,
+        "visible_structure": 2,
+        "total": 7
+      },
+      "hard_failures": [
+        "invented_facts"
+      ],
+      "checks": {
+        "answer_first": false,
+        "first_level_count": 2,
+        "first_level_kind_matches": true,
+        "invented_facts": true,
+        "unacknowledged_source_loss": false,
+        "mode_respected": true,
+        "readers_question_literal": false,
+        "order_type_named": false,
+        "scq_intro_present": true
+      }
+    },
+    {
+      "fixture": "04-meeting-note",
+      "mode": "write",
+      "engine": "codex",
+      "arm": "control",
+      "output": "out-01",
+      "completed": true,
+      "structure": {
+        "total": 3,
+        "top": 2,
+        "key_line_composition": 0,
+        "levels": 0,
+        "order_and_kind": 1
+      },
+      "quality_raw": {
+        "total": 7,
+        "top": 2,
+        "same_kind_grouping": 1,
+        "explainable_order": 1,
+        "mece": 1,
+        "visible_structure": 2
+      },
+      "quality_penalized": {
+        "top": 2,
+        "same_kind_grouping": 1,
+        "explainable_order": 1,
+        "mece": 1,
+        "visible_structure": 2,
+        "total": 7
+      },
+      "hard_failures": [],
+      "checks": {
+        "answer_first": true,
+        "first_level_count": 4,
+        "first_level_kind_matches": false,
+        "invented_facts": false,
+        "unacknowledged_source_loss": false,
+        "mode_respected": true,
+        "readers_question_literal": true,
+        "order_type_named": "na",
+        "scq_intro_present": "na"
+      }
+    },
+    {
+      "fixture": "04-meeting-note",
+      "mode": "write",
+      "engine": "codex",
+      "arm": "skill",
+      "output": "out-02",
+      "completed": true,
+      "structure": {
+        "total": 2,
+        "top": 2,
+        "key_line_composition": 0,
+        "levels": 0,
+        "order_and_kind": 0
+      },
+      "quality_raw": {
+        "total": 5,
+        "top": 2,
+        "same_kind_grouping": 0,
+        "explainable_order": 0,
+        "mece": 1,
+        "visible_structure": 2
+      },
+      "quality_penalized": {
+        "top": 2,
+        "same_kind_grouping": 0,
+        "explainable_order": 0,
+        "mece": 0,
+        "visible_structure": 2,
+        "total": 4
+      },
+      "hard_failures": [
+        "invented_facts"
+      ],
+      "checks": {
+        "answer_first": true,
+        "first_level_count": 4,
+        "first_level_kind_matches": false,
+        "invented_facts": true,
+        "unacknowledged_source_loss": false,
+        "mode_respected": true,
+        "readers_question_literal": true,
+        "order_type_named": "na",
+        "scq_intro_present": "na"
+      }
+    },
+    {
+      "fixture": "04-meeting-note",
+      "mode": "write",
+      "engine": "gpt-oss-120b",
+      "arm": "control",
+      "output": "out-04",
+      "completed": true,
+      "structure": {
+        "total": 2,
+        "top": 1,
+        "key_line_composition": 0,
+        "levels": 0,
+        "order_and_kind": 1
+      },
+      "quality_raw": {
+        "total": 5,
+        "top": 1,
+        "same_kind_grouping": 1,
+        "explainable_order": 1,
+        "mece": 1,
+        "visible_structure": 1
+      },
+      "quality_penalized": {
+        "top": 1,
+        "same_kind_grouping": 1,
+        "explainable_order": 1,
+        "mece": 0,
+        "visible_structure": 1,
+        "total": 4
+      },
+      "hard_failures": [
+        "invented_facts"
+      ],
+      "checks": {
+        "answer_first": true,
+        "first_level_count": 4,
+        "first_level_kind_matches": false,
+        "invented_facts": true,
+        "unacknowledged_source_loss": false,
+        "mode_respected": true,
+        "readers_question_literal": false,
+        "order_type_named": "na",
+        "scq_intro_present": "na"
+      }
+    },
+    {
+      "fixture": "04-meeting-note",
+      "mode": "write",
+      "engine": "gpt-oss-120b",
+      "arm": "skill",
+      "output": "out-03",
+      "completed": true,
+      "structure": {
+        "total": 2,
+        "top": 1,
+        "key_line_composition": 0,
+        "levels": 0,
+        "order_and_kind": 1
+      },
+      "quality_raw": {
+        "total": 4,
+        "top": 1,
+        "same_kind_grouping": 1,
+        "explainable_order": 1,
+        "mece": 0,
+        "visible_structure": 1
+      },
+      "quality_penalized": {
+        "top": 1,
+        "same_kind_grouping": 1,
+        "explainable_order": 1,
+        "mece": 0,
+        "visible_structure": 1,
+        "total": 4
+      },
+      "hard_failures": [
+        "invented_facts"
+      ],
+      "checks": {
+        "answer_first": true,
+        "first_level_count": 3,
+        "first_level_kind_matches": false,
+        "invented_facts": true,
+        "unacknowledged_source_loss": false,
+        "mode_respected": true,
+        "readers_question_literal": false,
+        "order_type_named": "na",
+        "scq_intro_present": "na"
+      }
+    },
+    {
+      "fixture": "04-meeting-note",
+      "mode": "write",
+      "engine": "qwen3.6-fp8",
+      "arm": "control",
+      "output": "out-08",
+      "completed": true,
+      "structure": {
+        "total": 2,
+        "top": 1,
+        "key_line_composition": 0,
+        "levels": 0,
+        "order_and_kind": 1
+      },
+      "quality_raw": {
+        "total": 6,
+        "top": 1,
+        "same_kind_grouping": 1,
+        "explainable_order": 1,
+        "mece": 1,
+        "visible_structure": 2
+      },
+      "quality_penalized": {
+        "top": 1,
+        "same_kind_grouping": 1,
+        "explainable_order": 1,
+        "mece": 0,
+        "visible_structure": 2,
+        "total": 5
+      },
+      "hard_failures": [
+        "invented_facts"
+      ],
+      "checks": {
+        "answer_first": true,
+        "first_level_count": 4,
+        "first_level_kind_matches": false,
+        "invented_facts": true,
+        "unacknowledged_source_loss": false,
+        "mode_respected": true,
+        "readers_question_literal": false,
+        "order_type_named": "na",
+        "scq_intro_present": "na"
+      }
+    },
+    {
+      "fixture": "04-meeting-note",
+      "mode": "write",
+      "engine": "qwen3.6-fp8",
+      "arm": "skill",
+      "output": "out-05",
+      "completed": true,
+      "structure": {
+        "total": 5,
+        "top": 2,
+        "key_line_composition": 1,
+        "levels": 1,
+        "order_and_kind": 1
+      },
+      "quality_raw": {
+        "total": 6,
+        "top": 2,
+        "same_kind_grouping": 1,
+        "explainable_order": 1,
+        "mece": 1,
+        "visible_structure": 1
+      },
+      "quality_penalized": {
+        "top": 2,
+        "same_kind_grouping": 1,
+        "explainable_order": 1,
+        "mece": 0,
+        "visible_structure": 1,
+        "total": 5
+      },
+      "hard_failures": [
+        "invented_facts"
+      ],
+      "checks": {
+        "answer_first": true,
+        "first_level_count": 2,
+        "first_level_kind_matches": false,
+        "invented_facts": true,
+        "unacknowledged_source_loss": false,
+        "mode_respected": true,
+        "readers_question_literal": true,
+        "order_type_named": "na",
+        "scq_intro_present": "na"
+      }
+    },
+    {
+      "fixture": "04-meeting-note",
+      "mode": "write",
+      "engine": "sonnet5",
+      "arm": "control",
+      "output": "out-06",
+      "completed": true,
+      "structure": {
+        "total": 3,
+        "top": 2,
+        "key_line_composition": 0,
+        "levels": 0,
+        "order_and_kind": 1
+      },
+      "quality_raw": {
+        "total": 7,
+        "top": 2,
+        "same_kind_grouping": 1,
+        "explainable_order": 1,
+        "mece": 1,
+        "visible_structure": 2
+      },
+      "quality_penalized": {
+        "top": 2,
+        "same_kind_grouping": 1,
+        "explainable_order": 1,
+        "mece": 0,
+        "visible_structure": 2,
+        "total": 6
+      },
+      "hard_failures": [
+        "invented_facts"
+      ],
+      "checks": {
+        "answer_first": true,
+        "first_level_count": 4,
+        "first_level_kind_matches": false,
+        "invented_facts": true,
+        "unacknowledged_source_loss": false,
+        "mode_respected": true,
+        "readers_question_literal": true,
+        "order_type_named": "na",
+        "scq_intro_present": "na"
+      }
+    },
+    {
+      "fixture": "04-meeting-note",
+      "mode": "write",
+      "engine": "sonnet5",
+      "arm": "skill",
+      "output": "out-07",
+      "completed": true,
+      "structure": {
+        "total": 5,
+        "top": 2,
+        "key_line_composition": 1,
+        "levels": 1,
+        "order_and_kind": 1
+      },
+      "quality_raw": {
+        "total": 7,
+        "top": 2,
+        "same_kind_grouping": 1,
+        "explainable_order": 1,
+        "mece": 1,
+        "visible_structure": 2
+      },
+      "quality_penalized": {
+        "top": 2,
+        "same_kind_grouping": 1,
+        "explainable_order": 1,
+        "mece": 0,
+        "visible_structure": 2,
+        "total": 6
+      },
+      "hard_failures": [
+        "invented_facts"
+      ],
+      "checks": {
+        "answer_first": true,
+        "first_level_count": 2,
+        "first_level_kind_matches": false,
+        "invented_facts": true,
+        "unacknowledged_source_loss": false,
+        "mode_respected": true,
+        "readers_question_literal": true,
+        "order_type_named": "na",
+        "scq_intro_present": "na"
+      }
+    }
+  ],
+  "site_metrics": {
+    "quality": {
+      "label": "Writing quality, share of the judge's 10 points",
+      "control": 69,
+      "skill": 68,
+      "delta": -1,
+      "source": "quality_raw",
+      "kind": "score"
+    },
+    "structure": {
+      "label": "Structure, share of the judge's 8 points",
+      "control": 33,
+      "skill": 48,
+      "delta": 15,
+      "source": "structure",
+      "kind": "score"
+    },
+    "readers-question": {
+      "label": "The reader's question is written down",
+      "control": 17,
+      "skill": 42,
+      "delta": 25,
+      "source": "readers_question_literal",
+      "kind": "rate"
+    },
+    "kind-matches": {
+      "label": "First-level points are all the same kind",
+      "control": 17,
+      "skill": 33,
+      "delta": 16,
+      "source": "first_level_kind_matches",
+      "kind": "rate"
+    },
+    "answer-first": {
+      "label": "Answer in the first sentence",
+      "control": 75,
+      "skill": 50,
+      "delta": -25,
+      "source": "answer_first",
+      "kind": "rate"
+    },
+    "source-kept": {
+      "label": "No source material lost without saying so",
+      "control": 58,
+      "skill": 67,
+      "delta": 9,
+      "source": "no_unacknowledged_source_loss",
+      "kind": "rate"
+    }
+  }
+}

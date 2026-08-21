@@ -1,0 +1,10 @@
+- The opening states the subject and document structure instead of giving a governing thought, conclusion, or requested decision.
+- It is self-referential (“This memorandum describes…”) and does not answer the reader’s underlying question.
+- It provides no visible situation–complication–question framing, so the purpose is not positioned as an answer.
+- The six headings are a flat list/table of contents rather than a hierarchy of supporting ideas under one key line.
+- The headings are not clearly same-level or MECE: they combine context, theory, scope, process, outcomes, and prerequisites.
+- “Background” reads as introductory context rather than a supporting point, and “Distinctive benefits and results” merges two distinct ideas.
+- The visible order does not make the logical relationships among the sections explicit, particularly between outcomes and the conditions required for success.
+- The six ungrouped headings increase cognitive load and obscure the overall structure expected in a pyramid.
+- Limited to the visible opening, the structure does not demonstrate the required vertical logic of a key line supported by its sections or the horizontal logic of logically ordered, mutually exclusive supporting headings.
+- The unavailable body is not inferred.

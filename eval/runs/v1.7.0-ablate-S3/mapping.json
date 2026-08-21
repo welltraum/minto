@@ -1,0 +1,44 @@
+{
+  "10-rollout-review": {
+    "out-01.md": {
+      "engine": "qwen3.6-fp8",
+      "arm": "control",
+      "bytes": 4208
+    },
+    "out-02.md": {
+      "engine": "codex",
+      "arm": "skill",
+      "bytes": 7234
+    },
+    "out-03.md": {
+      "engine": "qwen3.6-fp8",
+      "arm": "skill",
+      "bytes": 5217
+    },
+    "out-04.md": {
+      "engine": "sonnet5",
+      "arm": "control",
+      "bytes": 5922
+    },
+    "out-05.md": {
+      "engine": "sonnet5",
+      "arm": "skill",
+      "bytes": 5263
+    },
+    "out-06.md": {
+      "engine": "gpt-oss-120b",
+      "arm": "skill",
+      "bytes": 3033
+    },
+    "out-07.md": {
+      "engine": "gpt-oss-120b",
+      "arm": "control",
+      "bytes": 6298
+    },
+    "out-08.md": {
+      "engine": "codex",
+      "arm": "control",
+      "bytes": 4625
+    }
+  }
+}
