@@ -1,58 +1,48 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
-  <title id="title">Minto: structure business writing before rewriting it</title>
-  <desc id="description">Minto helps Codex and Claude Code settle the argument before rewriting the prose.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="og-title og-desc">
+  <title id="og-title">Minto: the decision reads in the first line</title>
+  <desc id="og-desc">A Claude Code and Codex skill that settles the reader's question before it edits a single word.</desc>
   <style>
-    @font-face {
-      font-family: "Onest";
-      src: url("./fonts/onest-latin.woff2") format("woff2");
-      font-weight: 100 900;
-    }
-    text { font-family: "Onest", "Helvetica Neue", Arial, sans-serif; }
-    .bg { fill: #ffffff; fill: oklch(1 0 0); }
-    .ink { fill: #24271d; fill: oklch(0.18 0.025 110); }
-    .primary { fill: #48502c; fill: oklch(0.35 0.075 110); }
-    .primary-stroke { stroke: #48502c; stroke: oklch(0.35 0.075 110); }
-    .surface { fill: #f2f3ed; fill: oklch(0.965 0.008 110); }
-    .accent { fill: #c34d32; fill: oklch(0.56 0.16 35); }
-    .line { stroke: #d2d5c8; stroke: oklch(0.84 0.014 110); }
-    .white { fill: #ffffff; fill: oklch(1 0 0); }
+    @font-face { font-family: "Tektur"; src: url("./fonts/tektur-700-latin.woff2") format("woff2"); font-weight: 700; }
+    @font-face { font-family: "Golos Text"; src: url("./fonts/golos-text-latin.woff2") format("woff2"); font-weight: 400 700; }
+    @font-face { font-family: "JetBrains Mono"; src: url("./fonts/jetbrains-mono-latin.woff2") format("woff2"); font-weight: 500 600; }
+    .paper { fill: #fcf9f4; }
+    .ink { fill: #27231f; }
+    .soft { fill: #6c625a; }
+    .accent { fill: #a04e36; }
+    .rule { stroke: #8c8078; }
+    .terracotta-stroke { stroke: #a04e36; }
+    .sand { fill: #f2e7da; }
+    .display { font-family: "Tektur", "Golos Text", Arial, sans-serif; font-weight: 700; font-size: 78px; letter-spacing: -1px; }
+    .word { font-family: "Golos Text", Arial, sans-serif; font-weight: 700; font-size: 38px; }
+    .label { font-family: "JetBrains Mono", monospace; font-weight: 600; font-size: 22px; letter-spacing: 0.4px; }
   </style>
 
-  <rect class="bg" width="1200" height="630"/>
-  <path class="line" d="M70 80H1130" stroke-width="2"/>
+  <rect class="paper" width="1200" height="630"/>
 
-  <g transform="translate(70 31)">
-    <path class="primary-stroke" d="M25 2 47 44H3L25 2Z" fill="none" stroke-width="2.5"/>
-    <path class="primary-stroke" d="M10 29h30M16 17h18" fill="none" stroke-width="2.5"/>
-    <text class="ink" x="62" y="34" font-size="30" font-weight="750">Minto</text>
+  <g transform="translate(80 74)">
+    <path class="terracotta-stroke" d="M18 3 33 30H3L18 3Z" fill="none" stroke-width="2.6" stroke-linejoin="round"/>
+    <path class="rule" d="M8.4 20.5h19.2M12.8 12.5h10.4" fill="none" stroke-width="2.6"/>
+    <text class="word ink" x="52" y="30">Minto</text>
   </g>
 
-  <text class="accent" x="70" y="170" font-size="19" font-weight="700">FOR CODEX &amp; CLAUDE CODE</text>
-  <text class="ink" x="70" y="250" font-size="60" font-weight="820" letter-spacing="-2">Settle the argument</text>
-  <text class="primary" x="70" y="320" font-size="60" font-weight="820" letter-spacing="-2">before rewriting</text>
-  <text class="primary" x="70" y="390" font-size="60" font-weight="820" letter-spacing="-2">the prose.</text>
-  <text class="ink" x="70" y="455" font-size="25" font-weight="450">A Minto plugin for Codex and Claude Code.</text>
+  <path class="rule" d="M80 152H1120" stroke-width="1.5"/>
 
-  <g transform="translate(760 145)">
-    <rect class="primary" x="68" width="234" height="104"/>
-    <text class="white" x="92" y="35" font-size="14" font-weight="700">ANSWER</text>
-    <text class="white" x="92" y="72" font-size="23" font-weight="750">Approve the pilot.</text>
-    <path class="primary-stroke" d="M185 104V145M185 145H55V205M185 145V205M185 145H315V205" fill="none" stroke-width="3"/>
-    <g transform="translate(0 205)">
-      <rect class="surface" width="110" height="125"/>
-      <rect class="surface" x="130" width="110" height="125"/>
-      <rect class="surface" x="260" width="110" height="125"/>
-      <rect class="accent" width="110" height="6"/>
-      <rect class="accent" x="130" width="110" height="6"/>
-      <rect class="accent" x="260" width="110" height="6"/>
-      <text class="ink" x="14" y="42" font-size="13" font-weight="700">REASON</text>
-      <text class="ink" x="144" y="42" font-size="13" font-weight="700">REASON</text>
-      <text class="ink" x="274" y="42" font-size="13" font-weight="700">REASON</text>
-      <text class="ink" x="14" y="76" font-size="16" font-weight="650">Evidence</text>
-      <text class="ink" x="144" y="76" font-size="16" font-weight="650">Fit</text>
-      <text class="ink" x="274" y="76" font-size="16" font-weight="650">Risk</text>
-    </g>
+  <text class="display ink" x="80" y="286">The decision reads</text>
+  <text class="display accent" x="80" y="380">in the first line</text>
+
+  <path class="rule" d="M80 430H560" stroke-width="1.5"/>
+
+  <g transform="translate(80 470)">
+    <rect class="sand" width="470" height="12" rx="6"/>
+    <rect class="sand" y="34" width="392" height="12" rx="6"/>
+    <rect class="accent" y="68" width="470" height="12" rx="6"/>
   </g>
 
-  <text class="ink" x="70" y="570" font-size="19" font-weight="650">welltraum.github.io/minto</text>
+  <g transform="translate(640 466)">
+    <rect class="accent" width="470" height="14" rx="7"/>
+    <rect class="sand" x="30" y="36" width="392" height="12" rx="6"/>
+    <rect class="sand" x="30" y="68" width="356" height="12" rx="6"/>
+  </g>
+
+  <text class="label soft" x="80" y="592">ANSWER ON TOP &#183; POINTS OF ONE KIND &#183; GAPS NAMED</text>
 </svg>
