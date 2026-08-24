@@ -4,6 +4,8 @@
   const status = document.querySelector(".copy-status");
   let statusTimer;
 
+  // Paired with `.js [hidden] { display: none !important }`: without JS no
+  // panel is ever hidden, so all five cases render as one long page.
   root.classList.add("js");
 
   const writeClipboard = async (text) => {
@@ -33,20 +35,26 @@
   };
 
   document.querySelectorAll("[data-copy]").forEach((button) => {
-    button.addEventListener("click", async () => {
-      const text = button.dataset.copy;
+    const label = button.querySelector("[data-copy-label]");
+    let labelTimer;
 
+    button.addEventListener("click", async () => {
       try {
-        await writeClipboard(text);
+        await writeClipboard(button.dataset.copy);
         announce(isRussian ? "Скопировано в буфер обмена." : "Copied to clipboard.");
 
-        const label = button.querySelector(".copy-button span, .prompt-action");
         if (!label) return;
 
-        const previous = label.textContent;
+        // Read the original from the dataset, not from the DOM: a second
+        // click inside the timeout would otherwise capture "Copied".
+        if (label.dataset.copyLabel === "") {
+          label.dataset.copyLabel = label.textContent;
+        }
+
         label.textContent = isRussian ? "Готово" : "Copied";
-        window.setTimeout(() => {
-          label.textContent = previous;
+        window.clearTimeout(labelTimer);
+        labelTimer = window.setTimeout(() => {
+          label.textContent = label.dataset.copyLabel;
         }, 1600);
       } catch {
         announce(
@@ -58,39 +66,33 @@
     });
   });
 
-  const modeExplorer = document.querySelector("[data-mode-explorer]");
+  const tabs = [...document.querySelectorAll("[data-case-tab]")];
+  const panels = [...document.querySelectorAll("[data-case-panel]")];
 
-  if (modeExplorer) {
-    const tabs = [...modeExplorer.querySelectorAll("[data-mode-tab]")];
-    const panels = [...modeExplorer.querySelectorAll("[data-mode-panel]")];
-
-    const setMode = (mode, focusPanel = false) => {
+  if (tabs.length && panels.length) {
+    const setCase = (name) => {
       tabs.forEach((tab) => {
-        const selected = tab.dataset.modeTab === mode;
+        const selected = tab.dataset.caseTab === name;
         tab.setAttribute("aria-selected", String(selected));
         tab.setAttribute("tabindex", selected ? "0" : "-1");
-        tab.toggleAttribute("aria-current", selected);
       });
 
       panels.forEach((panel) => {
-        const selected = panel.dataset.modePanel === mode;
-        panel.hidden = !selected;
-        panel.setAttribute("aria-hidden", String(!selected));
+        panel.hidden = panel.dataset.casePanel !== name;
       });
-
-      if (focusPanel) {
-        const activePanel = panels.find((panel) => panel.dataset.modePanel === mode);
-        activePanel?.focus({ preventScroll: true });
-      }
     };
+
+    // Roles first: aria-selected on an <a> only means anything once the
+    // element is a tab.
+    document.querySelector("[data-tablist]")?.setAttribute("role", "tablist");
 
     tabs.forEach((tab) => {
       tab.setAttribute("role", "tab");
-      tab.setAttribute("aria-controls", `mode-${tab.dataset.modeTab}`);
+      tab.setAttribute("aria-controls", `case-${tab.dataset.caseTab}`);
 
       tab.addEventListener("click", (event) => {
         event.preventDefault();
-        setMode(tab.dataset.modeTab);
+        setCase(tab.dataset.caseTab);
         history.replaceState(null, "", tab.hash);
       });
 
@@ -101,24 +103,22 @@
 
         event.preventDefault();
         const direction = ["ArrowDown", "ArrowRight"].includes(event.key) ? 1 : -1;
-        const currentIndex = tabs.indexOf(tab);
-        const nextIndex = (currentIndex + direction + tabs.length) % tabs.length;
-        const nextTab = tabs[nextIndex];
-        nextTab.focus();
-        setMode(nextTab.dataset.modeTab);
+        const next = tabs[(tabs.indexOf(tab) + direction + tabs.length) % tabs.length];
+        next.focus();
+        setCase(next.dataset.caseTab);
       });
     });
 
-    modeExplorer.querySelector(".mode-tabs")?.setAttribute("role", "tablist");
     panels.forEach((panel) => {
       panel.setAttribute("role", "tabpanel");
+      panel.setAttribute("tabindex", "-1");
     });
 
-    const requestedMode = window.location.hash.replace("#mode-", "");
-    const initialMode = tabs.some((tab) => tab.dataset.modeTab === requestedMode)
-      ? requestedMode
-      : "intent";
-    setMode(initialMode);
+    const requested = window.location.hash.replace("#case-", "");
+    const initial = tabs.some((tab) => tab.dataset.caseTab === requested)
+      ? requested
+      : tabs[0].dataset.caseTab;
+    setCase(initial);
   }
 
   const navLinks = [...document.querySelectorAll("[data-section-link]")];
@@ -147,8 +147,4 @@
 
     observedSections.forEach((section) => sectionObserver.observe(section));
   }
-
-  window.requestAnimationFrame(() => {
-    document.body.classList.add("is-ready");
-  });
 })();

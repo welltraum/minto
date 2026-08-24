@@ -3,30 +3,35 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fcf9f4">
     <meta name="robots" content="noindex">
     <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="./assets/styles.css?v=4">
+    <link rel="preload" href="./assets/fonts/golos-text-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="./assets/styles.css?v=5">
     <title>Page not found | Minto</title>
     <style>
-      .not-found { min-height: 100svh; display: grid; place-items: center; padding: var(--page-padding); }
-      .not-found main { width: min(100%, 52rem); }
-      .not-found .brand { margin-bottom: 5rem; }
-      .not-found h1 { max-width: 10ch; }
-      .not-found p { max-width: 52ch; margin: 2rem 0; color: var(--color-muted); font-size: 1.15rem; }
+      .not-found { min-height: 100svh; display: grid; place-items: center; }
+      .not-found main { width: min(100%, 46em); }
+      .not-found .brand { margin-bottom: var(--ac-space-md); }
+      .not-found h1 { max-width: 18ch; }
+      .not-found .ac-title-block { margin-bottom: var(--ac-space-md); }
     </style>
   </head>
   <body class="not-found">
-    <main>
-      <a class="brand" href="./" aria-label="Minto home">
-        <svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true">
+    <main class="page">
+      <a class="brand" href="./">
+        <svg class="brand__mark" viewBox="0 0 36 36" width="26" height="26" aria-hidden="true">
           <path d="M18 3 33 30H3L18 3Z"></path>
           <path d="M8.4 20.5h19.2M12.8 12.5h10.4"></path>
         </svg>
-        <span>Minto</span>
+        <span class="ac-title-text">Minto</span>
       </a>
-      <h1>We could not find this page.</h1>
-      <p>Check the address or return to the Minto home page.</p>
-      <a class="button button-primary" href="./">Back to Minto</a>
+      <div class="ac-title-block">
+        <h1 class="ac-display">We could not find <span class="ac-accent">this page</span></h1>
+        <hr class="ac-title-block__rule">
+        <p class="ac-body">Check the address, or go back to the Minto home page.</p>
+      </div>
+      <a class="ac-btn ac-btn--primary ac-motion" href="./">Back to Minto</a>
     </main>
   </body>
 </html>

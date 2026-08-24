@@ -1,4 +1,9 @@
-Copyright 2021 The Onest Project Authors (https://github.com/googlefonts/onest)
+Copyright 2021 The Golos Text Project Authors (https://github.com/paratype/golos-text)
+Copyright 2023 The Tektur Project Authors (https://github.com/googlefonts/tektur)
+Copyright 2020 The JetBrains Mono Project Authors (https://github.com/JetBrains/JetBrainsMono)
+
+All three families in this directory are licensed under the SIL Open Font
+License, Version 1.1. The license text below applies to each of them.
 
 This Font Software is licensed under the SIL Open Font License, Version 1.1.
 This license is copied below, and is also available with a FAQ at:
