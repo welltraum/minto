@@ -52,6 +52,12 @@ eval/runs/v1.7.0-ablate-*/log.txt
 !eval/runs/v1.8.0-ablate-C/
 !eval/runs/v1.8.0-ablate-R/
 !eval/runs/v1.8.0-ablate-S/
+!eval/runs/v1.8.0-r2-baseline/
+!eval/runs/v1.8.0-r2/
+!eval/runs/v1.8.0-r2-ablate-D/
+!eval/runs/v1.8.0-r2-ablate-C/
+!eval/runs/v1.8.0-r2-ablate-R/
+!eval/runs/v1.8.0-r2-ablate-S/
 eval/runs/v1.8.0*/logs/
 eval/runs/v1.8.0*/blind/
 eval/runs/v1.8.0*/log.txt

@@ -36,7 +36,6 @@ Explicit argument wins: `intent` | `audit` | `write` | `digest` | `viz`. Otherwi
 | Text supplied + "check / what's wrong / is the logic sound / review" | `audit` |
 | Text, notes or bullets + "write / rewrite / restructure / make a memo" | `write` |
 | Sources were read (or are supplied) + "digest / summary in chat / report on what you read / выжимка / саммари" | `digest` |
-| One long source (a talk, a transcript, a recording, a long article) + "key idea / what it rests on / ключевая мысль / выжимка" | `digest` |
 | Structure exists (or was just produced) + "show / diagram / pyramid / picture" | `viz` |
 
 Chaining: after `audit`, offer `write` in one line — do not rewrite unasked. After
@@ -58,19 +57,13 @@ mixes signals, say which mode you picked in one sentence and go.
    can be answered yes while the reader still has no reason to spend money, time or authority.
    A reader who is deciding asks what the thing is worth, not whether it fits.
 2. **Provisional answer** in one sentence, no "and also". Test it by objection: if
-   refuting it takes two separate objections, it is two tops, not one. A top made of a
-   list of nouns ("intent, process, people and measurement") is an enumeration wearing a
-   sentence — find the one claim they share and state it so that it could be wrong.
+   refuting it takes two separate objections, it is two tops, not one.
 3. **SCQ intro, in story form.** Situation (what the reader already agrees with) →
    Complication (what changed, what blocks, what forces a choice) → Question → Answer.
    Tell it, do not label it: the reader recognizes the Situation, feels the turn, and
    reaches the Question already asking it. Nothing in the intro may need proving — a
    sentence the reader could argue with belongs in the body. The Question stays on the
-   page: §8 hides your process, not the reader's question. The Situation is taken from the
-   request or the source, never made up for the reader: "your teams still see only modest
-   gains" is an invention unless the request says so. When the request gives nothing, the
-   Situation is the source's own — what its author set out to answer — and the reader's
-   own position is left unstated rather than guessed.
+   page: §8 hides your process, not the reader's question.
 
    **Dose the Situation by what the reader already holds**, with breadth of readership as
    the proxy — the wider the circle, the less is shared, the further back you start:
@@ -108,27 +101,6 @@ mixes signals, say which mode you picked in one sentence and go.
    each mechanic ask what the reader ends up with once it works, put that on the first level,
    and hang the mechanic under it as its support. Stay inside the material — a mechanic whose
    payoff you cannot name from the source is a support, not a branch.
-
-   **Depth follows the material, and you decide it before drafting.** A short single-topic
-   source earns two levels: the answer and its supports. A long source — a talk, a
-   transcript, a document with sections, roughly 1,500 words or more — usually earns three:
-   the answer, 3–4 conclusions, and under each conclusion its concrete supports. Where the
-   reader has not read the source, every support carries a locator (timestamp, section,
-   file). Two tests decide the levels: a support that carries its own chain of evidence is a
-   conclusion missing its level; a conclusion resting on a single support — ask whether it is
-   a conclusion or a promoted support. Length follows the levels: a long source may take more
-   than one screen where the evidence requires it. The requested format still wins — a plain
-   list or a short note is never inflated to three levels.
-
-   **Supports keep the source's concreteness; abstraction is the parent's job.** Where the
-   source backs a claim with a figure, an example, a comparison or a quote, the support
-   carries that item and the conclusion above it carries the meaning: "stories shipped per
-   person rose from 2.2 to 2.9" is a support, "measure business value" is its parent. A
-   support you could have written without reading the source is an abstraction sitting in a
-   support's place — go back and put the figure in. Keep the owner of every number: a
-   participant's estimate ("about 15%, in his assessment") is reported as their estimate, a
-   forecast as a forecast, never as a measured fact — and no number, name or percentage the
-   source does not contain.
 5. **Order** — pick one and be able to justify it: time, structure, ranking,
    deduction, induction. Name it, so the reader can see it.
 6. **MECE** — no overlaps, no gaps, no false grouping. Duplication test: cover one
@@ -151,8 +123,6 @@ mixes signals, say which mode you picked in one sentence and go.
       accept and the Complication that makes the question live — or the output is short
       enough that the request itself is the Situation, and you decided to skip the story
       deliberately, not by forgetting it.
-   6. Check the depth against the source: three levels, with a locator on every support the
-      reader cannot otherwise find, for a long source; no inflation of a short one.
 
 Read `references/rules.md` when you need the exact test, the order-type table, the
 failure catalogue, or the scoring rubric. Read `references/templates.md` when
@@ -258,8 +228,8 @@ Rules that do not bend:
 ## Mode 4 — digest
 
 Report on read sources, answer-first, in chat. The input is not a text to rewrite:
-it is one or more sources you have read plus a reader who has not and will not —
-they act on your report. Digesting is not shrinking the sources; it is answering the
+it is several sources you have read plus a reader who has not and will not — they
+act on your report. Digesting is not shrinking the sources; it is answering the
 reader's question from them.
 
 Run the core loop with the reader's question as the spine, then deliver chat
@@ -274,13 +244,7 @@ prose:
   meaning of a fact from source B is delivered as the combined point;
 - a source reference on every load-bearing claim (file, row, note — the shortest
   form that lets the reader find it);
-- for one long source — a talk, a transcript, a long article — the reader's question
-  is usually what is claimed and what it rests on; the digest then shows three levels:
-  the claim, three or four conclusions, and under each its concrete supports with a
-  minute marker or section as the locator. It stays chat prose and may run past one
-  screen where the supports require it;
-- length of roughly one chat screen for several short sources; for one long source,
-  the length the three levels take. Condensing is the job: compress settled
+- length of roughly one chat screen. Condensing is the job: compress settled
   matters to a line each, and spend the space on what the reader will act on.
   Anything the reader would act on differently had they known must survive the
   compression; the rest may go without a note.
