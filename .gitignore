@@ -65,3 +65,6 @@ dataset/
 tmp/
 .cache/
 __pycache__/
+
+# Local launch config for the desktop preview
+.claude/
