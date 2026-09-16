@@ -1,16 +1,16 @@
 # Gold 12: talk digest
 
 Gold for a condensed translation of a public conference talk. The talk is one
-speaker, 26 minutes, seven distinct themes; the digest must be sized to that, not
-to a habit.
+speaker, 26 minutes, several distinct themes; the digest must be sized to that,
+not to a habit.
 
 ## Expected structure
 
 Top: one claim the speaker makes, stated so that it could be wrong, not a list of
 themes. The strongest available top: the promised 10x did not arrive because the
 bottleneck is no longer writing code but the people and process around the agents
-— so the reader should change roles, feedback and the sprint cycle, not buy another
-tool. A top that names the speaker's final line ("the only one in the way is the
+— so what the reader should look at is roles, feedback and the sprint cycle rather
+than the tooling. A top that names the speaker's final line ("the only one in the way is the
 human") is acceptable if it is immediately grounded. A top made of four nouns
 ("tools, roles, process and infrastructure") is an enumeration, not an answer; a
 top that describes the talk ("the speaker discusses agent-driven development") is
@@ -64,10 +64,11 @@ that reaches the same content by different cuts is acceptable):
 
 The "agent as a new actor" material (new entry points, a compromised shopping
 agent, harness, services built for agents, the assistant that deleted its own
-memory when the disk filled — 00:22–00:26) may be a fifth conclusion if it is
-grounded, or may sit as supports under conclusions 2 or 4; a chronological
-retelling of the slides, or a catch-all branch ("teams, infrastructure and the
-market"), is a failure of grouping.
+memory when the disk filled — 00:22–00:26) sits as supports under conclusion 2 or
+4, or replaces one of the four if the output argues it better; a fifth first-level
+branch breaks the four-group limit, and a chronological retelling of the slides or
+a catch-all branch ("teams, infrastructure and the market") is a failure of
+grouping.
 
 ## Concreteness of the supports
 

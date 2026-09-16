@@ -153,14 +153,13 @@ feedback, it starts to understand well how our system works and can correct it
 without us.
 
 Let us move on to probabilistic systems. I will concentrate on agent systems here —
-we have done both. Who do you think should develop agents? Honestly — our classical
-roles.
+we have done both. Who do you think should develop agents — which of our classical roles?
 
 [00:14] because if you give it to backend developers, they start writing
 frameworks. We gave backenders the task several times: they build their own
 frameworks, they do not want to take the unfinished open-source ones; they build
 their frameworks for several months and nothing comes of it. A good option, you
-would think: we have AI engineers — they are agents, everything is fine. I walked
+would think: we have AI engineers — they do agents, so all is fine. I walked
 into one team: a product manager and an NLP engineer. I looked at the backlog:
 authorization, integration, database work. I asked: "Where is the agent?" The NLP
 engineer was doing all that plumbing, and the manager did not understand why he
