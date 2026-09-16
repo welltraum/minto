@@ -21,7 +21,9 @@ Minto routes a request into one of five modes:
 - `write`: draft or restructure an answer-first memo, email, one-pager, decision
   note, chat update, or deck storyline.
 - `digest`: report on read sources answer-first in chat, with source references
-  and cross-source synthesis.
+  and cross-source synthesis; for one long source (a talk, a transcript) the
+  digest shows three levels — the claim, its conclusions, and the concrete
+  supports with locators.
 - `viz`: render the pyramid and SCQ flow in Mermaid, with an optional
   self-contained HTML view when explicitly requested.
 
@@ -142,9 +144,12 @@ python3 eval/aggregate.py eval/runs/v1.7.0-final --allow-partial
 bash eval/build-report.sh eval/runs/v1.7.0-final eval/report-v1.7.0.md
 ```
 
-The release benchmark uses eleven English fixtures, eight engines, and two arms
-(`skill` and `control`) for 172 judged cells, all generated at low reasoning
-effort. Model identifiers, CLI versions, effort settings, UTC time, and the commit
+The benchmark on the site (`v1.7.0-final`) uses eleven English fixtures, eight
+engines, and two arms (`skill` and `control`) for 172 judged cells, all generated
+at low reasoning effort; it measures the 1.7.0 skill text. The 1.8.0 revision
+was measured on the twelfth fixture only, against the 1.7.0 text and through
+removal tests of each edit — see `CHANGELOG.md` and `eval/report-v1.8.0.md`; the
+site figures were not re-run for it. Model identifiers, CLI versions, effort settings, UTC time, and the commit
 SHA are recorded with the run. Every published figure is computed from the verdicts
 by `eval/aggregate.py`; nothing downstream recomputes it. See `eval/README.md` for
 the arms, the isolation each engine runs under, and which release a given run
@@ -164,6 +169,35 @@ an original paraphrase inspired by a
 [Planio article](https://plan.io/blog/pyramid-principle-pitching/). The digest,
 rollout-review, and plain-list fixtures are modeled on real usage patterns with
 every company, product, person, system, and number invented for the benchmark.
+The talk-digest fixture is a condensed English translation of a public 2026
+conference talk on agent-driven development, with the speaker anonymized and one
+company name in an example replaced.
+
+## Releasing
+
+The version string is what both hosts use to decide that an update exists: Codex
+caches a plugin under `<name>/<version>/` and Claude Code records the installed
+version, so skill text that changes without a bump never reaches an installed
+user. Three files carry that string:
+
+- `.claude-plugin/marketplace.json`
+- `plugins/minto/.claude-plugin/plugin.json`
+- `plugins/minto/.codex-plugin/plugin.json`
+
+Bump all three together, add the matching `## <version> - <date>` section to
+`CHANGELOG.md`, and verify before pushing:
+
+```bash
+python3 scripts/check_manifest_versions.py
+```
+
+The check fails when the manifests disagree, when the changelog has no section
+for the version, and when `plugins/minto` has changed since the latest tag while
+the version has not. It runs in CI on pull requests and on `main`, and with
+`--tag` against the tag name when a `v*` tag is pushed.
+
+Both hosts install from the default branch, so a release reaches users only once
+it is merged into `main` and tagged `vX.Y.Z`.
 
 ## Updating
 

@@ -36,6 +36,7 @@ Explicit argument wins: `intent` | `audit` | `write` | `digest` | `viz`. Otherwi
 | Text supplied + "check / what's wrong / is the logic sound / review" | `audit` |
 | Text, notes or bullets + "write / rewrite / restructure / make a memo" | `write` |
 | Sources were read (or are supplied) + "digest / summary in chat / report on what you read / выжимка / саммари" | `digest` |
+| One long source (a talk, a transcript, a recording, a long article) + "key idea / what it rests on / ключевая мысль / выжимка" | `digest` |
 | Structure exists (or was just produced) + "show / diagram / pyramid / picture" | `viz` |
 
 Chaining: after `audit`, offer `write` in one line — do not rewrite unasked. After
@@ -101,6 +102,17 @@ mixes signals, say which mode you picked in one sentence and go.
    each mechanic ask what the reader ends up with once it works, put that on the first level,
    and hang the mechanic under it as its support. Stay inside the material — a mechanic whose
    payoff you cannot name from the source is a support, not a branch.
+
+   **Depth follows the material, and you decide it before drafting.** A short single-topic
+   source earns two levels: the answer and its supports. A long source — a talk, a
+   transcript, a document with sections, roughly 1,500 words or more — usually earns three:
+   the answer, 3–4 conclusions, and under each conclusion its concrete supports. Where the
+   reader has not read the source, every support carries a locator (timestamp, section,
+   file). Two tests decide the levels: a support that carries its own chain of evidence is a
+   conclusion missing its level; a conclusion resting on a single support — ask whether it is
+   a conclusion or a promoted support. Length follows the levels: a long source may take more
+   than one screen where the evidence requires it. The requested format still wins — a plain
+   list or a short note is never inflated to three levels.
 5. **Order** — pick one and be able to justify it: time, structure, ranking,
    deduction, induction. Name it, so the reader can see it.
 6. **MECE** — no overlaps, no gaps, no false grouping. Duplication test: cover one
@@ -123,6 +135,8 @@ mixes signals, say which mode you picked in one sentence and go.
       accept and the Complication that makes the question live — or the output is short
       enough that the request itself is the Situation, and you decided to skip the story
       deliberately, not by forgetting it.
+   6. Check the depth against the source: three levels, with a locator on every support the
+      reader cannot otherwise find, for a long source; no inflation of a short one.
 
 Read `references/rules.md` when you need the exact test, the order-type table, the
 failure catalogue, or the scoring rubric. Read `references/templates.md` when
@@ -228,8 +242,8 @@ Rules that do not bend:
 ## Mode 4 — digest
 
 Report on read sources, answer-first, in chat. The input is not a text to rewrite:
-it is several sources you have read plus a reader who has not and will not — they
-act on your report. Digesting is not shrinking the sources; it is answering the
+it is one or more sources you have read plus a reader who has not and will not —
+they act on your report. Digesting is not shrinking the sources; it is answering the
 reader's question from them.
 
 Run the core loop with the reader's question as the spine, then deliver chat
@@ -244,7 +258,13 @@ prose:
   meaning of a fact from source B is delivered as the combined point;
 - a source reference on every load-bearing claim (file, row, note — the shortest
   form that lets the reader find it);
-- length of roughly one chat screen. Condensing is the job: compress settled
+- for one long source — a talk, a transcript, a long article — the reader's question
+  is usually what is claimed and what it rests on; the digest then shows three levels:
+  the claim, three or four conclusions, and under each its concrete supports with a
+  minute marker or section as the locator. It stays chat prose and may run past one
+  screen where the supports require it;
+- length of roughly one chat screen for several short sources; for one long source,
+  the length the three levels take. Condensing is the job: compress settled
   matters to a line each, and spend the space on what the reader will act on.
   Anything the reader would act on differently had they known must survive the
   compression; the rest may go without a note.

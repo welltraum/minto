@@ -1,0 +1,11 @@
+We must replace classical Agile workflows with a hybrid model that integrates research cycles, redefines roles toward product engineers and dual-role builders, and treats agents as new actors requiring dedicated infrastructure and security.
+
+Teams have started using coding agents, but the promised acceleration has not materialized because classical development processes and roles are misaligned with agent capabilities. The speaker argues that agents introduce probabilistic research cycles, break handoff-based workflows, and create new security and infrastructure demands, requiring a fundamental shift in how we organize work.
+
+**Integrate research cycles and hypothesis-based sprints.** Agents introduce a research cycle where errors are data for evaluation rather than bugs to fix; classical sprints stall when teams try to code these errors one by one. Adopt hypothesis-based sprints and use ML System Design Docs to record experiments, track hypotheses, and communicate progress to clients. [00:20]
+
+**Redefine roles toward product engineers and dual-role builders.** Handoffs slow down speed even when individuals work faster with agents; product engineers build full apps in days while classical teams take months. Agents require both engineering and research skills, which one role cannot cover; assign a superhuman or pair a developer with a researcher. Invest in training and allow three to six months for mastery, as resistance is large and many default to "auto" mode. [00:10], [00:14], [00:02]
+
+**Implement automated feedback loops and business-function modeling.** Agents need constant checks from tests, browsers, and servers to correct themselves; move from human review to agent-to-agent review with human external correction. Analysts struggle to describe agents classically; mapping agents to business functions using IDEF0 helps communicate with clients and simplifies agent design. [00:06], [00:12], [00:16]
+
+**Secure agent entry points and monitor infrastructure.** Agents are new actors connecting to services and other agents, creating security risks if compromised; services are not ready for agent interaction and need new entry points. Monitor infrastructure closely, as agents can consume resources unpredictably, such as deleting memory or filling disk space. [00:22]

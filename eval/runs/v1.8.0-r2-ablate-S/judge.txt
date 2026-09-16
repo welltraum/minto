@@ -1,0 +1,9 @@
+judge_model: gpt-5.6-sol
+judge_effort: high
+expected_outputs_per_fixture: from shuffle.txt
+judge_attempts: 2
+judge_prompt_sha256: 3a2c745bb09431ead11f41a06707aa2865ecb8bfa51ea9c12f9a878a6c6bc43d
+rubric_sha256: 973cef5bb2f16503d6b2a33e44b53915f2ec277268033221b0b6d244755687e7
+universal_checks_sha256: d5c16bcb35911c8cbf56c736326bb00e3f8616de23b706f62da4ea4b40f4a9f9
+codex_cli: codex-cli 0.147.0
+command: codex exec -C ISOLATED_WORKSPACE -m MODEL -c model_reasoning_effort=EFFORT --ignore-user-config --ignore-rules --ephemeral --skip-git-repo-check -o OUTPUT -

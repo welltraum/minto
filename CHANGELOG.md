@@ -3,6 +3,104 @@
 All notable changes to Minto are documented here. The project follows semantic
 versioning for its plugin manifests.
 
+## 1.8.0 - 2026-09-16
+
+A revision driven by one real case: a 15,000-word, multi-topic conversation
+transcript run through `/minto` came back as one key sentence with a flat list,
+and its supports were abstractions ("value is measured by the product, not by
+tokens") where the authors' own summary kept the figures ("stories shipped per
+person rose from 2.2 to 2.9"). Two of the four edits written for it survived
+their removal tests and ship; two did not and are recorded below. Everything was
+measured on the new fixture only — the site benchmark is unchanged and still
+describes the 1.7.0 text.
+
+### Added
+
+- **Depth follows the material** (core loop §4 and self-check item 6): a long
+  source — a talk, a transcript, a document with sections, roughly 1,500 words or
+  more — earns three levels, the answer, 3–4 conclusions and their concrete
+  supports, with a locator on every support the reader cannot otherwise find;
+  a short source or a plain-list request is never inflated. Two tests decide the
+  levels: a support carrying its own chain of evidence is a conclusion missing
+  its level, and a conclusion on a single support is asked whether it is a
+  promoted support. Removing this edit lowered skill-arm structure in both
+  measurement rounds and produced a fifth first-level branch on codex each time.
+- **One long source in `digest`**: a router row for "one long source + key idea /
+  what it rests on / ключевая мысль", the mode definition widened from "several
+  sources" to "one or more", and sizing for that case — three levels with minute
+  markers or sections as locators, chat prose that may run past one screen where
+  the supports require it. Removing this edit lowered skill-arm structure and
+  `mode_respected` in both rounds and also produced a fifth branch.
+- Fixture `12-talk-digest`: a condensed English translation of a public 2026
+  conference talk on agent-driven development (26 minutes, one speaker, several
+  themes; speaker anonymized, one company name in an example replaced, every
+  figure kept), with a gold that requires three levels, concrete supports with
+  locators, and attribution of the speaker's estimates as estimates. Universal
+  check denominators and the eval regression tests move from eleven to twelve
+  fixtures.
+- Run directories `v1.8.0-baseline`, `v1.8.0`, `v1.8.0-ablate-{D,C,R,S}`, the
+  round-2 set `v1.8.0-r2-*` with a fourth engine, and `v1.8.0-final`, whose
+  `skill_sha256` matches the shipped text.
+
+### Rolled back during this cycle (negative results)
+
+- **Concreteness of supports** ("where the source backs a claim with a figure,
+  the support carries it; abstraction is the parent's job", plus a sentence
+  against a top made of a list of nouns). Removing it left the judged axes flat
+  or better in both rounds (skill quality 7.33 → 8.00 in round 1, 8.25 → 8.25 in
+  round 2), and the judge's per-cell answers show no change in how many of the
+  talk's nine planted figures survived — with or without the edit, engines kept
+  roughly two to six of them, codex the most. The owner's second complaint —
+  supports too abstract where the source is concrete — therefore **remains open**:
+  this wording did not move it.
+- **No invented Situation** ("the Situation is taken from the request or the
+  source, never made up for the reader"). Its target was a failure the judge
+  saw repeatedly — the skill inventing the reader's own position ("your teams
+  still see only modest gains", "we deployed agents expecting…"). Removing it
+  raised structure in both rounds (6.00 → 6.67, 6.50 → 7.00) and its effect on
+  `invented_facts` split one round each way. The failure itself is real and
+  persists in the shipped text (qwen3.6-fp8 opens the `v1.8.0-final` skill cell
+  with "We deployed coding agents expecting a tenfold acceleration"); it is the
+  first candidate for the next revision.
+
+### Known regressions and limits shipped with eyes open
+
+- On fixture 12 the 1.7.0 text already produced three levels with locators on
+  every engine tested, so the real case's flat output was **not reproduced** at
+  this size (3,700 words) and these engines; the depth edits are justified by the
+  removal tests (structure and first-level count), not by a before/after gain on
+  depth itself.
+- `invented_facts` on the skill arm moved against the candidate in round 2
+  (0 of 4 cells with the 1.7.0 text, 3 of 4 with the full candidate; the
+  removal tests sit at 2–3 of 4 regardless of which edit is removed). The
+  figures for the shipped text are in `eval/report-v1.8.0.md`.
+- Three or four engines per arm, one cell each: the noise floor is large. Two
+  judge passes over the same 1.7.0 cells differed by 1.0 quality point on the
+  skill arm. Every decision above rests on the direction agreeing across both
+  rounds, not on any single delta.
+- Claude engines are absent: the Claude CLI was not authenticated on the
+  maintainer's machine, and the eval forbids in-session subagents as cells. Not
+  substituted.
+- The eleven older fixtures were not re-run, so the 1.7.0 regressions on
+  `no_invented_facts` (−8.2 pp) and `answer_first` (−10.0 pp) are neither fixed
+  nor re-measured here. The site keeps the `v1.7.0-final` figures.
+
+### Fixed
+
+- `plugins/minto/.codex-plugin/plugin.json` had stayed at 1.6.0 through the
+  1.7.0 release; all three manifests now carry the same version.
+
+### Evaluation
+
+The release run is `eval/runs/v1.8.0-final` (fixture 12, engines codex,
+gpt-oss-120b, qwen3.6-fp8, qwen3.6-35b-a3b, both arms, blind judge gpt-5.6-sol at
+high effort); its figures and the two-round comparison against the 1.7.0 text are
+in `eval/report-v1.8.0.md`. The Codex review of the candidate before the runs
+(five must-fix items, all applied: the theme-count trigger and the universal
+locator requirement were dropped from the depth edit, the gold no longer admits a
+fifth branch, the digest definition was widened, two transcript sentences were
+retranslated) is summarized there as well.
+
 ## 1.7.0 - 2026-08-20
 
 The first revision of the skill text since 1.5.0, driven by 21 real usage

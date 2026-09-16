@@ -1,0 +1,34 @@
+{
+  "12-talk-digest": {
+    "out-01.md": {
+      "engine": "codex",
+      "arm": "skill",
+      "bytes": 4152
+    },
+    "out-02.md": {
+      "engine": "gpt-oss-120b",
+      "arm": "skill",
+      "bytes": 1724
+    },
+    "out-03.md": {
+      "engine": "qwen3.6-fp8",
+      "arm": "control",
+      "bytes": 2364
+    },
+    "out-04.md": {
+      "engine": "qwen3.6-fp8",
+      "arm": "skill",
+      "bytes": 1911
+    },
+    "out-05.md": {
+      "engine": "gpt-oss-120b",
+      "arm": "control",
+      "bytes": 6669
+    },
+    "out-06.md": {
+      "engine": "codex",
+      "arm": "control",
+      "bytes": 3996
+    }
+  }
+}

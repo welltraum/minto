@@ -1,0 +1,23 @@
+started_utc: 2026-09-16T14:29:59Z
+commit: 5092a71b580cb7dcb4e8303dbd363033ced0d14c
+worktree: dirty
+allow_dirty: 1
+min_output_bytes: 10
+skill_sha256: 80ec3a323f360026fb189eae621663d7f534bc2b7551f11713335de3aed89273
+rules_sha256: 44ac7427fa75f614df62c1cf5bd6ac8b17b9b4771e02e52d93f697a120ddd93a
+templates_sha256: 9be36d71f023001a3d743903ab122ee0b7aaffcfcdee8c14619bc5b295113f33
+codex: model=gpt-5.6-terra reasoning_effort=low
+codex_cli: codex-cli 0.147.0
+kimi: model=kimi-code/k3-low effort=low
+kimi_cli: 0.34.0
+claude_cli: 2.1.247 (Claude Code)
+neuraldeep: model=gpt-oss-120b base_url=https://api.neuraldeep.ru/v1 temperature=0.1 max_tokens=24576 timeout=550 attempts=2 concurrency=2
+neuraldeep: model=qwen3.6-fp8 base_url=https://api.neuraldeep.ru/v1 temperature=0.1 max_tokens=24576 timeout=550 attempts=2 concurrency=2
+neuraldeep: model=qwen3.6-35b-a3b base_url=https://api.neuraldeep.ru/v1 temperature=0.1 max_tokens=24576 timeout=550 attempts=2 concurrency=2
+arms: skill control
+fixtures: 12-talk-digest
+engines: gpt-oss-120b qwen3.6-fp8 qwen3.6-35b-a3b codex
+codex_command: codex exec -C ISOLATED_WORKSPACE -m MODEL -c model_reasoning_effort=EFFORT --ignore-user-config --ignore-rules --ephemeral --skip-git-repo-check -o OUTPUT -
+kimi_command: cd ISOLATED_HOME && KIMI_CODE_HOME=ISOLATED_HOME kimi --skills-dir EMPTY_SKILLS -p PROMPT -m MODEL --output-format stream-json
+claude_command: cd ISOLATED_WORKSPACE && env -u CLAUDECODE -u CLAUDE_CODE_* -u CLAUDE_EFFORT -u CLAUDE_PID -u CLAUDE_PLUGIN_DATA -u CLAUDE_AGENT_SDK_VERSION claude -p --model MODEL --effort EFFORT --output-format json --tools "" --disable-slash-commands --strict-mcp-config --setting-sources "" --no-session-persistence --exclude-dynamic-system-prompt-sections < PROMPT
+neuraldeep_command: eval/run-neuraldeep.py MODEL PROMPT OUTPUT
