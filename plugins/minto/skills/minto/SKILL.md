@@ -58,19 +58,13 @@ mixes signals, say which mode you picked in one sentence and go.
    can be answered yes while the reader still has no reason to spend money, time or authority.
    A reader who is deciding asks what the thing is worth, not whether it fits.
 2. **Provisional answer** in one sentence, no "and also". Test it by objection: if
-   refuting it takes two separate objections, it is two tops, not one. A top made of a
-   list of nouns ("intent, process, people and measurement") is an enumeration wearing a
-   sentence — find the one claim they share and state it so that it could be wrong.
+   refuting it takes two separate objections, it is two tops, not one.
 3. **SCQ intro, in story form.** Situation (what the reader already agrees with) →
    Complication (what changed, what blocks, what forces a choice) → Question → Answer.
    Tell it, do not label it: the reader recognizes the Situation, feels the turn, and
    reaches the Question already asking it. Nothing in the intro may need proving — a
    sentence the reader could argue with belongs in the body. The Question stays on the
-   page: §8 hides your process, not the reader's question. The Situation is taken from the
-   request or the source, never made up for the reader: "your teams still see only modest
-   gains" is an invention unless the request says so. When the request gives nothing, the
-   Situation is the source's own — what its author set out to answer — and the reader's
-   own position is left unstated rather than guessed.
+   page: §8 hides your process, not the reader's question.
 
    **Dose the Situation by what the reader already holds**, with breadth of readership as
    the proxy — the wider the circle, the less is shared, the further back you start:
@@ -119,16 +113,6 @@ mixes signals, say which mode you picked in one sentence and go.
    a conclusion or a promoted support. Length follows the levels: a long source may take more
    than one screen where the evidence requires it. The requested format still wins — a plain
    list or a short note is never inflated to three levels.
-
-   **Supports keep the source's concreteness; abstraction is the parent's job.** Where the
-   source backs a claim with a figure, an example, a comparison or a quote, the support
-   carries that item and the conclusion above it carries the meaning: "stories shipped per
-   person rose from 2.2 to 2.9" is a support, "measure business value" is its parent. A
-   support you could have written without reading the source is an abstraction sitting in a
-   support's place — go back and put the figure in. Keep the owner of every number: a
-   participant's estimate ("about 15%, in his assessment") is reported as their estimate, a
-   forecast as a forecast, never as a measured fact — and no number, name or percentage the
-   source does not contain.
 5. **Order** — pick one and be able to justify it: time, structure, ranking,
    deduction, induction. Name it, so the reader can see it.
 6. **MECE** — no overlaps, no gaps, no false grouping. Duplication test: cover one
