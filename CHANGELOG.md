@@ -89,6 +89,12 @@ describes the 1.7.0 text.
 
 - `plugins/minto/.codex-plugin/plugin.json` had stayed at 1.6.0 through the
   1.7.0 release; all three manifests now carry the same version.
+- `scripts/check_manifest_versions.py`, run by the `Plugin manifests` workflow
+  on pull requests, on `main` and against the tag on a release, fails when the
+  three manifests disagree, when the changelog has no section for the version,
+  when a release tag does not match it, and when `plugins/minto` has changed
+  since the latest tag while the version has not. The miss above was invisible
+  until a user could not update.
 
 ### Evaluation
 
