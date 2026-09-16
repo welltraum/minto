@@ -46,6 +46,15 @@ eval/runs/v1.7.0-final/log.txt
 eval/runs/v1.7.0-ablate-*/logs/
 eval/runs/v1.7.0-ablate-*/blind/
 eval/runs/v1.7.0-ablate-*/log.txt
+!eval/runs/v1.8.0-baseline/
+!eval/runs/v1.8.0/
+!eval/runs/v1.8.0-ablate-D/
+!eval/runs/v1.8.0-ablate-C/
+!eval/runs/v1.8.0-ablate-R/
+!eval/runs/v1.8.0-ablate-S/
+eval/runs/v1.8.0*/logs/
+eval/runs/v1.8.0*/blind/
+eval/runs/v1.8.0*/log.txt
 
 # Resume invocations record themselves separately so a re-run cannot overwrite the
 # provenance of the cells already on disk. Incidental; the original is what counts.
