@@ -73,7 +73,16 @@ describes the 1.7.0 text.
 - `invented_facts` on the skill arm moved against the candidate in round 2
   (0 of 4 cells with the 1.7.0 text, 3 of 4 with the full candidate; the
   removal tests sit at 2–3 of 4 regardless of which edit is removed). The
-  figures for the shipped text are in `eval/report-v1.8.0.md`.
+  shipped text's release run (`v1.8.0-final`) has 2 of 4 — both qwen cells, one
+  of them the invented reader position quoted above.
+- In the release run the skill arm did **not** beat control on structure
+  (6.00 against 7.00 of 8) and tied on quality as judged (7.75); after the
+  hard-failure penalty it leads by +0.25. Against the 1.7.0 text on the same
+  cells the skill arm is flat (structure 6.00 → 6.00, quality 8.00 → 7.75); the
+  control arm of that run drifted +1.25 structure on identical prompts, which is
+  the noise floor at four cells per arm. `mode_respected` and
+  `first_level_count_within_limit` are 100% on the skill arm against 75% on
+  control; `first_level_kind_matches` is 50% against 75%.
 - Three or four engines per arm, one cell each: the noise floor is large. Two
   judge passes over the same 1.7.0 cells differed by 1.0 quality point on the
   skill arm. Every decision above rests on the direction agreeing across both

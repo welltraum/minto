@@ -11,7 +11,128 @@ fixtures and the site figures are unchanged from `v1.7.0-final`.
 
 ## Deterministic scores of the release run
 
-PENDING_SCORES
+Generated 2026-09-16T18:23:08Z by `eval/aggregate.py` from 8 judged cells. Commit `58f3b0946a151b9b1d4ef5235df9484016e2d4b9`, worktree clean, rubric penalty version 1.
+
+Generated at a single commit.
+
+Every number here is computed from the json blocks in `verdicts/`. Quote them; do not recompute them.
+
+### Pooled
+
+| Measure | Control | With skill | Δ | Δ pp | Relative |
+|---|---:|---:|---:|---:|---:|
+| Structure /8 | 7.00 (87.5%) | 6.00 (75.0%) | -1.00 | -12.5 | -14.3% |
+| Quality (as judged) /10 | 7.75 (77.5%) | 7.75 (77.5%) | 0.00 | 0.0 | 0.0% |
+| Quality (after hard-failure penalty) /10 | 7.00 (70.0%) | 7.25 (72.5%) | +0.25 | +2.5 | +3.6% |
+
+### Behaviour pass rates
+
+`n` is the number of cells the check applies to, per arm. A conditional check shows a smaller denominator by design.
+
+| Check | Control | With skill | Δ pp | n per arm |
+|---|---:|---:|---:|---:|
+| `first_level_kind_matches` | 75.0% | 50.0% | -25.0 | 4 |
+| `no_invented_facts` | 25.0% | 50.0% | +25.0 | 4 |
+| `no_unacknowledged_source_loss` | 0.0% | 0.0% | 0.0 | 0 |
+| `mode_respected` | 75.0% | 100.0% | +25.0 | 4 |
+| `answer_first` | 75.0% | 75.0% | 0.0 | 4 |
+| `first_level_count_within_limit` | 75.0% | 100.0% | +25.0 | 4 |
+| `readers_question_literal` | 0.0% | 0.0% | 0.0 | 0 |
+| `order_type_named` | 0.0% | 0.0% | 0.0 | 0 |
+| `scq_intro_present` | 100.0% | 100.0% | 0.0 | 4 |
+| `no_hard_failure` | 25.0% | 50.0% | +25.0 | 4 |
+
+### By engine
+
+| Engine | n per arm | Structure control → skill | Quality control → skill | Δ quality pp |
+|---|---:|---|---|---:|
+| codex | 1 | 100.0% → 100.0% | 100.0% → 100.0% | 0.0 |
+| gpt-oss-120b | 1 | 75.0% → 75.0% | 50.0% → 70.0% | +20.0 |
+| qwen3.6-35b-a3b | 1 | 75.0% → 62.5% | 70.0% → 70.0% | 0.0 |
+| qwen3.6-fp8 | 1 | 100.0% → 62.5% | 90.0% → 70.0% | -20.0 |
+
+### Hard failures by type
+
+| Token | Control | With skill |
+|---|---:|---:|
+| `invented_facts` | 3 | 2 |
+| `more_than_four_first_level` | 1 | 0 |
+
+### Landing-page figures
+
+| Slug | Label | Control | With skill | Δ pp |
+|---|---|---:|---:|---:|
+| `quality` | Writing quality, share of the judge's 10 points | 78% | 78% | +0 |
+| `structure` | Structure, share of the judge's 8 points | 88% | 75% | -13 |
+| `readers-question` | The reader's question is written down | 0% | 0% | +0 |
+| `kind-matches` | First-level points are all the same kind | 75% | 50% | -25 |
+| `answer-first` | Answer in the first sentence | 75% | 75% | +0 |
+| `source-kept` | No source material lost without saying so | 0% | 0% | +0 |
+
+### Reading the release run
+
+Skill minus control in this run: structure −1.00, quality as judged 0.00,
+quality after the hard-failure penalty +0.25; `invented_facts` 2 skill cells
+against 3 control, `more_than_four_first_level` 0 against 1. The skill arm did
+not beat control on structure here. Against the 1.7.0 text on the same fixture
+and engines (`v1.8.0-r2-baseline`), the skill arm is flat: structure 6.00 →
+6.00, quality 8.00 → 7.75, while the control arm of this run scored 1.25
+structure points and 1.50 quality points above its own round-2 self on identical
+prompts — that drift is the noise floor at four cells per arm. Cell-for-cell
+output of `eval/compare-runs.py`:
+
+```text
+baseline:  v1.8.0-r2-baseline  commit 5092a71b580c  cells 8
+candidate: v1.8.0-final  commit 58f3b0946a15  cells 8
+
+== Pooled means per arm (delta = candidate - baseline) ==
+measure                            arm       baseline  candidate   delta
+structure /8                       skill        6.000      6.000  +0.000
+quality_raw /10                    skill        8.000      7.750  -0.250
+quality_penalized /10              skill        8.000      7.250  -0.750
+structure /8                       control      5.750      7.000  +1.250
+quality_raw /10                    control      6.250      7.750  +1.500
+quality_penalized /10              control      4.750      7.000  +2.250
+
+== Check pass rates per arm, pct (delta pp) ==
+-- skill arm --
+  answer_first                          75.0 ->  75.0  ( +0.0 pp, n=4)
+  first_level_count_within_limit       100.0 -> 100.0  ( +0.0 pp, n=4)
+  first_level_kind_matches             100.0 ->  50.0  (-50.0 pp, n=4)
+  mode_respected                       100.0 -> 100.0  ( +0.0 pp, n=4)
+  no_invented_facts                    100.0 ->  50.0  (-50.0 pp, n=4)
+  scq_intro_present                    100.0 -> 100.0  ( +0.0 pp, n=4)
+-- control arm --
+  answer_first                         100.0 ->  75.0  (-25.0 pp, n=4)
+  first_level_count_within_limit        25.0 ->  75.0  (+50.0 pp, n=4)
+  first_level_kind_matches              50.0 ->  75.0  (+25.0 pp, n=4)
+  mode_respected                        75.0 ->  75.0  ( +0.0 pp, n=4)
+  no_invented_facts                     25.0 ->  25.0  ( +0.0 pp, n=4)
+  scq_intro_present                    100.0 -> 100.0  ( +0.0 pp, n=4)
+
+== Skill-arm quality_raw mean by engine ==
+  codex              10.00 -> 10.00  (+0.00)
+  gpt-oss-120b        7.00 ->  7.00  (+0.00)
+  qwen3.6-35b-a3b     7.00 ->  7.00  (+0.00)
+  qwen3.6-fp8         8.00 ->  7.00  (-1.00)
+
+== Skill-arm structure+quality by fixture (mean over engines) ==
+  12-talk-digest           structure 6.00 -> 6.00 (+0.00)   quality 8.00 -> 7.75 (-0.25)
+
+== Hard failures per arm (token: baseline -> candidate) ==
+  skill    invented_facts: 0->2
+  control  invented_facts: 3->3, more_than_four_first_level: 3->1
+```
+
+The judge's per-cell answers for the skill arm: all four outputs show three
+levels with minute markers on the supports (decisive questions 2 and 5); codex
+keeps five of the nine planted figures, the hub models two or three (question 4);
+qwen3.6-fp8 again opens with an invented reader position ("the reader's
+organization deployed agents expecting 10×") and qwen3.6-35b-a3b turns "a month
+without code" into "months" (question 7). The judge's own attribution table lists
+"long-talk supports lose the figures and examples needed to judge the claim" as
+the most frequent defect across both arms.
+
 
 ---
 
