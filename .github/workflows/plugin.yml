@@ -1,0 +1,36 @@
+name: Plugin manifests
+
+on:
+  pull_request:
+    paths:
+      - "plugins/**"
+      - ".claude-plugin/**"
+      - ".agents/**"
+      - "CHANGELOG.md"
+      - "scripts/check_manifest_versions.py"
+      - ".github/workflows/plugin.yml"
+  push:
+    branches:
+      - main
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  versions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Validate manifest versions
+        run: python3 scripts/check_manifest_versions.py
+
+      - name: Validate release tag
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: python3 scripts/check_manifest_versions.py --tag "${{ github.ref_name }}"

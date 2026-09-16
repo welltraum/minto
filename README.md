@@ -173,6 +173,32 @@ The talk-digest fixture is a condensed English translation of a public 2026
 conference talk on agent-driven development, with the speaker anonymized and one
 company name in an example replaced.
 
+## Releasing
+
+The version string is what both hosts use to decide that an update exists: Codex
+caches a plugin under `<name>/<version>/` and Claude Code records the installed
+version, so skill text that changes without a bump never reaches an installed
+user. Three files carry that string:
+
+- `.claude-plugin/marketplace.json`
+- `plugins/minto/.claude-plugin/plugin.json`
+- `plugins/minto/.codex-plugin/plugin.json`
+
+Bump all three together, add the matching `## <version> - <date>` section to
+`CHANGELOG.md`, and verify before pushing:
+
+```bash
+python3 scripts/check_manifest_versions.py
+```
+
+The check fails when the manifests disagree, when the changelog has no section
+for the version, and when `plugins/minto` has changed since the latest tag while
+the version has not. It runs in CI on pull requests and on `main`, and with
+`--tag` against the tag name when a `v*` tag is pushed.
+
+Both hosts install from the default branch, so a release reaches users only once
+it is merged into `main` and tagged `vX.Y.Z`.
+
 ## Updating
 
 Claude Code:
