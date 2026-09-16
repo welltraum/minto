@@ -83,3 +83,4 @@ __pycache__/
 
 # Local launch config for the desktop preview
 .claude/
+!eval/runs/v1.8.0-final/

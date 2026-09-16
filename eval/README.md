@@ -230,6 +230,16 @@ two of whose sections later failed their removal tests — see
 `v1.7.0-final`, the release benchmark for **1.7.0**: its `skill_sha256`
 matches the shipped text.
 
+The 1.8.0 release was measured on fixture `12-talk-digest` only, in two rounds:
+`v1.8.0-baseline` and `v1.8.0-r2-baseline` (the 1.7.0 text, three and four
+engines), `v1.8.0` and `v1.8.0-r2` (the shipped text — its `skill_sha256`
+matches), and `v1.8.0-ablate-{D,C,R,S}` / `v1.8.0-r2-ablate-{D,C,R,S}` (the
+shipped text minus one edit each, skill arm regenerated, control arm copied from
+the candidate run). The site benchmark stays `v1.7.0-final`, which measures the
+1.7.0 text; the eleven older fixtures were not re-run for 1.8.0. Claude engines
+are absent from these runs because the Claude CLI was not authenticated on the
+maintainer's machine at the time; they were not substituted.
+
 Do not rename a run to match a release. The name records what was measured and
 when; renaming it would restate both, and it would break `scores.json`'s `run`
 field, the `--run` argument in the Pages workflow, and every committed artifact path.

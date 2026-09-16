@@ -1,0 +1,10 @@
+Teams have started using coding agents, but the promised acceleration has stalled because classical processes cannot handle probabilistic systems or the agent as a new actor. To unlock value and manage risks, we must restructure our development process to integrate research cycles, merge engineering and research roles, and design systems for agents as autonomous actors.
+
+**Integrate research cycles and hypothesis tracking into the development workflow.**
+Classical Agile handoffs slow progress when everyone works faster with agents; teams stall when engineers treat agent errors as Jira bugs instead of data for improvement. [00:10] We must introduce a research cycle within development, track experiments via an ML System Design Doc, and measure business metrics rather than just features. [00:22] Stakeholder communication must shift to the language of hypotheses, acknowledging that some experiments will fail while others succeed.
+
+**Merge engineering and research capabilities into hybrid roles or T-shaped teams.**
+Backend developers tend to build frameworks rather than agents, while NLP engineers often get stuck on plumbing; a single classical role is insufficient for agent development. [00:14] We need either "superhuman" individuals who combine both skill sets or pairs of engineers covering engineering and research. [00:16] T-shaped teams of two to three people who split roles but cover more ground are proving effective. [00:10] Analysts should map agents to business functions using IDEF0 to bridge the gap between technical implementation and client expectations. [00:18]
+
+**Architect services and security controls for agents as autonomous actors.**
+Agents are new actors that connect to services, other agents, and the outside world, but our services are not yet ready for them. [00:24] We must design new entry points and security controls, such as defending against compromised user agents interacting with MCP servers. [00:24] The human role shifts to providing external feedback and maintaining the agent layer—monitoring infrastructure, memory, and skills—rather than reviewing code line-by-line. [00:08]
