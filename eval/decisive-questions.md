@@ -116,3 +116,14 @@ Answer only the section for the current fixture, once for every blinded output.
 5. Are the three removals present as one group?
 6. Were the covered layers listed as a padding group?
 7. Which severities, efforts, orders, or facts were invented?
+
+## 12-talk-digest
+
+1. Is the top one claim that could be wrong, a list of themes or nouns, or a description of the talk?
+2. How many levels does the digest show: top → conclusions → supports, or a top followed by one flat list?
+3. How many first-level conclusions are there, and do they follow the answer or the chronology of the talk?
+4. Do the supports carry the talk's figures and examples (list which of these survive: default "auto" mode, three to six months, two hours vs half an hour vs the waiting handoff, a month without a line vs a couple of days, two or three people, API contracts and the database, a hundred tools, ten features plus ten hypotheses, 20 degrees / GPS), or are they abstracted into lines one could write without the talk?
+5. Do load-bearing supports carry a minute marker or another locator?
+6. Is feedback (CI/CD review agent, GPS/floor analogy, unit tests) gathered into one point, or spread across branches?
+7. Are the speaker's estimates and anecdotes reported as theirs, or presented as measured facts? Which numbers, names, companies or citations were invented?
+8. Which of these appear: marker legend, mermaid, findings table, meta-comment about group order, a chronological retelling, a file written?

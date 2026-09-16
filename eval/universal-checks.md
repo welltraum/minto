@@ -165,15 +165,16 @@ The `headline` list names the rates fit to publish. It includes conditional
 checks, which is allowed as long as each is published with its own denominator and
 never pooled with the others into one figure.
 
-Expected denominators, per arm, for a run of E engines over the eleven fixtures:
-11E for `first_level_kind_matches`, `invented_facts` and `mode_respected`; 10E for
-`unacknowledged_source_loss` (all but the `digest` fixture); 9E for `answer_first`
-and `first_level_count` (seven `write` plus one `viz` plus one `digest`); 6E for
-`readers_question_literal` (seven `write` minus the `11-plain-list` override); 7E
-for `order_type_named` (seven `write` plus two `audit`, minus the `04-meeting-note`
-and `11-plain-list` overrides); 6E for `scq_intro_present` (seven `write` plus one
-`digest`, minus the same two overrides). If a conditional check ever reports 11E,
-the matrix is not being applied.
+Expected denominators, per arm, for a run of E engines over the twelve fixtures:
+12E for `first_level_kind_matches`, `invented_facts` and `mode_respected`; 10E for
+`unacknowledged_source_loss` (all but the two `digest` fixtures); 10E for
+`answer_first` and `first_level_count` (seven `write` plus one `viz` plus two
+`digest`); 6E for `readers_question_literal` (seven `write` minus the
+`11-plain-list` override); 7E for `order_type_named` (seven `write` plus two
+`audit`, minus the `04-meeting-note` and `11-plain-list` overrides); 7E for
+`scq_intro_present` (seven `write` plus two `digest`, minus the same two
+overrides). If a conditional check ever reports 12E, the matrix is not being
+applied.
 
 ## What these checks are not
 

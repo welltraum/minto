@@ -5,7 +5,7 @@ The evaluation asks two questions:
 1. Does the skill produce the structural result expected by the Minto examples?
 2. Does it improve on a control prompt that only names the Pyramid Principle?
 
-The suite contains eleven English fixtures:
+The suite contains twelve English fixtures:
 
 | Fixture | Mode | Primary behavior |
 |---|---|---|
@@ -20,6 +20,7 @@ The suite contains eleven English fixtures:
 | `09-sources-digest` | digest | answer-first source report with cross-source synthesis |
 | `10-rollout-review` | write | large sectioned document: cross-section MECE, honest geometry |
 | `11-plain-list` | write | plain pasteable output without audit apparatus |
+| `12-talk-digest` | digest | one long spoken source: depth from the material, concrete supports with locators |
 
 Book-derived inputs are faithful paraphrases of Barbara Minto's 2010 English
 edition. They preserve the business facts and structural defect without
@@ -27,7 +28,9 @@ reproducing long copyrighted passages. The source PDF is not part of the
 repository. Fixtures 09–11 are modeled on real usage sessions with every
 company, product, person, system and number invented for the benchmark; the
 raw session data never leaves the maintainer's machine (`dataset/` is
-gitignored).
+gitignored). Fixture 12 is a condensed English translation of a public 2026
+conference talk on agent-driven development, with the speaker anonymized and one
+company name in an example replaced; every figure and example of the talk is kept.
 
 ## Arms and engines
 
