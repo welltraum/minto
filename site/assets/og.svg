@@ -2,47 +2,77 @@
   <title id="og-title">Minto: the decision reads in the first line</title>
   <desc id="og-desc">A Claude Code and Codex skill that settles the reader's question before it edits a single word.</desc>
   <style>
-    @font-face { font-family: "Tektur"; src: url("./fonts/tektur-700-latin.woff2") format("woff2"); font-weight: 700; }
-    @font-face { font-family: "Golos Text"; src: url("./fonts/golos-text-latin.woff2") format("woff2"); font-weight: 400 700; }
-    @font-face { font-family: "JetBrains Mono"; src: url("./fonts/jetbrains-mono-latin.woff2") format("woff2"); font-weight: 500 600; }
-    .paper { fill: #fcf9f4; }
-    .ink { fill: #27231f; }
-    .soft { fill: #6c625a; }
-    .accent { fill: #a04e36; }
-    .rule { stroke: #8c8078; }
-    .terracotta-stroke { stroke: #a04e36; }
-    .sand { fill: #f2e7da; }
-    .display { font-family: "Tektur", "Golos Text", Arial, sans-serif; font-weight: 700; font-size: 78px; letter-spacing: -1px; }
-    .word { font-family: "Golos Text", Arial, sans-serif; font-weight: 700; font-size: 38px; }
-    .label { font-family: "JetBrains Mono", monospace; font-weight: 600; font-size: 22px; letter-spacing: 0.4px; }
+    @font-face { font-family: "Play"; src: url("./fonts/Play-Bold.woff2") format("woff2"); font-weight: 700; }
+    @font-face { font-family: "Golos Text"; src: url("./fonts/GolosText-Bold.woff2") format("woff2"); font-weight: 700; }
+    @font-face { font-family: "JetBrains Mono"; src: url("./fonts/JetBrainsMono-Regular.woff2") format("woff2"); font-weight: 400; }
+    .paper { fill: #f8f1e3; }
+    .ink { fill: #0e0a06; }
+    .weak { fill: #c6bcac; }
+    .ash { fill: #726759; }
+    .mustard { fill: #e9b100; }
+    .line { stroke: #c6bcac; }
+    .display { font-family: "Play", "Golos Text", Arial, sans-serif; font-weight: 700; font-size: 60px; letter-spacing: -1.4px; }
+    .word { font-family: "Play", "Golos Text", Arial, sans-serif; font-weight: 700; font-size: 34px; letter-spacing: -0.4px; }
+    .mono { font-family: "JetBrains Mono", monospace; font-weight: 400; font-size: 20px; }
   </style>
 
   <rect class="paper" width="1200" height="630"/>
 
-  <g transform="translate(80 74)">
-    <path class="terracotta-stroke" d="M18 3 33 30H3L18 3Z" fill="none" stroke-width="2.6" stroke-linejoin="round"/>
-    <path class="rule" d="M8.4 20.5h19.2M12.8 12.5h10.4" fill="none" stroke-width="2.6"/>
-    <text class="word ink" x="52" y="30">Minto</text>
+  <g transform="translate(80 56)">
+    <rect class="ink" x="14" width="10" height="10"/>
+    <rect class="ink" x="7" y="14" width="10" height="10"/>
+    <rect class="ink" x="21" y="14" width="10" height="10"/>
+    <rect class="ink" y="28" width="10" height="10"/>
+    <rect class="ink" x="14" y="28" width="10" height="10"/>
+    <rect class="ink" x="28" y="28" width="10" height="10"/>
+    <text class="word ink" x="56" y="34">Minto</text>
   </g>
 
-  <path class="rule" d="M80 152H1120" stroke-width="1.5"/>
+  <path class="line" d="M80 138H1120" stroke-width="1.5"/>
 
-  <text class="display ink" x="80" y="286">The decision reads</text>
-  <text class="display accent" x="80" y="380">in the first line</text>
+  <text class="display ink" x="80" y="300">The decision reads</text>
+  <text class="display ink" x="80" y="378">in the first line</text>
 
-  <path class="rule" d="M80 430H560" stroke-width="1.5"/>
-
-  <g transform="translate(80 470)">
-    <rect class="sand" width="470" height="12" rx="6"/>
-    <rect class="sand" y="34" width="392" height="12" rx="6"/>
-    <rect class="accent" y="68" width="470" height="12" rx="6"/>
+  <g>
+    <rect class="weak" x="768" y="283" width="18" height="18"/>
+    <rect class="weak" x="792" y="283" width="18" height="18"/>
+    <rect class="weak" x="816" y="283" width="18" height="18"/>
+    <rect class="weak" x="720" y="307" width="18" height="18"/>
+    <rect class="weak" x="744" y="307" width="18" height="18"/>
+    <rect class="weak" x="792" y="331" width="18" height="18"/>
+    <rect class="weak" x="816" y="331" width="18" height="18"/>
+    <rect class="weak" x="840" y="331" width="18" height="18"/>
+    <rect class="weak" x="864" y="331" width="18" height="18"/>
+    <rect class="weak" x="744" y="355" width="18" height="18"/>
+    <rect class="weak" x="768" y="355" width="18" height="18"/>
+    <rect class="weak" x="816" y="379" width="18" height="18"/>
+    <rect class="weak" x="840" y="379" width="18" height="18"/>
+    <rect class="ink" x="864" y="379" width="18" height="18"/>
   </g>
 
-  <g transform="translate(640 466)">
-    <rect class="accent" width="470" height="14" rx="7"/>
-    <rect class="sand" x="30" y="36" width="392" height="12" rx="6"/>
-    <rect class="sand" x="30" y="68" width="356" height="12" rx="6"/>
+  <g class="ash" transform="translate(900 333)">
+    <path d="M0 7H23" stroke="#726759" stroke-width="2.4" fill="none"/>
+    <path d="M22 1.5 L32 7 L22 12.5 Z" fill="#726759"/>
   </g>
 
-  <text class="label soft" x="80" y="592">ANSWER ON TOP &#183; POINTS OF ONE KIND &#183; GAPS NAMED</text>
+  <g>
+    <rect class="mustard" x="1026" y="295" width="18" height="18"/>
+    <rect class="ink" x="1014" y="319" width="18" height="18"/>
+    <rect class="ink" x="1038" y="319" width="18" height="18"/>
+    <rect class="ink" x="990" y="343" width="18" height="18"/>
+    <rect class="ink" x="1014" y="343" width="18" height="18"/>
+    <rect class="ink" x="1038" y="343" width="18" height="18"/>
+    <rect class="ink" x="1062" y="343" width="18" height="18"/>
+    <rect class="ink" x="954" y="367" width="18" height="18"/>
+    <rect class="ink" x="978" y="367" width="18" height="18"/>
+    <rect class="ink" x="1002" y="367" width="18" height="18"/>
+    <rect class="ink" x="1026" y="367" width="18" height="18"/>
+    <rect class="ink" x="1050" y="367" width="18" height="18"/>
+    <rect class="ink" x="1074" y="367" width="18" height="18"/>
+    <rect class="ink" x="1098" y="367" width="18" height="18"/>
+  </g>
+
+  <path class="line" d="M80 520H1120" stroke-width="1.5"/>
+
+  <text class="mono ash" x="80" y="566">Answer on top &#183; Points of one kind &#183; Gaps named</text>
 </svg>

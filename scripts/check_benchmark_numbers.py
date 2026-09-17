@@ -56,7 +56,7 @@ class MetricParser(HTMLParser):
         self.paths.append("/".join(self._open + [tag]))
         if tag not in VOID_TAGS:
             self._open.append(tag)
-        if "data-metric" in values or "data-fixture" in values:
+        if "data-metric" in values or "data-fixture" in values or "data-figure" in values:
             row = {"tag": tag, "attrs": values, "text": [], "depth": len(self._stack)}
             self._stack.append(row)
             self.rows.append(row)
@@ -136,6 +136,56 @@ def check_metrics(page: Path, rows: list[dict], metrics: dict, errors: list[str]
     if missing:
         errors.append(f"{label}: scores.json has metrics the page never shows: {', '.join(sorted(missing))}")
     return seen
+
+
+def check_figures(page: Path, rows: list[dict], scores: dict, metrics: dict, errors: list[str]) -> None:
+    """The headline band is four numbers set large; large is exactly where a stale
+    figure does the most damage. Each one names where it comes from and is derived
+    here, never transcribed."""
+    label = page.relative_to(ROOT)
+    figures = [row for row in rows if "data-figure" in row["attrs"]]
+    if not figures:
+        errors.append(f"{label}: no element carries data-figure, so the headline band is unverifiable")
+        return
+
+    for row in figures:
+        kind = row["attrs"]["data-figure"]
+        text = row["text"]
+        if kind == "cells":
+            expected = scores["cells_used"]
+        elif kind == "engines":
+            expected = len(scores["engines"])
+        elif kind == "metric-delta":
+            slug = row["attrs"].get("data-metric-ref", "")
+            if slug not in metrics:
+                errors.append(f"{label}: figure data-metric-ref={slug!r} is not in scores.json")
+                continue
+            expected = metrics[slug]["delta"]
+        else:
+            errors.append(f"{label}: unknown data-figure kind {kind!r}")
+            continue
+
+        shown = figure_value(text)
+        if shown != expected:
+            errors.append(
+                f"{label}: figure {kind}"
+                + (f" ({row['attrs'].get('data-metric-ref')})" if kind == "metric-delta" else "")
+                + f" reads {shown!r} but scores.json gives {expected}"
+            )
+        if kind == "metric-delta" and (expected < 0) != ("figure--down" in row["attrs"].get("class", "")):
+            errors.append(
+                f"{label}: figure {row['attrs'].get('data-metric-ref')} is {expected} but its "
+                f"class does not match the sign; a loss must carry figure--down"
+            )
+
+
+def figure_value(text: str) -> int | None:
+    """The first signed number in the cell's own visible text."""
+    match = re.search(r"([+\u2212\u2013-]?)\s*(\d+)", text)
+    if match is None:
+        return None
+    value = int(match.group(2))
+    return -value if match.group(1) in {"\u2212", "\u2013", "-"} else value
 
 
 def check_example(page: Path, rows: list[dict], scores: dict, errors: list[str]) -> None:
@@ -245,6 +295,7 @@ def main() -> int:
         parsed[page] = (rows, tags)
         check_section(page, section, scores, errors)
         check_metrics(page, rows, metrics, errors)
+        check_figures(page, rows, scores, metrics, errors)
         check_example(page, rows, scores, errors)
 
     if len(parsed) == 2:

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#fcf9f4">
+    <meta name="theme-color" content="#f8f1e3">
     <meta name="description" content="Minto перестраивает аргумент по принципу пирамиды Барбары Минто: ответ наверху, пункты одного вида, названные пробелы. Пять режимов, кейсы «до / после» и 172 слепые оценки бенчмарка.">
     <meta name="robots" content="index,follow">
     <link rel="canonical" href="https://welltraum.github.io/minto/ru/">
@@ -11,9 +11,10 @@
     <link rel="alternate" hreflang="ru" href="https://welltraum.github.io/minto/ru/">
     <link rel="alternate" hreflang="x-default" href="https://welltraum.github.io/minto/">
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="preload" href="../assets/fonts/golos-text-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="../assets/fonts/tektur-700-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../assets/styles.css?v=5">
+    <link rel="preload" href="../assets/fonts/GolosText-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../assets/fonts/Play-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../assets/mirai.css?v=6">
+    <link rel="stylesheet" href="../assets/styles.css?v=6">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Minto">
     <meta property="og:title" content="Minto: решение читается с первой строки">
@@ -26,409 +27,317 @@
     <meta name="twitter:card" content="summary_large_image">
     <title>Minto &mdash; навык для Claude Code и Codex: решение читается с первой строки</title>
   </head>
-  <body>
-    <a class="skip-link ac-btn ac-btn--secondary ac-btn--label ac-motion" href="#main">К содержанию</a>
+  <body class="mr-root" data-tone="vivid">
+    <a class="skip-link mr-button" data-variant="ghost" data-size="sm" href="#main">К содержанию</a>
 
     <header class="site-header">
       <div class="page site-header__inner">
         <a class="brand" href="../">
-          <svg class="brand__mark" viewBox="0 0 36 36" width="26" height="26" role="img" aria-label="Трёхуровневая пирамида">
-            <path d="M18 3 33 30H3L18 3Z"></path>
-            <path d="M8.4 20.5h19.2M12.8 12.5h10.4"></path>
-          </svg>
-          <span class="ac-title-text">Minto</span>
+          <span class="brand__mark units" data-shape="pyramid" role="img" aria-label="Пирамида из трёх рядов">
+            <span class="units__row"><span class="unit"></span></span>
+            <span class="units__row"><span class="unit"></span><span class="unit"></span></span>
+            <span class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span></span>
+          </span>
+          <span class="brand__word">Minto</span>
         </a>
 
         <nav class="site-nav" aria-label="Разделы">
-          <a class="ac-link ac-label ac-motion" href="#modes" data-section-link="modes">Режимы</a>
-          <a class="ac-link ac-label ac-motion" href="#cases" data-section-link="cases">Примеры</a>
-          <a class="ac-link ac-label ac-motion" href="#evidence" data-section-link="evidence">Замеры</a>
-          <a class="ac-link ac-label ac-motion" href="#install" data-section-link="install">Установка</a>
+          <a class="nav-link" href="#modes" data-section-link="modes">Режимы</a>
+          <a class="nav-link" href="#cases" data-section-link="cases">Примеры</a>
+          <a class="nav-link" href="#evidence" data-section-link="evidence">Замеры</a>
+          <a class="nav-link" href="#install" data-section-link="install">Установка</a>
         </nav>
 
         <nav class="lang" aria-label="Язык">
-          <a class="ac-link ac-label ac-motion" href="../" lang="en">EN</a>
-          <span class="ac-label lang__sep" aria-hidden="true">/</span>
-          <a class="ac-link ac-label ac-motion" href="./" lang="ru" aria-current="page">RU</a>
+          <a class="nav-link" href="../" lang="en">EN</a>
+          <span class="label lang__sep" aria-hidden="true">/</span>
+          <a class="nav-link" href="./" lang="ru" aria-current="page">RU</a>
         </nav>
       </div>
     </header>
 
     <main class="page" id="main">
 
-      <section class="hero grid-pair" aria-labelledby="hero-heading">
+      <section class="hero" aria-labelledby="hero-heading">
         <div class="hero__copy">
-          <div class="ac-title-block">
-            <h1 class="ac-display" id="hero-heading">Решение читается <span class="ac-accent">с первой строки</span></h1>
-            <hr class="ac-title-block__rule">
-            <p class="ac-body">Minto &mdash; навык для Claude Code и Codex, который сначала находит вопрос читателя и только потом правит слова.</p>
+          <div class="title-block">
+            <h1 class="display" id="hero-heading">Решение читается с первой строки</h1>
+            <hr class="rule">
+            <p class="lead">Minto &mdash; навык для Claude Code и Codex, который сначала находит вопрос читателя и только потом правит слова.</p>
           </div>
-
-          <p class="ac-body hero__lede">Обычный ассистент улучшает формулировки и оставляет аргумент прежним: просьба спрятана в конце, пункты перемешаны, чего-то не хватает. Minto меняет порядок мыслей, а не только слова.</p>
 
           <div class="hero__actions">
-            <a class="ac-btn ac-btn--primary ac-motion" href="#install">Установить навык</a>
-            <a class="ac-btn ac-btn--ghost ac-motion" href="#cases">Смотреть примеры «до / после» &darr;</a>
+            <a class="mr-button" data-variant="dark" href="#install">Установить навык</a>
+            <a class="mr-button" data-variant="ghost" href="#cases">Смотреть примеры «до / после»</a>
           </div>
 
-          <div class="hero__facts">
-            <div class="ac-iconitem">
-              <svg class="ac-glyph" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <circle cx="12" cy="12" r="8.5"></circle>
-                <path d="M8.2 12.3l2.6 2.6 5-5.4"></path>
-              </svg>
-              <span class="ac-iconitem__text">
-                <span class="ac-body ac-iconitem__label">Ответ наверху</span>
-                <span class="ac-label">Просьба &mdash; в первой фразе</span>
-              </span>
-            </div>
-            <div class="ac-iconitem">
-              <svg class="ac-glyph" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M12 4v16M6 20h12M4 9h16M4 9l-2 5h4l-2-5ZM20 9l-2 5h4l-2-5Z"></path>
-              </svg>
-              <span class="ac-iconitem__text">
-                <span class="ac-body ac-iconitem__label">Пункты одного вида</span>
-                <span class="ac-label">Причины к причинам, шаги к шагам</span>
-              </span>
-            </div>
-            <div class="ac-iconitem">
-              <svg class="ac-glyph" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <circle cx="12" cy="12" r="8.5"></circle>
-                <path d="M12 7.5v6M12 16.4v.2"></path>
-              </svg>
-              <span class="ac-iconitem__text">
-                <span class="ac-body ac-iconitem__label">Пробелы названы</span>
-                <span class="ac-label">Нехватка данных не додумывается</span>
-              </span>
-            </div>
-          </div>
         </div>
 
-        <div>
-          <div class="ac-panel ac-panel--paper hero__card">
-            <div class="hero__card-part">
-              <span class="ac-label ac-label--caps hero__pill">Было &mdash; письмо на 4 абзаца</span>
-              <div class="hero__lines" aria-hidden="true">
-                <span class="line-stub" style="--w: 92%"></span>
-                <span class="line-stub" style="--w: 84%"></span>
-                <span class="line-stub" style="--w: 88%"></span>
-                <span class="line-stub" style="--w: 62%"></span>
-              </div>
-              <div class="hero__ask">
-                <p class="ac-label ac-label--caps">Просьба &mdash; в последнем абзаце</p>
-                <p class="doc-note">«Предлагаю посвятить следующий спринт разбору бэклога дефектов. Скажи, что думаешь.»</p>
-              </div>
+        <div class="hero__figure">
+          <div class="hero__card">
+            <div class="units" data-shape="scatter" aria-hidden="true">
+              <div class="units__row" style="--x: 2"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+              <div class="units__row" style="--x: 0"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+              <div class="units__row" style="--x: 3"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+              <div class="units__row" style="--x: 1"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+              <div class="units__row" style="--x: 4"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit"></span></div>
             </div>
-
-            <div class="hero__card-part">
-              <span class="ac-label ac-label--caps hero__pill hero__pill--accent">Стало &mdash; решение сверху</span>
-              <div class="hero__answer">
-                <p class="doc-answer">«Давай посвятим следующий спринт бэклогу дефектов &mdash; мы теряем клиентов и сделки быстрее, чем закрываем задачи.»</p>
-              </div>
-              <div class="hero__points">
-                <div class="hero__point">
-                  <span class="hero__dot" aria-hidden="true"></span>
-                  <div>
-                    <p class="doc-item">Бэклог растёт сам собой</p>
-                    <span class="line-stub" style="--w: 72%" aria-hidden="true"></span>
-                  </div>
-                </div>
-                <div class="hero__point">
-                  <span class="hero__dot" aria-hidden="true"></span>
-                  <div>
-                    <p class="doc-item">Дефекты стоят нам клиентов</p>
-                    <span class="line-stub" style="--w: 84%" aria-hidden="true"></span>
-                  </div>
-                </div>
-                <div class="hero__point">
-                  <span class="hero__dot" aria-hidden="true"></span>
-                  <div>
-                    <p class="doc-item">И уже стоят новых сделок</p>
-                    <span class="line-stub" style="--w: 66%" aria-hidden="true"></span>
-                  </div>
-                </div>
-              </div>
+            <span class="hero__turn" aria-hidden="true">
+              <svg width="26" height="16" viewBox="0 0 26 16" fill="none">
+                <path d="M0 8H19" stroke="currentColor" stroke-width="2"></path>
+                <path d="M18 2.5 L26 8 L18 13.5 Z" fill="currentColor"></path>
+              </svg>
+            </span>
+            <div class="units hero__pyramid" data-shape="pyramid" aria-hidden="true">
+              <div class="units__row" style="--i: 0; --from: 2"><span class="unit" data-state="answer"></span></div>
+              <div class="units__row" style="--i: 1; --from: -3"><span class="unit"></span><span class="unit"></span></div>
+              <div class="units__row" style="--i: 2; --from: 3"><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span></div>
+              <div class="units__row" style="--i: 3; --from: -2"><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit" data-state="gap"></span></div>
             </div>
           </div>
-          <p class="ac-body ac-body--md hero__caption">Кейс 08 из бенчмарка: тот же текст, тот же объём &mdash; другой порядок.</p>
+          <p class="small hero__caption">Кейс 08 из бенчмарка: тот же текст, тот же объём &mdash; другой порядок.</p>
+        </div>
+        <div class="hero__facts">
+          <div class="hero__fact">
+            <span class="units" data-shape="pyramid" data-size="sm" aria-hidden="true">
+              <span class="units__row"><span class="unit"></span></span>
+              <span class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></span>
+            </span>
+            <span class="hero__fact-text">
+              <span class="hero__fact-label">Ответ наверху</span>
+              <span class="label">Просьба &mdash; в первой фразе</span>
+            </span>
+          </div>
+          <div class="hero__fact">
+            <span class="units" data-size="sm" aria-hidden="true">
+              <span class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span></span>
+              <span class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></span>
+            </span>
+            <span class="hero__fact-text">
+              <span class="hero__fact-label">Пункты одного вида</span>
+              <span class="label">Причины к причинам, шаги к шагам</span>
+            </span>
+          </div>
+          <div class="hero__fact">
+            <span class="units" data-size="sm" aria-hidden="true">
+              <span class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit" data-state="gap"></span></span>
+              <span class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></span>
+            </span>
+            <span class="hero__fact-text">
+              <span class="hero__fact-label">Пробелы названы</span>
+              <span class="label">Нехватка данных не додумывается</span>
+            </span>
+          </div>
         </div>
       </section>
 
       <section class="section" id="modes" aria-labelledby="modes-heading">
-        <div class="ac-title-block">
-          <h2 class="ac-display" id="modes-heading"><span class="ac-accent">Пять режимов</span> &mdash; пять разных результатов из одного текста</h2>
-          <hr class="ac-title-block__rule">
-          <p class="ac-body">Режим выбирается по тому, что нужно получить дальше: понимание, диагноз, документ, сводку или схему.</p>
+        <div class="title-block">
+          <h2 class="title" id="modes-heading">Пять режимов &mdash; пять разных результатов из одного текста</h2>
+          <hr class="rule">
+          <p class="body">Режим выбирается по тому, что нужно получить дальше: понимание, диагноз, документ, сводку или схему.</p>
         </div>
 
-        <div class="modes grid-pair">
-
-          <article class="ac-panel ac-panel--sand-light mode">
-            <span class="ac-eyebrow ac-eyebrow--solid">intent</span>
-            <h3 class="ac-title-text mode__name">Понять, что документ должен решить</h3>
-            <p class="ac-body ac-body--md">Задаёт вопросы и выдаёт три строки, с которых начинается работа.</p>
-            <div class="mode__demo">
-              <div class="demo-card">
-                <p class="ac-label ac-label--caps">Вопрос читателя</p>
-                <p class="doc-item">Запускать ли пилот онбординга в следующем месяце?</p>
+        <ul class="modes">
+          <li class="mode">
+            <code class="mode__cmd">intent</code>
+            <div class="mode__turn" aria-hidden="true">
+              <div class="units" data-shape="scatter">
+                <div class="units__row" style="--x: 1"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+                <div class="units__row" style="--x: 0"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+                <div class="units__row" style="--x: 2"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
               </div>
-              <div class="demo-card demo-card--accent">
-                <p class="ac-label ac-label--caps ac-label--accent">Ответ одной фразой</p>
-                <p class="doc-item doc-strong">Согласовать трёхнедельный пилот на двух готовых вариантах.</p>
-              </div>
-              <div class="demo-card demo-card--gap">
-                <svg class="ac-glyph" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <circle cx="12" cy="12" r="8.5"></circle>
-                  <path d="M12 7.5v6M12 16.4v.2"></path>
+              <span class="flow-arrow">
+                <svg width="30" height="14" viewBox="0 0 30 14" fill="none">
+                  <path d="M0 7H23" stroke="currentColor" stroke-width="2"></path>
+                  <path d="M22 2.5 L30 7 L22 11.5 Z" fill="currentColor"></path>
                 </svg>
-                <p class="doc-note">Чего не хватает: цель по активации до старта.</p>
+              </span>
+              <div class="units" data-shape="pyramid">
+                <div class="units__row"><span class="unit"></span></div>
+                <div class="units__row"><span class="unit" data-state="gap"></span></div>
               </div>
             </div>
-          </article>
+            <p class="mode__result">Вопрос читателя, ответ одной фразой и названный пробел</p>
+          </li>
+          <li class="mode">
+            <code class="mode__cmd">audit</code>
+            <div class="mode__turn" aria-hidden="true">
+              <div class="units" data-shape="pyramid">
+                <div class="units__row"><span class="unit"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span></div>
+              </div>
+              <span class="flow-arrow">
+                <svg width="30" height="14" viewBox="0 0 30 14" fill="none">
+                  <path d="M0 7H23" stroke="currentColor" stroke-width="2"></path>
+                  <path d="M22 2.5 L30 7 L22 11.5 Z" fill="currentColor"></path>
+                </svg>
+              </span>
+              <div class="units" data-shape="pyramid">
+                <div class="units__row"><span class="unit" data-state="flaw"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit" data-state="flaw"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit" data-state="flaw"></span><span class="unit"></span></div>
+              </div>
+            </div>
+            <p class="mode__result">Оценка структуре и каждый дефект по имени &mdash; текст не тронут</p>
+          </li>
+          <li class="mode">
+            <code class="mode__cmd">write</code>
+            <div class="mode__turn" aria-hidden="true">
+              <div class="units" data-shape="scatter">
+                <div class="units__row" style="--x: 1"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+                <div class="units__row" style="--x: 0"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+                <div class="units__row" style="--x: 2"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit"></span></div>
+              </div>
+              <span class="flow-arrow">
+                <svg width="30" height="14" viewBox="0 0 30 14" fill="none">
+                  <path d="M0 7H23" stroke="currentColor" stroke-width="2"></path>
+                  <path d="M22 2.5 L30 7 L22 11.5 Z" fill="currentColor"></path>
+                </svg>
+              </span>
+              <div class="units" data-shape="pyramid">
+                <div class="units__row"><span class="unit"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span></div>
+              </div>
+            </div>
+            <p class="mode__result">Документ, который начинается с вывода</p>
+          </li>
+          <li class="mode">
+            <code class="mode__cmd">digest</code>
+            <div class="mode__turn" aria-hidden="true">
+              <div class="units">
+                <div class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+                <div class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+                <div class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+              </div>
+              <span class="flow-arrow">
+                <svg width="30" height="14" viewBox="0 0 30 14" fill="none">
+                  <path d="M0 7H23" stroke="currentColor" stroke-width="2"></path>
+                  <path d="M22 2.5 L30 7 L22 11.5 Z" fill="currentColor"></path>
+                </svg>
+              </span>
+              <div class="units" data-shape="pyramid">
+                <div class="units__row"><span class="unit"></span></div>
+              </div>
+            </div>
+            <p class="mode__result">Одно дело на сегодня, каждый пункт со ссылкой на источник</p>
+          </li>
+          <li class="mode">
+            <code class="mode__cmd">viz</code>
+            <div class="mode__turn" aria-hidden="true">
+              <div class="units">
+                <div class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+              </div>
+              <span class="flow-arrow">
+                <svg width="30" height="14" viewBox="0 0 30 14" fill="none">
+                  <path d="M0 7H23" stroke="currentColor" stroke-width="2"></path>
+                  <path d="M22 2.5 L30 7 L22 11.5 Z" fill="currentColor"></path>
+                </svg>
+              </span>
+              <div class="units" data-shape="pyramid">
+                <div class="units__row"><span class="unit"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span></div>
+              </div>
+            </div>
+            <p class="mode__result">Пирамида и поток «ситуация &mdash; осложнение &mdash; вопрос &mdash; ответ»</p>
+          </li>
+        </ul>
 
-          <article class="ac-panel ac-panel--sand-light mode">
-            <span class="ac-eyebrow ac-eyebrow--solid">audit</span>
-            <h3 class="ac-title-text mode__name">Найти дефекты, не переписывая текст</h3>
-            <p class="ac-body ac-body--md">Ставит оценку структуре, называет каждый дефект и его тяжесть.</p>
-            <div class="mode__demo">
-              <div class="demo-score">
-                <span class="demo-score__value">2/10</span>
-                <span class="ac-label">структура &middot; «ещё не выстроено»</span>
-              </div>
-              <div class="demo-flaws">
-                <div class="demo-flaw">
-                  <span class="ac-pill ac-pill--fail">
-                    <span class="ac-pill__mark" aria-hidden="true">
-                      <svg class="ac-glyph" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="8.5"></circle>
-                        <path d="M9.2 9.2l5.6 5.6M14.8 9.2l-5.6 5.6"></path>
-                      </svg>
-                    </span>
-                    <span>критично</span>
-                  </span>
-                  <span class="doc-item">Ответа нет нигде в тексте</span>
-                </div>
-                <div class="demo-flaw">
-                  <span class="ac-pill ac-pill--fail">
-                    <span class="ac-pill__mark" aria-hidden="true">
-                      <svg class="ac-glyph" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="8.5"></circle>
-                        <path d="M9.2 9.2l5.6 5.6M14.8 9.2l-5.6 5.6"></path>
-                      </svg>
-                    </span>
-                    <span>критично</span>
-                  </span>
-                  <span class="doc-item">Заголовки &mdash; темы, а не утверждения</span>
-                </div>
-                <div class="demo-flaw">
-                  <span class="ac-pill">
-                    <span>средне</span>
-                  </span>
-                  <span class="doc-item">Шесть групп вместо трёх-четырёх</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article class="ac-panel ac-panel--sand-light mode">
-            <span class="ac-eyebrow ac-eyebrow--solid">write</span>
-            <h3 class="ac-title-text mode__name">Собрать документ, который начинается с вывода</h3>
-            <p class="ac-body ac-body--md">Заметки и черновики превращаются в письмо, памятку или сюжет презентации.</p>
-            <div class="mode__demo">
-              <div class="demo-write grid-pair" aria-hidden="true">
-                <div class="demo-stack">
-                  <span class="line-stub" style="--w: 90%"></span>
-                  <span class="line-stub" style="--w: 78%"></span>
-                  <span class="line-stub" style="--w: 86%"></span>
-                  <span class="line-stub" style="--w: 64%"></span>
-                  <span class="line-stub line-stub--accent" style="--w: 82%"></span>
-                </div>
-                <span class="ac-arrow">
-                  <svg width="34" height="14" viewBox="0 0 34 14" fill="none">
-                    <path d="M0 7H27" stroke="currentColor" stroke-width="2"></path>
-                    <path d="M26 2.5 L34 7 L26 11.5 Z" fill="currentColor"></path>
-                  </svg>
-                </span>
-                <div class="demo-stack">
-                  <span class="line-stub line-stub--accent" style="--w: 88%"></span>
-                  <span class="line-stub line-stub--indent" style="--w: 70%"></span>
-                  <span class="line-stub line-stub--indent" style="--w: 74%"></span>
-                  <span class="line-stub line-stub--indent" style="--w: 62%"></span>
-                  <span class="line-stub" style="--w: 46%"></span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article class="ac-panel ac-panel--sand-light mode">
-            <span class="ac-eyebrow ac-eyebrow--solid">digest</span>
-            <h3 class="ac-title-text mode__name">Свести прочитанные источники к одному действию</h3>
-            <p class="ac-body ac-body--md">Отчёт в чат: что уже решено, что ещё нужно добыть &mdash; со ссылками на источники.</p>
-            <div class="mode__demo">
-              <div class="demo-digest">
-                <div class="demo-docs" aria-hidden="true">
-                  <svg class="ac-glyph" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M6.5 3.5h7.5l4 4V20a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5V4a.5.5 0 0 1 .5-.5Z"></path>
-                    <path d="M14 3.5V8h4"></path>
-                  </svg>
-                  <svg class="ac-glyph" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M6.5 3.5h7.5l4 4V20a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5V4a.5.5 0 0 1 .5-.5Z"></path>
-                    <path d="M14 3.5V8h4"></path>
-                  </svg>
-                  <svg class="ac-glyph" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M6.5 3.5h7.5l4 4V20a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5V4a.5.5 0 0 1 .5-.5Z"></path>
-                    <path d="M14 3.5V8h4"></path>
-                  </svg>
-                </div>
-                <span class="ac-arrow" aria-hidden="true">
-                  <svg width="30" height="14" viewBox="0 0 30 14" fill="none">
-                    <path d="M0 7H23" stroke="currentColor" stroke-width="2"></path>
-                    <path d="M22 2.5 L30 7 L22 11.5 Z" fill="currentColor"></path>
-                  </svg>
-                </span>
-                <div class="demo-card demo-card--accent">
-                  <p class="ac-label ac-label--caps ac-label--accent">Одно дело на сегодня</p>
-                  <p class="doc-item doc-strong">Отправить схему архитектуры &mdash; единственный блокер на нашей стороне.</p>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article class="ac-panel ac-panel--sand-light mode mode--wide">
-            <span class="ac-eyebrow ac-eyebrow--solid">viz</span>
-            <h3 class="ac-title-text mode__name">Показать пирамиду, когда проза скрывает структуру</h3>
-            <p class="ac-body ac-body--md">Схема пирамиды и поток «ситуация &mdash; осложнение &mdash; вопрос &mdash; ответ» в Mermaid или отдельной страницей.</p>
-            <div class="mode__demo">
-              <div class="demo-viz grid-pair">
-                <div>
-                  <div class="pyramid__top">
-                    <p class="doc-item doc-strong">Согласовать пилот</p>
-                  </div>
-                  <svg class="pyramid__conn" viewBox="0 0 300 44" height="44" preserveAspectRatio="none" aria-hidden="true">
-                    <path d="M150 0V16M46 16H254M46 16V44M150 16V44M254 16V44" fill="none" stroke="currentColor" stroke-width="1.5"></path>
-                  </svg>
-                  <div class="pyramid__row grid-pair">
-                    <div class="pyramid__node">
-                      <span class="ac-label ac-label--ink">Нужда</span>
-                    </div>
-                    <div class="pyramid__node">
-                      <span class="ac-label ac-label--ink">Готовность</span>
-                    </div>
-                    <div class="pyramid__node">
-                      <span class="ac-label ac-label--ink">Объём</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="ac-layers">
-                  <div class="ac-layer">
-                    <span class="ac-layer__text">
-                      <span class="ac-title-text ac-layer__label">Ситуация</span>
-                      <span class="ac-body ac-body--sm">с чем читатель уже согласен</span>
-                    </span>
-                  </div>
-                  <div class="ac-layer">
-                    <span class="ac-layer__text">
-                      <span class="ac-title-text ac-layer__label">Осложнение</span>
-                      <span class="ac-body ac-body--sm">что изменилось или мешает</span>
-                    </span>
-                  </div>
-                  <div class="ac-layer">
-                    <span class="ac-layer__text">
-                      <span class="ac-title-text ac-layer__label">Вопрос</span>
-                      <span class="ac-body ac-body--sm">что читателю нужно решить</span>
-                    </span>
-                  </div>
-                  <div class="ac-layer ac-layer--hl">
-                    <span class="ac-layer__text">
-                      <span class="ac-title-text ac-layer__label">Ответ</span>
-                      <span class="ac-body ac-body--sm">что он должен сделать или понять</span>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </article>
-        </div>
+        <p class="label scq__label">Поток, который навык проверяет в каждом документе</p>
+        <ol class="scq">
+          <li class="scq__step">
+            <span class="unit" data-state="weak" aria-hidden="true"></span>
+            <span class="scq__name">Ситуация</span>
+            <span class="label">с чем читатель уже согласен</span>
+          </li>
+          <li class="scq__step">
+            <span class="unit" data-state="weak" aria-hidden="true"></span>
+            <span class="scq__name">Осложнение</span>
+            <span class="label">что изменилось или мешает</span>
+          </li>
+          <li class="scq__step">
+            <span class="unit" data-state="weak" aria-hidden="true"></span>
+            <span class="scq__name">Вопрос</span>
+            <span class="label">что читателю нужно решить</span>
+          </li>
+          <li class="scq__step">
+            <span class="unit" aria-hidden="true"></span>
+            <span class="scq__name">Ответ</span>
+            <span class="label">что он должен сделать или понять</span>
+          </li>
+        </ol>
       </section>
 
       <section class="section" id="cases" aria-labelledby="cases-heading">
-        <div class="ac-title-block">
-          <h2 class="ac-display" id="cases-heading"><span class="ac-accent">Пять кейсов</span> &mdash; пять разных сторон навыка</h2>
-          <hr class="ac-title-block__rule">
-          <p class="ac-body">Слева &mdash; исходный текст из набора задач бенчмарка. Справа &mdash; то, что выдала модель Opus 5 с навыком, в том же виде, в каком это судили.</p>
+        <div class="title-block">
+          <h2 class="title" id="cases-heading">Пять кейсов &mdash; пять разных сторон навыка</h2>
+          <hr class="rule">
+          <p class="body">Слева &mdash; исходный текст из набора задач бенчмарка. Справа &mdash; то, что выдала модель Opus 5 с навыком, в том же виде, в каком это судили.</p>
         </div>
-        <p class="ac-body ac-body--md cases__note">Русский текст &mdash; перевод английского прогона v1.7.0-final; структура и объём сохранены.</p>
+        <p class="small cases__note">Русский текст &mdash; перевод английского прогона v1.7.0-final; структура и объём сохранены.</p>
 
         <div class="case-tabs" data-tablist aria-label="Кейсы бенчмарка">
-          <a class="ac-btn ac-btn--label ac-motion case-tab" href="#case-01" data-case-tab="01">01 &middot; write &middot; Перенос встречи</a>
-          <a class="ac-btn ac-btn--label ac-motion case-tab" href="#case-02" data-case-tab="02">02 &middot; audit &middot; Шесть заголовков</a>
-          <a class="ac-btn ac-btn--label ac-motion case-tab" href="#case-03" data-case-tab="03">03 &middot; viz &middot; Пирамида из прозы</a>
-          <a class="ac-btn ac-btn--label ac-motion case-tab" href="#case-04" data-case-tab="04">04 &middot; digest &middot; Три источника</a>
-          <a class="ac-btn ac-btn--label ac-motion case-tab" href="#case-05" data-case-tab="05">05 &middot; write &middot; Бэклог дефектов</a>
+          <a class="case-tab" href="#case-01" data-case-tab="01">Перенос встречи &middot; write</a>
+          <a class="case-tab" href="#case-02" data-case-tab="02">Шесть заголовков &middot; audit</a>
+          <a class="case-tab" href="#case-03" data-case-tab="03">Пирамида из прозы &middot; viz</a>
+          <a class="case-tab" href="#case-04" data-case-tab="04">Три источника &middot; digest</a>
+          <a class="case-tab" href="#case-05" data-case-tab="05">Бэклог дефектов &middot; write</a>
         </div>
 
         <article class="case" id="case-01" data-case-panel="01" aria-labelledby="case-01-heading">
           <div class="case__head">
-            <h3 class="ac-title-text" id="case-01-heading">Короткая записка коллеге</h3>
-            <p class="ac-body ac-body--md">Что показывает: сдержанность. Навык не надевает на записку каркас из заголовков и схем.</p>
+            <h3 class="subtitle" id="case-01-heading">Короткая записка коллеге</h3>
+            <p class="small">Что показывает: сдержанность. Навык не надевает на записку каркас из заголовков и схем.</p>
           </div>
-          <div class="case__pair grid-pair">
-            <div class="ac-panel ac-panel--sand-light case__source">
-              <p class="ac-label ac-label--caps">Источник &middot; перечень ограничений</p>
-              <p class="doc-text">Коллинз не сможет в 15:00. Джонсон может позже сегодня или завтра, но не раньше 10:30. Клиффорд вернётся из Франкфурта только поздно вечером завтра. Переговорная завтра занята, но свободна в четверг. Четверг, 11:00, кажется возможным. Это подходит?</p>
-              <p class="ac-body ac-body--md">Читатель сам собирает вывод из пяти ограничений.</p>
+          <div class="case__pair">
+            <div class="case__source">
+            <div class="case__shape" aria-hidden="true">
+              <div class="units" data-shape="scatter">
+                <div class="units__row" style="--x: 1"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+                <div class="units__row" style="--x: 0"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+                <div class="units__row" style="--x: 2"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+              </div>
             </div>
-            <div class="ac-panel ac-panel--outlined case__result">
-              <span class="ac-eyebrow ac-eyebrow--solid">С Minto</span>
+              <p class="label">Источник &middot; перечень ограничений</p>
+              <p class="doc-text">Коллинз не сможет в 15:00. Джонсон может позже сегодня или завтра, но не раньше 10:30. Клиффорд вернётся из Франкфурта только поздно вечером завтра. Переговорная завтра занята, но свободна в четверг. Четверг, 11:00, кажется возможным. Это подходит?</p>
+              <p class="small">Читатель сам собирает вывод из пяти ограничений.</p>
+            </div>
+            <div class="case__result">
+            <div class="case__shape" aria-hidden="true">
+              <div class="units" data-shape="pyramid">
+                <div class="units__row"><span class="unit"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span></div>
+              </div>
+            </div>
+              <div class="case__head-row">
+                <span class="mr-tag">С Minto</span>
+              </div>
               <p class="doc-answer">Можем перенести сегодняшнюю встречу на четверг, 11:00?</p>
               <p class="doc-text">Коллинз и Клиффорд не могут сегодня в 15:00 &mdash; Клиффорд во Франкфурте до позднего вечера завтра, &mdash; а Джонсон свободен только с 10:30 завтра, когда переговорная уже занята. Четверг, 11:00, подходит всем трём, и переговорная свободна.</p>
               <p class="doc-text">Скажите, если устраивает, &mdash; отправлю приглашения.</p>
-            </div>
-          </div>
-          <div class="ac-callout case__changed">
-            <span class="ac-callout__disc" aria-hidden="true">
-              <svg width="20" height="14" viewBox="0 0 20 14" fill="none">
-                <path d="M0 7H13" stroke="currentColor" stroke-width="2"></path>
-                <path d="M12 2.5 L20 7 L12 11.5 Z" fill="currentColor"></path>
-              </svg>
-            </span>
-            <div class="ac-callout__text">
-              <h4 class="ac-title-text">Что изменилось</h4>
-              <ul class="ac-checklist">
-                <li class="ac-check">
-                  <svg class="ac-check__box" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <rect x="0.9" y="0.9" width="14.2" height="14.2" rx="3" stroke="currentColor" stroke-width="1.5"></rect>
-                    <path d="M4.2 8.3l2.4 2.4 5.2-5.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                  <span class="ac-body ac-check__text">Ответ стал первой фразой: просьба вместо перечня ограничений.</span>
-                </li>
-                <li class="ac-check">
-                  <svg class="ac-check__box" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <rect x="0.9" y="0.9" width="14.2" height="14.2" rx="3" stroke="currentColor" stroke-width="1.5"></rect>
-                    <path d="M4.2 8.3l2.4 2.4 5.2-5.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                  <span class="ac-body ac-check__text">Ограничения превратились в две выгоды читателя &mdash; время всем удобно, все трое смогут.</span>
-                </li>
-                <li class="ac-check">
-                  <svg class="ac-check__box" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <rect x="0.9" y="0.9" width="14.2" height="14.2" rx="3" stroke="currentColor" stroke-width="1.5"></rect>
-                    <path d="M4.2 8.3l2.4 2.4 5.2-5.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                  <span class="ac-body ac-check__text">Записка не выросла: ни заголовков, ни схемы, ни шаблона SCQ.</span>
-                </li>
-              </ul>
             </div>
           </div>
         </article>
 
         <article class="case" id="case-02" data-case-panel="02" aria-labelledby="case-02-heading">
           <div class="case__head">
-            <h3 class="ac-title-text" id="case-02-heading">Меморандум из шести разделов</h3>
-            <p class="ac-body ac-body--md">Что показывает: диагноз без переписывания. Видно только оглавление &mdash; навык не додумывает содержание.</p>
+            <h3 class="subtitle" id="case-02-heading">Меморандум из шести разделов</h3>
+            <p class="small">Что показывает: диагноз без переписывания. Видно только оглавление &mdash; навык не додумывает содержание.</p>
           </div>
-          <div class="case__pair case__pair--wide grid-pair">
-            <div class="ac-panel ac-panel--sand-light case__source">
-              <p class="ac-label ac-label--caps">Источник &middot; оглавление</p>
+          <div class="case__pair case__pair--wide">
+            <div class="case__source">
+            <div class="case__shape" aria-hidden="true">
+              <div class="units" data-shape="pyramid">
+                <div class="units__row"><span class="unit"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span></div>
+              </div>
+            </div>
+              <p class="label">Источник &middot; оглавление</p>
               <p class="doc-text">«Этот меморандум описывает, как проектные команды находят и приносят значимый рост прибыли. Он состоит из шести разделов:»</p>
               <ol class="case__toc">
                 <li class="doc-note">Предыстория</li>
@@ -438,114 +347,82 @@
                 <li class="doc-note">Отличительные выгоды и результаты</li>
                 <li class="doc-note">Условия, необходимые для успеха</li>
               </ol>
-              <p class="ac-body ac-body--md">Шесть тем разного вида. Что нужно решить читателю &mdash; не сказано.</p>
+              <p class="small">Шесть тем разного вида. Что нужно решить читателю &mdash; не сказано.</p>
             </div>
-            <div class="ac-panel ac-panel--outlined case__result">
-              <div class="case__scores">
-                <span class="ac-eyebrow ac-eyebrow--solid">С Minto &middot; audit</span>
-                <span class="case__score">2/10</span>
-                <span class="ac-label">оценка структуры</span>
+            <div class="case__result">
+            <div class="case__shape" aria-hidden="true">
+              <div class="units" data-shape="pyramid">
+                <div class="units__row"><span class="unit" data-state="flaw"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit" data-state="flaw"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit" data-state="flaw"></span><span class="unit"></span></div>
+              </div>
+            </div>
+              <div class="case__head-row">
+                <span class="mr-tag">С Minto &middot; audit</span>
+                <span class="num case__score">2/10</span>
+                <span class="label">оценка структуры</span>
               </div>
               <div class="case__flaws">
-                <div class="case__flaw grid-pair">
-                  <span class="ac-pill ac-pill--fail">
-                    <span class="ac-pill__mark" aria-hidden="true">
-                      <svg class="ac-glyph" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="8.5"></circle>
-                        <path d="M9.2 9.2l5.6 5.6M14.8 9.2l-5.6 5.6"></path>
-                      </svg>
-                    </span>
-                    <span>критично</span>
-                  </span>
+                <div class="case__flaw">
+                  <span class="mr-tag" data-tone="hot">критично</span>
                   <p class="doc-item">Ответа нет нигде в видимом тексте: у документа есть тема, но нет утверждения.</p>
                 </div>
-                <div class="case__flaw grid-pair">
-                  <span class="ac-pill ac-pill--fail">
-                    <span class="ac-pill__mark" aria-hidden="true">
-                      <svg class="ac-glyph" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="8.5"></circle>
-                        <path d="M9.2 9.2l5.6 5.6M14.8 9.2l-5.6 5.6"></path>
-                      </svg>
-                    </span>
-                    <span>критично</span>
-                  </span>
+                <div class="case__flaw">
+                  <span class="mr-tag" data-tone="hot">критично</span>
                   <p class="doc-item">Шесть заголовков шести разных видов: контекст, понятия, определение, механика, выгоды, условия. Одним словом их не назвать.</p>
                 </div>
-                <div class="case__flaw grid-pair">
-                  <span class="ac-pill">
-                    <span>средне</span>
-                  </span>
+                <div class="case__flaw">
+                  <span class="mr-tag">средне</span>
                   <p class="doc-item">«Выгоды и результаты» &mdash; это и есть ответ на вопрос читателя, но он спрятан пятым из шести.</p>
                 </div>
-                <div class="case__flaw grid-pair">
-                  <span class="ac-pill">
-                    <span>средне</span>
-                  </span>
+                <div class="case__flaw">
+                  <span class="mr-tag">средне</span>
                   <p class="doc-item">Принципы, определение и организация перекрываются: все три описывают, что это за подход.</p>
                 </div>
               </div>
               <div class="case__fixes">
-                <p class="ac-label ac-label--caps ac-label--accent">Три исправления, которые дают больше всего</p>
+                <p class="label">Три исправления, которые дают больше всего</p>
                 <p class="doc-item">Сказать ответ в первой фразе. Поднять «выгоды и результаты» на первый уровень. Переписать шесть тем как три-четыре утверждения одного вида.</p>
               </div>
-            </div>
-          </div>
-          <div class="ac-callout case__changed">
-            <span class="ac-callout__disc" aria-hidden="true">
-              <svg width="20" height="14" viewBox="0 0 20 14" fill="none">
-                <path d="M0 7H13" stroke="currentColor" stroke-width="2"></path>
-                <path d="M12 2.5 L20 7 L12 11.5 Z" fill="currentColor"></path>
-              </svg>
-            </span>
-            <div class="ac-callout__text">
-              <h4 class="ac-title-text">Что изменилось</h4>
-              <ul class="ac-checklist">
-                <li class="ac-check">
-                  <svg class="ac-check__box" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <rect x="0.9" y="0.9" width="14.2" height="14.2" rx="3" stroke="currentColor" stroke-width="1.5"></rect>
-                    <path d="M4.2 8.3l2.4 2.4 5.2-5.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                  <span class="ac-body ac-check__text">Каждый дефект назван и привязан к месту в тексте &mdash; исходные слова не тронуты.</span>
-                </li>
-                <li class="ac-check">
-                  <svg class="ac-check__box" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <rect x="0.9" y="0.9" width="14.2" height="14.2" rx="3" stroke="currentColor" stroke-width="1.5"></rect>
-                    <path d="M4.2 8.3l2.4 2.4 5.2-5.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                  <span class="ac-body ac-check__text">Навык остался внутри видимого: о содержании отсутствующих разделов не сказано ничего.</span>
-                </li>
-                <li class="ac-check">
-                  <svg class="ac-check__box" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <rect x="0.9" y="0.9" width="14.2" height="14.2" rx="3" stroke="currentColor" stroke-width="1.5"></rect>
-                    <path d="M4.2 8.3l2.4 2.4 5.2-5.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                  <span class="ac-body ac-check__text">На выходе &mdash; оценка, приоритет и три исправления, а не переписанный документ.</span>
-                </li>
-              </ul>
             </div>
           </div>
         </article>
 
         <article class="case" id="case-03" data-case-panel="03" aria-labelledby="case-03-heading">
           <div class="case__head">
-            <h3 class="ac-title-text" id="case-03-heading">Служебная записка о стоимости набора</h3>
-            <p class="ac-body ac-body--md">Что показывает: структуру видно глазами. Текст не переписан &mdash; из него вынута пирамида.</p>
+            <h3 class="subtitle" id="case-03-heading">Служебная записка о стоимости набора</h3>
+            <p class="small">Что показывает: структуру видно глазами. Текст не переписан &mdash; из него вынута пирамида.</p>
           </div>
-          <div class="case__pair case__pair--wider grid-pair">
-            <div class="ac-panel ac-panel--sand-light case__source">
-              <p class="ac-label ac-label--caps">Источник &middot; проза на страницу</p>
-              <p class="doc-note">«Набор &mdash; около 40% стоимости твёрдого переплёта и 50&ndash;55% мягкого. TTW не знает, завышена ли стоимость, но заказчики считают её неконкурентной на простых работах. Предварительная работа показывает, что стоимость набора можно существенно снизить&hellip;»</p>
-              <p class="ac-body ac-body--sm">Дальше &mdash; два раздела заглавными буквами и десять фактов внутри абзацев: отставание от эталона на 20&ndash;50%, одинаковые проверки для всех работ, зарплаты ниже рынка, двое уже ушли, переработки выше бюджета на 50%.</p>
+          <div class="case__pair case__pair--wider">
+            <div class="case__source">
+            <div class="case__shape" aria-hidden="true">
+              <div class="units">
+                <div class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+              </div>
             </div>
-            <div class="ac-panel ac-panel--outlined case__result">
-              <span class="ac-eyebrow ac-eyebrow--solid">С Minto &middot; viz</span>
+              <p class="label">Источник &middot; проза на страницу</p>
+              <p class="doc-note">«Набор &mdash; около 40% стоимости твёрдого переплёта и 50&ndash;55% мягкого. TTW не знает, завышена ли стоимость, но заказчики считают её неконкурентной на простых работах. Предварительная работа показывает, что стоимость набора можно существенно снизить&hellip;»</p>
+              <p class="small">Дальше &mdash; два раздела заглавными буквами и десять фактов внутри абзацев: отставание от эталона на 20&ndash;50%, одинаковые проверки для всех работ, зарплаты ниже рынка, двое уже ушли, переработки выше бюджета на 50%.</p>
+            </div>
+            <div class="case__result">
+            <div class="case__shape" aria-hidden="true">
+              <div class="units" data-shape="pyramid">
+                <div class="units__row"><span class="unit"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span></div>
+              </div>
+            </div>
+              <div class="case__head-row">
+                <span class="mr-tag">С Minto &middot; viz</span>
+              </div>
               <div class="pyramid__top">
+                <span class="unit" data-state="answer" aria-hidden="true"></span>
                 <p class="doc-answer">TTW может существенно снизить стоимость набора</p>
               </div>
-              <svg class="pyramid__conn" viewBox="0 0 600 40" height="40" preserveAspectRatio="none" aria-hidden="true">
-                <path d="M300 0V14M150 14H450M150 14V40M450 14V40" fill="none" stroke="currentColor" stroke-width="1.5"></path>
+              <svg class="pyramid__conn" viewBox="0 0 600 34" height="34" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M300 0V12M150 12H450M150 12V34M450 12V34" fill="none" stroke="currentColor" stroke-width="1.5"></path>
               </svg>
-              <div class="case__branches grid-pair">
+              <div class="case__branches">
                 <div class="case__branch">
                   <p class="doc-lead">Убрать лишние этапы процесса</p>
                   <ul>
@@ -566,139 +443,89 @@
                 </div>
               </div>
               <div class="case__gap">
-                <svg class="ac-glyph" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <circle cx="12" cy="12" r="8.5"></circle>
-                  <path d="M12 7.5v6M12 16.4v.2"></path>
-                </svg>
+                <span class="unit" data-state="gap" aria-hidden="true"></span>
                 <p class="doc-note">Навык сам помечает пробел: экономия посчитана только для первой ветки &mdash; «существенно» во втором случае ничем не измерено.</p>
               </div>
-            </div>
-          </div>
-          <div class="ac-callout case__changed">
-            <span class="ac-callout__disc" aria-hidden="true">
-              <svg width="20" height="14" viewBox="0 0 20 14" fill="none">
-                <path d="M0 7H13" stroke="currentColor" stroke-width="2"></path>
-                <path d="M12 2.5 L20 7 L12 11.5 Z" fill="currentColor"></path>
-              </svg>
-            </span>
-            <div class="ac-callout__text">
-              <h4 class="ac-title-text">Что изменилось</h4>
-              <ul class="ac-checklist">
-                <li class="ac-check">
-                  <svg class="ac-check__box" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <rect x="0.9" y="0.9" width="14.2" height="14.2" rx="3" stroke="currentColor" stroke-width="1.5"></rect>
-                    <path d="M4.2 8.3l2.4 2.4 5.2-5.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                  <span class="ac-body ac-check__text">Из прозы вынуты один ответ и две ветки-действия &mdash; ровно те, что есть в тексте.</span>
-                </li>
-                <li class="ac-check">
-                  <svg class="ac-check__box" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <rect x="0.9" y="0.9" width="14.2" height="14.2" rx="3" stroke="currentColor" stroke-width="1.5"></rect>
-                    <path d="M4.2 8.3l2.4 2.4 5.2-5.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                  <span class="ac-body ac-check__text">Десять фактов разложены по своим веткам, ни один не добавлен.</span>
-                </li>
-                <li class="ac-check">
-                  <svg class="ac-check__box" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <rect x="0.9" y="0.9" width="14.2" height="14.2" rx="3" stroke="currentColor" stroke-width="1.5"></rect>
-                    <path d="M4.2 8.3l2.4 2.4 5.2-5.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                  <span class="ac-body ac-check__text">Пробел помечен самим навыком: экономия во второй ветке не измерена.</span>
-                </li>
-              </ul>
             </div>
           </div>
         </article>
 
         <article class="case" id="case-04" data-case-panel="04" aria-labelledby="case-04-heading">
           <div class="case__head">
-            <h3 class="ac-title-text" id="case-04-heading">Три источника по комплаенсу</h3>
-            <p class="ac-body ac-body--md">Что показывает: работу с прочитанным. Руководитель не будет читать источники &mdash; ему нужно решение на сегодня.</p>
+            <h3 class="subtitle" id="case-04-heading">Три источника по комплаенсу</h3>
+            <p class="small">Что показывает: работу с прочитанным. Руководитель не будет читать источники &mdash; ему нужно решение на сегодня.</p>
           </div>
-          <div class="case__pair case__pair--wider grid-pair">
+          <div class="case__pair case__pair--wider">
             <div class="case__srclist">
-              <p class="ac-label ac-label--caps">Источники &middot; 3 файла, 7 страниц</p>
-              <div class="ac-panel ac-panel--sand-light ac-panel--dense">
+            <div class="case__shape" aria-hidden="true">
+              <div class="units">
+                <div class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+                <div class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+                <div class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+              </div>
+            </div>
+              <p class="label">Источники &middot; 3 файла, 7 страниц</p>
+              <div class="case__src">
                 <p class="doc-name">gate-review.xlsx</p>
                 <p class="doc-note">Семь вопросов от комплаенса банка. На один ответ &mdash; отказ: «нельзя ответить без схемы архитектуры».</p>
               </div>
-              <div class="ac-panel ac-panel--sand-light ac-panel--dense">
+              <div class="case__src">
                 <p class="doc-name">sync-0709.md</p>
                 <p class="doc-note">Список пакетов «готовится». Названо новое контактное лицо. Реплику про двух инженеров в Лиссабоне никто не прокомментировал.</p>
               </div>
-              <div class="ac-panel ac-panel--sand-light ac-panel--dense">
+              <div class="case__src">
                 <p class="doc-name">Реестр рисков</p>
                 <p class="doc-note">Три открытые строки: цена не фиксируется, список не получен 98 дней, схема не отправлена.</p>
               </div>
             </div>
-            <div class="ac-panel ac-panel--outlined case__result">
-              <span class="ac-eyebrow ac-eyebrow--solid">С Minto &middot; digest</span>
+            <div class="case__result">
+            <div class="case__shape" aria-hidden="true">
+              <div class="units" data-shape="pyramid">
+                <div class="units__row"><span class="unit"></span></div>
+              </div>
+            </div>
+              <div class="case__head-row">
+                <span class="mr-tag">С Minto &middot; digest</span>
+              </div>
               <p class="doc-answer">Одно дело на сегодня: отправить схему архитектуры.</p>
               <p class="doc-item">Черновик существует с 11 августа, и это единственный блокер комплаенса на нашей стороне: на синке 9 июля договорились отправить схему до следующей встречи, иначе вопросы о хранении, шифровании и логировании остаются без ответа. Всё остальное ждёт банк &mdash; и два пункта ждут уже так долго, что их пора эскалировать по имени.</p>
               <div class="case__groups">
                 <div class="case__group">
-                  <p class="ac-label ac-label--caps ac-label--ink">Уже решено &mdash; считаем закрытым</p>
+                  <p class="doc-lead">Уже решено &mdash; считаем закрытым</p>
                   <p class="doc-note">Ревью безопасности до прода обязательно. Внутренний фреймворк укрепления существует, но ревью не отменяет. Политика по открытому коду есть. Работа из Ирландии допустима.</p>
                 </div>
                 <div class="case__group">
-                  <p class="ac-label ac-label--caps ac-label--ink">Ждём банк &mdash; и уже просрочено</p>
+                  <p class="doc-lead">Ждём банк &mdash; и уже просрочено</p>
                   <p class="doc-note">Список одобренных пакетов обещали 12 мая и снова 9 июля, оба раза без даты &mdash; 98 дней. Ответственный за инфобез назван, но ни разу не был на общей встрече. Просить список у него напрямую или дату письмом.</p>
                 </div>
                 <div class="case__group">
-                  <p class="ac-label ac-label--caps ac-label--ink">Два ответа банк не даст заранее &mdash; и это бьёт по цене</p>
+                  <p class="doc-lead">Два ответа банк не даст заранее &mdash; и это бьёт по цене</p>
                   <p class="doc-note">Нужен ли пентест, решает ревьюер во время ревью. Срок одобрения зависимостей &mdash; «по ситуации». Значит, цену этапа разработки нельзя дать одним числом: либо выносим эти два пункта отдельной строкой, либо держим цену до назначенного ревью.</p>
                 </div>
                 <div class="case__group case__group--accent">
-                  <p class="ac-label ac-label--caps ac-label--accent">Одна незакрытая уязвимость, которую стоит поднять самому</p>
+                  <p class="doc-lead">Одна незакрытая уязвимость, которую стоит поднять самому</p>
                   <p class="doc-item">9 июля сказали, что двое инженеров работают из Лиссабона, и никто из банка не ответил. Молчание на встрече &mdash; не согласование: напишите про Лиссабон вместе со схемой, пока эти люди не сели на задачи с банковскими данными.</p>
                 </div>
               </div>
-            </div>
-          </div>
-          <div class="ac-callout case__changed">
-            <span class="ac-callout__disc" aria-hidden="true">
-              <svg width="20" height="14" viewBox="0 0 20 14" fill="none">
-                <path d="M0 7H13" stroke="currentColor" stroke-width="2"></path>
-                <path d="M12 2.5 L20 7 L12 11.5 Z" fill="currentColor"></path>
-              </svg>
-            </span>
-            <div class="ac-callout__text">
-              <h4 class="ac-title-text">Что изменилось</h4>
-              <ul class="ac-checklist">
-                <li class="ac-check">
-                  <svg class="ac-check__box" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <rect x="0.9" y="0.9" width="14.2" height="14.2" rx="3" stroke="currentColor" stroke-width="1.5"></rect>
-                    <path d="M4.2 8.3l2.4 2.4 5.2-5.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                  <span class="ac-body ac-check__text">Семь страниц трёх источников свелись к одному делу на сегодня.</span>
-                </li>
-                <li class="ac-check">
-                  <svg class="ac-check__box" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <rect x="0.9" y="0.9" width="14.2" height="14.2" rx="3" stroke="currentColor" stroke-width="1.5"></rect>
-                    <path d="M4.2 8.3l2.4 2.4 5.2-5.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                  <span class="ac-body ac-check__text">Ответы сгруппированы по тому, что с ними делать: закрыто, ждём банк, не дадут заранее.</span>
-                </li>
-                <li class="ac-check">
-                  <svg class="ac-check__box" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <rect x="0.9" y="0.9" width="14.2" height="14.2" rx="3" stroke="currentColor" stroke-width="1.5"></rect>
-                    <path d="M4.2 8.3l2.4 2.4 5.2-5.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                  <span class="ac-body ac-check__text">Каждый пункт со ссылкой на источник; молчание в переписке названо риском, а не согласием.</span>
-                </li>
-              </ul>
             </div>
           </div>
         </article>
 
         <article class="case" id="case-05" data-case-panel="05" aria-labelledby="case-05-heading">
           <div class="case__head">
-            <h3 class="ac-title-text" id="case-05-heading">Письмо про бэклог дефектов</h3>
-            <p class="ac-body ac-body--md">Что показывает: честный случай. Просьба была написана &mdash; только в последнем абзаце.</p>
+            <h3 class="subtitle" id="case-05-heading">Письмо про бэклог дефектов</h3>
+            <p class="small">Что показывает: честный случай. Просьба была написана &mdash; только в последнем абзаце.</p>
           </div>
-          <div class="case__pair grid-pair">
-            <div class="ac-panel ac-panel--sand-light case__source">
-              <p class="ac-label ac-label--caps">Источник &middot; четыре абзаца доказательств</p>
+          <div class="case__pair">
+            <div class="case__source">
+            <div class="case__shape" aria-hidden="true">
+              <div class="units" data-shape="scatter">
+                <div class="units__row" style="--x: 1"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+                <div class="units__row" style="--x: 0"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+                <div class="units__row" style="--x: 2"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit"></span></div>
+              </div>
+            </div>
+              <p class="label">Источник &middot; четыре абзаца доказательств</p>
               <div class="case__letter">
                 <p class="doc-item">Привет, Алекс!</p>
                 <p class="doc-item">Меня всё больше беспокоит бэклог дефектов. На графике &mdash; новые дефекты против закрытых и прогноз на год вперёд.</p>
@@ -706,12 +533,19 @@
                 <p class="doc-item">Есть и признаки ущерба бренду: посты пользователей, жалоба крупного клиента, и продажи говорят, что сделки закрывать труднее.</p>
                 <p class="doc-item case__ask">Предлагаю посвятить следующий спринт разбору бэклога дефектов. Скажи, что думаешь.</p>
               </div>
-              <p class="ac-body ac-body--md">Алекс читает четыре абзаца доказательств, прежде чем узнаёт, что от него хотят.</p>
+              <p class="small">Алекс читает четыре абзаца доказательств, прежде чем узнаёт, что от него хотят.</p>
             </div>
-            <div class="ac-panel ac-panel--outlined case__result" data-fixture="08-techdebt" data-engine="opus5" data-arm="skill" data-structure="8" data-quality="10" data-hard-failures="1">
-              <div class="case__scores">
-                <span class="ac-eyebrow ac-eyebrow--solid">С Minto &middot; write</span>
-                <span class="ac-label">слепой судья: структура 8/8, качество 10/10</span>
+            <div class="case__result" data-fixture="08-techdebt" data-engine="opus5" data-arm="skill" data-structure="8" data-quality="10" data-hard-failures="1">
+            <div class="case__shape" aria-hidden="true">
+              <div class="units" data-shape="pyramid">
+                <div class="units__row"><span class="unit"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span></div>
+              </div>
+            </div>
+              <div class="case__head-row">
+                <span class="mr-tag">С Minto &middot; write</span>
+                <span class="label">слепой судья: структура 8/8, качество 10/10</span>
               </div>
               <div class="case__letter">
                 <p class="doc-item">Привет, Алекс!</p>
@@ -725,60 +559,65 @@
               </div>
             </div>
           </div>
-          <div class="ac-callout case__changed">
-            <span class="ac-callout__disc" aria-hidden="true">!</span>
-            <div class="ac-callout__text">
-              <h4 class="ac-title-text">Здесь навык не победил &mdash; и это видно</h4>
-              <p class="ac-body ac-body--md">Простой случай: просьба уже была написана, только не на своём месте. Контрольный прогон той же модели получил те же 8/8 и 10/10, и судья отметил в обоих один выдуманный факт. Разница между условиями видна не здесь, а на 172 прогонах ниже.</p>
-            </div>
-          </div>
+          <p class="small case__caveat"><strong>Здесь навык не победил &mdash; и это видно.</strong> Простой случай: просьба уже была написана, только не на своём месте. Контрольный прогон той же модели получил те же 8/8 и 10/10, и судья отметил в обоих один выдуманный факт. Разница между условиями видна не здесь, а на 172 прогонах ниже.</p>
         </article>
       </section>
 
       <section class="section" id="evidence" aria-labelledby="evidence-heading" data-benchmark="v1.7.0-final" data-benchmark-cells="172">
-        <div class="ac-title-block">
-          <h2 class="ac-display" id="evidence-heading">Пять измерений выросли. <span class="ac-accent">Одно упало.</span></h2>
-          <hr class="ac-title-block__rule">
-          <p class="ac-body">Одиннадцать документов, восемь моделей, каждый переписан дважды: с навыком и без. Слепой судья оценил все 172 результата, не зная, где что.</p>
+        <div class="title-block">
+          <h2 class="title" id="evidence-heading">Пять измерений выросли. Одно упало.</h2>
+          <hr class="rule">
+          <p class="body">Одиннадцать документов, восемь моделей, каждый переписан дважды: с навыком и без. Слепой судья оценил все 172 результата, не зная, где что.</p>
         </div>
 
-        <div class="evidence__method">
-          <h3 class="ac-label ac-label--caps ac-label--accent">Как мы это мерили</h3>
+        <ul class="figures">
+          <li class="figure" data-figure="cells">
+            <p class="figure__num">172</p>
+            <p class="label">слепых оценки, все по одной рубрике</p>
+          </li>
+          <li class="figure" data-figure="engines">
+            <p class="figure__num">8</p>
+            <p class="label">моделей, каждая переписала документы дважды</p>
+          </li>
+          <li class="figure" data-figure="metric-delta" data-metric-ref="readers-question">
+            <p class="figure__num">+22</p>
+            <p class="label">пункта: вопрос читателя написан прямо в тексте</p>
+          </li>
+          <li class="figure figure--down" data-figure="metric-delta" data-metric-ref="answer-first">
+            <p class="figure__num">&minus;10</p>
+            <p class="label">пунктов: ответ реже стоит в первой фразе</p>
+          </li>
+        </ul>
+
+        <div class="method">
+          <h3 class="subtitle">Как мы это мерили</h3>
           <div class="stages grid-stages">
-            <div class="ac-panel ac-panel--sand-light ac-stage">
-              <div class="ac-stage__head">
-                <span class="ac-stage__num" aria-hidden="true">1</span>
-                <div class="ac-stage__headtext">
-                  <h4 class="ac-title-text">11 документов</h4>
-                  <p class="ac-body ac-body--md ac-stage__sub">Письма, памятки, аудит, дайджест, список в чат &mdash; от короткой записки до обзора на восемь страниц.</p>
-                </div>
+            <div class="stage">
+              <span class="num stage__num" aria-hidden="true">1</span>
+              <div class="stage__text">
+                <h4 class="subtitle">11 документов</h4>
+                <p class="small">Письма, памятки, аудит, дайджест, список в чат &mdash; от короткой записки до обзора на восемь страниц.</p>
               </div>
             </div>
-            <div class="ac-panel ac-panel--sand-light ac-stage">
-              <div class="ac-stage__head">
-                <span class="ac-stage__num" aria-hidden="true">2</span>
-                <div class="ac-stage__headtext">
-                  <h4 class="ac-title-text">Два условия</h4>
-                  <p class="ac-body ac-body--md ac-stage__sub">С навыком &mdash; и контроль: промпт, который уже называет принцип пирамиды. Не «пустая модель».</p>
-                </div>
+            <div class="stage">
+              <span class="num stage__num" aria-hidden="true">2</span>
+              <div class="stage__text">
+                <h4 class="subtitle">Два условия</h4>
+                <p class="small">С навыком &mdash; и контроль: промпт, который уже называет принцип пирамиды. Не «пустая модель».</p>
               </div>
             </div>
-            <div class="ac-panel ac-panel--sand-light ac-stage">
-              <div class="ac-stage__head">
-                <span class="ac-stage__num" aria-hidden="true">3</span>
-                <div class="ac-stage__headtext">
-                  <h4 class="ac-title-text">Слепой судья</h4>
-                  <p class="ac-body ac-body--md ac-stage__sub">Тексты перемешаны: судья не знает ни модель, ни условие. Оценивает по одной рубрике.</p>
-                </div>
+            <div class="stage">
+              <span class="num stage__num" aria-hidden="true">3</span>
+              <div class="stage__text">
+                <h4 class="subtitle">Слепой судья</h4>
+                <p class="small">Тексты перемешаны: судья не знает ни модель, ни условие. Оценивает по одной рубрике.</p>
               </div>
             </div>
-            <div class="ac-panel ac-panel--accent ac-stage">
-              <div class="ac-stage__head">
-                <span class="ac-stage__num" aria-hidden="true">4</span>
-                <div class="ac-stage__headtext">
-                  <h4 class="ac-title-text">172 оценки</h4>
-                  <p class="ac-body ac-body--md ac-stage__sub">Каждое число на этой странице посчитано скриптом из опубликованных вердиктов, а не пересказано моделью.</p>
-                </div>
+            <div class="stage stage--ink">
+              <span class="num stage__num" aria-hidden="true">4</span>
+              <div class="stage__text">
+                <h4 class="subtitle">Посчитано, а не пересказано</h4>
+                <p class="small">Каждое число на этой странице посчитано скриптом из опубликованных вердиктов, а не пересказано моделью.</p>
               </div>
             </div>
           </div>
@@ -786,221 +625,219 @@
 
         <figure class="chart">
           <div class="chart__head">
-            <h3 class="ac-title-text">Что изменилось в текстах</h3>
+            <h3 class="subtitle">Что изменилось в текстах</h3>
             <div class="chart__legend">
-              <span class="legend"><span class="legend__swatch" aria-hidden="true"></span><span class="ac-label">без навыка</span></span>
-              <span class="legend"><span class="legend__swatch legend__swatch--skill" aria-hidden="true"></span><span class="ac-label">с Minto</span></span>
+              <span class="legend"><span class="legend__swatch" aria-hidden="true"></span><span class="label">без навыка</span></span>
+              <span class="legend"><span class="legend__swatch legend__swatch--skill" aria-hidden="true"></span><span class="label">с Minto</span></span>
+              <span class="legend"><span class="legend__swatch legend__swatch--delta" aria-hidden="true"></span><span class="label">разница</span></span>
             </div>
           </div>
 
           <ul class="metrics">
-            <li class="metric grid-pair" data-metric="readers-question" data-control="13" data-skill="35" data-delta="22">
-              <p class="doc-lead metric__name">Вопрос читателя написан прямо в тексте</p>
+            <li class="metric" data-metric="readers-question" data-control="13" data-skill="35" data-delta="22" style="--control: 13; --skill: 35">
+              <div class="metric__head">
+                <p class="metric__name">Вопрос читателя написан прямо в тексте</p>
+              </div>
               <div class="metric__rows">
-                <div class="metric__row"><span class="metric__track"><span class="metric__bar" style="--bar: 13%"></span></span><span class="ac-label metric__value">13%</span></div>
-                <div class="metric__row metric__row--skill"><span class="metric__track"><span class="metric__bar" style="--bar: 35%"></span></span><span class="ac-label metric__value">35%</span></div>
+                <div class="metric__row"><span class="metric__track"><span class="metric__band" aria-hidden="true"></span></span><span class="label metric__value">13%</span></div>
+                <div class="metric__row metric__row--skill"><span class="metric__track"><span class="metric__band" aria-hidden="true"></span></span><span class="label metric__value">35%</span></div>
               </div>
               <p class="metric__delta">+22<span class="visually-hidden"> процентных пунктов</span></p>
             </li>
-            <li class="metric grid-pair" data-metric="kind-matches" data-control="54" data-skill="66" data-delta="12">
-              <p class="doc-lead metric__name">Пункты первого уровня &mdash; одного вида</p>
+            <li class="metric" data-metric="kind-matches" data-control="54" data-skill="66" data-delta="12" style="--control: 54; --skill: 66">
+              <div class="metric__head">
+                <p class="metric__name">Пункты первого уровня &mdash; одного вида</p>
+              </div>
               <div class="metric__rows">
-                <div class="metric__row"><span class="metric__track"><span class="metric__bar" style="--bar: 54%"></span></span><span class="ac-label metric__value">54%</span></div>
-                <div class="metric__row metric__row--skill"><span class="metric__track"><span class="metric__bar" style="--bar: 66%"></span></span><span class="ac-label metric__value">66%</span></div>
+                <div class="metric__row"><span class="metric__track"><span class="metric__band" aria-hidden="true"></span></span><span class="label metric__value">54%</span></div>
+                <div class="metric__row metric__row--skill"><span class="metric__track"><span class="metric__band" aria-hidden="true"></span></span><span class="label metric__value">66%</span></div>
               </div>
               <p class="metric__delta">+12<span class="visually-hidden"> процентных пунктов</span></p>
             </li>
-            <li class="metric grid-pair" data-metric="structure" data-control="59" data-skill="66" data-delta="7">
-              <p class="doc-lead metric__name">Структура: доля из 8 баллов судьи</p>
+            <li class="metric" data-metric="structure" data-control="59" data-skill="66" data-delta="7" style="--control: 59; --skill: 66">
+              <div class="metric__head">
+                <p class="metric__name">Структура: доля из 8 баллов судьи</p>
+              </div>
               <div class="metric__rows">
-                <div class="metric__row"><span class="metric__track"><span class="metric__bar" style="--bar: 59%"></span></span><span class="ac-label metric__value">59%</span></div>
-                <div class="metric__row metric__row--skill"><span class="metric__track"><span class="metric__bar" style="--bar: 66%"></span></span><span class="ac-label metric__value">66%</span></div>
+                <div class="metric__row"><span class="metric__track"><span class="metric__band" aria-hidden="true"></span></span><span class="label metric__value">59%</span></div>
+                <div class="metric__row metric__row--skill"><span class="metric__track"><span class="metric__band" aria-hidden="true"></span></span><span class="label metric__value">66%</span></div>
               </div>
               <p class="metric__delta">+7<span class="visually-hidden"> процентных пунктов</span></p>
             </li>
-            <li class="metric grid-pair" data-metric="quality" data-control="72" data-skill="79" data-delta="7">
-              <p class="doc-lead metric__name">Качество текста: доля из 10 баллов судьи</p>
+            <li class="metric" data-metric="quality" data-control="72" data-skill="79" data-delta="7" style="--control: 72; --skill: 79">
+              <div class="metric__head">
+                <p class="metric__name">Качество текста: доля из 10 баллов судьи</p>
+              </div>
               <div class="metric__rows">
-                <div class="metric__row"><span class="metric__track"><span class="metric__bar" style="--bar: 72%"></span></span><span class="ac-label metric__value">72%</span></div>
-                <div class="metric__row metric__row--skill"><span class="metric__track"><span class="metric__bar" style="--bar: 79%"></span></span><span class="ac-label metric__value">79%</span></div>
+                <div class="metric__row"><span class="metric__track"><span class="metric__band" aria-hidden="true"></span></span><span class="label metric__value">72%</span></div>
+                <div class="metric__row metric__row--skill"><span class="metric__track"><span class="metric__band" aria-hidden="true"></span></span><span class="label metric__value">79%</span></div>
               </div>
               <p class="metric__delta">+7<span class="visually-hidden"> процентных пунктов</span></p>
             </li>
-            <li class="metric grid-pair" data-metric="source-kept" data-control="62" data-skill="65" data-delta="3">
-              <p class="doc-lead metric__name">Ничего из источника не потеряно молча</p>
+            <li class="metric" data-metric="source-kept" data-control="62" data-skill="65" data-delta="3" style="--control: 62; --skill: 65">
+              <div class="metric__head">
+                <p class="metric__name">Ничего из источника не потеряно молча</p>
+              </div>
               <div class="metric__rows">
-                <div class="metric__row"><span class="metric__track"><span class="metric__bar" style="--bar: 62%"></span></span><span class="ac-label metric__value">62%</span></div>
-                <div class="metric__row metric__row--skill"><span class="metric__track"><span class="metric__bar" style="--bar: 65%"></span></span><span class="ac-label metric__value">65%</span></div>
+                <div class="metric__row"><span class="metric__track"><span class="metric__band" aria-hidden="true"></span></span><span class="label metric__value">62%</span></div>
+                <div class="metric__row metric__row--skill"><span class="metric__track"><span class="metric__band" aria-hidden="true"></span></span><span class="label metric__value">65%</span></div>
               </div>
               <p class="metric__delta">+3<span class="visually-hidden"> процентных пунктов</span></p>
             </li>
-            <li class="metric metric--down grid-pair" data-metric="answer-first" data-control="84" data-skill="74" data-delta="-10">
-              <div>
-                <p class="doc-lead metric__name">Ответ в первом предложении</p>
-                <div class="metric__pill">
-                  <span class="ac-pill ac-pill--fail">
-                    <span class="ac-pill__mark" aria-hidden="true">
-                      <svg class="ac-glyph" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="8.5"></circle>
-                        <path d="M9.2 9.2l5.6 5.6M14.8 9.2l-5.6 5.6"></path>
-                      </svg>
-                    </span>
-                    <span>стало хуже</span>
-                  </span>
-                </div>
+            <li class="metric metric--down" data-metric="answer-first" data-control="84" data-skill="74" data-delta="-10" style="--control: 84; --skill: 74">
+              <div class="metric__head">
+                <p class="metric__name">Ответ в первом предложении</p>
+                <span class="mr-tag" data-tone="hot">стало хуже</span>
               </div>
               <div class="metric__rows">
-                <div class="metric__row"><span class="metric__track"><span class="metric__bar" style="--bar: 84%"></span></span><span class="ac-label metric__value">84%</span></div>
-                <div class="metric__row metric__row--skill"><span class="metric__track"><span class="metric__bar" style="--bar: 74%"></span></span><span class="ac-label metric__value">74%</span></div>
+                <div class="metric__row"><span class="metric__track"><span class="metric__band" aria-hidden="true"></span></span><span class="label metric__value">84%</span></div>
+                <div class="metric__row metric__row--skill"><span class="metric__track"><span class="metric__band" aria-hidden="true"></span></span><span class="label metric__value">74%</span></div>
               </div>
               <p class="metric__delta metric__delta--down">&minus;10<span class="visually-hidden"> процентных пунктов</span></p>
             </li>
           </ul>
 
-          <figcaption class="ac-body ac-body--md chart__note">Доли прогонов или доли от максимума судьи. Разница &mdash; в процентных пунктах.</figcaption>
+          <figcaption class="small">Доли прогонов или доли от максимума судьи. Разница &mdash; в процентных пунктах, а шкала под каждым измерением размечена двадцатью шагами по пять.</figcaption>
         </figure>
 
-        <div class="caveats grid-pair">
-          <div class="ac-panel ac-panel--sand-light caveat">
-            <h3 class="ac-label ac-label--caps ac-label--accent">Что мы публикуем против себя</h3>
+        <div class="caveats">
+          <div class="caveat">
+            <h3 class="subtitle">Что мы публикуем против себя</h3>
             <ul>
               <li class="doc-item">С навыком модели чаще утверждали то, чего в источнике нет: 49 прогонов против 42.</li>
               <li class="doc-item">Ответ реже стоял в первой фразе &mdash; рамка вытесняла его вниз. Это два главных пункта на следующую версию.</li>
               <li class="doc-item">Качество выросло у всех восьми моделей; структура упала у одной (Sonnet 5) и не изменилась у qwen3.8-27b.</li>
             </ul>
           </div>
-          <div class="ac-panel ac-panel--sand-light caveat">
-            <h3 class="ac-label ac-label--caps ac-label--ink">Границы замера</h3>
+          <div class="caveat">
+            <h3 class="subtitle">Границы замера</h3>
             <ul>
-              <li class="doc-note">По одному прогону на каждую пару «модель &mdash; документ»: повторяемость не измерена.</li>
-              <li class="doc-note">Документы &mdash; английские; с прежними русскими прогонами числа несравнимы.</li>
-              <li class="doc-note">Три документа из одиннадцати добавлены в этом раунде, поэтому с предыдущей таблицей на 112 прогонов сравнивать нельзя.</li>
+              <li class="doc-item">По одному прогону на каждую пару «модель &mdash; документ»: повторяемость не измерена.</li>
+              <li class="doc-item">Документы &mdash; английские; с прежними русскими прогонами числа несравнимы.</li>
+              <li class="doc-item">Три документа из одиннадцати добавлены в этом раунде, поэтому с предыдущей таблицей на 112 прогонов сравнивать нельзя.</li>
             </ul>
           </div>
         </div>
 
         <details class="models">
-          <summary class="ac-body">Точные оценки по моделям</summary>
-          <div class="models__scroll">
-            <table>
-              <caption class="ac-label">Доля от максимума судьи: без навыка, затем с Minto. Одиннадцать документов на каждую модель (девять для qwen3.8-27b &mdash; два не дошли в обоих условиях).</caption>
-              <thead>
-                <tr>
-                  <th class="ac-label ac-label--caps" scope="col">Модель</th>
-                  <th class="ac-label ac-label--caps" scope="col">Структура /8</th>
-                  <th class="ac-label ac-label--caps" scope="col">Качество /10</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">Claude Opus 5</th>
-                  <td class="cell--up">63%<svg class="ac-arrow pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>84%</td>
-                  <td class="cell--up">74%<svg class="ac-arrow pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>90%</td>
-                </tr>
-                <tr>
-                  <th scope="row">Claude Sonnet 5</th>
-                  <td>66%<svg class="ac-arrow pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>61%</td>
-                  <td class="cell--up">78%<svg class="ac-arrow pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>80%</td>
-                </tr>
-                <tr>
-                  <th scope="row">Claude Haiku 4.5</th>
-                  <td class="cell--up">53%<svg class="ac-arrow pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>63%</td>
-                  <td class="cell--up">67%<svg class="ac-arrow pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>76%</td>
-                </tr>
-                <tr>
-                  <th scope="row">Codex gpt-5.6-terra</th>
-                  <td class="cell--up">60%<svg class="ac-arrow pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>67%</td>
-                  <td class="cell--up">75%<svg class="ac-arrow pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>82%</td>
-                </tr>
-                <tr>
-                  <th scope="row">gpt-oss-120b</th>
-                  <td class="cell--up">50%<svg class="ac-arrow pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>52%</td>
-                  <td class="cell--up">53%<svg class="ac-arrow pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>64%</td>
-                </tr>
-                <tr>
-                  <th scope="row">qwen3.6-35b-a3b</th>
-                  <td class="cell--up">58%<svg class="ac-arrow pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>67%</td>
-                  <td class="cell--up">76%<svg class="ac-arrow pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>79%</td>
-                </tr>
-                <tr>
-                  <th scope="row">qwen3.6-fp8</th>
-                  <td class="cell--up">64%<svg class="ac-arrow pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>69%</td>
-                  <td class="cell--up">75%<svg class="ac-arrow pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>80%</td>
-                </tr>
-                <tr>
-                  <th scope="row">qwen3.8-27b</th>
-                  <td>63%<svg class="ac-arrow pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>63%</td>
-                  <td class="cell--up">79%<svg class="ac-arrow pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>81%</td>
-                </tr>
-              </tbody>
-            </table>
+          <summary class="models__summary">Точные оценки по моделям</summary>
+          <div class="models__body">
+            <div class="mr-table__scroll">
+              <table class="mr-table__table">
+                <caption class="models__caption">Доля от максимума судьи: без навыка, затем с Minto. Одиннадцать документов на каждую модель (девять для qwen3.8-27b &mdash; два не дошли в обоих условиях).</caption>
+                <thead>
+                  <tr>
+                    <th class="mr-table__th" scope="col">Модель</th>
+                    <th class="mr-table__th" scope="col">Структура /8</th>
+                    <th class="mr-table__th" scope="col">Качество /10</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th class="mr-table__td" scope="row">Claude Opus 5</th>
+                    <td class="mr-table__td"><span class="cell cell--up">63%<svg class="pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>84%</span></td>
+                    <td class="mr-table__td"><span class="cell cell--up">74%<svg class="pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>90%</span></td>
+                  </tr>
+                  <tr>
+                    <th class="mr-table__td" scope="row">Claude Sonnet 5</th>
+                    <td class="mr-table__td"><span class="cell">66%<svg class="pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>61%</span></td>
+                    <td class="mr-table__td"><span class="cell cell--up">78%<svg class="pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>80%</span></td>
+                  </tr>
+                  <tr>
+                    <th class="mr-table__td" scope="row">Claude Haiku 4.5</th>
+                    <td class="mr-table__td"><span class="cell cell--up">53%<svg class="pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>63%</span></td>
+                    <td class="mr-table__td"><span class="cell cell--up">67%<svg class="pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>76%</span></td>
+                  </tr>
+                  <tr>
+                    <th class="mr-table__td" scope="row">Codex gpt-5.6-terra</th>
+                    <td class="mr-table__td"><span class="cell cell--up">60%<svg class="pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>67%</span></td>
+                    <td class="mr-table__td"><span class="cell cell--up">75%<svg class="pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>82%</span></td>
+                  </tr>
+                  <tr>
+                    <th class="mr-table__td" scope="row">gpt-oss-120b</th>
+                    <td class="mr-table__td"><span class="cell cell--up">50%<svg class="pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>52%</span></td>
+                    <td class="mr-table__td"><span class="cell cell--up">53%<svg class="pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>64%</span></td>
+                  </tr>
+                  <tr>
+                    <th class="mr-table__td" scope="row">qwen3.6-35b-a3b</th>
+                    <td class="mr-table__td"><span class="cell cell--up">58%<svg class="pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>67%</span></td>
+                    <td class="mr-table__td"><span class="cell cell--up">76%<svg class="pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>79%</span></td>
+                  </tr>
+                  <tr>
+                    <th class="mr-table__td" scope="row">qwen3.6-fp8</th>
+                    <td class="mr-table__td"><span class="cell cell--up">64%<svg class="pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>69%</span></td>
+                    <td class="mr-table__td"><span class="cell cell--up">75%<svg class="pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>80%</span></td>
+                  </tr>
+                  <tr>
+                    <th class="mr-table__td" scope="row">qwen3.8-27b</th>
+                    <td class="mr-table__td"><span class="cell">63%<svg class="pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>63%</span></td>
+                    <td class="mr-table__td"><span class="cell cell--up">79%<svg class="pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>81%</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="small">В баллах, суммарно по восьми моделям: структура 4,76 из 8 становится 5,27; качество 7,17 из 10 становится 7,90. Со штрафом рубрики за выдуманные или потерянные факты &mdash; 6,34 против 7,08.</p>
+            <p><a class="link small" href="https://github.com/welltraum/minto/blob/main/eval/report-v1.7.0.md">Полная методика и ограничения<svg class="link-mark" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 10 10 2M4.5 2H10v5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></a></p>
           </div>
-          <p class="ac-body ac-body--md models__totals">В баллах, суммарно по восьми моделям: структура 4,76 из 8 становится 5,27; качество 7,17 из 10 становится 7,90. Со штрафом рубрики за выдуманные или потерянные факты &mdash; 6,34 против 7,08.</p>
-          <p class="models__link"><a class="ac-link ac-body ac-body--md ac-motion" href="https://github.com/welltraum/minto/blob/main/eval/report-v1.7.0.md">Полная методика и ограничения<svg class="link-mark" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 10 10 2M4.5 2H10v5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></a></p>
         </details>
       </section>
 
       <section class="section" id="install" aria-labelledby="install-heading">
-        <div class="ac-title-block">
-          <h2 class="ac-display" id="install-heading">Установка &mdash; <span class="ac-accent">две команды</span></h2>
-          <hr class="ac-title-block__rule">
-          <p class="ac-body">Добавьте маркетплейс, поставьте плагин и начните новую сессию.</p>
+        <div class="title-block">
+          <h2 class="title" id="install-heading">Установка &mdash; две команды</h2>
+          <hr class="rule">
+          <p class="body">Добавьте маркетплейс, поставьте плагин и начните новую сессию.</p>
         </div>
 
-        <div class="install grid-pair">
-          <div class="ac-panel ac-panel--sand-light install__card">
+        <div class="install">
+          <div class="install__card">
             <div class="install__head">
-              <h3 class="ac-title-text">Claude Code</h3>
-              <span class="ac-label">CLI и приложение</span>
+              <h3 class="subtitle">Claude Code</h3>
+              <span class="label">CLI и приложение</span>
             </div>
             <ol class="install__rows">
               <li class="install__row">
-                <span class="command-number" aria-hidden="true">1</span>
+                <span class="install__num" aria-hidden="true">1</span>
                 <code class="install__cmd">/plugin marketplace add welltraum/minto</code>
-                <button class="ac-btn ac-btn--secondary ac-btn--label ac-motion install__copy" type="button" data-copy="/plugin marketplace add welltraum/minto" aria-label="Копировать команду: /plugin marketplace add welltraum/minto"><span data-copy-label>Копировать</span></button>
+                <button class="mr-button" data-variant="ghost" type="button" data-copy="/plugin marketplace add welltraum/minto" aria-label="Копировать команду: /plugin marketplace add welltraum/minto"><span data-copy-label>Копировать</span></button>
               </li>
               <li class="install__row">
-                <span class="command-number" aria-hidden="true">2</span>
+                <span class="install__num" aria-hidden="true">2</span>
                 <code class="install__cmd">/plugin install minto@minto</code>
-                <button class="ac-btn ac-btn--secondary ac-btn--label ac-motion install__copy" type="button" data-copy="/plugin install minto@minto" aria-label="Копировать команду: /plugin install minto@minto"><span data-copy-label>Копировать</span></button>
+                <button class="mr-button" data-variant="ghost" type="button" data-copy="/plugin install minto@minto" aria-label="Копировать команду: /plugin install minto@minto"><span data-copy-label>Копировать</span></button>
               </li>
             </ol>
-            <p class="ac-body ac-body--md install__after">Затем вызовите <code>/minto:minto</code> &mdash; или просто опишите задачу, Claude подберёт навык сам.</p>
+            <p class="small install__after">Затем вызовите <code>/minto:minto</code> &mdash; или просто опишите задачу, Claude подберёт навык сам.</p>
           </div>
 
-          <div class="ac-panel ac-panel--sand-light install__card">
+          <div class="install__card">
             <div class="install__head">
-              <h3 class="ac-title-text">Codex</h3>
-              <span class="ac-label">CLI и приложение</span>
+              <h3 class="subtitle">Codex</h3>
+              <span class="label">CLI и приложение</span>
             </div>
             <ol class="install__rows">
               <li class="install__row">
-                <span class="command-number" aria-hidden="true">1</span>
+                <span class="install__num" aria-hidden="true">1</span>
                 <code class="install__cmd">codex plugin marketplace add welltraum/minto</code>
-                <button class="ac-btn ac-btn--secondary ac-btn--label ac-motion install__copy" type="button" data-copy="codex plugin marketplace add welltraum/minto" aria-label="Копировать команду: codex plugin marketplace add welltraum/minto"><span data-copy-label>Копировать</span></button>
+                <button class="mr-button" data-variant="ghost" type="button" data-copy="codex plugin marketplace add welltraum/minto" aria-label="Копировать команду: codex plugin marketplace add welltraum/minto"><span data-copy-label>Копировать</span></button>
               </li>
               <li class="install__row">
-                <span class="command-number" aria-hidden="true">2</span>
+                <span class="install__num" aria-hidden="true">2</span>
                 <code class="install__cmd">codex plugin add minto@minto</code>
-                <button class="ac-btn ac-btn--secondary ac-btn--label ac-motion install__copy" type="button" data-copy="codex plugin add minto@minto" aria-label="Копировать команду: codex plugin add minto@minto"><span data-copy-label>Копировать</span></button>
+                <button class="mr-button" data-variant="ghost" type="button" data-copy="codex plugin add minto@minto" aria-label="Копировать команду: codex plugin add minto@minto"><span data-copy-label>Копировать</span></button>
               </li>
             </ol>
-            <p class="ac-body ac-body--md install__after">Затем вызовите <code>$minto</code> или опишите задачу словами.</p>
+            <p class="small install__after">Затем вызовите <code>$minto</code> или опишите задачу словами.</p>
           </div>
         </div>
 
-        <p class="ac-label copy-status" role="status" aria-live="polite"></p>
+        <p class="label copy-status" role="status" aria-live="polite"></p>
 
-        <div class="ac-callout ac-callout--accent install__prompt">
-          <span class="ac-callout__disc" aria-hidden="true">
-            <svg width="20" height="14" viewBox="0 0 20 14" fill="none">
-              <path d="M0 7H13" stroke="currentColor" stroke-width="2"></path>
-              <path d="M12 2.5 L20 7 L12 11.5 Z" fill="currentColor"></path>
-            </svg>
-          </span>
-          <div class="ac-callout__text">
-            <h3 class="ac-title-text">Начните с того черновика, который у вас уже есть</h3>
-            <p class="ac-body ac-body--md">Не нужно ничего вычищать заранее. Вставьте текст и попросите Minto сначала разобраться со структурой: «Проверь эту заявку на логику пирамиды. Не переписывай её.»</p>
+        <div class="prompt">
+          <span class="unit" data-state="answer" aria-hidden="true"></span>
+          <div class="prompt__text">
+            <h3 class="subtitle">Начните с того черновика, который у вас уже есть</h3>
+            <p class="small">Не нужно ничего вычищать заранее. Вставьте текст и попросите Minto сначала разобраться со структурой: «Проверь эту заявку на логику пирамиды. Не переписывай её.»</p>
           </div>
         </div>
       </section>
@@ -1009,21 +846,22 @@
     <footer class="site-footer">
       <div class="page site-footer__inner">
         <div class="brand site-footer__brand">
-          <svg class="brand__mark" viewBox="0 0 36 36" width="22" height="22" aria-hidden="true">
-            <path d="M18 3 33 30H3L18 3Z"></path>
-            <path d="M8.4 20.5h19.2M12.8 12.5h10.4"></path>
-          </svg>
-          <span class="ac-title-text">Minto</span>
+          <span class="brand__mark units" data-shape="pyramid" aria-hidden="true">
+            <span class="units__row"><span class="unit"></span></span>
+            <span class="units__row"><span class="unit"></span><span class="unit"></span></span>
+            <span class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span></span>
+          </span>
+          <span class="brand__word">Minto</span>
         </div>
-        <p class="ac-body ac-body--md">Навык приводит в порядок аргумент, прежде чем править слова. Материал книги Барбары Минто принадлежит правообладателям; код навыка &mdash; под лицензией MIT.</p>
+        <p class="small">Навык приводит в порядок аргумент, прежде чем править слова. Материал книги Барбары Минто принадлежит правообладателям; код навыка &mdash; под лицензией MIT.</p>
         <nav aria-label="Ссылки">
-          <a class="ac-link ac-label ac-motion" href="https://github.com/welltraum/minto">GitHub</a>
-          <a class="ac-link ac-label ac-motion" href="https://github.com/welltraum/minto/blob/main/CHANGELOG.md">Изменения</a>
-          <a class="ac-link ac-label ac-motion" href="../" lang="en">English</a>
+          <a class="nav-link" href="https://github.com/welltraum/minto">GitHub</a>
+          <a class="nav-link" href="https://github.com/welltraum/minto/blob/main/CHANGELOG.md">Изменения</a>
+          <a class="nav-link" href="../" lang="en">English</a>
         </nav>
       </div>
     </footer>
 
-    <script src="../assets/app.js?v=5" defer></script>
+    <script src="../assets/app.js?v=6" defer></script>
   </body>
 </html>
