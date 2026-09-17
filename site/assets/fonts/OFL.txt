@@ -1,13 +1,13 @@
-Copyright 2021 The Golos Text Project Authors (https://github.com/paratype/golos-text)
-Copyright 2023 The Tektur Project Authors (https://github.com/googlefonts/tektur)
-Copyright 2020 The JetBrains Mono Project Authors (https://github.com/JetBrains/JetBrainsMono)
+# Applies to the three families shipped here: Play, Golos Text and JetBrains Mono,
+# all licensed under the SIL Open Font License, Version 1.1. Vendored with the
+# Mirai design system; Mirai's own copy also covers Zen Old Mincho, which this
+# site does not ship.
 
-All three families in this directory are licensed under the SIL Open Font
-License, Version 1.1. The license text below applies to each of them.
+Copyright (c) 2011, Jonas Hecksher, Playtypes, e-types AS (lasse@e-types.com), with Reserved Font Name 'Play', 'Playtype', 'Playtype Sans'.
 
 This Font Software is licensed under the SIL Open Font License, Version 1.1.
 This license is copied below, and is also available with a FAQ at:
-https://scripts.sil.org/OFL
+http://scripts.sil.org/OFL
 
 
 -----------------------------------------------------------
@@ -23,7 +23,7 @@ with others.
 
 The OFL allows the licensed fonts to be used, studied, modified and
 redistributed freely as long as they are not sold by themselves. The
-fonts, including any derivative works, can be bundled, embedded,
+fonts, including any derivative works, can be bundled, embedded, 
 redistributed and/or sold with any software provided that any reserved
 names are not used by derivative works. The fonts and derivatives,
 however, cannot be released under any other type of license. The

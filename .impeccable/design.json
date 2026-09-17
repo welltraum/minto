@@ -1,0 +1,531 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-17T13:35:20+03:00",
+  "title": "Design System: Minto",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Warm Paper",
+        "canonical": "#f8f1e3",
+        "purpose": "The page ground, top to bottom, both locales and 404.",
+        "tonalRamp": [
+          "#3d2e0f",
+          "#6c511b",
+          "#9a7427",
+          "#c99732",
+          "#d7af5f",
+          "#e3c68d",
+          "#eeddbc",
+          "#faf5eb"
+        ]
+      },
+      "sand": {
+        "role": "neutral",
+        "displayName": "Sand",
+        "canonical": "#eee0c4",
+        "purpose": "The before-ground: case sources, source chips, inline code, the unfilled rail.",
+        "tonalRamp": [
+          "#3b2d11",
+          "#69501e",
+          "#96722b",
+          "#c39538",
+          "#d2ad63",
+          "#dfc591",
+          "#ecddbe",
+          "#f9f5eb"
+        ]
+      },
+      "card": {
+        "role": "neutral",
+        "displayName": "Lifted Card",
+        "canonical": "#fffaf0",
+        "purpose": "Tone-lifted surfaces: hero picture, method stages, caveats, install columns.",
+        "tonalRamp": [
+          "#4c3300",
+          "#875a00",
+          "#c18100",
+          "#fba800",
+          "#ffbc37",
+          "#ffd071",
+          "#ffe3ab",
+          "#fff6e5"
+        ]
+      },
+      "mustard": {
+        "role": "primary",
+        "displayName": "Answer Mustard",
+        "canonical": "#e9b100",
+        "purpose": "The answer and nothing else; never two in a viewport.",
+        "tonalRamp": [
+          "#4c3a00",
+          "#876600",
+          "#c19300",
+          "#fbbf00",
+          "#ffcf37",
+          "#ffdd71",
+          "#ffebab",
+          "#fff9e5"
+        ]
+      },
+      "mustard-hover": {
+        "role": "primary",
+        "displayName": "Answer Mustard Hover",
+        "canonical": "#f2c22a",
+        "purpose": "Mirai's primary button hover.",
+        "tonalRamp": [
+          "#483804",
+          "#7f6208",
+          "#b68d0b",
+          "#edb80e",
+          "#f3c942",
+          "#f7d979",
+          "#fae8b0",
+          "#fef8e7"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Charcoal Ink",
+        "canonical": "#0e0a06",
+        "purpose": "Body text, the solid unit, dark button, ink plates.",
+        "tonalRamp": [
+          "#362617",
+          "#5e4328",
+          "#87613a",
+          "#b07e4b",
+          "#c39b73",
+          "#d4b89c",
+          "#e6d5c4",
+          "#f7f2ed"
+        ]
+      },
+      "coal": {
+        "role": "neutral",
+        "displayName": "Coal",
+        "canonical": "#1f1915",
+        "purpose": "Mirai plate tone.",
+        "tonalRamp": [
+          "#2e251f",
+          "#504136",
+          "#735d4e",
+          "#967966",
+          "#ae9788",
+          "#c6b5aa",
+          "#ddd3cd",
+          "#f5f2f0"
+        ]
+      },
+      "coal-soft": {
+        "role": "neutral",
+        "displayName": "Coal Soft",
+        "canonical": "#332c27",
+        "purpose": "Running prose, and the mandatory tint for quiet text on sand.",
+        "tonalRamp": [
+          "#2b2521",
+          "#4c423a",
+          "#6d5e54",
+          "#8e7b6d",
+          "#a8998d",
+          "#c1b6ae",
+          "#dbd4d0",
+          "#f4f2f1"
+        ]
+      },
+      "ash": {
+        "role": "neutral",
+        "displayName": "Ash",
+        "canonical": "#726759",
+        "purpose": "Labels and captions on paper; graphics only on sand.",
+        "tonalRamp": [
+          "#2b2722",
+          "#4c443b",
+          "#6c6255",
+          "#8d806e",
+          "#a79c8e",
+          "#c1b9af",
+          "#dad6d0",
+          "#f4f2f1"
+        ]
+      },
+      "field": {
+        "role": "neutral",
+        "displayName": "Field",
+        "canonical": "#8f8272",
+        "purpose": "The control arm of every benchmark rail and its legend swatch.",
+        "tonalRamp": [
+          "#2b2722",
+          "#4b443c",
+          "#6c6255",
+          "#8c7f6f",
+          "#a69c8f",
+          "#c0b9b0",
+          "#dad6d0",
+          "#f4f2f1"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#c6bcac",
+        "purpose": "Every 1px rule, and the weak unit.",
+        "tonalRamp": [
+          "#2d281f",
+          "#504637",
+          "#72654f",
+          "#958366",
+          "#ad9f88",
+          "#c5bbab",
+          "#ddd7cd",
+          "#f5f3f0"
+        ]
+      },
+      "stone": {
+        "role": "neutral",
+        "displayName": "Stone",
+        "canonical": "#d8d0c3",
+        "purpose": "Quiet text on ink grounds.",
+        "tonalRamp": [
+          "#2e281e",
+          "#524735",
+          "#75654c",
+          "#988463",
+          "#b0a086",
+          "#c7bca9",
+          "#ded7cc",
+          "#f5f3f0"
+        ]
+      },
+      "ok": {
+        "role": "tertiary",
+        "displayName": "Olive",
+        "canonical": "#5f6b2e",
+        "purpose": "Mirai's positive delta tone; sparsely used.",
+        "tonalRamp": [
+          "#2f3517",
+          "#545e29",
+          "#78873a",
+          "#9cb04c",
+          "#b3c373",
+          "#c9d49c",
+          "#dfe6c4",
+          "#f5f7ed"
+        ]
+      },
+      "hot": {
+        "role": "secondary",
+        "displayName": "Burnt Orange",
+        "canonical": "#cc572a",
+        "purpose": "The loss channel: the one measure that got worse, and the flaw tag.",
+        "tonalRamp": [
+          "#3f1b0d",
+          "#703017",
+          "#a04421",
+          "#d0592b",
+          "#dd7e59",
+          "#e7a389",
+          "#f1c9ba",
+          "#fbefea"
+        ]
+      },
+      "hot-text": {
+        "role": "secondary",
+        "displayName": "Burnt Orange Text",
+        "canonical": "#943419",
+        "purpose": "Text-safe loss tone for figures and deltas.",
+        "tonalRamp": [
+          "#41170b",
+          "#732913",
+          "#a53a1c",
+          "#d74c24",
+          "#e27354",
+          "#ea9c85",
+          "#f3c4b7",
+          "#fbede9"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "One per page: the hero H1 and the 404 H1. Never auto-hyphenated."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Card, stage and case headings."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Hero lede, section intros, and the lead metric name on a rail row."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running prose, capped at a 44em measure."
+      },
+      "small": {
+        "displayName": "Small",
+        "purpose": "Captions, case documents, caveats."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Figure captions, legends, tabs, provenance; ash on paper."
+      },
+      "mono": {
+        "displayName": "Mono",
+        "purpose": "Install commands, mode names, metric slugs."
+      },
+      "figure-xl": {
+        "displayName": "Figure XL",
+        "purpose": "The four derived numbers of the evidence band; the largest type on the page."
+      },
+      "figure-lg": {
+        "displayName": "Figure LG",
+        "purpose": "Rail delta from 700px, and the case score."
+      },
+      "figure-md": {
+        "displayName": "Figure MD",
+        "purpose": "Rail delta below 700px."
+      },
+      "figure-sm": {
+        "displayName": "Figure SM",
+        "purpose": "Method stage numerals and the brand wordmark."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Mirai's only easing; every hover and border transition uses it."
+      },
+      {
+        "name": "dur",
+        "value": "250ms",
+        "purpose": "Mirai's only transition duration."
+      },
+      {
+        "name": "hero-gather",
+        "value": "@media (prefers-reduced-motion: no-preference) { .hero__pyramid .units__row { animation: hero-gather 900ms var(--mr-ease) both; animation-delay: calc(var(--i, 0) * 90ms); } @keyframes hero-gather { from { transform: translateX(calc(var(--from, 0) * 5px)); } to { transform: none; } } }",
+        "purpose": "The page's only authored animation. Rows start visible and merely displaced; 5px a step keeps the widest travel (15px) inside the card's narrowest inline padding. Nothing fades in and nothing animates on scroll."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "pairs",
+        "value": "700px"
+      },
+      {
+        "name": "hero-turn",
+        "value": "900px"
+      },
+      {
+        "name": "stages-four",
+        "value": "1000px"
+      },
+      {
+        "name": "wide",
+        "value": "1080px"
+      }
+    ],
+    "grounds": [
+      "paper",
+      "sand",
+      "card",
+      "ink"
+    ],
+    "checks": [
+      {
+        "name": "locale parity",
+        "value": "867 lines each, identical tag sequence per line",
+        "enforcedBy": "scripts/check_benchmark_numbers.py"
+      },
+      {
+        "name": "derived figures",
+        "value": "cells_used, len(engines), site_metrics[...].delta from scores.json; a negative delta must carry figure--down",
+        "enforcedBy": "scripts/check_benchmark_numbers.py check_figures()"
+      },
+      {
+        "name": "vendored world",
+        "value": "mirai.css is read-only and updated only by re-vendoring; styles.css carries no literal colour, family, radius or stroke width",
+        "enforcedBy": "review"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Dark Button",
+      "kind": "button",
+      "refersTo": "button-dark",
+      "description": "The page's one primary call to action: install the skill.",
+      "html": "<a class=\"ds-btn-dark\" href=\"#install\">Install the skill</a>",
+      "css": ".ds-btn-dark { display:inline-flex; align-items:center; min-height:44px; padding:12px 20px; font:600 14px/1 var(--mr-font-body, 'Golos Text', system-ui, sans-serif); background:#0e0a06; color:#f8f1e3; border:1px solid #0e0a06; border-radius:4px; text-decoration:none; transition: background 250ms cubic-bezier(0.16,1,0.3,1); } .ds-btn-dark:hover { background:#332c27; } .ds-btn-dark:focus-visible { outline:none; box-shadow:0 0 0 2px #f8f1e3, 0 0 0 4px #0e0a06; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary actions and every copy button.",
+      "html": "<button class=\"ds-btn-ghost\" type=\"button\">Copy</button>",
+      "css": ".ds-btn-ghost { display:inline-flex; align-items:center; min-height:44px; padding:12px 20px; font:600 14px/1 'Golos Text', system-ui, sans-serif; background:transparent; color:#0e0a06; border:1px solid #c6bcac; border-radius:4px; cursor:pointer; transition: background 250ms cubic-bezier(0.16,1,0.3,1), border-color 250ms cubic-bezier(0.16,1,0.3,1); } .ds-btn-ghost:hover { background:#eee0c4; border-color:#0e0a06; } .ds-btn-ghost:focus-visible { outline:none; box-shadow:0 0 0 2px #f8f1e3, 0 0 0 4px #0e0a06; }"
+    },
+    {
+      "name": "Case Tab",
+      "kind": "nav",
+      "refersTo": "tab-selected",
+      "description": "In-page anchor that works with JavaScript off and upgrades to a tab when the script loads.",
+      "html": "<nav class=\"ds-tabs\"><a class=\"ds-tab\" href=\"#case-01\" aria-selected=\"true\">Meeting note &middot; write</a><a class=\"ds-tab\" href=\"#case-02\">Six headings &middot; audit</a></nav>",
+      "css": ".ds-tabs { display:flex; gap:6px; flex-wrap:wrap; } .ds-tab { display:inline-flex; align-items:center; min-height:44px; padding:6px 12px; font:500 12.5px/1.2 'Golos Text', system-ui, sans-serif; color:#332c27; background:#f8f1e3; border:1px solid #c6bcac; border-radius:4px; text-decoration:none; transition: background 250ms cubic-bezier(0.16,1,0.3,1), color 250ms, border-color 250ms; } .ds-tab:hover { border-color:#0e0a06; color:#0e0a06; } .ds-tab[aria-selected=\"true\"] { background:#0e0a06; color:#f8f1e3; border-color:#0e0a06; }"
+    },
+    {
+      "name": "Unit",
+      "kind": "custom",
+      "refersTo": "unit",
+      "description": "The page's one pictorial atom, in all five states: idea, weak material, named gap, defect, answer.",
+      "html": "<span class=\"ds-units\"><span class=\"ds-unit\"></span><span class=\"ds-unit ds-unit--weak\"></span><span class=\"ds-unit ds-unit--gap\"></span><span class=\"ds-unit ds-unit--flaw\"></span><span class=\"ds-unit ds-unit--answer\"></span></span>",
+      "css": ".ds-units { display:flex; gap:4px; } .ds-unit { display:block; width:13px; height:13px; background:#0e0a06; flex:none; } .ds-unit--weak { background:#c6bcac; } .ds-unit--gap { background:transparent; box-shadow:inset 0 0 0 1.5px #8f8272; } .ds-unit--flaw { background:repeating-linear-gradient(45deg,#0e0a06 0 2px,#f8f1e3 2px 4px); box-shadow:inset 0 0 0 1px #0e0a06; } .ds-unit--answer { background:#e9b100; }"
+    },
+    {
+      "name": "Mode Row",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "One of five rows of identical anatomy: command, the turn on a three-track grid, the result sentence.",
+      "html": "<li class=\"ds-mode\"><code class=\"ds-mode__cmd\">audit</code><div class=\"ds-mode__turn\"><span class=\"ds-units ds-units--in\"><span class=\"ds-unit\"></span><span class=\"ds-unit\"></span><span class=\"ds-unit\"></span></span><span class=\"ds-arrow\"><svg width=\"30\" height=\"14\" viewBox=\"0 0 30 14\" fill=\"none\"><path d=\"M0 7H23\" stroke=\"currentColor\" stroke-width=\"2\"></path><path d=\"M22 2.5 L30 7 L22 11.5 Z\" fill=\"currentColor\"></path></svg></span><span class=\"ds-units\"><span class=\"ds-unit ds-unit--flaw\"></span><span class=\"ds-unit\"></span></span></div><p class=\"ds-mode__result\">A score for the structure and every defect by name</p></li>",
+      "css": ".ds-mode { list-style:none; display:grid; grid-template-columns:92px minmax(0,1fr) minmax(0,1.05fr); gap:26px; align-items:center; padding:20px 0; border-top:1px solid #c6bcac; } .ds-mode__cmd { font-family:'JetBrains Mono', ui-monospace, monospace; font-size:13.5px; color:#943419; } .ds-mode__turn { display:grid; grid-template-columns:calc(7 * 15px + 6 * 5px) auto calc(4 * 15px + 3 * 5px); align-items:center; gap:26px; } .ds-mode__turn > :first-child { justify-self:end; } .ds-mode__turn > :last-child { justify-self:start; } .ds-arrow { color:#726759; } .ds-mode__result { margin:0; font:600 15.5px/1.5 'Golos Text', system-ui, sans-serif; color:#0e0a06; } .ds-unit { display:block; width:15px; height:15px; background:#0e0a06; } .ds-units { display:flex; gap:5px; } .ds-unit--flaw { background:repeating-linear-gradient(45deg,#0e0a06 0 2px,#f8f1e3 2px 4px); box-shadow:inset 0 0 0 1px #0e0a06; }"
+    },
+    {
+      "name": "Figure",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "One of the four derived headline numbers; a loss takes the down variant and turns hot.",
+      "html": "<ul class=\"ds-figures\"><li class=\"ds-figure\"><p class=\"ds-figure__num\">+22</p><p class=\"ds-label\">points: the reader&rsquo;s question written down in the text</p></li><li class=\"ds-figure ds-figure--down\"><p class=\"ds-figure__num\">&minus;10</p><p class=\"ds-label\">points: the answer stands in the first sentence less often</p></li></ul>",
+      "css": ".ds-figures { margin:0; padding:28px 0 30px; list-style:none; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; border-top:1px solid #c6bcac; border-bottom:1px solid #c6bcac; } .ds-figure { display:grid; gap:8px; } .ds-figure__num { margin:0; font-family:'Play', system-ui, sans-serif; font-weight:700; font-size:clamp(38px,6.4vw,88px); line-height:0.92; letter-spacing:-0.03em; font-variant-numeric:tabular-nums; color:#0e0a06; } .ds-figure--down .ds-figure__num { color:#943419; } .ds-label { margin:0; max-width:24ch; font:500 12.5px/1.4 'Golos Text', system-ui, sans-serif; color:#726759; }"
+    },
+    {
+      "name": "Benchmark Rail",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Control track at 13px, skill track at 26px, the difference band in ink; the same square logic stretched into twenty ticks of five points.",
+      "html": "<div class=\"ds-metric\"><p class=\"ds-metric__name\">The reader&rsquo;s question is written down</p><div class=\"ds-metric__rows\"><div class=\"ds-metric__row\" style=\"--v:13\"><span class=\"ds-track\"></span></div><div class=\"ds-metric__row ds-metric__row--skill\" style=\"--v:35;--control:13;--skill:35\"><span class=\"ds-track ds-track--tall\"><span class=\"ds-band\"></span></span></div></div><p class=\"ds-delta\">+22</p></div>",
+      "css": ".ds-metric { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.9fr) auto; gap:20px; align-items:center; padding:14px 0; border-top:1px solid #c6bcac; border-bottom:1px solid #c6bcac; } .ds-metric__name { margin:0; font:600 17px/1.3 'Golos Text', system-ui, sans-serif; color:#0e0a06; } .ds-metric__rows { display:grid; gap:6px; } .ds-track { position:relative; display:block; height:13px; } .ds-track--tall { height:26px; } .ds-track::before, .ds-track::after { content:\"\"; position:absolute; inset:0; background:repeating-linear-gradient(90deg,currentColor 0 calc(5% - 3px),transparent calc(5% - 3px) 5%); } .ds-track::before { color:#eee0c4; } .ds-track::after { color:#8f8272; clip-path:inset(0 calc(100% - var(--v,0) * 1%) 0 0); } .ds-band { position:absolute; inset:0; z-index:1; color:#0e0a06; background:repeating-linear-gradient(90deg,currentColor 0 calc(5% - 3px),transparent calc(5% - 3px) 5%); clip-path:inset(0 calc(100% - max(var(--control),var(--skill)) * 1%) 0 calc(min(var(--control),var(--skill)) * 1%)); } .ds-delta { margin:0; font-family:'Play', system-ui, sans-serif; font-weight:700; font-size:34px; letter-spacing:-0.02em; font-variant-numeric:tabular-nums; color:#0e0a06; }"
+    },
+    {
+      "name": "Ink Plate",
+      "kind": "card",
+      "refersTo": "plate-ink",
+      "description": "The page's one inverted surface type: the fourth method stage and the install prompt, opened by a mustard unit.",
+      "html": "<div class=\"ds-plate\"><span class=\"ds-unit--answer\"></span><div><h3 class=\"ds-plate__title\">Start with the draft you actually have</h3><p class=\"ds-plate__text\">Paste the text and ask Minto to settle the structure before the wording.</p></div></div>",
+      "css": ".ds-plate { display:grid; grid-template-columns:auto minmax(0,1fr); gap:14px; align-items:start; background:#0e0a06; border-radius:4px; padding:22px; } .ds-unit--answer { display:block; width:13px; height:13px; margin-top:6px; background:#e9b100; } .ds-plate__title { margin:0 0 8px; font:700 20px/1.1 'Play', system-ui, sans-serif; letter-spacing:-0.01em; color:#f8f1e3; } .ds-plate__text { margin:0; max-width:62ch; font:400 13.5px/1.55 'Golos Text', system-ui, sans-serif; color:#d8d0c3; }"
+    },
+    {
+      "name": "Sand Source Panel",
+      "kind": "card",
+      "refersTo": "panel-sand",
+      "description": "The before half of a case: sand ground, no border, opened by the glyph of the mode the case demonstrates.",
+      "html": "<div class=\"ds-panel\"><div class=\"ds-panel__shape\"><span class=\"ds-units\"><span class=\"ds-unit-w\"></span><span class=\"ds-unit-w\"></span><span class=\"ds-unit-w\"></span></span></div><p class=\"ds-panel__label\">Source &middot; a list of constraints</p><p class=\"ds-panel__text\">Collins cannot attend at 3:00. Johnson can meet later today or tomorrow&hellip;</p></div>",
+      "css": ".ds-panel { background:#eee0c4; border-radius:4px; padding:22px; display:grid; gap:12px; } .ds-panel__shape { padding-bottom:12px; border-bottom:1px solid #c6bcac; } .ds-units { display:flex; gap:3px; } .ds-unit-w { display:block; width:9px; height:9px; background:#726759; } .ds-panel__label { margin:0; font:500 12.5px/1.3 'Golos Text', system-ui, sans-serif; color:#332c27; } .ds-panel__text { margin:0; font:400 13.5px/1.55 'Golos Text', system-ui, sans-serif; color:#332c27; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Isotype Ledger",
+    "overview": "Minto is a printed-looking argument on warm paper. Everything on the page is made of one material: a small solid square. Scattered, the squares are raw material; stacked into a pyramid they are a settled argument; graduated into twenty ticks they are a benchmark rail. The system never draws a picture of a product; it draws the thing the product does, in the same ink the text is set in. Its density is editorial rather than marketing: long measures, hairline rules instead of boxes, sections separated by air rather than by colour.\n\nThe world is Mirai at data-tone=\"vivid\", vendored whole. The page layer composes; it never redecorates. Every surface on the site is one of four grounds - paper, card, sand, ink - and the page never leaves paper as its base. There is no gradient field, no glass, no shadow, and no second accent. One mustard exists, and the discipline around it is the single loudest rule in this system.\n\nThe page carries exactly one authored animation and nothing that enters on scroll. The material is meant to read as already there, the way a diagram in a book is already there.",
+    "keyCharacteristics": [
+      "One pictorial atom (the square unit) in five states carries every illustration.",
+      "Warm paper ground throughout; the page never goes full-bleed and never inverts a section.",
+      "One accent (mustard), spent on an answer and nothing else.",
+      "Flat by construction: hairlines and tonal grounds, no shadows anywhere.",
+      "Play 700 for headings and figures, Golos Text for prose, JetBrains Mono for commands and named data.",
+      "One radius (4px) and one square form; circles belong to Mirai, not to the page."
+    ],
+    "rules": [
+      {
+        "name": "The Two-Mustard Rule",
+        "body": "The markup carries three mustard units - the hero apex, case 03's result apex, and the install prompt plate. Case 03 lives in a tab panel that JavaScript hides by default, so a reader with JavaScript on sees two; a reader with it off sees three down a very long scroll. Either way no viewport ever holds two. Mustard means \"this is the answer\"; a second one in view would mean there are two answers.",
+        "section": "colors"
+      },
+      {
+        "name": "The Sand Contrast Rule",
+        "body": "--mr-ash clears 4.5:1 on paper but only 4.2:1 on sand. Text on a sand ground steps to --mr-coal-soft; a graphic on sand may use ash, which clears the 3:1 bar - that is exactly why the case glyph's weak units repaint from line to ash inside .case__source. Ash text on sand is banned.",
+        "section": "colors"
+      },
+      {
+        "name": "The Loss-Has-A-Colour Rule",
+        "body": "Hot is the page's honesty channel. If a number went the wrong way it wears hot in the figure band, in the rail, and in the delta, and its element carries figure--down / metric--down. Hot never appears where nothing was lost.",
+        "section": "colors"
+      },
+      {
+        "name": "The Broken-Word-Over-Hyphen Rule",
+        "body": "The display face never auto-hyphenates (hyphens: manual); it may only break on overflow-wrap: break-word when a word genuinely cannot fit. A headline that reads as three clean lines beats one that reads as prose with a hyphen in it - and the RU locale's longer words are the reason the escape hatch exists.",
+        "section": "typography"
+      },
+      {
+        "name": "The Numbers-Are-Display Rule",
+        "body": "Every number a reader is meant to remember is set in Play 700 with tabular figures, not in body text. Prose states, figures count.",
+        "section": "typography"
+      },
+      {
+        "name": "The Figure Is Derived Rule",
+        "body": "No headline number is transcribed. check_figures() in scripts/check_benchmark_numbers.py derives each one from scores.json (cells_used, len(engines), site_metrics[...][\"delta\"]) and fails the check if the visible text drifts or if a negative delta is missing figure--down. A new large number needs a data-figure source before it needs a size.",
+        "section": "typography"
+      },
+      {
+        "name": "The Solve-For-The-Column Rule",
+        "body": "A diagram is scaled for the column it sits in, not by a generic size token. The hero picture is eight units wide at its widest, so it sets its own --u: clamp(13px, 1.7vw, 24px) inside .hero__card instead of taking data-size=\"lg\".",
+        "section": "layout"
+      },
+      {
+        "name": "The Turn-When-It-Fits Rule",
+        "body": "The hero picture only becomes a row - scatter, arrow, pyramid - once the column can hold eight units across, at 900px. Below that it stacks and the arrow rotates 90 degrees. A picture is never allowed to clip to stay horizontal.",
+        "section": "layout"
+      },
+      {
+        "name": "The One-Vertical Rule",
+        "body": "Repeated diagrams align on a track, not by eye. Each of the five mode rows uses the same three-track grid (7 units | auto | 4 units), so every arrow and every output edge sits on one vertical down the list.",
+        "section": "layout"
+      },
+      {
+        "name": "The Flat-Ground Rule",
+        "body": "If a surface needs to feel more important, change its ground or its border weight. Never add a shadow, a glow, or a blur.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Border Says Which One Won Rule",
+        "body": "In a before/after pair the source half is sand with no border and the result half is card with a 1.5px ink border. Weight, not colour, marks the authored side.",
+        "section": "elevation"
+      },
+      {
+        "name": "The One Atom Rule",
+        "body": "A new illustration is built from .unit in its five states or it is not built. No new glyph vocabulary, no icon set, no illustration style.",
+        "section": "shapes"
+      },
+      {
+        "name": "The Arrow Is Not A Unit Rule",
+        "body": "The only non-square marks the page draws are the two inline flow arrows (26x16 in the hero, 30x14 in the modes), stroked in currentColor at ash. They are connectives, not decoration, and no other bespoke SVG exists in the page layer.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do build every new illustration from .unit in its five states, and scale it for its own column.",
+      "Do keep mustard on the answer only: no viewport may show two mustard elements.",
+      "Do consume var(--mr-*) for every colour, family, radius and stroke width; a literal in styles.css is a defect.",
+      "Do re-vendor mirai.css when the design system changes - it is read-only, and no page rule may restyle an mr-* class or invent one.",
+      "Do keep both locales line-for-line mirrors (867 lines, identical tag sequence per line); check_benchmark_numbers.py enforces it.",
+      "Do step quiet text on sand to --mr-coal-soft, and let graphics on sand use --mr-ash for the 3:1 bar.",
+      "Do derive every visible benchmark number from scores.json and let the check fail the build when it drifts.",
+      "Do keep content and both install commands working with JavaScript off, and keep the page buildless - two stylesheets, one script, no toolchain.",
+      "Do set every remembered number in Play 700 with tabular figures."
+    ],
+    "donts": [
+      "Don't add a shadow, glow, or blur to anything, in any state.",
+      "Don't introduce a second radius, a pill, or a page-drawn circle; 4px and the square are the whole form language.",
+      "Don't animate anything in on scroll, and don't fade anything in. The page's one authored animation is hero-gather: the pyramid's rows start visible and merely displaced (an inline --from at 5px a step, staggered by an inline --i at 90ms), declared only inside @media (prefers-reduced-motion: no-preference). Anything beyond that needs the same three properties: already visible, inside the reduced-motion guard, and bounded by the container's own padding.",
+      "Don't put a second accent colour on the page, and don't spend hot on anything but a measured loss.",
+      "Don't let a section go full-bleed or invert the page ground; paper runs top to bottom.",
+      "Don't hide information the page exists to carry behind hover or a pointer.",
+      "Don't add a bespoke icon or glyph set; the two flow arrows are the only non-square marks."
+    ]
+  }
+}

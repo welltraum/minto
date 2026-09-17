@@ -81,6 +81,11 @@ tmp/
 .cache/
 __pycache__/
 
+# Design-review captures from the impeccable skill: full-page screenshots, a few
+# megabytes per round, regenerated on demand. The surface brief beside them is the
+# direction contract later sessions reload, so that one is tracked.
+.impeccable/review/
+
 # Local launch config for the desktop preview
 .claude/
 !eval/runs/v1.8.0-final/

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#fcf9f4">
+    <meta name="theme-color" content="#f8f1e3">
     <meta name="description" content="Minto reorders the argument on Barbara Minto&rsquo;s pyramid principle: the answer on top, like items grouped, gaps named. Five modes, before / after cases and 172 blind benchmark verdicts.">
     <meta name="robots" content="index,follow">
     <link rel="canonical" href="https://welltraum.github.io/minto/">
@@ -11,9 +11,10 @@
     <link rel="alternate" hreflang="ru" href="https://welltraum.github.io/minto/ru/">
     <link rel="alternate" hreflang="x-default" href="https://welltraum.github.io/minto/">
     <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
-    <link rel="preload" href="./assets/fonts/golos-text-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="./assets/fonts/tektur-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="./assets/styles.css?v=5">
+    <link rel="preload" href="./assets/fonts/GolosText-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./assets/fonts/Play-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="./assets/mirai.css?v=6">
+    <link rel="stylesheet" href="./assets/styles.css?v=6">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Minto">
     <meta property="og:title" content="Minto: the decision reads in the first line">
@@ -26,409 +27,317 @@
     <meta name="twitter:card" content="summary_large_image">
     <title>Minto &mdash; a Claude Code and Codex skill: the decision reads from the first line</title>
   </head>
-  <body>
-    <a class="skip-link ac-btn ac-btn--secondary ac-btn--label ac-motion" href="#main">Skip to content</a>
+  <body class="mr-root" data-tone="vivid">
+    <a class="skip-link mr-button" data-variant="ghost" data-size="sm" href="#main">Skip to content</a>
 
     <header class="site-header">
       <div class="page site-header__inner">
         <a class="brand" href="./">
-          <svg class="brand__mark" viewBox="0 0 36 36" width="26" height="26" role="img" aria-label="Three-level pyramid">
-            <path d="M18 3 33 30H3L18 3Z"></path>
-            <path d="M8.4 20.5h19.2M12.8 12.5h10.4"></path>
-          </svg>
-          <span class="ac-title-text">Minto</span>
+          <span class="brand__mark units" data-shape="pyramid" role="img" aria-label="A pyramid of three rows">
+            <span class="units__row"><span class="unit"></span></span>
+            <span class="units__row"><span class="unit"></span><span class="unit"></span></span>
+            <span class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span></span>
+          </span>
+          <span class="brand__word">Minto</span>
         </a>
 
         <nav class="site-nav" aria-label="Sections">
-          <a class="ac-link ac-label ac-motion" href="#modes" data-section-link="modes">Modes</a>
-          <a class="ac-link ac-label ac-motion" href="#cases" data-section-link="cases">Examples</a>
-          <a class="ac-link ac-label ac-motion" href="#evidence" data-section-link="evidence">Evidence</a>
-          <a class="ac-link ac-label ac-motion" href="#install" data-section-link="install">Install</a>
+          <a class="nav-link" href="#modes" data-section-link="modes">Modes</a>
+          <a class="nav-link" href="#cases" data-section-link="cases">Examples</a>
+          <a class="nav-link" href="#evidence" data-section-link="evidence">Evidence</a>
+          <a class="nav-link" href="#install" data-section-link="install">Install</a>
         </nav>
 
         <nav class="lang" aria-label="Language">
-          <a class="ac-link ac-label ac-motion" href="./" lang="en" aria-current="page">EN</a>
-          <span class="ac-label lang__sep" aria-hidden="true">/</span>
-          <a class="ac-link ac-label ac-motion" href="./ru/" lang="ru">RU</a>
+          <a class="nav-link" href="./" lang="en" aria-current="page">EN</a>
+          <span class="label lang__sep" aria-hidden="true">/</span>
+          <a class="nav-link" href="./ru/" lang="ru">RU</a>
         </nav>
       </div>
     </header>
 
     <main class="page" id="main">
 
-      <section class="hero grid-pair" aria-labelledby="hero-heading">
+      <section class="hero" aria-labelledby="hero-heading">
         <div class="hero__copy">
-          <div class="ac-title-block">
-            <h1 class="ac-display" id="hero-heading">The decision reads <span class="ac-accent">in the first line</span></h1>
-            <hr class="ac-title-block__rule">
-            <p class="ac-body">Minto is an installable skill for Claude Code and Codex that settles the reader&rsquo;s question before it edits a single word.</p>
+          <div class="title-block">
+            <h1 class="display" id="hero-heading">The decision reads in the first line</h1>
+            <hr class="rule">
+            <p class="lead">Minto is an installable skill for Claude Code and Codex that settles the reader&rsquo;s question before it edits a single word.</p>
           </div>
-
-          <p class="ac-body hero__lede">A general assistant improves the wording and leaves the argument where it was: the ask is buried at the bottom, the points mix kinds, and something is missing. Minto changes the order of the thinking, not only the prose.</p>
 
           <div class="hero__actions">
-            <a class="ac-btn ac-btn--primary ac-motion" href="#install">Install the skill</a>
-            <a class="ac-btn ac-btn--ghost ac-motion" href="#cases">See the before / after cases &darr;</a>
+            <a class="mr-button" data-variant="dark" href="#install">Install the skill</a>
+            <a class="mr-button" data-variant="ghost" href="#cases">See the before / after cases</a>
           </div>
 
-          <div class="hero__facts">
-            <div class="ac-iconitem">
-              <svg class="ac-glyph" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <circle cx="12" cy="12" r="8.5"></circle>
-                <path d="M8.2 12.3l2.6 2.6 5-5.4"></path>
-              </svg>
-              <span class="ac-iconitem__text">
-                <span class="ac-body ac-iconitem__label">Answer on top</span>
-                <span class="ac-label">The ask is the first sentence</span>
-              </span>
-            </div>
-            <div class="ac-iconitem">
-              <svg class="ac-glyph" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M12 4v16M6 20h12M4 9h16M4 9l-2 5h4l-2-5ZM20 9l-2 5h4l-2-5Z"></path>
-              </svg>
-              <span class="ac-iconitem__text">
-                <span class="ac-body ac-iconitem__label">Points of one kind</span>
-                <span class="ac-label">Reasons with reasons, steps with steps</span>
-              </span>
-            </div>
-            <div class="ac-iconitem">
-              <svg class="ac-glyph" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <circle cx="12" cy="12" r="8.5"></circle>
-                <path d="M12 7.5v6M12 16.4v.2"></path>
-              </svg>
-              <span class="ac-iconitem__text">
-                <span class="ac-body ac-iconitem__label">Gaps named</span>
-                <span class="ac-label">Missing evidence is marked, not invented</span>
-              </span>
-            </div>
-          </div>
         </div>
 
-        <div>
-          <div class="ac-panel ac-panel--paper hero__card">
-            <div class="hero__card-part">
-              <span class="ac-label ac-label--caps hero__pill">Before &mdash; four paragraphs</span>
-              <div class="hero__lines" aria-hidden="true">
-                <span class="line-stub" style="--w: 92%"></span>
-                <span class="line-stub" style="--w: 84%"></span>
-                <span class="line-stub" style="--w: 88%"></span>
-                <span class="line-stub" style="--w: 62%"></span>
-              </div>
-              <div class="hero__ask">
-                <p class="ac-label ac-label--caps">The ask &mdash; in the last paragraph</p>
-                <p class="doc-note">&ldquo;I recommend using the next sprint to reduce the defect backlog. Let me know what you think.&rdquo;</p>
-              </div>
+        <div class="hero__figure">
+          <div class="hero__card">
+            <div class="units" data-shape="scatter" aria-hidden="true">
+              <div class="units__row" style="--x: 2"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+              <div class="units__row" style="--x: 0"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+              <div class="units__row" style="--x: 3"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+              <div class="units__row" style="--x: 1"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+              <div class="units__row" style="--x: 4"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit"></span></div>
             </div>
-
-            <div class="hero__card-part">
-              <span class="ac-label ac-label--caps hero__pill hero__pill--accent">After &mdash; decision on top</span>
-              <div class="hero__answer">
-                <p class="doc-answer">&ldquo;Let&rsquo;s spend the next sprint on the defect backlog &mdash; we&rsquo;re losing customers and deals to it faster than we&rsquo;re closing it.&rdquo;</p>
-              </div>
-              <div class="hero__points">
-                <div class="hero__point">
-                  <span class="hero__dot" aria-hidden="true"></span>
-                  <div>
-                    <p class="doc-item">The backlog grows on its own</p>
-                    <span class="line-stub" style="--w: 72%" aria-hidden="true"></span>
-                  </div>
-                </div>
-                <div class="hero__point">
-                  <span class="hero__dot" aria-hidden="true"></span>
-                  <div>
-                    <p class="doc-item">Defects are costing us customers</p>
-                    <span class="line-stub" style="--w: 84%" aria-hidden="true"></span>
-                  </div>
-                </div>
-                <div class="hero__point">
-                  <span class="hero__dot" aria-hidden="true"></span>
-                  <div>
-                    <p class="doc-item">And now new business too</p>
-                    <span class="line-stub" style="--w: 66%" aria-hidden="true"></span>
-                  </div>
-                </div>
-              </div>
+            <span class="hero__turn" aria-hidden="true">
+              <svg width="26" height="16" viewBox="0 0 26 16" fill="none">
+                <path d="M0 8H19" stroke="currentColor" stroke-width="2"></path>
+                <path d="M18 2.5 L26 8 L18 13.5 Z" fill="currentColor"></path>
+              </svg>
+            </span>
+            <div class="units hero__pyramid" data-shape="pyramid" aria-hidden="true">
+              <div class="units__row" style="--i: 0; --from: 2"><span class="unit" data-state="answer"></span></div>
+              <div class="units__row" style="--i: 1; --from: -3"><span class="unit"></span><span class="unit"></span></div>
+              <div class="units__row" style="--i: 2; --from: 3"><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span></div>
+              <div class="units__row" style="--i: 3; --from: -2"><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit" data-state="gap"></span></div>
             </div>
           </div>
-          <p class="ac-body ac-body--md hero__caption">Case 08 from the benchmark: same facts, same length &mdash; different order.</p>
+          <p class="small hero__caption">Case 08 from the benchmark: same facts, same length &mdash; different order.</p>
+        </div>
+        <div class="hero__facts">
+          <div class="hero__fact">
+            <span class="units" data-shape="pyramid" data-size="sm" aria-hidden="true">
+              <span class="units__row"><span class="unit"></span></span>
+              <span class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></span>
+            </span>
+            <span class="hero__fact-text">
+              <span class="hero__fact-label">Answer on top</span>
+              <span class="label">The ask is the first sentence</span>
+            </span>
+          </div>
+          <div class="hero__fact">
+            <span class="units" data-size="sm" aria-hidden="true">
+              <span class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span></span>
+              <span class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></span>
+            </span>
+            <span class="hero__fact-text">
+              <span class="hero__fact-label">Points of one kind</span>
+              <span class="label">Reasons with reasons, steps with steps</span>
+            </span>
+          </div>
+          <div class="hero__fact">
+            <span class="units" data-size="sm" aria-hidden="true">
+              <span class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit" data-state="gap"></span></span>
+              <span class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></span>
+            </span>
+            <span class="hero__fact-text">
+              <span class="hero__fact-label">Gaps named</span>
+              <span class="label">Missing evidence is marked, not invented</span>
+            </span>
+          </div>
         </div>
       </section>
 
       <section class="section" id="modes" aria-labelledby="modes-heading">
-        <div class="ac-title-block">
-          <h2 class="ac-display" id="modes-heading"><span class="ac-accent">Five modes</span> &mdash; five different results from one text</h2>
-          <hr class="ac-title-block__rule">
-          <p class="ac-body">Pick the mode by what you need next: understanding, a diagnosis, a document, a digest, or a diagram.</p>
+        <div class="title-block">
+          <h2 class="title" id="modes-heading">Five modes &mdash; five different results from one text</h2>
+          <hr class="rule">
+          <p class="body">Pick the mode by what you need next: understanding, a diagnosis, a document, a digest, or a diagram.</p>
         </div>
 
-        <div class="modes grid-pair">
-
-          <article class="ac-panel ac-panel--sand-light mode">
-            <span class="ac-eyebrow ac-eyebrow--solid">intent</span>
-            <h3 class="ac-title-text mode__name">Decide what the document must achieve</h3>
-            <p class="ac-body ac-body--md">It interviews you and returns the three lines the work starts from.</p>
-            <div class="mode__demo">
-              <div class="demo-card">
-                <p class="ac-label ac-label--caps">Reader question</p>
-                <p class="doc-item">Should we run an onboarding pilot next month?</p>
+        <ul class="modes">
+          <li class="mode">
+            <code class="mode__cmd">intent</code>
+            <div class="mode__turn" aria-hidden="true">
+              <div class="units" data-shape="scatter">
+                <div class="units__row" style="--x: 1"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+                <div class="units__row" style="--x: 0"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+                <div class="units__row" style="--x: 2"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
               </div>
-              <div class="demo-card demo-card--accent">
-                <p class="ac-label ac-label--caps ac-label--accent">One-sentence answer</p>
-                <p class="doc-item doc-strong">Approve a three-week pilot to test the two prepared directions.</p>
-              </div>
-              <div class="demo-card demo-card--gap">
-                <svg class="ac-glyph" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <circle cx="12" cy="12" r="8.5"></circle>
-                  <path d="M12 7.5v6M12 16.4v.2"></path>
+              <span class="flow-arrow">
+                <svg width="30" height="14" viewBox="0 0 30 14" fill="none">
+                  <path d="M0 7H23" stroke="currentColor" stroke-width="2"></path>
+                  <path d="M22 2.5 L30 7 L22 11.5 Z" fill="currentColor"></path>
                 </svg>
-                <p class="doc-note">Evidence gap: define the activation target before launch.</p>
+              </span>
+              <div class="units" data-shape="pyramid">
+                <div class="units__row"><span class="unit"></span></div>
+                <div class="units__row"><span class="unit" data-state="gap"></span></div>
               </div>
             </div>
-          </article>
+            <p class="mode__result">The reader&rsquo;s question, the answer in one line, and the gap named</p>
+          </li>
+          <li class="mode">
+            <code class="mode__cmd">audit</code>
+            <div class="mode__turn" aria-hidden="true">
+              <div class="units" data-shape="pyramid">
+                <div class="units__row"><span class="unit"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span></div>
+              </div>
+              <span class="flow-arrow">
+                <svg width="30" height="14" viewBox="0 0 30 14" fill="none">
+                  <path d="M0 7H23" stroke="currentColor" stroke-width="2"></path>
+                  <path d="M22 2.5 L30 7 L22 11.5 Z" fill="currentColor"></path>
+                </svg>
+              </span>
+              <div class="units" data-shape="pyramid">
+                <div class="units__row"><span class="unit" data-state="flaw"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit" data-state="flaw"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit" data-state="flaw"></span><span class="unit"></span></div>
+              </div>
+            </div>
+            <p class="mode__result">A score for the structure and every defect by name &mdash; the text untouched</p>
+          </li>
+          <li class="mode">
+            <code class="mode__cmd">write</code>
+            <div class="mode__turn" aria-hidden="true">
+              <div class="units" data-shape="scatter">
+                <div class="units__row" style="--x: 1"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+                <div class="units__row" style="--x: 0"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+                <div class="units__row" style="--x: 2"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit"></span></div>
+              </div>
+              <span class="flow-arrow">
+                <svg width="30" height="14" viewBox="0 0 30 14" fill="none">
+                  <path d="M0 7H23" stroke="currentColor" stroke-width="2"></path>
+                  <path d="M22 2.5 L30 7 L22 11.5 Z" fill="currentColor"></path>
+                </svg>
+              </span>
+              <div class="units" data-shape="pyramid">
+                <div class="units__row"><span class="unit"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span></div>
+              </div>
+            </div>
+            <p class="mode__result">A document that starts with the conclusion</p>
+          </li>
+          <li class="mode">
+            <code class="mode__cmd">digest</code>
+            <div class="mode__turn" aria-hidden="true">
+              <div class="units">
+                <div class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+                <div class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+                <div class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+              </div>
+              <span class="flow-arrow">
+                <svg width="30" height="14" viewBox="0 0 30 14" fill="none">
+                  <path d="M0 7H23" stroke="currentColor" stroke-width="2"></path>
+                  <path d="M22 2.5 L30 7 L22 11.5 Z" fill="currentColor"></path>
+                </svg>
+              </span>
+              <div class="units" data-shape="pyramid">
+                <div class="units__row"><span class="unit"></span></div>
+              </div>
+            </div>
+            <p class="mode__result">One thing to do today, with every point back to its source</p>
+          </li>
+          <li class="mode">
+            <code class="mode__cmd">viz</code>
+            <div class="mode__turn" aria-hidden="true">
+              <div class="units">
+                <div class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+              </div>
+              <span class="flow-arrow">
+                <svg width="30" height="14" viewBox="0 0 30 14" fill="none">
+                  <path d="M0 7H23" stroke="currentColor" stroke-width="2"></path>
+                  <path d="M22 2.5 L30 7 L22 11.5 Z" fill="currentColor"></path>
+                </svg>
+              </span>
+              <div class="units" data-shape="pyramid">
+                <div class="units__row"><span class="unit"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span></div>
+              </div>
+            </div>
+            <p class="mode__result">The pyramid and the situation&ndash;complication&ndash;question&ndash;answer flow</p>
+          </li>
+        </ul>
 
-          <article class="ac-panel ac-panel--sand-light mode">
-            <span class="ac-eyebrow ac-eyebrow--solid">audit</span>
-            <h3 class="ac-title-text mode__name">Find the defects without rewriting the text</h3>
-            <p class="ac-body ac-body--md">It scores the structure, names each defect and how badly it hurts.</p>
-            <div class="mode__demo">
-              <div class="demo-score">
-                <span class="demo-score__value">2/10</span>
-                <span class="ac-label">structure &middot; not structured yet</span>
-              </div>
-              <div class="demo-flaws">
-                <div class="demo-flaw">
-                  <span class="ac-pill ac-pill--fail">
-                    <span class="ac-pill__mark" aria-hidden="true">
-                      <svg class="ac-glyph" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="8.5"></circle>
-                        <path d="M9.2 9.2l5.6 5.6M14.8 9.2l-5.6 5.6"></path>
-                      </svg>
-                    </span>
-                    <span>critical</span>
-                  </span>
-                  <span class="doc-item">No answer anywhere in the text</span>
-                </div>
-                <div class="demo-flaw">
-                  <span class="ac-pill ac-pill--fail">
-                    <span class="ac-pill__mark" aria-hidden="true">
-                      <svg class="ac-glyph" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="8.5"></circle>
-                        <path d="M9.2 9.2l5.6 5.6M14.8 9.2l-5.6 5.6"></path>
-                      </svg>
-                    </span>
-                    <span>critical</span>
-                  </span>
-                  <span class="doc-item">Headings are topics, not claims</span>
-                </div>
-                <div class="demo-flaw">
-                  <span class="ac-pill">
-                    <span>medium</span>
-                  </span>
-                  <span class="doc-item">Six groups instead of three or four</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article class="ac-panel ac-panel--sand-light mode">
-            <span class="ac-eyebrow ac-eyebrow--solid">write</span>
-            <h3 class="ac-title-text mode__name">Build a document that starts with the conclusion</h3>
-            <p class="ac-body ac-body--md">Notes and drafts become an email, a memo, a one-pager or a deck storyline.</p>
-            <div class="mode__demo">
-              <div class="demo-write grid-pair" aria-hidden="true">
-                <div class="demo-stack">
-                  <span class="line-stub" style="--w: 90%"></span>
-                  <span class="line-stub" style="--w: 78%"></span>
-                  <span class="line-stub" style="--w: 86%"></span>
-                  <span class="line-stub" style="--w: 64%"></span>
-                  <span class="line-stub line-stub--accent" style="--w: 82%"></span>
-                </div>
-                <span class="ac-arrow">
-                  <svg width="34" height="14" viewBox="0 0 34 14" fill="none">
-                    <path d="M0 7H27" stroke="currentColor" stroke-width="2"></path>
-                    <path d="M26 2.5 L34 7 L26 11.5 Z" fill="currentColor"></path>
-                  </svg>
-                </span>
-                <div class="demo-stack">
-                  <span class="line-stub line-stub--accent" style="--w: 88%"></span>
-                  <span class="line-stub line-stub--indent" style="--w: 70%"></span>
-                  <span class="line-stub line-stub--indent" style="--w: 74%"></span>
-                  <span class="line-stub line-stub--indent" style="--w: 62%"></span>
-                  <span class="line-stub" style="--w: 46%"></span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article class="ac-panel ac-panel--sand-light mode">
-            <span class="ac-eyebrow ac-eyebrow--solid">digest</span>
-            <h3 class="ac-title-text mode__name">Turn everything you read into one action</h3>
-            <p class="ac-body ac-body--md">A chat report: what is settled, what still has to be obtained &mdash; with source references.</p>
-            <div class="mode__demo">
-              <div class="demo-digest">
-                <div class="demo-docs" aria-hidden="true">
-                  <svg class="ac-glyph" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M6.5 3.5h7.5l4 4V20a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5V4a.5.5 0 0 1 .5-.5Z"></path>
-                    <path d="M14 3.5V8h4"></path>
-                  </svg>
-                  <svg class="ac-glyph" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M6.5 3.5h7.5l4 4V20a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5V4a.5.5 0 0 1 .5-.5Z"></path>
-                    <path d="M14 3.5V8h4"></path>
-                  </svg>
-                  <svg class="ac-glyph" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M6.5 3.5h7.5l4 4V20a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5V4a.5.5 0 0 1 .5-.5Z"></path>
-                    <path d="M14 3.5V8h4"></path>
-                  </svg>
-                </div>
-                <span class="ac-arrow" aria-hidden="true">
-                  <svg width="30" height="14" viewBox="0 0 30 14" fill="none">
-                    <path d="M0 7H23" stroke="currentColor" stroke-width="2"></path>
-                    <path d="M22 2.5 L30 7 L22 11.5 Z" fill="currentColor"></path>
-                  </svg>
-                </span>
-                <div class="demo-card demo-card--accent">
-                  <p class="ac-label ac-label--caps ac-label--accent">The one thing to do today</p>
-                  <p class="doc-item doc-strong">Send the architecture diagram &mdash; the only blocker we own.</p>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article class="ac-panel ac-panel--sand-light mode mode--wide">
-            <span class="ac-eyebrow ac-eyebrow--solid">viz</span>
-            <h3 class="ac-title-text mode__name">Make the pyramid visible when prose hides it</h3>
-            <p class="ac-body ac-body--md">The pyramid and the situation &mdash; complication &mdash; question &mdash; answer flow, in Mermaid or as a standalone page.</p>
-            <div class="mode__demo">
-              <div class="demo-viz grid-pair">
-                <div>
-                  <div class="pyramid__top">
-                    <p class="doc-item doc-strong">Approve the pilot</p>
-                  </div>
-                  <svg class="pyramid__conn" viewBox="0 0 300 44" height="44" preserveAspectRatio="none" aria-hidden="true">
-                    <path d="M150 0V16M46 16H254M46 16V44M150 16V44M254 16V44" fill="none" stroke="currentColor" stroke-width="1.5"></path>
-                  </svg>
-                  <div class="pyramid__row grid-pair">
-                    <div class="pyramid__node">
-                      <span class="ac-label ac-label--ink">Need</span>
-                    </div>
-                    <div class="pyramid__node">
-                      <span class="ac-label ac-label--ink">Readiness</span>
-                    </div>
-                    <div class="pyramid__node">
-                      <span class="ac-label ac-label--ink">Scope</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="ac-layers">
-                  <div class="ac-layer">
-                    <span class="ac-layer__text">
-                      <span class="ac-title-text ac-layer__label">Situation</span>
-                      <span class="ac-body ac-body--sm">what the reader already accepts</span>
-                    </span>
-                  </div>
-                  <div class="ac-layer">
-                    <span class="ac-layer__text">
-                      <span class="ac-title-text ac-layer__label">Complication</span>
-                      <span class="ac-body ac-body--sm">what changed or now blocks</span>
-                    </span>
-                  </div>
-                  <div class="ac-layer">
-                    <span class="ac-layer__text">
-                      <span class="ac-title-text ac-layer__label">Question</span>
-                      <span class="ac-body ac-body--sm">what the reader must decide</span>
-                    </span>
-                  </div>
-                  <div class="ac-layer ac-layer--hl">
-                    <span class="ac-layer__text">
-                      <span class="ac-title-text ac-layer__label">Answer</span>
-                      <span class="ac-body ac-body--sm">what they should conclude or do</span>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </article>
-        </div>
+        <p class="label scq__label">The flow the skill checks in every document</p>
+        <ol class="scq">
+          <li class="scq__step">
+            <span class="unit" data-state="weak" aria-hidden="true"></span>
+            <span class="scq__name">Situation</span>
+            <span class="label">what the reader already agrees with</span>
+          </li>
+          <li class="scq__step">
+            <span class="unit" data-state="weak" aria-hidden="true"></span>
+            <span class="scq__name">Complication</span>
+            <span class="label">what changed or gets in the way</span>
+          </li>
+          <li class="scq__step">
+            <span class="unit" data-state="weak" aria-hidden="true"></span>
+            <span class="scq__name">Question</span>
+            <span class="label">what the reader has to decide</span>
+          </li>
+          <li class="scq__step">
+            <span class="unit" aria-hidden="true"></span>
+            <span class="scq__name">Answer</span>
+            <span class="label">what they should do or understand</span>
+          </li>
+        </ol>
       </section>
 
       <section class="section" id="cases" aria-labelledby="cases-heading">
-        <div class="ac-title-block">
-          <h2 class="ac-display" id="cases-heading"><span class="ac-accent">Five cases</span> &mdash; five different sides of the skill</h2>
-          <hr class="ac-title-block__rule">
-          <p class="ac-body">On the left, the source text from the benchmark suite. On the right, what Opus 5 produced with the skill installed, quoted as it was blind-judged.</p>
+        <div class="title-block">
+          <h2 class="title" id="cases-heading">Five cases &mdash; five different sides of the skill</h2>
+          <hr class="rule">
+          <p class="body">On the left, the source text from the benchmark suite. On the right, what Opus 5 produced with the skill installed, quoted as it was blind-judged.</p>
         </div>
-        <p class="ac-body ac-body--md cases__note">Every text on this page is a real artifact from run v1.7.0-final &mdash; nothing is written for the website.</p>
+        <p class="small cases__note">Every text on this page is a real artifact from run v1.7.0-final &mdash; nothing is written for the website.</p>
 
         <div class="case-tabs" data-tablist aria-label="Benchmark cases">
-          <a class="ac-btn ac-btn--label ac-motion case-tab" href="#case-01" data-case-tab="01">01 &middot; write &middot; Meeting note</a>
-          <a class="ac-btn ac-btn--label ac-motion case-tab" href="#case-02" data-case-tab="02">02 &middot; audit &middot; Six headings</a>
-          <a class="ac-btn ac-btn--label ac-motion case-tab" href="#case-03" data-case-tab="03">03 &middot; viz &middot; Pyramid from prose</a>
-          <a class="ac-btn ac-btn--label ac-motion case-tab" href="#case-04" data-case-tab="04">04 &middot; digest &middot; Three sources</a>
-          <a class="ac-btn ac-btn--label ac-motion case-tab" href="#case-05" data-case-tab="05">05 &middot; write &middot; Defect backlog</a>
+          <a class="case-tab" href="#case-01" data-case-tab="01">Meeting note &middot; write</a>
+          <a class="case-tab" href="#case-02" data-case-tab="02">Six headings &middot; audit</a>
+          <a class="case-tab" href="#case-03" data-case-tab="03">Pyramid from prose &middot; viz</a>
+          <a class="case-tab" href="#case-04" data-case-tab="04">Three sources &middot; digest</a>
+          <a class="case-tab" href="#case-05" data-case-tab="05">Defect backlog &middot; write</a>
         </div>
 
         <article class="case" id="case-01" data-case-panel="01" aria-labelledby="case-01-heading">
           <div class="case__head">
-            <h3 class="ac-title-text" id="case-01-heading">A short note to a colleague</h3>
-            <p class="ac-body ac-body--md">What it shows: restraint. The skill does not dress a two-line note in headings and diagrams.</p>
+            <h3 class="subtitle" id="case-01-heading">A short note to a colleague</h3>
+            <p class="small">What it shows: restraint. The skill does not dress a two-line note in headings and diagrams.</p>
           </div>
-          <div class="case__pair grid-pair">
-            <div class="ac-panel ac-panel--sand-light case__source">
-              <p class="ac-label ac-label--caps">Source &middot; a list of constraints</p>
-              <p class="doc-text">Collins cannot attend at 3:00. Johnson can meet later today or tomorrow, but not before 10:30. Clifford will not return from Frankfurt until late tomorrow. The conference room is occupied tomorrow but available on Thursday. Thursday at 11:00 appears possible. Is that acceptable?</p>
-              <p class="ac-body ac-body--md">The reader assembles the conclusion himself, out of five constraints.</p>
+          <div class="case__pair">
+            <div class="case__source">
+            <div class="case__shape" aria-hidden="true">
+              <div class="units" data-shape="scatter">
+                <div class="units__row" style="--x: 1"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+                <div class="units__row" style="--x: 0"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+                <div class="units__row" style="--x: 2"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+              </div>
             </div>
-            <div class="ac-panel ac-panel--outlined case__result">
-              <span class="ac-eyebrow ac-eyebrow--solid">With Minto</span>
+              <p class="label">Source &middot; a list of constraints</p>
+              <p class="doc-text">Collins cannot attend at 3:00. Johnson can meet later today or tomorrow, but not before 10:30. Clifford will not return from Frankfurt until late tomorrow. The conference room is occupied tomorrow but available on Thursday. Thursday at 11:00 appears possible. Is that acceptable?</p>
+              <p class="small">The reader assembles the conclusion himself, out of five constraints.</p>
+            </div>
+            <div class="case__result">
+            <div class="case__shape" aria-hidden="true">
+              <div class="units" data-shape="pyramid">
+                <div class="units__row"><span class="unit"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span></div>
+              </div>
+            </div>
+              <div class="case__head-row">
+                <span class="mr-tag">With Minto</span>
+              </div>
               <p class="doc-answer">Could we move today&rsquo;s meeting to Thursday at 11:00?</p>
               <p class="doc-text">Collins and Clifford can&rsquo;t make 3:00 today &mdash; Clifford is in Frankfurt until late tomorrow &mdash; and Johnson is only free from 10:30 tomorrow, when the conference room is already booked. Thursday at 11:00 works for all three, and the room is free.</p>
               <p class="doc-text">Let me know if that suits you and I&rsquo;ll send the invitations.</p>
-            </div>
-          </div>
-          <div class="ac-callout case__changed">
-            <span class="ac-callout__disc" aria-hidden="true">
-              <svg width="20" height="14" viewBox="0 0 20 14" fill="none">
-                <path d="M0 7H13" stroke="currentColor" stroke-width="2"></path>
-                <path d="M12 2.5 L20 7 L12 11.5 Z" fill="currentColor"></path>
-              </svg>
-            </span>
-            <div class="ac-callout__text">
-              <h4 class="ac-title-text">What changed</h4>
-              <ul class="ac-checklist">
-                <li class="ac-check">
-                  <svg class="ac-check__box" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <rect x="0.9" y="0.9" width="14.2" height="14.2" rx="3" stroke="currentColor" stroke-width="1.5"></rect>
-                    <path d="M4.2 8.3l2.4 2.4 5.2-5.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                  <span class="ac-body ac-check__text">The answer became the first sentence: a request instead of a list of constraints.</span>
-                </li>
-                <li class="ac-check">
-                  <svg class="ac-check__box" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <rect x="0.9" y="0.9" width="14.2" height="14.2" rx="3" stroke="currentColor" stroke-width="1.5"></rect>
-                    <path d="M4.2 8.3l2.4 2.4 5.2-5.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                  <span class="ac-body ac-check__text">The constraints turned into two reader benefits &mdash; the time suits everyone, all three can attend.</span>
-                </li>
-                <li class="ac-check">
-                  <svg class="ac-check__box" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <rect x="0.9" y="0.9" width="14.2" height="14.2" rx="3" stroke="currentColor" stroke-width="1.5"></rect>
-                    <path d="M4.2 8.3l2.4 2.4 5.2-5.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                  <span class="ac-body ac-check__text">The note did not grow: no headings, no diagram, no SCQ template.</span>
-                </li>
-              </ul>
             </div>
           </div>
         </article>
 
         <article class="case" id="case-02" data-case-panel="02" aria-labelledby="case-02-heading">
           <div class="case__head">
-            <h3 class="ac-title-text" id="case-02-heading">A memorandum in six sections</h3>
-            <p class="ac-body ac-body--md">What it shows: a diagnosis without a rewrite. Only the setout is visible &mdash; the skill invents nothing about the body.</p>
+            <h3 class="subtitle" id="case-02-heading">A memorandum in six sections</h3>
+            <p class="small">What it shows: a diagnosis without a rewrite. Only the setout is visible &mdash; the skill invents nothing about the body.</p>
           </div>
-          <div class="case__pair case__pair--wide grid-pair">
-            <div class="ac-panel ac-panel--sand-light case__source">
-              <p class="ac-label ac-label--caps">Source &middot; the setout</p>
+          <div class="case__pair case__pair--wide">
+            <div class="case__source">
+            <div class="case__shape" aria-hidden="true">
+              <div class="units" data-shape="pyramid">
+                <div class="units__row"><span class="unit"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span></div>
+              </div>
+            </div>
+              <p class="label">Source &middot; the setout</p>
               <p class="doc-text">&ldquo;This memorandum describes how project teams identify and deliver significant profit improvements. It is organized in six sections:&rdquo;</p>
               <ol class="case__toc">
                 <li class="doc-note">Background</li>
@@ -438,114 +347,82 @@
                 <li class="doc-note">Distinctive benefits and results</li>
                 <li class="doc-note">Conditions required for success</li>
               </ol>
-              <p class="ac-body ac-body--md">Six topics of six different kinds. What the reader must decide is never stated.</p>
+              <p class="small">Six topics of six different kinds. What the reader must decide is never stated.</p>
             </div>
-            <div class="ac-panel ac-panel--outlined case__result">
-              <div class="case__scores">
-                <span class="ac-eyebrow ac-eyebrow--solid">With Minto &middot; audit</span>
-                <span class="case__score">2/10</span>
-                <span class="ac-label">structure score</span>
+            <div class="case__result">
+            <div class="case__shape" aria-hidden="true">
+              <div class="units" data-shape="pyramid">
+                <div class="units__row"><span class="unit" data-state="flaw"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit" data-state="flaw"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit" data-state="flaw"></span><span class="unit"></span></div>
+              </div>
+            </div>
+              <div class="case__head-row">
+                <span class="mr-tag">With Minto &middot; audit</span>
+                <span class="num case__score">2/10</span>
+                <span class="label">structure score</span>
               </div>
               <div class="case__flaws">
-                <div class="case__flaw grid-pair">
-                  <span class="ac-pill ac-pill--fail">
-                    <span class="ac-pill__mark" aria-hidden="true">
-                      <svg class="ac-glyph" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="8.5"></circle>
-                        <path d="M9.2 9.2l5.6 5.6M14.8 9.2l-5.6 5.6"></path>
-                      </svg>
-                    </span>
-                    <span>critical</span>
-                  </span>
+                <div class="case__flaw">
+                  <span class="mr-tag" data-tone="hot">critical</span>
                   <p class="doc-item">No answer anywhere in the visible text &mdash; the document has a subject, not a controlling idea.</p>
                 </div>
-                <div class="case__flaw grid-pair">
-                  <span class="ac-pill ac-pill--fail">
-                    <span class="ac-pill__mark" aria-hidden="true">
-                      <svg class="ac-glyph" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="8.5"></circle>
-                        <path d="M9.2 9.2l5.6 5.6M14.8 9.2l-5.6 5.6"></path>
-                      </svg>
-                    </span>
-                    <span>critical</span>
-                  </span>
+                <div class="case__flaw">
+                  <span class="mr-tag" data-tone="hot">critical</span>
                   <p class="doc-item">Six headings of six different kinds &mdash; context, concepts, definition, mechanics, payoffs, prerequisites. No plural noun fits them.</p>
                 </div>
-                <div class="case__flaw grid-pair">
-                  <span class="ac-pill">
-                    <span>medium</span>
-                  </span>
+                <div class="case__flaw">
+                  <span class="mr-tag">medium</span>
                   <p class="doc-item">&ldquo;Benefits and results&rdquo; is the answer to the reader&rsquo;s question, buried as the fifth of six items.</p>
                 </div>
-                <div class="case__flaw grid-pair">
-                  <span class="ac-pill">
-                    <span>medium</span>
-                  </span>
+                <div class="case__flaw">
+                  <span class="mr-tag">medium</span>
                   <p class="doc-item">Principles, definition and organization overlap: all three describe what the approach is.</p>
                 </div>
               </div>
               <div class="case__fixes">
-                <p class="ac-label ac-label--caps ac-label--accent">Three fixes that buy the most</p>
+                <p class="label">Three fixes that buy the most</p>
                 <p class="doc-item">State the answer in the first sentence. Promote &ldquo;benefits and results&rdquo; to the first level. Rewrite the six topic labels as three or four same-kind assertions.</p>
               </div>
-            </div>
-          </div>
-          <div class="ac-callout case__changed">
-            <span class="ac-callout__disc" aria-hidden="true">
-              <svg width="20" height="14" viewBox="0 0 20 14" fill="none">
-                <path d="M0 7H13" stroke="currentColor" stroke-width="2"></path>
-                <path d="M12 2.5 L20 7 L12 11.5 Z" fill="currentColor"></path>
-              </svg>
-            </span>
-            <div class="ac-callout__text">
-              <h4 class="ac-title-text">What changed</h4>
-              <ul class="ac-checklist">
-                <li class="ac-check">
-                  <svg class="ac-check__box" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <rect x="0.9" y="0.9" width="14.2" height="14.2" rx="3" stroke="currentColor" stroke-width="1.5"></rect>
-                    <path d="M4.2 8.3l2.4 2.4 5.2-5.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                  <span class="ac-body ac-check__text">Every defect is named and tied to a place in the text &mdash; the original wording is untouched.</span>
-                </li>
-                <li class="ac-check">
-                  <svg class="ac-check__box" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <rect x="0.9" y="0.9" width="14.2" height="14.2" rx="3" stroke="currentColor" stroke-width="1.5"></rect>
-                    <path d="M4.2 8.3l2.4 2.4 5.2-5.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                  <span class="ac-body ac-check__text">The skill stayed inside the visible evidence: nothing is claimed about the missing body.</span>
-                </li>
-                <li class="ac-check">
-                  <svg class="ac-check__box" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <rect x="0.9" y="0.9" width="14.2" height="14.2" rx="3" stroke="currentColor" stroke-width="1.5"></rect>
-                    <path d="M4.2 8.3l2.4 2.4 5.2-5.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                  <span class="ac-body ac-check__text">The output is a score, a priority and three fixes &mdash; not a rewritten document.</span>
-                </li>
-              </ul>
             </div>
           </div>
         </article>
 
         <article class="case" id="case-03" data-case-panel="03" aria-labelledby="case-03-heading">
           <div class="case__head">
-            <h3 class="ac-title-text" id="case-03-heading">A memo on composing cost</h3>
-            <p class="ac-body ac-body--md">What it shows: structure you can see. The prose is not rewritten &mdash; its pyramid is lifted out of it.</p>
+            <h3 class="subtitle" id="case-03-heading">A memo on composing cost</h3>
+            <p class="small">What it shows: structure you can see. The prose is not rewritten &mdash; its pyramid is lifted out of it.</p>
           </div>
-          <div class="case__pair case__pair--wider grid-pair">
-            <div class="ac-panel ac-panel--sand-light case__source">
-              <p class="ac-label ac-label--caps">Source &middot; a page of prose</p>
-              <p class="doc-note">&ldquo;Composition represents about 40% of hardback cost and 50&ndash;55% of paperback cost. TTW does not know whether the cost is excessive, but customers regard it as uncompetitive on simple jobs. Our preliminary work indicates that TTW can cut composing cost substantially&hellip;&rdquo;</p>
-              <p class="ac-body ac-body--sm">Then two all-caps sections and ten facts inside paragraphs: a 20&ndash;50% productivity gap, identical checks for every title, below-market pay, two compositors just gone, overtime more than 50% over budget.</p>
+          <div class="case__pair case__pair--wider">
+            <div class="case__source">
+            <div class="case__shape" aria-hidden="true">
+              <div class="units">
+                <div class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+              </div>
             </div>
-            <div class="ac-panel ac-panel--outlined case__result">
-              <span class="ac-eyebrow ac-eyebrow--solid">With Minto &middot; viz</span>
+              <p class="label">Source &middot; a page of prose</p>
+              <p class="doc-note">&ldquo;Composition represents about 40% of hardback cost and 50&ndash;55% of paperback cost. TTW does not know whether the cost is excessive, but customers regard it as uncompetitive on simple jobs. Our preliminary work indicates that TTW can cut composing cost substantially&hellip;&rdquo;</p>
+              <p class="small">Then two all-caps sections and ten facts inside paragraphs: a 20&ndash;50% productivity gap, identical checks for every title, below-market pay, two compositors just gone, overtime more than 50% over budget.</p>
+            </div>
+            <div class="case__result">
+            <div class="case__shape" aria-hidden="true">
+              <div class="units" data-shape="pyramid">
+                <div class="units__row"><span class="unit"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span></div>
+              </div>
+            </div>
+              <div class="case__head-row">
+                <span class="mr-tag">With Minto &middot; viz</span>
+              </div>
               <div class="pyramid__top">
+                <span class="unit" data-state="answer" aria-hidden="true"></span>
                 <p class="doc-answer">TTW can cut composing cost substantially</p>
               </div>
-              <svg class="pyramid__conn" viewBox="0 0 600 40" height="40" preserveAspectRatio="none" aria-hidden="true">
-                <path d="M300 0V14M150 14H450M150 14V40M450 14V40" fill="none" stroke="currentColor" stroke-width="1.5"></path>
+              <svg class="pyramid__conn" viewBox="0 0 600 34" height="34" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M300 0V12M150 12H450M150 12V34M450 12V34" fill="none" stroke="currentColor" stroke-width="1.5"></path>
               </svg>
-              <div class="case__branches grid-pair">
+              <div class="case__branches">
                 <div class="case__branch">
                   <p class="doc-lead">Remove unnecessary process stages</p>
                   <ul>
@@ -566,139 +443,89 @@
                 </div>
               </div>
               <div class="case__gap">
-                <svg class="ac-glyph" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <circle cx="12" cy="12" r="8.5"></circle>
-                  <path d="M12 7.5v6M12 16.4v.2"></path>
-                </svg>
+                <span class="unit" data-state="gap" aria-hidden="true"></span>
                 <p class="doc-note">The skill marks its own gap: the saving is quantified for the first branch only &mdash; &ldquo;substantially&rdquo; is unmeasured for the second.</p>
               </div>
-            </div>
-          </div>
-          <div class="ac-callout case__changed">
-            <span class="ac-callout__disc" aria-hidden="true">
-              <svg width="20" height="14" viewBox="0 0 20 14" fill="none">
-                <path d="M0 7H13" stroke="currentColor" stroke-width="2"></path>
-                <path d="M12 2.5 L20 7 L12 11.5 Z" fill="currentColor"></path>
-              </svg>
-            </span>
-            <div class="ac-callout__text">
-              <h4 class="ac-title-text">What changed</h4>
-              <ul class="ac-checklist">
-                <li class="ac-check">
-                  <svg class="ac-check__box" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <rect x="0.9" y="0.9" width="14.2" height="14.2" rx="3" stroke="currentColor" stroke-width="1.5"></rect>
-                    <path d="M4.2 8.3l2.4 2.4 5.2-5.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                  <span class="ac-body ac-check__text">One answer and two action branches are lifted out of the prose &mdash; exactly the ones it contains.</span>
-                </li>
-                <li class="ac-check">
-                  <svg class="ac-check__box" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <rect x="0.9" y="0.9" width="14.2" height="14.2" rx="3" stroke="currentColor" stroke-width="1.5"></rect>
-                    <path d="M4.2 8.3l2.4 2.4 5.2-5.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                  <span class="ac-body ac-check__text">Ten facts are sorted under their own branch; none is added.</span>
-                </li>
-                <li class="ac-check">
-                  <svg class="ac-check__box" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <rect x="0.9" y="0.9" width="14.2" height="14.2" rx="3" stroke="currentColor" stroke-width="1.5"></rect>
-                    <path d="M4.2 8.3l2.4 2.4 5.2-5.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                  <span class="ac-body ac-check__text">The skill marks its own gap: the saving under the second branch is unquantified.</span>
-                </li>
-              </ul>
             </div>
           </div>
         </article>
 
         <article class="case" id="case-04" data-case-panel="04" aria-labelledby="case-04-heading">
           <div class="case__head">
-            <h3 class="ac-title-text" id="case-04-heading">Three compliance sources</h3>
-            <p class="ac-body ac-body--md">What it shows: working from what was read. The tech lead will not read the sources &mdash; they need today&rsquo;s decision.</p>
+            <h3 class="subtitle" id="case-04-heading">Three compliance sources</h3>
+            <p class="small">What it shows: working from what was read. The tech lead will not read the sources &mdash; they need today&rsquo;s decision.</p>
           </div>
-          <div class="case__pair case__pair--wider grid-pair">
+          <div class="case__pair case__pair--wider">
             <div class="case__srclist">
-              <p class="ac-label ac-label--caps">Sources &middot; 3 files</p>
-              <div class="ac-panel ac-panel--sand-light ac-panel--dense">
+            <div class="case__shape" aria-hidden="true">
+              <div class="units">
+                <div class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+                <div class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+                <div class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+              </div>
+            </div>
+              <p class="label">Sources &middot; 3 files</p>
+              <div class="case__src">
                 <p class="doc-name">gate-review.xlsx</p>
                 <p class="doc-note">Seven questions answered by the bank&rsquo;s compliance office. One is declined outright: &ldquo;cannot be answered without an architecture diagram&rdquo;.</p>
               </div>
-              <div class="ac-panel ac-panel--sand-light ac-panel--dense">
+              <div class="case__src">
                 <p class="doc-name">sync-0709.md</p>
                 <p class="doc-note">The package list &ldquo;is being prepared&rdquo;. A new contact is named. The remark about two engineers in Lisbon draws no response.</p>
               </div>
-              <div class="ac-panel ac-panel--sand-light ac-panel--dense">
+              <div class="case__src">
                 <p class="doc-name">Risk register</p>
                 <p class="doc-note">Three open rows: the price cannot be fixed, the list is 98 days late, the diagram has not been sent.</p>
               </div>
             </div>
-            <div class="ac-panel ac-panel--outlined case__result">
-              <span class="ac-eyebrow ac-eyebrow--solid">With Minto &middot; digest</span>
+            <div class="case__result">
+            <div class="case__shape" aria-hidden="true">
+              <div class="units" data-shape="pyramid">
+                <div class="units__row"><span class="unit"></span></div>
+              </div>
+            </div>
+              <div class="case__head-row">
+                <span class="mr-tag">With Minto &middot; digest</span>
+              </div>
               <p class="doc-answer">The one thing to do today: send the architecture diagram.</p>
               <p class="doc-item">It has been drafted since 11 August and it is the only compliance blocker Fernway owns &mdash; the 9 July sync agreed it must arrive before the next sync so the storage, encryption and logging questions can get a real answer. Everything else is waiting on Aldergate, and two items have been waiting long enough to need escalating by name.</p>
               <div class="case__groups">
                 <div class="case__group">
-                  <p class="ac-label ac-label--caps ac-label--ink">Already answered, treat as settled</p>
+                  <p class="doc-lead">Already answered, treat as settled</p>
                   <p class="doc-note">A security review before production is mandatory. An internal hardening framework exists, though conforming to it does not remove the review. An open-source policy exists. Work from Ireland is acceptable.</p>
                 </div>
                 <div class="case__group">
-                  <p class="ac-label ac-label--caps ac-label--ink">Waiting on Aldergate, and overdue</p>
+                  <p class="doc-lead">Waiting on Aldergate, and overdue</p>
                   <p class="doc-note">The approved-package list was promised on 12 May and again on 9 July, both times with no date &mdash; 98 days open. The named information-security owner has never joined a joint meeting. Ask them for the list directly, or for a date in writing.</p>
                 </div>
                 <div class="case__group">
-                  <p class="ac-label ac-label--caps ac-label--ink">Two answers they will not give in advance &mdash; and they hit the price</p>
+                  <p class="doc-lead">Two answers they will not give in advance &mdash; and they hit the price</p>
                   <p class="doc-note">Whether a penetration test is required is decided by the reviewer during the review. Dependency approval has no standard turnaround. So the build-phase price cannot be a single number: either carve both out as separately-priced items, or hold the price until the review is scheduled.</p>
                 </div>
                 <div class="case__group case__group--accent">
-                  <p class="ac-label ac-label--caps ac-label--accent">One unresolved exposure worth raising yourself</p>
+                  <p class="doc-lead">One unresolved exposure worth raising yourself</p>
                   <p class="doc-item">On 9 July it was said that two engineers are based in Lisbon, and nobody from the bank responded. Silence in a meeting is not approval &mdash; put Lisbon in writing alongside the diagram, before those engineers touch bank data.</p>
                 </div>
               </div>
-            </div>
-          </div>
-          <div class="ac-callout case__changed">
-            <span class="ac-callout__disc" aria-hidden="true">
-              <svg width="20" height="14" viewBox="0 0 20 14" fill="none">
-                <path d="M0 7H13" stroke="currentColor" stroke-width="2"></path>
-                <path d="M12 2.5 L20 7 L12 11.5 Z" fill="currentColor"></path>
-              </svg>
-            </span>
-            <div class="ac-callout__text">
-              <h4 class="ac-title-text">What changed</h4>
-              <ul class="ac-checklist">
-                <li class="ac-check">
-                  <svg class="ac-check__box" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <rect x="0.9" y="0.9" width="14.2" height="14.2" rx="3" stroke="currentColor" stroke-width="1.5"></rect>
-                    <path d="M4.2 8.3l2.4 2.4 5.2-5.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                  <span class="ac-body ac-check__text">Three sources collapse into one thing to do today.</span>
-                </li>
-                <li class="ac-check">
-                  <svg class="ac-check__box" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <rect x="0.9" y="0.9" width="14.2" height="14.2" rx="3" stroke="currentColor" stroke-width="1.5"></rect>
-                    <path d="M4.2 8.3l2.4 2.4 5.2-5.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                  <span class="ac-body ac-check__text">Answers are grouped by what to do with them: settled, waiting on them, will not be given in advance.</span>
-                </li>
-                <li class="ac-check">
-                  <svg class="ac-check__box" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <rect x="0.9" y="0.9" width="14.2" height="14.2" rx="3" stroke="currentColor" stroke-width="1.5"></rect>
-                    <path d="M4.2 8.3l2.4 2.4 5.2-5.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>
-                  </svg>
-                  <span class="ac-body ac-check__text">Every point carries its source; silence in a meeting is named as a risk, not read as approval.</span>
-                </li>
-              </ul>
             </div>
           </div>
         </article>
 
         <article class="case" id="case-05" data-case-panel="05" aria-labelledby="case-05-heading">
           <div class="case__head">
-            <h3 class="ac-title-text" id="case-05-heading">A message about the defect backlog</h3>
-            <p class="ac-body ac-body--md">What it shows: an honest case. The ask was already written &mdash; just in the last paragraph.</p>
+            <h3 class="subtitle" id="case-05-heading">A message about the defect backlog</h3>
+            <p class="small">What it shows: an honest case. The ask was already written &mdash; just in the last paragraph.</p>
           </div>
-          <div class="case__pair grid-pair">
-            <div class="ac-panel ac-panel--sand-light case__source">
-              <p class="ac-label ac-label--caps">Source &middot; four paragraphs of evidence</p>
+          <div class="case__pair">
+            <div class="case__source">
+            <div class="case__shape" aria-hidden="true">
+              <div class="units" data-shape="scatter">
+                <div class="units__row" style="--x: 1"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+                <div class="units__row" style="--x: 0"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+                <div class="units__row" style="--x: 2"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit"></span></div>
+              </div>
+            </div>
+              <p class="label">Source &middot; four paragraphs of evidence</p>
               <div class="case__letter">
                 <p class="doc-item">Hi Alex,</p>
                 <p class="doc-item">I am increasingly worried about the defect backlog. The attached chart compares new defects with the number we close and projects the backlog one year ahead.</p>
@@ -706,12 +533,19 @@
                 <p class="doc-item">There are signs of brand damage too: user posts, a complaint from a major account, and Sales reports that these concerns are making deals harder to close.</p>
                 <p class="doc-item case__ask">I recommend using the next sprint to reduce the defect backlog. Let me know what you think.</p>
               </div>
-              <p class="ac-body ac-body--md">Alex reads four paragraphs of evidence before finding out what he is being asked to decide.</p>
+              <p class="small">Alex reads four paragraphs of evidence before finding out what he is being asked to decide.</p>
             </div>
-            <div class="ac-panel ac-panel--outlined case__result" data-fixture="08-techdebt" data-engine="opus5" data-arm="skill" data-structure="8" data-quality="10" data-hard-failures="1">
-              <div class="case__scores">
-                <span class="ac-eyebrow ac-eyebrow--solid">With Minto &middot; write</span>
-                <span class="ac-label">blind judge: structure 8/8, quality 10/10</span>
+            <div class="case__result" data-fixture="08-techdebt" data-engine="opus5" data-arm="skill" data-structure="8" data-quality="10" data-hard-failures="1">
+            <div class="case__shape" aria-hidden="true">
+              <div class="units" data-shape="pyramid">
+                <div class="units__row"><span class="unit"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span></div>
+              </div>
+            </div>
+              <div class="case__head-row">
+                <span class="mr-tag">With Minto &middot; write</span>
+                <span class="label">blind judge: structure 8/8, quality 10/10</span>
               </div>
               <div class="case__letter">
                 <p class="doc-item">Hi Alex,</p>
@@ -725,60 +559,65 @@
               </div>
             </div>
           </div>
-          <div class="ac-callout case__changed">
-            <span class="ac-callout__disc" aria-hidden="true">!</span>
-            <div class="ac-callout__text">
-              <h4 class="ac-title-text">The skill did not win this one &mdash; and it shows</h4>
-              <p class="ac-body ac-body--md">An easy case: the recommendation was already written, only in the wrong place. The same model&rsquo;s control run also scored 8/8 and 10/10, and the judge flagged one invented fact in both. What separates the two arms is the pattern across all 172 runs below.</p>
-            </div>
-          </div>
+          <p class="small case__caveat"><strong>The skill did not win this one &mdash; and it shows.</strong> An easy case: the recommendation was already written, only in the wrong place. The same model&rsquo;s control run also scored 8/8 and 10/10, and the judge flagged one invented fact in both. What separates the two arms is the pattern across all 172 runs below.</p>
         </article>
       </section>
 
       <section class="section" id="evidence" aria-labelledby="evidence-heading" data-benchmark="v1.7.0-final" data-benchmark-cells="172">
-        <div class="ac-title-block">
-          <h2 class="ac-display" id="evidence-heading">Five measures improve. <span class="ac-accent">One gets worse.</span></h2>
-          <hr class="ac-title-block__rule">
-          <p class="ac-body">Eleven documents, eight models, each rewritten twice: once with the skill, once without. A blind judge scored all 172 without knowing which was which.</p>
+        <div class="title-block">
+          <h2 class="title" id="evidence-heading">Five measures improve. One gets worse.</h2>
+          <hr class="rule">
+          <p class="body">Every document was rewritten twice &mdash; once with the skill, once without &mdash; and scored by a judge who never saw which arm it was reading.</p>
         </div>
 
-        <div class="evidence__method">
-          <h3 class="ac-label ac-label--caps ac-label--accent">How we measured it</h3>
+        <ul class="figures">
+          <li class="figure" data-figure="cells">
+            <p class="figure__num">172</p>
+            <p class="label">blind judgements, every run scored on one rubric</p>
+          </li>
+          <li class="figure" data-figure="engines">
+            <p class="figure__num">8</p>
+            <p class="label">models, each rewriting every document twice</p>
+          </li>
+          <li class="figure" data-figure="metric-delta" data-metric-ref="readers-question">
+            <p class="figure__num">+22</p>
+            <p class="label">points: the reader&rsquo;s question written down in the text</p>
+          </li>
+          <li class="figure figure--down" data-figure="metric-delta" data-metric-ref="answer-first">
+            <p class="figure__num">&minus;10</p>
+            <p class="label">points: the answer stands in the first sentence less often</p>
+          </li>
+        </ul>
+
+        <div class="method">
+          <h3 class="subtitle">How we measured it</h3>
           <div class="stages grid-stages">
-            <div class="ac-panel ac-panel--sand-light ac-stage">
-              <div class="ac-stage__head">
-                <span class="ac-stage__num" aria-hidden="true">1</span>
-                <div class="ac-stage__headtext">
-                  <h4 class="ac-title-text">11 documents</h4>
-                  <p class="ac-body ac-body--md ac-stage__sub">Emails, memos, an audit, a digest, a pasteable list &mdash; from a two-line note to an eight-page review.</p>
-                </div>
+            <div class="stage">
+              <span class="num stage__num" aria-hidden="true">1</span>
+              <div class="stage__text">
+                <h4 class="subtitle">11 documents</h4>
+                <p class="small">Emails, memos, an audit, a digest, a pasteable list &mdash; from a two-line note to an eight-page review.</p>
               </div>
             </div>
-            <div class="ac-panel ac-panel--sand-light ac-stage">
-              <div class="ac-stage__head">
-                <span class="ac-stage__num" aria-hidden="true">2</span>
-                <div class="ac-stage__headtext">
-                  <h4 class="ac-title-text">Two arms</h4>
-                  <p class="ac-body ac-body--md ac-stage__sub">With the skill &mdash; and a control prompt that already names the Pyramid Principle. Not an unprompted model.</p>
-                </div>
+            <div class="stage">
+              <span class="num stage__num" aria-hidden="true">2</span>
+              <div class="stage__text">
+                <h4 class="subtitle">Two arms</h4>
+                <p class="small">With the skill &mdash; and a control prompt that already names the Pyramid Principle. Not an unprompted model.</p>
               </div>
             </div>
-            <div class="ac-panel ac-panel--sand-light ac-stage">
-              <div class="ac-stage__head">
-                <span class="ac-stage__num" aria-hidden="true">3</span>
-                <div class="ac-stage__headtext">
-                  <h4 class="ac-title-text">Blind judge</h4>
-                  <p class="ac-body ac-body--md ac-stage__sub">Outputs are shuffled: the judge knows neither the model nor the arm, and scores against one rubric.</p>
-                </div>
+            <div class="stage">
+              <span class="num stage__num" aria-hidden="true">3</span>
+              <div class="stage__text">
+                <h4 class="subtitle">Blind judge</h4>
+                <p class="small">Outputs are shuffled: the judge knows neither the model nor the arm, and scores against one rubric.</p>
               </div>
             </div>
-            <div class="ac-panel ac-panel--accent ac-stage">
-              <div class="ac-stage__head">
-                <span class="ac-stage__num" aria-hidden="true">4</span>
-                <div class="ac-stage__headtext">
-                  <h4 class="ac-title-text">172 verdicts</h4>
-                  <p class="ac-body ac-body--md ac-stage__sub">Every figure on this page is computed from the published verdicts by a script, not summarised by a model.</p>
-                </div>
+            <div class="stage stage--ink">
+              <span class="num stage__num" aria-hidden="true">4</span>
+              <div class="stage__text">
+                <h4 class="subtitle">Counted, not recalled</h4>
+                <p class="small">Every figure on this page is computed from the published verdicts by a script, not summarised by a model.</p>
               </div>
             </div>
           </div>
@@ -786,221 +625,219 @@
 
         <figure class="chart">
           <div class="chart__head">
-            <h3 class="ac-title-text">What changed in the texts</h3>
+            <h3 class="subtitle">What changed in the texts</h3>
             <div class="chart__legend">
-              <span class="legend"><span class="legend__swatch" aria-hidden="true"></span><span class="ac-label">without the skill</span></span>
-              <span class="legend"><span class="legend__swatch legend__swatch--skill" aria-hidden="true"></span><span class="ac-label">with Minto</span></span>
+              <span class="legend"><span class="legend__swatch" aria-hidden="true"></span><span class="label">without the skill</span></span>
+              <span class="legend"><span class="legend__swatch legend__swatch--skill" aria-hidden="true"></span><span class="label">with Minto</span></span>
+              <span class="legend"><span class="legend__swatch legend__swatch--delta" aria-hidden="true"></span><span class="label">the difference</span></span>
             </div>
           </div>
 
           <ul class="metrics">
-            <li class="metric grid-pair" data-metric="readers-question" data-control="13" data-skill="35" data-delta="22">
-              <p class="doc-lead metric__name">The reader&rsquo;s question is written down</p>
+            <li class="metric" data-metric="readers-question" data-control="13" data-skill="35" data-delta="22" style="--control: 13; --skill: 35">
+              <div class="metric__head">
+                <p class="metric__name">The reader&rsquo;s question is written down</p>
+              </div>
               <div class="metric__rows">
-                <div class="metric__row"><span class="metric__track"><span class="metric__bar" style="--bar: 13%"></span></span><span class="ac-label metric__value">13%</span></div>
-                <div class="metric__row metric__row--skill"><span class="metric__track"><span class="metric__bar" style="--bar: 35%"></span></span><span class="ac-label metric__value">35%</span></div>
+                <div class="metric__row"><span class="metric__track"><span class="metric__band" aria-hidden="true"></span></span><span class="label metric__value">13%</span></div>
+                <div class="metric__row metric__row--skill"><span class="metric__track"><span class="metric__band" aria-hidden="true"></span></span><span class="label metric__value">35%</span></div>
               </div>
               <p class="metric__delta">+22<span class="visually-hidden"> percentage points</span></p>
             </li>
-            <li class="metric grid-pair" data-metric="kind-matches" data-control="54" data-skill="66" data-delta="12">
-              <p class="doc-lead metric__name">First-level points are all the same kind</p>
+            <li class="metric" data-metric="kind-matches" data-control="54" data-skill="66" data-delta="12" style="--control: 54; --skill: 66">
+              <div class="metric__head">
+                <p class="metric__name">First-level points are all the same kind</p>
+              </div>
               <div class="metric__rows">
-                <div class="metric__row"><span class="metric__track"><span class="metric__bar" style="--bar: 54%"></span></span><span class="ac-label metric__value">54%</span></div>
-                <div class="metric__row metric__row--skill"><span class="metric__track"><span class="metric__bar" style="--bar: 66%"></span></span><span class="ac-label metric__value">66%</span></div>
+                <div class="metric__row"><span class="metric__track"><span class="metric__band" aria-hidden="true"></span></span><span class="label metric__value">54%</span></div>
+                <div class="metric__row metric__row--skill"><span class="metric__track"><span class="metric__band" aria-hidden="true"></span></span><span class="label metric__value">66%</span></div>
               </div>
               <p class="metric__delta">+12<span class="visually-hidden"> percentage points</span></p>
             </li>
-            <li class="metric grid-pair" data-metric="structure" data-control="59" data-skill="66" data-delta="7">
-              <p class="doc-lead metric__name">Structure, share of the judge&rsquo;s 8 points</p>
+            <li class="metric" data-metric="structure" data-control="59" data-skill="66" data-delta="7" style="--control: 59; --skill: 66">
+              <div class="metric__head">
+                <p class="metric__name">Structure, share of the judge&rsquo;s 8 points</p>
+              </div>
               <div class="metric__rows">
-                <div class="metric__row"><span class="metric__track"><span class="metric__bar" style="--bar: 59%"></span></span><span class="ac-label metric__value">59%</span></div>
-                <div class="metric__row metric__row--skill"><span class="metric__track"><span class="metric__bar" style="--bar: 66%"></span></span><span class="ac-label metric__value">66%</span></div>
+                <div class="metric__row"><span class="metric__track"><span class="metric__band" aria-hidden="true"></span></span><span class="label metric__value">59%</span></div>
+                <div class="metric__row metric__row--skill"><span class="metric__track"><span class="metric__band" aria-hidden="true"></span></span><span class="label metric__value">66%</span></div>
               </div>
               <p class="metric__delta">+7<span class="visually-hidden"> percentage points</span></p>
             </li>
-            <li class="metric grid-pair" data-metric="quality" data-control="72" data-skill="79" data-delta="7">
-              <p class="doc-lead metric__name">Writing quality, share of the judge&rsquo;s 10 points</p>
+            <li class="metric" data-metric="quality" data-control="72" data-skill="79" data-delta="7" style="--control: 72; --skill: 79">
+              <div class="metric__head">
+                <p class="metric__name">Writing quality, share of the judge&rsquo;s 10 points</p>
+              </div>
               <div class="metric__rows">
-                <div class="metric__row"><span class="metric__track"><span class="metric__bar" style="--bar: 72%"></span></span><span class="ac-label metric__value">72%</span></div>
-                <div class="metric__row metric__row--skill"><span class="metric__track"><span class="metric__bar" style="--bar: 79%"></span></span><span class="ac-label metric__value">79%</span></div>
+                <div class="metric__row"><span class="metric__track"><span class="metric__band" aria-hidden="true"></span></span><span class="label metric__value">72%</span></div>
+                <div class="metric__row metric__row--skill"><span class="metric__track"><span class="metric__band" aria-hidden="true"></span></span><span class="label metric__value">79%</span></div>
               </div>
               <p class="metric__delta">+7<span class="visually-hidden"> percentage points</span></p>
             </li>
-            <li class="metric grid-pair" data-metric="source-kept" data-control="62" data-skill="65" data-delta="3">
-              <p class="doc-lead metric__name">No source material lost without saying so</p>
+            <li class="metric" data-metric="source-kept" data-control="62" data-skill="65" data-delta="3" style="--control: 62; --skill: 65">
+              <div class="metric__head">
+                <p class="metric__name">No source material lost without saying so</p>
+              </div>
               <div class="metric__rows">
-                <div class="metric__row"><span class="metric__track"><span class="metric__bar" style="--bar: 62%"></span></span><span class="ac-label metric__value">62%</span></div>
-                <div class="metric__row metric__row--skill"><span class="metric__track"><span class="metric__bar" style="--bar: 65%"></span></span><span class="ac-label metric__value">65%</span></div>
+                <div class="metric__row"><span class="metric__track"><span class="metric__band" aria-hidden="true"></span></span><span class="label metric__value">62%</span></div>
+                <div class="metric__row metric__row--skill"><span class="metric__track"><span class="metric__band" aria-hidden="true"></span></span><span class="label metric__value">65%</span></div>
               </div>
               <p class="metric__delta">+3<span class="visually-hidden"> percentage points</span></p>
             </li>
-            <li class="metric metric--down grid-pair" data-metric="answer-first" data-control="84" data-skill="74" data-delta="-10">
-              <div>
-                <p class="doc-lead metric__name">Answer in the first sentence</p>
-                <div class="metric__pill">
-                  <span class="ac-pill ac-pill--fail">
-                    <span class="ac-pill__mark" aria-hidden="true">
-                      <svg class="ac-glyph" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="8.5"></circle>
-                        <path d="M9.2 9.2l5.6 5.6M14.8 9.2l-5.6 5.6"></path>
-                      </svg>
-                    </span>
-                    <span>got worse</span>
-                  </span>
-                </div>
+            <li class="metric metric--down" data-metric="answer-first" data-control="84" data-skill="74" data-delta="-10" style="--control: 84; --skill: 74">
+              <div class="metric__head">
+                <p class="metric__name">Answer in the first sentence</p>
+                <span class="mr-tag" data-tone="hot">got worse</span>
               </div>
               <div class="metric__rows">
-                <div class="metric__row"><span class="metric__track"><span class="metric__bar" style="--bar: 84%"></span></span><span class="ac-label metric__value">84%</span></div>
-                <div class="metric__row metric__row--skill"><span class="metric__track"><span class="metric__bar" style="--bar: 74%"></span></span><span class="ac-label metric__value">74%</span></div>
+                <div class="metric__row"><span class="metric__track"><span class="metric__band" aria-hidden="true"></span></span><span class="label metric__value">84%</span></div>
+                <div class="metric__row metric__row--skill"><span class="metric__track"><span class="metric__band" aria-hidden="true"></span></span><span class="label metric__value">74%</span></div>
               </div>
               <p class="metric__delta metric__delta--down">&minus;10<span class="visually-hidden"> percentage points</span></p>
             </li>
           </ul>
 
-          <figcaption class="ac-body ac-body--md chart__note">Share of runs, or share of the judge&rsquo;s maximum score. The delta is in percentage points.</figcaption>
+          <figcaption class="small">Share of runs, or share of the judge&rsquo;s maximum score. The delta is in percentage points, and the rail behind each measure is graduated in twenty steps of five.</figcaption>
         </figure>
 
-        <div class="caveats grid-pair">
-          <div class="ac-panel ac-panel--sand-light caveat">
-            <h3 class="ac-label ac-label--caps ac-label--accent">What we publish against ourselves</h3>
+        <div class="caveats">
+          <div class="caveat">
+            <h3 class="subtitle">What we publish against ourselves</h3>
             <ul>
               <li class="doc-item">With the skill, models asserted unsupported facts more often: 49 runs against 42.</li>
               <li class="doc-item">The answer stood in the opening sentence less often &mdash; framing pushed it down. Those two are the top fixes for the next version.</li>
               <li class="doc-item">Quality improved for all eight models; structure fell for one (Sonnet 5) and stayed level for qwen3.8-27b.</li>
             </ul>
           </div>
-          <div class="ac-panel ac-panel--sand-light caveat">
-            <h3 class="ac-label ac-label--caps ac-label--ink">Limits of the measurement</h3>
+          <div class="caveat">
+            <h3 class="subtitle">Limits of the measurement</h3>
             <ul>
-              <li class="doc-note">One run per model, arm and document, so repeatability is unmeasured.</li>
-              <li class="doc-note">The documents are English, so these figures are not comparable with earlier Russian runs.</li>
-              <li class="doc-note">Three of the eleven documents are new in this round, so the previous 112-run table is not comparable either.</li>
+              <li class="doc-item">One run per model, arm and document, so repeatability is unmeasured.</li>
+              <li class="doc-item">The documents are English, so these figures are not comparable with earlier Russian runs.</li>
+              <li class="doc-item">Three of the eleven documents are new in this round, so the previous 112-run table is not comparable either.</li>
             </ul>
           </div>
         </div>
 
         <details class="models">
-          <summary class="ac-body">View the exact scores by model</summary>
-          <div class="models__scroll">
-            <table>
-              <caption class="ac-label">Share of the judge&rsquo;s maximum, control then with Minto. Eleven documents per model (nine for qwen3.8-27b &mdash; two timed out in both arms).</caption>
-              <thead>
-                <tr>
-                  <th class="ac-label ac-label--caps" scope="col">Model</th>
-                  <th class="ac-label ac-label--caps" scope="col">Structure /8</th>
-                  <th class="ac-label ac-label--caps" scope="col">Quality /10</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">Claude Opus 5</th>
-                  <td class="cell--up">63%<svg class="ac-arrow pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>84%</td>
-                  <td class="cell--up">74%<svg class="ac-arrow pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>90%</td>
-                </tr>
-                <tr>
-                  <th scope="row">Claude Sonnet 5</th>
-                  <td>66%<svg class="ac-arrow pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>61%</td>
-                  <td class="cell--up">78%<svg class="ac-arrow pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>80%</td>
-                </tr>
-                <tr>
-                  <th scope="row">Claude Haiku 4.5</th>
-                  <td class="cell--up">53%<svg class="ac-arrow pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>63%</td>
-                  <td class="cell--up">67%<svg class="ac-arrow pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>76%</td>
-                </tr>
-                <tr>
-                  <th scope="row">Codex gpt-5.6-terra</th>
-                  <td class="cell--up">60%<svg class="ac-arrow pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>67%</td>
-                  <td class="cell--up">75%<svg class="ac-arrow pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>82%</td>
-                </tr>
-                <tr>
-                  <th scope="row">gpt-oss-120b</th>
-                  <td class="cell--up">50%<svg class="ac-arrow pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>52%</td>
-                  <td class="cell--up">53%<svg class="ac-arrow pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>64%</td>
-                </tr>
-                <tr>
-                  <th scope="row">qwen3.6-35b-a3b</th>
-                  <td class="cell--up">58%<svg class="ac-arrow pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>67%</td>
-                  <td class="cell--up">76%<svg class="ac-arrow pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>79%</td>
-                </tr>
-                <tr>
-                  <th scope="row">qwen3.6-fp8</th>
-                  <td class="cell--up">64%<svg class="ac-arrow pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>69%</td>
-                  <td class="cell--up">75%<svg class="ac-arrow pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>80%</td>
-                </tr>
-                <tr>
-                  <th scope="row">qwen3.8-27b</th>
-                  <td>63%<svg class="ac-arrow pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>63%</td>
-                  <td class="cell--up">79%<svg class="ac-arrow pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>81%</td>
-                </tr>
-              </tbody>
-            </table>
+          <summary class="models__summary">View the exact scores by model</summary>
+          <div class="models__body">
+            <div class="mr-table__scroll">
+              <table class="mr-table__table">
+                <caption class="models__caption">Share of the judge&rsquo;s maximum, control then with Minto. Eleven documents per model (nine for qwen3.8-27b &mdash; two timed out in both arms).</caption>
+                <thead>
+                  <tr>
+                    <th class="mr-table__th" scope="col">Model</th>
+                    <th class="mr-table__th" scope="col">Structure /8</th>
+                    <th class="mr-table__th" scope="col">Quality /10</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th class="mr-table__td" scope="row">Claude Opus 5</th>
+                    <td class="mr-table__td"><span class="cell cell--up">63%<svg class="pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>84%</span></td>
+                    <td class="mr-table__td"><span class="cell cell--up">74%<svg class="pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>90%</span></td>
+                  </tr>
+                  <tr>
+                    <th class="mr-table__td" scope="row">Claude Sonnet 5</th>
+                    <td class="mr-table__td"><span class="cell">66%<svg class="pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>61%</span></td>
+                    <td class="mr-table__td"><span class="cell cell--up">78%<svg class="pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>80%</span></td>
+                  </tr>
+                  <tr>
+                    <th class="mr-table__td" scope="row">Claude Haiku 4.5</th>
+                    <td class="mr-table__td"><span class="cell cell--up">53%<svg class="pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>63%</span></td>
+                    <td class="mr-table__td"><span class="cell cell--up">67%<svg class="pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>76%</span></td>
+                  </tr>
+                  <tr>
+                    <th class="mr-table__td" scope="row">Codex gpt-5.6-terra</th>
+                    <td class="mr-table__td"><span class="cell cell--up">60%<svg class="pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>67%</span></td>
+                    <td class="mr-table__td"><span class="cell cell--up">75%<svg class="pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>82%</span></td>
+                  </tr>
+                  <tr>
+                    <th class="mr-table__td" scope="row">gpt-oss-120b</th>
+                    <td class="mr-table__td"><span class="cell cell--up">50%<svg class="pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>52%</span></td>
+                    <td class="mr-table__td"><span class="cell cell--up">53%<svg class="pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>64%</span></td>
+                  </tr>
+                  <tr>
+                    <th class="mr-table__td" scope="row">qwen3.6-35b-a3b</th>
+                    <td class="mr-table__td"><span class="cell cell--up">58%<svg class="pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>67%</span></td>
+                    <td class="mr-table__td"><span class="cell cell--up">76%<svg class="pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>79%</span></td>
+                  </tr>
+                  <tr>
+                    <th class="mr-table__td" scope="row">qwen3.6-fp8</th>
+                    <td class="mr-table__td"><span class="cell cell--up">64%<svg class="pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>69%</span></td>
+                    <td class="mr-table__td"><span class="cell cell--up">75%<svg class="pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>80%</span></td>
+                  </tr>
+                  <tr>
+                    <th class="mr-table__td" scope="row">qwen3.8-27b</th>
+                    <td class="mr-table__td"><span class="cell">63%<svg class="pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>63%</span></td>
+                    <td class="mr-table__td"><span class="cell cell--up">79%<svg class="pair-arrow" width="16" height="14" viewBox="0 0 16 14" fill="none" aria-hidden="true"><path d="M0 7H9" stroke="currentColor" stroke-width="2"></path><path d="M8 2.5 L16 7 L8 11.5 Z" fill="currentColor"></path></svg>81%</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="small">In raw points, pooled across all eight models: structure 4.76 out of 8 becomes 5.27, quality 7.17 out of 10 becomes 7.90. Applying the rubric&rsquo;s own penalty for invented or dropped facts gives 6.34 against 7.08.</p>
+            <p><a class="link small" href="https://github.com/welltraum/minto/blob/main/eval/report-v1.7.0.md">Read the full methodology and limitations<svg class="link-mark" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 10 10 2M4.5 2H10v5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></a></p>
           </div>
-          <p class="ac-body ac-body--md models__totals">In raw points, pooled across all eight models: structure 4.76 out of 8 becomes 5.27, quality 7.17 out of 10 becomes 7.90. Applying the rubric&rsquo;s own penalty for invented or dropped facts gives 6.34 against 7.08.</p>
-          <p class="models__link"><a class="ac-link ac-body ac-body--md ac-motion" href="https://github.com/welltraum/minto/blob/main/eval/report-v1.7.0.md">Read the full methodology and limitations<svg class="link-mark" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 10 10 2M4.5 2H10v5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></a></p>
         </details>
       </section>
 
       <section class="section" id="install" aria-labelledby="install-heading">
-        <div class="ac-title-block">
-          <h2 class="ac-display" id="install-heading">Install in <span class="ac-accent">two commands</span></h2>
-          <hr class="ac-title-block__rule">
-          <p class="ac-body">Add the marketplace, install the plugin, then start a new session.</p>
+        <div class="title-block">
+          <h2 class="title" id="install-heading">Install in two commands</h2>
+          <hr class="rule">
+          <p class="body">Add the marketplace, install the plugin, then start a new session.</p>
         </div>
 
-        <div class="install grid-pair">
-          <div class="ac-panel ac-panel--sand-light install__card">
+        <div class="install">
+          <div class="install__card">
             <div class="install__head">
-              <h3 class="ac-title-text">Claude Code</h3>
-              <span class="ac-label">CLI &amp; desktop app</span>
+              <h3 class="subtitle">Claude Code</h3>
+              <span class="label">CLI &amp; desktop app</span>
             </div>
             <ol class="install__rows">
               <li class="install__row">
-                <span class="command-number" aria-hidden="true">1</span>
+                <span class="install__num" aria-hidden="true">1</span>
                 <code class="install__cmd">/plugin marketplace add welltraum/minto</code>
-                <button class="ac-btn ac-btn--secondary ac-btn--label ac-motion install__copy" type="button" data-copy="/plugin marketplace add welltraum/minto" aria-label="Copy command: /plugin marketplace add welltraum/minto"><span data-copy-label>Copy</span></button>
+                <button class="mr-button" data-variant="ghost" type="button" data-copy="/plugin marketplace add welltraum/minto" aria-label="Copy command: /plugin marketplace add welltraum/minto"><span data-copy-label>Copy</span></button>
               </li>
               <li class="install__row">
-                <span class="command-number" aria-hidden="true">2</span>
+                <span class="install__num" aria-hidden="true">2</span>
                 <code class="install__cmd">/plugin install minto@minto</code>
-                <button class="ac-btn ac-btn--secondary ac-btn--label ac-motion install__copy" type="button" data-copy="/plugin install minto@minto" aria-label="Copy command: /plugin install minto@minto"><span data-copy-label>Copy</span></button>
+                <button class="mr-button" data-variant="ghost" type="button" data-copy="/plugin install minto@minto" aria-label="Copy command: /plugin install minto@minto"><span data-copy-label>Copy</span></button>
               </li>
             </ol>
-            <p class="ac-body ac-body--md install__after">Then invoke <code>/minto:minto</code> &mdash; or just describe the writing problem and let Claude route it.</p>
+            <p class="small install__after">Then invoke <code>/minto:minto</code> &mdash; or just describe the writing problem and let Claude route it.</p>
           </div>
 
-          <div class="ac-panel ac-panel--sand-light install__card">
+          <div class="install__card">
             <div class="install__head">
-              <h3 class="ac-title-text">Codex</h3>
-              <span class="ac-label">CLI &amp; desktop app</span>
+              <h3 class="subtitle">Codex</h3>
+              <span class="label">CLI &amp; desktop app</span>
             </div>
             <ol class="install__rows">
               <li class="install__row">
-                <span class="command-number" aria-hidden="true">1</span>
+                <span class="install__num" aria-hidden="true">1</span>
                 <code class="install__cmd">codex plugin marketplace add welltraum/minto</code>
-                <button class="ac-btn ac-btn--secondary ac-btn--label ac-motion install__copy" type="button" data-copy="codex plugin marketplace add welltraum/minto" aria-label="Copy command: codex plugin marketplace add welltraum/minto"><span data-copy-label>Copy</span></button>
+                <button class="mr-button" data-variant="ghost" type="button" data-copy="codex plugin marketplace add welltraum/minto" aria-label="Copy command: codex plugin marketplace add welltraum/minto"><span data-copy-label>Copy</span></button>
               </li>
               <li class="install__row">
-                <span class="command-number" aria-hidden="true">2</span>
+                <span class="install__num" aria-hidden="true">2</span>
                 <code class="install__cmd">codex plugin add minto@minto</code>
-                <button class="ac-btn ac-btn--secondary ac-btn--label ac-motion install__copy" type="button" data-copy="codex plugin add minto@minto" aria-label="Copy command: codex plugin add minto@minto"><span data-copy-label>Copy</span></button>
+                <button class="mr-button" data-variant="ghost" type="button" data-copy="codex plugin add minto@minto" aria-label="Copy command: codex plugin add minto@minto"><span data-copy-label>Copy</span></button>
               </li>
             </ol>
-            <p class="ac-body ac-body--md install__after">Then invoke <code>$minto</code>, or describe the problem in words.</p>
+            <p class="small install__after">Then invoke <code>$minto</code>, or describe the problem in words.</p>
           </div>
         </div>
 
-        <p class="ac-label copy-status" role="status" aria-live="polite"></p>
+        <p class="label copy-status" role="status" aria-live="polite"></p>
 
-        <div class="ac-callout ac-callout--accent install__prompt">
-          <span class="ac-callout__disc" aria-hidden="true">
-            <svg width="20" height="14" viewBox="0 0 20 14" fill="none">
-              <path d="M0 7H13" stroke="currentColor" stroke-width="2"></path>
-              <path d="M12 2.5 L20 7 L12 11.5 Z" fill="currentColor"></path>
-            </svg>
-          </span>
-          <div class="ac-callout__text">
-            <h3 class="ac-title-text">Start with the draft you actually have</h3>
-            <p class="ac-body ac-body--md">You do not need to clean anything up first. Paste the text and ask Minto to settle the structure before the wording: &ldquo;Audit this proposal for pyramid logic. Do not rewrite it.&rdquo;</p>
+        <div class="prompt">
+          <span class="unit" data-state="answer" aria-hidden="true"></span>
+          <div class="prompt__text">
+            <h3 class="subtitle">Start with the draft you actually have</h3>
+            <p class="small">You do not need to clean anything up first. Paste the text and ask Minto to settle the structure before the wording: &ldquo;Audit this proposal for pyramid logic. Do not rewrite it.&rdquo;</p>
           </div>
         </div>
       </section>
@@ -1009,21 +846,22 @@
     <footer class="site-footer">
       <div class="page site-footer__inner">
         <div class="brand site-footer__brand">
-          <svg class="brand__mark" viewBox="0 0 36 36" width="22" height="22" aria-hidden="true">
-            <path d="M18 3 33 30H3L18 3Z"></path>
-            <path d="M8.4 20.5h19.2M12.8 12.5h10.4"></path>
-          </svg>
-          <span class="ac-title-text">Minto</span>
+          <span class="brand__mark units" data-shape="pyramid" aria-hidden="true">
+            <span class="units__row"><span class="unit"></span></span>
+            <span class="units__row"><span class="unit"></span><span class="unit"></span></span>
+            <span class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span></span>
+          </span>
+          <span class="brand__word">Minto</span>
         </div>
-        <p class="ac-body ac-body--md">The skill settles the argument before it rewrites the prose. Barbara Minto&rsquo;s source material remains the property of its rights holders; the plugin code is MIT-licensed.</p>
+        <p class="small">The skill settles the argument before it rewrites the prose. Barbara Minto&rsquo;s source material remains the property of its rights holders; the plugin code is MIT-licensed.</p>
         <nav aria-label="Links">
-          <a class="ac-link ac-label ac-motion" href="https://github.com/welltraum/minto">GitHub</a>
-          <a class="ac-link ac-label ac-motion" href="https://github.com/welltraum/minto/blob/main/CHANGELOG.md">Changelog</a>
-          <a class="ac-link ac-label ac-motion" href="./ru/" lang="ru">Русский</a>
+          <a class="nav-link" href="https://github.com/welltraum/minto">GitHub</a>
+          <a class="nav-link" href="https://github.com/welltraum/minto/blob/main/CHANGELOG.md">Changelog</a>
+          <a class="nav-link" href="./ru/" lang="ru">Русский</a>
         </nav>
       </div>
     </footer>
 
-    <script src="./assets/app.js?v=5" defer></script>
+    <script src="./assets/app.js?v=6" defer></script>
   </body>
 </html>
