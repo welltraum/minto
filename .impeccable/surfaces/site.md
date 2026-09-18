@@ -42,14 +42,14 @@ Text for prose, JetBrains Mono for commands and measured data. The unit is a squ
 states, not four: ink idea, `--mr-line` weak material, outlined named gap, hatched defect,
 mustard answer. Every illustration on the page is built from it.
 
-STORY: the visitor sees disorder turn into a pyramid made of identical material, reads five
-modes in one anatomy, sees five before/after cases, reads one benchmark that also reports its
-loss, and installs in two commands.
+STORY: the visitor sees disorder turn into a pyramid made of identical material, sees one
+representative before/after case, meets the benchmark gain and loss at equal weight, chooses a
+job in user language, can inspect the full method and remaining cases, and installs in two commands.
 
-FIRST VIEWPORT: paper. Left column carries the Play headline, one lede paragraph, an ink
-primary button and a ghost second. Right column carries a card that stretches to the copy
+FIRST VIEWPORT: paper. Left column carries the answer-first promise, one concrete lede paragraph,
+an ink installation button and a ghost before/after button. Right column carries a card that stretches to the copy
 column's height and holds the whole transformation in one row — scatter, arrow, pyramid, and
-nothing else — with the case provenance beneath it. Below 900px the card stacks and the arrow
+nothing else. Below 900px the card stacks and the arrow
 rotates. Three promises sit in a full-width band under both columns. Header scrolls away like
 a masthead.
 
@@ -70,8 +70,8 @@ card holds nothing else — no captions, no quotes, no bullets. Its scale is sol
 column (`--u: clamp(13px, 1.7vw, 24px)`), not borrowed from a generic size token, because the
 picture is eight units wide at its widest.
 
-**The mode list.** Five rows of one anatomy: mono command, the turn, the result sentence. The
-turn is a three-track grid (`7 units | auto | 4 units`), so every arrow and every output edge
+**The mode list.** Five rows led by a user task, followed by the mono command, the turn and the
+result sentence. The turn is a three-track grid (`7 units | auto | 4 units`), so every arrow and every output edge
 sits on one vertical down the whole list. The SCQ ladder keeps a row of its own beneath them,
 because it is the one thing the old mode cards carried that appears nowhere else.
 
@@ -84,8 +84,8 @@ sand.
 **The benchmark rail.** The same square logic stretched: twenty ticks of five points, control
 track 13px in `--mr-field`, skill track 26px, the difference permanently drawn as a band in
 `--mr-ink` (or `--mr-hot` where the measure fell), legend swatches at 7/13/13 echoing those
-heights. Above the rails, a band of four large derived numbers answers before the rails
-explain. This replaces the hover-revealed delta bracket the contract first named: that version
+heights. Earlier in the story, a compact band of four large derived deltas answers before the
+full method and rails explain. This replaces the hover-revealed delta bracket the contract first named: that version
 hid the page's central number behind a pointer, so no touch reader ever saw it, and information
 a chart exists to carry should not be an interaction.
 

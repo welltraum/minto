@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="og-title og-desc">
-  <title id="og-title">Minto: the decision reads in the first line</title>
-  <desc id="og-desc">A Claude Code and Codex skill that settles the reader's question before it edits a single word.</desc>
+  <title id="og-title">Minto: decide what to say before deciding how to write it</title>
+  <desc id="og-desc">A Claude Code and Codex skill that turns notes and drafts into a clear argument.</desc>
   <style>
     @font-face { font-family: "Play"; src: url("./fonts/Play-Bold.woff2") format("woff2"); font-weight: 700; }
     @font-face { font-family: "Golos Text"; src: url("./fonts/GolosText-Bold.woff2") format("woff2"); font-weight: 700; }
@@ -11,7 +11,7 @@
     .ash { fill: #726759; }
     .mustard { fill: #e9b100; }
     .line { stroke: #c6bcac; }
-    .display { font-family: "Play", "Golos Text", Arial, sans-serif; font-weight: 700; font-size: 60px; letter-spacing: -1.4px; }
+    .display { font-family: "Play", "Golos Text", Arial, sans-serif; font-weight: 700; font-size: 72px; letter-spacing: -1.4px; }
     .word { font-family: "Play", "Golos Text", Arial, sans-serif; font-weight: 700; font-size: 34px; letter-spacing: -0.4px; }
     .mono { font-family: "JetBrains Mono", monospace; font-weight: 400; font-size: 20px; }
   </style>
@@ -30,8 +30,8 @@
 
   <path class="line" d="M80 138H1120" stroke-width="1.5"/>
 
-  <text class="display ink" x="80" y="300">The decision reads</text>
-  <text class="display ink" x="80" y="378">in the first line</text>
+  <text class="display ink" x="80" y="300">Decide what to say</text>
+  <text class="display ink" x="80" y="378">before you write</text>
 
   <g>
     <rect class="weak" x="768" y="283" width="18" height="18"/>
@@ -74,5 +74,5 @@
 
   <path class="line" d="M80 520H1120" stroke-width="1.5"/>
 
-  <text class="mono ash" x="80" y="566">Answer on top &#183; Points of one kind &#183; Gaps named</text>
+  <text class="mono ash" x="80" y="566">Clear question &#183; Main answer &#183; Evidence gaps</text>
 </svg>

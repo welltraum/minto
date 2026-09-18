@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#f8f1e3">
-    <meta name="description" content="Minto reorders the argument on Barbara Minto&rsquo;s pyramid principle: the answer on top, like items grouped, gaps named. Five modes, before / after cases and 172 blind benchmark verdicts.">
+    <meta name="description" content="Minto turns notes and drafts into a clear argument: it identifies the reader&rsquo;s question, surfaces the main answer, groups supporting points and exposes evidence gaps. Before / after cases and 172 blind verdicts.">
     <meta name="robots" content="index,follow">
     <link rel="canonical" href="https://welltraum.github.io/minto/">
     <link rel="alternate" hreflang="en" href="https://welltraum.github.io/minto/">
@@ -14,18 +14,18 @@
     <link rel="preload" href="./assets/fonts/GolosText-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="./assets/fonts/Play-Bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="./assets/mirai.css?v=6">
-    <link rel="stylesheet" href="./assets/styles.css?v=6">
+    <link rel="stylesheet" href="./assets/styles.css?v=7">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Minto">
-    <meta property="og:title" content="Minto: the decision reads in the first line">
-    <meta property="og:description" content="A Claude Code and Codex skill that settles the reader&rsquo;s question before it edits a single word.">
+    <meta property="og:title" content="Minto: decide what to say before deciding how to write it">
+    <meta property="og:description" content="A Claude Code and Codex skill that turns notes and drafts into a clear argument.">
     <meta property="og:url" content="https://welltraum.github.io/minto/">
     <meta property="og:image" content="https://welltraum.github.io/minto/assets/og.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Minto puts the answer on top, groups like items and names the gaps">
+    <meta property="og:image:alt" content="Minto turns a scattered draft into a clear argument structure">
     <meta name="twitter:card" content="summary_large_image">
-    <title>Minto &mdash; a Claude Code and Codex skill: the decision reads from the first line</title>
+    <title>Minto &mdash; a Claude Code and Codex skill: decide what to say first</title>
   </head>
   <body class="mr-root" data-tone="vivid">
     <a class="skip-link mr-button" data-variant="ghost" data-size="sm" href="#main">Skip to content</a>
@@ -42,9 +42,9 @@
         </a>
 
         <nav class="site-nav" aria-label="Sections">
-          <a class="nav-link" href="#modes" data-section-link="modes">Modes</a>
           <a class="nav-link" href="#cases" data-section-link="cases">Examples</a>
           <a class="nav-link" href="#evidence" data-section-link="evidence">Evidence</a>
+          <a class="nav-link" href="#modes" data-section-link="modes">Capabilities</a>
           <a class="nav-link" href="#install" data-section-link="install">Install</a>
         </nav>
 
@@ -61,14 +61,14 @@
       <section class="hero" aria-labelledby="hero-heading">
         <div class="hero__copy">
           <div class="title-block">
-            <h1 class="display" id="hero-heading">The decision reads in the first line</h1>
+            <h1 class="display" id="hero-heading">Decide what to say. Then decide how to write it</h1>
             <hr class="rule">
-            <p class="lead">Minto is an installable skill for Claude Code and Codex that settles the reader&rsquo;s question before it edits a single word.</p>
+            <p class="lead">Minto is a Claude Code and Codex skill that turns notes and drafts into a clear argument: it identifies the reader&rsquo;s question, surfaces the main answer, groups supporting points and shows where evidence is missing.</p>
           </div>
 
           <div class="hero__actions">
-            <a class="mr-button" data-variant="dark" href="#install">Install the skill</a>
-            <a class="mr-button" data-variant="ghost" href="#cases">See the before / after cases</a>
+            <a class="mr-button" data-variant="dark" href="#install">Install in 2 commands</a>
+            <a class="mr-button" data-variant="ghost" href="#cases">See before / after</a>
           </div>
 
         </div>
@@ -95,7 +95,6 @@
               <div class="units__row" style="--i: 3; --from: -2"><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit" data-state="gap"></span></div>
             </div>
           </div>
-          <p class="small hero__caption">Case 08 from the benchmark: same facts, same length &mdash; different order.</p>
         </div>
         <div class="hero__facts">
           <div class="hero__fact">
@@ -104,8 +103,8 @@
               <span class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></span>
             </span>
             <span class="hero__fact-text">
-              <span class="hero__fact-label">Answer on top</span>
-              <span class="label">The ask is the first sentence</span>
+              <span class="hero__fact-label">The main point comes first</span>
+              <span class="label">The reader sees where you are going</span>
             </span>
           </div>
           <div class="hero__fact">
@@ -114,7 +113,7 @@
               <span class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></span>
             </span>
             <span class="hero__fact-text">
-              <span class="hero__fact-label">Points of one kind</span>
+              <span class="hero__fact-label">Arguments grouped by kind</span>
               <span class="label">Reasons with reasons, steps with steps</span>
             </span>
           </div>
@@ -124,173 +123,80 @@
               <span class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></span>
             </span>
             <span class="hero__fact-text">
-              <span class="hero__fact-label">Gaps named</span>
-              <span class="label">Missing evidence is marked, not invented</span>
+              <span class="hero__fact-label">Missing evidence is marked</span>
+              <span class="label">Unsupported claims stay visibly separate</span>
             </span>
           </div>
         </div>
       </section>
 
-      <section class="section" id="modes" aria-labelledby="modes-heading">
+      <section class="section" id="cases" aria-labelledby="cases-heading">
         <div class="title-block">
-          <h2 class="title" id="modes-heading">Five modes &mdash; five different results from one text</h2>
+          <h2 class="title" id="cases-heading">Before / after: how Minto changes the structure</h2>
           <hr class="rule">
-          <p class="body">Pick the mode by what you need next: understanding, a diagnosis, a document, a digest, or a diagram.</p>
+          <p class="body">Minto moves the decision to the top and organises the evidence around it. Compare the original email with the result, then see how the skill checks logic, draws the structure and combines sources.</p>
         </div>
 
-        <ul class="modes">
-          <li class="mode">
-            <code class="mode__cmd">intent</code>
-            <div class="mode__turn" aria-hidden="true">
-              <div class="units" data-shape="scatter">
-                <div class="units__row" style="--x: 1"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
-                <div class="units__row" style="--x: 0"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
-                <div class="units__row" style="--x: 2"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
-              </div>
-              <span class="flow-arrow">
-                <svg width="30" height="14" viewBox="0 0 30 14" fill="none">
-                  <path d="M0 7H23" stroke="currentColor" stroke-width="2"></path>
-                  <path d="M22 2.5 L30 7 L22 11.5 Z" fill="currentColor"></path>
-                </svg>
-              </span>
-              <div class="units" data-shape="pyramid">
-                <div class="units__row"><span class="unit"></span></div>
-                <div class="units__row"><span class="unit" data-state="gap"></span></div>
-              </div>
-            </div>
-            <p class="mode__result">The reader&rsquo;s question, the answer in one line, and the gap named</p>
-          </li>
-          <li class="mode">
-            <code class="mode__cmd">audit</code>
-            <div class="mode__turn" aria-hidden="true">
-              <div class="units" data-shape="pyramid">
-                <div class="units__row"><span class="unit"></span></div>
-                <div class="units__row"><span class="unit"></span><span class="unit"></span></div>
-                <div class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span></div>
-              </div>
-              <span class="flow-arrow">
-                <svg width="30" height="14" viewBox="0 0 30 14" fill="none">
-                  <path d="M0 7H23" stroke="currentColor" stroke-width="2"></path>
-                  <path d="M22 2.5 L30 7 L22 11.5 Z" fill="currentColor"></path>
-                </svg>
-              </span>
-              <div class="units" data-shape="pyramid">
-                <div class="units__row"><span class="unit" data-state="flaw"></span></div>
-                <div class="units__row"><span class="unit"></span><span class="unit" data-state="flaw"></span></div>
-                <div class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit" data-state="flaw"></span><span class="unit"></span></div>
-              </div>
-            </div>
-            <p class="mode__result">A score for the structure and every defect by name &mdash; the text untouched</p>
-          </li>
-          <li class="mode">
-            <code class="mode__cmd">write</code>
-            <div class="mode__turn" aria-hidden="true">
+        <div class="case-tabs" data-tablist aria-label="Benchmark cases">
+          <a class="case-tab" href="#case-05" data-case-tab="05">Defect backlog &middot; write</a>
+          <a class="case-tab" href="#case-03" data-case-tab="03">Pyramid from prose &middot; viz</a>
+          <a class="case-tab" href="#case-04" data-case-tab="04">Three sources &middot; digest</a>
+          <a class="case-tab" href="#case-02" data-case-tab="02">Six headings &middot; audit</a>
+          <a class="case-tab" href="#case-01" data-case-tab="01">Meeting note &middot; write</a>
+        </div>
+
+        <article class="case" id="case-05" data-case-panel="05" aria-labelledby="case-05-heading">
+          <div class="case__head">
+            <h3 class="subtitle" id="case-05-heading">A message about the defect backlog</h3>
+            <p class="small">The same facts are organised around the decision instead of placed before it.</p>
+          </div>
+          <div class="case__pair">
+            <div class="case__source">
+            <div class="case__shape" aria-hidden="true">
               <div class="units" data-shape="scatter">
                 <div class="units__row" style="--x: 1"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
                 <div class="units__row" style="--x: 0"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
                 <div class="units__row" style="--x: 2"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit"></span></div>
               </div>
-              <span class="flow-arrow">
-                <svg width="30" height="14" viewBox="0 0 30 14" fill="none">
-                  <path d="M0 7H23" stroke="currentColor" stroke-width="2"></path>
-                  <path d="M22 2.5 L30 7 L22 11.5 Z" fill="currentColor"></path>
-                </svg>
-              </span>
+            </div>
+              <p class="label">Source &middot; four paragraphs of evidence</p>
+              <div class="case__letter">
+                <p class="doc-item">Hi Alex,</p>
+                <p class="doc-item">I am increasingly worried about the defect backlog. The attached chart compares new defects with the number we close and projects the backlog one year ahead.</p>
+                <p class="doc-item">Customer Experience and Research also report that defects are contributing to churn. A second chart places churn beside defect volume, and an interview illustrates the same issue.</p>
+                <p class="doc-item">There are signs of brand damage too: user posts, a complaint from a major account, and Sales reports that these concerns are making deals harder to close.</p>
+                <p class="doc-item case__ask">I recommend using the next sprint to reduce the defect backlog. Let me know what you think.</p>
+              </div>
+              <p class="small">Alex reads four paragraphs of evidence before finding out what he is being asked to decide.</p>
+            </div>
+            <div class="case__result" data-fixture="08-techdebt" data-engine="opus5" data-arm="skill" data-structure="8" data-quality="10" data-hard-failures="1">
+            <div class="case__shape" aria-hidden="true">
               <div class="units" data-shape="pyramid">
                 <div class="units__row"><span class="unit"></span></div>
                 <div class="units__row"><span class="unit"></span><span class="unit"></span></div>
                 <div class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span></div>
               </div>
             </div>
-            <p class="mode__result">A document that starts with the conclusion</p>
-          </li>
-          <li class="mode">
-            <code class="mode__cmd">digest</code>
-            <div class="mode__turn" aria-hidden="true">
-              <div class="units">
-                <div class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
-                <div class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
-                <div class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
-              </div>
-              <span class="flow-arrow">
-                <svg width="30" height="14" viewBox="0 0 30 14" fill="none">
-                  <path d="M0 7H23" stroke="currentColor" stroke-width="2"></path>
-                  <path d="M22 2.5 L30 7 L22 11.5 Z" fill="currentColor"></path>
-                </svg>
-              </span>
-              <div class="units" data-shape="pyramid">
-                <div class="units__row"><span class="unit"></span></div>
+              <p class="label">With Minto &middot; write &middot; scores: structure 8/8, quality 10/10</p>
+              <div class="case__letter">
+                <p class="doc-item">Hi Alex,</p>
+                <p class="doc-answer">Let&rsquo;s spend the next sprint on the defect backlog &mdash; we&rsquo;re losing customers and deals to it faster than we&rsquo;re closing it.</p>
+                <ul class="case__list">
+                  <li class="doc-item"><strong>The backlog will keep growing on its own.</strong> We&rsquo;re opening defects faster than we close them; the attached chart projects where that leaves us in a year if we don&rsquo;t intervene now.</li>
+                  <li class="doc-item"><strong>Defects are costing us customers.</strong> Customer Experience and Research tie them directly to churn &mdash; the second chart puts churn alongside defect volume, and the attached interview shows the mechanism up close.</li>
+                  <li class="doc-item"><strong>They&rsquo;re now costing us new business too.</strong> User posts and a complaint from one of our largest accounts have made this visible outside the product, and Sales reports it&rsquo;s slowing close rates.</li>
+                </ul>
+                <p class="doc-item">Can you confirm the sprint focus so we can shape the backlog before planning?</p>
               </div>
             </div>
-            <p class="mode__result">One thing to do today, with every point back to its source</p>
-          </li>
-          <li class="mode">
-            <code class="mode__cmd">viz</code>
-            <div class="mode__turn" aria-hidden="true">
-              <div class="units">
-                <div class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
-              </div>
-              <span class="flow-arrow">
-                <svg width="30" height="14" viewBox="0 0 30 14" fill="none">
-                  <path d="M0 7H23" stroke="currentColor" stroke-width="2"></path>
-                  <path d="M22 2.5 L30 7 L22 11.5 Z" fill="currentColor"></path>
-                </svg>
-              </span>
-              <div class="units" data-shape="pyramid">
-                <div class="units__row"><span class="unit"></span></div>
-                <div class="units__row"><span class="unit"></span><span class="unit"></span></div>
-                <div class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span></div>
-              </div>
-            </div>
-            <p class="mode__result">The pyramid and the situation&ndash;complication&ndash;question&ndash;answer flow</p>
-          </li>
-        </ul>
-
-        <p class="label scq__label">The flow the skill checks in every document</p>
-        <ol class="scq">
-          <li class="scq__step">
-            <span class="unit" data-state="weak" aria-hidden="true"></span>
-            <span class="scq__name">Situation</span>
-            <span class="label">what the reader already agrees with</span>
-          </li>
-          <li class="scq__step">
-            <span class="unit" data-state="weak" aria-hidden="true"></span>
-            <span class="scq__name">Complication</span>
-            <span class="label">what changed or gets in the way</span>
-          </li>
-          <li class="scq__step">
-            <span class="unit" data-state="weak" aria-hidden="true"></span>
-            <span class="scq__name">Question</span>
-            <span class="label">what the reader has to decide</span>
-          </li>
-          <li class="scq__step">
-            <span class="unit" aria-hidden="true"></span>
-            <span class="scq__name">Answer</span>
-            <span class="label">what they should do or understand</span>
-          </li>
-        </ol>
-      </section>
-
-      <section class="section" id="cases" aria-labelledby="cases-heading">
-        <div class="title-block">
-          <h2 class="title" id="cases-heading">Five cases &mdash; five different sides of the skill</h2>
-          <hr class="rule">
-          <p class="body">On the left, the source text from the benchmark suite. On the right, what Opus 5 produced with the skill installed, quoted as it was blind-judged.</p>
-        </div>
-        <p class="small cases__note">Every text on this page is a real artifact from run v1.7.0-final &mdash; nothing is written for the website.</p>
-
-        <div class="case-tabs" data-tablist aria-label="Benchmark cases">
-          <a class="case-tab" href="#case-01" data-case-tab="01">Meeting note &middot; write</a>
-          <a class="case-tab" href="#case-02" data-case-tab="02">Six headings &middot; audit</a>
-          <a class="case-tab" href="#case-03" data-case-tab="03">Pyramid from prose &middot; viz</a>
-          <a class="case-tab" href="#case-04" data-case-tab="04">Three sources &middot; digest</a>
-          <a class="case-tab" href="#case-05" data-case-tab="05">Defect backlog &middot; write</a>
-        </div>
+          </div>
+          <p class="small case__caveat"><strong>The skill moved the ask to the top and organised the evidence around it.</strong> The scores did not change: the same model&rsquo;s control run also scored 8/8 and 10/10, and both texts contained one unsupported fact. This example shows the restructuring; the overall effect appears across the 172 judgements below.</p>
+        </article>
 
         <article class="case" id="case-01" data-case-panel="01" aria-labelledby="case-01-heading">
           <div class="case__head">
             <h3 class="subtitle" id="case-01-heading">A short note to a colleague</h3>
-            <p class="small">What it shows: restraint. The skill does not dress a two-line note in headings and diagrams.</p>
+            <p class="small">The short note stays short while the conclusion moves to the top.</p>
           </div>
           <div class="case__pair">
             <div class="case__source">
@@ -326,7 +232,7 @@
         <article class="case" id="case-02" data-case-panel="02" aria-labelledby="case-02-heading">
           <div class="case__head">
             <h3 class="subtitle" id="case-02-heading">A memorandum in six sections</h3>
-            <p class="small">What it shows: a diagnosis without a rewrite. Only the setout is visible &mdash; the skill invents nothing about the body.</p>
+            <p class="small">The diagnosis uses the setout without rewriting it; unknown body content stays outside the assessment.</p>
           </div>
           <div class="case__pair case__pair--wide">
             <div class="case__source">
@@ -369,7 +275,7 @@
                 </div>
                 <div class="case__flaw">
                   <span class="mr-tag" data-tone="hot">critical</span>
-                  <p class="doc-item">Six headings of six different kinds &mdash; context, concepts, definition, mechanics, payoffs, prerequisites. No plural noun fits them.</p>
+                  <p class="doc-item">One level mixes context, a definition, process, benefits and conditions. It is not one logical list.</p>
                 </div>
                 <div class="case__flaw">
                   <span class="mr-tag">medium</span>
@@ -381,7 +287,7 @@
                 </div>
               </div>
               <div class="case__fixes">
-                <p class="label">Three fixes that buy the most</p>
+                <p class="label">The three changes with the greatest effect</p>
                 <p class="doc-item">State the answer in the first sentence. Promote &ldquo;benefits and results&rdquo; to the first level. Rewrite the six topic labels as three or four same-kind assertions.</p>
               </div>
             </div>
@@ -391,7 +297,7 @@
         <article class="case" id="case-03" data-case-panel="03" aria-labelledby="case-03-heading">
           <div class="case__head">
             <h3 class="subtitle" id="case-03-heading">A memo on composing cost</h3>
-            <p class="small">What it shows: structure you can see. The prose is not rewritten &mdash; its pyramid is lifted out of it.</p>
+            <p class="small">The argument structure becomes visible separately from the prose.</p>
           </div>
           <div class="case__pair case__pair--wider">
             <div class="case__source">
@@ -453,7 +359,7 @@
         <article class="case" id="case-04" data-case-panel="04" aria-labelledby="case-04-heading">
           <div class="case__head">
             <h3 class="subtitle" id="case-04-heading">Three compliance sources</h3>
-            <p class="small">What it shows: working from what was read. The tech lead will not read the sources &mdash; they need today&rsquo;s decision.</p>
+            <p class="small">Several sources become one decision instead of a sequence of summaries.</p>
           </div>
           <div class="case__pair case__pair--wider">
             <div class="case__srclist">
@@ -503,7 +409,7 @@
                   <p class="doc-note">Whether a penetration test is required is decided by the reviewer during the review. Dependency approval has no standard turnaround. So the build-phase price cannot be a single number: either carve both out as separately-priced items, or hold the price until the review is scheduled.</p>
                 </div>
                 <div class="case__group case__group--accent">
-                  <p class="doc-lead">One unresolved exposure worth raising yourself</p>
+                  <p class="doc-lead">One open risk to raise ourselves</p>
                   <p class="doc-item">On 9 July it was said that two engineers are based in Lisbon, and nobody from the bank responded. Silence in a meeting is not approval &mdash; put Lisbon in writing alongside the diagram, before those engineers touch bank data.</p>
                 </div>
               </div>
@@ -511,73 +417,23 @@
           </div>
         </article>
 
-        <article class="case" id="case-05" data-case-panel="05" aria-labelledby="case-05-heading">
-          <div class="case__head">
-            <h3 class="subtitle" id="case-05-heading">A message about the defect backlog</h3>
-            <p class="small">What it shows: an honest case. The ask was already written &mdash; just in the last paragraph.</p>
-          </div>
-          <div class="case__pair">
-            <div class="case__source">
-            <div class="case__shape" aria-hidden="true">
-              <div class="units" data-shape="scatter">
-                <div class="units__row" style="--x: 1"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
-                <div class="units__row" style="--x: 0"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
-                <div class="units__row" style="--x: 2"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit"></span></div>
-              </div>
-            </div>
-              <p class="label">Source &middot; four paragraphs of evidence</p>
-              <div class="case__letter">
-                <p class="doc-item">Hi Alex,</p>
-                <p class="doc-item">I am increasingly worried about the defect backlog. The attached chart compares new defects with the number we close and projects the backlog one year ahead.</p>
-                <p class="doc-item">Customer Experience and Research also report that defects are contributing to churn. A second chart places churn beside defect volume, and an interview illustrates the same issue.</p>
-                <p class="doc-item">There are signs of brand damage too: user posts, a complaint from a major account, and Sales reports that these concerns are making deals harder to close.</p>
-                <p class="doc-item case__ask">I recommend using the next sprint to reduce the defect backlog. Let me know what you think.</p>
-              </div>
-              <p class="small">Alex reads four paragraphs of evidence before finding out what he is being asked to decide.</p>
-            </div>
-            <div class="case__result" data-fixture="08-techdebt" data-engine="opus5" data-arm="skill" data-structure="8" data-quality="10" data-hard-failures="1">
-            <div class="case__shape" aria-hidden="true">
-              <div class="units" data-shape="pyramid">
-                <div class="units__row"><span class="unit"></span></div>
-                <div class="units__row"><span class="unit"></span><span class="unit"></span></div>
-                <div class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span></div>
-              </div>
-            </div>
-              <div class="case__head-row">
-                <span class="mr-tag">With Minto &middot; write</span>
-                <span class="label">blind judge: structure 8/8, quality 10/10</span>
-              </div>
-              <div class="case__letter">
-                <p class="doc-item">Hi Alex,</p>
-                <p class="doc-answer">Let&rsquo;s spend the next sprint on the defect backlog &mdash; we&rsquo;re losing customers and deals to it faster than we&rsquo;re closing it.</p>
-                <ul class="case__list">
-                  <li class="doc-item"><strong>The backlog will keep growing on its own.</strong> We&rsquo;re opening defects faster than we close them; the attached chart projects where that leaves us in a year if we don&rsquo;t intervene now.</li>
-                  <li class="doc-item"><strong>Defects are costing us customers.</strong> Customer Experience and Research tie them directly to churn &mdash; the second chart puts churn alongside defect volume, and the attached interview shows the mechanism up close.</li>
-                  <li class="doc-item"><strong>They&rsquo;re now costing us new business too.</strong> User posts and a complaint from one of our largest accounts have made this visible outside the product, and Sales reports it&rsquo;s slowing close rates.</li>
-                </ul>
-                <p class="doc-item">Can you confirm the sprint focus so we can shape the backlog before planning?</p>
-              </div>
-            </div>
-          </div>
-          <p class="small case__caveat"><strong>The skill did not win this one &mdash; and it shows.</strong> An easy case: the recommendation was already written, only in the wrong place. The same model&rsquo;s control run also scored 8/8 and 10/10, and the judge flagged one invented fact in both. What separates the two arms is the pattern across all 172 runs below.</p>
-        </article>
       </section>
 
       <section class="section" id="evidence" aria-labelledby="evidence-heading" data-benchmark="v1.7.0-final" data-benchmark-cells="172">
         <div class="title-block">
-          <h2 class="title" id="evidence-heading">Five measures improve. One gets worse.</h2>
+          <h2 class="title" id="evidence-heading" data-figure="cells">Tested in 172 blind judgements</h2>
           <hr class="rule">
-          <p class="body">Every document was rewritten twice &mdash; once with the skill, once without &mdash; and scored by a judge who never saw which arm it was reading.</p>
+          <p class="body">Minto&rsquo;s effect is measured on real texts, showing where the structure improved and where the skill still needs work.</p>
         </div>
 
         <ul class="figures">
-          <li class="figure" data-figure="cells">
-            <p class="figure__num">172</p>
-            <p class="label">blind judgements, every run scored on one rubric</p>
+          <li class="figure" data-figure="metric-delta" data-metric-ref="structure">
+            <p class="figure__num">+7</p>
+            <p class="label">points: argument structure</p>
           </li>
-          <li class="figure" data-figure="engines">
-            <p class="figure__num">8</p>
-            <p class="label">models, each rewriting every document twice</p>
+          <li class="figure" data-figure="metric-delta" data-metric-ref="quality">
+            <p class="figure__num">+7</p>
+            <p class="label">points: overall writing quality</p>
           </li>
           <li class="figure" data-figure="metric-delta" data-metric-ref="readers-question">
             <p class="figure__num">+22</p>
@@ -589,35 +445,188 @@
           </li>
         </ul>
 
+        <div class="evidence__foot">
+          <a class="link" href="#evidence-details">How we measured it &darr;</a>
+        </div>
+      </section>
+
+      <section class="section" id="modes" aria-labelledby="modes-heading">
+        <div class="title-block">
+          <h2 class="title" id="modes-heading">Five jobs for Minto</h2>
+          <hr class="rule">
+          <p class="body">Choose the result you need and invoke the command beside it: <code>intent</code>, <code>audit</code>, <code>write</code>, <code>digest</code> or <code>viz</code>.</p>
+        </div>
+
+        <ul class="modes">
+          <li class="mode">
+            <p class="mode__task">Work out what you want to say</p>
+            <code class="mode__cmd">intent</code>
+            <div class="mode__turn" aria-hidden="true">
+              <div class="units" data-shape="scatter">
+                <div class="units__row" style="--x: 1"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+                <div class="units__row" style="--x: 0"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+                <div class="units__row" style="--x: 2"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+              </div>
+              <span class="flow-arrow">
+                <svg width="30" height="14" viewBox="0 0 30 14" fill="none">
+                  <path d="M0 7H23" stroke="currentColor" stroke-width="2"></path>
+                  <path d="M22 2.5 L30 7 L22 11.5 Z" fill="currentColor"></path>
+                </svg>
+              </span>
+              <div class="units" data-shape="pyramid">
+                <div class="units__row"><span class="unit"></span></div>
+                <div class="units__row"><span class="unit" data-state="gap"></span></div>
+              </div>
+            </div>
+            <p class="mode__result">The reader&rsquo;s question, the answer in one line, and the gap named</p>
+          </li>
+          <li class="mode">
+            <p class="mode__task">Check the logic without rewriting</p>
+            <code class="mode__cmd">audit</code>
+            <div class="mode__turn" aria-hidden="true">
+              <div class="units" data-shape="pyramid">
+                <div class="units__row"><span class="unit"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span></div>
+              </div>
+              <span class="flow-arrow">
+                <svg width="30" height="14" viewBox="0 0 30 14" fill="none">
+                  <path d="M0 7H23" stroke="currentColor" stroke-width="2"></path>
+                  <path d="M22 2.5 L30 7 L22 11.5 Z" fill="currentColor"></path>
+                </svg>
+              </span>
+              <div class="units" data-shape="pyramid">
+                <div class="units__row"><span class="unit" data-state="flaw"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit" data-state="flaw"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit" data-state="flaw"></span><span class="unit"></span></div>
+              </div>
+            </div>
+            <p class="mode__result">A structure score and every defect named &mdash; the text stays untouched</p>
+          </li>
+          <li class="mode">
+            <p class="mode__task">Rebuild a text around its main answer</p>
+            <code class="mode__cmd">write</code>
+            <div class="mode__turn" aria-hidden="true">
+              <div class="units" data-shape="scatter">
+                <div class="units__row" style="--x: 1"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+                <div class="units__row" style="--x: 0"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+                <div class="units__row" style="--x: 2"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit"></span></div>
+              </div>
+              <span class="flow-arrow">
+                <svg width="30" height="14" viewBox="0 0 30 14" fill="none">
+                  <path d="M0 7H23" stroke="currentColor" stroke-width="2"></path>
+                  <path d="M22 2.5 L30 7 L22 11.5 Z" fill="currentColor"></path>
+                </svg>
+              </span>
+              <div class="units" data-shape="pyramid">
+                <div class="units__row"><span class="unit"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span></div>
+              </div>
+            </div>
+            <p class="mode__result">A document that starts with the conclusion</p>
+          </li>
+          <li class="mode">
+            <p class="mode__task">Turn several sources into one decision</p>
+            <code class="mode__cmd">digest</code>
+            <div class="mode__turn" aria-hidden="true">
+              <div class="units">
+                <div class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+                <div class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+                <div class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+              </div>
+              <span class="flow-arrow">
+                <svg width="30" height="14" viewBox="0 0 30 14" fill="none">
+                  <path d="M0 7H23" stroke="currentColor" stroke-width="2"></path>
+                  <path d="M22 2.5 L30 7 L22 11.5 Z" fill="currentColor"></path>
+                </svg>
+              </span>
+              <div class="units" data-shape="pyramid">
+                <div class="units__row"><span class="unit"></span></div>
+              </div>
+            </div>
+            <p class="mode__result">One thing to do today, with every point back to its source</p>
+          </li>
+          <li class="mode">
+            <p class="mode__task">See the structure of an argument</p>
+            <code class="mode__cmd">viz</code>
+            <div class="mode__turn" aria-hidden="true">
+              <div class="units">
+                <div class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+              </div>
+              <span class="flow-arrow">
+                <svg width="30" height="14" viewBox="0 0 30 14" fill="none">
+                  <path d="M0 7H23" stroke="currentColor" stroke-width="2"></path>
+                  <path d="M22 2.5 L30 7 L22 11.5 Z" fill="currentColor"></path>
+                </svg>
+              </span>
+              <div class="units" data-shape="pyramid">
+                <div class="units__row"><span class="unit"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span></div>
+              </div>
+            </div>
+            <p class="mode__result">The pyramid and the situation&ndash;complication&ndash;question&ndash;answer flow</p>
+          </li>
+        </ul>
+
+        <p class="label scq__label">The flow the skill checks in every document</p>
+        <ol class="scq">
+          <li class="scq__step">
+            <span class="unit" data-state="weak" aria-hidden="true"></span>
+            <span class="scq__name">Situation</span>
+            <span class="label">what the reader already agrees with</span>
+          </li>
+          <li class="scq__step">
+            <span class="unit" data-state="weak" aria-hidden="true"></span>
+            <span class="scq__name">Complication</span>
+            <span class="label">what changed or gets in the way</span>
+          </li>
+          <li class="scq__step">
+            <span class="unit" data-state="weak" aria-hidden="true"></span>
+            <span class="scq__name">Question</span>
+            <span class="label">what the reader has to decide</span>
+          </li>
+          <li class="scq__step">
+            <span class="unit" aria-hidden="true"></span>
+            <span class="scq__name">Answer</span>
+            <span class="label">what they should do or understand</span>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section evidence-detail" id="evidence-details" aria-labelledby="evidence-details-heading">
+        <div class="title-block">
+          <h2 class="title" id="evidence-details-heading">How the benchmark works</h2>
+          <hr class="rule">
+          <p class="body">The method, all six measures and model-level scores.</p>
+        </div>
+
         <div class="method">
-          <h3 class="subtitle">How we measured it</h3>
+          <h3 class="subtitle">How we tested it</h3>
           <div class="stages grid-stages">
             <div class="stage">
-              <span class="num stage__num" aria-hidden="true">1</span>
               <div class="stage__text">
-                <h4 class="subtitle">11 documents</h4>
-                <p class="small">Emails, memos, an audit, a digest, a pasteable list &mdash; from a two-line note to an eight-page review.</p>
+                <h4 class="subtitle">11 different jobs</h4>
+                <p class="small">Emails, memos, an audit, a digest and a pasteable list &mdash; from a two-line note to an eight-page review.</p>
               </div>
             </div>
             <div class="stage">
-              <span class="num stage__num" aria-hidden="true">2</span>
               <div class="stage__text">
-                <h4 class="subtitle">Two arms</h4>
-                <p class="small">With the skill &mdash; and a control prompt that already names the Pyramid Principle. Not an unprompted model.</p>
+                <h4 class="subtitle">Structure against instruction</h4>
+                <p class="small">Minto fixes the reader&rsquo;s question, the answer and its supports; the control prompt only asks for the Pyramid Principle.</p>
               </div>
             </div>
             <div class="stage">
-              <span class="num stage__num" aria-hidden="true">3</span>
               <div class="stage__text">
-                <h4 class="subtitle">Blind judge</h4>
-                <p class="small">Outputs are shuffled: the judge knows neither the model nor the arm, and scores against one rubric.</p>
+                <h4 class="subtitle">One rubric for every text</h4>
+                <p class="small">Shuffled outputs are scored against the same criteria without revealing the model or preparation method.</p>
               </div>
             </div>
             <div class="stage stage--ink">
-              <span class="num stage__num" aria-hidden="true">4</span>
               <div class="stage__text">
-                <h4 class="subtitle">Counted, not recalled</h4>
-                <p class="small">Every figure on this page is computed from the published verdicts by a script, not summarised by a model.</p>
+                <h4 class="subtitle">Every figure is reproducible</h4>
+                <p class="small">A script calculates every figure on this page from the published verdicts.</p>
               </div>
             </div>
           </div>
@@ -697,27 +706,7 @@
             </li>
           </ul>
 
-          <figcaption class="small">Share of runs, or share of the judge&rsquo;s maximum score. The delta is in percentage points, and the rail behind each measure is graduated in twenty steps of five.</figcaption>
         </figure>
-
-        <div class="caveats">
-          <div class="caveat">
-            <h3 class="subtitle">What we publish against ourselves</h3>
-            <ul>
-              <li class="doc-item">With the skill, models asserted unsupported facts more often: 49 runs against 42.</li>
-              <li class="doc-item">The answer stood in the opening sentence less often &mdash; framing pushed it down. Those two are the top fixes for the next version.</li>
-              <li class="doc-item">Quality improved for all eight models; structure fell for one (Sonnet 5) and stayed level for qwen3.8-27b.</li>
-            </ul>
-          </div>
-          <div class="caveat">
-            <h3 class="subtitle">Limits of the measurement</h3>
-            <ul>
-              <li class="doc-item">One run per model, arm and document, so repeatability is unmeasured.</li>
-              <li class="doc-item">The documents are English, so these figures are not comparable with earlier Russian runs.</li>
-              <li class="doc-item">Three of the eleven documents are new in this round, so the previous 112-run table is not comparable either.</li>
-            </ul>
-          </div>
-        </div>
 
         <details class="models">
           <summary class="models__summary">View the exact scores by model</summary>
@@ -784,7 +773,7 @@
 
       <section class="section" id="install" aria-labelledby="install-heading">
         <div class="title-block">
-          <h2 class="title" id="install-heading">Install in two commands</h2>
+          <h2 class="title" id="install-heading">Install Minto</h2>
           <hr class="rule">
           <p class="body">Add the marketplace, install the plugin, then start a new session.</p>
         </div>
@@ -836,8 +825,8 @@
         <div class="prompt">
           <span class="unit" data-state="answer" aria-hidden="true"></span>
           <div class="prompt__text">
-            <h3 class="subtitle">Start with the draft you actually have</h3>
-            <p class="small">You do not need to clean anything up first. Paste the text and ask Minto to settle the structure before the wording: &ldquo;Audit this proposal for pyramid logic. Do not rewrite it.&rdquo;</p>
+            <h3 class="subtitle">Test it as soon as it is installed</h3>
+            <p class="small">Paste the text and say: &ldquo;Check this proposal against the Pyramid Principle. Name the structural problems first. Do not rewrite the text.&rdquo;</p>
           </div>
         </div>
       </section>

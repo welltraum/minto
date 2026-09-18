@@ -28,7 +28,7 @@ Minto makes AI-assisted business writing decision-ready by forcing the reader's 
 - A first-time visitor understands the promise in one screen and can install Minto without opening the README.
 - Codex and Claude Code installation paths are equally clear and copyable.
 - The site demonstrates the method with real structures and original examples, not abstract feature claims.
-- Benchmark evidence is presented accurately, including mixed results and limitations.
+- Benchmark evidence is presented accurately, including mixed results.
 - Both English and Russian versions are complete, accessible, fast, and usable without JavaScript.
 
 ## Principles

@@ -189,6 +189,7 @@ body { margin: 0; }
 .brand {
   display: inline-flex;
   align-items: center;
+  min-height: 44px;
   gap: 10px;
   text-decoration: none;
   color: var(--mr-ink);
@@ -260,7 +261,6 @@ body { margin: 0; }
 .hero__card .units { --u: clamp(18px, 5.6vw, 26px); --u-gap: calc(var(--u) / 4); }
 .hero__turn { color: var(--mr-ash); display: flex; }
 .hero__turn svg { transform: rotate(90deg); }
-.hero__caption { margin-top: 12px; }
 
 /* The page's one authored moment: the pyramid gathers out of the scatter's own
    offsets. It starts visible and only displaced, so nothing fades in. */
@@ -295,6 +295,17 @@ body { margin: 0; }
   padding: 18px 0;
   border-top: var(--rule) solid var(--mr-line);
   align-items: center;
+}
+.mode__task {
+  margin: 0;
+  max-width: 34ch;
+  font-family: var(--mr-font-display);
+  font-size: var(--fs-h3);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--mr-ink);
+  text-wrap: balance;
 }
 .mode__cmd {
   font-family: var(--mr-font-mono);
@@ -369,7 +380,6 @@ body { margin: 0; }
 
 /* ---------- 8. cases ---------- */
 
-.cases__note { margin-bottom: 16px; }
 .case-tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 22px; }
 .case-tab {
   display: inline-flex;
@@ -458,21 +468,19 @@ body { margin: 0; }
   border-radius: var(--mr-radius);
   padding: var(--pad);
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
   gap: 12px;
   align-content: start;
 }
 .stage--ink { background: var(--mr-ink); border-color: var(--mr-ink); }
-.stage--ink .subtitle, .stage--ink .stage__num { color: var(--mr-paper); }
+.stage--ink .subtitle { color: var(--mr-paper); }
 .stage--ink .small { color: var(--mr-stone); }
-.stage__num { font-size: var(--fs-figure-sm); line-height: 1; }
 .stage__text { display: grid; gap: 5px; }
 
 /* The band answers before the rails explain. Every number in it is derived
    from the same scores.json the rails are, and check_benchmark_numbers.py
    fails the build if one drifts. */
 .figures {
-  margin: 0 0 var(--section);
+  margin: 0 0 24px;
   padding: 0;
   list-style: none;
   display: grid;
@@ -483,6 +491,17 @@ body { margin: 0; }
 }
 .figures { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .figure { display: grid; gap: 8px; align-content: start; }
+.evidence__foot {
+  display: grid;
+  gap: 10px;
+  align-items: baseline;
+}
+.evidence__foot .link {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-self: start;
+}
 .figure__num {
   margin: 0;
   font-family: var(--mr-font-display);
@@ -574,18 +593,6 @@ body { margin: 0; }
 .metric__delta--down { color: var(--mr-hot-text); }
 
 
-.caveats { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--gap); margin-top: var(--section); }
-.caveat {
-  background: var(--mr-card);
-  border: var(--rule) solid var(--mr-line);
-  border-radius: var(--mr-radius);
-  padding: var(--pad-lg);
-  display: grid;
-  gap: 10px;
-  align-content: start;
-}
-.caveat ul { margin: 0; padding-left: 18px; display: grid; gap: 7px; }
-.caveat .doc-note { color: var(--mr-coal-soft); }
 
 .models { margin-top: 26px; border-top: var(--rule) solid var(--mr-line); padding-top: 16px; }
 .models__summary {
@@ -604,6 +611,7 @@ body { margin: 0; }
 .models__summary::after { content: "+"; font-family: var(--mr-font-mono); color: var(--mr-ash); }
 .models[open] .models__summary::after { content: "\2212"; }
 .models__body { display: grid; gap: 14px; padding-top: 8px; }
+.models__body .link { min-height: 44px; display: inline-flex; align-items: center; }
 .cell { display: inline-flex; align-items: center; gap: 6px; }
 .cell--up { color: var(--mr-ink); font-weight: 600; }
 .pair-arrow { color: var(--mr-ash); }
@@ -672,6 +680,9 @@ body { margin: 0; }
 /* ---------- 11. wider viewports ---------- */
 
 @media (max-width: 699px) {
+  .site-nav .nav-link { padding-inline: 8px; }
+  .install__row { grid-template-columns: auto minmax(0, 1fr); }
+  .install__row .mr-button { grid-column: 1 / -1; width: 100%; }
   .install__cmd { font-size: var(--fs-sm); }
 }
 
@@ -690,10 +701,10 @@ body { margin: 0; }
   .case__pair--wide { grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); }
   .case__pair--wider { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); }
   .case__branches { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
-  .caveats { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
   .install { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
   .stages { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .mode { grid-template-columns: 92px minmax(0, 1fr) minmax(0, 1.05fr); gap: 26px; padding: 20px 0; }
+  .mode { grid-template-columns: 92px minmax(0, 1fr) minmax(0, 1.05fr); gap: 14px 26px; padding: 20px 0; }
+  .mode__task { grid-column: 1 / -1; }
   .scq { grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: 18px; }
   .metric { grid-template-columns: minmax(0, 1fr) minmax(0, 1.9fr) auto; gap: 20px; align-items: center; }
   .metric__delta { font-size: var(--fs-figure-lg); }

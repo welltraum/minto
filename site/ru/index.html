@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#f8f1e3">
-    <meta name="description" content="Minto перестраивает аргумент по принципу пирамиды Барбары Минто: ответ наверху, пункты одного вида, названные пробелы. Пять режимов, кейсы «до / после» и 172 слепые оценки бенчмарка.">
+    <meta name="description" content="Minto превращает заметки и черновики в ясную структуру: формулирует вопрос читателя, поднимает главный вывод, группирует аргументы и показывает пробелы. Кейсы «до / после» и 172 слепые оценки.">
     <meta name="robots" content="index,follow">
     <link rel="canonical" href="https://welltraum.github.io/minto/ru/">
     <link rel="alternate" hreflang="en" href="https://welltraum.github.io/minto/">
@@ -14,18 +14,18 @@
     <link rel="preload" href="../assets/fonts/GolosText-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../assets/fonts/Play-Bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="../assets/mirai.css?v=6">
-    <link rel="stylesheet" href="../assets/styles.css?v=6">
+    <link rel="stylesheet" href="../assets/styles.css?v=7">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Minto">
-    <meta property="og:title" content="Minto: решение читается с первой строки">
-    <meta property="og:description" content="Навык для Claude Code и Codex, который сначала находит вопрос читателя и только потом правит слова.">
+    <meta property="og:title" content="Minto: сначала решите, что сказать. Потом — как написать">
+    <meta property="og:description" content="Навык для Claude Code и Codex, который превращает заметки и черновики в ясную структуру аргумента.">
     <meta property="og:url" content="https://welltraum.github.io/minto/ru/">
     <meta property="og:image" content="https://welltraum.github.io/minto/assets/og.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Minto ставит ответ наверх, собирает пункты одного вида и называет пробелы">
+    <meta property="og:image:alt" content="Minto превращает разрозненный черновик в ясную структуру аргумента">
     <meta name="twitter:card" content="summary_large_image">
-    <title>Minto &mdash; навык для Claude Code и Codex: решение читается с первой строки</title>
+    <title>Minto &mdash; навык для Claude Code и Codex: сначала решите, что сказать</title>
   </head>
   <body class="mr-root" data-tone="vivid">
     <a class="skip-link mr-button" data-variant="ghost" data-size="sm" href="#main">К содержанию</a>
@@ -42,9 +42,9 @@
         </a>
 
         <nav class="site-nav" aria-label="Разделы">
-          <a class="nav-link" href="#modes" data-section-link="modes">Режимы</a>
           <a class="nav-link" href="#cases" data-section-link="cases">Примеры</a>
           <a class="nav-link" href="#evidence" data-section-link="evidence">Замеры</a>
+          <a class="nav-link" href="#modes" data-section-link="modes">Возможности</a>
           <a class="nav-link" href="#install" data-section-link="install">Установка</a>
         </nav>
 
@@ -61,14 +61,14 @@
       <section class="hero" aria-labelledby="hero-heading">
         <div class="hero__copy">
           <div class="title-block">
-            <h1 class="display" id="hero-heading">Решение читается с первой строки</h1>
+            <h1 class="display" id="hero-heading">Сначала решите, что сказать. Потом &mdash; как написать</h1>
             <hr class="rule">
-            <p class="lead">Minto &mdash; навык для Claude Code и Codex, который сначала находит вопрос читателя и только потом правит слова.</p>
+            <p class="lead">Minto &mdash; навык для Claude Code и Codex, который превращает заметки и черновики в ясную структуру: формулирует вопрос читателя, поднимает главный вывод, группирует аргументы и показывает, где не хватает данных.</p>
           </div>
 
           <div class="hero__actions">
-            <a class="mr-button" data-variant="dark" href="#install">Установить навык</a>
-            <a class="mr-button" data-variant="ghost" href="#cases">Смотреть примеры «до / после»</a>
+            <a class="mr-button" data-variant="dark" href="#install">Установить за 2 команды</a>
+            <a class="mr-button" data-variant="ghost" href="#cases">Посмотреть «до / после»</a>
           </div>
 
         </div>
@@ -95,7 +95,6 @@
               <div class="units__row" style="--i: 3; --from: -2"><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit" data-state="gap"></span></div>
             </div>
           </div>
-          <p class="small hero__caption">Кейс 08 из бенчмарка: тот же текст, тот же объём &mdash; другой порядок.</p>
         </div>
         <div class="hero__facts">
           <div class="hero__fact">
@@ -104,8 +103,8 @@
               <span class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></span>
             </span>
             <span class="hero__fact-text">
-              <span class="hero__fact-label">Ответ наверху</span>
-              <span class="label">Просьба &mdash; в первой фразе</span>
+              <span class="hero__fact-label">Главная мысль наверху</span>
+              <span class="label">Читатель сразу понимает, к чему вы ведёте</span>
             </span>
           </div>
           <div class="hero__fact">
@@ -114,7 +113,7 @@
               <span class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></span>
             </span>
             <span class="hero__fact-text">
-              <span class="hero__fact-label">Пункты одного вида</span>
+              <span class="hero__fact-label">Аргументы сгруппированы</span>
               <span class="label">Причины к причинам, шаги к шагам</span>
             </span>
           </div>
@@ -124,173 +123,80 @@
               <span class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></span>
             </span>
             <span class="hero__fact-text">
-              <span class="hero__fact-label">Пробелы названы</span>
-              <span class="label">Нехватка данных не додумывается</span>
+              <span class="hero__fact-label">Нехватка данных обозначена</span>
+              <span class="label">Неподтверждённые утверждения видны отдельно</span>
             </span>
           </div>
         </div>
       </section>
 
-      <section class="section" id="modes" aria-labelledby="modes-heading">
+      <section class="section" id="cases" aria-labelledby="cases-heading">
         <div class="title-block">
-          <h2 class="title" id="modes-heading">Пять режимов &mdash; пять разных результатов из одного текста</h2>
+          <h2 class="title" id="cases-heading">До / после: как Minto меняет структуру</h2>
           <hr class="rule">
-          <p class="body">Режим выбирается по тому, что нужно получить дальше: понимание, диагноз, документ, сводку или схему.</p>
+          <p class="body">Minto поднимает решение наверх и собирает доказательства вокруг него. Сравните исходное письмо с результатом, а затем посмотрите, как навык проверяет логику, строит схему и объединяет источники.</p>
         </div>
 
-        <ul class="modes">
-          <li class="mode">
-            <code class="mode__cmd">intent</code>
-            <div class="mode__turn" aria-hidden="true">
-              <div class="units" data-shape="scatter">
-                <div class="units__row" style="--x: 1"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
-                <div class="units__row" style="--x: 0"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
-                <div class="units__row" style="--x: 2"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
-              </div>
-              <span class="flow-arrow">
-                <svg width="30" height="14" viewBox="0 0 30 14" fill="none">
-                  <path d="M0 7H23" stroke="currentColor" stroke-width="2"></path>
-                  <path d="M22 2.5 L30 7 L22 11.5 Z" fill="currentColor"></path>
-                </svg>
-              </span>
-              <div class="units" data-shape="pyramid">
-                <div class="units__row"><span class="unit"></span></div>
-                <div class="units__row"><span class="unit" data-state="gap"></span></div>
-              </div>
-            </div>
-            <p class="mode__result">Вопрос читателя, ответ одной фразой и названный пробел</p>
-          </li>
-          <li class="mode">
-            <code class="mode__cmd">audit</code>
-            <div class="mode__turn" aria-hidden="true">
-              <div class="units" data-shape="pyramid">
-                <div class="units__row"><span class="unit"></span></div>
-                <div class="units__row"><span class="unit"></span><span class="unit"></span></div>
-                <div class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span></div>
-              </div>
-              <span class="flow-arrow">
-                <svg width="30" height="14" viewBox="0 0 30 14" fill="none">
-                  <path d="M0 7H23" stroke="currentColor" stroke-width="2"></path>
-                  <path d="M22 2.5 L30 7 L22 11.5 Z" fill="currentColor"></path>
-                </svg>
-              </span>
-              <div class="units" data-shape="pyramid">
-                <div class="units__row"><span class="unit" data-state="flaw"></span></div>
-                <div class="units__row"><span class="unit"></span><span class="unit" data-state="flaw"></span></div>
-                <div class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit" data-state="flaw"></span><span class="unit"></span></div>
-              </div>
-            </div>
-            <p class="mode__result">Оценка структуре и каждый дефект по имени &mdash; текст не тронут</p>
-          </li>
-          <li class="mode">
-            <code class="mode__cmd">write</code>
-            <div class="mode__turn" aria-hidden="true">
+        <div class="case-tabs" data-tablist aria-label="Кейсы бенчмарка">
+          <a class="case-tab" href="#case-05" data-case-tab="05">Бэклог дефектов &middot; write</a>
+          <a class="case-tab" href="#case-03" data-case-tab="03">Пирамида из прозы &middot; viz</a>
+          <a class="case-tab" href="#case-04" data-case-tab="04">Три источника &middot; digest</a>
+          <a class="case-tab" href="#case-02" data-case-tab="02">Шесть заголовков &middot; audit</a>
+          <a class="case-tab" href="#case-01" data-case-tab="01">Перенос встречи &middot; write</a>
+        </div>
+
+        <article class="case" id="case-05" data-case-panel="05" aria-labelledby="case-05-heading">
+          <div class="case__head">
+            <h3 class="subtitle" id="case-05-heading">Письмо про бэклог дефектов</h3>
+            <p class="small">Те же факты собраны вокруг решения, а не поставлены перед ним.</p>
+          </div>
+          <div class="case__pair">
+            <div class="case__source">
+            <div class="case__shape" aria-hidden="true">
               <div class="units" data-shape="scatter">
                 <div class="units__row" style="--x: 1"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
                 <div class="units__row" style="--x: 0"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
                 <div class="units__row" style="--x: 2"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit"></span></div>
               </div>
-              <span class="flow-arrow">
-                <svg width="30" height="14" viewBox="0 0 30 14" fill="none">
-                  <path d="M0 7H23" stroke="currentColor" stroke-width="2"></path>
-                  <path d="M22 2.5 L30 7 L22 11.5 Z" fill="currentColor"></path>
-                </svg>
-              </span>
+            </div>
+              <p class="label">Источник &middot; четыре абзаца доказательств</p>
+              <div class="case__letter">
+                <p class="doc-item">Привет, Алекс!</p>
+                <p class="doc-item">Меня всё больше беспокоит бэклог дефектов. На графике &mdash; новые дефекты против закрытых и прогноз на год вперёд.</p>
+                <p class="doc-item">Клиентский опыт и исследования тоже сообщают, что дефекты влияют на оттоки. Второй график ставит отток рядом с числом дефектов, интервью показывает то же самое.</p>
+                <p class="doc-item">Есть и признаки ущерба бренду: посты пользователей, жалоба крупного клиента, и продажи говорят, что сделки закрывать труднее.</p>
+                <p class="doc-item case__ask">Предлагаю посвятить следующий спринт разбору бэклога дефектов. Скажи, что думаешь.</p>
+              </div>
+              <p class="small">Алекс читает четыре абзаца доказательств, прежде чем узнаёт, что от него хотят.</p>
+            </div>
+            <div class="case__result" data-fixture="08-techdebt" data-engine="opus5" data-arm="skill" data-structure="8" data-quality="10" data-hard-failures="1">
+            <div class="case__shape" aria-hidden="true">
               <div class="units" data-shape="pyramid">
                 <div class="units__row"><span class="unit"></span></div>
                 <div class="units__row"><span class="unit"></span><span class="unit"></span></div>
                 <div class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span></div>
               </div>
             </div>
-            <p class="mode__result">Документ, который начинается с вывода</p>
-          </li>
-          <li class="mode">
-            <code class="mode__cmd">digest</code>
-            <div class="mode__turn" aria-hidden="true">
-              <div class="units">
-                <div class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
-                <div class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
-                <div class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
-              </div>
-              <span class="flow-arrow">
-                <svg width="30" height="14" viewBox="0 0 30 14" fill="none">
-                  <path d="M0 7H23" stroke="currentColor" stroke-width="2"></path>
-                  <path d="M22 2.5 L30 7 L22 11.5 Z" fill="currentColor"></path>
-                </svg>
-              </span>
-              <div class="units" data-shape="pyramid">
-                <div class="units__row"><span class="unit"></span></div>
+              <p class="label">С Minto &middot; write &middot; оценка: структура 8/8, качество 10/10</p>
+              <div class="case__letter">
+                <p class="doc-item">Привет, Алекс!</p>
+                <p class="doc-answer">Давай посвятим следующий спринт бэклогу дефектов &mdash; мы теряем клиентов и сделки быстрее, чем закрываем задачи.</p>
+                <ul class="case__list">
+                  <li class="doc-item"><strong>Бэклог будет расти сам собой.</strong> Мы открываем дефекты быстрее, чем закрываем; график показывает, где мы окажемся через год без вмешательства.</li>
+                  <li class="doc-item"><strong>Дефекты стоят нам клиентов.</strong> Клиентский опыт и исследования связывают их с оттоком напрямую &mdash; второй график ставит отток рядом с объёмом дефектов, интервью показывает механику вблизи.</li>
+                  <li class="doc-item"><strong>Теперь они стоят нам и новых сделок.</strong> Посты пользователей и жалоба одного из крупнейших клиентов вынесли это за пределы продукта, а продажи сообщают, что сделки закрываются медленнее.</li>
+                </ul>
+                <p class="doc-item">Подтвердишь фокус спринта, чтобы мы собрали бэклог до планирования?</p>
               </div>
             </div>
-            <p class="mode__result">Одно дело на сегодня, каждый пункт со ссылкой на источник</p>
-          </li>
-          <li class="mode">
-            <code class="mode__cmd">viz</code>
-            <div class="mode__turn" aria-hidden="true">
-              <div class="units">
-                <div class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
-              </div>
-              <span class="flow-arrow">
-                <svg width="30" height="14" viewBox="0 0 30 14" fill="none">
-                  <path d="M0 7H23" stroke="currentColor" stroke-width="2"></path>
-                  <path d="M22 2.5 L30 7 L22 11.5 Z" fill="currentColor"></path>
-                </svg>
-              </span>
-              <div class="units" data-shape="pyramid">
-                <div class="units__row"><span class="unit"></span></div>
-                <div class="units__row"><span class="unit"></span><span class="unit"></span></div>
-                <div class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span></div>
-              </div>
-            </div>
-            <p class="mode__result">Пирамида и поток «ситуация &mdash; осложнение &mdash; вопрос &mdash; ответ»</p>
-          </li>
-        </ul>
-
-        <p class="label scq__label">Поток, который навык проверяет в каждом документе</p>
-        <ol class="scq">
-          <li class="scq__step">
-            <span class="unit" data-state="weak" aria-hidden="true"></span>
-            <span class="scq__name">Ситуация</span>
-            <span class="label">с чем читатель уже согласен</span>
-          </li>
-          <li class="scq__step">
-            <span class="unit" data-state="weak" aria-hidden="true"></span>
-            <span class="scq__name">Осложнение</span>
-            <span class="label">что изменилось или мешает</span>
-          </li>
-          <li class="scq__step">
-            <span class="unit" data-state="weak" aria-hidden="true"></span>
-            <span class="scq__name">Вопрос</span>
-            <span class="label">что читателю нужно решить</span>
-          </li>
-          <li class="scq__step">
-            <span class="unit" aria-hidden="true"></span>
-            <span class="scq__name">Ответ</span>
-            <span class="label">что он должен сделать или понять</span>
-          </li>
-        </ol>
-      </section>
-
-      <section class="section" id="cases" aria-labelledby="cases-heading">
-        <div class="title-block">
-          <h2 class="title" id="cases-heading">Пять кейсов &mdash; пять разных сторон навыка</h2>
-          <hr class="rule">
-          <p class="body">Слева &mdash; исходный текст из набора задач бенчмарка. Справа &mdash; то, что выдала модель Opus 5 с навыком, в том же виде, в каком это судили.</p>
-        </div>
-        <p class="small cases__note">Русский текст &mdash; перевод английского прогона v1.7.0-final; структура и объём сохранены.</p>
-
-        <div class="case-tabs" data-tablist aria-label="Кейсы бенчмарка">
-          <a class="case-tab" href="#case-01" data-case-tab="01">Перенос встречи &middot; write</a>
-          <a class="case-tab" href="#case-02" data-case-tab="02">Шесть заголовков &middot; audit</a>
-          <a class="case-tab" href="#case-03" data-case-tab="03">Пирамида из прозы &middot; viz</a>
-          <a class="case-tab" href="#case-04" data-case-tab="04">Три источника &middot; digest</a>
-          <a class="case-tab" href="#case-05" data-case-tab="05">Бэклог дефектов &middot; write</a>
-        </div>
+          </div>
+          <p class="small case__caveat"><strong>Навык перенёс просьбу наверх и собрал доказательства вокруг неё.</strong> Оценки при этом не изменились: контрольный прогон той же модели тоже получил 8/8 и 10/10, а в обоих текстах отметили один выдуманный факт. Этот пример показывает перестройку; общий эффект виден по 172 оценкам ниже.</p>
+        </article>
 
         <article class="case" id="case-01" data-case-panel="01" aria-labelledby="case-01-heading">
           <div class="case__head">
             <h3 class="subtitle" id="case-01-heading">Короткая записка коллеге</h3>
-            <p class="small">Что показывает: сдержанность. Навык не надевает на записку каркас из заголовков и схем.</p>
+            <p class="small">Короткий текст остаётся коротким, а вывод поднимается наверх.</p>
           </div>
           <div class="case__pair">
             <div class="case__source">
@@ -326,7 +232,7 @@
         <article class="case" id="case-02" data-case-panel="02" aria-labelledby="case-02-heading">
           <div class="case__head">
             <h3 class="subtitle" id="case-02-heading">Меморандум из шести разделов</h3>
-            <p class="small">Что показывает: диагноз без переписывания. Видно только оглавление &mdash; навык не додумывает содержание.</p>
+            <p class="small">Диагноз строится по оглавлению без переписывания; неизвестное содержание остаётся за рамкой оценки.</p>
           </div>
           <div class="case__pair case__pair--wide">
             <div class="case__source">
@@ -369,7 +275,7 @@
                 </div>
                 <div class="case__flaw">
                   <span class="mr-tag" data-tone="hot">критично</span>
-                  <p class="doc-item">Шесть заголовков шести разных видов: контекст, понятия, определение, механика, выгоды, условия. Одним словом их не назвать.</p>
+                  <p class="doc-item">На одном уровне смешаны контекст, определение, процесс, выгоды и условия. Это не один логический список.</p>
                 </div>
                 <div class="case__flaw">
                   <span class="mr-tag">средне</span>
@@ -381,7 +287,7 @@
                 </div>
               </div>
               <div class="case__fixes">
-                <p class="label">Три исправления, которые дают больше всего</p>
+                <p class="label">Три исправления, которые дадут наибольший эффект</p>
                 <p class="doc-item">Сказать ответ в первой фразе. Поднять «выгоды и результаты» на первый уровень. Переписать шесть тем как три-четыре утверждения одного вида.</p>
               </div>
             </div>
@@ -391,7 +297,7 @@
         <article class="case" id="case-03" data-case-panel="03" aria-labelledby="case-03-heading">
           <div class="case__head">
             <h3 class="subtitle" id="case-03-heading">Служебная записка о стоимости набора</h3>
-            <p class="small">Что показывает: структуру видно глазами. Текст не переписан &mdash; из него вынута пирамида.</p>
+            <p class="small">Структура аргумента становится видна отдельно от формулировок.</p>
           </div>
           <div class="case__pair case__pair--wider">
             <div class="case__source">
@@ -453,7 +359,7 @@
         <article class="case" id="case-04" data-case-panel="04" aria-labelledby="case-04-heading">
           <div class="case__head">
             <h3 class="subtitle" id="case-04-heading">Три источника по комплаенсу</h3>
-            <p class="small">Что показывает: работу с прочитанным. Руководитель не будет читать источники &mdash; ему нужно решение на сегодня.</p>
+            <p class="small">Несколько источников складываются в одно решение вместо последовательного пересказа.</p>
           </div>
           <div class="case__pair case__pair--wider">
             <div class="case__srclist">
@@ -503,7 +409,7 @@
                   <p class="doc-note">Нужен ли пентест, решает ревьюер во время ревью. Срок одобрения зависимостей &mdash; «по ситуации». Значит, цену этапа разработки нельзя дать одним числом: либо выносим эти два пункта отдельной строкой, либо держим цену до назначенного ревью.</p>
                 </div>
                 <div class="case__group case__group--accent">
-                  <p class="doc-lead">Одна незакрытая уязвимость, которую стоит поднять самому</p>
+                  <p class="doc-lead">Один открытый риск, который стоит поднять самим</p>
                   <p class="doc-item">9 июля сказали, что двое инженеров работают из Лиссабона, и никто из банка не ответил. Молчание на встрече &mdash; не согласование: напишите про Лиссабон вместе со схемой, пока эти люди не сели на задачи с банковскими данными.</p>
                 </div>
               </div>
@@ -511,73 +417,23 @@
           </div>
         </article>
 
-        <article class="case" id="case-05" data-case-panel="05" aria-labelledby="case-05-heading">
-          <div class="case__head">
-            <h3 class="subtitle" id="case-05-heading">Письмо про бэклог дефектов</h3>
-            <p class="small">Что показывает: честный случай. Просьба была написана &mdash; только в последнем абзаце.</p>
-          </div>
-          <div class="case__pair">
-            <div class="case__source">
-            <div class="case__shape" aria-hidden="true">
-              <div class="units" data-shape="scatter">
-                <div class="units__row" style="--x: 1"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
-                <div class="units__row" style="--x: 0"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
-                <div class="units__row" style="--x: 2"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit"></span></div>
-              </div>
-            </div>
-              <p class="label">Источник &middot; четыре абзаца доказательств</p>
-              <div class="case__letter">
-                <p class="doc-item">Привет, Алекс!</p>
-                <p class="doc-item">Меня всё больше беспокоит бэклог дефектов. На графике &mdash; новые дефекты против закрытых и прогноз на год вперёд.</p>
-                <p class="doc-item">Клиентский опыт и исследования тоже сообщают, что дефекты влияют на оттоки. Второй график ставит отток рядом с числом дефектов, интервью показывает то же самое.</p>
-                <p class="doc-item">Есть и признаки ущерба бренду: посты пользователей, жалоба крупного клиента, и продажи говорят, что сделки закрывать труднее.</p>
-                <p class="doc-item case__ask">Предлагаю посвятить следующий спринт разбору бэклога дефектов. Скажи, что думаешь.</p>
-              </div>
-              <p class="small">Алекс читает четыре абзаца доказательств, прежде чем узнаёт, что от него хотят.</p>
-            </div>
-            <div class="case__result" data-fixture="08-techdebt" data-engine="opus5" data-arm="skill" data-structure="8" data-quality="10" data-hard-failures="1">
-            <div class="case__shape" aria-hidden="true">
-              <div class="units" data-shape="pyramid">
-                <div class="units__row"><span class="unit"></span></div>
-                <div class="units__row"><span class="unit"></span><span class="unit"></span></div>
-                <div class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span></div>
-              </div>
-            </div>
-              <div class="case__head-row">
-                <span class="mr-tag">С Minto &middot; write</span>
-                <span class="label">слепой судья: структура 8/8, качество 10/10</span>
-              </div>
-              <div class="case__letter">
-                <p class="doc-item">Привет, Алекс!</p>
-                <p class="doc-answer">Давай посвятим следующий спринт бэклогу дефектов &mdash; мы теряем клиентов и сделки быстрее, чем закрываем задачи.</p>
-                <ul class="case__list">
-                  <li class="doc-item"><strong>Бэклог будет расти сам собой.</strong> Мы открываем дефекты быстрее, чем закрываем; график показывает, где мы окажемся через год без вмешательства.</li>
-                  <li class="doc-item"><strong>Дефекты стоят нам клиентов.</strong> Клиентский опыт и исследования связывают их с оттоком напрямую &mdash; второй график ставит отток рядом с объёмом дефектов, интервью показывает механику вблизи.</li>
-                  <li class="doc-item"><strong>Теперь они стоят нам и новых сделок.</strong> Посты пользователей и жалоба одного из крупнейших клиентов вынесли это за пределы продукта, а продажи сообщают, что сделки закрываются медленнее.</li>
-                </ul>
-                <p class="doc-item">Подтвердишь фокус спринта, чтобы мы собрали бэклог до планирования?</p>
-              </div>
-            </div>
-          </div>
-          <p class="small case__caveat"><strong>Здесь навык не победил &mdash; и это видно.</strong> Простой случай: просьба уже была написана, только не на своём месте. Контрольный прогон той же модели получил те же 8/8 и 10/10, и судья отметил в обоих один выдуманный факт. Разница между условиями видна не здесь, а на 172 прогонах ниже.</p>
-        </article>
       </section>
 
       <section class="section" id="evidence" aria-labelledby="evidence-heading" data-benchmark="v1.7.0-final" data-benchmark-cells="172">
         <div class="title-block">
-          <h2 class="title" id="evidence-heading">Пять измерений выросли. Одно упало.</h2>
+          <h2 class="title" id="evidence-heading" data-figure="cells">Проверили на 172 слепых оценках</h2>
           <hr class="rule">
-          <p class="body">Одиннадцать документов, восемь моделей, каждый переписан дважды: с навыком и без. Слепой судья оценил все 172 результата, не зная, где что.</p>
+          <p class="body">Эффект Minto измерен на реальных текстах: видно, где структура стала сильнее и где навык ещё требует доработки.</p>
         </div>
 
         <ul class="figures">
-          <li class="figure" data-figure="cells">
-            <p class="figure__num">172</p>
-            <p class="label">слепых оценки, все по одной рубрике</p>
+          <li class="figure" data-figure="metric-delta" data-metric-ref="structure">
+            <p class="figure__num">+7</p>
+            <p class="label">пунктов: качество структуры</p>
           </li>
-          <li class="figure" data-figure="engines">
-            <p class="figure__num">8</p>
-            <p class="label">моделей, каждая переписала документы дважды</p>
+          <li class="figure" data-figure="metric-delta" data-metric-ref="quality">
+            <p class="figure__num">+7</p>
+            <p class="label">пунктов: общее качество текста</p>
           </li>
           <li class="figure" data-figure="metric-delta" data-metric-ref="readers-question">
             <p class="figure__num">+22</p>
@@ -589,35 +445,188 @@
           </li>
         </ul>
 
+        <div class="evidence__foot">
+          <a class="link" href="#evidence-details">Как считали &darr;</a>
+        </div>
+      </section>
+
+      <section class="section" id="modes" aria-labelledby="modes-heading">
+        <div class="title-block">
+          <h2 class="title" id="modes-heading">Пять задач для Minto</h2>
+          <hr class="rule">
+          <p class="body">Выберите нужный результат и вызовите команду рядом с ним: <code>intent</code>, <code>audit</code>, <code>write</code>, <code>digest</code> или <code>viz</code>.</p>
+        </div>
+
+        <ul class="modes">
+          <li class="mode">
+            <p class="mode__task">Понять, что вы хотите сказать</p>
+            <code class="mode__cmd">intent</code>
+            <div class="mode__turn" aria-hidden="true">
+              <div class="units" data-shape="scatter">
+                <div class="units__row" style="--x: 1"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+                <div class="units__row" style="--x: 0"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+                <div class="units__row" style="--x: 2"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+              </div>
+              <span class="flow-arrow">
+                <svg width="30" height="14" viewBox="0 0 30 14" fill="none">
+                  <path d="M0 7H23" stroke="currentColor" stroke-width="2"></path>
+                  <path d="M22 2.5 L30 7 L22 11.5 Z" fill="currentColor"></path>
+                </svg>
+              </span>
+              <div class="units" data-shape="pyramid">
+                <div class="units__row"><span class="unit"></span></div>
+                <div class="units__row"><span class="unit" data-state="gap"></span></div>
+              </div>
+            </div>
+            <p class="mode__result">Вопрос читателя, ответ одной фразой и названный пробел</p>
+          </li>
+          <li class="mode">
+            <p class="mode__task">Проверить логику, не переписывая текст</p>
+            <code class="mode__cmd">audit</code>
+            <div class="mode__turn" aria-hidden="true">
+              <div class="units" data-shape="pyramid">
+                <div class="units__row"><span class="unit"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span></div>
+              </div>
+              <span class="flow-arrow">
+                <svg width="30" height="14" viewBox="0 0 30 14" fill="none">
+                  <path d="M0 7H23" stroke="currentColor" stroke-width="2"></path>
+                  <path d="M22 2.5 L30 7 L22 11.5 Z" fill="currentColor"></path>
+                </svg>
+              </span>
+              <div class="units" data-shape="pyramid">
+                <div class="units__row"><span class="unit" data-state="flaw"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit" data-state="flaw"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit" data-state="flaw"></span><span class="unit"></span></div>
+              </div>
+            </div>
+            <p class="mode__result">Оценка структуры и каждый дефект по имени &mdash; текст не тронут</p>
+          </li>
+          <li class="mode">
+            <p class="mode__task">Перестроить текст вокруг главного вывода</p>
+            <code class="mode__cmd">write</code>
+            <div class="mode__turn" aria-hidden="true">
+              <div class="units" data-shape="scatter">
+                <div class="units__row" style="--x: 1"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+                <div class="units__row" style="--x: 0"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+                <div class="units__row" style="--x: 2"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit"></span></div>
+              </div>
+              <span class="flow-arrow">
+                <svg width="30" height="14" viewBox="0 0 30 14" fill="none">
+                  <path d="M0 7H23" stroke="currentColor" stroke-width="2"></path>
+                  <path d="M22 2.5 L30 7 L22 11.5 Z" fill="currentColor"></path>
+                </svg>
+              </span>
+              <div class="units" data-shape="pyramid">
+                <div class="units__row"><span class="unit"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span></div>
+              </div>
+            </div>
+            <p class="mode__result">Документ, который начинается с вывода</p>
+          </li>
+          <li class="mode">
+            <p class="mode__task">Собрать решение из нескольких источников</p>
+            <code class="mode__cmd">digest</code>
+            <div class="mode__turn" aria-hidden="true">
+              <div class="units">
+                <div class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+                <div class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+                <div class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+              </div>
+              <span class="flow-arrow">
+                <svg width="30" height="14" viewBox="0 0 30 14" fill="none">
+                  <path d="M0 7H23" stroke="currentColor" stroke-width="2"></path>
+                  <path d="M22 2.5 L30 7 L22 11.5 Z" fill="currentColor"></path>
+                </svg>
+              </span>
+              <div class="units" data-shape="pyramid">
+                <div class="units__row"><span class="unit"></span></div>
+              </div>
+            </div>
+            <p class="mode__result">Одно дело на сегодня, каждый пункт со ссылкой на источник</p>
+          </li>
+          <li class="mode">
+            <p class="mode__task">Увидеть структуру аргумента</p>
+            <code class="mode__cmd">viz</code>
+            <div class="mode__turn" aria-hidden="true">
+              <div class="units">
+                <div class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+              </div>
+              <span class="flow-arrow">
+                <svg width="30" height="14" viewBox="0 0 30 14" fill="none">
+                  <path d="M0 7H23" stroke="currentColor" stroke-width="2"></path>
+                  <path d="M22 2.5 L30 7 L22 11.5 Z" fill="currentColor"></path>
+                </svg>
+              </span>
+              <div class="units" data-shape="pyramid">
+                <div class="units__row"><span class="unit"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit"></span></div>
+                <div class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span></div>
+              </div>
+            </div>
+            <p class="mode__result">Пирамида и поток «ситуация &mdash; осложнение &mdash; вопрос &mdash; ответ»</p>
+          </li>
+        </ul>
+
+        <p class="label scq__label">Поток, который навык проверяет в каждом документе</p>
+        <ol class="scq">
+          <li class="scq__step">
+            <span class="unit" data-state="weak" aria-hidden="true"></span>
+            <span class="scq__name">Ситуация</span>
+            <span class="label">с чем читатель уже согласен</span>
+          </li>
+          <li class="scq__step">
+            <span class="unit" data-state="weak" aria-hidden="true"></span>
+            <span class="scq__name">Осложнение</span>
+            <span class="label">что изменилось или мешает</span>
+          </li>
+          <li class="scq__step">
+            <span class="unit" data-state="weak" aria-hidden="true"></span>
+            <span class="scq__name">Вопрос</span>
+            <span class="label">что читателю нужно решить</span>
+          </li>
+          <li class="scq__step">
+            <span class="unit" aria-hidden="true"></span>
+            <span class="scq__name">Ответ</span>
+            <span class="label">что он должен сделать или понять</span>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section evidence-detail" id="evidence-details" aria-labelledby="evidence-details-heading">
+        <div class="title-block">
+          <h2 class="title" id="evidence-details-heading">Как устроен замер</h2>
+          <hr class="rule">
+          <p class="body">Методика, все шесть показателей и оценки по моделям.</p>
+        </div>
+
         <div class="method">
-          <h3 class="subtitle">Как мы это мерили</h3>
+          <h3 class="subtitle">Как проверяли</h3>
           <div class="stages grid-stages">
             <div class="stage">
-              <span class="num stage__num" aria-hidden="true">1</span>
               <div class="stage__text">
-                <h4 class="subtitle">11 документов</h4>
-                <p class="small">Письма, памятки, аудит, дайджест, список в чат &mdash; от короткой записки до обзора на восемь страниц.</p>
+                <h4 class="subtitle">11 разных задач</h4>
+                <p class="small">Письма, памятки, аудит, дайджест и список для чата &mdash; от короткой записки до обзора на восемь страниц.</p>
               </div>
             </div>
             <div class="stage">
-              <span class="num stage__num" aria-hidden="true">2</span>
               <div class="stage__text">
-                <h4 class="subtitle">Два условия</h4>
-                <p class="small">С навыком &mdash; и контроль: промпт, который уже называет принцип пирамиды. Не «пустая модель».</p>
+                <h4 class="subtitle">Структура против инструкции</h4>
+                <p class="small">Minto фиксирует вопрос читателя, ответ и опоры; контрольный промпт только просит применить принцип пирамиды.</p>
               </div>
             </div>
             <div class="stage">
-              <span class="num stage__num" aria-hidden="true">3</span>
               <div class="stage__text">
-                <h4 class="subtitle">Слепой судья</h4>
-                <p class="small">Тексты перемешаны: судья не знает ни модель, ни условие. Оценивает по одной рубрике.</p>
+                <h4 class="subtitle">Одна рубрика для всех</h4>
+                <p class="small">Перемешанные тексты оцениваются по единым критериям без подсказки о модели и способе подготовки.</p>
               </div>
             </div>
             <div class="stage stage--ink">
-              <span class="num stage__num" aria-hidden="true">4</span>
               <div class="stage__text">
-                <h4 class="subtitle">Посчитано, а не пересказано</h4>
-                <p class="small">Каждое число на этой странице посчитано скриптом из опубликованных вердиктов, а не пересказано моделью.</p>
+                <h4 class="subtitle">Все числа воспроизводимы</h4>
+                <p class="small">Скрипт рассчитывает каждую цифру на странице из опубликованных вердиктов.</p>
               </div>
             </div>
           </div>
@@ -697,27 +706,7 @@
             </li>
           </ul>
 
-          <figcaption class="small">Доли прогонов или доли от максимума судьи. Разница &mdash; в процентных пунктах, а шкала под каждым измерением размечена двадцатью шагами по пять.</figcaption>
         </figure>
-
-        <div class="caveats">
-          <div class="caveat">
-            <h3 class="subtitle">Что мы публикуем против себя</h3>
-            <ul>
-              <li class="doc-item">С навыком модели чаще утверждали то, чего в источнике нет: 49 прогонов против 42.</li>
-              <li class="doc-item">Ответ реже стоял в первой фразе &mdash; рамка вытесняла его вниз. Это два главных пункта на следующую версию.</li>
-              <li class="doc-item">Качество выросло у всех восьми моделей; структура упала у одной (Sonnet 5) и не изменилась у qwen3.8-27b.</li>
-            </ul>
-          </div>
-          <div class="caveat">
-            <h3 class="subtitle">Границы замера</h3>
-            <ul>
-              <li class="doc-item">По одному прогону на каждую пару «модель &mdash; документ»: повторяемость не измерена.</li>
-              <li class="doc-item">Документы &mdash; английские; с прежними русскими прогонами числа несравнимы.</li>
-              <li class="doc-item">Три документа из одиннадцати добавлены в этом раунде, поэтому с предыдущей таблицей на 112 прогонов сравнивать нельзя.</li>
-            </ul>
-          </div>
-        </div>
 
         <details class="models">
           <summary class="models__summary">Точные оценки по моделям</summary>
@@ -784,7 +773,7 @@
 
       <section class="section" id="install" aria-labelledby="install-heading">
         <div class="title-block">
-          <h2 class="title" id="install-heading">Установка &mdash; две команды</h2>
+          <h2 class="title" id="install-heading">Установка</h2>
           <hr class="rule">
           <p class="body">Добавьте маркетплейс, поставьте плагин и начните новую сессию.</p>
         </div>
@@ -836,8 +825,8 @@
         <div class="prompt">
           <span class="unit" data-state="answer" aria-hidden="true"></span>
           <div class="prompt__text">
-            <h3 class="subtitle">Начните с того черновика, который у вас уже есть</h3>
-            <p class="small">Не нужно ничего вычищать заранее. Вставьте текст и попросите Minto сначала разобраться со структурой: «Проверь эту заявку на логику пирамиды. Не переписывай её.»</p>
+            <h3 class="subtitle">Проверьте текст сразу после установки</h3>
+            <p class="small">Вставьте текст и напишите: «Проверь заявку по принципу пирамиды. Сначала назови проблемы в структуре. Не переписывай текст».</p>
           </div>
         </div>
       </section>
