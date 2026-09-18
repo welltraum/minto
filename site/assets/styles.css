@@ -175,8 +175,6 @@ body { margin: 0; }
 .units[data-size="lg"] { --u: 22px; --u-gap: 6px; }
 .units[data-size="sm"] { --u: 8px; --u-gap: 3px; }
 
-.flow-arrow { color: var(--mr-ash); flex: none; }
-
 /* ---------- 5. header and footer ---------- */
 
 .site-header { padding-block: 20px 6px; }
@@ -259,23 +257,6 @@ body { margin: 0; }
 /* The hero picture carries eight units across at its widest, so its scale is
    solved for the column it sits in rather than borrowed from data-size="lg". */
 .hero__card .units { --u: clamp(18px, 5.6vw, 26px); --u-gap: calc(var(--u) / 4); }
-.hero__turn { color: var(--mr-ash); display: flex; }
-.hero__turn svg { transform: rotate(90deg); }
-
-/* The page's one authored moment: the pyramid gathers out of the scatter's own
-   offsets. It starts visible and only displaced, so nothing fades in. */
-@media (prefers-reduced-motion: no-preference) {
-  .hero__pyramid .units__row {
-    animation: hero-gather 900ms var(--mr-ease) both;
-    animation-delay: calc(var(--i, 0) * 90ms);
-  }
-  @keyframes hero-gather {
-    /* 5px a step: the widest displacement (3 steps, 15px) stays inside the
-       card's narrowest inline padding, so no row is ever clipped mid-gather. */
-    from { transform: translateX(calc(var(--from, 0) * 5px)); }
-    to { transform: none; }
-  }
-}
 
 /* ---------- 7. modes ---------- */
 
@@ -313,18 +294,16 @@ body { margin: 0; }
   color: var(--mr-hot-text);
 }
 .mode__turn {
-  --u: 15px;
-  --u-gap: 5px;
+  --u: clamp(11px, 4vw, 15px);
+  --u-gap: calc(var(--u) / 3);
   display: grid;
-  grid-template-columns:
-    calc(7 * var(--u) + 6 * var(--u-gap))
-    auto
-    calc(4 * var(--u) + 3 * var(--u-gap));
+  grid-template-columns: repeat(2, calc(7 * var(--u) + 6 * var(--u-gap)));
   align-items: center;
-  gap: clamp(12px, 2.4vw, 26px);
+  justify-content: start;
+  gap: clamp(12px, 2vw, 22px);
+  min-height: calc(3 * var(--u) + 2 * var(--u-gap));
 }
-.mode__turn > :first-child { justify-self: end; }
-.mode__turn > :last-child { justify-self: start; }
+.mode__turn > [data-shape-state] { justify-self: center; }
 .mode__result {
   font-size: var(--fs-body);
   font-weight: 600;
@@ -715,17 +694,44 @@ body { margin: 0; }
   .units[data-size="lg"] { --u: 32px; --u-gap: 8px; }
 }
 
-/* The picture only turns into a row once the column can hold eight units
-   across; between 700 and 900 it stays stacked rather than clipping. */
+/* The static no-JavaScript / reduced-motion pair only turns into a row once
+   the column can hold both states without clipping. */
 @media (min-width: 900px) {
   .hero__card { grid-auto-flow: column; }
-  .hero__turn svg { transform: none; }
 }
 
 @media (min-width: 1000px) {
   .stages { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .site-footer__inner { grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 26px; }
   .site-footer__inner .small { max-width: 52ch; }
+}
+
+/* One motion grammar replaces the arrows: two real diagrams share one stable
+   stage while their square units travel between measured positions. Without
+   JavaScript, or when motion is reduced, the base grid above keeps both states
+   visible as a quiet static pair. */
+@media (prefers-reduced-motion: no-preference) {
+  .js [data-shape-transition] {
+    grid-auto-flow: row;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+  .js [data-shape-transition] > [data-shape-state] {
+    grid-area: 1 / 1;
+    place-self: center;
+  }
+  .js [data-shape-transition] > [data-shape-state="target"] {
+    visibility: hidden;
+  }
+  .js [data-shape-transition][data-transition-ready] > [data-shape-state="target"] {
+    visibility: visible;
+  }
+  .js .mode__turn[data-shape-transition] {
+    grid-template-columns: calc(7 * var(--u) + 6 * var(--u-gap));
+  }
+  [data-shape-transition][data-transition-running] .unit {
+    will-change: transform, opacity;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

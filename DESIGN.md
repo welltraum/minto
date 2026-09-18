@@ -185,8 +185,10 @@ and the page never leaves paper as its base. There is no gradient field, no glas
 shadow, and no second accent. One mustard exists, and the discipline around it is the
 single loudest rule in this system.
 
-The page carries exactly one authored animation and nothing that enters on scroll. The
-material is meant to read as already there, the way a diagram in a book is already there.
+The page carries one authored motion grammar and nothing that enters on scroll. In the hero
+and the five mode rows, the same square units settle from an input shape into an output shape,
+hold long enough to read, and return. The material is already present; motion explains the
+change rather than introducing content.
 
 **Key Characteristics:**
 - One pictorial atom (the square unit) in five states carries every illustration.
@@ -346,9 +348,9 @@ Circles are not a page form. The only round object on the site is Mirai's `mr-su
 **The One Atom Rule.** A new illustration is built from `.unit` in its five states or it is
 not built. No new glyph vocabulary, no icon set, no illustration style.
 
-**The Arrow Is Not A Unit Rule.** The only non-square marks the page draws are the two inline
-flow arrows (26×16 in the hero, 30×14 in the modes), stroked in `currentColor` at ash. They
-are connectives, not decoration, and no other bespoke SVG exists in the page layer.
+**The Transition Needs No Arrow Rule.** Hero and mode transformations occupy one stable stage:
+the square units themselves carry the relationship, so no connector is drawn between states.
+The compact arrows inside benchmark value pairs remain data notation, not illustration.
 
 ## Components
 
@@ -376,7 +378,7 @@ are connectives, not decoration, and no other bespoke SVG exists in the page lay
 
 ### The Unit and Its Compositions (signature)
 - **Unit:** a `--u` square (11/12/13px) in five states. `data-shape="scatter"` offsets each row by `--x` steps of `--u-step`; `data-shape="pyramid"` centres rows.
-- **Mode row:** mono command, a three-track turn (input glyph → arrow → output glyph), a 15.5px 600 result sentence. Five rows, one anatomy, hairline-separated.
+- **Mode row:** mono command, one fixed transformation stage shared by input and output glyphs, and a 15.5px 600 result sentence. Five rows, one anatomy, hairline-separated.
 - **Case glyph:** a 9px-unit miniature of the mode a case demonstrates, sitting above each half over a hairline, so the shape of the change reads before the text does.
 - **Benchmark rail:** control track 13px in field, skill track 26px, the difference band in ink (or hot when the measure fell), all three as the same graduated stripe; the delta is set in Play at 23px, 34px from 700px.
 - **Figure band:** four derived numbers at the top of Evidence, on the largest type step on the page, over and under a hairline; a negative figure takes `figure--down` and turns hot.
@@ -388,7 +390,7 @@ are connectives, not decoration, and no other bespoke SVG exists in the page lay
 - **Do** keep mustard on the answer only: no viewport may show two mustard elements.
 - **Do** consume `var(--mr-*)` for every colour, family, radius and stroke width; a literal in `styles.css` is a defect.
 - **Do** re-vendor `mirai.css` when the design system changes — it is read-only, and no page rule may restyle an `mr-*` class or invent one.
-- **Do** keep both locales line-for-line mirrors (867 lines, identical tag sequence per line); `check_benchmark_numbers.py` enforces it.
+- **Do** keep both locales structural mirrors with the same tag sequence; `check_benchmark_numbers.py` enforces it.
 - **Do** step quiet text on sand to `--mr-coal-soft`, and let graphics on sand use `--mr-ash` for the 3:1 bar.
 - **Do** derive every visible benchmark number from `scores.json` and let the check fail the build when it drifts.
 - **Do** keep content and both install commands working with JavaScript off, and keep the page buildless — two stylesheets, one script, no toolchain.
@@ -397,8 +399,8 @@ are connectives, not decoration, and no other bespoke SVG exists in the page lay
 ### Don't:
 - **Don't** add a shadow, glow, or blur to anything, in any state.
 - **Don't** introduce a second radius, a pill, or a page-drawn circle; 4px and the square are the whole form language.
-- **Don't** animate anything in on scroll, and don't fade anything in. The page's one authored animation is `hero-gather`: the pyramid's rows start visible and merely displaced (an inline `--from` at 5px a step, staggered by an inline `--i` at 90ms), declared only inside `@media (prefers-reduced-motion: no-preference)`. Anything beyond that needs the same three properties: already visible, inside the reduced-motion guard, and bounded by the container's own padding.
+- **Don't** animate content in on scroll. The single transformation grammar holds each state for 1800ms and moves for 650ms with `cubic-bezier(0.16, 1, 0.3, 1)`; it runs only while its stable stage is visible, pauses with the document, and becomes a static two-state pair under reduced motion or without JavaScript.
 - **Don't** put a second accent colour on the page, and don't spend hot on anything but a measured loss.
 - **Don't** let a section go full-bleed or invert the page ground; paper runs top to bottom.
 - **Don't** hide information the page exists to carry behind hover or a pointer.
-- **Don't** add a bespoke icon or glyph set; the two flow arrows are the only non-square marks.
+- **Don't** add a bespoke icon or glyph set; illustrations stay inside the square-unit vocabulary.

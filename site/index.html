@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>document.documentElement.classList.add("js");</script>
     <meta name="theme-color" content="#f8f1e3">
     <meta name="description" content="Minto turns notes and drafts into a clear argument: it identifies the reader&rsquo;s question, surfaces the main answer, groups supporting points and exposes evidence gaps. Before / after cases and 172 blind verdicts.">
     <meta name="robots" content="index,follow">
@@ -14,7 +15,7 @@
     <link rel="preload" href="./assets/fonts/GolosText-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="./assets/fonts/Play-Bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="./assets/mirai.css?v=6">
-    <link rel="stylesheet" href="./assets/styles.css?v=7">
+    <link rel="stylesheet" href="./assets/styles.css?v=8">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Minto">
     <meta property="og:title" content="Minto: decide what to say before deciding how to write it">
@@ -74,25 +75,19 @@
         </div>
 
         <div class="hero__figure">
-          <div class="hero__card">
-            <div class="units" data-shape="scatter" aria-hidden="true">
+          <div class="hero__card" data-shape-transition>
+            <div class="units" data-shape="scatter" data-shape-state="source" aria-hidden="true">
               <div class="units__row" style="--x: 2"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
               <div class="units__row" style="--x: 0"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
               <div class="units__row" style="--x: 3"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
               <div class="units__row" style="--x: 1"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
               <div class="units__row" style="--x: 4"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit"></span></div>
             </div>
-            <span class="hero__turn" aria-hidden="true">
-              <svg width="26" height="16" viewBox="0 0 26 16" fill="none">
-                <path d="M0 8H19" stroke="currentColor" stroke-width="2"></path>
-                <path d="M18 2.5 L26 8 L18 13.5 Z" fill="currentColor"></path>
-              </svg>
-            </span>
-            <div class="units hero__pyramid" data-shape="pyramid" aria-hidden="true">
-              <div class="units__row" style="--i: 0; --from: 2"><span class="unit" data-state="answer"></span></div>
-              <div class="units__row" style="--i: 1; --from: -3"><span class="unit"></span><span class="unit"></span></div>
-              <div class="units__row" style="--i: 2; --from: 3"><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span></div>
-              <div class="units__row" style="--i: 3; --from: -2"><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit" data-state="gap"></span></div>
+            <div class="units hero__pyramid" data-shape="pyramid" data-shape-state="target" aria-hidden="true">
+              <div class="units__row"><span class="unit" data-state="answer"></span></div>
+              <div class="units__row"><span class="unit"></span><span class="unit"></span></div>
+              <div class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span></div>
+              <div class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit" data-state="gap"></span></div>
             </div>
           </div>
         </div>
@@ -461,19 +456,13 @@
           <li class="mode">
             <p class="mode__task">Work out what you want to say</p>
             <code class="mode__cmd">intent</code>
-            <div class="mode__turn" aria-hidden="true">
-              <div class="units" data-shape="scatter">
+            <div class="mode__turn" data-shape-transition aria-hidden="true">
+              <div class="units" data-shape="scatter" data-shape-state="source">
                 <div class="units__row" style="--x: 1"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
                 <div class="units__row" style="--x: 0"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
                 <div class="units__row" style="--x: 2"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
               </div>
-              <span class="flow-arrow">
-                <svg width="30" height="14" viewBox="0 0 30 14" fill="none">
-                  <path d="M0 7H23" stroke="currentColor" stroke-width="2"></path>
-                  <path d="M22 2.5 L30 7 L22 11.5 Z" fill="currentColor"></path>
-                </svg>
-              </span>
-              <div class="units" data-shape="pyramid">
+              <div class="units" data-shape="pyramid" data-shape-state="target">
                 <div class="units__row"><span class="unit"></span></div>
                 <div class="units__row"><span class="unit" data-state="gap"></span></div>
               </div>
@@ -483,19 +472,13 @@
           <li class="mode">
             <p class="mode__task">Check the logic without rewriting</p>
             <code class="mode__cmd">audit</code>
-            <div class="mode__turn" aria-hidden="true">
-              <div class="units" data-shape="pyramid">
+            <div class="mode__turn" data-shape-transition aria-hidden="true">
+              <div class="units" data-shape="pyramid" data-shape-state="source">
                 <div class="units__row"><span class="unit"></span></div>
                 <div class="units__row"><span class="unit"></span><span class="unit"></span></div>
                 <div class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span></div>
               </div>
-              <span class="flow-arrow">
-                <svg width="30" height="14" viewBox="0 0 30 14" fill="none">
-                  <path d="M0 7H23" stroke="currentColor" stroke-width="2"></path>
-                  <path d="M22 2.5 L30 7 L22 11.5 Z" fill="currentColor"></path>
-                </svg>
-              </span>
-              <div class="units" data-shape="pyramid">
+              <div class="units" data-shape="pyramid" data-shape-state="target">
                 <div class="units__row"><span class="unit" data-state="flaw"></span></div>
                 <div class="units__row"><span class="unit"></span><span class="unit" data-state="flaw"></span></div>
                 <div class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit" data-state="flaw"></span><span class="unit"></span></div>
@@ -506,19 +489,13 @@
           <li class="mode">
             <p class="mode__task">Rebuild a text around its main answer</p>
             <code class="mode__cmd">write</code>
-            <div class="mode__turn" aria-hidden="true">
-              <div class="units" data-shape="scatter">
+            <div class="mode__turn" data-shape-transition aria-hidden="true">
+              <div class="units" data-shape="scatter" data-shape-state="source">
                 <div class="units__row" style="--x: 1"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
                 <div class="units__row" style="--x: 0"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
                 <div class="units__row" style="--x: 2"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit"></span></div>
               </div>
-              <span class="flow-arrow">
-                <svg width="30" height="14" viewBox="0 0 30 14" fill="none">
-                  <path d="M0 7H23" stroke="currentColor" stroke-width="2"></path>
-                  <path d="M22 2.5 L30 7 L22 11.5 Z" fill="currentColor"></path>
-                </svg>
-              </span>
-              <div class="units" data-shape="pyramid">
+              <div class="units" data-shape="pyramid" data-shape-state="target">
                 <div class="units__row"><span class="unit"></span></div>
                 <div class="units__row"><span class="unit"></span><span class="unit"></span></div>
                 <div class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span></div>
@@ -529,19 +506,13 @@
           <li class="mode">
             <p class="mode__task">Turn several sources into one decision</p>
             <code class="mode__cmd">digest</code>
-            <div class="mode__turn" aria-hidden="true">
-              <div class="units">
+            <div class="mode__turn" data-shape-transition aria-hidden="true">
+              <div class="units" data-shape-state="source">
                 <div class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
                 <div class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
                 <div class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
               </div>
-              <span class="flow-arrow">
-                <svg width="30" height="14" viewBox="0 0 30 14" fill="none">
-                  <path d="M0 7H23" stroke="currentColor" stroke-width="2"></path>
-                  <path d="M22 2.5 L30 7 L22 11.5 Z" fill="currentColor"></path>
-                </svg>
-              </span>
-              <div class="units" data-shape="pyramid">
+              <div class="units" data-shape="pyramid" data-shape-state="target">
                 <div class="units__row"><span class="unit"></span></div>
               </div>
             </div>
@@ -550,17 +521,11 @@
           <li class="mode">
             <p class="mode__task">See the structure of an argument</p>
             <code class="mode__cmd">viz</code>
-            <div class="mode__turn" aria-hidden="true">
-              <div class="units">
+            <div class="mode__turn" data-shape-transition aria-hidden="true">
+              <div class="units" data-shape-state="source">
                 <div class="units__row"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
               </div>
-              <span class="flow-arrow">
-                <svg width="30" height="14" viewBox="0 0 30 14" fill="none">
-                  <path d="M0 7H23" stroke="currentColor" stroke-width="2"></path>
-                  <path d="M22 2.5 L30 7 L22 11.5 Z" fill="currentColor"></path>
-                </svg>
-              </span>
-              <div class="units" data-shape="pyramid">
+              <div class="units" data-shape="pyramid" data-shape-state="target">
                 <div class="units__row"><span class="unit"></span></div>
                 <div class="units__row"><span class="unit"></span><span class="unit"></span></div>
                 <div class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span></div>
@@ -851,6 +816,6 @@
       </div>
     </footer>
 
-    <script src="./assets/app.js?v=6" defer></script>
+    <script src="./assets/app.js?v=7" defer></script>
   </body>
 </html>
