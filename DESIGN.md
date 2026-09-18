@@ -18,6 +18,18 @@ colors:
   hot: "#cc572a"
   hot-text: "#943419"
 typography:
+  hero-display:
+    fontFamily: "Play, system-ui, sans-serif"
+    fontSize: "clamp(58px, 6.1vw, 92px)"
+    fontWeight: 700
+    lineHeight: 0.94
+    letterSpacing: "-0.035em"
+  hero-display-mobile:
+    fontFamily: "Play, system-ui, sans-serif"
+    fontSize: "clamp(48px, 14.8vw, 64px)"
+    fontWeight: 700
+    lineHeight: 0.93
+    letterSpacing: "-0.035em"
   display:
     fontFamily: "Play, system-ui, sans-serif"
     fontSize: "clamp(38px, 6.2vw, 72px)"
@@ -185,14 +197,16 @@ and the page never leaves paper as its base. There is no gradient field, no glas
 shadow, and no second accent. One mustard exists, and the discipline around it is the
 single loudest rule in this system.
 
-The page carries one authored motion grammar and nothing that enters on scroll. In the hero
-and the five mode rows, the same square units settle from an input shape into an output shape,
-hold long enough to read, and return. The material is already present; motion explains the
-change rather than introducing content.
+The page carries one authored motion grammar and nothing that enters on scroll. In the hero,
+three flat diagonal streams cross the paper and converge into the answer pyramid; the same
+square units make shorter curved crossings in the five mode rows. Each state holds long enough
+to read and then returns. The material is already present; motion explains the change rather
+than introducing content.
 
 **Key Characteristics:**
 - One pictorial atom (the square unit) in five states carries every illustration.
-- Warm paper ground throughout; the page never goes full-bleed and never inverts a section.
+- Warm paper ground throughout; only the hero illustration escapes the reading column, and it
+  remains on paper rather than introducing a new surface.
 - One accent (mustard), spent on an answer and nothing else.
 - Flat by construction: hairlines and tonal grounds, no shadows anywhere.
 - Play 700 for headings and figures, Golos Text for prose, JetBrains Mono for commands and named data.
@@ -216,7 +230,7 @@ and a burnt orange reserved for measured loss.
 
 ### Neutral
 - **Paper** (#f8f1e3): the page ground, top to bottom, both locales and 404.
-- **Card** (#fffaf0): lifted-by-tone surfaces — hero picture card, method stages, caveats, install cards.
+- **Card** (#fffaf0): lifted-by-tone surfaces — method stages, caveats and install cards.
 - **Sand** (#eee0c4): the "before" ground — case source panels, source chips, inline `code` in prose, the unfilled part of a benchmark rail, and nav/ghost hover.
 - **Ink** (#0e0a06): body text, the solid unit, the dark button, the fourth method stage, and the install prompt plate.
 - **Coal Soft** (#332c27): running prose, and the mandatory tint for quiet text on sand.
@@ -254,7 +268,8 @@ the prose plain and highly legible in both Cyrillic and Latin, so the two locale
 identically. Mono appears only where the reader is meant to type or to trust a measurement.
 
 ### Hierarchy
-- **Display** (Play 700, `clamp(38px, 6.2vw, 72px)`, 1.02): one per page — the hero H1 and the 404 H1.
+- **Hero display** (Play 700, `clamp(58px, 6.1vw, 92px)`, 0.94; mobile `clamp(48px, 14.8vw, 64px)`, 0.93): the landing-page H1, sized to balance the full-bleed square field.
+- **Display** (Play 700, `clamp(38px, 6.2vw, 72px)`, 1.02): the 404 H1.
 - **Headline** (Play 700, `clamp(23px, 3.5vw, 38px)`, 1.02): section titles.
 - **Title** (Play 700, `clamp(17px, 1.4vw, 20px)`, 1.1): card, stage and case headings.
 - **Lead** (Golos Text 400, `clamp(15px, 1.15vw, 17.5px)`): the hero lede and section intros; also the lead metric name on a rail row.
@@ -287,24 +302,24 @@ One centred column, 1180px maximum, with page padding stepping 20 → 32 → 40p
 1080px. Sections are separated by a `--section` rhythm of 56 → 76 → 96px and, where a border
 is needed, by a 1px `--mr-line` hairline rather than a container.
 
-The page is single-column below 700px and pairs above it: the hero splits 0.86 / 1.14, cases
-split evenly (or 0.85/1.15, 0.8/1.2 where the result needs room), install splits in two,
-method stages go 1 → 2 → 4 across 700 and 1000px, and the figure band goes 2 → 4. Three
-breakpoints do all the work: 700px (pairs), 900px (hero picture turns), 1080px (largest
-type and padding).
+The reading page is single-column below 700px and pairs above it. The hero is the deliberate
+exception: its copy and facts stay aligned to the 1180px column while its flat square streams
+span and crop against the viewport. Cases split evenly (or 0.85/1.15, 0.8/1.2 where the result
+needs room), install splits in two, method stages go 1 → 2 → 4 across 700 and 1000px, and the
+figure band goes 2 → 4.
 
 The unit scale is itself a layout token: `--u` steps 11 → 12 → 13px with the viewport, and
 `--u-step` (`--u` + `--u-gap`) is what scatter offsets are counted in, so a diagram stays in
 proportion at every width.
 
 ### Named Rules
-**The Solve-For-The-Column Rule.** A diagram is scaled for the column it sits in, not by a
-generic size token. The hero picture is eight units wide at its widest, so it sets its own
-`--u: clamp(13px, 1.7vw, 24px)` inside `.hero__card` instead of taking `data-size="lg"`.
+**The Solve-For-The-Scene Rule.** A diagram is scaled for the stage it inhabits, not by a
+generic size token. The hero unit is derived from both viewport width and available height;
+mode and case glyphs keep their compact local scales.
 
-**The Turn-When-It-Fits Rule.** The hero picture only becomes a row — scatter, arrow,
-pyramid — once the column can hold eight units across, at 900px. Below that it stacks and
-the arrow rotates 90°. A picture is never allowed to clip to stay horizontal.
+**The Directed-Crop Rule.** Hero streams may begin and finish beyond the viewport so the
+composition reads as ongoing material, not a centred diagram. The answer pyramid and all text
+must remain fully visible; accidental document overflow is forbidden.
 
 **The One-Vertical Rule.** Repeated diagrams align on a track, not by eye. Each of the five
 mode rows uses the same three-track grid (`7 units | auto | 4 units`), so every arrow and
@@ -366,7 +381,7 @@ The compact arrows inside benchmark value pairs remain data notation, not illust
 - **Tones:** `hot` fills the burnt orange for a named defect; `flaw`/`stone` for neutral marks. Tags label evidence; they are never navigation.
 
 ### Cards and Panels
-- **Card** (`--mr-card` + 1px line, 4px, 18–22px padding): hero picture, method stage, caveat, install column.
+- **Card** (`--mr-card` + 1px line, 4px, 18–22px padding): method stage, caveat and install column.
 - **Sand panel** (no border): the "before" half of a case, source chips, the inline `code` chip.
 - **Ink plate** (ink ground, paper text, stone for quiet text): the fourth method stage, and the install prompt at the foot of the page.
 - **Shadow strategy:** none; see Elevation & Depth.
@@ -399,8 +414,9 @@ The compact arrows inside benchmark value pairs remain data notation, not illust
 ### Don't:
 - **Don't** add a shadow, glow, or blur to anything, in any state.
 - **Don't** introduce a second radius, a pill, or a page-drawn circle; 4px and the square are the whole form language.
-- **Don't** animate content in on scroll. The single transformation grammar holds each state for 1800ms and moves for 650ms with `cubic-bezier(0.16, 1, 0.3, 1)`; it runs only while its stable stage is visible, pauses with the document, and becomes a static two-state pair under reduced motion or without JavaScript.
+- **Don't** animate content in on scroll. The single transformation grammar holds each state for 1900ms and moves for 1100ms, with stagger capped at 320ms and a final `cubic-bezier(0.16, 1, 0.3, 1)` settle; it runs only while its stable stage is visible, pauses with the document, and becomes a static two-state pair under reduced motion or without JavaScript.
 - **Don't** put a second accent colour on the page, and don't spend hot on anything but a measured loss.
-- **Don't** let a section go full-bleed or invert the page ground; paper runs top to bottom.
+- **Don't** let content leave the reading column or invert the page ground; only the hero's
+  non-interactive square field may run full-bleed, and paper still runs top to bottom.
 - **Don't** hide information the page exists to carry behind hover or a pointer.
 - **Don't** add a bespoke icon or glyph set; illustrations stay inside the square-unit vocabulary.

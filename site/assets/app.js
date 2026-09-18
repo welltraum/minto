@@ -66,7 +66,200 @@
   });
 
   const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const FLOW_HOLD = 1900;
+  const FLOW_MOVE = 1100;
+  const FLOW_STAGGER = 320;
+  const FLOW_TRAVEL = FLOW_MOVE - FLOW_STAGGER;
+  const FLOW_CYCLE = (FLOW_HOLD + FLOW_MOVE) * 2;
+  const FLOW_EASE = "cubic-bezier(0.3, 0, 0.2, 1)";
+  const FLOW_SETTLE = "cubic-bezier(0.16, 1, 0.3, 1)";
+  let stopHeroFlow = () => {};
   let stopShapeTransitions = () => {};
+
+  const startHeroFlow = () => {
+    stopHeroFlow();
+    stopHeroFlow = () => {};
+
+    const scene = document.querySelector("[data-flow-scene]");
+    if (!scene || motionPreference.matches || !Element.prototype.animate) return;
+
+    const layer = scene.querySelector("[data-flow-layer]");
+    const styles = getComputedStyle(document.body);
+    const palette = {
+      ink: styles.getPropertyValue("--mr-ink").trim(),
+      weak: styles.getPropertyValue("--mr-line").trim(),
+      mustard: styles.getPropertyValue("--mr-mustard").trim(),
+      field: styles.getPropertyValue("--mr-field").trim(),
+      clear: "rgba(14, 10, 6, 0)",
+    };
+    const sourceCells = [
+      ["weak", 0.44, 0.22], ["weak", 0.54, 0.30], ["weak", 0.64, 0.38],
+      ["weak", 0.76, 0.48], ["weak", 0.88, 0.62], ["weak", 0.32, 0.22],
+      ["weak", 0.42, 0.30], ["weak", 0.52, 0.40], ["weak", 0.66, 0.52],
+      ["weak", 0.80, 0.66], ["ink", 1.68, 1], ["weak", 1.46, 0.82],
+      ["ink", 1.28, 0.92], ["ink", 1.10, 1], ["ink", 0.94, 1],
+    ].map(([state, scale, opacity]) => ({ state, scale, opacity }));
+    const targetCells = [
+      { state: "answer" },
+      ...Array.from({ length: 2 }, () => ({ state: "ink" })),
+      ...Array.from({ length: 4 }, () => ({ state: "ink" })),
+      ...Array.from({ length: 7 }, () => ({ state: "ink" })),
+      { state: "gap" },
+    ];
+    const permutation = sourceCells.map((_, index) => (index * 7 + 4) % sourceCells.length);
+    const desktopLayout = [
+      [0.10, 0.20], [0.22, 0.29], [0.34, 0.38], [0.45, 0.47], [0.56, 0.55],
+      [1.01, 0.02], [0.92, 0.10], [0.83, 0.20], [0.74, 0.32], [0.65, 0.46],
+      [0.39, 1.03], [0.46, 0.90], [0.53, 0.78], [0.61, 0.68], [0.71, 0.59],
+    ];
+    const mobileLayout = [
+      [-0.06, 0.24], [0.10, 0.34], [0.25, 0.44], [0.39, 0.54], [0.52, 0.63],
+      [1.04, 0.04], [0.91, 0.14], [0.79, 0.25], [0.68, 0.38], [0.58, 0.51],
+      [0.02, 1.03], [0.15, 0.88], [0.28, 0.75], [0.40, 0.65], [0.52, 0.58],
+    ];
+
+    let animations = [];
+    let elapsed = 0;
+    let previousTime = performance.now();
+    let sceneVisible = true;
+    let resizeFrame = 0;
+    let animationFrame = 0;
+    let lastSize = { width: 0, height: 0 };
+
+    const paint = (state) => {
+      if (state === "answer") return { fill: palette.mustard, edge: palette.mustard };
+      if (state === "gap") return { fill: palette.clear, edge: palette.field };
+      if (state === "ink") return { fill: palette.ink, edge: palette.ink };
+      return { fill: palette.weak, edge: palette.weak };
+    };
+    const offset = (milliseconds) => milliseconds / FLOW_CYCLE;
+    const transform = (point, scale) => `translate3d(${point.x}px, ${point.y}px, 0) scale(${scale})`;
+    const dimensions = () => {
+      const bounds = scene.getBoundingClientRect();
+      const width = Math.max(320, bounds.width);
+      const height = Math.max(420, bounds.height);
+      const mobile = width < 700;
+      const unit = mobile
+        ? Math.min(document.documentElement.clientWidth / 10.2, height / 9.5)
+        : Math.min(width / 20, height / 9);
+      const gap = unit * 0.15;
+      return { width, height, unit, gap, step: unit + gap, mobile };
+    };
+    const sourcePoints = ({ width, height, unit, mobile }) => (mobile ? mobileLayout : desktopLayout)
+      .map(([x, y]) => ({ x: x * width - unit / 2, y: y * height - unit / 2 }));
+    const targetPoints = ({ width, height, unit, gap, step, mobile }) => {
+      const points = [];
+      const centreX = width * (mobile ? 0.5 : 0.74);
+      const startY = height * (mobile ? 0.58 : 0.27);
+      [1, 2, 4, 8].forEach((count, row) => {
+        const rowWidth = count * unit + (count - 1) * gap;
+        const startX = centreX - rowWidth / 2;
+        for (let column = 0; column < count; column += 1) {
+          points.push({ x: startX + column * step, y: startY + row * step });
+        }
+      });
+      return points;
+    };
+    const arcPoint = (from, to, index, unit, reverse = false) => {
+      const dx = to.x - from.x;
+      const dy = to.y - from.y;
+      const length = Math.hypot(dx, dy) || 1;
+      const lane = Math.floor(index / 5);
+      const direction = [1, -1, 1][lane] * (reverse ? -0.82 : 1);
+      const amplitude = unit * (0.7 + (index % 5) * 0.17) * direction;
+      return {
+        x: (from.x + to.x) / 2 + (-dy / length) * amplitude,
+        y: (from.y + to.y) / 2 + (dx / length) * amplitude,
+      };
+    };
+    const animateUnit = (unitNode, from, to, sourceIndex, targetIndex, unitSize) => {
+      const forwardDelay = (sourceIndex / (sourceCells.length - 1)) * FLOW_STAGGER;
+      const reverseDelay = ((sourceCells.length - 1 - sourceIndex) / (sourceCells.length - 1)) * FLOW_STAGGER;
+      const forwardStart = FLOW_HOLD + forwardDelay;
+      const forwardMiddle = forwardStart + FLOW_TRAVEL * 0.47;
+      const forwardEnd = forwardStart + FLOW_TRAVEL;
+      const reverseStart = FLOW_HOLD + FLOW_MOVE + FLOW_HOLD + reverseDelay;
+      const reverseMiddle = reverseStart + FLOW_TRAVEL * 0.53;
+      const reverseEnd = reverseStart + FLOW_TRAVEL;
+      const source = sourceCells[sourceIndex];
+      const sourcePaint = paint(source.state);
+      const targetPaint = paint(targetCells[targetIndex].state);
+      const forwardArc = arcPoint(from, to, sourceIndex, unitSize);
+      const reverseArc = arcPoint(from, to, sourceIndex, unitSize, true);
+
+      const animation = unitNode.animate([
+        { offset: 0, transform: transform(from, source.scale), opacity: source.opacity, backgroundColor: sourcePaint.fill, borderColor: sourcePaint.edge },
+        { offset: offset(forwardStart), transform: transform(from, source.scale), opacity: source.opacity, backgroundColor: sourcePaint.fill, borderColor: sourcePaint.edge, easing: FLOW_EASE },
+        { offset: offset(forwardMiddle), transform: transform(forwardArc, (source.scale + 1) / 2), opacity: Math.max(0.72, source.opacity), backgroundColor: sourcePaint.fill, borderColor: sourcePaint.edge, easing: FLOW_SETTLE },
+        { offset: offset(forwardEnd), transform: transform(to, 1), opacity: 1, backgroundColor: targetPaint.fill, borderColor: targetPaint.edge },
+        { offset: offset(reverseStart), transform: transform(to, 1), opacity: 1, backgroundColor: targetPaint.fill, borderColor: targetPaint.edge, easing: FLOW_EASE },
+        { offset: offset(reverseMiddle), transform: transform(reverseArc, (source.scale + 1) / 2), opacity: Math.max(0.72, source.opacity), backgroundColor: targetPaint.fill, borderColor: targetPaint.edge, easing: FLOW_SETTLE },
+        { offset: offset(reverseEnd), transform: transform(from, source.scale), opacity: source.opacity, backgroundColor: sourcePaint.fill, borderColor: sourcePaint.edge },
+        { offset: 1, transform: transform(from, source.scale), opacity: source.opacity, backgroundColor: sourcePaint.fill, borderColor: sourcePaint.edge },
+      ], { duration: FLOW_CYCLE, iterations: Infinity, fill: "both" });
+      animation.pause();
+      animation.currentTime = elapsed;
+      return animation;
+    };
+    const build = () => {
+      const size = dimensions();
+      if (Math.abs(size.width - lastSize.width) < 1 && Math.abs(size.height - lastSize.height) < 1 && animations.length) return;
+      lastSize = size;
+      animations.forEach((animation) => animation.cancel());
+      animations = [];
+      layer.replaceChildren();
+      const from = sourcePoints(size);
+      const to = targetPoints(size);
+      sourceCells.forEach((_, sourceIndex) => {
+        const targetIndex = permutation[sourceIndex];
+        const unitNode = document.createElement("span");
+        unitNode.className = "hero__flow-unit";
+        unitNode.style.setProperty("--flow-unit", `${size.unit}px`);
+        layer.append(unitNode);
+        animations.push(animateUnit(unitNode, from[sourceIndex], to[targetIndex], sourceIndex, targetIndex, size.unit));
+      });
+      scene.setAttribute("data-flow-ready", "");
+    };
+    const active = () => sceneVisible && !document.hidden;
+    const frame = (time) => {
+      if (active()) {
+        elapsed = (elapsed + time - previousTime) % FLOW_CYCLE;
+        animations.forEach((animation) => { animation.currentTime = elapsed; });
+      }
+      previousTime = time;
+      animationFrame = requestAnimationFrame(frame);
+    };
+    const resetClock = () => { previousTime = performance.now(); };
+    const visibilityObserver = "IntersectionObserver" in window
+      ? new IntersectionObserver(([entry]) => {
+          sceneVisible = entry.isIntersecting;
+          resetClock();
+        }, { threshold: 0.08 })
+      : null;
+    const resizeObserver = "ResizeObserver" in window
+      ? new ResizeObserver(() => {
+          cancelAnimationFrame(resizeFrame);
+          resizeFrame = requestAnimationFrame(build);
+        })
+      : null;
+
+    build();
+    visibilityObserver?.observe(scene);
+    resizeObserver?.observe(scene);
+    document.addEventListener("visibilitychange", resetClock);
+    animationFrame = requestAnimationFrame(frame);
+
+    stopHeroFlow = () => {
+      visibilityObserver?.disconnect();
+      resizeObserver?.disconnect();
+      cancelAnimationFrame(resizeFrame);
+      cancelAnimationFrame(animationFrame);
+      document.removeEventListener("visibilitychange", resetClock);
+      animations.forEach((animation) => animation.cancel());
+      layer.replaceChildren();
+      scene.removeAttribute("data-flow-ready");
+    };
+  };
 
   const startShapeTransitions = () => {
     stopShapeTransitions();
@@ -74,13 +267,6 @@
 
     if (motionPreference.matches || !Element.prototype.animate) return;
 
-    const HOLD = 1800;
-    const MOVE = 650;
-    const CYCLE = (HOLD + MOVE) * 2;
-    const SOURCE_HOLD_END = HOLD / CYCLE;
-    const TARGET_START = (HOLD + MOVE) / CYCLE;
-    const TARGET_HOLD_END = (HOLD + MOVE + HOLD) / CYCLE;
-    const EASE = "cubic-bezier(0.16, 1, 0.3, 1)";
     const scenes = [...document.querySelectorAll("[data-shape-transition]")];
 
     const centre = (rect) => ({
@@ -88,36 +274,20 @@
       y: rect.top + rect.height / 2,
     });
 
-    // Prefer a one-to-one nearest match. If one state has fewer squares, the
-    // remaining units converge on the closest already-used destination.
-    const matchNearest = (fromRects, toRects) => {
-      const open = toRects.map((_, index) => index);
-
-      return fromRects.map((fromRect) => {
-        const candidates = open.length ? open : toRects.map((_, index) => index);
-        const from = centre(fromRect);
-        let match = candidates[0];
-        let distance = Number.POSITIVE_INFINITY;
-
-        candidates.forEach((index) => {
-          const to = centre(toRects[index]);
-          const nextDistance = Math.hypot(to.x - from.x, to.y - from.y);
-          if (nextDistance < distance) {
-            match = index;
-            distance = nextDistance;
-          }
-        });
-
-        const openIndex = open.indexOf(match);
-        if (openIndex !== -1) open.splice(openIndex, 1);
-        return toRects[match];
-      });
-    };
-
-    const offsetTransform = (fromRect, toRect) => {
+    const travel = (fromRect, toRect, index) => {
       const from = centre(fromRect);
       const to = centre(toRect);
-      return `translate(${to.x - from.x}px, ${to.y - from.y}px) scale(0.72)`;
+      const dx = to.x - from.x;
+      const dy = to.y - from.y;
+      const length = Math.hypot(dx, dy) || 1;
+      const amplitude = Math.min(28, Math.max(9, length * 0.24)) * (index % 2 ? -1 : 1);
+      const arcX = (-dy / length) * amplitude;
+      const arcY = (dx / length) * amplitude;
+      return {
+        destination: `translate(${dx}px, ${dy}px) scale(0.78)`,
+        forwardMiddle: `translate(${dx / 2 + arcX}px, ${dy / 2 + arcY}px) scale(0.9)`,
+        reverseMiddle: `translate(${dx / 2 - arcX * 0.82}px, ${dy / 2 - arcY * 0.82}px) scale(0.9)`,
+      };
     };
 
     const controllers = scenes.map((scene) => {
@@ -150,29 +320,51 @@
         const targetRects = targetUnits.map((unit) => unit.getBoundingClientRect());
         if (!sourceRects.length || !targetRects.length) return;
 
-        const sourceDestinations = matchNearest(sourceRects, targetRects);
-        const targetOrigins = matchNearest(targetRects, sourceRects);
+        const sourceDestinations = sourceRects.map((_, index) => targetRects[(index * 3 + 1) % targetRects.length]);
+        const targetOrigins = targetRects.map((_, index) => sourceRects[(index * 5 + 2) % sourceRects.length]);
 
         sourceUnits.forEach((unit, index) => {
-          const destination = offsetTransform(sourceRects[index], sourceDestinations[index]);
+          const path = travel(sourceRects[index], sourceDestinations[index], index);
+          const forwardDelay = (index / Math.max(1, sourceUnits.length - 1)) * FLOW_STAGGER;
+          const reverseDelay = ((sourceUnits.length - 1 - index) / Math.max(1, sourceUnits.length - 1)) * FLOW_STAGGER;
+          const forwardStart = FLOW_HOLD + forwardDelay;
+          const forwardMiddle = forwardStart + FLOW_TRAVEL * 0.47;
+          const forwardEnd = forwardStart + FLOW_TRAVEL;
+          const reverseStart = FLOW_HOLD + FLOW_MOVE + FLOW_HOLD + reverseDelay;
+          const reverseMiddle = reverseStart + FLOW_TRAVEL * 0.53;
+          const reverseEnd = reverseStart + FLOW_TRAVEL;
           controller.animations.push(unit.animate([
             { offset: 0, transform: "none", opacity: 1 },
-            { offset: SOURCE_HOLD_END, transform: "none", opacity: 1, easing: EASE },
-            { offset: TARGET_START, transform: destination, opacity: 0 },
-            { offset: TARGET_HOLD_END, transform: destination, opacity: 0, easing: EASE },
+            { offset: forwardStart / FLOW_CYCLE, transform: "none", opacity: 1, easing: FLOW_EASE },
+            { offset: forwardMiddle / FLOW_CYCLE, transform: path.forwardMiddle, opacity: 0.88, easing: FLOW_SETTLE },
+            { offset: forwardEnd / FLOW_CYCLE, transform: path.destination, opacity: 0 },
+            { offset: reverseStart / FLOW_CYCLE, transform: path.destination, opacity: 0, easing: FLOW_EASE },
+            { offset: reverseMiddle / FLOW_CYCLE, transform: path.reverseMiddle, opacity: 0.88, easing: FLOW_SETTLE },
+            { offset: reverseEnd / FLOW_CYCLE, transform: "none", opacity: 1 },
             { offset: 1, transform: "none", opacity: 1 },
-          ], { duration: CYCLE, iterations: Infinity, fill: "both" }));
+          ], { duration: FLOW_CYCLE, iterations: Infinity, fill: "both" }));
         });
 
         targetUnits.forEach((unit, index) => {
-          const origin = offsetTransform(targetRects[index], targetOrigins[index]);
+          const path = travel(targetRects[index], targetOrigins[index], index);
+          const forwardDelay = (index / Math.max(1, targetUnits.length - 1)) * FLOW_STAGGER;
+          const reverseDelay = ((targetUnits.length - 1 - index) / Math.max(1, targetUnits.length - 1)) * FLOW_STAGGER;
+          const forwardStart = FLOW_HOLD + forwardDelay;
+          const forwardMiddle = forwardStart + FLOW_TRAVEL * 0.47;
+          const forwardEnd = forwardStart + FLOW_TRAVEL;
+          const reverseStart = FLOW_HOLD + FLOW_MOVE + FLOW_HOLD + reverseDelay;
+          const reverseMiddle = reverseStart + FLOW_TRAVEL * 0.53;
+          const reverseEnd = reverseStart + FLOW_TRAVEL;
           controller.animations.push(unit.animate([
-            { offset: 0, transform: origin, opacity: 0 },
-            { offset: SOURCE_HOLD_END, transform: origin, opacity: 0, easing: EASE },
-            { offset: TARGET_START, transform: "none", opacity: 1 },
-            { offset: TARGET_HOLD_END, transform: "none", opacity: 1, easing: EASE },
-            { offset: 1, transform: origin, opacity: 0 },
-          ], { duration: CYCLE, iterations: Infinity, fill: "both" }));
+            { offset: 0, transform: path.destination, opacity: 0 },
+            { offset: forwardStart / FLOW_CYCLE, transform: path.destination, opacity: 0, easing: FLOW_EASE },
+            { offset: forwardMiddle / FLOW_CYCLE, transform: path.forwardMiddle, opacity: 0.72, easing: FLOW_SETTLE },
+            { offset: forwardEnd / FLOW_CYCLE, transform: "none", opacity: 1 },
+            { offset: reverseStart / FLOW_CYCLE, transform: "none", opacity: 1, easing: FLOW_EASE },
+            { offset: reverseMiddle / FLOW_CYCLE, transform: path.reverseMiddle, opacity: 0.72, easing: FLOW_SETTLE },
+            { offset: reverseEnd / FLOW_CYCLE, transform: path.destination, opacity: 0 },
+            { offset: 1, transform: path.destination, opacity: 0 },
+          ], { duration: FLOW_CYCLE, iterations: Infinity, fill: "both" }));
         });
 
         controller.animations.forEach((animation) => animation.pause());
@@ -247,8 +439,12 @@
     };
   };
 
-  startShapeTransitions();
-  motionPreference.addEventListener?.("change", startShapeTransitions);
+  const restartMotion = () => {
+    startHeroFlow();
+    startShapeTransitions();
+  };
+  restartMotion();
+  motionPreference.addEventListener?.("change", restartMotion);
 
   const tabs = [...document.querySelectorAll("[data-case-tab]")];
   const panels = [...document.querySelectorAll("[data-case-panel]")];

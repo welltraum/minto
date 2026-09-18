@@ -54,7 +54,7 @@
 /* ---------- 2. base ---------- */
 
 html { scroll-behavior: smooth; }
-body { margin: 0; }
+body { margin: 0; overflow-x: clip; }
 
 .page {
   max-width: var(--page-max);
@@ -223,40 +223,82 @@ body { margin: 0; }
 /* ---------- 6. hero ---------- */
 
 .hero {
+  --hero-inline: max(var(--page-pad), calc((100vw - var(--page-max)) / 2 + var(--page-pad)));
+  position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: clamp(28px, 4vw, 52px);
-  padding-block: clamp(26px, 4vw, 48px) 0;
+  grid-template-rows: minmax(0, 1fr) auto;
+  width: 100vw;
+  min-height: min(860px, calc(100svh - 70px));
+  margin-inline: calc(50% - 50vw);
+  padding: clamp(48px, 6vw, 72px) var(--hero-inline) 0;
+  overflow: hidden;
+  isolation: isolate;
 }
-.hero__copy { display: grid; gap: 22px; align-content: start; }
+.hero__copy {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: 22px;
+  align-content: center;
+  width: min(690px, 49vw);
+  padding-bottom: 48px;
+}
+.hero .display {
+  max-width: 9ch;
+  font-size: clamp(58px, 6.1vw, 92px);
+  line-height: 0.94;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+.hero .title-block { margin: 0; gap: 18px; }
+.hero .title-block .lead { max-width: 51ch; }
 .hero__actions { display: flex; gap: 10px; flex-wrap: wrap; }
-.hero__facts { display: grid; gap: 16px; }
+.hero__facts {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  width: 100%;
+  padding-block: 24px 28px;
+  background: var(--mr-paper);
+  border-block: var(--rule) solid var(--mr-line);
+}
 .hero__fact { display: flex; align-items: flex-start; gap: 12px; }
 .hero__fact .units { --u: 10px; --u-gap: 3px; margin-top: 3px; }
 .hero__fact-text { display: grid; gap: 2px; }
 .hero__fact-label { font-size: var(--fs-body); font-weight: 600; color: var(--mr-ink); }
 
-.hero__figure { display: grid; grid-template-rows: minmax(0, 1fr) auto; }
-
-/* The transformation is the whole picture: scatter, turn, pyramid and nothing
-   else. The words that used to caption each half live in case 05, where the
-   same letter is quoted in full. */
-.hero__card {
-  background: var(--mr-card);
-  border: var(--rule) solid var(--mr-line);
-  border-radius: var(--mr-radius);
-  padding: clamp(24px, 2.6vw, 34px) clamp(16px, 1.8vw, 24px);
-  display: grid;
-  justify-content: center;
-  justify-items: center;
-  align-content: center;
-  align-items: center;
-  gap: clamp(14px, 1.6vw, 20px);
+.hero__flow {
+  position: absolute;
+  z-index: 1;
+  inset: -4% -3% -2%;
   overflow: hidden;
+  pointer-events: none;
 }
-/* The hero picture carries eight units across at its widest, so its scale is
-   solved for the column it sits in rather than borrowed from data-size="lg". */
-.hero__card .units { --u: clamp(18px, 5.6vw, 26px); --u-gap: calc(var(--u) / 4); }
+.hero__flow-layer { position: absolute; inset: 0; }
+.hero__flow-unit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--flow-unit, 64px);
+  height: var(--flow-unit, 64px);
+  border: max(1px, calc(var(--flow-unit, 64px) * 0.025)) solid transparent;
+  background: var(--mr-line);
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+.hero__static {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(24px, 4vw, 52px);
+  padding-right: 8vw;
+}
+.hero__static .units { --u: clamp(13px, 1.7vw, 24px); --u-gap: calc(var(--u) / 4); }
+.hero__flow[data-flow-ready] .hero__static { display: none; }
 
 /* ---------- 7. modes ---------- */
 
@@ -659,7 +701,27 @@ body { margin: 0; }
 /* ---------- 11. wider viewports ---------- */
 
 @media (max-width: 699px) {
-  .site-nav .nav-link { padding-inline: 8px; }
+  .site-nav { display: none; }
+  .hero {
+    min-height: 1080px;
+    padding-top: 38px;
+  }
+  .hero__copy {
+    align-content: start;
+    width: 100%;
+    padding-bottom: 440px;
+  }
+  .hero .display {
+    max-width: 8.3ch;
+    font-size: clamp(48px, 14.8vw, 64px);
+    line-height: 0.93;
+  }
+  .hero__flow { top: 36%; right: -10%; bottom: 150px; left: -10%; }
+  .hero__static { justify-content: center; gap: 18px; padding: 120px 0 0; }
+  .hero__static .units { --u: 11px; --u-gap: 3px; }
+  .hero__facts { grid-template-columns: 1fr; gap: 0; padding-block: 8px; }
+  .hero__fact { padding-block: 14px; }
+  .hero__fact + .hero__fact { border-top: var(--rule) solid var(--mr-line); }
   .install__row { grid-template-columns: auto minmax(0, 1fr); }
   .install__row .mr-button { grid-column: 1 / -1; width: 100%; }
   .install__cmd { font-size: var(--fs-sm); }
@@ -667,14 +729,6 @@ body { margin: 0; }
 
 @media (min-width: 700px) {
   .units[data-size="lg"] { --u: 26px; --u-gap: 7px; }
-  .hero { grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr); align-items: stretch; }
-  .hero__card .units { --u: clamp(13px, 1.7vw, 24px); }
-  .hero__facts {
-    grid-column: 1 / -1;
-    border-top: var(--rule) solid var(--mr-line);
-    padding-top: 26px;
-  }
-  .hero__facts { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
   .hero__fact { flex-direction: column; gap: 10px; }
   .case__pair { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
   .case__pair--wide { grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); }
@@ -692,12 +746,6 @@ body { margin: 0; }
 
 @media (min-width: 1080px) {
   .units[data-size="lg"] { --u: 32px; --u-gap: 8px; }
-}
-
-/* The static no-JavaScript / reduced-motion pair only turns into a row once
-   the column can hold both states without clipping. */
-@media (min-width: 900px) {
-  .hero__card { grid-auto-flow: column; }
 }
 
 @media (min-width: 1000px) {

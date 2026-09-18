@@ -15,7 +15,7 @@
     <link rel="preload" href="../assets/fonts/GolosText-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../assets/fonts/Play-Bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="../assets/mirai.css?v=6">
-    <link rel="stylesheet" href="../assets/styles.css?v=8">
+    <link rel="stylesheet" href="../assets/styles.css?v=9">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Minto">
     <meta property="og:title" content="Minto: сначала решите, что сказать. Потом — как написать">
@@ -60,6 +60,25 @@
     <main class="page" id="main">
 
       <section class="hero" aria-labelledby="hero-heading">
+        <div class="hero__flow" data-flow-scene aria-hidden="true">
+          <div class="hero__flow-layer" data-flow-layer></div>
+          <div class="hero__static">
+            <div class="units" data-shape="scatter">
+              <div class="units__row" style="--x: 2"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+              <div class="units__row" style="--x: 0"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+              <div class="units__row" style="--x: 3"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+              <div class="units__row" style="--x: 1"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
+              <div class="units__row" style="--x: 4"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit"></span></div>
+            </div>
+            <div class="units" data-shape="pyramid">
+              <div class="units__row"><span class="unit" data-state="answer"></span></div>
+              <div class="units__row"><span class="unit"></span><span class="unit"></span></div>
+              <div class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span></div>
+              <div class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit" data-state="gap"></span></div>
+            </div>
+          </div>
+        </div>
+
         <div class="hero__copy">
           <div class="title-block">
             <h1 class="display" id="hero-heading">Сначала решите, что сказать. Потом &mdash; как написать</h1>
@@ -72,24 +91,6 @@
             <a class="mr-button" data-variant="ghost" href="#cases">Посмотреть «до / после»</a>
           </div>
 
-        </div>
-
-        <div class="hero__figure">
-          <div class="hero__card" data-shape-transition>
-            <div class="units" data-shape="scatter" data-shape-state="source" aria-hidden="true">
-              <div class="units__row" style="--x: 2"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
-              <div class="units__row" style="--x: 0"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
-              <div class="units__row" style="--x: 3"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
-              <div class="units__row" style="--x: 1"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span></div>
-              <div class="units__row" style="--x: 4"><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit" data-state="weak"></span><span class="unit"></span></div>
-            </div>
-            <div class="units hero__pyramid" data-shape="pyramid" data-shape-state="target" aria-hidden="true">
-              <div class="units__row"><span class="unit" data-state="answer"></span></div>
-              <div class="units__row"><span class="unit"></span><span class="unit"></span></div>
-              <div class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span></div>
-              <div class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit"></span><span class="unit" data-state="gap"></span></div>
-            </div>
-          </div>
         </div>
         <div class="hero__facts">
           <div class="hero__fact">
@@ -816,6 +817,6 @@
       </div>
     </footer>
 
-    <script src="../assets/app.js?v=7" defer></script>
+    <script src="../assets/app.js?v=8" defer></script>
   </body>
 </html>
