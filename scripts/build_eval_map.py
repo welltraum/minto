@@ -205,7 +205,7 @@ def render_table(lang: str, name: str, source: str, maximum: int, pairs: dict, c
             label = name_en if lang == "en" else name_ru
             out.append("                  <tr>")
             out.append(f'                    <th class="mr-table__td map__case" scope="row">')
-            out.append(f'                      <span class="map__case-name">{esc(label)}</span>')
+            out.append(f'                      <a class="map__case-name" href="./{fixture}/">{esc(label)}</a>')
             out.append(f'                      <code class="map__case-slug">{fixture}</code>')
             out.append("                    </th>")
             present: list[int] = []
@@ -217,9 +217,9 @@ def render_table(lang: str, name: str, source: str, maximum: int, pairs: dict, c
                     tone = "up" if value > 0 else "down" if value < 0 else "flat"
                     out.append(
                         f'                    <td class="mr-table__td map__td">'
-                        f'<span class="map__cell map__cell--{tone}" data-cell data-cell-measure="{name}"'
+                        f'<a class="map__cell map__cell--{tone}" href="./{fixture}/{engine}/#{name}" data-cell data-cell-measure="{name}"'
                         f' data-heat="{heat(value)}" {cell_attrs(fixture, engine, pair)}>{signed(value)}'
-                        f'<span class="visually-hidden">, {esc(engine_label)}</span></span></td>'
+                        f'<span class="visually-hidden">, {esc(engine_label)}</span></a></td>'
                     )
                 else:
                     out.append(
@@ -408,15 +408,31 @@ def main() -> int:
     assert_shape(scores, pairs)
     versions = asset_versions()
 
-    drifted = False
-    for lang in ("en", "ru"):
-        page = render(lang, scores, pairs, versions)
-        path = target(lang)
+    # The pages under the map: one per case, one per judged pair, one for the skill.
+    # Imported here because that module reads this one's constants.
+    import build_eval_detail
+
+    pages = {target(lang): render(lang, scores, pairs, versions) for lang in ("en", "ru")}
+    pages.update(build_eval_detail.render_all(args.run, versions))
+
+    drifted = 0
+    written = 0
+    # A page this run no longer renders must not linger on the site under a stale URL.
+    for folder in build_eval_detail.managed_dirs():
+        for stray in sorted(folder.rglob("index.html")):
+            if stray not in pages:
+                drifted += 1
+                print(f"ERROR: {stray.relative_to(ROOT)} is not rendered by {args.run}; delete it")
+
+    for path, page in pages.items():
         label = path.relative_to(ROOT)
         if args.check:
             current = path.read_text(encoding="utf-8") if path.is_file() else ""
             if current != page:
-                drifted = True
+                drifted += 1
+                if drifted > 3:
+                    print(f"ERROR: {label} is not what {args.run} renders")
+                    continue
                 diff = difflib.unified_diff(
                     current.splitlines(), page.splitlines(),
                     fromfile=f"{label} (committed)", tofile=f"{label} (from {args.run})", lineterm="", n=1,
@@ -425,14 +441,17 @@ def main() -> int:
                 print(f"ERROR: {label} is not what {args.run} renders; run scripts/build_eval_map.py")
         else:
             path.parent.mkdir(parents=True, exist_ok=True)
-            path.write_text(page, encoding="utf-8")
-            print(f"wrote {label} ({len(page.splitlines())} lines)")
+            if not path.is_file() or path.read_text(encoding="utf-8") != page:
+                path.write_text(page, encoding="utf-8")
+                written += 1
 
     if drifted:
         return 1
     if args.check:
         complete = sum(1 for arms in pairs.values() if len(arms) == 2)
-        print(f"Both Eval Map pages match eval/runs/{args.run}/scores.json ({complete} judged pairs).")
+        print(f"All {len(pages)} Eval Map pages match eval/runs/{args.run}/scores.json ({complete} judged pairs).")
+    else:
+        print(f"{len(pages)} Eval Map pages rendered from {args.run}; {written} changed on disk.")
     return 0
 
 

@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>document.documentElement.classList.add("js");</script>
+    <meta name="theme-color" content="#f8f1e3">
+    <meta name="description" content="Claude Haiku 4.5, case 10-rollout-review: structure 5 to 5 of 8, quality 7 to 8 of 10 with Minto. Both outputs, the judge’s notes and the exact prompts.">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://welltraum.github.io/minto/eval-map/10-rollout-review/haiku45/">
+    <link rel="alternate" hreflang="en" href="https://welltraum.github.io/minto/eval-map/10-rollout-review/haiku45/">
+    <link rel="alternate" hreflang="ru" href="https://welltraum.github.io/minto/ru/eval-map/10-rollout-review/haiku45/">
+    <link rel="alternate" hreflang="x-default" href="https://welltraum.github.io/minto/eval-map/10-rollout-review/haiku45/">
+    <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="../../../assets/fonts/GolosText-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../../../assets/fonts/Play-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../../../assets/mirai.css?v=6">
+    <link rel="stylesheet" href="../../../assets/styles.css?v=12">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Minto">
+    <meta property="og:title" content="Claude Haiku 4.5 on A review of a large rollout — Minto Eval Map">
+    <meta property="og:description" content="Claude Haiku 4.5, case 10-rollout-review: structure 5 to 5 of 8, quality 7 to 8 of 10 with Minto. Both outputs, the judge’s notes and the exact prompts.">
+    <meta property="og:url" content="https://welltraum.github.io/minto/eval-map/10-rollout-review/haiku45/">
+    <meta property="og:image" content="https://welltraum.github.io/minto/assets/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Minto turns a scattered draft into a clear argument structure">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Claude Haiku 4.5 on A review of a large rollout — Minto Eval Map</title>
+  </head>
+  <body class="mr-root" data-tone="vivid" data-layout="wide">
+    <a class="skip-link mr-button" data-variant="ghost" data-size="sm" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="page site-header__inner">
+        <a class="brand" href="../../../">
+          <span class="brand__mark units" data-shape="pyramid" role="img" aria-label="A pyramid of three rows">
+            <span class="units__row"><span class="unit"></span></span>
+            <span class="units__row"><span class="unit"></span><span class="unit"></span></span>
+            <span class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span></span>
+          </span>
+          <span class="brand__word">Minto</span>
+        </a>
+
+        <nav class="site-nav" aria-label="Sections">
+          <a class="nav-link" href="../../../#cases">Examples</a>
+          <a class="nav-link" href="../../../#evidence">Evidence</a>
+          <a class="nav-link" href="../../../#modes">Capabilities</a>
+          <a class="nav-link" href="../../../#install">Install</a>
+        </nav>
+
+        <nav class="lang" aria-label="Language">
+          <a class="nav-link" href="./" lang="en" aria-current="page">EN</a>
+          <span class="label lang__sep" aria-hidden="true">/</span>
+          <a class="nav-link" href="../../../ru/eval-map/10-rollout-review/haiku45/" lang="ru">RU</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page detail" id="main">
+      <article class="pair" data-pair-fixture="10-rollout-review" data-pair-engine="haiku45">
+        <header class="pair-top">
+          <nav class="crumbs" aria-label="Breadcrumb">
+            <a class="link" href="../../../eval-map/">Eval Map</a>
+            <span class="crumbs__sep" aria-hidden="true">/</span>
+            <a class="link" href="../../../eval-map/10-rollout-review/">A review of a large rollout</a>
+            <span class="crumbs__sep" aria-hidden="true">/</span>
+            <span aria-current="page">Claude Haiku 4.5</span>
+          </nav>
+          <h1 class="display pair-top__h">Claude Haiku 4.5 on “A review of a large rollout”: with Minto, better on quality, structure unchanged</h1>
+          <p class="pair-top__figs">
+            <span class="pair-fig pair-fig--flat" data-pair-measure="structure" data-pair-control="5" data-pair-skill="5" data-pair-delta="0"><span class="pair-fig__name">Structure</span> <span class="num">5&nbsp;→&nbsp;5</span> <span class="pair-fig__max">of&nbsp;8</span> <span class="num pair-fig__delta">0</span></span>
+            <span class="pair-fig pair-fig--up" data-pair-measure="quality" data-pair-control="7" data-pair-skill="8" data-pair-delta="1"><span class="pair-fig__name">Quality</span> <span class="num">7&nbsp;→&nbsp;8</span> <span class="pair-fig__max">of&nbsp;10</span> <span class="num pair-fig__delta">+1</span></span>
+          </p>
+          <div class="pair-top__why">
+            <p class="label">The judge on the output with Minto</p>
+            <blockquote class="judge-note" lang="en"><p>The fix/payoff pattern is visible, but false asset-feed ticket attribution and invented economics undermine an otherwise workable prerequisite structure.</p></blockquote>
+          </div>
+          <p class="label pair-top__meta">Mode <code class="mono">write</code> · case <code class="mono">10-rollout-review</code> · run v1.7.0-final</p>
+        </header>
+        <section class="section pair-axes" aria-label="Structure, Quality">
+          <div class="axes">
+            <table class="axis-table" id="structure">
+              <caption class="axis-table__cap"><span class="axis-table__capin"><span class="subtitle">Structure</span> <span class="label">of&nbsp;8, 2 points per axis</span></span></caption>
+              <thead>
+                <tr><th scope="col"><span class="visually-hidden">Structure</span></th><th scope="col" class="label">Without Minto <span class="num">5</span></th><th scope="col" class="label">With Minto <span class="num">5</span></th><th scope="col" class="label axis-table__d">Change</th></tr>
+              </thead>
+              <tbody>
+                <tr class="axis-row axis-row--up" data-axis-measure="structure" data-axis="top" data-axis-control="1" data-axis-skill="2"><th scope="row" class="axis-row__name">Top</th><td><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span><span class="visually-hidden">1</span></td><td><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit"></span></span><span class="visually-hidden">2</span></td><td class="num axis-row__delta">+1</td></tr>
+                <tr class="axis-row axis-row--flat" data-axis-measure="structure" data-axis="key_line_composition" data-axis-control="1" data-axis-skill="1"><th scope="row" class="axis-row__name">Key-line composition</th><td><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span><span class="visually-hidden">1</span></td><td><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span><span class="visually-hidden">1</span></td><td class="num axis-row__delta"></td></tr>
+                <tr class="axis-row axis-row--flat" data-axis-measure="structure" data-axis="levels" data-axis-control="1" data-axis-skill="1"><th scope="row" class="axis-row__name">Levels</th><td><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span><span class="visually-hidden">1</span></td><td><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span><span class="visually-hidden">1</span></td><td class="num axis-row__delta"></td></tr>
+                <tr class="axis-row axis-row--down" data-axis-measure="structure" data-axis="order_and_kind" data-axis-control="2" data-axis-skill="1"><th scope="row" class="axis-row__name">Order and kind</th><td><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit"></span></span><span class="visually-hidden">2</span></td><td><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="flaw"></span></span><span class="visually-hidden">1</span></td><td class="num axis-row__delta">−1</td></tr>
+              </tbody>
+            </table>
+            <table class="axis-table" id="quality">
+              <caption class="axis-table__cap"><span class="axis-table__capin"><span class="subtitle">Quality</span> <span class="label">of&nbsp;10, 2 points per axis</span></span></caption>
+              <thead>
+                <tr><th scope="col"><span class="visually-hidden">Quality</span></th><th scope="col" class="label">Without Minto <span class="num">7</span></th><th scope="col" class="label">With Minto <span class="num">8</span></th><th scope="col" class="label axis-table__d">Change</th></tr>
+              </thead>
+              <tbody>
+                <tr class="axis-row axis-row--up" data-axis-measure="quality" data-axis="top" data-axis-control="1" data-axis-skill="2"><th scope="row" class="axis-row__name">Top</th><td><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span><span class="visually-hidden">1</span></td><td><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit"></span></span><span class="visually-hidden">2</span></td><td class="num axis-row__delta">+1</td></tr>
+                <tr class="axis-row axis-row--flat" data-axis-measure="quality" data-axis="same_kind_grouping" data-axis-control="2" data-axis-skill="2"><th scope="row" class="axis-row__name">Same-kind grouping</th><td><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit"></span></span><span class="visually-hidden">2</span></td><td><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit"></span></span><span class="visually-hidden">2</span></td><td class="num axis-row__delta"></td></tr>
+                <tr class="axis-row axis-row--flat" data-axis-measure="quality" data-axis="explainable_order" data-axis-control="1" data-axis-skill="1"><th scope="row" class="axis-row__name">Explainable order</th><td><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span><span class="visually-hidden">1</span></td><td><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span><span class="visually-hidden">1</span></td><td class="num axis-row__delta"></td></tr>
+                <tr class="axis-row axis-row--flat" data-axis-measure="quality" data-axis="mece" data-axis-control="1" data-axis-skill="1"><th scope="row" class="axis-row__name">MECE</th><td><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span><span class="visually-hidden">1</span></td><td><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span><span class="visually-hidden">1</span></td><td class="num axis-row__delta"></td></tr>
+                <tr class="axis-row axis-row--flat" data-axis-measure="quality" data-axis="visible_structure" data-axis-control="2" data-axis-skill="2"><th scope="row" class="axis-row__name">Visible, proportionate structure</th><td><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit"></span></span><span class="visually-hidden">2</span></td><td><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit"></span></span><span class="visually-hidden">2</span></td><td class="num axis-row__delta"></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section class="section margins" aria-labelledby="rail-h">
+          <p class="label margins__note">Outputs and the judge’s words are quoted as written, in English.</p>
+          <div class="case-tabs arm-tabs" data-arm-tablist aria-label="The judge">
+            <a class="case-tab" href="#arm-control" data-arm-tab="control">Without Minto</a>
+            <a class="case-tab" href="#arm-skill" data-arm-tab="skill">With Minto</a>
+          </div>
+          <div class="margins__docs">
+            <article class="arm arm--control" id="arm-control" data-arm-panel="control" aria-labelledby="arm-control-h">
+              <header class="arm__head"><h2 class="subtitle" id="arm-control-h">Without Minto</h2><span class="label">control prompt · blind label <code class="mono">out-10</code></span></header>
+              <div class="strips" aria-hidden="true">
+                <div class="strip"><span class="label strip__name">Structure</span><span class="strip__units"><span class="strip__axis"><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span></span><span class="strip__axis"><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span></span><span class="strip__axis"><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span></span><span class="strip__axis"><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit"></span></span></span></span><span class="num strip__total">5<span class="label">/8</span></span></div>
+                <div class="strip"><span class="label strip__name">Quality</span><span class="strip__units"><span class="strip__axis"><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span></span><span class="strip__axis"><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit"></span></span></span><span class="strip__axis"><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span></span><span class="strip__axis"><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span></span><span class="strip__axis"><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit"></span></span></span></span><span class="num strip__total">7<span class="label">/10</span></span></div>
+              </div>
+              <ul class="arm-hf" aria-label="Hard failures"><li><span class="unit" data-state="flaw" aria-hidden="true"></span><code class="mono">invented_facts</code></li><li class="arm-hf__pen" data-pair-penalized="6" data-pair-raw="7"><span class="label">quality after the rubric’s penalty</span> <span class="num">6</span><span class="label">/10</span></li></ul>
+              <blockquote class="judge-note" lang="en"><p>The main branches are readable, but the top omits the integration condition and governance sits outside the stated basis.</p></blockquote>
+              <div class="md arm__doc" lang="en">
+                <h4>FIELDBOOK ROLLOUT: EXTEND TO NORTH AND ISLANDS IN Q1</h4>
+                <h5>RECOMMENDATION</h5>
+                <p>Extend Fieldbook to North and Islands in Q1, provided that training is restructured to match Central and East's model before go-live.</p>
+                <h5>BASIS FOR EXTENSION</h5>
+                <p>The case rests on three independent factors:</p>
+                <h6>1. Operational and financial returns justify the investment—if adoption is fast</h6>
+                <p>The four live regions show strong returns: jobs per technician rose from 4.6 to 5.3 per day, travel time fell 18%, and same-day emergency insertion dropped to 4 minutes. These gains drove 12% overtime reduction and 9% fuel savings.</p>
+                <p><strong>Financial payback achieved in Central and East:</strong> Running costs of £31,000/month recovered in Q2. Extension to North and Islands adds £13,500/month.</p>
+                <p><strong>Financial performance depends on adoption speed:</strong> South and West reached break-even only, not payback, because adoption stalled—same operational gains, but slower ramp added improvised training costs (380 technician-hours, one temporary billing clerk for two quarters). Extending North and Islands works financially only if adoption matches Central/East's six-week path to 80%, not West's nine-week plateau at 71%.</p>
+                <h6>2. Adoption speed is determined by training structure, not the tool</h6>
+                <p><strong>Evidence the tool works:</strong> Dispatchers achieved 100% adoption by day one when the legacy scheduling system was switched off—they had no alternative. No tool defect prevented adoption; adoption required forced migration.</p>
+                <p><strong>Central and East achieved fast adoption</strong> (six weeks) through a single intensive classroom training.</p>
+                <p><strong>South and West adoption stalled</strong> because the classroom course was scheduled only once per region. Technicians hired afterward, or absent during the session, learned second-hand from colleagues. Coordinators improvised shadowing, pulling experienced technicians off their own routes. In West, 34 of 118 technicians never attended any session.</p>
+                <p><strong>The solution exists and is working:</strong> The support desk now runs a weekly webinar reaching 20–30 technicians. Attendance correlates strongly with regions that missed classroom slots. The desk lead notes: "We are doing the training program's job at ticket prices—most of what we handle is people who were never onboarded."</p>
+                <p><strong>For North and Islands, increase training frequency or shift to the webinar model before go-live.</strong> The tool's readiness is proven; the constraint is training delivery.</p>
+                <h6>3. Remaining system gaps are fixable without vendor action or program delay</h6>
+                <p>Three issues reduce efficiency but do not prevent go-live and all have solutions waiting on Kestrel decisions:</p>
+                <p><strong>Missing asset register history (9% of jobs re-do warranted repairs):</strong> Technicians call the back office for equipment history. Vendor has a ready connector for the asset register database; the request has been in the asset team's backlog since month two. Assign ownership and schedule a nightly export.</p>
+                <p><strong>Job-completion code mismatch (300 records/week re-keyed into invoicing system, 2–4% reporting drift):</strong> Billing team introduces transcription errors; finance reconciles discrepancies manually each month. Vendor's mapping table exists and takes roughly one day to configure. No integration owner was assigned during rollout. Assign and schedule before go-live.</p>
+                <p><strong>Customer-search limitation (70 duplicate records/week merged manually):</strong> Search matches on exact postcode only, so technicians create duplicate customer records when they cannot find the first. Job-history views split across records until merged. Vendor solution is available. Decide and schedule before go-live.</p>
+                <p>None of these require a vendor release or block North and Islands deployment. All have solutions that can be prioritized in Q4.</p>
+                <hr>
+                <h5>EXECUTION REQUIREMENTS BEFORE GO-LIVE</h5>
+                <p><strong>Training:</strong> Restructure to weekly webinars or multiple classroom sessions (Central/East playbook).</p>
+                <p><strong>Integrations and fixes:</strong> Assign specific owners and schedule before deployment—asset register nightly export, job-code mapping configuration, search improvement.</p>
+                <hr>
+                <h5>ADDITIONAL CONTEXT: WHY SOUTH AND WEST WEREN'T FASTER</h5>
+                <p>Every negative pattern visible in this review emerged by week four of Central's go-live. The program had no mechanism to convert early field observations into cross-region fixes, so the same issues replayed in South and West. A weekly integration sync starting week one of North and Islands go-live will surface problems earlier.</p>
+                <p>The vendor relationship is sound: response times meet contract, and both known system gaps (asset register and code mapping) are backed by vendor solutions awaiting Kestrel decisions, not vendor work.</p>
+              </div>
+            </article>
+            <article class="arm arm--skill" id="arm-skill" data-arm-panel="skill" aria-labelledby="arm-skill-h">
+              <header class="arm__head"><h2 class="subtitle" id="arm-skill-h">With Minto</h2><span class="label">prompt with the skill · blind label <code class="mono">out-04</code></span></header>
+              <div class="strips" aria-hidden="true">
+                <div class="strip"><span class="label strip__name">Structure</span><span class="strip__units"><span class="strip__axis"><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit"></span></span></span><span class="strip__axis"><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span></span><span class="strip__axis"><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span></span><span class="strip__axis"><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="flaw"></span></span></span></span><span class="num strip__total">5<span class="label">/8</span></span></div>
+                <div class="strip"><span class="label strip__name">Quality</span><span class="strip__units"><span class="strip__axis"><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit"></span></span></span><span class="strip__axis"><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit"></span></span></span><span class="strip__axis"><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span></span><span class="strip__axis"><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span></span><span class="strip__axis"><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit"></span></span></span></span><span class="num strip__total">8<span class="label">/10</span></span></div>
+              </div>
+              <ul class="arm-hf" aria-label="Hard failures"><li><span class="unit" data-state="flaw" aria-hidden="true"></span><code class="mono">invented_facts</code></li><li><span class="unit" data-state="flaw" aria-hidden="true"></span><code class="mono">unacknowledged_source_loss</code></li><li class="arm-hf__pen" data-pair-penalized="7" data-pair-raw="8"><span class="label">quality after the rubric’s penalty</span> <span class="num">7</span><span class="label">/10</span></li></ul>
+              <blockquote class="judge-note" lang="en"><p>The fix/payoff pattern is visible, but false asset-feed ticket attribution and invented economics undermine an otherwise workable prerequisite structure.</p></blockquote>
+              <div class="md arm__doc" lang="en">
+                <h4>FIELDBOOK ROLLOUT — Q1 EXTENSION RECOMMENDATION</h4>
+                <p><strong>Recommendation: Extend Fieldbook to North and Islands in Q1, contingent on completing three system fixes before go-live.</strong></p>
+                <p>Fieldbook has been live in four regions for two quarters and has delivered strong operational gains in adoption leaders Central and East: overtime is down 12%, fuel costs are down 9%, and technicians now complete 5.3 jobs per day (up from 4.6). The business case for extending to North and Islands is favorable if adoption matches Central/East's pace; however, South and West lagged significantly. Analysis shows the difference is driven by three fixable gaps that recurred across regions because the program had no early-feedback mechanism to close issues between launches. Closing these gaps before launch will replicate Central/East's economics.</p>
+                <h5>Three mandatory prerequisites for launch</h5>
+                <p><strong>1. Restructure onboarding to replicate fast-adoption pattern</strong></p>
+                <p>Central and East reached 80%+ adoption within six weeks. West achieved only 71% after nine weeks. Root cause: a single classroom training session left technicians hired after the course to learn the platform second-hand from colleagues, slowing uptake. Regional coordinators improvised shadowing arrangements to compensate, consuming an estimated 380 technician-hours of lost route time in South and West combined.</p>
+                <p>Fix: Finalize the onboarding plan before launch using the model that succeeded in Central/East — ongoing support and flexible shadowing rather than a one-time classroom session.</p>
+                <p>Payoff: Replicates the fast adoption curve, preventing the 380+ technician-hour workaround costs that slow regions incurred.</p>
+                <p><strong>2. Activate asset-register integration to close the highest-impact support gap</strong></p>
+                <p>Fieldbook does not receive equipment service history from the legacy asset register, so technicians open each job without knowing prior service or warranty status. This missing data drives 19% of all support tickets (escalations and repeat searches) and causes 9% of jobs to include unnecessary parts replacements — parts already replaced under warranty within the past year.</p>
+                <p>Fix: Prioritize the nightly export request to the legacy asset register team (currently in their backlog since month two). The vendor integration is complete and ready; it requires only internal data-coordination decisions.</p>
+                <p>Payoff: Eliminates the majority of support volume tied to missing data and prevents warranty-related parts waste.</p>
+                <p><strong>3. Configure billing-code mapping with vendor to eliminate manual rework</strong></p>
+                <p>Job-completion codes in Fieldbook do not match the invoicing system, forcing the billing team to re-key approximately 300 job records per week by hand. This introduces transcription errors visible to customers on invoices, required hiring a temporary clerk (£8,400 for two quarters), and creates a 2–4% weekly variance that finance reconciles manually at month end.</p>
+                <p>Fix: Assign an integration owner to configure the billing-code mapping table. The vendor has confirmed this is a 1-day setup requiring no additional development.</p>
+                <p>Payoff: Eliminates manual re-keying, reduces billing errors, and simplifies finance reconciliation.</p>
+                <h5>Financial case with these fixes in place</h5>
+                <p>Central and East demonstrate the model: operational savings (12% overtime reduction, 9% fuel cost reduction) deliver £30k/month recurring benefit, exceeding the £13,500/month incremental licensing cost for new regions. Payback occurs within the second quarter of operation.</p>
+                <p>South and West reached break-even only because slow adoption extended payback to two quarters and generated unplanned labor costs (workaround shadowing). Without the three fixes above, North/Islands will follow West's pattern and the business case fails. With the fixes in place and adoption matching Central/East, the extension is financially justified.</p>
+                <h5>Next step</h5>
+                <p>Approval to proceed with Q1 launch, with confirmation that these three actions will be prioritized, owned, and completed before go-live.</p>
+              </div>
+            </article>
+          </div>
+          <aside class="margins__rail" aria-labelledby="rail-h">
+            <h2 class="subtitle" id="rail-h">The judge</h2>
+            <table class="dmatrix">
+              <thead><tr><th scope="col" class="label">Recurring defect</th><th scope="col" class="label">without</th><th scope="col" class="label">with Minto</th></tr></thead>
+              <tbody>
+                <tr><th scope="row"><span class="doc-item" lang="en">Full recommendation or condition is not at the true top</span><span class="label defect__cause">the skill has no such rule · <span lang="en">Core loop §2–3; Mode 3</span></span></th><td><span class="unit" data-state="flaw" aria-hidden="true"></span><span class="visually-hidden">present</span></td><td><span class="unit" data-state="gap" aria-hidden="true"></span><span class="visually-hidden">absent</span></td></tr>
+                <tr><th scope="row"><span class="doc-item" lang="en">Program feedback is present but subordinated to another branch or appendix-like section</span><span class="label defect__cause">the rule is there but buried · <span lang="en">Core loop §4; section pyramids</span></span></th><td><span class="unit" data-state="flaw" aria-hidden="true"></span><span class="visually-hidden">present</span></td><td><span class="unit" data-state="flaw" aria-hidden="true"></span><span class="visually-hidden">present</span></td></tr>
+                <tr><th scope="row"><span class="doc-item" lang="en">Unsupported facts, causal certainty or implementation specifics are introduced</span><span class="label defect__cause">the skill has the rule; the model did not follow it · <span lang="en">Mode 3, “Invent nothing”</span></span></th><td><span class="unit" data-state="flaw" aria-hidden="true"></span><span class="visually-hidden">present</span></td><td><span class="unit" data-state="flaw" aria-hidden="true"></span><span class="visually-hidden">present</span></td></tr>
+                <tr><th scope="row"><span class="doc-item" lang="en">Material source content disappears without a note</span><span class="label defect__cause">the skill has the rule; the model did not follow it · <span lang="en">Mode 3, “Keep every fact”</span></span></th><td><span class="unit" data-state="gap" aria-hidden="true"></span><span class="visually-hidden">absent</span></td><td><span class="unit" data-state="flaw" aria-hidden="true"></span><span class="visually-hidden">present</span></td></tr>
+                <tr><th scope="row"><span class="doc-item" lang="en">Ordering principle is not named</span><span class="label defect__cause">the skill has the rule; the model did not follow it · <span lang="en">Core loop §5</span></span></th><td><span class="unit" data-state="flaw" aria-hidden="true"></span><span class="visually-hidden">present</span></td><td><span class="unit" data-state="flaw" aria-hidden="true"></span><span class="visually-hidden">present</span></td></tr>
+              </tbody>
+            </table>
+            <h3 class="label rail__sub">Decisive questions</h3>
+            <ol class="cmp-list">
+              <li class="cmp"><p class="small cmp__q" lang="en">Does the top carry both the recommendation and its condition?</p><p class="cmp__a"><span class="label">without</span> <span lang="en">the recommendation carries only the onboarding condition, leaving integrations outside the top</span></p><p class="cmp__a"><span class="label">with Minto</span> <span lang="en">yes, although “three system fixes” inaccurately includes onboarding</span></p></li>
+              <li class="cmp"><p class="small cmp__q" lang="en">How many first-level branches, and does the split follow the answer or the source sections?</p><p class="cmp__a"><span class="label">without</span> <span lang="en">three reason branches, with feedback appended outside them</span></p><p class="cmp__a"><span class="label">with Minto</span> <span lang="en">three prerequisite branches</span></p></li>
+              <li class="cmp"><p class="small cmp__q" lang="en">Does each substantive section get its own one-sentence top feeding the key line, or is the document flattened into a single pyramid?</p><p class="cmp__a"><span class="label">without</span> <span lang="en">the three main sections have tops but the feedback material is loose</span></p><p class="cmp__a"><span class="label">with Minto</span> <span lang="en">each prerequisite has a top/fix/payoff pattern, but feedback is not a section</span></p></li>
+              <li class="cmp"><p class="small cmp__q" lang="en">Q4, Q5 and Q6</p><p class="cmp__a"><span class="label">without</span> <span lang="en">are consolidated</span></p><p class="cmp__a"><span class="label">with Minto</span> <span lang="en">are each consolidated</span></p></li>
+              <li class="cmp"><p class="small cmp__q" lang="en">Does depth vary with the material (e.g., a third level under integrations), or is every branch forced to the same depth?</p><p class="cmp__a"><span class="label">without</span> <span lang="en">the integration branch receives deeper treatment</span></p><p class="cmp__a"><span class="label">with Minto</span> <span lang="en">every prerequisite is forced into the same template</span></p></li>
+              <li class="cmp"><p class="small cmp__q" lang="en">Were the minor facts (parts-ordering habit, dispatcher uptake, vendor relationship) demoted or dropped with a note, silently lost, or promoted?</p><p class="cmp__a"><span class="label">without</span> <span lang="en">dispatcher and vendor facts are retained while parts ordering is silently dropped</span></p><p class="cmp__a"><span class="label">with Minto</span> <span lang="en">all three minor facts are silently dropped</span></p></li>
+              <li class="cmp"><p class="small cmp__q" lang="en">Which numbers or facts were invented?</p><p class="cmp__a"><span class="label">without</span> <span lang="en">it attributes the billing clerk to slow adoption, invents a search remedy and Q4 scheduling, and overstates the absence of product defects</span></p><p class="cmp__a"><span class="label">with Minto</span> <span lang="en">the 19% ticket share is wrongly attributed to the asset feed, the connector is called complete, £30,000 monthly benefit is invented, and the one-day estimate is overextended</span></p></li>
+            </ol>
+            <table class="checks">
+              <thead><tr><th scope="col" class="label">Judge’s check</th><th scope="col" class="label">without</th><th scope="col" class="label">with Minto</th></tr></thead>
+              <tbody>
+                <tr class="check-row"><th scope="row">Answer first</th><td><span class="check check--ok">yes</span></td><td><span class="check check--ok">yes</span></td></tr>
+                <tr class="check-row"><th scope="row">First-level elements</th><td><span class="num">3</span></td><td><span class="num">3</span></td></tr>
+                <tr class="check-row"><th scope="row">First-level kind matches the gold</th><td><span class="check check--ok">yes</span></td><td><span class="check check--ok">yes</span></td></tr>
+                <tr class="check-row"><th scope="row">Invented facts</th><td><span class="check check--bad">yes</span></td><td><span class="check check--bad">yes</span></td></tr>
+                <tr class="check-row check-row--diff"><th scope="row">Source lost without a note</th><td><span class="check check--ok">no</span></td><td><span class="check check--bad">yes</span></td></tr>
+                <tr class="check-row"><th scope="row">Mode respected</th><td><span class="check check--ok">yes</span></td><td><span class="check check--ok">yes</span></td></tr>
+                <tr class="check-row"><th scope="row">Reader’s question stated literally</th><td><span class="check check--bad">no</span></td><td><span class="check check--bad">no</span></td></tr>
+                <tr class="check-row"><th scope="row">Order type named</th><td><span class="check check--bad">no</span></td><td><span class="check check--bad">no</span></td></tr>
+                <tr class="check-row check-row--diff"><th scope="row">SCQ introduction present</th><td><span class="check check--bad">no</span></td><td><span class="check check--ok">yes</span></td></tr>
+              </tbody>
+            </table>
+          </aside>
+        </section>
+        <section class="section test" aria-labelledby="test-h">
+          <h2 class="title" id="test-h">How the test was built</h2>
+          <p class="body test__lede">Claude Haiku 4.5 received the same task twice. The control prompt is one framing line and the task. The prompt with Minto is the same task preceded by the full text of the skill. The judge read both outputs among 14 under blind labels and did not know which one had the skill.</p>
+          <div class="test__grid">
+            <details class="test__part">
+              <summary><span class="subtitle">Prompt without Minto</span> <span class="label">8&nbsp;317&nbsp;B</span></summary>
+              <pre class="prompt-src" lang="en"><code>You are working on a business document using the Minto Pyramid Principle.
+
+&lt;!-- Original fixture. Company, product, regions, people and numbers are invented.
+     It tests the large-document behaviors: one pyramid per section plus a
+     top-level pyramid, MECE across sections (planted cross-section duplicates),
+     and geometry derived from the material rather than a fixed 3x3 habit. --&gt;
+
+# Fixture 10: rollout review
+
+**Mode:** `write`
+**Language:** `en`
+
+## Context
+
+Kestrel Maintenance Group services heating and cooling equipment across six
+regions. Over the past two quarters it rolled out Fieldbook, a work-order and
+scheduling platform, to four of the six regions. The draft below is the internal
+review of that rollout, assembled by the program office from status reports. The
+reader is the chief operating officer, who must decide at the quarterly meeting
+whether to extend Fieldbook to the remaining two regions (North and Islands) in
+Q1, and has asked to see this review beforehand.
+
+## Before
+
+```text
+FIELDBOOK ROLLOUT — TWO-QUARTER REVIEW (DRAFT)
+
+1. Adoption
+
+Fieldbook is now live in four regions: Central, East, South, and West. Across
+these regions 412 of 486 field technicians have activated their accounts, and
+83% of work orders are now created and closed inside Fieldbook rather than on
+paper or by phone. Central and East reached full adoption within six weeks.
+South and West lagged: South took eleven weeks to pass 80% of orders in the
+system, and West is still at 71% after nine weeks. Regional coordinators in
+both slower regions report the same explanation: the two-day classroom course
+was scheduled only once per region, so technicians hired after the course, or
+absent during it, learned the platform second-hand from colleagues. In West,
+34 of 118 technicians never attended any session. Coordinators improvised
+shadowing arrangements, which worked but pulled experienced technicians off
+their own routes. Uptake among dispatchers was faster: all 41 dispatchers
+across the four regions were using Fieldbook scheduling from week one, since
+the old scheduling spreadsheet was switched off on day one and they had no
+alternative.
+
+2. Operations
+
+The clearest operational gain is scheduling density. With Fieldbook suggesting
+route-aware assignment, completed jobs per technician per day rose from 4.6 to
+5.3 across the four live regions, and average travel time between jobs fell
+18%. Same-day emergency insertion, which previously required a dispatcher to
+phone technicians until someone accepted, is now automatic and takes a median
+of 4 minutes. However, the benefit is partly eaten by a data-transfer defect:
+Fieldbook does not receive equipment service history from the legacy asset
+register, so technicians open each job without knowing what was done at that
+site before. They compensate by calling the back office, or by asking the
+customer, and in 9% of audited jobs they replaced parts that had already been
+replaced within warranty in the past year. The asset register team was asked
+in month two for a nightly export; the request is still in their backlog. A
+second, smaller friction: job-completion codes in Fieldbook do not match the
+codes in the invoicing system, so the billing team re-keys roughly 300 job
+records per week into the invoicing system by hand, introducing transcription
+errors that customers catch on invoices. Operations leads in Central and East
+also note that Fieldbook&#x27;s parts-ordering screen is unpopular; most
+technicians still order parts by phone, though this appears to be habit rather
+than a defect, as the screen works correctly in testing.
+
+3. Support and training
+
+The support desk logged 1,940 Fieldbook tickets over the two quarters. Ticket
+volume peaked in each region&#x27;s third week and declined steadily after. 44% of
+all tickets are password resets and login problems, concentrated among
+technicians who missed the classroom course and had never logged in during the
+supported window. Another 19% are duplicate-record tickets: technicians create
+a second customer record when they cannot find the first, because the search
+screen matches on exact postcode only. The support desk merges these
+duplicates manually, at about 70 records per week. Support also fields a
+steady trickle of calls from the billing team about mismatched job-completion
+codes, which the desk cannot resolve and forwards to the vendor. The vendor&#x27;s
+response on the code mismatch has been that a configurable mapping table
+exists and takes roughly a day to set up, but it has not been scheduled
+because no one on Kestrel&#x27;s side owns the integration. Training-wise, the desk
+runs a weekly one-hour webinar that reaches 20 to 30 technicians; attendance
+correlates strongly with regions that missed classroom slots. The desk lead&#x27;s
+written comment: &quot;We are doing the training program&#x27;s job at ticket prices —
+most of what we handle is people who were never onboarded, plus the two known
+system gaps.&quot;
+
+4. Finance
+
+Licence and hosting for Fieldbook run £31,000 per month for the four live
+regions. Overtime spending in the live regions is down 12% quarter over
+quarter, which finance attributes mainly to the scheduling gains, and fuel
+cost per job is down 9%, consistent with the travel-time reduction. Against
+that, the program has carried unplanned costs: the improvised shadowing
+arrangements in South and West consumed an estimated 380 technician-hours of
+lost route time, and the billing team added one temporary clerk (£8,400 for
+the two quarters) to handle the re-keying of job records into the invoicing
+system. The program office estimates that the rollout paid back its running
+cost within the second quarter in Central and East, while South and West are
+roughly at break-even because of the slower adoption. Extending to North and
+Islands would add £13,500 per month in licences and require winter travel for
+any classroom training. On the current evidence the economics of extension are
+favourable if, and only if, the adoption pace of Central and East can be
+reproduced; a repeat of the West pattern would put the new regions underwater
+for at least two quarters. The program office therefore leans toward
+extending in Q1, provided onboarding is restructured first.
+
+5. Data and integrations
+
+Fieldbook&#x27;s reporting module is now the source of record for job status across
+the four regions, and regional managers use its dashboard in the Monday
+review. Data quality inside Fieldbook is generally good, with two exceptions.
+First, the customer-record duplicates created through the search limitation
+(support merges about 70 per week, as noted) mean that job-history views for
+affected customers are split across records until merged. Second, the missing
+feed from the legacy asset register leaves the equipment-history panel empty
+on every job screen, which both hides warranty state from technicians and
+makes the panel&#x27;s audit trail useless for dispute resolution. The invoicing
+mismatch also surfaces here: because completion codes are re-keyed by hand,
+the reporting module and the invoicing system disagree on completed-job counts
+by 2-4% in any given week, and finance reconciles the difference manually at
+month end. The vendor&#x27;s integration catalogue lists supported connectors for
+both the asset register&#x27;s database and the invoicing system&#x27;s import format;
+neither connector has been evaluated. IT&#x27;s position is that both are
+straightforward but that no integration work was scoped into the rollout
+program, which was staffed for deployment and training only.
+
+6. Program office remarks
+
+Individual regional reports repeat most of the above in local detail. Two
+further observations. First, every negative pattern in this review was visible
+by week four of the Central go-live; the program had no mechanism to convert
+early field observations into program-level fixes, so the same issues
+replayed in each subsequent region. Second, the vendor relationship is good:
+response times are within contract, and both known system gaps have vendor
+solutions waiting on Kestrel decisions rather than on vendor work.
+```
+
+## Task
+
+Restructure this review for the COO using the Minto Pyramid Principle. The COO&#x27;s
+decision is whether to extend Fieldbook to North and Islands in Q1.
+
+Return only the result, with no explanation of how you produced it.
+</code></pre>
+            </details>
+            <details class="test__part">
+              <summary><span class="subtitle">Prompt with Minto</span> <span class="label">five parts, in order · 35&nbsp;890&nbsp;B</span></summary>
+              <ol class="assembly">
+                  <li><code class="mono" lang="en">Below is a skill written as an instruction. Read it in full and apply it to the task at the end.</code></li>
+                  <li><code class="mono">===== SKILL.md =====</code> <a class="link small" href="../../../eval-map/skill/#skill-md">SKILL.md at f4813ce</a> <span class="label">17&nbsp;235&nbsp;B</span></li>
+                  <li><code class="mono">===== references/rules.md =====</code> <a class="link small" href="../../../eval-map/skill/#rules-md">references/rules.md at f4813ce</a> <span class="label">6&nbsp;464&nbsp;B</span></li>
+                  <li><code class="mono">===== references/templates.md =====</code> <a class="link small" href="../../../eval-map/skill/#templates-md">references/templates.md at f4813ce</a> <span class="label">3&nbsp;742&nbsp;B</span></li>
+                  <li><code class="mono">===== TASK =====</code> <span class="small">the whole case input</span></li>
+                  <li><code class="mono" lang="en">Return only the result, with no explanation of how you produced it.</code></li>
+              </ol>
+            </details>
+            <details class="test__part">
+              <summary><span class="subtitle">Case input</span> <code class="label">before.md</code></summary>
+              <div class="md md--src" lang="en">
+                <p>&lt;!-- Original fixture. Company, product, regions, people and numbers are invented.<br>It tests the large-document behaviors: one pyramid per section plus a<br>top-level pyramid, MECE across sections (planted cross-section duplicates),<br>and geometry derived from the material rather than a fixed 3x3 habit. --&gt;</p>
+                <h4>Fixture 10: rollout review</h4>
+                <p><strong>Mode:</strong> <code>write</code><br><strong>Language:</strong> <code>en</code></p>
+                <h5>Context</h5>
+                <p>Kestrel Maintenance Group services heating and cooling equipment across six<br>regions. Over the past two quarters it rolled out Fieldbook, a work-order and<br>scheduling platform, to four of the six regions. The draft below is the internal<br>review of that rollout, assembled by the program office from status reports. The<br>reader is the chief operating officer, who must decide at the quarterly meeting<br>whether to extend Fieldbook to the remaining two regions (North and Islands) in<br>Q1, and has asked to see this review beforehand.</p>
+                <h5>Before</h5>
+                <pre><code>FIELDBOOK ROLLOUT — TWO-QUARTER REVIEW (DRAFT)
+                
+                1. Adoption
+                
+                Fieldbook is now live in four regions: Central, East, South, and West. Across
+                these regions 412 of 486 field technicians have activated their accounts, and
+                83% of work orders are now created and closed inside Fieldbook rather than on
+                paper or by phone. Central and East reached full adoption within six weeks.
+                South and West lagged: South took eleven weeks to pass 80% of orders in the
+                system, and West is still at 71% after nine weeks. Regional coordinators in
+                both slower regions report the same explanation: the two-day classroom course
+                was scheduled only once per region, so technicians hired after the course, or
+                absent during it, learned the platform second-hand from colleagues. In West,
+                34 of 118 technicians never attended any session. Coordinators improvised
+                shadowing arrangements, which worked but pulled experienced technicians off
+                their own routes. Uptake among dispatchers was faster: all 41 dispatchers
+                across the four regions were using Fieldbook scheduling from week one, since
+                the old scheduling spreadsheet was switched off on day one and they had no
+                alternative.
+                
+                2. Operations
+                
+                The clearest operational gain is scheduling density. With Fieldbook suggesting
+                route-aware assignment, completed jobs per technician per day rose from 4.6 to
+                5.3 across the four live regions, and average travel time between jobs fell
+                18%. Same-day emergency insertion, which previously required a dispatcher to
+                phone technicians until someone accepted, is now automatic and takes a median
+                of 4 minutes. However, the benefit is partly eaten by a data-transfer defect:
+                Fieldbook does not receive equipment service history from the legacy asset
+                register, so technicians open each job without knowing what was done at that
+                site before. They compensate by calling the back office, or by asking the
+                customer, and in 9% of audited jobs they replaced parts that had already been
+                replaced within warranty in the past year. The asset register team was asked
+                in month two for a nightly export; the request is still in their backlog. A
+                second, smaller friction: job-completion codes in Fieldbook do not match the
+                codes in the invoicing system, so the billing team re-keys roughly 300 job
+                records per week into the invoicing system by hand, introducing transcription
+                errors that customers catch on invoices. Operations leads in Central and East
+                also note that Fieldbook's parts-ordering screen is unpopular; most
+                technicians still order parts by phone, though this appears to be habit rather
+                than a defect, as the screen works correctly in testing.
+                
+                3. Support and training
+                
+                The support desk logged 1,940 Fieldbook tickets over the two quarters. Ticket
+                volume peaked in each region's third week and declined steadily after. 44% of
+                all tickets are password resets and login problems, concentrated among
+                technicians who missed the classroom course and had never logged in during the
+                supported window. Another 19% are duplicate-record tickets: technicians create
+                a second customer record when they cannot find the first, because the search
+                screen matches on exact postcode only. The support desk merges these
+                duplicates manually, at about 70 records per week. Support also fields a
+                steady trickle of calls from the billing team about mismatched job-completion
+                codes, which the desk cannot resolve and forwards to the vendor. The vendor's
+                response on the code mismatch has been that a configurable mapping table
+                exists and takes roughly a day to set up, but it has not been scheduled
+                because no one on Kestrel's side owns the integration. Training-wise, the desk
+                runs a weekly one-hour webinar that reaches 20 to 30 technicians; attendance
+                correlates strongly with regions that missed classroom slots. The desk lead's
+                written comment: "We are doing the training program's job at ticket prices —
+                most of what we handle is people who were never onboarded, plus the two known
+                system gaps."
+                
+                4. Finance
+                
+                Licence and hosting for Fieldbook run £31,000 per month for the four live
+                regions. Overtime spending in the live regions is down 12% quarter over
+                quarter, which finance attributes mainly to the scheduling gains, and fuel
+                cost per job is down 9%, consistent with the travel-time reduction. Against
+                that, the program has carried unplanned costs: the improvised shadowing
+                arrangements in South and West consumed an estimated 380 technician-hours of
+                lost route time, and the billing team added one temporary clerk (£8,400 for
+                the two quarters) to handle the re-keying of job records into the invoicing
+                system. The program office estimates that the rollout paid back its running
+                cost within the second quarter in Central and East, while South and West are
+                roughly at break-even because of the slower adoption. Extending to North and
+                Islands would add £13,500 per month in licences and require winter travel for
+                any classroom training. On the current evidence the economics of extension are
+                favourable if, and only if, the adoption pace of Central and East can be
+                reproduced; a repeat of the West pattern would put the new regions underwater
+                for at least two quarters. The program office therefore leans toward
+                extending in Q1, provided onboarding is restructured first.
+                
+                5. Data and integrations
+                
+                Fieldbook's reporting module is now the source of record for job status across
+                the four regions, and regional managers use its dashboard in the Monday
+                review. Data quality inside Fieldbook is generally good, with two exceptions.
+                First, the customer-record duplicates created through the search limitation
+                (support merges about 70 per week, as noted) mean that job-history views for
+                affected customers are split across records until merged. Second, the missing
+                feed from the legacy asset register leaves the equipment-history panel empty
+                on every job screen, which both hides warranty state from technicians and
+                makes the panel's audit trail useless for dispute resolution. The invoicing
+                mismatch also surfaces here: because completion codes are re-keyed by hand,
+                the reporting module and the invoicing system disagree on completed-job counts
+                by 2-4% in any given week, and finance reconciles the difference manually at
+                month end. The vendor's integration catalogue lists supported connectors for
+                both the asset register's database and the invoicing system's import format;
+                neither connector has been evaluated. IT's position is that both are
+                straightforward but that no integration work was scoped into the rollout
+                program, which was staffed for deployment and training only.
+                
+                6. Program office remarks
+                
+                Individual regional reports repeat most of the above in local detail. Two
+                further observations. First, every negative pattern in this review was visible
+                by week four of the Central go-live; the program had no mechanism to convert
+                early field observations into program-level fixes, so the same issues
+                replayed in each subsequent region. Second, the vendor relationship is good:
+                response times are within contract, and both known system gaps have vendor
+                solutions waiting on Kestrel decisions rather than on vendor work.</code></pre>
+                <h5>Task</h5>
+                <p>Restructure this review for the COO using the Minto Pyramid Principle. The COO's<br>decision is whether to extend Fieldbook to North and Islands in Q1.</p>
+              </div>
+            </details>
+            <details class="test__part">
+              <summary><span class="subtitle">The judge’s gold</span> <code class="label">gold.md</code></summary>
+              <div class="md md--src" lang="en">
+                <h4>Gold 10: rollout review</h4>
+                <p>Original gold for an invented scenario.</p>
+                <h5>Expected structure</h5>
+                <p>Top: answers the COO's actual question — extend to North and Islands in Q1,<br>conditional on fixing what made South and West slow and expensive. A defensible<br>top must carry both the recommendation and its condition; "the rollout went<br>well" is a topic, and an unconditional "extend" ignores the document's own<br>economics (a repeat of the West pattern puts the new regions underwater).</p>
+                <p>The material honestly supports <strong>four</strong> first-level branches, not the habitual<br>three — for example:</p>
+                <ol><li><strong>The economics already argue for extension</strong> — productivity up (4.6 → 5.3<br>jobs/day, travel −18%, overtime −12%, fuel −9%), payback reached in the two<br>regions that onboarded fast.</li><li><strong>Onboarding is the reproducible failure</strong> — single classroom slot per<br>region left late hires unserved (34 of 118 in West never attended), drove<br>44% of support tickets, forced shadowing that cost 380 technician-hours,<br>and is the one variable separating payback regions from break-even regions.</li><li><strong>Two integration defects tax every region and have waiting fixes</strong> — the<br>asset-register feed (blind technicians, 9% redundant warranty parts, empty<br>audit panel) and the completion-code mismatch (300 records/week re-keyed, a<br>temporary clerk, 2–4% reporting discrepancy); vendor connectors and the<br>mapping table exist, and stall only because nobody owns integration.</li><li><strong>The program lacked a feedback loop</strong> — every defect was visible by week<br>four of Central and replayed in each region; extension without that loop<br>repeats the tax in two more regions.</li></ol>
+                <p>A grouping that reaches the same content by different cuts is acceptable; what<br>is not acceptable is a branch per source section (adoption / operations /<br>support / finance / data), which is the document's order, not an answer.</p>
+                <h5>Section pyramids</h5>
+                <p>The rewrite must give each substantive section its own small pyramid — a<br>one-sentence section top that its details support — plus the top-level pyramid<br>whose key line the section tops visibly feed. A single flat pyramid over a<br>document of this size, with details hanging directly off four branches and the<br>sections dissolved, loses the layer the reader navigates by. Depth should<br>follow the material: the integration branch genuinely carries two distinct<br>defects, each with its own evidence, so it earns a third level; thin branches<br>must not be padded to match.</p>
+                <h5>Cross-section duplicates (the MECE trap)</h5>
+                <p>The same three facts each appear in two or three sections and must appear<br><strong>once</strong> in the structure, with their scattered evidence gathered:</p>
+                <ul><li>The completion-code mismatch: Operations (300 records/week re-keyed), Support<br>(forwarded tickets, vendor's mapping-table answer), Finance (£8,400 clerk),<br>Data (2–4% reconciliation gap). One defect, four symptoms.</li><li>The missing asset-register feed: Operations (blind jobs, 9% redundant parts)<br>and Data (empty history panel, useless audit trail). One defect.</li><li>The training shortfall: Adoption (late hires unserved, shadowing), Support<br>(44% of tickets, webinar attendance pattern, the desk lead's comment),<br>Finance (380 lost hours). One cause.</li></ul>
+                <p>An output that keeps any of these as two separate first-level or second-level<br>points in different branches has failed the cross-section MECE pass.</p>
+                <h5>Facts and proportions</h5>
+                <p>All load-bearing numbers come from the source; invented benchmarks, dates or<br>vendor quotes are hard failures. The parts-ordering habit, dispatcher uptake,<br>and vendor-relationship remarks are legitimately minor: demoting them to a<br>short residual note or explicitly dropping them is proportional omission.<br>The output is a restructured review, so it will be long — length itself is not<br>a defect; a section-by-section retelling under new headings is.</p>
+              </div>
+            </details>
+          </div>
+          <p class="label test__prov">Judge gpt-5.6-sol, effort high · Claude Haiku 4.5, effort low · skill from commit f4813ce · run v1.7.0-final</p>
+        </section>
+        <nav class="pair-steps" aria-label="Neighbouring pairs">
+          <a class="nav-step" href="../../../eval-map/10-rollout-review/sonnet5/" rel="prev" data-step="prev-model"><span class="label">Previous model</span><span class="small">Claude Sonnet 5</span></a>
+          <a class="nav-step" href="../../../eval-map/10-rollout-review/codex/" rel="next" data-step="next-model"><span class="label">Next model</span><span class="small">Codex gpt-5.6-terra</span></a>
+          <a class="nav-step" href="../../../eval-map/08-techdebt/haiku45/" rel="prev" data-step="prev-case"><span class="label">Previous case</span><span class="small">A message about technical debt</span></a>
+          <a class="nav-step" href="../../../eval-map/11-plain-list/haiku45/" rel="next" data-step="next-case"><span class="label">Next case</span><span class="small">A plain list, no pyramid</span></a>
+        </nav>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="page site-footer__inner">
+        <div class="brand site-footer__brand">
+          <span class="brand__mark units" data-shape="pyramid" aria-hidden="true">
+            <span class="units__row"><span class="unit"></span></span>
+            <span class="units__row"><span class="unit"></span><span class="unit"></span></span>
+            <span class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span></span>
+          </span>
+          <span class="brand__word">Minto</span>
+        </div>
+        <p class="small">The skill settles the argument before it rewrites the prose. Barbara Minto&rsquo;s source material remains the property of its rights holders; the plugin code is MIT-licensed.</p>
+        <nav aria-label="Links">
+          <a class="nav-link" href="https://github.com/welltraum/minto">GitHub</a>
+          <a class="nav-link" href="https://github.com/welltraum/minto/blob/main/CHANGELOG.md">Changelog</a>
+          <a class="nav-link" href="../../../ru/eval-map/10-rollout-review/haiku45/">Русский</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="../../../assets/app.js?v=10" defer></script>
+  </body>
+</html>

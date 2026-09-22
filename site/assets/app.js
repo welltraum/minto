@@ -522,6 +522,47 @@
     prefix: "map-",
   });
 
+  // The pair page sets two outputs side by side. On a phone they would stack
+  // into one long scroll, so there the two become tabs; wider, both stay open.
+  // Without JavaScript the tabs are anchors and both outputs are in the page.
+  const armTabs = [...document.querySelectorAll("[data-arm-tab]")];
+  const armPanels = [...document.querySelectorAll("[data-arm-panel]")];
+  if (armTabs.length && armPanels.length) {
+    const narrow = window.matchMedia("(max-width: 899px)");
+    let current = window.location.hash === "#arm-skill" ? "skill" : "control";
+    const apply = () => {
+      armPanels.forEach((panel) => {
+        panel.hidden = narrow.matches && panel.dataset.armPanel !== current;
+        panel.setAttribute("role", narrow.matches ? "tabpanel" : "article");
+      });
+      armTabs.forEach((tab) => {
+        const selected = tab.dataset.armTab === current;
+        tab.setAttribute("aria-selected", String(selected));
+        tab.setAttribute("tabindex", selected ? "0" : "-1");
+      });
+    };
+    document.querySelector("[data-arm-tablist]")?.setAttribute("role", "tablist");
+    armTabs.forEach((tab) => {
+      tab.setAttribute("role", "tab");
+      tab.setAttribute("aria-controls", `arm-${tab.dataset.armTab}`);
+      tab.addEventListener("click", (event) => {
+        event.preventDefault();
+        current = tab.dataset.armTab;
+        apply();
+      });
+      tab.addEventListener("keydown", (event) => {
+        if (!["ArrowRight", "ArrowLeft"].includes(event.key)) return;
+        event.preventDefault();
+        const next = armTabs[(armTabs.indexOf(tab) + 1) % armTabs.length];
+        next.focus();
+        current = next.dataset.armTab;
+        apply();
+      });
+    });
+    narrow.addEventListener("change", apply);
+    apply();
+  }
+
   const navLinks = [...document.querySelectorAll("[data-section-link]")];
   const observedSections = navLinks
     .map((link) => document.getElementById(link.dataset.sectionLink))

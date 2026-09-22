@@ -56,6 +56,8 @@ VOID_TAGS = frozenset({"br", "img", "input", "hr", "meta", "link", "source", "ar
 class MetricParser(HTMLParser):
     """Collect elements carrying data-metric or data-fixture, with their text."""
 
+    watch = frozenset({"data-metric", "data-fixture", "data-figure", "data-cell", "data-cell-missing", "data-row-avg"})
+
     def __init__(self) -> None:
         super().__init__()
         self.rows: list[dict] = []
@@ -76,7 +78,7 @@ class MetricParser(HTMLParser):
         self.paths.append("/".join(self._open + [tag]))
         if tag not in VOID_TAGS:
             self._open.append(tag)
-        if values.keys() & {"data-metric", "data-fixture", "data-figure", "data-cell", "data-cell-missing", "data-row-avg"}:
+        if values.keys() & self.watch:
             row = {"tag": tag, "attrs": values, "text": [], "depth": len(self._stack)}
             self._stack.append(row)
             self.rows.append(row)
@@ -104,8 +106,28 @@ class MetricParser(HTMLParser):
             row["text"].append(data)
 
 
-def parse_page(path: Path) -> tuple[list[dict], list[str], dict[str, str]]:
-    parser = MetricParser()
+class DetailParser(MetricParser):
+    """The pages under the map name their figures with attributes of their own, so
+    the landing page's and the map's rules never apply to them by accident."""
+
+    watch = frozenset({"data-pair-fixture", "data-pair-measure", "data-axis", "data-case-fixture",
+                       "data-case-engine", "data-case-missing", "data-pair-penalized"})
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        # Table cells and spans sit flush in the markup; a space keeps "0" and "2"
+        # from reading as "02" in the row's text.
+        for row in self._stack:
+            row["text"].append(" ")
+        super().handle_starttag(tag, attrs)
+
+
+def signed_tokens(text: str) -> list[int]:
+    """Every integer in the visible text, with its sign when it carries one."""
+    return [(-1 if sign in "\u2212-" and sign else 1) * int(n) for sign, n in re.findall(r"([+\u2212-]?)(\d+)", text)]
+
+
+def parse_page(path: Path, parser_class: type[MetricParser] = MetricParser) -> tuple[list[dict], list[str], dict[str, str]]:
+    parser = parser_class()
     parser.feed(path.read_text(encoding="utf-8"))
     for row in parser.rows:
         row["text"] = re.sub(r"\s+", " ", "".join(row["text"])).strip()
@@ -463,6 +485,130 @@ def check_parity(
         errors.append(f"metric slugs differ between locales: {first_slugs ^ second_slugs}")
 
 
+DETAIL_MEASURES = (("structure", "structure"), ("quality", "quality_raw"))
+DETAIL_AXES = {
+    "structure": ("top", "key_line_composition", "levels", "order_and_kind"),
+    "quality": ("top", "same_kind_grouping", "explainable_order", "mece", "visible_structure"),
+}
+
+
+def expected_detail_pages(scores: dict) -> dict[str, tuple]:
+    """Every page under the map, derived from scores.json and the declared grid alone.
+
+    Path relative to a locale root -> (kind, fixture, engine). Built without the
+    generator, so a page the generator forgets, or one it renders for a pair the run
+    never judged, shows up here as a missing or an extra file.
+    """
+    arms: dict[tuple[str, str], set[str]] = {}
+    for cell in scores.get("cells", []):
+        arms.setdefault((cell["fixture"], cell["engine"]), set()).add(cell["arm"])
+    pages: dict[str, tuple] = {"eval-map/skill/index.html": ("skill", None, None)}
+    for fixture, *_ in FIXTURES:
+        pages[f"eval-map/{fixture}/index.html"] = ("case", fixture, None)
+        for engine, _ in ENGINES:
+            if {"control", "skill"} <= arms.get((fixture, engine), set()):
+                pages[f"eval-map/{fixture}/{engine}/index.html"] = ("pair", fixture, engine)
+    return pages
+
+
+def check_pair_page(page: Path, rows: list[dict], fixture: str, engine: str, cells: dict, errors: list[str]) -> None:
+    label = page.relative_to(ROOT)
+    control, skill = cells[(fixture, engine, "control")], cells[(fixture, engine, "skill")]
+    heads = [r for r in rows if "data-pair-fixture" in r["attrs"]]
+    if len(heads) != 1 or heads[0]["attrs"].get("data-pair-fixture") != fixture or heads[0]["attrs"].get("data-pair-engine") != engine:
+        errors.append(f"{label}: the page does not declare itself as {fixture} x {engine}")
+    figures = {r["attrs"]["data-pair-measure"]: r for r in rows if "data-pair-measure" in r["attrs"]}
+    axes = {(r["attrs"].get("data-axis-measure"), r["attrs"]["data-axis"]): r for r in rows if "data-axis" in r["attrs"]}
+    for name, source in DETAIL_MEASURES:
+        want_c, want_s = control[source]["total"], skill[source]["total"]
+        row = figures.get(name)
+        if row is None:
+            errors.append(f"{label}: no {name} figure")
+            continue
+        got = tuple(as_int(row["attrs"].get(f"data-pair-{k}", "")) for k in ("control", "skill", "delta"))
+        if got != (want_c, want_s, want_s - want_c):
+            errors.append(f"{label}: {name} figure carries {got}, scores.json gives {(want_c, want_s, want_s - want_c)}")
+        # "Structure 6 → 2 of 8 −4": before, after, the maximum, the signed change.
+        tokens = signed_tokens(row["text"])
+        if tokens[:2] != [want_c, want_s] or tokens[-1] != want_s - want_c:
+            errors.append(f"{label}: {name} figure reads {row['text']!r}, scores.json gives {want_c} to {want_s}")
+        for axis in DETAIL_AXES[name]:
+            arow = axes.get((name, axis))
+            if arow is None:
+                errors.append(f"{label}: no {name}.{axis} axis row")
+                continue
+            got_c, got_s = as_int(arow["attrs"].get("data-axis-control", "")), as_int(arow["attrs"].get("data-axis-skill", ""))
+            if (got_c, got_s) != (control[source][axis], skill[source][axis]):
+                errors.append(f"{label}: {name}.{axis} carries {got_c}/{got_s}, scores.json gives {control[source][axis]}/{skill[source][axis]}")
+            # "Top 2 0 −2": control, skill, and the change only when there is one.
+            tokens = signed_tokens(arow["text"])
+            want = [control[source][axis], skill[source][axis]]
+            change = skill[source][axis] - control[source][axis]
+            if tokens != want + ([change] if change else []):
+                errors.append(f"{label}: {name}.{axis} reads {arow['text']!r}, scores.json gives {want}")
+    shown_penalties = sorted(as_int(r["attrs"]["data-pair-penalized"]) for r in rows if "data-pair-penalized" in r["attrs"])
+    want_penalties = sorted(c["quality_penalized"]["total"] for c in (control, skill)
+                            if c["quality_penalized"]["total"] != c["quality_raw"]["total"])
+    if shown_penalties != want_penalties:
+        errors.append(f"{label}: shows penalised quality {shown_penalties}, scores.json gives {want_penalties}")
+    for r in rows:
+        if "data-pair-penalized" in r["attrs"] and signed_tokens(r["text"])[:1] != [as_int(r["attrs"]["data-pair-penalized"])]:
+            errors.append(f"{label}: penalised quality reads {r['text']!r}")
+    if len(axes) != sum(len(v) for v in DETAIL_AXES.values()):
+        errors.append(f"{label}: {len(axes)} axis rows, the rubric has {sum(len(v) for v in DETAIL_AXES.values())}")
+
+
+def check_case_page(page: Path, rows: list[dict], fixture: str, cells: dict, errors: list[str]) -> None:
+    label = page.relative_to(ROOT)
+    judged = {e for e, _ in ENGINES if (fixture, e, "control") in cells and (fixture, e, "skill") in cells}
+    drawn = {r["attrs"]["data-case-engine"]: r for r in rows if "data-case-engine" in r["attrs"]}
+    empty = {r["attrs"]["data-case-missing"] for r in rows if "data-case-missing" in r["attrs"]}
+    if set(drawn) != judged:
+        errors.append(f"{label}: draws {sorted(drawn)} but scores.json judged {sorted(judged)}")
+    if empty != {e for e, _ in ENGINES} - judged:
+        errors.append(f"{label}: marks {sorted(empty)} as having no pair")
+    for engine, row in drawn.items():
+        if engine not in judged:
+            continue
+        for name, source in DETAIL_MEASURES:
+            want_c = cells[(fixture, engine, "control")][source]["total"]
+            want_s = cells[(fixture, engine, "skill")][source]["total"]
+            got = tuple(as_int(row["attrs"].get(f"data-case-{name}-{k}", "")) for k in ("control", "skill", "delta"))
+            if got != (want_c, want_s, want_s - want_c):
+                errors.append(f"{label}: {engine} {name} carries {got}, scores.json gives {(want_c, want_s, want_s - want_c)}")
+
+
+def check_details(scores: dict, errors: list[str]) -> int:
+    """The pages under the map: registry, figures, and locale parity for each pair."""
+    cells = {(c["fixture"], c["engine"], c["arm"]): c for c in scores.get("cells", [])}
+    expected = expected_detail_pages(scores)
+    pages = 0
+    for root in (SITE, SITE / "ru"):
+        present = {str(p.relative_to(root)) for p in (root / "eval-map").rglob("index.html")} - {"eval-map/index.html"}
+        for extra in sorted(present - set(expected)):
+            errors.append(f"{(root / extra).relative_to(ROOT)} is not a page of {scores['run']}")
+        for missing in sorted(set(expected) - present):
+            errors.append(f"missing page: {(root / missing).relative_to(ROOT)}")
+    for rel, (kind, fixture, engine) in expected.items():
+        first, second = SITE / rel, SITE / "ru" / rel
+        if not (first.is_file() and second.is_file()):
+            continue
+        parsed = {}
+        for page in (first, second):
+            rows, tags, _ = parse_page(page, DetailParser)
+            parsed[page] = (rows, tags)
+            pages += 1
+            if kind == "pair":
+                check_pair_page(page, rows, fixture, engine, cells, errors)
+            elif kind == "case":
+                check_case_page(page, rows, fixture, cells, errors)
+        check_parity(first, second, parsed[first], parsed[second], False, errors)
+        stream = lambda rows: [tuple(sorted((k, v) for k, v in r["attrs"].items() if k.startswith("data-"))) for r in rows]
+        if stream(parsed[first][0]) != stream(parsed[second][0]):
+            errors.append(f"the locales carry different figures on {rel}")
+    return pages
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--run", default=DEFAULT_RUN, help="run directory name under eval/runs/")
@@ -512,12 +658,17 @@ def main() -> int:
                 + ", ".join(str(page.relative_to(ROOT)) for page in pages)
             )
 
+    details = check_details(scores, errors)
+
     if errors:
-        print("\n".join(f"ERROR: {error}" for error in errors))
+        print("\n".join(f"ERROR: {error}" for error in errors[:60]))
+        if len(errors) > 60:
+            print(f"ERROR: and {len(errors) - 60} more")
         return 1
 
     print(
-        f"Validated {len(metrics)} benchmark figures and the eval map across {locales} pages "
+        f"Validated {len(metrics)} benchmark figures and the eval map across {locales} pages, "
+        f"and {details} pages under the map, "
         f"against eval/runs/{args.run}/scores.json (commit {scores.get('commit', 'unknown')[:12]})."
     )
     return 0

@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>document.documentElement.classList.add("js");</script>
+    <meta name="theme-color" content="#f8f1e3">
+    <meta name="description" content="gpt-oss-120b, case 03-period-graph-books: structure 4 to 3 of 8, quality 4 to 6 of 10 with Minto. Both outputs, the judge’s notes and the exact prompts.">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://welltraum.github.io/minto/eval-map/03-period-graph-books/gpt-oss-120b/">
+    <link rel="alternate" hreflang="en" href="https://welltraum.github.io/minto/eval-map/03-period-graph-books/gpt-oss-120b/">
+    <link rel="alternate" hreflang="ru" href="https://welltraum.github.io/minto/ru/eval-map/03-period-graph-books/gpt-oss-120b/">
+    <link rel="alternate" hreflang="x-default" href="https://welltraum.github.io/minto/eval-map/03-period-graph-books/gpt-oss-120b/">
+    <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="../../../assets/fonts/GolosText-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../../../assets/fonts/Play-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../../../assets/mirai.css?v=6">
+    <link rel="stylesheet" href="../../../assets/styles.css?v=12">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Minto">
+    <meta property="og:title" content="gpt-oss-120b on A set of monthly reports — Minto Eval Map">
+    <meta property="og:description" content="gpt-oss-120b, case 03-period-graph-books: structure 4 to 3 of 8, quality 4 to 6 of 10 with Minto. Both outputs, the judge’s notes and the exact prompts.">
+    <meta property="og:url" content="https://welltraum.github.io/minto/eval-map/03-period-graph-books/gpt-oss-120b/">
+    <meta property="og:image" content="https://welltraum.github.io/minto/assets/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Minto turns a scattered draft into a clear argument structure">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>gpt-oss-120b on A set of monthly reports — Minto Eval Map</title>
+  </head>
+  <body class="mr-root" data-tone="vivid" data-layout="wide">
+    <a class="skip-link mr-button" data-variant="ghost" data-size="sm" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="page site-header__inner">
+        <a class="brand" href="../../../">
+          <span class="brand__mark units" data-shape="pyramid" role="img" aria-label="A pyramid of three rows">
+            <span class="units__row"><span class="unit"></span></span>
+            <span class="units__row"><span class="unit"></span><span class="unit"></span></span>
+            <span class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span></span>
+          </span>
+          <span class="brand__word">Minto</span>
+        </a>
+
+        <nav class="site-nav" aria-label="Sections">
+          <a class="nav-link" href="../../../#cases">Examples</a>
+          <a class="nav-link" href="../../../#evidence">Evidence</a>
+          <a class="nav-link" href="../../../#modes">Capabilities</a>
+          <a class="nav-link" href="../../../#install">Install</a>
+        </nav>
+
+        <nav class="lang" aria-label="Language">
+          <a class="nav-link" href="./" lang="en" aria-current="page">EN</a>
+          <span class="label lang__sep" aria-hidden="true">/</span>
+          <a class="nav-link" href="../../../ru/eval-map/03-period-graph-books/gpt-oss-120b/" lang="ru">RU</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page detail" id="main">
+      <article class="pair" data-pair-fixture="03-period-graph-books" data-pair-engine="gpt-oss-120b">
+        <header class="pair-top">
+          <nav class="crumbs" aria-label="Breadcrumb">
+            <a class="link" href="../../../eval-map/">Eval Map</a>
+            <span class="crumbs__sep" aria-hidden="true">/</span>
+            <a class="link" href="../../../eval-map/03-period-graph-books/">A set of monthly reports</a>
+            <span class="crumbs__sep" aria-hidden="true">/</span>
+            <span aria-current="page">gpt-oss-120b</span>
+          </nav>
+          <h1 class="display pair-top__h">gpt-oss-120b on “A set of monthly reports”: with Minto, better on quality and worse on structure</h1>
+          <p class="pair-top__figs">
+            <span class="pair-fig pair-fig--down" data-pair-measure="structure" data-pair-control="4" data-pair-skill="3" data-pair-delta="-1"><span class="pair-fig__name">Structure</span> <span class="num">4&nbsp;→&nbsp;3</span> <span class="pair-fig__max">of&nbsp;8</span> <span class="num pair-fig__delta">−1</span></span>
+            <span class="pair-fig pair-fig--up" data-pair-measure="quality" data-pair-control="4" data-pair-skill="6" data-pair-delta="2"><span class="pair-fig__name">Quality</span> <span class="num">4&nbsp;→&nbsp;6</span> <span class="pair-fig__max">of&nbsp;10</span> <span class="num pair-fig__delta">+2</span></span>
+          </p>
+          <div class="pair-top__why">
+            <p class="label">The judge on the output with Minto</p>
+            <blockquote class="judge-note" lang="en"><p>The blanket use of <code>⚠</code> destroys hierarchy, and its suggested replacement mixes reasons, actions, and risks.</p></blockquote>
+          </div>
+          <p class="label pair-top__meta">Mode <code class="mono">audit</code> · case <code class="mono">03-period-graph-books</code> · run v1.7.0-final</p>
+        </header>
+        <section class="section pair-axes" aria-label="Structure, Quality">
+          <div class="axes">
+            <table class="axis-table" id="structure">
+              <caption class="axis-table__cap"><span class="axis-table__capin"><span class="subtitle">Structure</span> <span class="label">of&nbsp;8, 2 points per axis</span></span></caption>
+              <thead>
+                <tr><th scope="col"><span class="visually-hidden">Structure</span></th><th scope="col" class="label">Without Minto <span class="num">4</span></th><th scope="col" class="label">With Minto <span class="num">3</span></th><th scope="col" class="label axis-table__d">Change</th></tr>
+              </thead>
+              <tbody>
+                <tr class="axis-row axis-row--flat" data-axis-measure="structure" data-axis="top" data-axis-control="1" data-axis-skill="1"><th scope="row" class="axis-row__name">Top</th><td><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span><span class="visually-hidden">1</span></td><td><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span><span class="visually-hidden">1</span></td><td class="num axis-row__delta"></td></tr>
+                <tr class="axis-row axis-row--flat" data-axis-measure="structure" data-axis="key_line_composition" data-axis-control="1" data-axis-skill="1"><th scope="row" class="axis-row__name">Key-line composition</th><td><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span><span class="visually-hidden">1</span></td><td><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span><span class="visually-hidden">1</span></td><td class="num axis-row__delta"></td></tr>
+                <tr class="axis-row axis-row--down" data-axis-measure="structure" data-axis="levels" data-axis-control="1" data-axis-skill="0"><th scope="row" class="axis-row__name">Levels</th><td><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span><span class="visually-hidden">1</span></td><td><span class="axis-units" aria-hidden="true"><span class="unit" data-state="flaw"></span><span class="unit" data-state="gap"></span></span><span class="visually-hidden">0</span></td><td class="num axis-row__delta">−1</td></tr>
+                <tr class="axis-row axis-row--flat" data-axis-measure="structure" data-axis="order_and_kind" data-axis-control="1" data-axis-skill="1"><th scope="row" class="axis-row__name">Order and kind</th><td><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span><span class="visually-hidden">1</span></td><td><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span><span class="visually-hidden">1</span></td><td class="num axis-row__delta"></td></tr>
+              </tbody>
+            </table>
+            <table class="axis-table" id="quality">
+              <caption class="axis-table__cap"><span class="axis-table__capin"><span class="subtitle">Quality</span> <span class="label">of&nbsp;10, 2 points per axis</span></span></caption>
+              <thead>
+                <tr><th scope="col"><span class="visually-hidden">Quality</span></th><th scope="col" class="label">Without Minto <span class="num">4</span></th><th scope="col" class="label">With Minto <span class="num">6</span></th><th scope="col" class="label axis-table__d">Change</th></tr>
+              </thead>
+              <tbody>
+                <tr class="axis-row axis-row--flat" data-axis-measure="quality" data-axis="top" data-axis-control="1" data-axis-skill="1"><th scope="row" class="axis-row__name">Top</th><td><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span><span class="visually-hidden">1</span></td><td><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span><span class="visually-hidden">1</span></td><td class="num axis-row__delta"></td></tr>
+                <tr class="axis-row axis-row--flat" data-axis-measure="quality" data-axis="same_kind_grouping" data-axis-control="1" data-axis-skill="1"><th scope="row" class="axis-row__name">Same-kind grouping</th><td><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span><span class="visually-hidden">1</span></td><td><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span><span class="visually-hidden">1</span></td><td class="num axis-row__delta"></td></tr>
+                <tr class="axis-row axis-row--flat" data-axis-measure="quality" data-axis="explainable_order" data-axis-control="1" data-axis-skill="1"><th scope="row" class="axis-row__name">Explainable order</th><td><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span><span class="visually-hidden">1</span></td><td><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span><span class="visually-hidden">1</span></td><td class="num axis-row__delta"></td></tr>
+                <tr class="axis-row axis-row--up" data-axis-measure="quality" data-axis="mece" data-axis-control="0" data-axis-skill="1"><th scope="row" class="axis-row__name">MECE</th><td><span class="axis-units" aria-hidden="true"><span class="unit" data-state="gap"></span><span class="unit" data-state="gap"></span></span><span class="visually-hidden">0</span></td><td><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span><span class="visually-hidden">1</span></td><td class="num axis-row__delta">+1</td></tr>
+                <tr class="axis-row axis-row--up" data-axis-measure="quality" data-axis="visible_structure" data-axis-control="1" data-axis-skill="2"><th scope="row" class="axis-row__name">Visible, proportionate structure</th><td><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span><span class="visually-hidden">1</span></td><td><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit"></span></span><span class="visually-hidden">2</span></td><td class="num axis-row__delta">+1</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section class="section margins" aria-labelledby="rail-h">
+          <p class="label margins__note">Outputs and the judge’s words are quoted as written, in English.</p>
+          <div class="case-tabs arm-tabs" data-arm-tablist aria-label="The judge">
+            <a class="case-tab" href="#arm-control" data-arm-tab="control">Without Minto</a>
+            <a class="case-tab" href="#arm-skill" data-arm-tab="skill">With Minto</a>
+          </div>
+          <div class="margins__docs">
+            <article class="arm arm--control" id="arm-control" data-arm-panel="control" aria-labelledby="arm-control-h">
+              <header class="arm__head"><h2 class="subtitle" id="arm-control-h">Without Minto</h2><span class="label">control prompt · blind label <code class="mono">out-11</code></span></header>
+              <div class="strips" aria-hidden="true">
+                <div class="strip"><span class="label strip__name">Structure</span><span class="strip__units"><span class="strip__axis"><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span></span><span class="strip__axis"><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span></span><span class="strip__axis"><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span></span><span class="strip__axis"><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span></span></span><span class="num strip__total">4<span class="label">/8</span></span></div>
+                <div class="strip"><span class="label strip__name">Quality</span><span class="strip__units"><span class="strip__axis"><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span></span><span class="strip__axis"><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span></span><span class="strip__axis"><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span></span><span class="strip__axis"><span class="axis-units" aria-hidden="true"><span class="unit" data-state="gap"></span><span class="unit" data-state="gap"></span></span></span><span class="strip__axis"><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span></span></span><span class="num strip__total">4<span class="label">/10</span></span></div>
+              </div>
+              <ul class="arm-hf" aria-label="Hard failures"><li><span class="unit" data-state="flaw" aria-hidden="true"></span><code class="mono">invented_facts</code></li></ul>
+              <blockquote class="judge-note" lang="en"><p>The table is readable, but numerous peripheral or fabricated defects overwhelm the source-grounded Minto diagnosis.</p></blockquote>
+              <div class="md arm__doc" lang="en">
+                <p><strong>Audit of the “Period Graph Books” memo against the Minto Pyramid Principle</strong></p>
+                <div class="md-table"><table><thead><tr><th>Minto Principle Element</th><th>Defect(s) Identified</th><th>Why It Violates the Principle</th><th>What Must Change</th></tr></thead><tbody><tr><td><strong>Top‑Down Structure</strong></td><td>The memo opens with a narrative description (“Since Period 5…”) rather than a clear, single overarching recommendation or conclusion.</td><td>Minto requires the first sentence (or paragraph) to state the <em>key message</em> (the answer to the decision‑maker’s question). The current opening leaves the reader guessing what action is being sought.</td><td>Begin with a concise <strong>Executive Summary</strong> that states the recommended course (e.g., “We should redesign the graph‑book production process to eliminate duplication, assign end‑to‑end ownership, and automate calculations”). All subsequent sections must support this statement.</td></tr><tr><td><strong>Logical Flow (Situation‑Complication‑Question‑Answer)</strong></td><td>The memo mixes “Production” steps with “Issues” without first establishing the <em>situation</em> (current state) and the <em>complication</em> (why it is problematic).</td><td>The Situation‑Complication‑Question‑Answer (SCQA) framework is not evident; the reader cannot see the logical progression from “what is happening” to “why it matters” to “what we need to decide.”</td><td>Re‑order content: <br>1. <strong>Situation</strong> – brief factual description of the current process (who does what, how many steps). <br>2. <strong>Complication</strong> – enumerate the pain points (duplication, errors, lack of ownership). <br>3. <strong>Question</strong> – what should we do? <br>4. <strong>Answer</strong> – the recommended solution (streamlining, central control, automation).</td></tr><tr><td><strong>MECE Grouping</strong></td><td>The “Issues” list mixes different problem types (data duplication, calculation errors, unexplained changes, re‑entry of prior‑period data) without clear grouping. Some items overlap (e.g., “inconsistent data” and “incorrect variable‑cost calculations”).</td><td>Minto demands that supporting points be Mutually Exclusive and Collectively Exhaustive. Overlapping or redundant bullet points dilute clarity and make it harder to prioritize actions.</td><td>Re‑group issues into <strong>MECE categories</strong>, e.g.: <br>• <strong>Process Redundancy</strong> – multiple data entries, re‑entry of prior‑period data. <br>• <strong>Data Integrity</strong> – inconsistent data, unexplained changes, incorrect calculations. <br>• <strong>Ownership &amp; Control</strong> – no end‑to‑end responsibility, fragmented hand‑offs.</td></tr><tr><td><strong>Hierarchy of Detail</strong></td><td>The “Production” steps are presented as a flat list, then the “Issues” list follows, but there is no hierarchy linking each issue to the specific step that generates it.</td><td>In a pyramid, each lower‑level point should be a logical sub‑point of a higher‑level heading. Without explicit linkage, the reader cannot see which step causes which problem.</td><td>For each production step, attach the relevant issue(s) as sub‑bullets, or create a two‑column table mapping <strong>Step → Problem</strong>. This creates a clear cause‑effect hierarchy.</td></tr><tr><td><strong>Clarity of the Call‑to‑Action</strong></td><td>The memo ends with “Could we discuss how best to proceed?” – an open‑ended question that does not specify the decision needed.</td><td>Minto’s “Answer” should be a concrete recommendation, not a vague invitation to discuss. The decision‑maker needs a clear next step.</td><td>Replace the open question with a specific <strong>Decision Request</strong> (e.g., “Approve the formation of a cross‑functional task force to redesign the graph‑book workflow and implement an automated data pipeline by Q3”).</td></tr><tr><td><strong>Parallelism &amp; Consistency</strong></td><td>Bullet phrasing is inconsistent (some start with verbs, others with nouns; mixed tenses).</td><td>Parallel structure aids readability and reinforces the hierarchy. Inconsistent phrasing weakens the logical flow.</td><td>Standardize bullet style (e.g., all start with a verb phrase: “Gather data…”, “Calculate points…”, “Transcribe points…”, “Check data…”).</td></tr><tr><td><strong>Length &amp; Focus</strong></td><td>The memo includes narrative filler (“the transfer inserted another person…”) that does not directly support the key recommendation.</td><td>Minto advises brevity; every sentence should serve the top‑down argument. Extraneous context dilutes focus.</td><td>Trim or relocate background information to an appendix; keep the main memo to the essential argument and supporting facts.</td></tr><tr><td><strong>Use of Headings</strong></td><td>Only “Production,” “Issues,” and “Overall assessment” headings are used, but they do not reflect the SCQA hierarchy and are not ordered logically.</td><td>Headings should mirror the pyramid levels (Situation, Complication, Question, Answer). Misaligned headings confuse the reader’s mental map.</td><td>Rename and reorder headings to match the SCQA flow (e.g., “Current Process (Situation)”, “Pain Points (Complication)”, “Decision Needed (Question)”, “Proposed Solution (Answer)”).</td></tr><tr><td><strong>Data Presentation</strong></td><td>The memo mentions “inconsistent data between periods and regions” but provides no quantitative evidence or examples.</td><td>Supporting arguments should be backed by concrete data to make the case compelling.</td><td>Insert a brief data snapshot or a chart (or reference an appendix) that quantifies the error rate or duplication cost.</td></tr><tr><td><strong>Audience Orientation</strong></td><td>The memo assumes the reader knows the history of the transfer and the names of internal groups (e.g., “Color Graphics”) without explaining their relevance.</td><td>Minto stresses tailoring the message to the audience’s needs; unnecessary jargon can obscure the argument.</td><td>Provide a one‑sentence context for each stakeholder group or move detailed background to a footnote.</td></tr></tbody></table></div>
+                <p><strong>Summary of Required Changes</strong></p>
+                <ol><li><strong>Insert a clear executive summary</strong> that states the recommended action.  </li><li><strong>Re‑structure the memo using SCQA</strong> (Situation → Complication → Question → Answer).  </li><li><strong>Group issues into MECE categories</strong> and link each to the specific production step that generates it.  </li><li><strong>Replace the open‑ended discussion request with a concrete decision request</strong>.  </li><li><strong>Standardize bullet phrasing and ensure parallelism</strong>.  </li><li><strong>Trim non‑essential narrative</strong> and relocate detailed background to an appendix.  </li><li><strong>Rename headings to reflect the logical hierarchy</strong> and order them accordingly.  </li><li><strong>Add concise data evidence</strong> to substantiate the pain points.  </li><li><strong>Clarify stakeholder references</strong> for the audience’s understanding.</li></ol>
+                <p>Implementing these changes will align the memo with the Minto Pyramid Principle, making the argument more persuasive, easier to follow, and actionable for senior management.</p>
+              </div>
+            </article>
+            <article class="arm arm--skill" id="arm-skill" data-arm-panel="skill" aria-labelledby="arm-skill-h">
+              <header class="arm__head"><h2 class="subtitle" id="arm-skill-h">With Minto</h2><span class="label">prompt with the skill · blind label <code class="mono">out-04</code></span></header>
+              <div class="strips" aria-hidden="true">
+                <div class="strip"><span class="label strip__name">Structure</span><span class="strip__units"><span class="strip__axis"><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span></span><span class="strip__axis"><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span></span><span class="strip__axis"><span class="axis-units" aria-hidden="true"><span class="unit" data-state="flaw"></span><span class="unit" data-state="gap"></span></span></span><span class="strip__axis"><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span></span></span><span class="num strip__total">3<span class="label">/8</span></span></div>
+                <div class="strip"><span class="label strip__name">Quality</span><span class="strip__units"><span class="strip__axis"><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span></span><span class="strip__axis"><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span></span><span class="strip__axis"><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span></span><span class="strip__axis"><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit" data-state="gap"></span></span></span><span class="strip__axis"><span class="axis-units" aria-hidden="true"><span class="unit"></span><span class="unit"></span></span></span></span><span class="num strip__total">6<span class="label">/10</span></span></div>
+              </div>
+              <p class="label arm-hf arm-hf--none">No hard failures</p>
+              <blockquote class="judge-note" lang="en"><p>The blanket use of <code>⚠</code> destroys hierarchy, and its suggested replacement mixes reasons, actions, and risks.</p></blockquote>
+              <div class="md arm__doc" lang="en">
+                <p><strong>Legend</strong><br><code>▲</code> top / answer <code>●</code> first‑level group <code>○</code> supporting detail <code>⚠</code> violation (mixed kinds, missing top, no order, etc.) <code>↑</code> conclusion buried lower <code>⇄</code> wrong order type <code>⊗</code> overlap (ME broken) <code>⊕</code> gap (CE broken) <code>✂</code> cut / move to appendix</p>
+                <hr>
+                <pre><code>⚠ Subject: Period Graph Books
+                
+                ⚠ Since Period 5, Financial Analysis has been responsible for producing four
+                ⚠ graph‑presentation books previously handled by Corporate Planning. This memo
+                ⚠ describes issues that appeared after the transfer.
+                
+                ⚠ Production
+                ⚠ 
+                ⚠ 1. Gather data from divisional forms, internal documents, and telephone calls.
+                ⚠ 2. Calculate graph points manually or on the corporate computer, including
+                ⚠    rolling values for revenue, cost, and percentages.
+                ⚠ 3. Transcribe the points to input sheets. Analysts update the current period,
+                ⚠    then Color Graphics re‑enters the points into its own database and generates
+                ⚠    the graphs.
+                ⚠ 4. Check the data and calculations.
+                
+                ⚠ Issues
+                ⚠ 
+                ⚠ The transfer inserted another person into an already fragmented process.
+                ⚠ Divisional staff and three corporate departments participate, and the same
+                ⚠ information may be entered into computer systems three times.
+                ⚠ 
+                ⚠ For one book, divisional data are loaded into a dedicated corporate program,
+                ⚠ calculated, transferred to Color Graphics input sheets, entered again, and
+                ⚠ returned for updates. Problems include inconsistent data between periods and
+                ⚠ regions, incorrect variable‑cost calculations, unexplained changes to points
+                ⚠ that were previously correct, and prior‑period data that must be re‑entered.
+                
+                ⚠ Overall assessment
+                ⚠ 
+                ⚠ Most problems arise from a cumbersome fragmented process. No one controls the
+                ⚠ data from beginning to end, responsibility is unclear, and errors can fall
+                ⚠ between stages. The production process badly needs streamlining, both for each
+                ⚠ book and for common calculations. The current team cannot manage the required
+                ⚠ changes as well as ongoing production.
+                
+                ⚠ Could we discuss how best to proceed?</code></pre>
+                <hr>
+                <h4>Findings table</h4>
+                <div class="md-table"><table><thead><tr><th>Location</th><th>Violation</th><th>Suggested fix</th></tr></thead><tbody><tr><td>First line (“Subject: …”)</td><td>Missing top answer; title only</td><td>Insert a one‑sentence answer that states the recommended action (e.g., “We should redesign the graph‑book production process to eliminate duplication and improve data control”).</td></tr><tr><td>Sections “Production”, “Issues”, “Overall assessment”</td><td>Mixed‑kind first‑level groups (process steps, problem list, assessment) → violates same‑kind rule</td><td>Re‑structure into same‑kind groups that directly support the answer (e.g., <strong>Reasons</strong> for change, <strong>Actions</strong> to implement, <strong>Risks</strong>).</td></tr><tr><td>Entire memo</td><td>No explicit order (time, structure, ranking, etc.)</td><td>Choose an order type (e.g., <strong>Structure</strong>: parts of the new streamlined process) and label it in the intro.</td></tr><tr><td>“Issues” paragraph &amp; “Overall assessment”</td><td>Overlap between problem description and assessment; gaps (no recommendations, no responsibility matrix)</td><td>Separate problems (facts) from analysis (reasons) and add a dedicated <strong>Recommendations</strong> group; fill gaps with clear ownership and next steps.</td></tr><tr><td>“Could we discuss …?”</td><td>Question placed at very end, not reflected in a top answer</td><td>Move the question to the SCQ intro and answer it up front; the memo should close the question, not open it.</td></tr><tr><td>Overall layout</td><td>No visible hierarchy (headings not nested, no indentation)</td><td>Use clear headings and indentation to show pyramid levels; optionally add a simple outline (Top → Group 1 → Support 1.1, etc.).</td></tr><tr><td>“Production” step list</td><td>Process described but not linked to the answer; buried conclusion that “process needs streamlining” appears only in assessment</td><td>Promote the conclusion to the top answer and use the production steps as supporting detail under a <strong>Current Process</strong> group.</td></tr></tbody></table></div>
+                <p><em>(7 findings listed; all major defects captured.)</em></p>
+                <hr>
+                <h4>Score (0–2 per axis)</h4>
+                <div class="md-table"><table><thead><tr><th>Axis</th><th>Score</th><th>Comment</th></tr></thead><tbody><tr><td>Top</td><td><strong>0</strong></td><td>No answer; only a subject line.</td></tr><tr><td>Same‑kind groups</td><td><strong>0</strong></td><td>Groups are mixed (steps, issues, assessment).</td></tr><tr><td>Order</td><td><strong>0</strong></td><td>No explicit ordering principle.</td></tr><tr><td>MECE</td><td><strong>0</strong></td><td>Overlaps between problems and assessment; gaps (no recommendations).</td></tr><tr><td>Display</td><td><strong>0</strong></td><td>Hierarchy not visible; flat memo.</td></tr></tbody></table></div>
+                <p><strong>Total:</strong> 0 / 10 (not structured).</p>
+                <hr>
+                <h4>Three highest‑impact fixes</h4>
+                <ol><li><strong>Add a clear top answer</strong> that states the recommended action and closes the implied question.  </li><li><strong>Re‑organize the memo into same‑kind groups</strong> (e.g., Reasons, Actions, Risks) that directly support the top answer.  </li><li><strong>Apply a consistent order type</strong> (e.g., Structure) and ensure the hierarchy is visible with headings/indentation, eliminating overlaps and filling the missing recommendation gap.</li></ol>
+              </div>
+            </article>
+          </div>
+          <aside class="margins__rail" aria-labelledby="rail-h">
+            <h2 class="subtitle" id="rail-h">The judge</h2>
+            <table class="dmatrix">
+              <thead><tr><th scope="col" class="label">Recurring defect</th><th scope="col" class="label">without</th><th scope="col" class="label">with Minto</th></tr></thead>
+              <tbody>
+                <tr><th scope="row"><span class="doc-item" lang="en">Missing answer is not distinguished from the buried streamlining conclusion</span><span class="label defect__cause">the skill has the rule; the model did not follow it · <span lang="en">Mode 2 — audit, check 1: Top</span></span></th><td><span class="unit" data-state="flaw" aria-hidden="true"></span><span class="visually-hidden">present</span></td><td><span class="unit" data-state="flaw" aria-hidden="true"></span><span class="visually-hidden">present</span></td></tr>
+                <tr><th scope="row"><span class="doc-item" lang="en">Incomplete process logic is not separated into graph-generation and later-change failure points</span><span class="label defect__cause">the skill has no such rule · <span lang="en">Mode 2 — audit, check 4: MECE</span></span></th><td><span class="unit" data-state="flaw" aria-hidden="true"></span><span class="visually-hidden">present</span></td><td><span class="unit" data-state="flaw" aria-hidden="true"></span><span class="visually-hidden">present</span></td></tr>
+                <tr><th scope="row"><span class="doc-item" lang="en">Suggested first-level structure uses causes, symptoms, constraints, or topics instead of actions</span><span class="label defect__cause">the skill has the rule; the model did not follow it · <span lang="en">Core loop, §4 Groups</span></span></th><td><span class="unit" data-state="flaw" aria-hidden="true"></span><span class="visually-hidden">present</span></td><td><span class="unit" data-state="flaw" aria-hidden="true"></span><span class="visually-hidden">present</span></td></tr>
+                <tr><th scope="row"><span class="doc-item" lang="en">Inline annotation, capped findings, five-axis score, or three highest-value fixes are absent</span><span class="label defect__cause">the skill has the rule; the model did not follow it · <span lang="en">Mode 2 — audit, delivery contract</span></span></th><td><span class="unit" data-state="flaw" aria-hidden="true"></span><span class="visually-hidden">present</span></td><td><span class="unit" data-state="gap" aria-hidden="true"></span><span class="visually-hidden">absent</span></td></tr>
+                <tr><th scope="row"><span class="doc-item" lang="en">Unsupported evidence requirements, process claims, or implementation specifics are introduced</span><span class="label defect__cause">the skill has the rule; the model did not follow it · <span lang="en">Mode 2 finding rule and Core loop §8</span></span></th><td><span class="unit" data-state="flaw" aria-hidden="true"></span><span class="visually-hidden">present</span></td><td><span class="unit" data-state="flaw" aria-hidden="true"></span><span class="visually-hidden">present</span></td></tr>
+              </tbody>
+            </table>
+            <h3 class="label rail__sub">Decisive questions</h3>
+            <ol class="cmp-list">
+              <li class="cmp"><p class="small cmp__q" lang="en">Did the audit state precisely that the required changes are absent?</p><p class="cmp__a"><span class="label">without</span> <span lang="en">yes</span></p><p class="cmp__a"><span class="label">with Minto</span> <span lang="en">yes</span></p></li>
+              <li class="cmp"><p class="small cmp__q" lang="en">Did it distinguish a missing answer from a merely buried answer?</p><p class="cmp__a"><span class="label">without</span> <span lang="en">no</span></p><p class="cmp__a"><span class="label">with Minto</span> <span lang="en">no—the buried diagnosis is treated too much like the missing answer</span></p></li>
+              <li class="cmp"><p class="small cmp__q" lang="en">Did it identify streamlining as an undeveloped conclusion?</p><p class="cmp__a"><span class="label">without</span> <span lang="en">no</span></p><p class="cmp__a"><span class="label">with Minto</span> <span lang="en">yes</span></p></li>
+              <li class="cmp"><p class="small cmp__q" lang="en">Did it name incomplete process logic and unseparated failure points?</p><p class="cmp__a"><span class="label">without</span> <span lang="en">partial—suggests mapping steps to problems but misses the distinct failure classes</span></p><p class="cmp__a"><span class="label">with Minto</span> <span lang="en">partial</span></p></li>
+              <li class="cmp"><p class="small cmp__q" lang="en">If a replacement structure was suggested, is its key line made of actions?</p><p class="cmp__a"><span class="label">without</span> <span lang="en">no</span></p><p class="cmp__a"><span class="label">with Minto</span> <span lang="en">no—the proposed first level mixes reasons, actions, and risks</span></p></li>
+              <li class="cmp"><p class="small cmp__q" lang="en">What false positives or invented details appear?</p><p class="cmp__a"><span class="label">without</span> <span lang="en">invents automation, a task force, Q3 timing, and defects in parallelism, audience knowledge, and data presentation</span></p><p class="cmp__a"><span class="label">with Minto</span> <span lang="en">invents a responsibility-matrix requirement and wrongly asks for the order label in the memo</span></p></li>
+              <li class="cmp"><p class="small cmp__q" lang="en">Did the output remain diagnosis-only and include the required audit apparatus?</p><p class="cmp__a"><span class="label">without</span> <span lang="en">diagnosis-only, but lacks annotation, scoring, and a three-fix limit</span></p><p class="cmp__a"><span class="label">with Minto</span> <span lang="en">yes</span></p></li>
+            </ol>
+            <table class="checks">
+              <thead><tr><th scope="col" class="label">Judge’s check</th><th scope="col" class="label">without</th><th scope="col" class="label">with Minto</th></tr></thead>
+              <tbody>
+                <tr class="check-row"><th scope="row">First-level kind matches the gold</th><td><span class="check check--bad">no</span></td><td><span class="check check--bad">no</span></td></tr>
+                <tr class="check-row check-row--diff"><th scope="row">Invented facts</th><td><span class="check check--bad">yes</span></td><td><span class="check check--ok">no</span></td></tr>
+                <tr class="check-row"><th scope="row">Source lost without a note</th><td><span class="check check--ok">no</span></td><td><span class="check check--ok">no</span></td></tr>
+                <tr class="check-row"><th scope="row">Mode respected</th><td><span class="check check--ok">yes</span></td><td><span class="check check--ok">yes</span></td></tr>
+                <tr class="check-row check-row--diff"><th scope="row">Order type named</th><td><span class="check check--bad">no</span></td><td><span class="check check--ok">yes</span></td></tr>
+              </tbody>
+            </table>
+            <p class="label checks__na">4 more judge checks do not apply to mode <code class="mono">audit</code></p>
+          </aside>
+        </section>
+        <section class="section test" aria-labelledby="test-h">
+          <h2 class="title" id="test-h">How the test was built</h2>
+          <p class="body test__lede">gpt-oss-120b received the same task twice. The control prompt is one framing line and the task. The prompt with Minto is the same task preceded by the full text of the skill. The judge read both outputs among 16 under blind labels and did not know which one had the skill.</p>
+          <div class="test__grid">
+            <details class="test__part">
+              <summary><span class="subtitle">Prompt without Minto</span> <span class="label">2&nbsp;424&nbsp;B</span></summary>
+              <pre class="prompt-src" lang="en"><code>You are working on a business document using the Minto Pyramid Principle.
+
+&lt;!-- Faithful paraphrase of Minto (2010), Appendix B, Exhibits B-5 and B-6.
+     Original wording for this fixture. --&gt;
+
+# Fixture 03: Period Graph Books
+
+**Mode:** `audit`
+**Language:** `en`
+
+## Context
+
+Corporate Financial Analysis recently took over production of four monthly
+graph books used in presentations to senior management. Management knows that
+errors and inconsistencies have appeared and asked for corrective proposals.
+
+## Before
+
+```text
+Subject: Period Graph Books
+
+Since Period 5, Financial Analysis has been responsible for producing four
+graph-presentation books previously handled by Corporate Planning. This memo
+describes issues that appeared after the transfer.
+
+Production
+
+1. Gather data from divisional forms, internal documents, and telephone calls.
+2. Calculate graph points manually or on the corporate computer, including
+   rolling values for revenue, cost, and percentages.
+3. Transcribe the points to input sheets. Analysts update the current period,
+   then Color Graphics re-enters the points into its own database and generates
+   the graphs.
+4. Check the data and calculations.
+
+Issues
+
+The transfer inserted another person into an already fragmented process.
+Divisional staff and three corporate departments participate, and the same
+information may be entered into computer systems three times.
+
+For one book, divisional data are loaded into a dedicated corporate program,
+calculated, transferred to Color Graphics input sheets, entered again, and
+returned for updates. Problems include inconsistent data between periods and
+regions, incorrect variable-cost calculations, unexplained changes to points
+that were previously correct, and prior-period data that must be re-entered.
+
+Overall assessment
+
+Most problems arise from a cumbersome fragmented process. No one controls the
+data from beginning to end, responsibility is unclear, and errors can fall
+between stages. The production process badly needs streamlining, both for each
+book and for common calculations. The current team cannot manage the required
+changes as well as ongoing production.
+
+Could we discuss how best to proceed?
+```
+
+## Task
+
+Audit this document against the Minto Pyramid Principle. Diagnose the defects
+and explain what must change. Do not rewrite the document.
+
+Return only the result, with no explanation of how you produced it.
+</code></pre>
+            </details>
+            <details class="test__part">
+              <summary><span class="subtitle">Prompt with Minto</span> <span class="label">five parts, in order · 29&nbsp;997&nbsp;B</span></summary>
+              <ol class="assembly">
+                  <li><code class="mono" lang="en">Below is a skill written as an instruction. Read it in full and apply it to the task at the end.</code></li>
+                  <li><code class="mono">===== SKILL.md =====</code> <a class="link small" href="../../../eval-map/skill/#skill-md">SKILL.md at f4813ce</a> <span class="label">17&nbsp;235&nbsp;B</span></li>
+                  <li><code class="mono">===== references/rules.md =====</code> <a class="link small" href="../../../eval-map/skill/#rules-md">references/rules.md at f4813ce</a> <span class="label">6&nbsp;464&nbsp;B</span></li>
+                  <li><code class="mono">===== references/templates.md =====</code> <a class="link small" href="../../../eval-map/skill/#templates-md">references/templates.md at f4813ce</a> <span class="label">3&nbsp;742&nbsp;B</span></li>
+                  <li><code class="mono">===== TASK =====</code> <span class="small">the whole case input</span></li>
+                  <li><code class="mono" lang="en">Return only the result, with no explanation of how you produced it.</code></li>
+              </ol>
+            </details>
+            <details class="test__part">
+              <summary><span class="subtitle">Case input</span> <code class="label">before.md</code></summary>
+              <div class="md md--src" lang="en">
+                <p>&lt;!-- Faithful paraphrase of Minto (2010), Appendix B, Exhibits B-5 and B-6.<br>Original wording for this fixture. --&gt;</p>
+                <h4>Fixture 03: Period Graph Books</h4>
+                <p><strong>Mode:</strong> <code>audit</code><br><strong>Language:</strong> <code>en</code></p>
+                <h5>Context</h5>
+                <p>Corporate Financial Analysis recently took over production of four monthly<br>graph books used in presentations to senior management. Management knows that<br>errors and inconsistencies have appeared and asked for corrective proposals.</p>
+                <h5>Before</h5>
+                <pre><code>Subject: Period Graph Books
+                
+                Since Period 5, Financial Analysis has been responsible for producing four
+                graph-presentation books previously handled by Corporate Planning. This memo
+                describes issues that appeared after the transfer.
+                
+                Production
+                
+                1. Gather data from divisional forms, internal documents, and telephone calls.
+                2. Calculate graph points manually or on the corporate computer, including
+                   rolling values for revenue, cost, and percentages.
+                3. Transcribe the points to input sheets. Analysts update the current period,
+                   then Color Graphics re-enters the points into its own database and generates
+                   the graphs.
+                4. Check the data and calculations.
+                
+                Issues
+                
+                The transfer inserted another person into an already fragmented process.
+                Divisional staff and three corporate departments participate, and the same
+                information may be entered into computer systems three times.
+                
+                For one book, divisional data are loaded into a dedicated corporate program,
+                calculated, transferred to Color Graphics input sheets, entered again, and
+                returned for updates. Problems include inconsistent data between periods and
+                regions, incorrect variable-cost calculations, unexplained changes to points
+                that were previously correct, and prior-period data that must be re-entered.
+                
+                Overall assessment
+                
+                Most problems arise from a cumbersome fragmented process. No one controls the
+                data from beginning to end, responsibility is unclear, and errors can fall
+                between stages. The production process badly needs streamlining, both for each
+                book and for common calculations. The current team cannot manage the required
+                changes as well as ongoing production.
+                
+                Could we discuss how best to proceed?</code></pre>
+                <h5>Task</h5>
+                <p>Audit this document against the Minto Pyramid Principle. Diagnose the defects<br>and explain what must change. Do not rewrite the document.</p>
+              </div>
+            </details>
+            <details class="test__part">
+              <summary><span class="subtitle">The judge’s gold</span> <code class="label">gold.md</code></summary>
+              <div class="md md--src" lang="en">
+                <h4>Gold 03: Period Graph Books</h4>
+                <p>Source structure: Minto (2010), Appendix B, Exhibits B-5 and B-6.</p>
+                <h5>Book-derived defects</h5>
+                <div class="md-table"><table><thead><tr><th>Defect</th><th>Severity</th></tr></thead><tbody><tr><td>The document never states the changes required; it therefore does not answer management's question</td><td>Critical</td></tr><tr><td>It describes the current process instead of presenting a top and key line</td><td>Critical</td></tr><tr><td>"The purpose is to describe issues" is a topic, not an answer</td><td>Critical</td></tr><tr><td>The process description is incomplete and does not isolate each system's failure points</td><td>Medium</td></tr><tr><td>Problems in graph-point generation and later presenter changes are not clearly separated</td><td>Medium</td></tr></tbody></table></div>
+                <p>The buried conclusion is that the process needs streamlining, but this is not<br>turned into an actionable answer.</p>
+                <h5>Expected replacement structure</h5>
+                <p>Reader question: What changes should we make to prevent unreliable graphs?</p>
+                <p>Top: Remove the opportunities for error across data transfer, graph-point<br>generation, and final presentation changes.</p>
+                <p>Key-line kind: changes/actions.</p>
+                <ol><li>Create a direct data link to the corporate computer.</li><li>Create a reliable computerized routine for graph-point generation.</li><li>Require presenter changes to be revalidated before use.</li></ol>
+                <p>Audit outputs should name the missing answer, distinguish it from a conclusion<br>that is merely buried, annotate only visible evidence, provide no rewritten<br>memo, and avoid inventing defects in unseen material.</p>
+              </div>
+            </details>
+          </div>
+          <p class="label test__prov">Judge gpt-5.6-sol, effort high · skill from commit f4813ce · run v1.7.0-final</p>
+        </section>
+        <nav class="pair-steps" aria-label="Neighbouring pairs">
+          <a class="nav-step" href="../../../eval-map/03-period-graph-books/codex/" rel="prev" data-step="prev-model"><span class="label">Previous model</span><span class="small">Codex gpt-5.6-terra</span></a>
+          <a class="nav-step" href="../../../eval-map/03-period-graph-books/qwen3.6-35b-a3b/" rel="next" data-step="next-model"><span class="label">Next model</span><span class="small">qwen3.6-35b-a3b</span></a>
+          <a class="nav-step" href="../../../eval-map/11-plain-list/gpt-oss-120b/" rel="prev" data-step="prev-case"><span class="label">Previous case</span><span class="small">A plain list, no pyramid</span></a>
+          <a class="nav-step" href="../../../eval-map/07-headings-audit/gpt-oss-120b/" rel="next" data-step="next-case"><span class="label">Next case</span><span class="small">A set of headings</span></a>
+        </nav>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="page site-footer__inner">
+        <div class="brand site-footer__brand">
+          <span class="brand__mark units" data-shape="pyramid" aria-hidden="true">
+            <span class="units__row"><span class="unit"></span></span>
+            <span class="units__row"><span class="unit"></span><span class="unit"></span></span>
+            <span class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span></span>
+          </span>
+          <span class="brand__word">Minto</span>
+        </div>
+        <p class="small">The skill settles the argument before it rewrites the prose. Barbara Minto&rsquo;s source material remains the property of its rights holders; the plugin code is MIT-licensed.</p>
+        <nav aria-label="Links">
+          <a class="nav-link" href="https://github.com/welltraum/minto">GitHub</a>
+          <a class="nav-link" href="https://github.com/welltraum/minto/blob/main/CHANGELOG.md">Changelog</a>
+          <a class="nav-link" href="../../../ru/eval-map/03-period-graph-books/gpt-oss-120b/">Русский</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="../../../assets/app.js?v=10" defer></script>
+  </body>
+</html>

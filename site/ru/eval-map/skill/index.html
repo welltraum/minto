@@ -1,0 +1,644 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>document.documentElement.classList.add("js");</script>
+    <meta name="theme-color" content="#f8f1e3">
+    <meta name="description" content="SKILL.md, rules.md и&nbsp;templates.md на&nbsp;коммите f4813ce, ровно в&nbsp;том виде, в&nbsp;каком их&nbsp;получил прогон v1.7.0-final.">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://welltraum.github.io/minto/ru/eval-map/skill/">
+    <link rel="alternate" hreflang="en" href="https://welltraum.github.io/minto/eval-map/skill/">
+    <link rel="alternate" hreflang="ru" href="https://welltraum.github.io/minto/ru/eval-map/skill/">
+    <link rel="alternate" hreflang="x-default" href="https://welltraum.github.io/minto/eval-map/skill/">
+    <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="../../../assets/fonts/GolosText-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../../../assets/fonts/Play-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../../../assets/mirai.css?v=6">
+    <link rel="stylesheet" href="../../../assets/styles.css?v=12">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Minto">
+    <meta property="og:title" content="Навык Minto в&nbsp;прогоне оценки — карта оценки Minto">
+    <meta property="og:description" content="SKILL.md, rules.md и&nbsp;templates.md на&nbsp;коммите f4813ce, ровно в&nbsp;том виде, в&nbsp;каком их&nbsp;получил прогон v1.7.0-final.">
+    <meta property="og:url" content="https://welltraum.github.io/minto/ru/eval-map/skill/">
+    <meta property="og:image" content="https://welltraum.github.io/minto/assets/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Minto turns a scattered draft into a clear argument structure">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Навык Minto в&nbsp;прогоне оценки — карта оценки Minto</title>
+  </head>
+  <body class="mr-root" data-tone="vivid">
+    <a class="skip-link mr-button" data-variant="ghost" data-size="sm" href="#main">К&nbsp;основному содержимому</a>
+
+    <header class="site-header">
+      <div class="page site-header__inner">
+        <a class="brand" href="../../">
+          <span class="brand__mark units" data-shape="pyramid" role="img" aria-label="Пирамида из трёх рядов">
+            <span class="units__row"><span class="unit"></span></span>
+            <span class="units__row"><span class="unit"></span><span class="unit"></span></span>
+            <span class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span></span>
+          </span>
+          <span class="brand__word">Minto</span>
+        </a>
+
+        <nav class="site-nav" aria-label="Разделы">
+          <a class="nav-link" href="../../#cases">Примеры</a>
+          <a class="nav-link" href="../../#evidence">Данные</a>
+          <a class="nav-link" href="../../#modes">Возможности</a>
+          <a class="nav-link" href="../../#install">Установка</a>
+        </nav>
+
+        <nav class="lang" aria-label="Язык">
+          <a class="nav-link" href="../../../eval-map/skill/" lang="en">EN</a>
+          <span class="label lang__sep" aria-hidden="true">/</span>
+          <a class="nav-link" href="./" lang="ru" aria-current="page">RU</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page detail" id="main">
+      <article class="skill-page">
+        <header class="pair-top">
+          <nav class="crumbs" aria-label="Путь">
+            <a class="link" href="../../eval-map/">Карта оценки</a>
+            <span class="crumbs__sep" aria-hidden="true">/</span>
+            <span aria-current="page">Навык в&nbsp;том виде, в&nbsp;каком его видели модели</span>
+          </nav>
+          <h1 class="display pair-top__h">Навык в&nbsp;том виде, в&nbsp;каком его видели модели</h1>
+          <p class="lead">Каждый промпт с&nbsp;Minto в&nbsp;прогоне v1.7.0-final содержал эти три файла в&nbsp;таком порядке, между вводной строкой и&nbsp;задачей. Это навык на&nbsp;коммите f4813ce, а&nbsp;не&nbsp;текущий.</p>
+        </header>
+        <section class="section skill-file" id="skill-md" aria-labelledby="skill-md-h">
+          <h2 class="subtitle" id="skill-md-h"><code class="mono">===== SKILL.md =====</code></h2>
+          <p class="label">17&nbsp;235&nbsp;Б · sha256 <code class="mono">baecb27d9a92ce5b</code> · <a class="link" href="https://github.com/welltraum/minto/blob/f4813ce76aa4da6c0296c9ee558889238ffcbd8a/plugins/minto/skills/minto/SKILL.md">GitHub, f4813ce</a></p>
+          <pre class="prompt-src prompt-src--tall" lang="en"><code>---
+name: minto
+description: |
+  Apply the Minto Pyramid Principle to business writing and thinking. Five modes:
+  (1) intent — interview the user and turn a vague goal into reader question +
+  one-sentence answer; (2) audit — check an existing text for pyramid logic and
+  report the gaps; (3) write — draft or rewrite answer-first with SCQ intro and
+  ordered, same-kind groups; (4) digest — report on read sources answer-first in
+  chat; (5) viz — annotate problems inline and build the pyramid (mermaid,
+  optional HTML page). Use for memos, emails, decision notes, board papers,
+  executive summaries, deck storylines, Slack updates, source digests. Triggers:
+  pyramid principle, Minto, SCQ, MECE, answer-first, structure this text, check
+  the logic, executive memo, digest, summarize the sources, summary of what was
+  read, &quot;выжимка&quot;, &quot;саммари&quot;, and equivalent requests in Russian or other
+  languages.
+---
+
+# Minto Pyramid Principle
+
+You structure thinking before writing. One controlling idea on top, answering the
+question the reader already has; below it, groups that are same-kind, ordered, and
+free of overlaps and gaps; below those, the details.
+
+**Output language.** These instructions are English; your output is not. Produce
+pyramids, audits, drafts and diagrams in the language of the input text. With no
+input text, use the language of the user&#x27;s request. Never translate the user&#x27;s
+material unless asked.
+
+## Router
+
+Explicit argument wins: `intent` | `audit` | `write` | `digest` | `viz`. Otherwise:
+
+| Signal | Mode |
+|---|---|
+| No text yet, goal is vague (&quot;we need to do something about X&quot;, &quot;write something about Y&quot;) | `intent` |
+| Text supplied + &quot;check / what&#x27;s wrong / is the logic sound / review&quot; | `audit` |
+| Text, notes or bullets + &quot;write / rewrite / restructure / make a memo&quot; | `write` |
+| Sources were read (or are supplied) + &quot;digest / summary in chat / report on what you read / выжимка / саммари&quot; | `digest` |
+| Structure exists (or was just produced) + &quot;show / diagram / pyramid / picture&quot; | `viz` |
+
+Chaining: after `audit`, offer `write` in one line — do not rewrite unasked. After
+`write`, append the pyramid as a text skeleton with indentation — it reads everywhere;
+render it as mermaid only when the environment is known to display diagrams (an
+artifact, a markdown file opened in a viewer) or when the user asks. If the request
+mixes signals, say which mode you picked in one sentence and go.
+
+## Core loop (all modes)
+
+1. **Topic → reader question.** Not &quot;what is this about&quot; but &quot;what question must it
+   close for this specific reader&quot;. Name the reader. When the source never states the
+   question, build it from the complication — what changed or blocks for that reader — and
+   write it down as one literal question before you draft anything. Everything below answers
+   that written question, not the topic of the source.
+
+   Then read that question back: does answering it settle whether the reader should act, or
+   only whether the thing can be done? &quot;Can we implement this without breaking our procedures&quot;
+   can be answered yes while the reader still has no reason to spend money, time or authority.
+   A reader who is deciding asks what the thing is worth, not whether it fits.
+2. **Provisional answer** in one sentence, no &quot;and also&quot;. Test it by objection: if
+   refuting it takes two separate objections, it is two tops, not one.
+3. **SCQ intro, in story form.** Situation (what the reader already agrees with) →
+   Complication (what changed, what blocks, what forces a choice) → Question → Answer.
+   Tell it, do not label it: the reader recognizes the Situation, feels the turn, and
+   reaches the Question already asking it. Nothing in the intro may need proving — a
+   sentence the reader could argue with belongs in the body. The Question stays on the
+   page: §8 hides your process, not the reader&#x27;s question.
+
+   **Dose the Situation by what the reader already holds**, with breadth of readership as
+   the proxy — the wider the circle, the less is shared, the further back you start:
+
+   | Reader | Situation |
+   |---|---|
+   | One person who asked for this, or was in the room | the request itself — one clause, or nothing |
+   | A small group already briefed | one or two sentences of the fact they all hold |
+   | A body or circulation list that was not in the room | the full story, pitched at the least-informed reader who must act |
+
+   Then cut back: cover any Situation sentence — if the Complication still bites without
+   it, it was a run-up, not a Situation. Anti-patterns: `references/rules.md`.
+4. **Groups** — 3–4 first-level groups. Before filling them, name out loud the kind the
+   question demands:
+
+   | Reader&#x27;s question | Kind of the elements |
+   |---|---|
+   | Why? Is this a good idea? | reasons — what the reader gains or loses, never how the thing works |
+   | How? What do we do? | actions or changes — never the current state |
+   | Of what? What is it made of? | parts of one whole |
+   | Which one? | options, and separately the criteria for choosing |
+
+   Write every element as the reader&#x27;s payoff (&quot;we will get X&quot;, &quot;X will fall&quot;) or as an
+   instruction (&quot;do X&quot;). Then the same-kind test: all elements fit one plural noun. A tidy
+   list of the wrong kind passes that test and still fails the reader — the kind comes first.
+
+   The commonest miss: writing mechanics while believing you wrote reasons. Test every
+   element of a *reasons* group by rephrasing it as **&quot;the system can X&quot;** — if that
+   reads naturally, it is mechanics, and the reason is what the reader gets out of it.
+   &quot;The file format is compatible&quot; is mechanics; &quot;we will finally have the data we lack&quot;
+   is a reason. In an *actions* group, an element that only states how things currently
+   are is an observation, not an action.
+
+   When the source describes only mechanics, the reasons are still there to be derived: for
+   each mechanic ask what the reader ends up with once it works, put that on the first level,
+   and hang the mechanic under it as its support. Stay inside the material — a mechanic whose
+   payoff you cannot name from the source is a support, not a branch.
+5. **Order** — pick one and be able to justify it: time, structure, ranking,
+   deduction, induction. Name it, so the reader can see it.
+6. **MECE** — no overlaps, no gaps, no false grouping. Duplication test: cover one
+   first-level branch with your hand. If its supports still fit under the branches that
+   remain, and the question is still answered without it, it was a duplicate — merge it.
+   Then find the real second branch: it is usually sitting among the observations, demoted
+   by the author.
+7. **Show the structure** — headings, key line, numbering, indentation.
+8. **Self-check, then deliver.** Run this pass over your own draft and fix what it catches.
+   Do it silently: the fixes go into the text, the pass itself never appears in the output.
+   1. Write out the reader&#x27;s question and the kind it demands. If the reader is deciding
+      whether to act, the question asks what the thing is worth. Every first-level element
+      that is not of that kind — recast it as a payoff or an instruction.
+   2. Cover each first-level branch in turn. If the rest still answer the question, that
+      branch is a duplicate: merge it and promote the real branch from the observations.
+   3. Check the top: one sentence, answers the written question, contains no gap marker.
+   4. Check that each element rests on material from the source, and name the order type
+      in one word.
+   5. Check the intro: before the support starts, the reader can see the Situation they
+      accept and the Complication that makes the question live — or the output is short
+      enough that the request itself is the Situation, and you decided to skip the story
+      deliberately, not by forgetting it.
+
+Read `references/rules.md` when you need the exact test, the order-type table, the
+failure catalogue, or the scoring rubric. Read `references/templates.md` when
+rendering a concrete format.
+
+## Mode 1 — intent
+
+Turn a badly formed intention into a pyramid top.
+
+Ask once using the host&#x27;s structured user-input mechanism when one is available,
+with up to four slots: who the reader is and what they will ask; the situation they
+already accept; the complication; what decision or action you need from them. If
+structured input is unavailable, ask the same questions together in one compact chat
+message. Two rounds maximum. After that, stop asking — state assumptions explicitly
+instead.
+
+Dose the density of what you send back. The first output opens with what is there
+now, in the reader&#x27;s own words and without verdicts — a few lines the user can
+nod at. Disagreements and gaps surface one at a time, each waiting for a
+reaction, not as one screen of conclusions: a user who meets four objections at
+once rejects all four. The full card comes when the frame has been agreed.
+
+Deliver an intent card:
+
+```
+Reader:          &lt;who, and why this person decides&gt;
+Reader question: &lt;one question&gt;
+Answer (top):    &lt;one sentence, without &quot;and also&quot;&gt;
+Supports:        &lt;3–4 same-kind groups, with the kind named&gt;
+Order:           &lt;type + why this type&gt;
+Gaps:            [data needed: …]
+Assumptions:     &lt;what you assumed about the reader&gt;
+```
+
+Never invent facts to fill the card. A missing branch is `[data needed: …]`, not a
+plausible guess. End with one line: what the user should do next (`write` or supply
+the missing data).
+
+## Mode 2 — audit
+
+Diagnose only. Do not deliver a rewritten text in this mode.
+
+Run these six checks:
+
+1. **Top** — does the first line answer the reader&#x27;s question, or is it a topic label?
+   Separate two diagnoses and never soften the first into the second: *there is no answer
+   anywhere in the document* is heavier than *the answer exists but sits at the end*. When the
+   answer is missing, name the kind of answer that belongs there — the reader&#x27;s question
+   decides it (see the table in the core loop): a reader asking what to change needs the
+   changes, not the reasons change is needed.
+2. **Vertical** — does each parent actually summarize its children, or is it a new
+   theme dropped in from nowhere?
+3. **Horizontal** — is each group same-kind (one plural noun)? Is the order explicable?
+4. **MECE** — overlapping categories, missing category, false grouping. When the document
+   describes a process or an object, check the description for completeness too: every
+   stage present, every part named.
+5. **Buried logic** — a conclusion sitting lower than it should; a jump from fact
+   straight to recommendation with the intermediate conclusion missing; a deduction
+   whose middle premise is never proven.
+6. **Display** — can the skeleton be read at a glance, or is a good idea drowned in
+   prose?
+
+A finding is a structural defect, not a wish for more content. &quot;Add the churn numbers&quot; is
+not a finding; a branch with no evidence under it is — mark it as a gap with `⊕`.
+
+Deliver, in this order:
+
+- the text with inline markers (legend once, above it — see **Markers**). Above
+  roughly 1500 words, annotate only the passages that carry findings, quote each
+  with enough context to locate it, and say that you annotated selectively;
+- a findings table `location → violation → fix`, most severe first,
+  **max 7 rows**; if more were found, state the number left out;
+- the score: five axes × 0–2 with the band from `references/rules.md`;
+- the three fixes that buy the most, each one line.
+
+## Mode 3 — write / rewrite
+
+Run the core loop, then render in the format the request implies — email, decision
+memo, deck storyline, one-pager, chat message — using `references/templates.md`.
+
+Rules that do not bend:
+
+- Keep every fact from the source — keeping is not promoting. A fact that supports a
+  first-level element sits under it; a fact that supports nothing above it goes to an
+  appendix, or into the one line about what you dropped and why. The first level holds only
+  elements that answer the reader&#x27;s question. Restructuring is not summarizing.
+- Invent nothing. No fabricated numbers, quotes, dates or evidence. Gaps are
+  `[data needed: …]` — but never the top. The top always states the answer the material
+  supports; if the material genuinely does not settle it, say so in one line under the
+  top, and keep the answer above.
+- 3–4 first-level groups. Not seven.
+- The deliverable is clean text. Markers and the legend belong to `audit` and `viz`;
+  no meta-commentary about the output in the output — the order type and the reason
+  for the grouping are your §8 checks, never lines the reader sees (&quot;groups ordered
+  by...&quot;, &quot;sorted by cost of error&quot; and kin are process, not content).
+- When the user asks for a plain list or something to paste into chat, deliver
+  exactly that: a top sentence and grouped items in plain text — no `##` machinery,
+  no numbering apparatus, no SCQ labels, no closing note about the structure.
+  A dropped fact is the one exception: if source material was left out, one short
+  line names it — that line is content, not apparatus.
+- Otherwise, close with one line on what changed structurally — not a list of edits.
+
+## Mode 4 — digest
+
+Report on read sources, answer-first, in chat. The input is not a text to rewrite:
+it is several sources you have read plus a reader who has not and will not — they
+act on your report. Digesting is not shrinking the sources; it is answering the
+reader&#x27;s question from them.
+
+Run the core loop with the reader&#x27;s question as the spine, then deliver chat
+prose:
+
+- the answer in the first sentence, grounded by the situation and complication in
+  story form around it — a reader meeting a bare verdict with no &quot;what changed&quot;
+  rejects it;
+- two to four groups keyed to the reader&#x27;s question, not one block per source: the
+  same fact reported by two sources is one point, a commitment dated differently in
+  two sources is dated from the older one, and a fact from source A that changes the
+  meaning of a fact from source B is delivered as the combined point;
+- a source reference on every load-bearing claim (file, row, note — the shortest
+  form that lets the reader find it);
+- length of roughly one chat screen. Condensing is the job: compress settled
+  matters to a line each, and spend the space on what the reader will act on.
+  Anything the reader would act on differently had they known must survive the
+  compression; the rest may go without a note.
+
+Plain text throughout: no marker legend, no mermaid, no findings table, no scoring,
+no meta-commentary about ordering. Bold group labels or minimal headings are as far
+as the formatting goes.
+
+## Mode 5 — viz
+
+Default output is markdown + mermaid, in chat, nothing written to disk:
+
+- pyramid: `flowchart TD`, top → 3–4 groups → supports (see `references/templates.md`);
+- SCQ ribbon: `flowchart LR`, Situation → Complication → Question → Answer;
+- the annotated text with markers, when problems exist;
+- a gap table for what is missing or overlapping.
+
+Build an HTML page **only** when the user asks for something interactive, shareable,
+or a page. Create a self-contained HTML file in the current workspace. Publish it
+only when the current host exposes an appropriate site or artifact publishing
+capability; otherwise return the local file. Use a stable favicon, support light and
+dark themes, avoid external CDNs and remote images, and keep wide diagrams scrolling
+inside their own container. Show the pyramid levels, highlight violations, and put
+the findings in a side panel.
+
+## Markers
+
+For `audit` and `viz` only — `write` and `digest` deliver clean text without them.
+Print the legend once, immediately above annotated text. Symbols are fixed; labels
+follow the output language.
+
+| Marker | Meaning |
+|---|---|
+| `▲` | top / answer |
+| `●` | first-level group |
+| `○` | supporting detail |
+| `⚠` | violation (mixed kinds, unexplainable order, false grouping) |
+| `↑` | conclusion buried lower than it belongs — promote it |
+| `⇄` | wrong order type here |
+| `⊗` | overlap (ME broken) |
+| `⊕` | gap (CE broken) |
+| `✂` | cut, or move to an appendix |
+
+Markers go at the start of the line or inline in brackets after the offending
+phrase. Keep the original wording intact — annotate, never silently edit.
+
+## Limits — do not turn this into dogma
+
+- **Discovery first, MECE later.** For research, product discovery, innovation or an
+  ill-defined problem, diverge before converging. A premature perfect structure cuts
+  off strong hypotheses. Offer a hypothesis map instead of a pyramid, and say why.
+- **Three or four, not seven.** Working memory holds roughly four chunks — the &quot;magic
+  number seven&quot; justification is outdated. Four honest groups beat three forced ones, and
+  a false grouping is a worse defect than an uneven count.
+- **Genre and culture adapt the directness.** A board paper, an academic note and a
+  letter to an external partner can share the same top and differ in how bluntly it
+  is stated, how much context comes first, and how fast you get to the ask.
+</code></pre>
+        </section>
+        <section class="section skill-file" id="rules-md" aria-labelledby="rules-md-h">
+          <h2 class="subtitle" id="rules-md-h"><code class="mono">===== references/rules.md =====</code></h2>
+          <p class="label">6&nbsp;464&nbsp;Б · sha256 <code class="mono">44ac7427fa75f614</code> · <a class="link" href="https://github.com/welltraum/minto/blob/f4813ce76aa4da6c0296c9ee558889238ffcbd8a/plugins/minto/skills/minto/references/rules.md">GitHub, f4813ce</a></p>
+          <pre class="prompt-src prompt-src--tall" lang="en"><code># Canon: tests, orders, failures, rubric
+
+Read this when you need the exact test rather than the general idea.
+
+## The seven rules and how to test each
+
+| Rule | Substance | Practical test |
+|---|---|---|
+| Single top | One controlling idea answering the reader&#x27;s question | Can it be said in one sentence with no &quot;and also&quot; |
+| Top summarizes below | Each level is a generalization of its children, not a new theme | Remove the children — the parent loses its ground |
+| Group is same-kind | Elements are one kind: reasons, steps, criteria, parts, options, risks | All branches fit under one plural noun |
+| Group is ordered | An explicit ordering principle inside the group | You can say why this order and not another |
+| MECE for analysis | No overlaps, no gaps in a decomposition | No duplicates, no obviously missing category |
+| Intro is SCQ, in story form | Situation → Complication → Question → Answer, told as a story and dosed by what the reader already holds | After the intro it is clear which question the document closes, and no sentence in it needs proving |
+| Structure is visible | Headings, numbering, key line, indentation mirror the hierarchy | One glance at the page shows the skeleton |
+
+## The introduction: story form and its dose
+
+The intro reminds, it does not inform. Everything in it the reader already knows or accepts
+on sight; nothing in it is proved. The shape is a fairy tale: once upon a time (Situation),
+then one day (Complication), so what do we do (Question), here is what (Answer).
+
+Dose follows common ground, not habit. A reader who commissioned the document holds the
+whole Situation — restating it spends their attention and reads as padding. A circulation
+list that was not in the room holds none of it, and the Situation has to be supplied at the
+level of the least-informed reader who must act.
+
+| Anti-pattern | Why it fails | Fix |
+|---|---|---|
+| Heading &quot;Introduction&quot;, &quot;Background&quot;, &quot;Context&quot; | the point it makes is not on the same level of abstraction as the key line | run the story as prose, no heading |
+| Statement of purpose (&quot;the purpose of this memo is to…&quot;) | names the topic, answers nothing, and is not a Situation either | delete; open with the Situation or the Answer |
+| Long run-up (&quot;as you know, last quarter we worked hard…&quot;) | Situation-shaped padding that never reaches a Complication | cover the sentence: if the Complication still bites, cut it |
+| Situation the reader would argue with | it needs proof, so it is an argument, not common ground | move it below, as a support under the key line |
+| SCQ labels or subheadings on a four-sentence note | apparatus wider than the document | answer first, the reasons in the same sentence |
+| The Question never reaches the page | S and C delivered, the reader left to guess what is answered | one literal question, or a first line it is visibly the answer to |
+
+## Order types
+
+| Type | Use when | Key question |
+|---|---|---|
+| Time | Process, change, causal chain, stages | What comes first, second, third |
+| Structure | The whole splits into parts: functions, regions, units, layers | What parts make up the whole |
+| Ranking | Elements rank by size, risk, benefit, importance | What matters most, and why |
+| Deduction | A chain of premises leading to a conclusion | If A and B hold, what follows |
+| Induction | Independent observations rolling up into one conclusion | What do these facts have in common |
+
+Time / structure / ranking govern how you group and present. Deduction / induction
+govern how the argument unfolds. Both questions need an answer; they are not
+alternatives to each other.
+
+## MECE
+
+- **ME — no overlaps.** Two branches must not claim the same content. If a fact fits
+  two branches equally, the split is wrong.
+- **CE — no gaps.** The branches together cover the relevant field. Name the field
+  first, then check coverage against it.
+- **No false grouping.** A tidy-looking list can reflect the author&#x27;s association
+  chain rather than the structure of the subject. Ask: is this how the subject is
+  built, or how I happened to recall it?
+
+## Failure catalogue
+
+| Failure | What it looks like | Fix |
+|---|---|---|
+| Top does not answer | &quot;A memo about project X&quot; instead of &quot;we recommend X because…&quot; | Turn the topic into a question, then answer it |
+| Mixed kinds | One group holds reasons, steps, numbers and risks | Split into same-kind classes |
+| No order | Arguments sit in recall order | Assign time / structure / ranking / deduction / induction |
+| Non-MECE split | Categories overlap or leave a hole | Reformulate branches, check the boundary |
+| False deduction | Sounds like logic, but the middle premise is never proven | Recast as induction or comparison |
+| Hidden structure | A good idea drowned in paragraphs | Headings, key line, numbering, slides |
+| Missing intermediate conclusion | A fact jumps straight to a recommendation | Insert the conclusion the fact actually supports |
+| Duplicate branches in disguise | Two elements that say the same thing are presented as different lines of action | Cover one branch: if the rest still answer the question, merge it. The real second branch is usually demoted among the observations |
+| Right kind, wrong kind | The group is internally uniform but answers a different question than the reader&#x27;s | Re-derive the kind from the question, then refill the group |
+
+## Scoring rubric
+
+Five axes, 0–2 each, maximum 10.
+
+| Axis | 0 | 1 | 2 |
+|---|---|---|---|
+| Top | No answer | Answer is vague | Precise and actionable |
+| Same-kind groups | Full mix | Partly mixed | One kind per group |
+| Order | Unexplainable | Formally present | Explicable and useful to the reader |
+| MECE | Clear gaps and overlaps | Some doubtful spots | Overlaps and gaps minimal |
+| Display | Solid prose | Partly visible | Hierarchy readable in seconds |
+
+Bands: `0–3` not structured yet · `4–6` baseline workable · `7–8` good working level ·
+`9–10` executive level.
+
+Note: the source report&#x27;s interpretation bands run to 12 points while its own five
+axes cap at 10. This file uses the 10-point maximum and the bands above.
+
+## Reviewer checklist
+
+- Which question does this document answer?
+- Can the top be challenged without challenging any single support?
+- Is there a conclusion hiding below where it belongs?
+- Does the text jump from fact to recommendation with nothing in between?
+- Would a different order type serve the reader better?
+</code></pre>
+        </section>
+        <section class="section skill-file" id="templates-md" aria-labelledby="templates-md-h">
+          <h2 class="subtitle" id="templates-md-h"><code class="mono">===== references/templates.md =====</code></h2>
+          <p class="label">3&nbsp;742&nbsp;Б · sha256 <code class="mono">9be36d71f023001a</code> · <a class="link" href="https://github.com/welltraum/minto/blob/f4813ce76aa4da6c0296c9ee558889238ffcbd8a/plugins/minto/skills/minto/references/templates.md">GitHub, f4813ce</a></p>
+          <pre class="prompt-src prompt-src--tall" lang="en"><code># Render templates
+
+Skeletons only. Translate the labels into the output language, keep the order.
+Drop a section rather than filling it with filler; say which section you dropped.
+
+## Email / message
+
+```text
+Subject: &lt;the answer in one line&gt;
+
+Situation:   &lt;what the reader already knows and will agree with&gt;
+Complication:&lt;what changed, what blocks, why a choice is needed now&gt;
+Answer:      &lt;what you propose or assert&gt;
+
+Why:
+1. &lt;reason 1&gt;
+2. &lt;reason 2&gt;
+3. &lt;reason 3&gt;
+
+What I need now: &lt;decision / sign-off / comment, by when&gt;
+```
+
+The labels are a drafting skeleton, not the required output. For a reader who was not in
+the room, deliver the same Situation → Complication as running prose; for a reader who
+commissioned the document, the request itself is the Situation and one clause covers it.
+
+For a chat message compress to three lines: answer, two strongest reasons, the ask.
+No SCQ ceremony in Slack.
+
+## Decision memo
+
+```text
+Decision to make: &lt;one sentence&gt;
+Context:          &lt;2–3 lines: situation + complication&gt;
+Options:          A. … B. … C. …
+Criteria:         &lt;3–4 comparison criteria, the same for every option&gt;
+Recommendation:   &lt;which one and why&gt;
+Risks / guardrails: &lt;what would make this wrong, and what limits it&gt;
+```
+
+The options must be same-kind and non-overlapping, and the criteria must be applied
+to all of them — one criterion silently used on one option only is the classic defect
+here.
+
+## Deck storyline
+
+```text
+Slide 1  Executive answer — self-sufficient, readable alone
+Slide 2  Why this is a question now (situation + complication)
+Slide 3  Argument 1
+Slide 4  Argument 2
+Slide 5  Argument 3
+Slide 6+ Backup: data, calculations, risks, next steps
+```
+
+Backup slides support; they never repeat the argument slides.
+
+## One-pager for sign-off
+
+```text
+▲ &lt;top: the decision&gt;
+
+● &lt;branch 1&gt;   owner · metric · date
+● &lt;branch 2&gt;   owner · metric · date
+● &lt;branch 3&gt;   owner · metric · date
+
+Next step: &lt;what happens after approval, and who moves&gt;
+```
+
+## Text skeleton — pyramid
+
+The default rendering of a pyramid after `write`: plain indentation, readable in
+any chat or terminal, no diagram syntax to fail.
+
+```text
+Top: &lt;the answer, one sentence&gt;
+  1. &lt;group 1&gt;
+     - &lt;support 1.1&gt;
+     - &lt;support 1.2&gt;
+  2. &lt;group 2&gt;
+     - &lt;support 2.1&gt;
+  3. &lt;group 3&gt;
+     - &lt;support 3.1&gt;
+```
+
+Every node is a claim, not a topic word. Depth follows the material — show a third
+level only where it exists.
+
+## Mermaid — pyramid
+
+```mermaid
+flowchart TD
+    A[&quot;Top: the answer&quot;] --&gt; B1[&quot;Group 1&quot;]
+    A --&gt; B2[&quot;Group 2&quot;]
+    A --&gt; B3[&quot;Group 3&quot;]
+    B1 --&gt; C11[&quot;Support 1.1&quot;]
+    B2 --&gt; C21[&quot;Support 2.1&quot;]
+    B3 --&gt; C31[&quot;Support 3.1&quot;]
+```
+
+Keep it to two levels below the top. Label every node with a claim, not a topic
+word. Mark a broken branch in the label itself (`&quot;⚠ Group 3 — mixed kinds&quot;`); node
+styling is not worth the noise.
+
+## Mermaid — SCQ ribbon
+
+```mermaid
+flowchart LR
+    S[&quot;Situation&quot;] --&gt; C[&quot;Complication&quot;]
+    C --&gt; Q[&quot;Question&quot;]
+    Q --&gt; A[&quot;Answer&quot;]
+    A --&gt; N[&quot;Next step&quot;]
+```
+
+## HTML artifact brief
+
+Only on an explicit request for a page or an interactive/shareable view. Create a
+self-contained file in the current workspace. Publish it only when the current host
+has a suitable publishing capability; otherwise return the local file.
+
+Show:
+
+- the pyramid by levels, top prominent, groups collapsible to their supports;
+- violations highlighted in place, with the marker legend visible;
+- a findings panel: what is broken, where, how to fix;
+- the score with its band.
+
+Do not: external CDN, remote fonts or images, horizontal page scroll (wide diagrams
+scroll inside their own container), light-only styling, a favicon that changes
+between redeploys.
+</code></pre>
+        </section>
+        <p class="section"><a class="link small" href="../../eval-map/">Вернуться к&nbsp;карте</a></p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="page site-footer__inner">
+        <div class="brand site-footer__brand">
+          <span class="brand__mark units" data-shape="pyramid" aria-hidden="true">
+            <span class="units__row"><span class="unit"></span></span>
+            <span class="units__row"><span class="unit"></span><span class="unit"></span></span>
+            <span class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span></span>
+          </span>
+          <span class="brand__word">Minto</span>
+        </div>
+        <p class="small">Навык приводит в&nbsp;порядок аргумент, прежде чем править слова. Материал книги Барбары Минто принадлежит правообладателям; код навыка&nbsp;&mdash; под лицензией MIT.</p>
+        <nav aria-label="Ссылки">
+          <a class="nav-link" href="https://github.com/welltraum/minto">GitHub</a>
+          <a class="nav-link" href="https://github.com/welltraum/minto/blob/main/CHANGELOG.md">Изменения</a>
+          <a class="nav-link" href="../../../eval-map/skill/">English</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="../../../assets/app.js?v=10" defer></script>
+  </body>
+</html>
