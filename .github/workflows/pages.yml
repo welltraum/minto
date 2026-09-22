@@ -6,6 +6,8 @@ on:
       - "site/**"
       - "scripts/check_site.py"
       - "scripts/check_benchmark_numbers.py"
+      - "scripts/build_eval_map.py"
+      - "scripts/eval-map.template.html"
       - "eval/runs/v1.7.0-final/**"
       - "eval/report-v1.7.0.md"
       - ".github/workflows/pages.yml"
@@ -16,6 +18,8 @@ on:
       - "site/**"
       - "scripts/check_site.py"
       - "scripts/check_benchmark_numbers.py"
+      - "scripts/build_eval_map.py"
+      - "scripts/eval-map.template.html"
       - "eval/runs/v1.7.0-final/**"
       - "eval/report-v1.7.0.md"
       - ".github/workflows/pages.yml"
@@ -37,6 +41,9 @@ jobs:
 
       - name: Validate static site
         run: python3 scripts/check_site.py
+
+      - name: Eval map is what the run renders
+        run: python3 scripts/build_eval_map.py --run v1.7.0-final --check
 
       - name: Validate benchmark figures
         run: python3 scripts/check_benchmark_numbers.py --run v1.7.0-final

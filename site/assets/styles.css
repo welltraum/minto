@@ -698,7 +698,155 @@ body { margin: 0; overflow-x: clip; }
 .prompt .subtitle { color: var(--mr-paper); }
 .prompt .small { color: var(--mr-stone); max-width: 62ch; }
 
-/* ---------- 11. wider viewports ---------- */
+/* ---------- 11. the eval map ---------- */
+
+/* The matrix is 88 squares of the same atom the rest of the page is drawn from:
+   a hard square whose ink density is the size of the change. Gains take ink,
+   losses take hot — the page's one honesty channel — and no change stays paper,
+   so a quiet row reads as quiet. Mustard is not spent here: nothing in a
+   measurement is the answer. */
+
+.map-intro { display: grid; gap: 14px; }
+.map-intro__lede { max-width: var(--measure); }
+.map-intro__run { color: var(--mr-ash); }
+
+.map-measure__label { width: 100%; margin-bottom: 2px; color: var(--mr-ash); }
+
+.map-panel { margin-bottom: 26px; }
+.map-panel__title { margin-bottom: 12px; }
+
+/* Mirai gives the scroller its overflow; the region role and the tab stop are
+   ours, because a matrix a keyboard cannot reach is a matrix half the readers
+   never see. */
+.map__scroll { border: var(--rule) solid var(--mr-line); border-radius: var(--mr-radius); }
+
+.map__table {
+  --map-col: 56px;
+  /* Wide enough that the model headers never squeeze the case column; below
+     this the scroller takes over rather than the layout compressing. */
+  min-width: 1040px;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.map-panel__note { max-width: var(--measure); margin-bottom: 14px; color: var(--mr-coal-soft); }
+
+.map__head { padding: 12px 8px; vertical-align: bottom; }
+/* Mirai keeps table headers on one line; a model name may take two here, which
+   is what stops eight of them from starving the case column. */
+.map__head--model, .map__head--avg { text-align: center; white-space: normal; }
+.map__head--model { min-width: 92px; }
+.map__head--avg { min-width: 64px; }
+.map__head--case { width: 216px; min-width: 216px; padding-left: 14px; }
+
+/* The case column stays put while eight models scroll past it. Mirai's own
+   sticky helper carries a drop shadow, and this page lifts nothing with shadow;
+   a hairline does the separating instead. The background is not decoration —
+   without it the scrolling matrix shows straight through. */
+.map__case {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  width: 216px;
+  min-width: 216px;
+  padding: 10px var(--pad) 10px 14px;
+  text-align: left;
+  vertical-align: middle;
+  background: var(--mr-card);
+  border-right: var(--rule) solid var(--mr-line);
+}
+.map__table tbody tr:hover .map__case { background: var(--mr-paper); }
+.map__case-name { display: block; font-weight: 500; color: var(--mr-ink); }
+.map__case-slug { display: block; margin-top: 2px; font-size: var(--fs-label); color: var(--mr-ash); }
+
+.map__mode {
+  padding: 18px var(--pad) 8px 14px;
+  text-align: left;
+  background: var(--mr-paper);
+  border-top: var(--rule) solid var(--mr-line);
+}
+.map__table tbody:first-of-type .map__mode { border-top: 0; }
+/* The banner spans the whole table, so its label rides along when the matrix
+   scrolls sideways. Pinning the label keeps the reader inside the right mode. */
+.map__mode-inner { position: sticky; left: 14px; display: inline-flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.map__mode-name { font-size: var(--fs-body); font-weight: 700; color: var(--mr-ink); }
+.map__mode-gloss { font-size: var(--fs-sm); color: var(--mr-ash); }
+
+.map__td { padding: 3px 2px; text-align: center; }
+.map__td--avg { padding-left: 10px; }
+
+/* One square, six steps of density. The sign is written in the cell, so the
+   shading is a second reading of the same fact and never the only one. */
+.map__cell {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--map-col);
+  min-height: 32px;
+  font-family: var(--mr-font-display);
+  font-weight: 700;
+  font-size: var(--fs-sm);
+  font-variant-numeric: tabular-nums;
+  color: var(--mr-ink);
+}
+.map__cell::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--mr-ink);
+  opacity: var(--heat-o, 0);
+}
+.map__cell--down::after { background: var(--mr-hot); }
+.map__cell[data-heat="1"] { --heat-o: 0.16; }
+.map__cell[data-heat="2"] { --heat-o: 0.32; }
+.map__cell[data-heat="3"] { --heat-o: 0.48; }
+.map__cell[data-heat="4"] { --heat-o: 0.64; }
+.map__cell[data-heat="5"] { --heat-o: 0.8; }
+/* Ink past 0.48 drops below 4.5:1 for ink text; hot never does, so only the
+   gain side flips. */
+.map__cell--up[data-heat="4"], .map__cell--up[data-heat="5"] { color: var(--mr-paper); }
+.map__cell--flat { color: var(--mr-ash); }
+.map__cell--na { color: var(--mr-ash); }
+
+.map__avg {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 32px;
+  font-family: var(--mr-font-display);
+  font-weight: 700;
+  font-size: var(--fs-sm);
+  font-variant-numeric: tabular-nums;
+  color: var(--mr-coal-soft);
+}
+
+.map-legend { display: grid; gap: 10px; margin-top: 4px; }
+.map-legend__label { color: var(--mr-ash); }
+.map-legend__scale { display: flex; flex-wrap: wrap; gap: 10px 22px; }
+.map-legend__step { display: flex; align-items: center; gap: 8px; }
+.map-legend__step .map__cell { min-width: 42px; }
+.map-legend__step .label { color: var(--mr-coal-soft); }
+
+.map-read__grid { display: grid; gap: 18px; margin-bottom: 22px; }
+.map-read__item { max-width: var(--measure); }
+.map-read__lead { font-weight: 600; color: var(--mr-ink); }
+.map-read__links { display: flex; flex-wrap: wrap; gap: 8px 22px; }
+
+.map-link { margin-top: 22px; }
+
+/* On a phone the case column is competing with the matrix for 375px, so it
+   gives up its width and its slug; the name already says which case it is. */
+@media (max-width: 699px) {
+  .map__case, .map__head--case { width: 148px; min-width: 148px; }
+  .map__case { padding-right: 12px; }
+  .map__case-slug { display: none; }
+  .map__table { --map-col: 50px; min-width: 900px; }
+}
+
+/* ---------- 12. wider viewports ---------- */
 
 @media (max-width: 699px) {
   .site-nav { display: none; }

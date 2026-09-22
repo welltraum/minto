@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="{{lang}}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>document.documentElement.classList.add("js");</script>
+    <meta name="theme-color" content="#f8f1e3">
+    <meta name="description" content="{{description}}">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="{{canonical}}">
+    <link rel="alternate" hreflang="en" href="https://welltraum.github.io/minto/eval-map/">
+    <link rel="alternate" hreflang="ru" href="https://welltraum.github.io/minto/ru/eval-map/">
+    <link rel="alternate" hreflang="x-default" href="https://welltraum.github.io/minto/eval-map/">
+    <link rel="icon" href="{{dir_assets}}/favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="{{dir_assets}}/fonts/GolosText-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{{dir_assets}}/fonts/Play-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="{{dir_assets}}/mirai.css?v={{v_mirai}}">
+    <link rel="stylesheet" href="{{dir_assets}}/styles.css?v={{v_styles}}">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Minto">
+    <meta property="og:title" content="{{og_title}}">
+    <meta property="og:description" content="{{description}}">
+    <meta property="og:url" content="{{canonical}}">
+    <meta property="og:image" content="https://welltraum.github.io/minto/assets/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Minto turns a scattered draft into a clear argument structure">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>{{title}}</title>
+  </head>
+  <body class="mr-root" data-tone="vivid">
+    <a class="skip-link mr-button" data-variant="ghost" data-size="sm" href="#main">{{skip}}</a>
+
+    <header class="site-header">
+      <div class="page site-header__inner">
+        <a class="brand" href="{{dir_home}}">
+          <span class="brand__mark units" data-shape="pyramid" role="img" aria-label="{{brand_alt}}">
+            <span class="units__row"><span class="unit"></span></span>
+            <span class="units__row"><span class="unit"></span><span class="unit"></span></span>
+            <span class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span></span>
+          </span>
+          <span class="brand__word">Minto</span>
+        </a>
+
+        <nav class="site-nav" aria-label="{{nav_sections}}">
+          <a class="nav-link" href="{{dir_home}}#cases">{{nav_examples}}</a>
+          <a class="nav-link" href="{{dir_home}}#evidence">{{nav_evidence}}</a>
+          <a class="nav-link" href="{{dir_home}}#modes">{{nav_modes}}</a>
+          <a class="nav-link" href="{{dir_home}}#install">{{nav_install}}</a>
+        </nav>
+
+        <nav class="lang" aria-label="{{nav_language}}">
+          <a class="nav-link" href="{{href_en}}" lang="en"{{current_en}}>EN</a>
+          <span class="label lang__sep" aria-hidden="true">/</span>
+          <a class="nav-link" href="{{href_ru}}" lang="ru"{{current_ru}}>RU</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page" id="main">
+
+      <section class="section map-intro" aria-labelledby="map-heading">
+        <h1 class="display" id="map-heading">{{h1}}</h1>
+        <p class="lead map-intro__lede">{{lede}}</p>
+        <p class="label map-intro__run">{{provenance}}</p>
+      </section>
+
+      <section class="section" id="map" aria-labelledby="map-measure-label" data-benchmark="{{run}}" data-benchmark-cells="{{cells}}">
+        <p class="label map-measure__label" id="map-measure-label">{{measure_label}}</p>
+        <div class="case-tabs" data-map-tablist aria-labelledby="map-measure-label">
+          <a class="case-tab" href="#map-structure" data-map-tab="structure">{{tab_structure}}</a>
+          <a class="case-tab" href="#map-quality" data-map-tab="quality">{{tab_quality}}</a>
+        </div>
+
+        <article class="map-panel" id="map-structure" data-map-panel="structure" aria-labelledby="map-structure-heading">
+          <h2 class="title map-panel__title" id="map-structure-heading">{{heading_structure}}</h2>
+          <p class="small map-panel__note">{{caption_structure}}</p>
+          <div class="mr-table__scroll map__scroll" role="region" tabindex="0" aria-labelledby="map-structure-heading">
+{{table_structure}}
+          </div>
+        </article>
+
+        <article class="map-panel" id="map-quality" data-map-panel="quality" aria-labelledby="map-quality-heading">
+          <h2 class="title map-panel__title" id="map-quality-heading">{{heading_quality}}</h2>
+          <p class="small map-panel__note">{{caption_quality}}</p>
+          <div class="mr-table__scroll map__scroll" role="region" tabindex="0" aria-labelledby="map-quality-heading">
+{{table_quality}}
+          </div>
+        </article>
+
+        <div class="map-legend">
+          <p class="label map-legend__label">{{legend_label}}</p>
+          <ul class="map-legend__scale">
+            <li class="map-legend__step"><span class="map__cell map__cell--down" data-heat="4" aria-hidden="true">&minus;4</span><span class="label">{{legend_down}}</span></li>
+            <li class="map-legend__step"><span class="map__cell map__cell--flat" data-heat="0" aria-hidden="true">0</span><span class="label">{{legend_zero}}</span></li>
+            <li class="map-legend__step"><span class="map__cell map__cell--up" data-heat="4" aria-hidden="true">+4</span><span class="label">{{legend_up}}</span></li>
+            <li class="map-legend__step"><span class="map__cell map__cell--na" aria-hidden="true">&minus;</span><span class="label">{{na}}</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section map-read" aria-labelledby="map-read-heading">
+        <h2 class="headline" id="map-read-heading">{{read_heading}}</h2>
+        <div class="map-read__grid">
+          <p class="body map-read__item"><b class="map-read__lead">{{read_1_title}}</b> {{read_1_body}}</p>
+          <p class="body map-read__item"><b class="map-read__lead">{{read_2_title}}</b> {{read_2_body}}</p>
+          <p class="body map-read__item"><b class="map-read__lead">{{read_3_title}}</b> {{read_3_body}}</p>
+          <p class="body map-read__item"><b class="map-read__lead">{{read_4_title}}</b> {{read_4_body}}</p>
+        </div>
+        <p class="map-read__links">
+          <a class="link small" href="https://github.com/welltraum/minto/blob/main/eval/report-{{run_short}}.md">{{methodology}}<svg class="link-mark" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 10 10 2M4.5 2H10v5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+          <a class="link small" href="{{dir_home}}">{{back}}</a>
+        </p>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="page site-footer__inner">
+        <div class="brand site-footer__brand">
+          <span class="brand__mark units" data-shape="pyramid" aria-hidden="true">
+            <span class="units__row"><span class="unit"></span></span>
+            <span class="units__row"><span class="unit"></span><span class="unit"></span></span>
+            <span class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span></span>
+          </span>
+          <span class="brand__word">Minto</span>
+        </div>
+        <p class="small">{{footer_note}}</p>
+        <nav aria-label="{{nav_links}}">
+          <a class="nav-link" href="https://github.com/welltraum/minto">GitHub</a>
+          <a class="nav-link" href="https://github.com/welltraum/minto/blob/main/CHANGELOG.md">{{footer_changelog}}</a>
+          <a class="nav-link" href="{{dir_other}}">{{footer_switch}}</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="{{dir_assets}}/app.js?v={{v_app}}" defer></script>
+  </body>
+</html>

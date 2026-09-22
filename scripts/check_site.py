@@ -14,6 +14,8 @@ HTML_FILES = tuple(SITE.rglob("*.html"))
 REQUIRED_FILES = (
     SITE / "index.html",
     SITE / "ru" / "index.html",
+    SITE / "eval-map" / "index.html",
+    SITE / "ru" / "eval-map" / "index.html",
     SITE / "404.html",
     SITE / "assets" / "styles.css",
     SITE / "assets" / "app.js",

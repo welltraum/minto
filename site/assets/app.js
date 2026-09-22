@@ -446,33 +446,40 @@
   restartMotion();
   motionPreference.addEventListener?.("change", restartMotion);
 
-  const tabs = [...document.querySelectorAll("[data-case-tab]")];
-  const panels = [...document.querySelectorAll("[data-case-panel]")];
+  // Two surfaces need the same control: the case tabs here and the measure
+  // switch on the eval map. Both ship as real in-page links so that without
+  // JavaScript every panel stays in the document; this only upgrades them.
+  const bindTabs = ({ tabAttr, panelAttr, tablist, prefix }) => {
+    const tabs = [...document.querySelectorAll(`[${tabAttr}]`)];
+    const panels = [...document.querySelectorAll(`[${panelAttr}]`)];
+    const key = tabAttr.replace("data-", "").replace(/-(\w)/g, (_, c) => c.toUpperCase());
+    const panelKey = panelAttr.replace("data-", "").replace(/-(\w)/g, (_, c) => c.toUpperCase());
 
-  if (tabs.length && panels.length) {
-    const setCase = (name) => {
+    if (!tabs.length || !panels.length) return;
+
+    const select = (name) => {
       tabs.forEach((tab) => {
-        const selected = tab.dataset.caseTab === name;
+        const selected = tab.dataset[key] === name;
         tab.setAttribute("aria-selected", String(selected));
         tab.setAttribute("tabindex", selected ? "0" : "-1");
       });
 
       panels.forEach((panel) => {
-        panel.hidden = panel.dataset.casePanel !== name;
+        panel.hidden = panel.dataset[panelKey] !== name;
       });
     };
 
     // Roles first: aria-selected on an <a> only means anything once the
     // element is a tab.
-    document.querySelector("[data-tablist]")?.setAttribute("role", "tablist");
+    document.querySelector(tablist)?.setAttribute("role", "tablist");
 
     tabs.forEach((tab) => {
       tab.setAttribute("role", "tab");
-      tab.setAttribute("aria-controls", `case-${tab.dataset.caseTab}`);
+      tab.setAttribute("aria-controls", `${prefix}${tab.dataset[key]}`);
 
       tab.addEventListener("click", (event) => {
         event.preventDefault();
-        setCase(tab.dataset.caseTab);
+        select(tab.dataset[key]);
         history.replaceState(null, "", tab.hash);
       });
 
@@ -485,7 +492,7 @@
         const direction = ["ArrowDown", "ArrowRight"].includes(event.key) ? 1 : -1;
         const next = tabs[(tabs.indexOf(tab) + direction + tabs.length) % tabs.length];
         next.focus();
-        setCase(next.dataset.caseTab);
+        select(next.dataset[key]);
       });
     });
 
@@ -494,12 +501,26 @@
       panel.setAttribute("tabindex", "-1");
     });
 
-    const requested = window.location.hash.replace("#case-", "");
-    const initial = tabs.some((tab) => tab.dataset.caseTab === requested)
+    const requested = window.location.hash.replace(`#${prefix}`, "");
+    const initial = tabs.some((tab) => tab.dataset[key] === requested)
       ? requested
-      : tabs[0].dataset.caseTab;
-    setCase(initial);
-  }
+      : tabs[0].dataset[key];
+    select(initial);
+  };
+
+  bindTabs({
+    tabAttr: "data-case-tab",
+    panelAttr: "data-case-panel",
+    tablist: "[data-tablist]",
+    prefix: "case-",
+  });
+
+  bindTabs({
+    tabAttr: "data-map-tab",
+    panelAttr: "data-map-panel",
+    tablist: "[data-map-tablist]",
+    prefix: "map-",
+  });
 
   const navLinks = [...document.querySelectorAll("[data-section-link]")];
   const observedSections = navLinks

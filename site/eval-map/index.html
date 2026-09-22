@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>document.documentElement.classList.add("js");</script>
+    <meta name="theme-color" content="#f8f1e3">
+    <meta name="description" content="Eleven real writing jobs across eight models, judged with and without Minto. The same skill gains four points on one audit case and loses four on another.">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://welltraum.github.io/minto/eval-map/">
+    <link rel="alternate" hreflang="en" href="https://welltraum.github.io/minto/eval-map/">
+    <link rel="alternate" hreflang="ru" href="https://welltraum.github.io/minto/ru/eval-map/">
+    <link rel="alternate" hreflang="x-default" href="https://welltraum.github.io/minto/eval-map/">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="../assets/fonts/GolosText-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../assets/fonts/Play-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../assets/mirai.css?v=6">
+    <link rel="stylesheet" href="../assets/styles.css?v=10">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Minto">
+    <meta property="og:title" content="Eval Map: Minto measured case by case">
+    <meta property="og:description" content="Eleven real writing jobs across eight models, judged with and without Minto. The same skill gains four points on one audit case and loses four on another.">
+    <meta property="og:url" content="https://welltraum.github.io/minto/eval-map/">
+    <meta property="og:image" content="https://welltraum.github.io/minto/assets/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Minto turns a scattered draft into a clear argument structure">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Eval Map &mdash; Minto measured case by case</title>
+  </head>
+  <body class="mr-root" data-tone="vivid">
+    <a class="skip-link mr-button" data-variant="ghost" data-size="sm" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="page site-header__inner">
+        <a class="brand" href="../">
+          <span class="brand__mark units" data-shape="pyramid" role="img" aria-label="A pyramid of three rows">
+            <span class="units__row"><span class="unit"></span></span>
+            <span class="units__row"><span class="unit"></span><span class="unit"></span></span>
+            <span class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span></span>
+          </span>
+          <span class="brand__word">Minto</span>
+        </a>
+
+        <nav class="site-nav" aria-label="Sections">
+          <a class="nav-link" href="../#cases">Examples</a>
+          <a class="nav-link" href="../#evidence">Evidence</a>
+          <a class="nav-link" href="../#modes">Capabilities</a>
+          <a class="nav-link" href="../#install">Install</a>
+        </nav>
+
+        <nav class="lang" aria-label="Language">
+          <a class="nav-link" href="./" lang="en" aria-current="page">EN</a>
+          <span class="label lang__sep" aria-hidden="true">/</span>
+          <a class="nav-link" href="../ru/eval-map/" lang="ru">RU</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page" id="main">
+
+      <section class="section map-intro" aria-labelledby="map-heading">
+        <h1 class="display" id="map-heading">One overall score cannot say whether Minto helps</h1>
+        <p class="lead map-intro__lede">Claude Haiku 4.5 ran two audit cases in this run. On a set of headings its structure went from 2 out of 8 to 6. On a set of monthly reports it went from 6 down to 2. Same model, same mode, same skill, opposite results. That is why this evaluation is a map of cases rather than a single figure.</p>
+        <p class="label map-intro__run">Run v1.7.0-final &middot; 11 cases across 4 modes &middot; 8 models &middot; 172 blind verdicts over 86 pairs</p>
+      </section>
+
+      <section class="section" id="map" aria-labelledby="map-measure-label" data-benchmark="v1.7.0-final" data-benchmark-cells="172">
+        <p class="label map-measure__label" id="map-measure-label">Measure</p>
+        <div class="case-tabs" data-map-tablist aria-labelledby="map-measure-label">
+          <a class="case-tab" href="#map-structure" data-map-tab="structure">Structure, out of 8</a>
+          <a class="case-tab" href="#map-quality" data-map-tab="quality">Quality, out of 10</a>
+        </div>
+
+        <article class="map-panel" id="map-structure" data-map-panel="structure" aria-labelledby="map-structure-heading">
+          <h2 class="title map-panel__title" id="map-structure-heading">Change in structure, with Minto and without</h2>
+          <p class="small map-panel__note">Each cell is one judged document: its structure score with Minto minus the same model&rsquo;s score without it. The most structure can score is 8 points.</p>
+          <div class="mr-table__scroll map__scroll" role="region" tabindex="0" aria-labelledby="map-structure-heading">
+              <table class="mr-table__table map__table">
+                <caption class="visually-hidden">Change in structure by case and model, run v1.7.0-final</caption>
+                <thead>
+                  <tr>
+                    <th class="mr-table__th map__head map__head--case" scope="col">Case</th>
+                    <th class="mr-table__th map__head map__head--model" scope="col">Claude Opus 5</th>
+                    <th class="mr-table__th map__head map__head--model" scope="col">Claude Sonnet 5</th>
+                    <th class="mr-table__th map__head map__head--model" scope="col">Claude Haiku 4.5</th>
+                    <th class="mr-table__th map__head map__head--model" scope="col">Codex gpt-5.6-terra</th>
+                    <th class="mr-table__th map__head map__head--model" scope="col">gpt-oss-120b</th>
+                    <th class="mr-table__th map__head map__head--model" scope="col">qwen3.6-35b-a3b</th>
+                    <th class="mr-table__th map__head map__head--model" scope="col">qwen3.6-fp8</th>
+                    <th class="mr-table__th map__head map__head--model" scope="col">qwen3.8-27b</th>
+                    <th class="mr-table__th map__head map__head--avg" scope="col">Mean</th>
+                  </tr>
+                </thead>
+                <tbody class="map__group" data-map-mode="write">
+                  <tr>
+                    <th class="mr-table__td map__mode" scope="rowgroup" colspan="10">
+                      <span class="map__mode-inner">
+                        <code class="map__mode-name">write</code>
+                        <span class="map__mode-gloss">Create and rework text</span>
+                      </span>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th class="mr-table__td map__case" scope="row">
+                      <span class="map__case-name">A proposal to the chief executive</span>
+                      <code class="map__case-slug">01-big-chief</code>
+                    </th>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="structure" data-heat="5" data-cell-fixture="01-big-chief" data-cell-engine="opus5" data-structure-control="2" data-structure-skill="7" data-structure-delta="5" data-quality-control="9" data-quality-skill="10" data-quality-delta="1">+5<span class="visually-hidden">, Claude Opus 5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="structure" data-heat="0" data-cell-fixture="01-big-chief" data-cell-engine="sonnet5" data-structure-control="2" data-structure-skill="2" data-structure-delta="0" data-quality-control="8" data-quality-skill="9" data-quality-delta="1">0<span class="visually-hidden">, Claude Sonnet 5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="structure" data-heat="4" data-cell-fixture="01-big-chief" data-cell-engine="haiku45" data-structure-control="1" data-structure-skill="5" data-structure-delta="4" data-quality-control="7" data-quality-skill="7" data-quality-delta="0">+4<span class="visually-hidden">, Claude Haiku 4.5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="structure" data-heat="0" data-cell-fixture="01-big-chief" data-cell-engine="codex" data-structure-control="2" data-structure-skill="2" data-structure-delta="0" data-quality-control="8" data-quality-skill="8" data-quality-delta="0">0<span class="visually-hidden">, Codex gpt-5.6-terra</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="structure" data-heat="0" data-cell-fixture="01-big-chief" data-cell-engine="gpt-oss-120b" data-structure-control="3" data-structure-skill="3" data-structure-delta="0" data-quality-control="5" data-quality-skill="8" data-quality-delta="3">0<span class="visually-hidden">, gpt-oss-120b</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--down" data-cell data-cell-measure="structure" data-heat="1" data-cell-fixture="01-big-chief" data-cell-engine="qwen3.6-35b-a3b" data-structure-control="2" data-structure-skill="1" data-structure-delta="-1" data-quality-control="9" data-quality-skill="8" data-quality-delta="-1">−1<span class="visually-hidden">, qwen3.6-35b-a3b</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="structure" data-heat="2" data-cell-fixture="01-big-chief" data-cell-engine="qwen3.6-fp8" data-structure-control="1" data-structure-skill="3" data-structure-delta="2" data-quality-control="8" data-quality-skill="10" data-quality-delta="2">+2<span class="visually-hidden">, qwen3.6-fp8</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--down" data-cell data-cell-measure="structure" data-heat="1" data-cell-fixture="01-big-chief" data-cell-engine="qwen3.8-27b" data-structure-control="2" data-structure-skill="1" data-structure-delta="-1" data-quality-control="9" data-quality-skill="8" data-quality-delta="-1">−1<span class="visually-hidden">, qwen3.8-27b</span></span></td>
+                    <td class="mr-table__td map__td map__td--avg"><span class="map__avg" data-row-avg data-row-measure="structure" data-row-fixture="01-big-chief">+1.1</span></td>
+                  </tr>
+                  <tr>
+                    <th class="mr-table__td map__case" scope="row">
+                      <span class="map__case-name">A memo on composing costs</span>
+                      <code class="map__case-slug">02-ttv</code>
+                    </th>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="structure" data-heat="3" data-cell-fixture="02-ttv" data-cell-engine="opus5" data-structure-control="4" data-structure-skill="7" data-structure-delta="3" data-quality-control="6" data-quality-skill="8" data-quality-delta="2">+3<span class="visually-hidden">, Claude Opus 5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--down" data-cell data-cell-measure="structure" data-heat="1" data-cell-fixture="02-ttv" data-cell-engine="sonnet5" data-structure-control="6" data-structure-skill="5" data-structure-delta="-1" data-quality-control="7" data-quality-skill="7" data-quality-delta="0">−1<span class="visually-hidden">, Claude Sonnet 5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="structure" data-heat="0" data-cell-fixture="02-ttv" data-cell-engine="haiku45" data-structure-control="5" data-structure-skill="5" data-structure-delta="0" data-quality-control="8" data-quality-skill="7" data-quality-delta="-1">0<span class="visually-hidden">, Claude Haiku 4.5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--down" data-cell data-cell-measure="structure" data-heat="1" data-cell-fixture="02-ttv" data-cell-engine="codex" data-structure-control="6" data-structure-skill="5" data-structure-delta="-1" data-quality-control="7" data-quality-skill="8" data-quality-delta="1">−1<span class="visually-hidden">, Codex gpt-5.6-terra</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="structure" data-heat="1" data-cell-fixture="02-ttv" data-cell-engine="gpt-oss-120b" data-structure-control="4" data-structure-skill="5" data-structure-delta="1" data-quality-control="4" data-quality-skill="7" data-quality-delta="3">+1<span class="visually-hidden">, gpt-oss-120b</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="structure" data-heat="1" data-cell-fixture="02-ttv" data-cell-engine="qwen3.6-35b-a3b" data-structure-control="5" data-structure-skill="6" data-structure-delta="1" data-quality-control="8" data-quality-skill="7" data-quality-delta="-1">+1<span class="visually-hidden">, qwen3.6-35b-a3b</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--down" data-cell data-cell-measure="structure" data-heat="1" data-cell-fixture="02-ttv" data-cell-engine="qwen3.6-fp8" data-structure-control="6" data-structure-skill="5" data-structure-delta="-1" data-quality-control="7" data-quality-skill="7" data-quality-delta="0">−1<span class="visually-hidden">, qwen3.6-fp8</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--na" data-cell-missing data-cell-measure="structure" data-cell-fixture="02-ttv" data-cell-engine="qwen3.8-27b">−<span class="visually-hidden">no data, qwen3.8-27b</span></span></td>
+                    <td class="mr-table__td map__td map__td--avg"><span class="map__avg" data-row-avg data-row-measure="structure" data-row-fixture="02-ttv">+0.3</span></td>
+                  </tr>
+                  <tr>
+                    <th class="mr-table__td map__case" scope="row">
+                      <span class="map__case-name">A note before a meeting</span>
+                      <code class="map__case-slug">04-meeting-note</code>
+                    </th>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="structure" data-heat="2" data-cell-fixture="04-meeting-note" data-cell-engine="opus5" data-structure-control="4" data-structure-skill="6" data-structure-delta="2" data-quality-control="6" data-quality-skill="8" data-quality-delta="2">+2<span class="visually-hidden">, Claude Opus 5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="structure" data-heat="2" data-cell-fixture="04-meeting-note" data-cell-engine="sonnet5" data-structure-control="4" data-structure-skill="6" data-structure-delta="2" data-quality-control="6" data-quality-skill="8" data-quality-delta="2">+2<span class="visually-hidden">, Claude Sonnet 5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="structure" data-heat="0" data-cell-fixture="04-meeting-note" data-cell-engine="haiku45" data-structure-control="4" data-structure-skill="4" data-structure-delta="0" data-quality-control="6" data-quality-skill="7" data-quality-delta="1">0<span class="visually-hidden">, Claude Haiku 4.5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="structure" data-heat="1" data-cell-fixture="04-meeting-note" data-cell-engine="codex" data-structure-control="4" data-structure-skill="5" data-structure-delta="1" data-quality-control="7" data-quality-skill="7" data-quality-delta="0">+1<span class="visually-hidden">, Codex gpt-5.6-terra</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--down" data-cell data-cell-measure="structure" data-heat="1" data-cell-fixture="04-meeting-note" data-cell-engine="gpt-oss-120b" data-structure-control="4" data-structure-skill="3" data-structure-delta="-1" data-quality-control="5" data-quality-skill="3" data-quality-delta="-2">−1<span class="visually-hidden">, gpt-oss-120b</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="structure" data-heat="1" data-cell-fixture="04-meeting-note" data-cell-engine="qwen3.6-35b-a3b" data-structure-control="5" data-structure-skill="6" data-structure-delta="1" data-quality-control="7" data-quality-skill="9" data-quality-delta="2">+1<span class="visually-hidden">, qwen3.6-35b-a3b</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="structure" data-heat="0" data-cell-fixture="04-meeting-note" data-cell-engine="qwen3.6-fp8" data-structure-control="5" data-structure-skill="5" data-structure-delta="0" data-quality-control="7" data-quality-skill="7" data-quality-delta="0">0<span class="visually-hidden">, qwen3.6-fp8</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="structure" data-heat="0" data-cell-fixture="04-meeting-note" data-cell-engine="qwen3.8-27b" data-structure-control="4" data-structure-skill="4" data-structure-delta="0" data-quality-control="7" data-quality-skill="6" data-quality-delta="-1">0<span class="visually-hidden">, qwen3.8-27b</span></span></td>
+                    <td class="mr-table__td map__td map__td--avg"><span class="map__avg" data-row-avg data-row-measure="structure" data-row-fixture="04-meeting-note">+0.6</span></td>
+                  </tr>
+                  <tr>
+                    <th class="mr-table__td map__case" scope="row">
+                      <span class="map__case-name">The role of the board</span>
+                      <code class="map__case-slug">05-role-of-board</code>
+                    </th>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="structure" data-heat="3" data-cell-fixture="05-role-of-board" data-cell-engine="opus5" data-structure-control="1" data-structure-skill="4" data-structure-delta="3" data-quality-control="7" data-quality-skill="8" data-quality-delta="1">+3<span class="visually-hidden">, Claude Opus 5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--down" data-cell data-cell-measure="structure" data-heat="1" data-cell-fixture="05-role-of-board" data-cell-engine="sonnet5" data-structure-control="1" data-structure-skill="0" data-structure-delta="-1" data-quality-control="7" data-quality-skill="6" data-quality-delta="-1">−1<span class="visually-hidden">, Claude Sonnet 5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="structure" data-heat="2" data-cell-fixture="05-role-of-board" data-cell-engine="haiku45" data-structure-control="0" data-structure-skill="2" data-structure-delta="2" data-quality-control="5" data-quality-skill="7" data-quality-delta="2">+2<span class="visually-hidden">, Claude Haiku 4.5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="structure" data-heat="0" data-cell-fixture="05-role-of-board" data-cell-engine="codex" data-structure-control="1" data-structure-skill="1" data-structure-delta="0" data-quality-control="7" data-quality-skill="7" data-quality-delta="0">0<span class="visually-hidden">, Codex gpt-5.6-terra</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="structure" data-heat="2" data-cell-fixture="05-role-of-board" data-cell-engine="gpt-oss-120b" data-structure-control="1" data-structure-skill="3" data-structure-delta="2" data-quality-control="6" data-quality-skill="7" data-quality-delta="1">+2<span class="visually-hidden">, gpt-oss-120b</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="structure" data-heat="4" data-cell-fixture="05-role-of-board" data-cell-engine="qwen3.6-35b-a3b" data-structure-control="0" data-structure-skill="4" data-structure-delta="4" data-quality-control="6" data-quality-skill="7" data-quality-delta="1">+4<span class="visually-hidden">, qwen3.6-35b-a3b</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="structure" data-heat="0" data-cell-fixture="05-role-of-board" data-cell-engine="qwen3.6-fp8" data-structure-control="5" data-structure-skill="5" data-structure-delta="0" data-quality-control="8" data-quality-skill="8" data-quality-delta="0">0<span class="visually-hidden">, qwen3.6-fp8</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--down" data-cell data-cell-measure="structure" data-heat="1" data-cell-fixture="05-role-of-board" data-cell-engine="qwen3.8-27b" data-structure-control="1" data-structure-skill="0" data-structure-delta="-1" data-quality-control="7" data-quality-skill="6" data-quality-delta="-1">−1<span class="visually-hidden">, qwen3.8-27b</span></span></td>
+                    <td class="mr-table__td map__td map__td--avg"><span class="map__avg" data-row-avg data-row-measure="structure" data-row-fixture="05-role-of-board">+1.1</span></td>
+                  </tr>
+                  <tr>
+                    <th class="mr-table__td map__case" scope="row">
+                      <span class="map__case-name">A message about technical debt</span>
+                      <code class="map__case-slug">08-techdebt</code>
+                    </th>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="structure" data-heat="0" data-cell-fixture="08-techdebt" data-cell-engine="opus5" data-structure-control="8" data-structure-skill="8" data-structure-delta="0" data-quality-control="10" data-quality-skill="10" data-quality-delta="0">0<span class="visually-hidden">, Claude Opus 5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="structure" data-heat="1" data-cell-fixture="08-techdebt" data-cell-engine="sonnet5" data-structure-control="7" data-structure-skill="8" data-structure-delta="1" data-quality-control="9" data-quality-skill="10" data-quality-delta="1">+1<span class="visually-hidden">, Claude Sonnet 5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="structure" data-heat="0" data-cell-fixture="08-techdebt" data-cell-engine="haiku45" data-structure-control="6" data-structure-skill="6" data-structure-delta="0" data-quality-control="7" data-quality-skill="7" data-quality-delta="0">0<span class="visually-hidden">, Claude Haiku 4.5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="structure" data-heat="1" data-cell-fixture="08-techdebt" data-cell-engine="codex" data-structure-control="7" data-structure-skill="8" data-structure-delta="1" data-quality-control="8" data-quality-skill="10" data-quality-delta="2">+1<span class="visually-hidden">, Codex gpt-5.6-terra</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="structure" data-heat="2" data-cell-fixture="08-techdebt" data-cell-engine="gpt-oss-120b" data-structure-control="5" data-structure-skill="7" data-structure-delta="2" data-quality-control="6" data-quality-skill="8" data-quality-delta="2">+2<span class="visually-hidden">, gpt-oss-120b</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--down" data-cell data-cell-measure="structure" data-heat="1" data-cell-fixture="08-techdebt" data-cell-engine="qwen3.6-35b-a3b" data-structure-control="7" data-structure-skill="6" data-structure-delta="-1" data-quality-control="8" data-quality-skill="7" data-quality-delta="-1">−1<span class="visually-hidden">, qwen3.6-35b-a3b</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--down" data-cell data-cell-measure="structure" data-heat="1" data-cell-fixture="08-techdebt" data-cell-engine="qwen3.6-fp8" data-structure-control="7" data-structure-skill="6" data-structure-delta="-1" data-quality-control="8" data-quality-skill="7" data-quality-delta="-1">−1<span class="visually-hidden">, qwen3.6-fp8</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--down" data-cell data-cell-measure="structure" data-heat="1" data-cell-fixture="08-techdebt" data-cell-engine="qwen3.8-27b" data-structure-control="7" data-structure-skill="6" data-structure-delta="-1" data-quality-control="9" data-quality-skill="8" data-quality-delta="-1">−1<span class="visually-hidden">, qwen3.8-27b</span></span></td>
+                    <td class="mr-table__td map__td map__td--avg"><span class="map__avg" data-row-avg data-row-measure="structure" data-row-fixture="08-techdebt">+0.1</span></td>
+                  </tr>
+                  <tr>
+                    <th class="mr-table__td map__case" scope="row">
+                      <span class="map__case-name">A review of a large rollout</span>
+                      <code class="map__case-slug">10-rollout-review</code>
+                    </th>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="structure" data-heat="2" data-cell-fixture="10-rollout-review" data-cell-engine="opus5" data-structure-control="6" data-structure-skill="8" data-structure-delta="2" data-quality-control="7" data-quality-skill="10" data-quality-delta="3">+2<span class="visually-hidden">, Claude Opus 5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--down" data-cell data-cell-measure="structure" data-heat="1" data-cell-fixture="10-rollout-review" data-cell-engine="sonnet5" data-structure-control="8" data-structure-skill="7" data-structure-delta="-1" data-quality-control="10" data-quality-skill="9" data-quality-delta="-1">−1<span class="visually-hidden">, Claude Sonnet 5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="structure" data-heat="0" data-cell-fixture="10-rollout-review" data-cell-engine="haiku45" data-structure-control="5" data-structure-skill="5" data-structure-delta="0" data-quality-control="7" data-quality-skill="8" data-quality-delta="1">0<span class="visually-hidden">, Claude Haiku 4.5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="structure" data-heat="0" data-cell-fixture="10-rollout-review" data-cell-engine="codex" data-structure-control="8" data-structure-skill="8" data-structure-delta="0" data-quality-control="10" data-quality-skill="10" data-quality-delta="0">0<span class="visually-hidden">, Codex gpt-5.6-terra</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="structure" data-heat="0" data-cell-fixture="10-rollout-review" data-cell-engine="gpt-oss-120b" data-structure-control="3" data-structure-skill="3" data-structure-delta="0" data-quality-control="4" data-quality-skill="4" data-quality-delta="0">0<span class="visually-hidden">, gpt-oss-120b</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="structure" data-heat="1" data-cell-fixture="10-rollout-review" data-cell-engine="qwen3.6-35b-a3b" data-structure-control="5" data-structure-skill="6" data-structure-delta="1" data-quality-control="7" data-quality-skill="8" data-quality-delta="1">+1<span class="visually-hidden">, qwen3.6-35b-a3b</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="structure" data-heat="0" data-cell-fixture="10-rollout-review" data-cell-engine="qwen3.6-fp8" data-structure-control="6" data-structure-skill="6" data-structure-delta="0" data-quality-control="8" data-quality-skill="8" data-quality-delta="0">0<span class="visually-hidden">, qwen3.6-fp8</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--na" data-cell-missing data-cell-measure="structure" data-cell-fixture="10-rollout-review" data-cell-engine="qwen3.8-27b">−<span class="visually-hidden">no data, qwen3.8-27b</span></span></td>
+                    <td class="mr-table__td map__td map__td--avg"><span class="map__avg" data-row-avg data-row-measure="structure" data-row-fixture="10-rollout-review">+0.3</span></td>
+                  </tr>
+                  <tr>
+                    <th class="mr-table__td map__case" scope="row">
+                      <span class="map__case-name">A plain list, no pyramid</span>
+                      <code class="map__case-slug">11-plain-list</code>
+                    </th>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="structure" data-heat="0" data-cell-fixture="11-plain-list" data-cell-engine="opus5" data-structure-control="7" data-structure-skill="7" data-structure-delta="0" data-quality-control="8" data-quality-skill="9" data-quality-delta="1">0<span class="visually-hidden">, Claude Opus 5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="structure" data-heat="1" data-cell-fixture="11-plain-list" data-cell-engine="sonnet5" data-structure-control="3" data-structure-skill="4" data-structure-delta="1" data-quality-control="6" data-quality-skill="6" data-quality-delta="0">+1<span class="visually-hidden">, Claude Sonnet 5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="structure" data-heat="0" data-cell-fixture="11-plain-list" data-cell-engine="haiku45" data-structure-control="7" data-structure-skill="7" data-structure-delta="0" data-quality-control="8" data-quality-skill="9" data-quality-delta="1">0<span class="visually-hidden">, Claude Haiku 4.5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="structure" data-heat="0" data-cell-fixture="11-plain-list" data-cell-engine="codex" data-structure-control="4" data-structure-skill="4" data-structure-delta="0" data-quality-control="8" data-quality-skill="8" data-quality-delta="0">0<span class="visually-hidden">, Codex gpt-5.6-terra</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="structure" data-heat="1" data-cell-fixture="11-plain-list" data-cell-engine="gpt-oss-120b" data-structure-control="3" data-structure-skill="4" data-structure-delta="1" data-quality-control="5" data-quality-skill="7" data-quality-delta="2">+1<span class="visually-hidden">, gpt-oss-120b</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="structure" data-heat="2" data-cell-fixture="11-plain-list" data-cell-engine="qwen3.6-35b-a3b" data-structure-control="5" data-structure-skill="7" data-structure-delta="2" data-quality-control="9" data-quality-skill="9" data-quality-delta="0">+2<span class="visually-hidden">, qwen3.6-35b-a3b</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="structure" data-heat="3" data-cell-fixture="11-plain-list" data-cell-engine="qwen3.6-fp8" data-structure-control="4" data-structure-skill="7" data-structure-delta="3" data-quality-control="7" data-quality-skill="9" data-quality-delta="2">+3<span class="visually-hidden">, qwen3.6-fp8</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="structure" data-heat="3" data-cell-fixture="11-plain-list" data-cell-engine="qwen3.8-27b" data-structure-control="5" data-structure-skill="8" data-structure-delta="3" data-quality-control="7" data-quality-skill="10" data-quality-delta="3">+3<span class="visually-hidden">, qwen3.8-27b</span></span></td>
+                    <td class="mr-table__td map__td map__td--avg"><span class="map__avg" data-row-avg data-row-measure="structure" data-row-fixture="11-plain-list">+1.2</span></td>
+                  </tr>
+                </tbody>
+                <tbody class="map__group" data-map-mode="audit">
+                  <tr>
+                    <th class="mr-table__td map__mode" scope="rowgroup" colspan="10">
+                      <span class="map__mode-inner">
+                        <code class="map__mode-name">audit</code>
+                        <span class="map__mode-gloss">Check and find defects</span>
+                      </span>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th class="mr-table__td map__case" scope="row">
+                      <span class="map__case-name">A set of monthly reports</span>
+                      <code class="map__case-slug">03-period-graph-books</code>
+                    </th>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="structure" data-heat="0" data-cell-fixture="03-period-graph-books" data-cell-engine="opus5" data-structure-control="5" data-structure-skill="5" data-structure-delta="0" data-quality-control="6" data-quality-skill="7" data-quality-delta="1">0<span class="visually-hidden">, Claude Opus 5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--down" data-cell data-cell-measure="structure" data-heat="2" data-cell-fixture="03-period-graph-books" data-cell-engine="sonnet5" data-structure-control="6" data-structure-skill="4" data-structure-delta="-2" data-quality-control="7" data-quality-skill="7" data-quality-delta="0">−2<span class="visually-hidden">, Claude Sonnet 5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--down" data-cell data-cell-measure="structure" data-heat="4" data-cell-fixture="03-period-graph-books" data-cell-engine="haiku45" data-structure-control="6" data-structure-skill="2" data-structure-delta="-4" data-quality-control="8" data-quality-skill="6" data-quality-delta="-2">−4<span class="visually-hidden">, Claude Haiku 4.5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="structure" data-heat="0" data-cell-fixture="03-period-graph-books" data-cell-engine="codex" data-structure-control="5" data-structure-skill="5" data-structure-delta="0" data-quality-control="6" data-quality-skill="6" data-quality-delta="0">0<span class="visually-hidden">, Codex gpt-5.6-terra</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--down" data-cell data-cell-measure="structure" data-heat="1" data-cell-fixture="03-period-graph-books" data-cell-engine="gpt-oss-120b" data-structure-control="4" data-structure-skill="3" data-structure-delta="-1" data-quality-control="4" data-quality-skill="6" data-quality-delta="2">−1<span class="visually-hidden">, gpt-oss-120b</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="structure" data-heat="0" data-cell-fixture="03-period-graph-books" data-cell-engine="qwen3.6-35b-a3b" data-structure-control="4" data-structure-skill="4" data-structure-delta="0" data-quality-control="6" data-quality-skill="7" data-quality-delta="1">0<span class="visually-hidden">, qwen3.6-35b-a3b</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="structure" data-heat="0" data-cell-fixture="03-period-graph-books" data-cell-engine="qwen3.6-fp8" data-structure-control="4" data-structure-skill="4" data-structure-delta="0" data-quality-control="5" data-quality-skill="7" data-quality-delta="2">0<span class="visually-hidden">, qwen3.6-fp8</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--down" data-cell data-cell-measure="structure" data-heat="2" data-cell-fixture="03-period-graph-books" data-cell-engine="qwen3.8-27b" data-structure-control="6" data-structure-skill="4" data-structure-delta="-2" data-quality-control="7" data-quality-skill="6" data-quality-delta="-1">−2<span class="visually-hidden">, qwen3.8-27b</span></span></td>
+                    <td class="mr-table__td map__td map__td--avg"><span class="map__avg" data-row-avg data-row-measure="structure" data-row-fixture="03-period-graph-books">−1.1</span></td>
+                  </tr>
+                  <tr>
+                    <th class="mr-table__td map__case" scope="row">
+                      <span class="map__case-name">A set of headings</span>
+                      <code class="map__case-slug">07-headings-audit</code>
+                    </th>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="structure" data-heat="0" data-cell-fixture="07-headings-audit" data-cell-engine="opus5" data-structure-control="6" data-structure-skill="6" data-structure-delta="0" data-quality-control="7" data-quality-skill="9" data-quality-delta="2">0<span class="visually-hidden">, Claude Opus 5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="structure" data-heat="0" data-cell-fixture="07-headings-audit" data-cell-engine="sonnet5" data-structure-control="7" data-structure-skill="7" data-structure-delta="0" data-quality-control="8" data-quality-skill="9" data-quality-delta="1">0<span class="visually-hidden">, Claude Sonnet 5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="structure" data-heat="4" data-cell-fixture="07-headings-audit" data-cell-engine="haiku45" data-structure-control="2" data-structure-skill="6" data-structure-delta="4" data-quality-control="3" data-quality-skill="9" data-quality-delta="6">+4<span class="visually-hidden">, Claude Haiku 4.5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="structure" data-heat="3" data-cell-fixture="07-headings-audit" data-cell-engine="codex" data-structure-control="3" data-structure-skill="6" data-structure-delta="3" data-quality-control="4" data-quality-skill="8" data-quality-delta="4">+3<span class="visually-hidden">, Codex gpt-5.6-terra</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--down" data-cell data-cell-measure="structure" data-heat="1" data-cell-fixture="07-headings-audit" data-cell-engine="gpt-oss-120b" data-structure-control="5" data-structure-skill="4" data-structure-delta="-1" data-quality-control="5" data-quality-skill="6" data-quality-delta="1">−1<span class="visually-hidden">, gpt-oss-120b</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="structure" data-heat="1" data-cell-fixture="07-headings-audit" data-cell-engine="qwen3.6-35b-a3b" data-structure-control="5" data-structure-skill="6" data-structure-delta="1" data-quality-control="5" data-quality-skill="8" data-quality-delta="3">+1<span class="visually-hidden">, qwen3.6-35b-a3b</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="structure" data-heat="1" data-cell-fixture="07-headings-audit" data-cell-engine="qwen3.6-fp8" data-structure-control="5" data-structure-skill="6" data-structure-delta="1" data-quality-control="6" data-quality-skill="7" data-quality-delta="1">+1<span class="visually-hidden">, qwen3.6-fp8</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="structure" data-heat="1" data-cell-fixture="07-headings-audit" data-cell-engine="qwen3.8-27b" data-structure-control="5" data-structure-skill="6" data-structure-delta="1" data-quality-control="5" data-quality-skill="9" data-quality-delta="4">+1<span class="visually-hidden">, qwen3.8-27b</span></span></td>
+                    <td class="mr-table__td map__td map__td--avg"><span class="map__avg" data-row-avg data-row-measure="structure" data-row-fixture="07-headings-audit">+1.1</span></td>
+                  </tr>
+                </tbody>
+                <tbody class="map__group" data-map-mode="digest">
+                  <tr>
+                    <th class="mr-table__td map__mode" scope="rowgroup" colspan="10">
+                      <span class="map__mode-inner">
+                        <code class="map__mode-name">digest</code>
+                        <span class="map__mode-gloss">Report on what was read</span>
+                      </span>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th class="mr-table__td map__case" scope="row">
+                      <span class="map__case-name">A digest of several sources</span>
+                      <code class="map__case-slug">09-sources-digest</code>
+                    </th>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="structure" data-heat="3" data-cell-fixture="09-sources-digest" data-cell-engine="opus5" data-structure-control="5" data-structure-skill="8" data-structure-delta="3" data-quality-control="6" data-quality-skill="10" data-quality-delta="4">+3<span class="visually-hidden">, Claude Opus 5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--down" data-cell data-cell-measure="structure" data-heat="1" data-cell-fixture="09-sources-digest" data-cell-engine="sonnet5" data-structure-control="6" data-structure-skill="5" data-structure-delta="-1" data-quality-control="8" data-quality-skill="9" data-quality-delta="1">−1<span class="visually-hidden">, Claude Sonnet 5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="structure" data-heat="0" data-cell-fixture="09-sources-digest" data-cell-engine="haiku45" data-structure-control="6" data-structure-skill="6" data-structure-delta="0" data-quality-control="9" data-quality-skill="8" data-quality-delta="-1">0<span class="visually-hidden">, Claude Haiku 4.5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="structure" data-heat="2" data-cell-fixture="09-sources-digest" data-cell-engine="codex" data-structure-control="6" data-structure-skill="8" data-structure-delta="2" data-quality-control="8" data-quality-skill="9" data-quality-delta="1">+2<span class="visually-hidden">, Codex gpt-5.6-terra</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="structure" data-heat="0" data-cell-fixture="09-sources-digest" data-cell-engine="gpt-oss-120b" data-structure-control="4" data-structure-skill="4" data-structure-delta="0" data-quality-control="5" data-quality-skill="5" data-quality-delta="0">0<span class="visually-hidden">, gpt-oss-120b</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="structure" data-heat="0" data-cell-fixture="09-sources-digest" data-cell-engine="qwen3.6-35b-a3b" data-structure-control="6" data-structure-skill="6" data-structure-delta="0" data-quality-control="9" data-quality-skill="8" data-quality-delta="-1">0<span class="visually-hidden">, qwen3.6-35b-a3b</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="structure" data-heat="3" data-cell-fixture="09-sources-digest" data-cell-engine="qwen3.6-fp8" data-structure-control="5" data-structure-skill="8" data-structure-delta="3" data-quality-control="8" data-quality-skill="10" data-quality-delta="2">+3<span class="visually-hidden">, qwen3.6-fp8</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="structure" data-heat="1" data-cell-fixture="09-sources-digest" data-cell-engine="qwen3.8-27b" data-structure-control="7" data-structure-skill="8" data-structure-delta="1" data-quality-control="10" data-quality-skill="10" data-quality-delta="0">+1<span class="visually-hidden">, qwen3.8-27b</span></span></td>
+                    <td class="mr-table__td map__td map__td--avg"><span class="map__avg" data-row-avg data-row-measure="structure" data-row-fixture="09-sources-digest">+1.0</span></td>
+                  </tr>
+                </tbody>
+                <tbody class="map__group" data-map-mode="viz">
+                  <tr>
+                    <th class="mr-table__td map__mode" scope="rowgroup" colspan="10">
+                      <span class="map__mode-inner">
+                        <code class="map__mode-name">viz</code>
+                        <span class="map__mode-gloss">Show the structure</span>
+                      </span>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th class="mr-table__td map__case" scope="row">
+                      <span class="map__case-name">A pyramid of an existing memo</span>
+                      <code class="map__case-slug">06-ttw-viz</code>
+                    </th>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="structure" data-heat="1" data-cell-fixture="06-ttw-viz" data-cell-engine="opus5" data-structure-control="7" data-structure-skill="8" data-structure-delta="1" data-quality-control="9" data-quality-skill="10" data-quality-delta="1">+1<span class="visually-hidden">, Claude Opus 5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--down" data-cell data-cell-measure="structure" data-heat="2" data-cell-fixture="06-ttw-viz" data-cell-engine="sonnet5" data-structure-control="8" data-structure-skill="6" data-structure-delta="-2" data-quality-control="10" data-quality-skill="8" data-quality-delta="-2">−2<span class="visually-hidden">, Claude Sonnet 5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="structure" data-heat="2" data-cell-fixture="06-ttw-viz" data-cell-engine="haiku45" data-structure-control="5" data-structure-skill="7" data-structure-delta="2" data-quality-control="6" data-quality-skill="9" data-quality-delta="3">+2<span class="visually-hidden">, Claude Haiku 4.5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="structure" data-heat="0" data-cell-fixture="06-ttw-viz" data-cell-engine="codex" data-structure-control="7" data-structure-skill="7" data-structure-delta="0" data-quality-control="9" data-quality-skill="9" data-quality-delta="0">0<span class="visually-hidden">, Codex gpt-5.6-terra</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--down" data-cell data-cell-measure="structure" data-heat="1" data-cell-fixture="06-ttw-viz" data-cell-engine="gpt-oss-120b" data-structure-control="8" data-structure-skill="7" data-structure-delta="-1" data-quality-control="9" data-quality-skill="9" data-quality-delta="0">−1<span class="visually-hidden">, gpt-oss-120b</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="structure" data-heat="0" data-cell-fixture="06-ttw-viz" data-cell-engine="qwen3.6-35b-a3b" data-structure-control="7" data-structure-skill="7" data-structure-delta="0" data-quality-control="9" data-quality-skill="9" data-quality-delta="0">0<span class="visually-hidden">, qwen3.6-35b-a3b</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--down" data-cell data-cell-measure="structure" data-heat="2" data-cell-fixture="06-ttw-viz" data-cell-engine="qwen3.6-fp8" data-structure-control="8" data-structure-skill="6" data-structure-delta="-2" data-quality-control="10" data-quality-skill="8" data-quality-delta="-2">−2<span class="visually-hidden">, qwen3.6-fp8</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="structure" data-heat="0" data-cell-fixture="06-ttw-viz" data-cell-engine="qwen3.8-27b" data-structure-control="8" data-structure-skill="8" data-structure-delta="0" data-quality-control="10" data-quality-skill="10" data-quality-delta="0">0<span class="visually-hidden">, qwen3.8-27b</span></span></td>
+                    <td class="mr-table__td map__td map__td--avg"><span class="map__avg" data-row-avg data-row-measure="structure" data-row-fixture="06-ttw-viz">−0.2</span></td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+        </article>
+
+        <article class="map-panel" id="map-quality" data-map-panel="quality" aria-labelledby="map-quality-heading">
+          <h2 class="title map-panel__title" id="map-quality-heading">Change in writing quality, with Minto and without</h2>
+          <p class="small map-panel__note">Each cell is one judged document: its writing-quality score with Minto minus the same model&rsquo;s score without it. The most quality can score is 10 points.</p>
+          <div class="mr-table__scroll map__scroll" role="region" tabindex="0" aria-labelledby="map-quality-heading">
+              <table class="mr-table__table map__table">
+                <caption class="visually-hidden">Change in writing quality by case and model, run v1.7.0-final</caption>
+                <thead>
+                  <tr>
+                    <th class="mr-table__th map__head map__head--case" scope="col">Case</th>
+                    <th class="mr-table__th map__head map__head--model" scope="col">Claude Opus 5</th>
+                    <th class="mr-table__th map__head map__head--model" scope="col">Claude Sonnet 5</th>
+                    <th class="mr-table__th map__head map__head--model" scope="col">Claude Haiku 4.5</th>
+                    <th class="mr-table__th map__head map__head--model" scope="col">Codex gpt-5.6-terra</th>
+                    <th class="mr-table__th map__head map__head--model" scope="col">gpt-oss-120b</th>
+                    <th class="mr-table__th map__head map__head--model" scope="col">qwen3.6-35b-a3b</th>
+                    <th class="mr-table__th map__head map__head--model" scope="col">qwen3.6-fp8</th>
+                    <th class="mr-table__th map__head map__head--model" scope="col">qwen3.8-27b</th>
+                    <th class="mr-table__th map__head map__head--avg" scope="col">Mean</th>
+                  </tr>
+                </thead>
+                <tbody class="map__group" data-map-mode="write">
+                  <tr>
+                    <th class="mr-table__td map__mode" scope="rowgroup" colspan="10">
+                      <span class="map__mode-inner">
+                        <code class="map__mode-name">write</code>
+                        <span class="map__mode-gloss">Create and rework text</span>
+                      </span>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th class="mr-table__td map__case" scope="row">
+                      <span class="map__case-name">A proposal to the chief executive</span>
+                      <code class="map__case-slug">01-big-chief</code>
+                    </th>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="quality" data-heat="1" data-cell-fixture="01-big-chief" data-cell-engine="opus5" data-structure-control="2" data-structure-skill="7" data-structure-delta="5" data-quality-control="9" data-quality-skill="10" data-quality-delta="1">+1<span class="visually-hidden">, Claude Opus 5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="quality" data-heat="1" data-cell-fixture="01-big-chief" data-cell-engine="sonnet5" data-structure-control="2" data-structure-skill="2" data-structure-delta="0" data-quality-control="8" data-quality-skill="9" data-quality-delta="1">+1<span class="visually-hidden">, Claude Sonnet 5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="quality" data-heat="0" data-cell-fixture="01-big-chief" data-cell-engine="haiku45" data-structure-control="1" data-structure-skill="5" data-structure-delta="4" data-quality-control="7" data-quality-skill="7" data-quality-delta="0">0<span class="visually-hidden">, Claude Haiku 4.5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="quality" data-heat="0" data-cell-fixture="01-big-chief" data-cell-engine="codex" data-structure-control="2" data-structure-skill="2" data-structure-delta="0" data-quality-control="8" data-quality-skill="8" data-quality-delta="0">0<span class="visually-hidden">, Codex gpt-5.6-terra</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="quality" data-heat="3" data-cell-fixture="01-big-chief" data-cell-engine="gpt-oss-120b" data-structure-control="3" data-structure-skill="3" data-structure-delta="0" data-quality-control="5" data-quality-skill="8" data-quality-delta="3">+3<span class="visually-hidden">, gpt-oss-120b</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--down" data-cell data-cell-measure="quality" data-heat="1" data-cell-fixture="01-big-chief" data-cell-engine="qwen3.6-35b-a3b" data-structure-control="2" data-structure-skill="1" data-structure-delta="-1" data-quality-control="9" data-quality-skill="8" data-quality-delta="-1">−1<span class="visually-hidden">, qwen3.6-35b-a3b</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="quality" data-heat="2" data-cell-fixture="01-big-chief" data-cell-engine="qwen3.6-fp8" data-structure-control="1" data-structure-skill="3" data-structure-delta="2" data-quality-control="8" data-quality-skill="10" data-quality-delta="2">+2<span class="visually-hidden">, qwen3.6-fp8</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--down" data-cell data-cell-measure="quality" data-heat="1" data-cell-fixture="01-big-chief" data-cell-engine="qwen3.8-27b" data-structure-control="2" data-structure-skill="1" data-structure-delta="-1" data-quality-control="9" data-quality-skill="8" data-quality-delta="-1">−1<span class="visually-hidden">, qwen3.8-27b</span></span></td>
+                    <td class="mr-table__td map__td map__td--avg"><span class="map__avg" data-row-avg data-row-measure="quality" data-row-fixture="01-big-chief">+0.6</span></td>
+                  </tr>
+                  <tr>
+                    <th class="mr-table__td map__case" scope="row">
+                      <span class="map__case-name">A memo on composing costs</span>
+                      <code class="map__case-slug">02-ttv</code>
+                    </th>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="quality" data-heat="2" data-cell-fixture="02-ttv" data-cell-engine="opus5" data-structure-control="4" data-structure-skill="7" data-structure-delta="3" data-quality-control="6" data-quality-skill="8" data-quality-delta="2">+2<span class="visually-hidden">, Claude Opus 5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="quality" data-heat="0" data-cell-fixture="02-ttv" data-cell-engine="sonnet5" data-structure-control="6" data-structure-skill="5" data-structure-delta="-1" data-quality-control="7" data-quality-skill="7" data-quality-delta="0">0<span class="visually-hidden">, Claude Sonnet 5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--down" data-cell data-cell-measure="quality" data-heat="1" data-cell-fixture="02-ttv" data-cell-engine="haiku45" data-structure-control="5" data-structure-skill="5" data-structure-delta="0" data-quality-control="8" data-quality-skill="7" data-quality-delta="-1">−1<span class="visually-hidden">, Claude Haiku 4.5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="quality" data-heat="1" data-cell-fixture="02-ttv" data-cell-engine="codex" data-structure-control="6" data-structure-skill="5" data-structure-delta="-1" data-quality-control="7" data-quality-skill="8" data-quality-delta="1">+1<span class="visually-hidden">, Codex gpt-5.6-terra</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="quality" data-heat="3" data-cell-fixture="02-ttv" data-cell-engine="gpt-oss-120b" data-structure-control="4" data-structure-skill="5" data-structure-delta="1" data-quality-control="4" data-quality-skill="7" data-quality-delta="3">+3<span class="visually-hidden">, gpt-oss-120b</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--down" data-cell data-cell-measure="quality" data-heat="1" data-cell-fixture="02-ttv" data-cell-engine="qwen3.6-35b-a3b" data-structure-control="5" data-structure-skill="6" data-structure-delta="1" data-quality-control="8" data-quality-skill="7" data-quality-delta="-1">−1<span class="visually-hidden">, qwen3.6-35b-a3b</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="quality" data-heat="0" data-cell-fixture="02-ttv" data-cell-engine="qwen3.6-fp8" data-structure-control="6" data-structure-skill="5" data-structure-delta="-1" data-quality-control="7" data-quality-skill="7" data-quality-delta="0">0<span class="visually-hidden">, qwen3.6-fp8</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--na" data-cell-missing data-cell-measure="quality" data-cell-fixture="02-ttv" data-cell-engine="qwen3.8-27b">−<span class="visually-hidden">no data, qwen3.8-27b</span></span></td>
+                    <td class="mr-table__td map__td map__td--avg"><span class="map__avg" data-row-avg data-row-measure="quality" data-row-fixture="02-ttv">+0.6</span></td>
+                  </tr>
+                  <tr>
+                    <th class="mr-table__td map__case" scope="row">
+                      <span class="map__case-name">A note before a meeting</span>
+                      <code class="map__case-slug">04-meeting-note</code>
+                    </th>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="quality" data-heat="2" data-cell-fixture="04-meeting-note" data-cell-engine="opus5" data-structure-control="4" data-structure-skill="6" data-structure-delta="2" data-quality-control="6" data-quality-skill="8" data-quality-delta="2">+2<span class="visually-hidden">, Claude Opus 5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="quality" data-heat="2" data-cell-fixture="04-meeting-note" data-cell-engine="sonnet5" data-structure-control="4" data-structure-skill="6" data-structure-delta="2" data-quality-control="6" data-quality-skill="8" data-quality-delta="2">+2<span class="visually-hidden">, Claude Sonnet 5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="quality" data-heat="1" data-cell-fixture="04-meeting-note" data-cell-engine="haiku45" data-structure-control="4" data-structure-skill="4" data-structure-delta="0" data-quality-control="6" data-quality-skill="7" data-quality-delta="1">+1<span class="visually-hidden">, Claude Haiku 4.5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="quality" data-heat="0" data-cell-fixture="04-meeting-note" data-cell-engine="codex" data-structure-control="4" data-structure-skill="5" data-structure-delta="1" data-quality-control="7" data-quality-skill="7" data-quality-delta="0">0<span class="visually-hidden">, Codex gpt-5.6-terra</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--down" data-cell data-cell-measure="quality" data-heat="2" data-cell-fixture="04-meeting-note" data-cell-engine="gpt-oss-120b" data-structure-control="4" data-structure-skill="3" data-structure-delta="-1" data-quality-control="5" data-quality-skill="3" data-quality-delta="-2">−2<span class="visually-hidden">, gpt-oss-120b</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="quality" data-heat="2" data-cell-fixture="04-meeting-note" data-cell-engine="qwen3.6-35b-a3b" data-structure-control="5" data-structure-skill="6" data-structure-delta="1" data-quality-control="7" data-quality-skill="9" data-quality-delta="2">+2<span class="visually-hidden">, qwen3.6-35b-a3b</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="quality" data-heat="0" data-cell-fixture="04-meeting-note" data-cell-engine="qwen3.6-fp8" data-structure-control="5" data-structure-skill="5" data-structure-delta="0" data-quality-control="7" data-quality-skill="7" data-quality-delta="0">0<span class="visually-hidden">, qwen3.6-fp8</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--down" data-cell data-cell-measure="quality" data-heat="1" data-cell-fixture="04-meeting-note" data-cell-engine="qwen3.8-27b" data-structure-control="4" data-structure-skill="4" data-structure-delta="0" data-quality-control="7" data-quality-skill="6" data-quality-delta="-1">−1<span class="visually-hidden">, qwen3.8-27b</span></span></td>
+                    <td class="mr-table__td map__td map__td--avg"><span class="map__avg" data-row-avg data-row-measure="quality" data-row-fixture="04-meeting-note">+0.5</span></td>
+                  </tr>
+                  <tr>
+                    <th class="mr-table__td map__case" scope="row">
+                      <span class="map__case-name">The role of the board</span>
+                      <code class="map__case-slug">05-role-of-board</code>
+                    </th>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="quality" data-heat="1" data-cell-fixture="05-role-of-board" data-cell-engine="opus5" data-structure-control="1" data-structure-skill="4" data-structure-delta="3" data-quality-control="7" data-quality-skill="8" data-quality-delta="1">+1<span class="visually-hidden">, Claude Opus 5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--down" data-cell data-cell-measure="quality" data-heat="1" data-cell-fixture="05-role-of-board" data-cell-engine="sonnet5" data-structure-control="1" data-structure-skill="0" data-structure-delta="-1" data-quality-control="7" data-quality-skill="6" data-quality-delta="-1">−1<span class="visually-hidden">, Claude Sonnet 5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="quality" data-heat="2" data-cell-fixture="05-role-of-board" data-cell-engine="haiku45" data-structure-control="0" data-structure-skill="2" data-structure-delta="2" data-quality-control="5" data-quality-skill="7" data-quality-delta="2">+2<span class="visually-hidden">, Claude Haiku 4.5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="quality" data-heat="0" data-cell-fixture="05-role-of-board" data-cell-engine="codex" data-structure-control="1" data-structure-skill="1" data-structure-delta="0" data-quality-control="7" data-quality-skill="7" data-quality-delta="0">0<span class="visually-hidden">, Codex gpt-5.6-terra</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="quality" data-heat="1" data-cell-fixture="05-role-of-board" data-cell-engine="gpt-oss-120b" data-structure-control="1" data-structure-skill="3" data-structure-delta="2" data-quality-control="6" data-quality-skill="7" data-quality-delta="1">+1<span class="visually-hidden">, gpt-oss-120b</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="quality" data-heat="1" data-cell-fixture="05-role-of-board" data-cell-engine="qwen3.6-35b-a3b" data-structure-control="0" data-structure-skill="4" data-structure-delta="4" data-quality-control="6" data-quality-skill="7" data-quality-delta="1">+1<span class="visually-hidden">, qwen3.6-35b-a3b</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="quality" data-heat="0" data-cell-fixture="05-role-of-board" data-cell-engine="qwen3.6-fp8" data-structure-control="5" data-structure-skill="5" data-structure-delta="0" data-quality-control="8" data-quality-skill="8" data-quality-delta="0">0<span class="visually-hidden">, qwen3.6-fp8</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--down" data-cell data-cell-measure="quality" data-heat="1" data-cell-fixture="05-role-of-board" data-cell-engine="qwen3.8-27b" data-structure-control="1" data-structure-skill="0" data-structure-delta="-1" data-quality-control="7" data-quality-skill="6" data-quality-delta="-1">−1<span class="visually-hidden">, qwen3.8-27b</span></span></td>
+                    <td class="mr-table__td map__td map__td--avg"><span class="map__avg" data-row-avg data-row-measure="quality" data-row-fixture="05-role-of-board">+0.4</span></td>
+                  </tr>
+                  <tr>
+                    <th class="mr-table__td map__case" scope="row">
+                      <span class="map__case-name">A message about technical debt</span>
+                      <code class="map__case-slug">08-techdebt</code>
+                    </th>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="quality" data-heat="0" data-cell-fixture="08-techdebt" data-cell-engine="opus5" data-structure-control="8" data-structure-skill="8" data-structure-delta="0" data-quality-control="10" data-quality-skill="10" data-quality-delta="0">0<span class="visually-hidden">, Claude Opus 5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="quality" data-heat="1" data-cell-fixture="08-techdebt" data-cell-engine="sonnet5" data-structure-control="7" data-structure-skill="8" data-structure-delta="1" data-quality-control="9" data-quality-skill="10" data-quality-delta="1">+1<span class="visually-hidden">, Claude Sonnet 5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="quality" data-heat="0" data-cell-fixture="08-techdebt" data-cell-engine="haiku45" data-structure-control="6" data-structure-skill="6" data-structure-delta="0" data-quality-control="7" data-quality-skill="7" data-quality-delta="0">0<span class="visually-hidden">, Claude Haiku 4.5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="quality" data-heat="2" data-cell-fixture="08-techdebt" data-cell-engine="codex" data-structure-control="7" data-structure-skill="8" data-structure-delta="1" data-quality-control="8" data-quality-skill="10" data-quality-delta="2">+2<span class="visually-hidden">, Codex gpt-5.6-terra</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="quality" data-heat="2" data-cell-fixture="08-techdebt" data-cell-engine="gpt-oss-120b" data-structure-control="5" data-structure-skill="7" data-structure-delta="2" data-quality-control="6" data-quality-skill="8" data-quality-delta="2">+2<span class="visually-hidden">, gpt-oss-120b</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--down" data-cell data-cell-measure="quality" data-heat="1" data-cell-fixture="08-techdebt" data-cell-engine="qwen3.6-35b-a3b" data-structure-control="7" data-structure-skill="6" data-structure-delta="-1" data-quality-control="8" data-quality-skill="7" data-quality-delta="-1">−1<span class="visually-hidden">, qwen3.6-35b-a3b</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--down" data-cell data-cell-measure="quality" data-heat="1" data-cell-fixture="08-techdebt" data-cell-engine="qwen3.6-fp8" data-structure-control="7" data-structure-skill="6" data-structure-delta="-1" data-quality-control="8" data-quality-skill="7" data-quality-delta="-1">−1<span class="visually-hidden">, qwen3.6-fp8</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--down" data-cell data-cell-measure="quality" data-heat="1" data-cell-fixture="08-techdebt" data-cell-engine="qwen3.8-27b" data-structure-control="7" data-structure-skill="6" data-structure-delta="-1" data-quality-control="9" data-quality-skill="8" data-quality-delta="-1">−1<span class="visually-hidden">, qwen3.8-27b</span></span></td>
+                    <td class="mr-table__td map__td map__td--avg"><span class="map__avg" data-row-avg data-row-measure="quality" data-row-fixture="08-techdebt">+0.2</span></td>
+                  </tr>
+                  <tr>
+                    <th class="mr-table__td map__case" scope="row">
+                      <span class="map__case-name">A review of a large rollout</span>
+                      <code class="map__case-slug">10-rollout-review</code>
+                    </th>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="quality" data-heat="3" data-cell-fixture="10-rollout-review" data-cell-engine="opus5" data-structure-control="6" data-structure-skill="8" data-structure-delta="2" data-quality-control="7" data-quality-skill="10" data-quality-delta="3">+3<span class="visually-hidden">, Claude Opus 5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--down" data-cell data-cell-measure="quality" data-heat="1" data-cell-fixture="10-rollout-review" data-cell-engine="sonnet5" data-structure-control="8" data-structure-skill="7" data-structure-delta="-1" data-quality-control="10" data-quality-skill="9" data-quality-delta="-1">−1<span class="visually-hidden">, Claude Sonnet 5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="quality" data-heat="1" data-cell-fixture="10-rollout-review" data-cell-engine="haiku45" data-structure-control="5" data-structure-skill="5" data-structure-delta="0" data-quality-control="7" data-quality-skill="8" data-quality-delta="1">+1<span class="visually-hidden">, Claude Haiku 4.5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="quality" data-heat="0" data-cell-fixture="10-rollout-review" data-cell-engine="codex" data-structure-control="8" data-structure-skill="8" data-structure-delta="0" data-quality-control="10" data-quality-skill="10" data-quality-delta="0">0<span class="visually-hidden">, Codex gpt-5.6-terra</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="quality" data-heat="0" data-cell-fixture="10-rollout-review" data-cell-engine="gpt-oss-120b" data-structure-control="3" data-structure-skill="3" data-structure-delta="0" data-quality-control="4" data-quality-skill="4" data-quality-delta="0">0<span class="visually-hidden">, gpt-oss-120b</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="quality" data-heat="1" data-cell-fixture="10-rollout-review" data-cell-engine="qwen3.6-35b-a3b" data-structure-control="5" data-structure-skill="6" data-structure-delta="1" data-quality-control="7" data-quality-skill="8" data-quality-delta="1">+1<span class="visually-hidden">, qwen3.6-35b-a3b</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="quality" data-heat="0" data-cell-fixture="10-rollout-review" data-cell-engine="qwen3.6-fp8" data-structure-control="6" data-structure-skill="6" data-structure-delta="0" data-quality-control="8" data-quality-skill="8" data-quality-delta="0">0<span class="visually-hidden">, qwen3.6-fp8</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--na" data-cell-missing data-cell-measure="quality" data-cell-fixture="10-rollout-review" data-cell-engine="qwen3.8-27b">−<span class="visually-hidden">no data, qwen3.8-27b</span></span></td>
+                    <td class="mr-table__td map__td map__td--avg"><span class="map__avg" data-row-avg data-row-measure="quality" data-row-fixture="10-rollout-review">+0.6</span></td>
+                  </tr>
+                  <tr>
+                    <th class="mr-table__td map__case" scope="row">
+                      <span class="map__case-name">A plain list, no pyramid</span>
+                      <code class="map__case-slug">11-plain-list</code>
+                    </th>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="quality" data-heat="1" data-cell-fixture="11-plain-list" data-cell-engine="opus5" data-structure-control="7" data-structure-skill="7" data-structure-delta="0" data-quality-control="8" data-quality-skill="9" data-quality-delta="1">+1<span class="visually-hidden">, Claude Opus 5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="quality" data-heat="0" data-cell-fixture="11-plain-list" data-cell-engine="sonnet5" data-structure-control="3" data-structure-skill="4" data-structure-delta="1" data-quality-control="6" data-quality-skill="6" data-quality-delta="0">0<span class="visually-hidden">, Claude Sonnet 5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="quality" data-heat="1" data-cell-fixture="11-plain-list" data-cell-engine="haiku45" data-structure-control="7" data-structure-skill="7" data-structure-delta="0" data-quality-control="8" data-quality-skill="9" data-quality-delta="1">+1<span class="visually-hidden">, Claude Haiku 4.5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="quality" data-heat="0" data-cell-fixture="11-plain-list" data-cell-engine="codex" data-structure-control="4" data-structure-skill="4" data-structure-delta="0" data-quality-control="8" data-quality-skill="8" data-quality-delta="0">0<span class="visually-hidden">, Codex gpt-5.6-terra</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="quality" data-heat="2" data-cell-fixture="11-plain-list" data-cell-engine="gpt-oss-120b" data-structure-control="3" data-structure-skill="4" data-structure-delta="1" data-quality-control="5" data-quality-skill="7" data-quality-delta="2">+2<span class="visually-hidden">, gpt-oss-120b</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="quality" data-heat="0" data-cell-fixture="11-plain-list" data-cell-engine="qwen3.6-35b-a3b" data-structure-control="5" data-structure-skill="7" data-structure-delta="2" data-quality-control="9" data-quality-skill="9" data-quality-delta="0">0<span class="visually-hidden">, qwen3.6-35b-a3b</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="quality" data-heat="2" data-cell-fixture="11-plain-list" data-cell-engine="qwen3.6-fp8" data-structure-control="4" data-structure-skill="7" data-structure-delta="3" data-quality-control="7" data-quality-skill="9" data-quality-delta="2">+2<span class="visually-hidden">, qwen3.6-fp8</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="quality" data-heat="3" data-cell-fixture="11-plain-list" data-cell-engine="qwen3.8-27b" data-structure-control="5" data-structure-skill="8" data-structure-delta="3" data-quality-control="7" data-quality-skill="10" data-quality-delta="3">+3<span class="visually-hidden">, qwen3.8-27b</span></span></td>
+                    <td class="mr-table__td map__td map__td--avg"><span class="map__avg" data-row-avg data-row-measure="quality" data-row-fixture="11-plain-list">+1.1</span></td>
+                  </tr>
+                </tbody>
+                <tbody class="map__group" data-map-mode="audit">
+                  <tr>
+                    <th class="mr-table__td map__mode" scope="rowgroup" colspan="10">
+                      <span class="map__mode-inner">
+                        <code class="map__mode-name">audit</code>
+                        <span class="map__mode-gloss">Check and find defects</span>
+                      </span>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th class="mr-table__td map__case" scope="row">
+                      <span class="map__case-name">A set of monthly reports</span>
+                      <code class="map__case-slug">03-period-graph-books</code>
+                    </th>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="quality" data-heat="1" data-cell-fixture="03-period-graph-books" data-cell-engine="opus5" data-structure-control="5" data-structure-skill="5" data-structure-delta="0" data-quality-control="6" data-quality-skill="7" data-quality-delta="1">+1<span class="visually-hidden">, Claude Opus 5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="quality" data-heat="0" data-cell-fixture="03-period-graph-books" data-cell-engine="sonnet5" data-structure-control="6" data-structure-skill="4" data-structure-delta="-2" data-quality-control="7" data-quality-skill="7" data-quality-delta="0">0<span class="visually-hidden">, Claude Sonnet 5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--down" data-cell data-cell-measure="quality" data-heat="2" data-cell-fixture="03-period-graph-books" data-cell-engine="haiku45" data-structure-control="6" data-structure-skill="2" data-structure-delta="-4" data-quality-control="8" data-quality-skill="6" data-quality-delta="-2">−2<span class="visually-hidden">, Claude Haiku 4.5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="quality" data-heat="0" data-cell-fixture="03-period-graph-books" data-cell-engine="codex" data-structure-control="5" data-structure-skill="5" data-structure-delta="0" data-quality-control="6" data-quality-skill="6" data-quality-delta="0">0<span class="visually-hidden">, Codex gpt-5.6-terra</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="quality" data-heat="2" data-cell-fixture="03-period-graph-books" data-cell-engine="gpt-oss-120b" data-structure-control="4" data-structure-skill="3" data-structure-delta="-1" data-quality-control="4" data-quality-skill="6" data-quality-delta="2">+2<span class="visually-hidden">, gpt-oss-120b</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="quality" data-heat="1" data-cell-fixture="03-period-graph-books" data-cell-engine="qwen3.6-35b-a3b" data-structure-control="4" data-structure-skill="4" data-structure-delta="0" data-quality-control="6" data-quality-skill="7" data-quality-delta="1">+1<span class="visually-hidden">, qwen3.6-35b-a3b</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="quality" data-heat="2" data-cell-fixture="03-period-graph-books" data-cell-engine="qwen3.6-fp8" data-structure-control="4" data-structure-skill="4" data-structure-delta="0" data-quality-control="5" data-quality-skill="7" data-quality-delta="2">+2<span class="visually-hidden">, qwen3.6-fp8</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--down" data-cell data-cell-measure="quality" data-heat="1" data-cell-fixture="03-period-graph-books" data-cell-engine="qwen3.8-27b" data-structure-control="6" data-structure-skill="4" data-structure-delta="-2" data-quality-control="7" data-quality-skill="6" data-quality-delta="-1">−1<span class="visually-hidden">, qwen3.8-27b</span></span></td>
+                    <td class="mr-table__td map__td map__td--avg"><span class="map__avg" data-row-avg data-row-measure="quality" data-row-fixture="03-period-graph-books">+0.4</span></td>
+                  </tr>
+                  <tr>
+                    <th class="mr-table__td map__case" scope="row">
+                      <span class="map__case-name">A set of headings</span>
+                      <code class="map__case-slug">07-headings-audit</code>
+                    </th>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="quality" data-heat="2" data-cell-fixture="07-headings-audit" data-cell-engine="opus5" data-structure-control="6" data-structure-skill="6" data-structure-delta="0" data-quality-control="7" data-quality-skill="9" data-quality-delta="2">+2<span class="visually-hidden">, Claude Opus 5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="quality" data-heat="1" data-cell-fixture="07-headings-audit" data-cell-engine="sonnet5" data-structure-control="7" data-structure-skill="7" data-structure-delta="0" data-quality-control="8" data-quality-skill="9" data-quality-delta="1">+1<span class="visually-hidden">, Claude Sonnet 5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="quality" data-heat="5" data-cell-fixture="07-headings-audit" data-cell-engine="haiku45" data-structure-control="2" data-structure-skill="6" data-structure-delta="4" data-quality-control="3" data-quality-skill="9" data-quality-delta="6">+6<span class="visually-hidden">, Claude Haiku 4.5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="quality" data-heat="4" data-cell-fixture="07-headings-audit" data-cell-engine="codex" data-structure-control="3" data-structure-skill="6" data-structure-delta="3" data-quality-control="4" data-quality-skill="8" data-quality-delta="4">+4<span class="visually-hidden">, Codex gpt-5.6-terra</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="quality" data-heat="1" data-cell-fixture="07-headings-audit" data-cell-engine="gpt-oss-120b" data-structure-control="5" data-structure-skill="4" data-structure-delta="-1" data-quality-control="5" data-quality-skill="6" data-quality-delta="1">+1<span class="visually-hidden">, gpt-oss-120b</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="quality" data-heat="3" data-cell-fixture="07-headings-audit" data-cell-engine="qwen3.6-35b-a3b" data-structure-control="5" data-structure-skill="6" data-structure-delta="1" data-quality-control="5" data-quality-skill="8" data-quality-delta="3">+3<span class="visually-hidden">, qwen3.6-35b-a3b</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="quality" data-heat="1" data-cell-fixture="07-headings-audit" data-cell-engine="qwen3.6-fp8" data-structure-control="5" data-structure-skill="6" data-structure-delta="1" data-quality-control="6" data-quality-skill="7" data-quality-delta="1">+1<span class="visually-hidden">, qwen3.6-fp8</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="quality" data-heat="4" data-cell-fixture="07-headings-audit" data-cell-engine="qwen3.8-27b" data-structure-control="5" data-structure-skill="6" data-structure-delta="1" data-quality-control="5" data-quality-skill="9" data-quality-delta="4">+4<span class="visually-hidden">, qwen3.8-27b</span></span></td>
+                    <td class="mr-table__td map__td map__td--avg"><span class="map__avg" data-row-avg data-row-measure="quality" data-row-fixture="07-headings-audit">+2.8</span></td>
+                  </tr>
+                </tbody>
+                <tbody class="map__group" data-map-mode="digest">
+                  <tr>
+                    <th class="mr-table__td map__mode" scope="rowgroup" colspan="10">
+                      <span class="map__mode-inner">
+                        <code class="map__mode-name">digest</code>
+                        <span class="map__mode-gloss">Report on what was read</span>
+                      </span>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th class="mr-table__td map__case" scope="row">
+                      <span class="map__case-name">A digest of several sources</span>
+                      <code class="map__case-slug">09-sources-digest</code>
+                    </th>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="quality" data-heat="4" data-cell-fixture="09-sources-digest" data-cell-engine="opus5" data-structure-control="5" data-structure-skill="8" data-structure-delta="3" data-quality-control="6" data-quality-skill="10" data-quality-delta="4">+4<span class="visually-hidden">, Claude Opus 5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="quality" data-heat="1" data-cell-fixture="09-sources-digest" data-cell-engine="sonnet5" data-structure-control="6" data-structure-skill="5" data-structure-delta="-1" data-quality-control="8" data-quality-skill="9" data-quality-delta="1">+1<span class="visually-hidden">, Claude Sonnet 5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--down" data-cell data-cell-measure="quality" data-heat="1" data-cell-fixture="09-sources-digest" data-cell-engine="haiku45" data-structure-control="6" data-structure-skill="6" data-structure-delta="0" data-quality-control="9" data-quality-skill="8" data-quality-delta="-1">−1<span class="visually-hidden">, Claude Haiku 4.5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="quality" data-heat="1" data-cell-fixture="09-sources-digest" data-cell-engine="codex" data-structure-control="6" data-structure-skill="8" data-structure-delta="2" data-quality-control="8" data-quality-skill="9" data-quality-delta="1">+1<span class="visually-hidden">, Codex gpt-5.6-terra</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="quality" data-heat="0" data-cell-fixture="09-sources-digest" data-cell-engine="gpt-oss-120b" data-structure-control="4" data-structure-skill="4" data-structure-delta="0" data-quality-control="5" data-quality-skill="5" data-quality-delta="0">0<span class="visually-hidden">, gpt-oss-120b</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--down" data-cell data-cell-measure="quality" data-heat="1" data-cell-fixture="09-sources-digest" data-cell-engine="qwen3.6-35b-a3b" data-structure-control="6" data-structure-skill="6" data-structure-delta="0" data-quality-control="9" data-quality-skill="8" data-quality-delta="-1">−1<span class="visually-hidden">, qwen3.6-35b-a3b</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="quality" data-heat="2" data-cell-fixture="09-sources-digest" data-cell-engine="qwen3.6-fp8" data-structure-control="5" data-structure-skill="8" data-structure-delta="3" data-quality-control="8" data-quality-skill="10" data-quality-delta="2">+2<span class="visually-hidden">, qwen3.6-fp8</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="quality" data-heat="0" data-cell-fixture="09-sources-digest" data-cell-engine="qwen3.8-27b" data-structure-control="7" data-structure-skill="8" data-structure-delta="1" data-quality-control="10" data-quality-skill="10" data-quality-delta="0">0<span class="visually-hidden">, qwen3.8-27b</span></span></td>
+                    <td class="mr-table__td map__td map__td--avg"><span class="map__avg" data-row-avg data-row-measure="quality" data-row-fixture="09-sources-digest">+0.8</span></td>
+                  </tr>
+                </tbody>
+                <tbody class="map__group" data-map-mode="viz">
+                  <tr>
+                    <th class="mr-table__td map__mode" scope="rowgroup" colspan="10">
+                      <span class="map__mode-inner">
+                        <code class="map__mode-name">viz</code>
+                        <span class="map__mode-gloss">Show the structure</span>
+                      </span>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th class="mr-table__td map__case" scope="row">
+                      <span class="map__case-name">A pyramid of an existing memo</span>
+                      <code class="map__case-slug">06-ttw-viz</code>
+                    </th>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="quality" data-heat="1" data-cell-fixture="06-ttw-viz" data-cell-engine="opus5" data-structure-control="7" data-structure-skill="8" data-structure-delta="1" data-quality-control="9" data-quality-skill="10" data-quality-delta="1">+1<span class="visually-hidden">, Claude Opus 5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--down" data-cell data-cell-measure="quality" data-heat="2" data-cell-fixture="06-ttw-viz" data-cell-engine="sonnet5" data-structure-control="8" data-structure-skill="6" data-structure-delta="-2" data-quality-control="10" data-quality-skill="8" data-quality-delta="-2">−2<span class="visually-hidden">, Claude Sonnet 5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--up" data-cell data-cell-measure="quality" data-heat="3" data-cell-fixture="06-ttw-viz" data-cell-engine="haiku45" data-structure-control="5" data-structure-skill="7" data-structure-delta="2" data-quality-control="6" data-quality-skill="9" data-quality-delta="3">+3<span class="visually-hidden">, Claude Haiku 4.5</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="quality" data-heat="0" data-cell-fixture="06-ttw-viz" data-cell-engine="codex" data-structure-control="7" data-structure-skill="7" data-structure-delta="0" data-quality-control="9" data-quality-skill="9" data-quality-delta="0">0<span class="visually-hidden">, Codex gpt-5.6-terra</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="quality" data-heat="0" data-cell-fixture="06-ttw-viz" data-cell-engine="gpt-oss-120b" data-structure-control="8" data-structure-skill="7" data-structure-delta="-1" data-quality-control="9" data-quality-skill="9" data-quality-delta="0">0<span class="visually-hidden">, gpt-oss-120b</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="quality" data-heat="0" data-cell-fixture="06-ttw-viz" data-cell-engine="qwen3.6-35b-a3b" data-structure-control="7" data-structure-skill="7" data-structure-delta="0" data-quality-control="9" data-quality-skill="9" data-quality-delta="0">0<span class="visually-hidden">, qwen3.6-35b-a3b</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--down" data-cell data-cell-measure="quality" data-heat="2" data-cell-fixture="06-ttw-viz" data-cell-engine="qwen3.6-fp8" data-structure-control="8" data-structure-skill="6" data-structure-delta="-2" data-quality-control="10" data-quality-skill="8" data-quality-delta="-2">−2<span class="visually-hidden">, qwen3.6-fp8</span></span></td>
+                    <td class="mr-table__td map__td"><span class="map__cell map__cell--flat" data-cell data-cell-measure="quality" data-heat="0" data-cell-fixture="06-ttw-viz" data-cell-engine="qwen3.8-27b" data-structure-control="8" data-structure-skill="8" data-structure-delta="0" data-quality-control="10" data-quality-skill="10" data-quality-delta="0">0<span class="visually-hidden">, qwen3.8-27b</span></span></td>
+                    <td class="mr-table__td map__td map__td--avg"><span class="map__avg" data-row-avg data-row-measure="quality" data-row-fixture="06-ttw-viz">0.0</span></td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+        </article>
+
+        <div class="map-legend">
+          <p class="label map-legend__label">Reading the shading</p>
+          <ul class="map-legend__scale">
+            <li class="map-legend__step"><span class="map__cell map__cell--down" data-heat="4" aria-hidden="true">&minus;4</span><span class="label">Worse with Minto</span></li>
+            <li class="map-legend__step"><span class="map__cell map__cell--flat" data-heat="0" aria-hidden="true">0</span><span class="label">No change</span></li>
+            <li class="map-legend__step"><span class="map__cell map__cell--up" data-heat="4" aria-hidden="true">+4</span><span class="label">Better with Minto</span></li>
+            <li class="map-legend__step"><span class="map__cell map__cell--na" aria-hidden="true">&minus;</span><span class="label">no data</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section map-read" aria-labelledby="map-read-heading">
+        <h2 class="headline" id="map-read-heading">How to read this map</h2>
+        <div class="map-read__grid">
+          <p class="body map-read__item"><b class="map-read__lead">One document per cell.</b> Each cell is a single judged pair, not an average. A cell of plus or minus one is noise; the row means, over eight models, are the steadier number, and the modes are steadier still.</p>
+          <p class="body map-read__item"><b class="map-read__lead">172 verdicts, 86 pairs.</b> Every pair is judged twice, once without the skill and once with it, which is where the landing page&rsquo;s 172 comes from. The two empty cells are qwen3.8-27b on the two longest cases; it timed out in both arms, so there is nothing to subtract.</p>
+          <p class="body map-read__item"><b class="map-read__lead">These deltas are subtraction, not new judging.</b> The v1.7.0 report deliberately stopped short of case-level deltas. This page takes them by subtracting the two arms of each already-judged pair. No output was re-judged and no model was refitted.</p>
+          <p class="body map-read__item"><b class="map-read__lead">Cases are not interchangeable.</b> Each mode is tested on the jobs it exists for: write on drafting and reworking, audit on finding defects, digest on reporting what was read, viz on showing an existing structure. A single pooled score would average these into a number that describes none of them.</p>
+        </div>
+        <p class="map-read__links">
+          <a class="link small" href="https://github.com/welltraum/minto/blob/main/eval/report-v1.7.0.md">Read the full methodology and limitations<svg class="link-mark" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 10 10 2M4.5 2H10v5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+          <a class="link small" href="../">Back to the Minto home page</a>
+        </p>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="page site-footer__inner">
+        <div class="brand site-footer__brand">
+          <span class="brand__mark units" data-shape="pyramid" aria-hidden="true">
+            <span class="units__row"><span class="unit"></span></span>
+            <span class="units__row"><span class="unit"></span><span class="unit"></span></span>
+            <span class="units__row"><span class="unit"></span><span class="unit"></span><span class="unit"></span></span>
+          </span>
+          <span class="brand__word">Minto</span>
+        </div>
+        <p class="small">The skill settles the argument before it rewrites the prose. Barbara Minto&rsquo;s source material remains the property of its rights holders; the plugin code is MIT-licensed.</p>
+        <nav aria-label="Links">
+          <a class="nav-link" href="https://github.com/welltraum/minto">GitHub</a>
+          <a class="nav-link" href="https://github.com/welltraum/minto/blob/main/CHANGELOG.md">Changelog</a>
+          <a class="nav-link" href="../ru/eval-map/">Русский</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="../assets/app.js?v=9" defer></script>
+  </body>
+</html>
